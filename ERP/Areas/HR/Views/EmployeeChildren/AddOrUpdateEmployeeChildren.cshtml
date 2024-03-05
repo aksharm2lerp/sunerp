@@ -1,0 +1,174 @@
+@using Business.Entities.HR.EmployeeChildrenModel;
+@model EmployeeChildren;
+@{
+    int userId = 0;
+    int companyId = 0;
+    if (ViewBag.UserID != null)
+        userId = ViewBag.UserID;
+    if (ViewBag.CompanyID != null)
+        companyId = ViewBag.CompanyID;
+    string dismisModal = string.Empty;
+    if (Model != null)
+    {
+        if (Model.FromFamilyBackground)
+            dismisModal = "modal";
+        else
+            dismisModal = "offcanvas";
+    }
+}
+<form class="form-horizontal" role="form" id="formEmployeeChildren">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <input type="hidden" asp-for="EmployeeChildrenID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="EmployeeChildrenText" name="EmployeeChildrenText" asp-for="EmployeeChildrenText">
+                    <span asp-validation-for="EmployeeChildrenText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mb-5'>
+                <div class='col-12'>
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Employee<span class="required">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="hidden" asp-for="EmployeeID" id="EmployeeID" />
+                            <select class="form-select" required="" id="choices-multiple-remove-button-employeeChildren" asp-items="@EmployeeExtension.GetAllEmployeesForDropDown(userId,companyId)">
+                                <option value="">Select Employee...</option>
+                            </select>
+                            <span asp-validation-for="EmployeeID" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Full Name</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ChildFullName' asp-for='ChildFullName' name='ChildFullName'>
+                            <span asp-validation-for='ChildFullName' class='text-danger'></span>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>DOB</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='DOB' asp-for='DOB' name='DOB'>
+                            <span asp-validation-for='DOB' class='text-danger'></span>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Is Studying:</label>
+                        <div class='col-sm-9'>
+                            <input type='checkbox' class='form-check-input' role='switch' asp-for='IsStudying'>
+                            <span asp-validation-for='IsStudying' class='text-danger'></span>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Standard Or Degree</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='StandardOrDegree' asp-for='StandardOrDegree' name='StandardOrDegree'>
+                            <span asp-validation-for='StandardOrDegree' class='text-danger'></span>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>School Or University</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='SchoolOrUniversity' asp-for='SchoolOrUniversity' name='SchoolOrUniversity'>
+                            <span asp-validation-for='SchoolOrUniversity' class='text-danger'></span>
+                        </div>
+                    </div>
+
+                    @*   <div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>EmployeeID</label><div class='col-sm-9'><input type='text' class='form-control' id='EmployeeID' asp-for='EmployeeID' name='EmployeeID'><span asp-validation-for='EmployeeID' class='text-danger'></span></div></div>*@
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <!--<button type="button" data-bs-dismiss="offcanvas"  data-bs-dismiss="modal"  class="btn btn-primary btn-info px-5 my-2">Back</button>-->
+                <button type="button" data-bs-dismiss="@dismisModal" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '/HR/EmployeeChildren/AddOrUpdateEmployeeChildren';
+    function fnSubmit() {
+        let employeeIdDrp = document.getElementById('choices-multiple-remove-button-employeeChildren');
+        let selectedEmployeeIndex = employeeIdDrp.options[employeeIdDrp.selectedIndex];
+
+        let employeeId = document.getElementById("EmployeeID");
+        employeeId.value = selectedEmployeeIndex.value;
+
+        if ($("#formEmployeeChildren").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formEmployeeChildren").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#ModalAddChild").modal("hide");
+                        $("#canvas_EmployeeChildren").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+
+                        //window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+        let employeeids = document.getElementById("EmployeeID").value;
+        $.each(employeeids.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-employeeChildren option[value='" + e + "']").prop("selected", true);
+        });
+
+
+
+        var multipleCancelButtonEmployee = new Choices('#choices-multiple-remove-button-employeeChildren', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+    });
+
+
+</script>

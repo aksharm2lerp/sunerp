@@ -1,0 +1,144 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using GridCore
+@addTagHelper *, GridMvc
+@model ISGrid
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.Title = "Party List..";
+}
+<div class="card border-1 shadow rounded-7 p-1">
+
+<div class="page-breadcrumb d-none d-sm-flex align-items-center pb-3 border-bottom">
+    <div class="ps-3 col-md-6">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item">
+                    <a asp-controller="Party" asp-action="Index" asp-area="Marketing"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Party List</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="col-md-6 text-align-right">
+        <a class="btn btn-primary px-5" asp-controller="Party" asp-action="AddUpdateParty" asp-area="Marketing">
+            Add Party
+        </a>
+    </div>
+</div>
+<div class="card">
+<div class="row card">
+    <div id="SearchPanel">
+        @{
+            Html.RenderPartial("_partySearch", new Business.Entities.PartyMasterModel.PartySearch());
+        }
+    </div>
+</div>
+<div class="row pt-1">
+    <div class="col-md-12">
+        <grid model="@Model" />
+    </div>
+    </div>
+    </div>
+</div>
+@*<div class="offcanvas offcanvas-end" tabindex="-1" id="canvas_Employee" style="width: 65% !important; visibility: visible;">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="canvasHeader"></h5>
+        <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3 pb-5">
+        <div id="dvInfo">
+        </div>
+    </div>
+</div>*@
+
+
+<div class="modal fade" id="ModalMigrate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Party convert to customer !</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <h2 for="recipient-name" class="col-form-label">Are you want to convert party to cust</h2>
+                    <input type="hidden" id="selectedRowNo" />
+                <button type="button" class="btn btn-primary" onclick="fnConvertPartyToCustomer()">Convert</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Back
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    function fnOpenPartyIDMigrate(id) {
+        document.getElementById('selectedRowNo').value = id;
+        $('#ModalMigrate').modal('show');
+    }
+
+    function fnConvertPartyToCustomer() {
+        let URLPTC = '@Url.Action("PartyToCustomer", "ConversationActivities")';
+        var partyID = document.getElementById('selectedRowNo').value;
+        //alert('fnConvertPartyToCustomer success-- 2222 ' + partyID);
+        // URLPTC Url Party To Customer
+        // _id = @@Model.partyMaster.PartyID;
+        var _parameters = { PartyID: partyID };
+        $.ajax({
+            type: 'POST',
+            url: URLPTC,
+            data: _parameters,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status) {
+                    //notification
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message,
+                        delay: 5000, // Hide notification after this time(in miliseconds)
+                    });
+                    //$("#ModalMigrate").modal("hide");
+                    window.location.reload().delay(10000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message,
+                        delay: 5000, // Hide notification after this time(in miliseconds)
+                    });
+
+                }
+                //window.location.reload().delay(10000);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error",
+                    delay: 5000, // Hide notification after this time(in miliseconds)
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    }
+
+
+</script>

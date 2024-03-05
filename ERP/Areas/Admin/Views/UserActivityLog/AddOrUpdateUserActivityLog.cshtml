@@ -1,0 +1,78 @@
+@using Business.Entities.Admin.UserActivityLogModel;
+@model UserActivityLog;
+<form class="form-horizontal" role="form" id="formUserActivityLog">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="UserActivityLogID" />
+                <div class="col-sm-9">
+                  @*  <input type="text" required="" class="form-control" id="UserActivityLogText" name="UserActivityLogText" asp-for="UserActivityLogText">
+                    <span asp-validation-for="UserActivityLogText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'><div class='col-12'><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>ActivityLogText</label><div class='col-sm-9'><input type='text' class='form-control' id='ActivityLogText' asp-for='ActivityLogText' name='ActivityLogText'><span asp-validation-for='ActivityLogText' class='text-danger'></span></div></div><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>PackageID</label><div class='col-sm-9'><input type='text' class='form-control' id='PackageID' asp-for='PackageID' name='PackageID'><span asp-validation-for='PackageID' class='text-danger'></span></div></div><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>StartUserName</label><div class='col-sm-9'><input type='text' class='form-control' id='StartUserName' asp-for='StartUserName' name='StartUserName'><span asp-validation-for='StartUserName' class='text-danger'></span></div></div><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>EndUserName</label><div class='col-sm-9'><input type='text' class='form-control' id='EndUserName' asp-for='EndUserName' name='EndUserName'><span asp-validation-for='EndUserName' class='text-danger'></span></div></div><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>PageName</label><div class='col-sm-9'><input type='text' class='form-control' id='PageName' asp-for='PageName' name='PageName'><span asp-validation-for='PageName' class='text-danger'></span></div></div></div></div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateUserActivityLog", "UserActivityLog")';
+    function fnSubmit() {
+        if ($("#formUserActivityLog").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formUserActivityLog").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+						window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+</script>

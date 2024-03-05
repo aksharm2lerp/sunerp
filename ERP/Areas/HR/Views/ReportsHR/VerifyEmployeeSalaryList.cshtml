@@ -1,0 +1,512 @@
+﻿@using System.Data;
+@using System.Collections.Generic;
+@model DataSet;
+@{
+    ViewData["Title"] = "Employee Veryfied Salary summary";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@{
+    List<string> strForRow = new List<string>();
+    DateTime date = ViewBag.MonthYear;
+    //string monthyear = string.Concat(date.Year + "-" + date.Month);
+    string monthyear = date.ToString("yyyy-MM");
+    int? month = date.Month;
+    int? year = date.Year;
+    int? empCatId = ViewBag.EmployeeCategoryID;
+    int? companyID = ViewBag.CompanyID;
+    int? employmentTypeId = ViewBag.EmploymentTypeID;
+    int? empID = ViewBag.EmployeeID;
+    int? departmentId = ViewBag.DepartmentID;
+}
+
+<div class="container" id="employeeSalalrySummary">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+            <div class="card border-0 shadow rounded-3">
+                <div class="card-body">
+
+                    <div class="col-sm-12">
+                        <div class="page-breadcrumb align-items-center">
+                            <div class="p-2">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0 p-0">
+                                        <li class="breadcrumb-item">
+                                            <a asp-area="HR" asp-controller="ReportsHR" asp-action="VerifyEmployeeSalaryList"><i class="bx bx-home-alt"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">Employee Veryfied Salary summary</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr />
+
+                    <div class="row mb-1">
+                        <div class="row">
+                            <label class="col-sm-1 col-form-label">Month/Year</label>
+                            <div class="col-sm-3">
+                                <input type="month" class="form-control" id="month" value="@monthyear">
+                            </div>
+
+                            <label for="" class="col-sm-1 col-form-label ">Company</label>
+                            <div class="col-sm-3">
+                                <select class="form-select choices__inner_New" asp-for="@companyID" id="CompanyID" name="CompanyID" asp-items="@EmployeeExtension.GetAllCompanyAsync()">
+                                </select>
+                            </div>
+
+
+
+                            <label class="col-sm-1 col-form-label">Employee</label>
+                            <div class="col-sm-3">
+                                <select class="form-select" asp-for="@empID" id="EmployeeID" name="EmployeeID" asp-items="@CommonExtension.GetAllEmployeeAsync()">
+                                    <option value="" selected>--- All ---</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="row mb-1">
+                        <div class="row">
+
+                            
+
+                            <label for="" class="col-sm-1 col-form-label ">Department</label>
+                            <div class="col-sm-3">
+                                <select class="form-select" asp-for="@departmentId" id="DepartmentID" name="DepartmentID" asp-items="@CommonExtension.GetAllDepartmentAsync()">
+                                    <option value="" selected>--- All ---</option>
+                                </select>
+                            </div>
+                       
+
+                            <label for="" class="col-sm-1 col-form-label ">Employment Type:</label>
+                            <div class="col-sm-3">
+                                <select class="form-select" asp-for="@employmentTypeId" id="EmploymentTypeID" name="EmploymentTypeID" asp-items="@EmployeeExtension.GetAllEmploymentType()">
+                                    <option value="" selected>--- All ---</option>
+                                </select>
+                            </div>
+
+                            <label class="col-sm-1 col-form-label">Employee Category</label>
+                            <div class="col-sm-3">
+                                <select class="form-select" id="EmployeeCategoryID" name="EmployeeCategoryID" asp-items="@EmployeeExtension.GetAllEmployeeCategoryMaster()" asp-for="@empCatId">
+                                    <option value="" selected>--- All ---</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="text-end mb-3">
+                        <input type="button" value="Search" class="btn btn-outline-primary px-5 btn-sm" onclick="fnSearchEmpSal(0)" />
+
+                        <input type="button" value="Export" class="btn btn-outline-primary px-5 btn-sm" alt="Export to Excel" onclick="fnSearchEmpSal(true)" />
+                        <input type="button" value="Print" class="btn btn-outline-primary px-5 btn-sm" alt="Export to Excel" onclick="fnPrintAllSalarySleep(true)" />
+                    </div>
+                    <div id="EmployeeSummaryTable">
+                        @if (Model != null)
+                        {
+                            if (Model.Tables.Count > 0 && Model.Tables[0].Rows.Count > 0)
+                            {
+                                <div class="row" style="overflow:auto; height:auto; width:100%;">
+                                    <table class="table table-striped table-hover table-bordered" style="white-space: nowrap; font-size:inherit !important;">
+                                        @* style="display:block; overflow: auto; white-space: nowrap;" *@
+                                        <thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                            <tr>
+                                                <th>Verified</th>@* Added by Dravesh *@
+                                                <th>Edit</th>@* Added by Dravesh *@
+                                                <th>Print</th>@* Added by Rahul *@
+                                                @foreach (DataColumn dataColumn in Model.Tables[0].Columns)
+                                                {
+                                                    if (dataColumn.ColumnName.ToString() != "EmployeeID")
+                                                    {
+                                                        strForRow.Add(dataColumn.ToString());
+                                                        <th>@dataColumn.ToString()</th>
+                                                    }
+                                                }
+                                            </tr>
+                                        </thead>
+                                        @foreach (DataRow row in Model.Tables[0].Rows)
+                                        {
+                                            var test = row;
+                                            <tr>
+                                                <td class="text-center">
+                                                    @* <a asp-area="HR" asp-controller="ReportsHR" asp-action="Verified" asp-route-verifiedId="@row[0].ToString()"> *@
+                                                    <a type="button" onclick="fnVerifySalary(this)" data-empId="@row[1].ToInt()">
+                                                        @if (row[0].ToString().Equals("1"))
+                                                        {
+                                                            <iconify-icon icon="material-symbols:verified-outline" class="text-success" style="font-size:20px" disabled></iconify-icon>
+                                                        }
+                                                        else
+                                                        {
+                                                            <iconify-icon icon="material-symbols:verified-outline" class="text-danger" style="font-size:20px"></iconify-icon>
+                                                        }
+                                                        @*<iconify-icon icon="material-symbols:verified-outline" class="text-success" style="font-size:20px"></iconify-icon>*@
+                                                    </a>
+
+                                                </td>@* Added by Dravesh *@
+                                                <td>
+                                                   @*  @if (row[0].ToString().Equals("1"))
+                                                    { *@
+                                                      @*   <a asp-area="HR" asp-controller="ReportsHR" asp-action="Edit" asp-route-editId="@row[1].ToInt()" asp-route-month="@month" asp-route-year="@year" asp-route-companyId="@companyID" asp-route-employeeCategoryId="@empCatId" style="pointer-events: none"><iconify-icon icon="material-symbols:edit-note-sharp" style="font-size:20px"></iconify-icon></a> *@
+                                                        @* <a><iconify-icon icon="material-symbols:edit-note-sharp" style="font-size:20px"></iconify-icon></a> *@@* 
+                                                    }
+                                                    else
+                                                    { *@
+                                                        <a asp-area="HR" asp-controller="ReportsHR" asp-action="Edit" asp-route-editId="@row[1].ToInt()" asp-route-month="@month" asp-route-year="@year" asp-route-companyId="@companyID" asp-route-employeeCategoryId="@empCatId"><iconify-icon icon="material-symbols:edit-note-sharp" style="font-size:20px"></iconify-icon></a>
+                                                   @*  } *@
+                                                    @*<a asp-area="HR" asp-controller="ReportsHR" asp-action="Edit" asp-route-editId="@row[1].ToInt()" asp-route-month="@month" asp-route-year="@year" asp-route-companyId="@companyID" asp-route-employeeCategoryId="@empCatId"><iconify-icon icon="material-symbols:edit-note-sharp" style="font-size:20px"></iconify-icon></a>*@
+                                                </td>@* Added by Dravesh *@
+                                                <td>
+                                                    <a onclick="fnPrintSalarySleep(this)" href="javascript:void(0)" data-id="@row[1].ToInt()" data-month="@month" data-year="@year" data-company="@companyID" data-category="@empCatId" style="font-size:20px"><iconify-icon icon='arcticons:mobile-print'></iconify-icon></a>
+                                                </td>@* Added by Rahul *@
+                                                @foreach (string timeRow in strForRow)
+                                                {
+                                                    if (timeRow.ToString() != "EmployeeID")
+                                                    {
+                                                        @if (!string.IsNullOrEmpty(row[timeRow].ToString()))
+                                                        {
+                                                            <td>@row[timeRow]</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>-</td>
+                                                        }
+
+                                                    }
+                                                }
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="text-center">
+                                    <h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1>
+                                    <h3 style="color: red;">No Data Found</h3>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="text-center">
+                                <h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1>
+                                <h3 style="color: red;">No Data Found</h3>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    function fnSearchEmpSal(obj) {
+
+        const currentDate = new Date();
+        const years = currentDate.getFullYear();
+        const months = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const days = String(currentDate.getDate()).padStart(2, '0');
+        const formattedDate = `${years}-${months}-${days}`;
+
+        var isSalProcess = 2;
+
+        var employmentTypeId = $('#EmploymentTypeID').val();
+
+        var employeeCategoryId = $('#EmployeeCategoryID').val();
+
+        var companyid = $('#CompanyID').val();
+
+        var employeeId = $('#EmployeeID').val();
+        var deptId = $('#DepartmentID').val();
+
+        var monthDate = $('#month').val();
+        //const dateString = "2023-03-16";
+        const year = monthDate.slice(0, 4); // "2023"
+        const month = monthDate.slice(5, 7);
+
+        var isdownload = obj;
+
+        var urlEmpSalSumm = '@Url.Action("VerifyEmployeeSalaryList","ReportsHR")';
+
+        var searchEmpSalURL = urlEmpSalSumm + '?employeeCategoryId=' + employeeCategoryId + '&companyId=' + companyid + '&month=' + month + '&year=' + year + '&employeeId=' + employeeId + '&isDownload=' + isdownload + '&employmentTypeId=' + employmentTypeId + '&salaryDate=' + formattedDate + '&isSalProcess=' + isSalProcess + '&DepartmentID=' + deptId;
+
+        window.location.href = searchEmpSalURL;
+    };
+
+
+    function fnVerifySalary(obj) {
+
+        let year = @year;
+        let month = @month;
+        let companyId = @companyID;
+        let employeeId = obj.dataset.empid;
+        let employeeCategoryId = @empCatId;
+        const params = { year: year, month: month, companyId: companyId, employeeId: employeeId, employeeCategoryId: employeeCategoryId };
+        let verifySalaryUrl = '@Url.Action("VerifySalary","ReportsHR")';
+        $.ajax({
+            type: 'post',
+            url: verifySalaryUrl,
+            data: params,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    $("#EmployeeSummaryTable").load(window.location.href + " #EmployeeSummaryTable");
+                    var test = Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: 'Employee salary verified successfully.',
+                    });
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: 'Unable to verify employee salary.'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(ls);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: '@MessageHelper.Error'
+                });
+            }
+        }).always(function () {
+            hideloader();
+        });
+    @*   setTimeout(
+            function () {
+            //window.location.reload();
+            //$('#confirmationModal').modal('hide');
+            $("#EmployeeSummaryTable").load(window.location.href + " #EmployeeSummaryTable");
+            //}, 1000); *@
+                };
+
+    //  Print Function
+    function fnPrintSalary(obj) {
+        //alert('fnPrintSalary fn invoked.');
+        let _id = $(obj).data('id');
+        let _month = $(obj).data('month');
+        let _year = $(obj).data('year');
+        let _company = $(obj).data('company');
+        let _category = $(obj).data('category');
+        //let _empId = $(obj).data('key');
+
+        var currentUrl = window.location.href;
+
+        const index = currentUrl.indexOf('?');
+
+        // If the target character is found, return the portion of the string before it
+        if (index !== -1) {
+            currentUrl = currentUrl.slice(0, index + 1); // +1 to include the target character
+        }
+
+        var newUrl = currentUrl.replace('/HR/ReportsHR/GetEmployeeSalarySummary?', '/ReportViewer/');
+        let url = newUrl + 'ReportViewer/OnPostGetSalarySummaryReportHTML';
+        let parameters = { employeeId: _id, month: _month, year: _year, companyId: _company, employeeCategoryId: _category };
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: parameters,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    var newTab = window.open();
+                    newTab.document.open();
+                    newTab.document.write(data.data);
+                    newTab.document.close();
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: 'Error to load report.'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    };
+
+    function fnPrintSalarySleep(obj) {
+        //alert('fnPrintSalary fn invoked.');
+        let _id = $(obj).data('id');
+        let _month = $(obj).data('month');
+        let _year = $(obj).data('year');
+        let _company = $(obj).data('company');
+        let _category = $(obj).data('category');
+        //let _empId = $(obj).data('key');
+
+        var currentUrl = window.location.href;
+        // debugger;
+        //const index = currentUrl.indexOf('?');
+        //alert("&EmployeeID=" + _id + "&Year=" + _year + "&Month=" + _month + "&CompanyID=" + _company + "&IsVerified=1");
+        var Para = "&EmployeeID=" + _id + "&Year=" + _year + "&Month=" + _month + "&CompanyID=" + _company + "&IsVerified=1";
+        var url = "http://sun260880-001-site2.atempurl.com/default.aspx?reportkey=1" + Para;
+        window.open(url, "Report Platform","toolbar=0, location=0, directories=0, status=, menubar=0, scrollbars=yes, resizable=yes, copyhistory=yes, width=900, height=1200");
+        
+        // // If the target character is found, return the portion of the string before it
+        // if (index !== -1) {
+        //     currentUrl = currentUrl.slice(0, index + 1); // +1 to include the target character
+        // }
+
+        // var newUrl = currentUrl.replace('/HR/ReportsHR/GetEmployeeSalarySummary?', '/ReportViewer/');
+        // let url = newUrl + 'ReportViewer/OnPostGetSalarySummaryReportHTML';
+        //let parameters = { employeeId: _id, month: _month, year: _year, companyId: _company, employeeCategoryId: _category };
+        // debugger;
+        // $.ajax({
+        //     type: 'POST',
+        //     url: url,
+        //     data: parameters,
+        //     dataType: 'json',
+        //     success: function (data) {
+        //         if (data.status) {
+        //             var newTab = window.open();
+        //             newTab.document.open();
+        //             newTab.document.write(data.data);
+        //             newTab.document.close();
+        //         }
+        //         else {
+        //             Lobibox.notify('error', {
+        //                 pauseDelayOnHover: true,
+        //                 size: 'mini',
+        //                 icon: 'bx bx-check-circle',
+        //                 continueDelayOnInactiveTab: false,
+        //                 position: 'bottom right',
+        //                 msg: 'Error to load report.'
+        //             });
+        //         }
+        //     },
+        //     error: function (error) {
+        //         laddaStop(l);
+        //         Lobibox.notify('error', {
+        //             pauseDelayOnHover: true,
+        //             size: 'mini',
+        //             icon: 'bx bx-check-circle',
+        //             continueDelayOnInactiveTab: false,
+        //             position: 'bottom right',
+        //             msg: "@MessageHelper.Error"
+        //         });
+        //     }
+        // }).always(function () {
+        //     hideLoader();
+        // });
+    };
+    function fnPrintAllSalarySleep(obj) {
+        //alert('fnPrintSalary fn invoked.');
+          
+        // var employmentTypeId = $('#EmploymentTypeID').val();
+
+        var _category = $('#EmployeeCategoryID').val();
+
+        var _company = $('#CompanyID').val();
+        var deptId = $('#DepartmentID').val();
+
+        //var employeeId = $('#employeeText').val();
+
+        var monthDate = $('#month').val();
+        //const dateString = "2023-03-16";
+        const _year = monthDate.slice(0, 4); // "2023"
+        const _month = monthDate.slice(5, 7);
+
+        var currentUrl = window.location.href;
+        // debugger;
+        //const index = currentUrl.indexOf('?');
+        //alert("&EmployeeID=" + _id + "&Year=" + _year + "&Month=" + _month + "&CompanyID=" + _company + "&IsVerified=1");
+        var Para = "&EmployeeID=0&Year=" + _year + "&Month=" + _month + "&CompanyID=" + _company + "&IsVerified=1";
+        //var Para = "&EmployeeID=0&Year=" + _year + "&Month=" + _month + "&CompanyID=" + _company + "&IsVerified=1&DepartmentID=" + deptId;
+        var url = "http://sun260880-001-site2.atempurl.com/default.aspx?reportkey=1" + Para;
+        window.open(url, "Report Platform", "toolbar=0, location=0, directories=0, status=, menubar=0, scrollbars=yes, resizable=yes, copyhistory=yes, width=900, height=1200");
+
+         
+    };
+    
+     $(document).ready(function () {
+
+        $("#CompanyID option[value='" + '@Html.Raw(companyID)' + "']").prop("selected", true);
+
+        var multipleCancelButtonItemGroup = new Choices('#CompanyID', {
+            removeItemButton: true,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+        $("#EmployeeCategoryID option[value='" + '@Html.Raw(empCatId)' + "']").prop("selected", true);
+
+        var multipleCancelButtonWareHouse = new Choices('#EmployeeCategoryID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        $("#EmploymentTypeID option[value='" + '@Html.Raw(employmentTypeId)' + "']").prop("selected", true);
+
+        var multipleCancelButtonWareHouse = new Choices('#EmploymentTypeID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+        $("#EmployeeID option[value='" + '@Html.Raw(empID)' + "']").prop("selected", true);
+
+        var multipleCancelButtonWareHouse = new Choices('#EmployeeID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+        $("#DepartmentID option[value='" + '@Html.Raw(departmentId)' + "']").prop("selected", true);
+
+        var multipleCancelButtonWareHouse = new Choices('#DepartmentID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+    });
+
+
+</script>
+
+
+ 

@@ -1,0 +1,211 @@
+﻿@model Business.Entities.Master.ItemTableCollection
+@{
+    ViewData["Title"] = "Item";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+<style>
+    fieldset {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+
+    legend {
+        font-weight: bold;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        background-color: #fff;
+        margin: -30px 0px 20px 0;
+        width: 50%;
+        text-align: center;
+        color: black;
+    }
+
+    .box {
+        width: auto;
+        height: auto;
+    }
+</style>
+<div class="page-breadcrumb d-none d-sm-flex align-items-center pb-3 border-bottom">
+    <div class="ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item">
+                    <a asp-controller="Home" asp-action="Index" asp-area="SuperAdmin"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page"><a asp-controller="Item" asp-action="Index" asp-area="SuperAdmin">Item</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Create</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="row">
+    <form method="post" id="frmfgItem" asp-area="SuperAdmin" class="g-3 needs-validation" novalidate>
+        <div class="mt-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <fieldset>
+                        <legend style="">Finish Good Item Configuration</legend>
+                        <span>User Define Tables for Finish Good part</span>
+                        <div class="box">
+                            <div class="row col-md-12">
+                                <div class="mb-3 row">
+                                    <div class="col-md-2">
+                                        <label for="Name" class="col-form-label">Table Name<span class="required">*</span></label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" asp-for="TableName" maxlength="50">
+                                        <span asp-validation-for="TableName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-md-12">
+                                <div class="mb-3 row">
+                                    <div class="col-md-2">
+                                        <label for="Column1Name" class="col-form-label">Column1 <span class="required">*</span></label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" asp-for="Column1Name" maxlength="50">
+                                        <span asp-validation-for="Column1Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select asp-for="Column1Type" asp-items="@ViewBag.ColType" class="form-control">
+                                        </select>
+                                        <span asp-validation-for="Column1Type" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-md-12">
+                                <div class="mb-3 row">
+                                    <div class="col-md-2">
+                                        <label for="Column2Name" class="col-form-label">Column2 </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" asp-for="Column2Name" maxlength="50">
+                                        <span asp-validation-for="Column2Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select asp-for="Column2Type" asp-items="@ViewBag.ColType" class="form-control">
+                                        </select>
+                                        <span asp-validation-for="Column2Type" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-md-12">
+                                <div class="mb-3 row">
+                                    <div class="col-md-2">
+                                        <label for="Column3Name" class="col-form-label">Column3 </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" asp-for="Column3Name" maxlength="50">
+                                        <span asp-validation-for="Column3Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select asp-for="Column3Type" asp-items="@ViewBag.ColType" class="form-control">
+                                        </select>
+                                        <span asp-validation-for="Column3Type" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div>
+                <button class="btn btn-primary btn-info px-5 ladda-button" id="btnSave" type="button" onclick="fnSubmit()">
+                    Create Table
+                </button>
+                <button type="reset" class="btn btn-default btn-info px-5 ladda-button" onclick="fnReset()">Reset</button>
+            </div>
+        </div>
+    </form>
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script type="text/javascript">
+        (function ($) {
+
+            //re-set all client validation given a jQuery selected form or child
+            $.fn.resetValidation = function () {
+
+                var $form = this.closest('form');
+
+                //reset jQuery Validate's internals
+                $form.validate().resetForm();
+
+                //reset unobtrusive validation summary, if it exists
+                $form.find("[data-valmsg-summary=true]")
+                    .removeClass("validation-summary-errors")
+                    .addClass("validation-summary-valid")
+                    .find("ul").empty();
+
+                //reset unobtrusive field level, if it exists
+                $form.find("[data-valmsg-replace]")
+                    .removeClass("field-validation-error")
+                    .addClass("field-validation-valid")
+                    .empty();
+
+                return $form;
+            };
+        })(jQuery);
+        function fnReset() {
+            var $form = $("#frmfgItem");
+            $form[0].reset();
+            $form.resetValidation();
+        }
+        function fnSubmit() {
+            if ($("#frmfgItem").valid()) {
+                var l = laddaStart('btnSave');
+                modeldata = $("#frmfgItem").serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: '../FinishGoodItem/Save',
+                    data: modeldata,
+                    dataType: 'json',
+                    beforeSend: function () { },
+                    success: function (data) {
+                        console.log(data.status);
+                        if (data.status) {
+                            //notification
+                            //$("#canvas_fgitem").hide();//('hide');
+                            Lobibox.notify('success', {
+                                pauseDelayOnHover: true,
+                                size: 'mini',
+                                icon: 'bx bx-check-circle',
+                                continueDelayOnInactiveTab: false,
+                                position: 'bottom right',
+                                msg: data.message
+                            });
+                        }
+                        else {
+                            Lobibox.notify('error', {
+                                pauseDelayOnHover: true,
+                                size: 'mini',
+                                icon: 'bx bx-check-circle',
+                                continueDelayOnInactiveTab: false,
+                                position: 'bottom right',
+                                msg: data.message
+                            });
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                        laddaStop(l);
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: "@MessageHelper.Error"
+                        });
+                    }
+                }).always(function () {
+                    //hideLoader();
+                    fnReset();
+                });
+            }
+        };
+    </script>
+</div>

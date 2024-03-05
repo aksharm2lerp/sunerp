@@ -1,0 +1,400 @@
+@using Business.Entities.Production.MasterPackingModel;
+@model MasterPacking;
+@addTagHelper *, GridMvc
+@{
+    int i = 0;
+    var modelA = Model;
+    var modelB = modelA;
+}
+<script src="~/js/qrcode.min.js"></script>
+<style>
+    fieldset {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+
+    legend {
+        font-weight: 200;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        background-color: #f5f5f5;
+        margin: -30px 0px 20px 0;
+        width: 50%;
+        text-align: center;
+        color: black;
+    }
+
+    .box {
+        width: auto;
+        height: auto;
+    }
+</style>
+
+<form class="form-horizontal" role="form" id="formMasterPacking">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="MasterPackingID" />
+                <input type="hidden" asp-for="ScannedItemsArray" id="ScannedItemsArray" name="ScannedItemsArray" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="MasterPackingText" name="MasterPackingText" asp-for="MasterPackingText">
+                    <span asp-validation-for="MasterPackingText" class="text-danger"></span>*@
+                </div>
+            </div>
+            <fieldset class="card">
+
+                <legend><label>Scan Item for Master Packing.</label></legend>
+                <div class="row">
+                    <div class=" col-sm-6 col-md-6 col-lg-6">
+                        <div class='row mb-3'>
+                            <div class='col-sm-12'>
+                                <div class="text-center card" style="width:450px;" id="reader"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-sm-6 col-md-6 col-lg-6">
+                        <div class='row mb-3'>
+                            <div class='col-sm-12'>
+                                @* <div id="result" style="margin-top:60px;" >Show Here QRCode.</div> *@
+                                <div class='row mt-3'>
+                                    <div class='col-12'>
+                                        <div class='row mb-3'>
+                                            <label for='' class='col-sm-3 col-form-label'>Show Here QRCode</label>
+                                            <div class='col-sm-9'>
+                                                <div id="result" class="text-start headercolor2"></div>
+                                            </div>
+                                        </div>
+                                        <div class='row mb-3'>
+                                            <label for='' class='col-sm-3 col-form-label'>Master Packing Code</label>
+                                            <div class='col-sm-7'>
+                                                <input type='text' class='form-control' id='MasterPackingCode' asp-for='MasterPackingCode' name='MasterPackingCode' readonly>
+                                                <span asp-validation-for='MasterPackingCode' class='text-danger'>
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class='row mb-3'>
+                                            <label for='' class='col-sm-3 col-form-label'>Batch No</label>
+                                            <div class='col-sm-3'>
+                                                <input type='text' class='form-control' id='BatchNo' asp-for='BatchNo' name='BatchNo' readonly>
+                                                <span asp-validation-for='BatchNo' class='text-danger'>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class='row mb-3'>
+                                            <label for='' class='col-sm-3 col-form-label'>User Batch Code</label>
+                                            <div class='col-sm-5'>
+                                                <input type='text' class='form-control' id='UserBatchCode' asp-for='UserBatchCode' name='UserBatchCode' readonly>
+                                                <span asp-validation-for='UserBatchCode' class='text-danger'>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-12" id="newDivForScannedItemRow">
+
+                                <grid model="@Model.iSGrid" id="testID" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </fieldset>
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="modal fade" id="confirmationMasterPackageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleMasterPackageModalLabel">Master Packing Detail</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class='row mb-3'>
+                    <fieldset>
+                        <legend style="">QR Code</legend>
+                        <div class="box text-center">
+                            <img src="https://chart.googleapis.com/chart?cht=qr&chl=&chs=160x160&chld=L|0"
+                                 class="qr-code img-thumbnail img-responsive" id="newGenratedQRCode" />
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class='row mb-3'>
+                    <label for='' class='col-sm-3 col-form-label'>Master Packing Code</label>
+                    <div class='col-sm-7'>
+                        <input type='text' class='form-control' id='MasterPackingCode' asp-for='MasterPackingCode' name='MasterPackingCode' readonly>
+                    </div>
+                </div>
+
+                <div class='row mb-3'>
+                    <label for='' class='col-sm-3 col-form-label'>Batch No</label>
+                    <div class='col-sm-3'>
+                        <input type='text' class='form-control' id='BatchNo' asp-for='BatchNo' name='BatchNo' readonly>
+                    </div>
+                </div>
+
+                <div class='row mb-3'>
+                    <label for='' class='col-sm-3 col-form-label'>User Print Code</label>
+                    <div class='col-sm-5'>
+                        <input type='text' class='form-control' id='UserBatchCode' asp-for='UserBatchCode' name='UserBatchCode' readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                @* <a onclick="()" class="btn btn-primary">Confirm</a> *@
+                <!--<button type="button" class="btn btn-primary" onclick="fnAddParty()">Save</button>-->
+                <button type="button" class="btn btn-secondary" onclick="fnCloseModal()" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateMasterPacking", "MasterPacking")';
+    var urlGetData = '@Url.Action("GetItemDetailByScannedQRCode", "MasterPacking")';
+    function fnSubmit() {
+
+        var scannedItemStringJson = document.getElementById('ScannedItemsArray');
+        var tableElement = document.getElementById('scannedItemDetailTable');
+        var rowLen = tableElement.rows.length;
+        var tableData = [];
+        for (var i = 1; i < rowLen; i++) {
+
+            let masterPackingDetailId = tableElement.rows[i].cells[1].children[0].value;
+            if (masterPackingDetailId === '') {
+                masterPackingDetailId = 0;
+            }
+
+            let masterPackingId = tableElement.rows[i].cells[2].children[0].value;
+            if (masterPackingId === '') {
+                masterPackingId = 0;
+            }
+
+            var rowData = {
+
+                MasterPackingDetailID: masterPackingDetailId,
+                MasterPackingID: masterPackingId,
+                GoodsReceiptNo: tableElement.rows[i].cells[5].textContent,
+                ItemCode: tableElement.rows[i].cells[7].textContent,
+                BatchNum: tableElement.rows[i].cells[10].textContent,
+
+                // KEEP BELOW CODE, BY RAHUL.
+                //DocEntry: tableElement.rows[i].cells[1].textContent,
+                //PostDate: tableElement.rows[i].cells[2].textContent,
+                //Goods_Receipt_No: tableElement.rows[i].cells[3].textContent,
+                //OrderQty: tableElement.rows[i].cells[4].textContent,
+                //ItemCode: tableElement.rows[i].cells[5].textContent,
+                //BatchQty: tableElement.rows[i].cells[7].textContent,
+                //BatchNum: tableElement.rows[i].cells[8].textContent,
+                //CardName: tableElement.rows[i].cells[9].textContent,
+                // DocTime          : tableElement.rows[i].cells[].textContent,
+                // Production_No    : tableElement.rows[i].cells[].textContent,
+                // Warehouse        : tableElement.rows[i].cells[].textContent,
+                // DrumNo           : tableElement.rows[i].cells[].textContent,
+                // Pallet_No        : tableElement.rows[i].cells[].textContent,
+                // ProdName         : tableElement.rows[i].cells[].textContent,
+                // Sales_Order      : tableElement.rows[i].cells[].textContent,
+                // CardCode         : tableElement.rows[i].cells[].textContent,
+                // KEEP ABOVE CODE, BY RAHUL.
+
+            };
+
+            tableData.push(rowData);
+        }
+        scannedItemStringJson.value = JSON.stringify(tableData);
+
+        var autoGenCode = $('#MasterPackingCode').val();
+
+        if ($("#formMasterPacking").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formMasterPacking").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                success: function (data) {
+                     if (data.status) {
+
+                    let finalQRURL = 'https://chart.googleapis.com/chart?cht=qr&chl=' + autoGenCode + '&chs=260x260&chld=L|0';
+                    // Replace the src of the image with
+                    // the QR code image
+
+                    $('#newGenratedQRCode').attr('src', finalQRURL);
+
+                    $('#confirmationMasterPackageModal').modal('show');
+                    //notification
+                    //$("#canvas_masterentity2").hide();//('hide');
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                     }
+                     else {
+                         Lobibox.notify('error', {
+                             pauseDelayOnHover: true,
+                             size: 'mini',
+                             icon: 'bx bx-check-circle',
+                             continueDelayOnInactiveTab: false,
+                             position: 'bottom right',
+                             msg: data.message
+                         });
+                     }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    function fnCloseModal() {
+        $('#confirmationMasterPackageModal').modal('hide');
+        $("#canvas_masterentity2").hide();
+        window.location.reload().delay(3000);
+    }
+
+    $(document).ready(function () {
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+        var tables = document.querySelectorAll('table');
+        if (tables.length >= 2) {
+            tables[1].id = 'scannedItemDetailTable';
+        }
+    });
+
+
+    function onScanSuccess(qrCodeMessage) {
+        const audio = new Audio('https://sun260880-001-site1.ctempurl.com/sound/coin-collect-retro-8-bit-sound-effect-145251.mp3');
+        //const audio = new Audio('ht tps://sun260880-001-site1.ctempurl.com/sound/doorbell-ring-99733.mp3');
+        audio.play();
+        document.getElementById('result').innerHTML = '<span class="result">' + qrCodeMessage + '</span>';
+        try {
+            $.ajax({
+                url: urlGetData,
+                data: { qrCodeStr: qrCodeMessage },
+                type: 'get',
+                async: false,
+                success: function (data) {
+                    if (data.status) {
+                        var isExisingRow = false;
+                        var tableElement = document.getElementById('scannedItemDetailTable');
+                        if (tableElement !== null) {
+
+                            var srCount = tableElement.rows.length;
+                            var index = 'newRowIndex' + srCount;
+
+                            for (i = 1; i < srCount; i++) {
+                                let existingQR = tableElement.rows[i].cells[12].children[0].value;
+                                if (existingQR === qrCodeMessage) {
+                                    isExisingRow = true;
+                                }
+                            }
+
+                            if (!isExisingRow) {
+                                var newRow = "<tr class='grid-row'><td class='grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class='grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0'></td><td class='grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0'></td><td class='grid-cell' style='' data-name=''>" + data.model.docEntry + "</td><td class='grid-cell' style='' data-name=''>" + data.model.postDate + "</td><td class=' grid-cell' style='' data-name=''>" + data.model.goods_Receipt_No + "</td><td class='grid-cell' style='' data-name=''>" + data.model.orderQty + "</td><td class='grid-cell' style='' data-name=''>" + data.model.itemCode + "</td><td class='grid-cell' style='' data-name=''>" + data.model.prodName + "</td><td class='grid-cell' style='' data-name=''>" + data.model.batchQty + "</td><td class='grid-cell' style='' data-name=''>" + data.model.batchNum + "</td><td class='grid-cell' style='' data-name=''>" + data.model.cardName + "</td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='" + data.model.qrCode + "'></td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon = 'mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+
+                                $('#scannedItemDetailTable tbody').append(newRow);
+                            }
+                            // else{
+                            //     Lobibox.notify('error', {
+                            //         pauseDelayOnHover: true,
+                            //         size: 'mini',
+                            //         icon: 'bx bx-check-circle',
+                            //         continueDelayOnInactiveTab: false,
+                            //         position: 'bottom right',
+                            //         msg: 'QR Code is already scanned.'
+                            //     });
+                            // }
+                            document.getElementById('labelItemCount').innerText = srCount;
+                        }
+                        else {
+                            var newScannedItemTableInDiv = document.getElementById('newDivForScannedItemRow');
+                            var newScannedItemTable = "<div class='grid-mvc' data-lang='en' data-gridname='ScannedItemDetailGrid' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'/></div><div class='grid-table-wrap'><table class='table grid-table'  id='scannedItemDetailTable'><thead><tr><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class='grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>MasterPackingDetailID</span></div></div></th><th class='grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>MasterPackingID</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Doc Entry</span></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Post Date</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Goods Receipt No</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Order Qty</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Batch Qty</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Batch Number</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Card Name</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Qr Code</span></div></div></th><th class='grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody><tr class='grid-row'><td class='grid-cell' style='' data-name='SrNo'>1</td><td class='grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0'></td><td class='grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0'></td><td class='grid-cell' style='' data-name=''>" + data.model.docEntry + "</td><td class='grid-cell' style='' data-name=''>" + data.model.postDate + "</td><td class=' grid-cell' style='' data-name=''>" + data.model.goods_Receipt_No + "</td><td class='grid-cell' style='' data-name=''>" + data.model.orderQty + "</td><td class='grid-cell' style='' data-name=''>" + data.model.itemCode + "</td><td class='grid-cell' style='' data-name=''>" + data.model.item + "</td><td class='grid-cell' style='' data-name=''>" + data.model.batchQty + "</td><td class='grid-cell' style='' data-name=''>" + data.model.batchNum + "</td><td class='grid-cell' style='' data-name=''>" + data.model.cardName + "</td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='" + data.model.qrCode + "'></td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon = 'mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr></tbody></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b><label id='labelItemCount'>0</label></b></div></div></div></div></div>";
+                            newScannedItemTableInDiv.innerHTML += newScannedItemTable;
+                        }
+                    }
+                    else {
+                        alert('last else invoked.');
+                    }
+                    // $('#newDivForRow').html(data);
+                }
+            });
+        }
+        catch {
+            alert(errorMessage);
+        }
+        //sendAjaxRequest(qrCodeMessage);
+    }
+
+    function onScanError(errorMessage) {
+        //handle scan error
+    }
+
+
+    function removeRow(button) {
+
+        var row = button.parentNode.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+        var tableElement = document.getElementById('scannedItemDetailTable');
+        var srCount = tableElement.rows.length;
+        document.getElementById('labelItemCount').innerText = Number(srCount - 1);
+    }
+
+    // $(function () {
+
+    //     // Specify an onclick function
+    //     // for the generate button
+    //     $('#ItemCode').blur(function () {
+    //         // Generate the link that would be
+    //         // used to generate the QR Code
+    //         // with the given data
+    //         let finalURL =
+    //             'ht tps://chart.googleapis.com/chart?cht=qr&chl=' +
+    //             htmlEncode($('#MasterPackingAutoGen').val()) +
+    //             '&chs=260x260&chld=L|0'
+
+    //         // Replace the src of the image with
+    //         // the QR code image
+    //         $('.qr-code').attr('src', finalURL);
+    //     });
+    // });
+</script>

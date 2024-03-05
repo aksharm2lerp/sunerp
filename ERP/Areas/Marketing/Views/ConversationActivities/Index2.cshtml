@@ -1,0 +1,495 @@
+﻿@using Business.Entities.PartyMasterModel;
+@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using GridCore
+@addTagHelper *, GridMvc
+@model PartyMaster
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.Title = "Conversation Activities..";
+}
+
+<!--Calender File Start-->
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+<!--Calender File End-->
+
+<div class="row pt-1">
+    <div class="col-md-12">
+        @*<grid model="@Model" />*@
+
+        @{
+            DateTime currentTime = DateTime.Now;
+            TimeSpan MTime = new TimeSpan(9, 0, 0); // Define your start time
+            TimeSpan ATime = new TimeSpan(12, 0, 0); // Define your end time
+            TimeSpan ETime = new TimeSpan(16, 0, 0); // Define your end time
+        }
+
+        @if (currentTime.TimeOfDay >= MTime && currentTime.TimeOfDay <= ATime)
+        {
+            <h1 class="text-center"> Good Morning, <span id="ConAtivityUserPartyName"></span></h1>
+        }
+        else if (currentTime.TimeOfDay >= ATime && currentTime.TimeOfDay <= ETime)
+        {
+            <h1 class="text-center"> Good Afternoon, <span id="ConAtivityUserPartyName"></span></h1>
+        }
+        else
+        {
+            <h1 class="text-center"> Good Evening, <span id="ConAtivityUserPartyName"></span></h1>
+        }
+
+        @* <h1 class="text-center"> Good Morning, Dravesh Lokhande</h1>*@
+        <p class="text-center">Here's where you'll view a Lead’s basic profile with their activities and Request for Quot. detail.</p>
+
+        <div class="row">
+
+            <div class="col-3">
+                <div class="card">
+                    <!--style="width: 16rem;"-->
+                    <div class="text-center my-1">
+                        @*<img class="card-img-top-ConversationActivities rounded-circle border border-dark" id="ConAtivityUserImage" src="~/assets/images/avatars/avatar-1.png" alt="Card image cap">*@
+                        @*   @if (Model != null && !string.IsNullOrEmpty(Model.LogoImagePath))
+                        {
+                        <img id="ConAtivityUserImage" class="card-img-top-ConversationActivities rounded-circle border border-dark" src="@ViewBag.Image" />
+                        }
+                        else
+                        {*@
+                        <img id="ConAtivityUserImage" class="card-img-top-ConversationActivities rounded-circle border border-dark" src="~/assets/images/DefaultProfilePicture/DefaultProfilePicture.png" />
+                        @*}*@
+
+
+
+                        <script>
+                            var loadFile = function (event) {
+                                var image = document.getElementById('ConAtivityUserImage');
+                                image.src = URL.createObjectURL(event.target.files[0]);
+                            };
+                        </script>
+
+
+
+                    </div>
+                    <span id="ConAtivityUserImage"></span>
+
+                    <div class="card-body">
+
+                        <h5 class="card-title text-center" id="PartyName"> </h5>
+                        <hr />
+                        <p class="card-text"><b><u>Company:</u></b> <span id="ConAtivityUserGroupName"></span></p>
+                        <p class="card-text"><b><u>Contact:</u></b> <span id="ConAtivityUserPhone"></span></p>
+                        <p class="card-text"><b><u>Office No:</u></b> <span id="ConAtivityUserMobile"></span></p>
+                        <p class="card-text"><b><u>Email:</u></b> <span id="ConAtivityUserEmail"></span></p>
+                        @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Recent activity</h6>
+                        <div id="ConAtivityLists">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Requested for Quot</h6>
+                        <div class="table-responsive-sm">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sr No.</th>
+                                        <th scope="col">Item Description</th>
+                                        <th scope="col">UOM</th>
+                                        <th scope="col">Qty.</th>
+                                        <th scope="col">Status.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>PVC SL-S 8015 / H86 (SL-05)</td>
+                                        <td>Mtrs</td>
+                                        <td>1500</td>
+                                        <td>Quoted</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>PVC SL-I 7052FRLS / H92 (SL-131FRLS)</td>
+                                        <td>Mtrs</td>
+                                        <td>1500</td>
+                                        <td>Pending</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Meeting Schedule Information</h6>
+
+                        @*<div id="calendar"></div>*@
+
+                        @*<a asp-area="Marketing" asp-controller="MarketingMeeting" asp-action="Index">*@
+                        <div id="calender"></div>
+                        @*</a>*@
+
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #c2e0f9;">
+                                        <h4 class="modal-title"><span id="eventTitle"></span></h4>
+                                        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="pDetails"></p>
+                                    </div>
+                                    @*<div class="modal-footer">
+                                    <a asp-area="Marketing" asp-controller="MarketingMeeting" asp-action="Create" asp-route-id="" class="btn btn-default border border-primary">Edit</a>
+                                    <button type="button" class="btn btn-default border border-primary" data-bs-dismiss="modal">Close</button>
+                                    </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@*<div class="offcanvas offcanvas-end" tabindex="-1" id="canvas_Employee" style="width: 65% !important; visibility: visible;">
+    <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="canvasHeader"></h5>
+    <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3 pb-5">
+    <div id="dvInfo">
+    </div>
+    </div>
+    </div>*@
+
+@*<script type="text/javascript">
+    var urladd = '@Url.Action("GetEmployee", "Employee")';
+    function fnEmployee(obj) {
+    var _key = $(obj).data('key');
+    var _id = $(obj).data('id');
+    if (_id > 0)
+    document.getElementById("canvasHeader").innerHTML = "Update Employee";
+    else
+    document.getElementById("canvasHeader").innerHTML = "Add Employee";
+    var _parameters = { id: _id, key: _key };
+    $.ajax({
+    url: urladd,
+    type: "GET",
+    data: _parameters,
+    success: function (data, textStatus, jqXHR) {
+    $('#dvInfo').html(data);
+    $("#canvas_Employee").show();//('hide');
+    }
+    });
+    }
+    </script>*@
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var events = [];
+        $.ajax({
+            type: "GET",
+            url: "/Marketing/MarketingMeeting/MarketingMeet",
+            success: function (data) {
+
+                $.each(data, function (i, v) {
+                    let id = v.meetingStatusID;
+                    if (id == 1) {
+                        events.push({
+                            subject: v.subject,
+                            title: v.subject,
+                            description: v.description,
+                            start: moment(v.startDate),
+                            end: v.endDate != null ? moment(v.endDate) : null,
+                            data: v.marketingMeetingID,
+                            statusId: v.meetingStatusID,
+                            statusText: v.meetingStatusTypeText,
+                            color: '#EEE034', //Schedule color-yellow
+                            //allDay: 'true',
+                        });
+                    }
+                    if (id == 2) {
+                        events.push({
+                            subject: v.subject,
+                            title: v.subject,
+                            description: v.description,
+                            start: moment(v.startDate),
+                            end: v.endDate != null ? moment(v.endDate) : null,
+                            data: v.marketingMeetingID,
+                            statusId: v.meetingStatusID,
+                            statusText: v.meetingStatusTypeText,
+                            color: '#E79028', //Reschedule color-orange
+                            //allDay: 'true',
+                        });
+                    }
+                    if (id == 3) {
+                        events.push({
+                            subject: v.subject,
+                            title: v.subject,
+                            description: v.description,
+                            start: moment(v.startDate),
+                            end: v.endDate != null ? moment(v.endDate) : null,
+                            data: v.marketingMeetingID,
+                            statusId: v.meetingStatusID,
+                            statusText: v.meetingStatusTypeText,
+                            color: '#22D122', //Complete  color-green
+                            //allDay: 'true',
+                        });
+                    }
+                    if (id == 4) {
+                        events.push({
+                            subject: v.subject,
+                            title: v.subject,
+                            description: v.description,
+                            start: moment(v.startDate),
+                            end: v.endDate != null ? moment(v.endDate) : null,
+                            data: v.marketingMeetingID,
+                            statusId: v.meetingStatusID,
+                            statusText: v.meetingStatusTypeText,
+                            color: '#EF2525', // Cancel color-red
+                            //allDay: 'true',
+                        });
+                    }
+
+                });
+                GenerateCalender(events);
+            },
+            error: function (error) {
+                alert('failed');
+            }
+        })
+        function GenerateCalender(events) {
+            $('#calender').fullCalendar('destroy');
+            $('#calender').fullCalendar({
+                contentHeight: 400,
+                defaultDate: new Date(),
+                timeFormat: 'h(:mm) a - ',
+
+
+                //header: {
+                //    //left: 'prev,next today',
+                //    //center: 'title',
+                //    //right: 'month,basicWeek,basicDay,agenda'
+                //},
+
+                eventLimit: true,
+                //eventColor: '#378006',
+                events: events,
+
+                eventClick: function (calEvent, jsEvent, view) {
+
+                    $('#myModal #eventTitle').text(calEvent.subject);
+                    console.log('calEvent.subject---' + calEvent.subject);
+
+                    var $description = $('<div/>');
+
+                    $description.append($('<p/>').html('<b>Start: </b>' + calEvent.start.format("DD-MMM-YYYY HH:mm a")));
+                    console.log('calEvent.start--- ' + calEvent.start.format("DD-MMM-YYYY HH:mm a"));
+
+                    console.log('$description-- ' + $description);
+
+                    if (calEvent.end != null) {
+                        $description.append($('<p/>').html('<b>End: </b>' + calEvent.end.format("DD-MMM-YYYY HH:mm a")));
+                        console.log('calEvent.end---' + calEvent.end.format("DD-MMM-YYYY HH:mm a"));
+                    }
+                    $description.append($('<p/>').html('<b>Description: </b>' + calEvent.description));
+                    //$description.append($('<p/>').html('<b>Status: </b>' + calEvent.statusId));
+                    $description.append($('<p/>').html('<b>Status: </b>' + calEvent.statusText));
+
+                    if (calEvent.statusId == 3 && calEvent.statusText == 'Complete') {
+                        $description.append("<div class='modal-footer'> <button type='button' class='btn btn-default border border-primary' data-bs-dismiss='modal'>Close</button> </div>");
+                    }
+                    else {
+                        $description.append("<div class='modal-footer'> <a onclick=fnEdit('" + calEvent.data + "') class='btn btn-default border border-primary'>Edit</a> &nbsp; <button type='button' class='btn btn-default border border-primary' data-bs-dismiss='modal'>Close</button> </div>");
+                    }
+
+                    console.log('calEvent.description---' + calEvent.description);
+                    $('#myModal #pDetails').empty().html($description);
+                    $('#myModal').modal('show');
+                }
+            });
+        }
+    });
+
+    function fnEdit(obj) {
+        var urlMMEMID = '@Url.Action("Create", "MarketingMeeting")';
+        var urlWithId = urlMMEMID + '?id=' + obj;
+        window.location.href = urlWithId;
+    };
+
+    $(document).ready(function () {
+        var urlNotify = '@Url.Action("GetNotificationConversationActivities", "ConversationActivities")';
+
+        $.ajax({
+            url: urlNotify,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data.count, function (i, item) {
+                    let notificationMassage = '';
+
+                    notificationMassage = '<div class="d-flex align-items-center">' + item.notificationText + '</div>';
+
+                    /*<div class="notify bg-light-danger-AdminConversationActivities text-danger" >
+                        #MessageIcon#
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="msg-name">#MessageTitle#<span class="msg-time float-end">#MessageDatetime#</span></h6>
+                        <p class="msg-info my-0">#MessageSubject#</p>
+                        <p class="msg-info my-0">#MessageText#</p>
+                    </div>*/
+
+                    document.getElementById('ConAtivityLists').innerHTML += notificationMassage;
+                });
+            },
+            error: function () {
+                alert("Error detected");
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        var urlConActUserProfile = '@Url.Action("GetUserProfileConversationActivities", "ConversationActivities")';
+       // alert('urlConActUserProfile...' + urlConActUserProfile);
+        $.ajax({
+            url: urlConActUserProfile,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                //alert("Success "+data);
+                $.each(data.count, function (i, item) {                    
+                    //var $profiles = $('#ConAtivityUserImage').attr('src', item.logoImagePath);
+                    //let userProfileDetail = '';
+                    //userProfileDetail = '<div class="d-flex align-items-center">' + item.groupName + '</div>';
+                    document.getElementById('ConAtivityUserPartyName').innerHTML += item.partyName;
+                    document.getElementById('PartyName').innerHTML += item.partyName;
+                    document.getElementById('ConAtivityUserPhone').innerHTML += item.contactPhone1;
+                    document.getElementById('ConAtivityUserMobile').innerHTML += item.mobile1;
+                    document.getElementById('ConAtivityUserEmail').innerHTML += item.email;
+                    document.getElementById('ConAtivityUserGroupName').innerHTML += item.groupName;
+                    //$('#ConAtivityUserImage').attr('src', item.logoImagePath);   
+                    if (item.logoImagePath != null) {
+                        //$('#ConAtivityUserImage').attr('src', item.logoImagePath);
+                        //alert('logoImagePath-- ' + item.logoImagePath)
+                        const fileUrl = item.logoImagePath;
+                        return fetch(fileUrl, { method: 'HEAD' })
+                            .then(response => {
+                                if (response.ok) {
+                                    //alert('File exists');
+                                    $('#ConAtivityUserImage').attr('src', item.logoImagePath);
+                                }
+                                //else {
+                                //    alert('File not exists');
+                                //    $('#ConAtivityUserImage').attr('src', '~/assets/images/DefaultProfilePicture/DefaultProfilePicture.png');
+                                // //}
+                            })
+                            .catch(() => {
+                                alert('Error occurred, file doesnt exist');//
+                            });
+                        //checkFileExistence(fileUrl)
+                        //    .then(exists => {
+                        //        if (exists) {
+                        //        $('#ConAtivityUserImage').attr('src', item.logoImagePath);
+                        //        alert('++++++++++++');
+                        //            console.log('File exists');
+                        //        }
+                        //        else {
+                        //            alert('-----------');
+                        //            console.log('File does not exist');
+                        //        }
+                        //    })
+                        //    .catch(error => {
+                        //        alert('********');
+                        //        console.error('Error checking file existence:', error);
+                        //    });
+                    }
+                    else {
+                        $('#ConAtivityUserImage').attr('src', '~/assets/images/DefaultProfilePicture/DefaultProfilePicture.png');
+                    }
+                });
+            },
+            error: function () {
+                alert("Error detected");
+            }
+        });
+
+
+        var urlConActRFQList = '@Url.Action("GetRFQListConversationActivities", "ConversationActivities")';
+        //alert('urlConActRFQList...' + urlConActRFQList);
+        $.ajax({
+            url: urlConActRFQList,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                //alert("Success "+data);
+        //        $.each(data.count, function (i, item) {
+        //            //let userProfileDetail = '';
+        //            //userProfileDetail = '<div class="d-flex align-items-center">' + item.groupName + '</div>';
+        //            document.getElementById('ConAtivityUserPartyName').innerHTML += item.partyName;
+        //            document.getElementById('PartyName').innerHTML += item.partyName;
+        //            document.getElementById('ConAtivityUserPhone').innerHTML += item.contactPhone1;
+        //            document.getElementById('ConAtivityUserMobile').innerHTML += item.mobile1;
+        //            document.getElementById('ConAtivityUserEmail').innerHTML += item.email;
+        //            document.getElementById('ConAtivityUserGroupName').innerHTML += item.groupName;
+        //            $('#ConAtivityUserImage').attr('src', item.logoImagePath);
+        //        });
+            },
+            error: function () {
+                alert("Error detected");
+            }
+        });
+
+
+
+    });
+
+    //$(document).ready(function () {
+    //    var urlConActRFQList = 'Url.Action("GetRFQListConversationActivities", "ConversationActivities")';
+    //    alert('urlConActRFQList...' + urlConActRFQList);
+    //    //$.ajax({
+    //    //    url: urlConActRFQList,
+    //    //    type: 'GET',
+    //    //    dataType: 'json',
+    //    //    success: function (data) {
+    //    //        //alert("Success "+data);
+    //    //        $.each(data.count, function (i, item) {
+    //    //            //let userProfileDetail = '';
+    //    //            //userProfileDetail = '<div class="d-flex align-items-center">' + item.groupName + '</div>';
+    //    //            document.getElementById('ConAtivityUserPartyName').innerHTML += item.partyName;
+    //    //            document.getElementById('PartyName').innerHTML += item.partyName;
+    //    //            document.getElementById('ConAtivityUserPhone').innerHTML += item.contactPhone1;
+    //    //            document.getElementById('ConAtivityUserMobile').innerHTML += item.mobile1;
+    //    //            document.getElementById('ConAtivityUserEmail').innerHTML += item.email;
+    //    //            document.getElementById('ConAtivityUserGroupName').innerHTML += item.groupName;
+    //    //            $('#ConAtivityUserImage').attr('src', item.logoImagePath);
+    //    //        });
+    //    //    },
+    //    //    error: function () {
+    //    //        alert("Error detected");
+    //    //    }
+    //    //});
+    //});
+
+</script>

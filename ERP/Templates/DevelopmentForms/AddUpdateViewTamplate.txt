@@ -1,0 +1,93 @@
+@using Business.Entities.$ModuleName$.$TableName$Model;
+@model $TableName$;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="form$TableName$">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="$TableName$ID" />
+                <div class="col-sm-9">
+                  @*  <input type="text" required="" class="form-control" id="$TableName$Text" name="$TableName$Text" asp-for="$TableName$Text">
+                    <span asp-validation-for="$TableName$Text" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            $ReplaceController$
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdate$TableName$", "$TableName$")';
+    function fnSubmit() {
+        if ($("#form$TableName$").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#form$TableName$").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+						window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+     $(document).ready(function () {
+
+          $DropDownSelection$
+
+       
+
+          $DropDownSelectionList$
+
+    });
+
+
+</script>

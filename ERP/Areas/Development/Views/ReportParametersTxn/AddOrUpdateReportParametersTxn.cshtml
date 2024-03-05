@@ -1,0 +1,142 @@
+@using Business.Entities.DevelopmentArea.ReportParametersTxnModel;
+@model ReportParametersTxn;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formReportParametersTxn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="ReportParametersID" />
+                <div class="col-sm-9">
+                  @*  <input type="text" required="" class="form-control" id="ReportParametersTxnText" name="ReportParametersTxnText" asp-for="ReportParametersTxnText">
+                    <span asp-validation-for="ReportParametersTxnText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'><div class='col-12'>
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>ReportParametersID</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='ReportParametersID' asp-for='ReportParametersID' name='ReportParametersID'>
+ <span asp-validation-for='ReportParametersID' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>ParameterName</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='ParameterName' asp-for='ParameterName' name='ParameterName'>
+ <span asp-validation-for='ParameterName' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>ParameterType</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='ParameterType' asp-for='ParameterType' name='ParameterType'>
+ <span asp-validation-for='ParameterType' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>ReportID</label>
+ <div class='col-sm-9'>
+ <select class='form-select' id='choices-multiple-remove-button-ReportID' asp-items='@CommonExtension.GetAllReportAsync()'>
+ <option value=''>Select here...</option>
+ </select>
+ </div>
+ </div></div></div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateReportParametersTxn", "ReportParametersTxn")';
+    function fnSubmit() {
+        if ($("#formReportParametersTxn").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formReportParametersTxn").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+						window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+     $(document).ready(function () {
+
+          let ReportIDs = document.getElementById(choices-multiple-remove-button-ReportID).value;
+    $.each(ReportIDs.split(","), function (i, e) {
+    $("#choices-multiple-remove-button-ReportID option[value=" + e + "]").prop("selected", true);
+   });
+ 
+
+
+       
+
+           var multipleCancelButtonParty = new Choices("#choices-multiple-remove-button-ReportID", {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+ 
+
+
+    });
+
+
+</script>

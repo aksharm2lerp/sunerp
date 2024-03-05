@@ -1,0 +1,65 @@
+﻿@using Business.Entities.SalesDistribution.OpportunityLossMasterModel;
+@using System.Data;
+
+@* @using GridCore
+@addTagHelper *, GridMvc
+@model ISGrid;
+@{
+}
+<form method="get" id="salesItems" asp-area="SalesDistribution" asp-action="OpportunityLossItemDetail" asp-controller="OpportunityLossMaster" class="g-3 needs-validation" novalidate>
+<div class="row pt-2">
+    <div class="col-md-12">
+        <grid model="@Model" uiactions="manipulationchange" role="grid" />
+    </div>
+</div>
+</form> *@
+@model DataSet;
+@{
+    List<string> strTimeforRow = new List<string>();
+    int OpportunityLossId = ViewBag.OpportunityLossID;
+}
+<div id="EmployeeSummaryTable">
+                        @if (Model.Tables[0].Rows.Count > 0)
+                        {
+                            <div class="row" style="overflow:auto; height:auto; width:100%;">
+                                <table class="table table-striped w-auto" style="white-space: nowrap; font-size:inherit !important;">
+                                    <!--style="display:block; overflow: auto; white-space: nowrap;"-->
+                                    <thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                        <tr>
+                                            @foreach (DataColumn dataColumn in Model.Tables[0].Columns)
+                                            {
+                                                strTimeforRow.Add(dataColumn.ToString());
+                                                <th>@dataColumn.ToString()</th>
+                                            }
+                                        </tr>
+                                    </thead>
+                                    @foreach (DataRow row in Model.Tables[0].Rows)
+                                    {
+                                        <tr>
+                                            @foreach (string timeRow in strTimeforRow)
+                                            {
+                                                @if (!string.IsNullOrEmpty(row[timeRow].ToString()))
+                                                {
+                                                    <td>@row[timeRow]</td>
+                                                }
+                                                else
+                                                {
+                                                    <td>-</td>
+                                                }
+                                            }
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="text-center">
+                                <h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1>
+                                <h3 style="color: red;">No Data Found</h3>
+                            </div>
+                        }
+</div>
+
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

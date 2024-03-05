@@ -1,0 +1,91 @@
+﻿@model Business.Entities.Master.ItemSearch
+@{
+    
+}
+<form method="get" id="frmItemSearch" asp-action="Search" asp-controller="Item" asp-area="SuperAdmin" class="g-3" novalidate>
+    <div class="mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <div class="col-md-4">
+                                <label for="Keyword" class="col-form-label">keyword</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" asp-for="keyword" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="">
+                        <div class="mb-3 row">
+                            <div class="col-md-4">
+                                <label for="QtyFrom" class="col-form-label">Qty</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="number" class="form-control" asp-for="QtyFrom" maxlength="10">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="number" class="form-control" asp-for="QtyTo" maxlength="10">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="">
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <div class="col-md-4">
+                                <label for="ItemGroupID" class="col-form-label">Item Group</label>
+                            </div>
+                            <div class="col-md-8">
+                                <select asp-for="ItemGroupID" asp-items="@ViewBag.SubGroup" class="form-control">
+                                    <option value="">Select Item Group...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <div class="col-md-4">
+                                <label for="ItemSubGroupID" class="col-form-label">Item Sub Group</label>
+                            </div>
+                            <div class="col-md-8">
+                                <select asp-for="ItemSubGroupID" asp-items="@ViewBag.ItemSubGroup" class="form-control">
+                                    <option value="">Select Item Sub Group...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="">
+            <div class="col-md-6">
+                <div class="mb-3 row">
+                    <div class="col-md-4">
+                        <label for="DefaultLocationID" class="col-form-label">Primary Location</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select asp-for="DefaultLocationID" asp-items="@ViewBag.PrimaryLocation" class="form-control">
+                            <option value="">Select primary location</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <button class="btn btn-primary btn-info px-5 ladda-button" type="submit">
+                Submit
+            </button>
+            <button type="reset" class="btn btn-default btn-info px-5 ladda-button">Reset</button>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+
+</script>

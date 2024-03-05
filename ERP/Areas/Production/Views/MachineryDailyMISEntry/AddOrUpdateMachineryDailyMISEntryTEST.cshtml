@@ -1,0 +1,214 @@
+@using Business.Entities.Production.MachineryDailyMISEntryModel;
+@model MachineryDailyMISEntry;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formMachineryDailyMISEntry">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="MachineryDailyMISEntryID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="MachineryDailyMISEntryText" name="MachineryDailyMISEntryText" asp-for="MachineryDailyMISEntryText">
+                    <span asp-validation-for="MachineryDailyMISEntryText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>ItemCode</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ItemCode' asp-for='ItemCode' name='ItemCode'>
+                            <span asp-validation-for='ItemCode' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>MachineryID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' id='choices-multiple-remove-button-MachineryID' asp-items='@CommonExtension.GetAllMachineryAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>NoOfOperators</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='NoOfOperators' asp-for='NoOfOperators' name='NoOfOperators'>
+                            <span asp-validation-for='NoOfOperators' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>NoOfHelpers</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='NoOfHelpers' asp-for='NoOfHelpers' name='NoOfHelpers'>
+                            <span asp-validation-for='NoOfHelpers' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>WorkingHours</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='WorkingHours' asp-for='WorkingHours' name='WorkingHours'>
+                            <span asp-validation-for='WorkingHours' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>ShiftID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for='ShiftID' id='choices-multiple-remove-button-ShiftID' asp-items='@CommonExtension.GetAllShiftAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>ShopWorkOrderNo</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ShopWorkOrderNo' asp-for='ShopWorkOrderNo' name='ShopWorkOrderNo'>
+                            <span asp-validation-for='ShopWorkOrderNo' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>ItemID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' id='choices-multiple-remove-button-ItemID' asp-for="ItemID" asp-items='@CommonExtension.GetAllItemAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>OutputStock</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='OutputStock' asp-for='OutputStock' name='OutputStock'>
+                            <span asp-validation-for='OutputStock' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>UOMID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' id='choices-multiple-remove-button-UOMID'asp-for="UOMID" asp-items='@CommonExtension.GetAllUOMAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateMachineryDailyMISEntry", "MachineryDailyMISEntry")';
+    function fnSubmit() {
+        if ($("#formMachineryDailyMISEntry").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formMachineryDailyMISEntry").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+        let MachineryIDs = document.getElementById(choices - multiple - remove - button - MachineryID).value;
+        $.each(MachineryIDs.split('', ''), function (i, e) {
+            $('#choices-multiple-remove-button-MachineryID option[value='' + e + '']').prop('selected', true);
+        });
+
+        let UOMIDs = document.getElementById(choices - multiple - remove - button - UOMID).value;
+        $.each(UOMIDs.split('', ''), function (i, e) {
+            $('#choices-multiple-remove-button-UOMID option[value='' + e + '']').prop('selected', true);
+        });
+
+
+
+
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-MachineryID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-UOMID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+
+    });
+
+
+</script>

@@ -1,0 +1,156 @@
+@using Business.Entities.HR.UserMapToEmployeeModel;
+@model UserMapToEmployee;
+@{
+    int? userId = ViewBag.UserID;
+    int? companyId = ViewBag.CompanyID;
+}
+<form class="form-horizontal" role="form" id="formUserMapToEmployee">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="UserMapToEmployeeID" />
+                <input type="hidden" asp-for="EmployeeID" id="EmployeeID" />
+                <input type="hidden" asp-for="UserID" id="UserID" />
+
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="UserMapToEmployeeText" name="UserMapToEmployeeText" asp-for="UserMapToEmployeeText">
+                    <span asp-validation-for="UserMapToEmployeeText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>UserID</label>
+                        <div class="col-sm-9">
+                            @*  <input type="text" required="" class="form-control" id="VisitedByPerson" name="VisitedByPerson" asp-for="VisitedByPerson">
+                            <span asp-validation-for="VisitedByPerson" class="text-danger"></span>*@
+                            <select class="form-select" required="" id="choices-multiple-remove-button-user" asp-items="@UserExtension.GetAllUsersForDropDown()">
+                                <option value="">Select User</option>
+                            </select>
+                            <span asp-validation-for="UserID" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>EmployeeID</label>
+                        <div class="col-sm-9">
+                            @*  <input type="text" required="" class="form-control" id="VisitedByPerson" name="VisitedByPerson" asp-for="VisitedByPerson">
+                            <span asp-validation-for="VisitedByPerson" class="text-danger"></span>*@
+                            <select class="form-select" required="" id="choices-multiple-remove-button-employee" asp-items="@CommonExtension.GetAllEmployeeAsync()">
+                                <option value="">Select Employee</option>
+                            </select>
+                            <span asp-validation-for="EmployeeID" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Remarks</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='Remarks' asp-for='Remarks' name='Remarks'>
+                            <span asp-validation-for='Remarks' class='text-danger' />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateUserMapToEmployee", "UserMapToEmployee")';
+    function fnSubmit() {
+        let employeeIdDrp = document.getElementById('choices-multiple-remove-button-employee');
+        let selectedEmployeeIndex = employeeIdDrp.options[employeeIdDrp.selectedIndex];
+
+        let employeeId = document.getElementById("EmployeeID");
+        employeeId.value = selectedEmployeeIndex.value;
+
+
+        let userIdDrp = document.getElementById('choices-multiple-remove-button-user');
+        let selectedUserIndex = userIdDrp.options[userIdDrp.selectedIndex];
+
+        let userId = document.getElementById("UserID");
+        userId.value = selectedUserIndex.value;
+
+        if ($("#formUserMapToEmployee").valid()) {
+            var l = laddaStart('btnSave');
+            //console.log(l);
+            modeldata = $("#formUserMapToEmployee").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+        let employeeids = document.getElementById("EmployeeID").value;
+        $.each(employeeids.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-employee option[value='" + e + "']").prop("selected", true);
+        });
+
+        let partyids = document.getElementById("UserID").value;
+        $.each(partyids.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-user option[value='" + e + "']").prop("selected", true);
+        });
+
+        var multipleCancelButtonEmployee = new Choices('#choices-multiple-remove-button-employee', {
+            removeItemButton: false,
+            maxItemCount: 30,
+            searchResultLimit: 30,
+            renderChoiceLimit: 30
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-user', {
+            removeItemButton: false,
+            maxItemCount: 30,
+            searchResultLimit: 30,
+            renderChoiceLimit: 30
+        });
+    });
+</script>

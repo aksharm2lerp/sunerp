@@ -1,0 +1,364 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using GridCore
+@inject SignInManager<UserMasterMetadata> SignInManager
+@inject UserManager<UserMasterMetadata> UserManager
+
+
+@addTagHelper *, GridMvc
+
+@model ISGrid
+@{
+    ViewData["Title"] = "Canteen Charges Master";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+
+    var userlogin = UserManager.GetUserAsync(User).Result;
+    var roles = UserManager.GetRolesAsync(userlogin).Result;
+    
+}
+
+<div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+    <div class="card border-1 shadow rounded-7 p-1">
+        <div class="row border-bottom">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="page-breadcrumb align-items-center">
+                    <div class="p-2">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item">
+                                    <a asp-area="HR" asp-controller="GatePass" asp-action="Index"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Employee Gatepass List</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 text-end my-2">
+                @if (ViewBag.DisplayName != "Security")
+                {
+                    <a class="btn btn-primary px-5" onclick="fnEmployeeGatepass(this)"
+                    href="javascript:void(0)"
+                    data-id="0"
+                    data-key="0"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#canvasEmployeeGatepass"
+                    aria-controls="canvasEmployeeGatepass">
+                        Add Gatepass
+                    </a>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <grid model="@Model" />
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="canvasEmployeeGatepass">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="canvasHeaderNameEmployeeGatepass"></h5>
+                <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+            </div>
+            <div class="offcanvas-body pt-3 pb-5">
+                <div id="dvInfoEmployeeGatepass">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    var urlAddUpdateEmployeeGatepass = '@Url.Action("AddUpdateEmployeeGatepass", "GatePass")';
+    function fnEmployeeGatepass(obj) {
+        var _id = $(obj).data('id');
+        var _empId = $(obj).data('key');
+        //var _id = leaveTypeId;//$(this).data('id');
+        //var _employeeId = $("#LeaveTypeID").val();
+        if (_id > 0) {
+            document.getElementById("canvasHeaderNameEmployeeGatepass").innerHTML = "Update Employee Gatepass";
+        }
+        else {
+            document.getElementById("canvasHeaderNameEmployeeGatepass").innerHTML = "Add Employee Gatepass";
+        }
+        var _parameters = { employeeId: _empId, employeeGatePassID: _id };
+        $.ajax({
+            url: urlAddUpdateEmployeeGatepass,
+            type: "GET",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                $("#canvasEmployeeGatepass").show();//('hide');
+                $('#dvInfoEmployeeGatepass').html(data);
+            }
+        });
+    }
+
+
+    //  Print Function
+    function fnPrint(obj) {
+        let _id = $(obj).data('id');
+        //let _empId = $(obj).data('key');
+
+        var currentUrl = window.location.href;
+        var newUrl = currentUrl.replace('/HR/GatePass', '/ReportViewer/');
+        let url = newUrl + 'ReportViewer/OnPostGetHTML';
+        debugger;
+        let parameters = { employeeGatepassId: _id };
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: parameters,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    var newTab = window.open();
+                    newTab.document.open();
+                    newTab.document.write(data.data);
+                    newTab.document.close();
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: 'Error to load report.'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    };
+
+    //// Print Function
+
+
+    //// HOD active inactive Function.
+    ////function fnHODApprove(obj) {
+    ////    alert('fnHODApprove function invoked');
+    ////    let _id = $(obj).data('id');
+    ////    //let _empId = $(obj).data('key');
+    ////    let rowid = $(obj).data('rowid');
+    ////    alert('row id is ' + rowid);
+    ////    var currentUrl = window.location.href;
+    ////    var newUrl = currentUrl.replace('/HR/GatePass', '/ReportViewer/');
+    ////    let url = newUrl + 'ReportViewer/OnPostGetHTML';
+    ////    return true;
+    ////    debugger;
+    ////    let parameters = { employeeGatepassId: _id };
+    ////    $.ajax({
+    ////        type: 'POST',
+    ////        url: url,
+    ////        data: parameters,
+    ////        dataType: 'json',
+    ////        success: function (data) {
+    ////            if (data.status) {
+    ////                var newTab = window.open();
+    ////                newTab.document.open();
+    ////                newTab.document.write(data.data);
+    ////                newTab.document.close();
+    ////            }
+    ////            else {
+    ////                Lobibox.notify('error', {
+    ////                    pauseDelayOnHover: true,
+    ////                    size: 'mini',
+    ////                    icon: 'bx bx-check-circle',
+    ////                    continueDelayOnInactiveTab: false,
+    ////                    position: 'bottom right',
+    ////                    msg: 'Error to load report.'
+    ////                });
+    ////            }
+    ////        },
+    ////        error: function (error) {
+    ////            laddaStop(l);
+    ////            Lobibox.notify('error', {
+    ////                pauseDelayOnHover: true,
+    ////                size: 'mini',
+    ////                icon: 'bx bx-check-circle',
+    ////                continueDelayOnInactiveTab: false,
+    ////                position: 'bottom right',
+    ////                msg: "MessageHelper.Error"
+    ////            });
+    ////        }
+    ////    }).always(function () {
+    ////        hideLoader();
+    ////    });
+    ////};
+
+    //// HOD active inactive Function.
+
+    //// HR Approve function.
+
+    //function fnHRApprove(obj) {
+    //    alert('fnHRApprove function invoked');
+    //    let _id = $(obj).data('id');
+    //    //let _empId = $(obj).data('key');
+    //    let rowid = $(obj).data('rowid');
+    //    alert('row id is ' + rowid);
+    //};
+
+    //// HR Approve function.
+
+    //// Security Approve function.
+
+    //function fnSecurityApprove(obj) {
+    //    alert('fnSecurityApprove function invoked');
+    //    let _id = $(obj).data('id');
+    //    //let _empId = $(obj).data('key');
+    //    let rowid = $(obj).data('rowid');
+    //    alert('row id is ' + rowid);
+    //};
+
+    //// Security Approve function.
+
+    // Active Inactive HOD, HR Access.
+
+    function fnActiveInactiveApproval(obj) {
+      
+        var urlAddRemoveApproval = '@Url.Action("AddRemoveApproval", "GatePass")';
+        let rowid = $(obj).data('rowid');
+        let _isApproved = document.getElementById(rowid).checked;
+        let approval = $(obj).data('approval');
+        let _id = $(obj).data('id');
+        let parameters = { employeeGatepassId: _id, isApproved: _isApproved, approvalName: approval };
+        //debugger;
+        //let isfalse = isTrue.is(':checked');
+        //debugger;
+        //let _isAccess = $('#' + rowid).is(':checked');
+        //let _empId = $(obj).data('key');
+        
+        $.ajax({
+            type: 'POST',
+            url: urlAddRemoveApproval,
+            data: parameters,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    //var newTab = window.open();
+                    //newTab.document.open();
+                    //newTab.document.write(data.data);
+                    //newTab.document.close();
+
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    //setTimeout(
+                    //    function () {
+                    //        window.location.reload();
+                    //    }, 3000);
+
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: 'Error to load report.'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    };
+
+    // Active Inactive HOD, HR Approval.
+
+
+    // Update in and Out Time by Security.
+
+    function fnUpdateInOutTime(obj){
+        var urlUpdateGatePassInOutTime = '@Url.Action("UpdateGatePassInOutTime", "GatePass")';
+        let rowid = $(obj).data('rowid');
+        let checked = document.getElementById(rowid).checked;
+        let time = $(obj).data('time');
+        let _id = $(obj).data('id');
+        let parameters = { employeeGatepassId: _id, isChecked: checked, time: time, };
+        $.ajax({
+            type: 'POST',
+            url: urlUpdateGatePassInOutTime,
+            data: parameters,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    //var newTab = window.open();
+                    //newTab.document.open();
+                    //newTab.document.write(data.data);
+                    //newTab.document.close();
+
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    //setTimeout(
+                    //    function () {
+                    //        window.location.reload();
+                    //    }, 3000);
+
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: 'Error to update time.'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    };
+
+    // Update in and Out Time by Security.
+</script>

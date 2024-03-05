@@ -1,0 +1,50 @@
+﻿@using Business.Entities.Production.MasterPackingModel
+@model PagedDataTable<MasterPacking>
+<div class="modal fade bd-example-modal-xl" id="masterPackageMultipleQRCode" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleMasterPackageModalLabel">Master Packing Multiple QR Code</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                </p>
+            </div>
+            <div class="modal-body">
+                <fieldset>
+                    <div class="text-center" id="printAbleAreaMultipleQRCodeMasterPacking">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-4 printMultipleMasterPackageQRCode py-2">
+                                    <div>
+                                        @{
+                                            string imgUrl = "https://chart.googleapis.com/chart?cht=qr&chl=" + item.MasterPackingCode + "&chs=200x200&chld=L|0";
+                                        }
+                                        <img src="@imgUrl" class="qr-code img-thumbnail" />
+
+                                    </div>
+                                    <div>
+                                        <label for="" class="col-form-label text-dark h1">@item.UserBatchCode</label>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="printDiv(printAbleAreaMultipleQRCodeMasterPacking)">Print</button>
+                <button type="button" class="btn btn-secondary" onclick="fnCloseModal()" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function printDiv(divName) {        
+        window.print();
+    }
+</script>

@@ -1,0 +1,1238 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\ERP.csproj": {}
+  },
+  "projects": {
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj",
+        "projectName": "Business.Entities",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj",
+        "projectName": "Business.Interface",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj",
+        "projectName": "Business.Service",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj",
+        "projectName": "Business.SQL",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\ERP.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\ERP.csproj",
+        "projectName": "ERP",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\ERP.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AspNetCoreHero.ToastNotification": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.95.4, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Mvc.WebApiCompatShim": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.ReportViewer.WebForms": {
+              "target": "Package",
+              "version": "[10.0.40219.1, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Razor.Templating.Core": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "ReportViewerCore.NETCore": {
+              "target": "Package",
+              "version": "[15.1.17, )"
+            },
+            "Select.HtmlToPdf.NetCore": {
+              "target": "Package",
+              "version": "[22.1.0, )"
+            },
+            "Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core": {
+              "target": "Package",
+              "version": "[20.1.0.47, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj": {
+      "version": "3.2.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
+        "projectName": "GridBlazor",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0",
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              }
+            }
+          },
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Agno.BlazorInputFile": {
+              "target": "Package",
+              "version": "[0.3.0, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.11.0, )"
+            },
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Primitives": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Agno.BlazorInputFile": {
+              "target": "Package",
+              "version": "[0.3.0, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.11.0, )"
+            },
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Extensions.Primitives": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+      "version": "5.2.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj",
+        "projectName": "GridCore",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0",
+          "net6.0",
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              }
+            }
+          },
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              }
+            }
+          },
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.FileProviders.Embedded": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.FileProviders.Embedded": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Extensions.FileProviders.Embedded": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj": {
+      "version": "5.2.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
+        "projectName": "GridMvcCore",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0",
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj"
+              }
+            }
+          },
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.FileProviders.Embedded": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.FileProviders.Embedded": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+      "version": "5.2.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj",
+        "projectName": "GridShared",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0",
+          "net6.0",
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          },
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          },
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Primitives": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Primitives": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Extensions.Primitives": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj",
+        "projectName": "Kinfo.JsonStore",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
+              },
+              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "JsonFlatFileDataStore": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj",
+        "projectName": "Utils",
+        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

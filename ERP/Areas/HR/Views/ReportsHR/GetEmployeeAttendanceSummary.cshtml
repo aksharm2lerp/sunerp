@@ -1,0 +1,220 @@
+﻿@using System.Data;
+@using System.Collections.Generic;
+@model DataSet;
+@{
+    ViewData["Title"] = "Employee Attendance Summury Report";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@{
+    List<string> strTimeforRow = new List<string>();
+    DateTime date = ViewBag.MonthYear;
+    //string monthyear = string.Concat(date.Year + "-" + date.Month);
+    string monthyear = date.ToString("yyyy-MM");
+    int empCatId = ViewBag.EmployeeCategoryID;
+    int deptId = ViewBag.DepartmentID;
+
+}
+
+<div class="container" id="employeePresent">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+            <div class="card border-0 shadow rounded-3">
+                <div class="card-body">
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="page-breadcrumb align-items-center">
+                            <div class="p-2">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0 p-0">
+                                        <li class="breadcrumb-item">
+                                            <a asp-area="HR" asp-controller="ReportsHR" asp-action="GetEmployeeAttendanceSummary"><i class="bx bx-home-alt"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">Employee Attendance</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr />
+
+                    <div class="row mb-1">
+                        <label class="col-3 col-form-label">Employee Category</label>
+                        <div class="col-3">
+                            <select class="form-control" id="EmployeeCategoryID" name="EmployeeCategoryID" asp-items="@EmployeeExtension.GetAllEmployeeCategoryMaster()" asp-for="@empCatId">
+                                <option value="">Select Category</option>
+                            </select>
+                        </div>
+                        <label class="col-3 col-form-label">Select Month & Year</label>
+                        <div class="col-3">
+                            <input type="month" class="form-control" id="month" value="@monthyear">
+                        </div>
+                    </div>
+
+                    <div class="row mb-1">
+                        <label class="col-sm-3 col-form-label">Search Keyword</label>
+                        <div class="col-sm-3" id="idForDropdown">
+                            <input type="hidden" id="EmployeeID" class="form-control" />
+                            <input type="text" class="form-control bs-autocomplete" id="employeeText" name="EmployeeName" placeholder="Enter Searching text." value="@ViewBag.SearchString">
+                                                    
+
+                        </div>
+                        <label class="col-3 col-form-label">Department</label>
+                        <div class="col-3">
+                            <select class="form-control" id="DepartmentID" name="DepartmentID" asp-items="@EmployeeExtension.GetAllDepartmentText()" asp-for="@deptId">
+                                <option value="">Select Department</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="text-end mb-3">
+                        <input type="button" value="Export to excel" class="btn btn-outline-primary px-5 btn-sm" onclick="fnSearch(true)" />
+
+                        <button id="btnSearchEmployeePresent" type="button" onclick="fnSearch(false)" class="btn btn-outline-primary px-5 btn-sm">Search</button>
+                    </div>
+
+                    <div id="EmployeeAddessTable">
+                        @if (Model.Tables[0].Columns.Count > 2)
+                        {
+                            <div class="row" style="overflow:auto; height:350px; width:100%;">
+                                <table class="table table-striped w-auto" style="white-space: nowrap; font-size:inherit !important;">
+                                    <!--style="display:block; overflow: auto; white-space: nowrap;"-->
+                                    <thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                        <tr>
+                                            @foreach (DataColumn dataColumn in Model.Tables[0].Columns)
+                                            {
+                                                if (@dataColumn.ColumnName.ToString() == "EName")
+                                                {
+                                                    <th >@dataColumn.ToString()</th>
+                                                }
+                                                else
+                                                {
+                                                    <th >@dataColumn.ToString()</th>
+                                                }
+                                                strTimeforRow.Add(dataColumn.ToString());
+                                            }
+                                        </tr>
+                                    </thead>
+                                    @foreach (DataRow row in Model.Tables[0].Rows)
+                                    {
+                                        if (row["Desc"].ToString() == "TotalTime")
+                                        {
+                                            <tr style="background-color:azure; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                @foreach (string timeRow in strTimeforRow)
+                                                {
+                                                    @if (!string.IsNullOrEmpty(row[timeRow].ToString()))
+                                                    {
+                                                            <td>@row[timeRow]</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>-</td>
+                                                    }
+                                                }
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            <tr>
+                                                @foreach (string timeRow in strTimeforRow)
+                                                {
+                                                    @if (!string.IsNullOrEmpty(row[timeRow].ToString()))
+                                                    {
+                                                        <td>@row[timeRow]</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>-</td>
+                                                    }
+                                                }
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="text-center">
+                                <h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1>
+                                <h3 style="color: red;">No Data Found</h3>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    function fnSearch(obj) {
+
+        var employeeCategoryId = $('#EmployeeCategoryID').val();
+
+        var departmentId = $('#DepartmentID').val();
+
+        var employeeId = $('#employeeText').val();
+
+        var monthDate = $('#month').val();
+        //const dateString = "2023-03-16";
+        const year = monthDate.slice(0, 4); // "2023"
+        const month = monthDate.slice(5, 7);
+
+        var isdownload = obj;
+
+        var url = '@Url.Action("GetEmployeeAttendanceSummary","ReportsHR")';
+
+        var newurl = url + '?employeeCategoryId=' + employeeCategoryId + '&employeeId=' + employeeId + '&month=' + month + '&year=' + year + '&departmentId=' + departmentId + '&searchString=' + employeeId + '&isDownload=' + isdownload;
+
+        window.location.href = newurl;
+    };
+</script>
+
+
+<!--    Important Code Block
+@*@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="htts://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
+    <script src="htts://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="htts://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
+          rel="Stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(function () {
+            $("#EmployeeName").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/Reports/GetEmployeeslist/',
+                        data: { "EmpString": request.term },
+                        type: "POST",
+                        success: function (data) {
+                            console.table(data);
+                            if (data != false) {
+                                response($.map(data, function (item) {
+                                    return item;
+                                }))
+                            }
+                        },
+                        error: function (response) {
+                            console.log("Error: " + response.responseText);
+                        },
+                        failure: function (response) {
+                            console.log("Error: " + response.responseText);
+                        }
+                    });
+                },
+                select: function (e, i) {
+                    $("#EmployeeID").val(i.item.val);
+                },
+                minLength: 1
+            });
+        });
+    </script>
+}*@
+-->

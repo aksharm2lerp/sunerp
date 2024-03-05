@@ -1,0 +1,297 @@
+﻿@model Business.Entities.Marketing.Feedback.MarketingFeedback;
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";             //  START FROM HERE FOR NORMAL PAGE.
+    ViewBag.Title = "Feedback Details..";
+}
+@{
+    int i = 0;
+    int index = Model.marketingFeedbackLogDetails.Count();
+}
+<form class="form-horizontal" role="form" id="formFeedback">
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="MarketingFeedbackID" />
+                <input type="hidden" asp-for="PositiveNotesArray" name="PositiveNotesArray" id="PositiveNotesArray" />
+                <label class="col-sm-3 col-form-label">Party Name<span class="required">*</span></label>
+                <div class="col-sm-9">
+                    <input type="text" required="" class="form-control" id="PartyName" name="PartyName" asp-for="PartyName">
+                    <span asp-validation-for="PartyName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Party Type<span class="required">*</span></label>
+                <div class="col-sm-9">
+                    <select asp-for="PartyTypeID" asp-items="ViewBag.PartyTypeText" class="form-control" required="">
+                        <option value="">Select Party Type...</option>
+                    </select>
+                    <span asp-validation-for="PartyTypeID" class="text-danger "></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="Email" name="Email" asp-for="Email">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Mobile No.<span class="required">*</span></label>
+                <div class="col-sm-9">
+                    <input type="text" required="" class="form-control" id="MobileNo" name="MobileNo" asp-for="MobileNo" required="">
+                    <span asp-validation-for="MobileNo" class="text-danger "></span>
+                </div>
+            </div>
+
+            @* <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Feedback</label>
+            <div class="col-sm-9">
+            @*<select class="form-select" id="choices-multiple-remove-button" asp-for="PositiveNoteID" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" multiple>
+            <option value="">--Select--</option>
+            </select>
+            <span asp-validation-for="PositiveNoteID" class="text-danger"></span>
+            <select class="form-select" id="choices-multiple-remove-button" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" multiple>
+            @*<option value="">--Select--</option>
+            </select>
+            </div>
+            </div>*@
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Feedback</label>
+                <div class="col-sm-9">
+                    <a class="MCLFAB fa-lg" id="btnAddFeedback"><iconify-icon icon="material-symbols:add-circle-outline-rounded" class="parent-icon"></iconify-icon></a>
+                    <div class="col-sm-12">
+                    </div>
+
+                    <div id="addMoreFeedback">
+
+                        @if (Model != null)
+                        {
+                            if (Model.marketingFeedbackLogDetails.Count > 0)
+                            {
+                                foreach (var item in Model.marketingFeedbackLogDetails)
+                                {
+                                    <div id="@("removeAddMoreDiv" +i)" class="col-xs-12 col-sm-12 form-group">
+                                        <input type="hidden" asp-for="@item.MarketingFeedbackDetailID" id="MarketingFeedbackDetailID" name="MarketingFeedbackDetailID">
+                                        <input type="hidden" asp-for="@item.MarketingFeedbackID" id="MarketingFeedbackID" name="MarketingFeedbackID">
+                                        <div id="@("removeAddMoreDiv"+i)" class="col-xs-12 col-sm-12 form-group">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <select class='form-select' asp-for="@item.PositiveNoteID" name="@("SelectName"+i)" id="@("selectedId" + i)" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()">
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input placeholder="Response" class="form-control" asp-for="@item.Response" name="@("Response"+i)" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <a class="MCLFRB fa-2x" id="btnRemove" onclick="@("fnRemoveDiv("+i+")")"><iconify-icon icon="mdi:remove-circle-outline"></iconify-icon></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    i++;
+                                }
+                            }
+                        }
+
+                    </div>
+                    @*     <select class="form-select" id="choices-multiple-remove-button" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" multiple>
+                    @*<option value="">--Select--</option>
+                    </select>*@
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Feedback Note</label>
+                <div class="col-sm-9">
+                    <textarea class="form-control" rows="4" id="Note" name="Note" asp-for="Note"></textarea>
+                    @* <span asp-validation-for="Note" class="text-danger "></span>*@
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="" class="col-sm-3 col-form-label">Received Document</label>
+                <div class="col-sm-9">
+                    <input type="checkbox" class="form-check-input" asp-for="IsReceivedDocument" data-on-text="Yes" data-off-text="No">
+                </div>
+            </div>
+
+            @*<div class="row mb-3">
+            <label for="roleName" class="col-sm-3 col-form-label text-end">Value<span class="required">*</span></label>
+            <div class="col-sm-9">
+            <input type="text" required="" class="form-control" asp-for="Value" maxlength="100">
+            <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="row mb-3">
+            <label for="roleName" class="col-sm-3 col-form-label text-end">Display Order</label>
+            <div class="col-sm-9">
+            <input type="text" class="form-control" asp-for="SortOrder" maxlength="4">
+            </div>
+            </div>
+            <div class="row mb-3">
+            <label for="roleName" class="col-sm-3 col-form-label text-end">Entry Type<span class="required">*</span></label>
+            <div class="col-sm-9">
+
+            <select class="form-select" asp-for="EntryTypeID" asp-items="@SuperCompanyDropdownBinder.EntryType()">
+            <option value="">--Select--</option>
+            </select>
+            <span asp-validation-for="EntryTypeID" class="text-danger"></span>
+
+            </div>
+            </div>
+            <div class="row mb-3">
+            <label for="" class="col-sm-3 col-form-label text-end">Is Active</label>
+            <div class="col-sm-9">
+            <input type="checkbox" class="form-check-input" asp-for="IsActive" data-on-text="Yes" data-off-text="No">
+
+            </div>
+            </div>
+            <div class="row mb-3">
+            <label for="" class="col-sm-3 col-form-label text-end">Default Selected</label>
+            <div class="col-sm-9">
+            <input type="checkbox" class="form-check-input" asp-for="IsDefaultSelected" data-on-text="Yes" data-off-text="No">
+
+            </div>
+            </div>*@
+            <input type="hidden" id="PositiveNoteID" asp-for="PositiveNoteID" name="PositiveNoteID" />
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Save</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Cancel</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("CreateMarketingFeedback", "Feedback")';
+    var div = document.getElementById('addMoreFeedback');
+    var divIdsArray = [];
+    var i = 0;
+
+    function fnSubmit() {
+
+        var drpArray = [];
+        var elements1 = div.querySelectorAll('select, input');
+        if (elements1.length > 0) {
+            for (var k = 0; k < elements1.length; k++) {
+                drpArray.push(elements1[k].value);
+            }
+        }
+
+        let positiveids = document.getElementById("PositiveNoteID");
+
+        let positiveIdsNotes = document.getElementById('PositiveNotesArray');
+        positiveIdsNotes.value = drpArray.toString();
+        if ($("#formFeedback").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formFeedback").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                    window.location.reload().delay(5000);
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    // Added by Rahul Mistry on 21 Apr 2023
+
+    $(document).ready(function () {
+        $('#btnAddFeedback').click(function () {
+
+            let noOfIs = @index;
+            if (noOfIs > 0 && i <= noOfIs) {
+                i = noOfIs;
+            }
+
+            var newDiv = "<div id='removeAddMoreDiv" + i + "' class='col-xs-12 col-sm-12 form-group'><input type='hidden' id='MarketingFeedbackDetailID' name='MarketingFeedbackDetailID' value='0'><input type='hidden' id='MarketingFeedbackID' name='MarketingFeedbackID' value='" + @Model.MarketingFeedbackID+"'><div class='row'><div class='col-md-4'><select class='form-select' name='SelectName" + i + "' id='selectedId" + i + "'  onchange='fnLockDiv(" + i + ")'></select></div><div class='col-md-4'><input placeholder='Response' type='text' class='form-control' name='Response" + i + "'  id='selectedResponse" + i + "' onchange='fnLockDiv(" + i + ")'/></div><div class='col-md-4'><a class='MCLFRB fa-2x' id='btnRemove' onclick='fnRemoveDiv(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></div></div></div>";
+
+            div.innerHTML += newDiv;
+
+            var myselected = document.getElementById('selectedId' + i);
+
+            $.getJSON("/Marketing/MarketingCommunicationLog/GetAllMarketingClientFeedbackNote/",
+                function (data) {
+                    var newHTML = "";
+                    for (var j = 0; j < data.length; j++) {
+                        newHTML += "<option id='" + data[j].positiveNoteID + "' value='" + data[j].positiveNoteID + "'>" + data[j].positiveNoteText + "</option>";
+                    }
+                    //employeeDropdown.innerHTML = newHTML;
+                    myselected.innerHTML = newHTML;
+                });
+
+            i++;
+
+            $(function () {
+                for (var j = 0; j < divIdsArray.length; j++) {
+                    var divContent = divIdsArray[j];
+                    var test = localStorage.getItem(divContent);
+                    document.getElementById(divIdsArray[j]).value = test;
+                }
+            });
+        });
+    });
+
+    function fnRemoveDiv(id) {
+        var _id = id;
+        var divRemove = document.getElementById('removeAddMoreDiv' + _id);
+        divRemove.remove();
+    };
+
+    function fnLockDiv(lockId) {
+
+        const elselect = document.getElementById('selectedId' + lockId);
+        divIdsArray.push('selectedId' + lockId);
+        localStorage.setItem('selectedId' + lockId, elselect.value);
+
+        const elInput = document.getElementById('selectedResponse' + lockId);
+        divIdsArray.push('selectedResponse' + lockId);
+        localStorage.setItem('selectedResponse' + lockId, elInput.value);
+    };
+
+                         // Added by Rahul Mistry on 21 Apr 2023
+</script>

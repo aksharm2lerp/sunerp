@@ -1,0 +1,223 @@
+@using Business.Entities.Production.MachinerySalesDetailModel;
+@model MachinerySalesDetail;
+@{
+    //$ViewBag$
+    var test = Model;
+    var tesrRes = test;
+}
+<form class="form-horizontal" role="form" id="formMachinerySalesDetail">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="MachinerySalesDetailID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="MachinerySalesDetailText" name="MachinerySalesDetailText" asp-for="MachinerySalesDetailText">
+                    <span asp-validation-for="MachinerySalesDetailText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Item Code</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ItemCode' asp-for='ItemCode' name='ItemCode' disabled readonly>
+                            <span asp-validation-for='ItemCode' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Machinery</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' onchange="fnFillItemCode()" id='choices-multiple-remove-button-MachineryID' asp-items='@CommonExtension.GetAllMachineryAsync()' asp-for='MachineryID'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Invoice No</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='InvoiceNo' asp-for='InvoiceNo' name='InvoiceNo'>
+                            <span asp-validation-for='InvoiceNo' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Invoice Date</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='InvoiceDate' asp-for='InvoiceDate' name='InvoiceDate'>
+                            <span asp-validation-for='InvoiceDate' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>LR No</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='LRNo' asp-for='LRNo' name='LRNo'>
+                            <span asp-validation-for='LRNo' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>LR Date</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='LRDate' asp-for='LRDate' name='LRDate'>
+                            <span asp-validation-for='LRDate' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Transportation Name</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='TransportationName' asp-for='TransportationName' name='TransportationName'>
+                            <span asp-validation-for='TransportationName' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Dispatch Location</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='DispatchLocation' asp-for='DispatchLocation' name='DispatchLocation'>
+                            <span asp-validation-for='DispatchLocation' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Party Name</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='PartyName' asp-for='PartyName' name='PartyName'>
+                            <span asp-validation-for='PartyName' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Machine Operating StatusID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for="MachineOperatingStatusID" id='choices-multiple-remove-button-MachineOperatingStatusID' asp-items='@CommonExtension.GetAllMachineOperatingStatusAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateMachinerySalesDetail", "MachinerySalesDetail")';
+    function fnSubmit() {
+        if ($("#formMachinerySalesDetail").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formMachinerySalesDetail").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+        let MachineOperatingStatusIDs = document.getElementById(MachineOperatingStatusID).value;
+        $.each(MachineOperatingStatusIDs.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-MachineOperatingStatusID option[value=" + e + "]").prop('selected', true);
+        });
+
+
+
+
+
+        var multipleCancelButtonParty = new Choices("#choices-multiple-remove-button-MachineOperatingStatusID", {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+
+    });
+
+    function fnFillItemCode() {
+
+        let machineryNameDrp = document.getElementById('choices-multiple-remove-button-MachineryID');
+        let selectedMachineIndex = machineryNameDrp.options[machineryNameDrp.selectedIndex];
+        let machineryIdValue = selectedMachineIndex.value;
+
+        let urlFillItemCode = '@Url.Action("GetItemCode","Machinery")';
+        $.ajax({
+            url: urlFillItemCode,
+            type: "GET",
+            data: { id: machineryIdValue },
+            dataType: 'json',
+            success: function (data) {
+                if (data.status && data.itemCode != null) {
+                    document.getElementById('ItemCode').value = data.itemCode;
+                }
+            }
+        });
+    };
+
+</script>

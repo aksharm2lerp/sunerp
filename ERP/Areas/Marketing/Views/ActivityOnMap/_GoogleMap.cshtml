@@ -1,0 +1,133 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="dvMap" style="width: 500px; height: 300px">
+    </div>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQG4UAJOeOjPGIUluGz4KGPp1PaJaJGxQ&libraries=drawing&v=weekly"></script>
+    <script src="~/Scripts/GMap.NET/gmaps.js"></script>
+
+
+    <script type="text/javascript">
+        var markers = @Html.Raw(ViewBag.Markers);
+        var polygonline = @Html.Raw(ViewBag.drawline);
+        //var drawingManager = new google.maps.drawing.DrawingManager();
+        //var flightPlanCoordinates = [
+        //    { lat: 22.252579, lng: 73.130148 },
+        //    { lat: 22.252141, lng: 73.130259 },
+        //    { lat: 22.252513, lng: 73.130985 },
+        //    { lat: 22.252094, lng: 73.130831 },
+        //    { lat: 22.252462, lng: 73.130737 },
+        //    { lat: 22.252361, lng: 73.130200 },
+        //];
+
+        //      const markers = [
+        //  { lat: 37.772, lng: -122.214 },
+        //  { lat: 21.291, lng: -157.821 },
+        //  { lat: -18.142, lng: 178.431 },
+        //  { lat: -27.467, lng: 153.027 },
+        //];
+
+
+
+        window.onload = function () {
+
+            alert('onload function invoked.');
+            var mapOptions = {
+                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                zoom: 3,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var infoWindow = new google.maps.InfoWindow();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+            var flightPath = new google.maps.Polyline({
+                path: polygonline,
+                geodesic: true,
+                strokeColor: "#5cb5e6",
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+            });
+
+            //let directionsService = new google.maps.DirectionsService();
+            //let directionsRenderer = new google.maps.DirectionsRenderer();
+
+            for (i = 0; i < markers.length; i++) {
+                var data = markers[i]
+                var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+
+                //if(i==1){
+                //    var data1 = markers[i-1]
+                //    var dest = new google.maps.LatLng(data1.lat, data1.lng);
+
+                //    var route = {
+                //        origin: myLatlng,
+                //        destination: dest ,
+                //        travelMode: 'DRIVING'
+                //    }
+                //    directionsService.route(route,
+                //        function (response, status) { // anonymous function to capture directions
+                //            if (status !== 'OK') {
+                //                window.alert('Directions request failed due to ' + status);
+                //                return;
+                //            } else {
+                //                directionsRenderer.setDirections(response); // Add route to the map
+                //                var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
+                //                if (!directionsData) {
+                //                    window.alert('Directions request failed');
+                //                    return;
+                //                }
+                //                //else {
+                //                //    document.getElementById('msg').innerHTML += " Driving distance is " + directionsData.distance.text + " (" + directionsData.duration.text + ").";
+                //                //}
+                //            }
+                //        });
+
+                //    directionsRenderer.setMap(map);
+                //}
+
+
+
+
+
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: data.title,
+                    description: data.description,
+                    animation: google.maps.Animation.DROP
+                });
+
+                //drawingManager.setMap(map);
+                flightPath.setMap(map);
+
+
+                (function (marker, data) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        infoWindow.setContent(data.description);
+                        infoWindow.open(map, marker);
+
+                    });
+                    google.maps.event.addListener(marker, "click", function toggleBounce() {
+                        if (marker.getAnimation() !== null) {
+                            marker.setAnimation(null);
+                        } else {
+                            marker.setAnimation(google.maps.Animation.BOUNCE);
+                        }
+                    });
+
+                })(marker, data);
+
+            }
+        }
+    </script>
+</body>
+</html>

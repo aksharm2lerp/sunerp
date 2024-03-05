@@ -1,0 +1,121 @@
+﻿<!--Main Sidebar Start-->
+@using ERP.Controllers
+@{
+    string path = SettingsController.LOGOPATH;
+    var _mainMenu = SettingsController.MAINMENU;
+    var _parentMenu = SettingsController.PARENTMENU;
+    bool isLogo = false;
+    if (path.IsNotStringNullOrEmpty())
+    {
+        isLogo = true;
+    }
+}
+<div class="sidebar-wrapper" data-simplebar="true">
+    <div class="sidebar-header toggle-icon ms-auto">
+        @if (isLogo)
+        {
+            <div>
+                <img src="@SettingsController.LOGOPATH" class="logo-icon" alt="logo icon">
+            </div>
+        }
+        else
+        {
+            <div>
+                <h4 class="logo-text">@SettingsController.COMPANYNAME</h4>
+            </div>
+        }
+    </div>
+    <!--navigation-->
+    <ul class="metismenu" id="menu">
+        @foreach (var itemPM in _parentMenu)
+        {
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon">
+                        @*<i class='bx bx-user'></i>*@
+                        @Html.Raw(itemPM.PMenuIcon)
+                    </div>
+                    <div class="menu-title">@itemPM.ParentMenuName</div>
+                </a>
+                <ul>
+                    @if (itemPM.ParentMenuID > 0)
+                    {
+                        var mMenu = _mainMenu.Where(x => x.ParentMenuID == itemPM.ParentMenuID).GroupBy(y =>  y.MenuName ).Distinct().ToList();
+                        @foreach (var item in mMenu)
+                        {
+                            <li class="pd-ms-2">
+                                <a href="javascript:;" class="ms-4">
+                                    <div class="parent-icon">
+                                        @*<iconify-icon icon="clarity:thin-client-line" class="parent-icon"></iconify-icon>*@
+                                        @Html.Raw(item.Select(x=> x.MenuIcon).FirstOrDefault())
+                                    </div>
+                                    <div class="menu-title">@Convert.ToString(item.Key)</div>
+                                </a>
+                                <ul>
+                                    @{
+                                        var formName = _mainMenu.Where(x => x.ParentMenuID == itemPM.ParentMenuID && x.MenuName == item.Key).GroupBy(y => y.FormName).Distinct().ToList();
+                                    }
+                                    @foreach (var fname in formName)
+                                    {
+                                        var link = fname.Select(x => new { x.Area, x.Action, x.Controller, x.FormIcon }).FirstOrDefault();
+                                        <li>
+                                            <a class="ms-4" asp-area="@link.Area" asp-controller="@link.Controller" asp-action="@link.Action">
+                                                <div class="parent-icon">@Html.Raw(link.FormIcon)</div>
+                                                &nbsp;@Convert.ToString(fname.Key)
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+
+    <!--end navigation-->
+    <!--Testing Menu dynamically-->
+    <!--Testing Menu dynamically-->
+</div>
+
+<script>
+
+    showLoader();
+
+    function laddaStart(id) {
+        var l = Ladda.create(document.getElementById(id));
+        l.start();
+        return l;
+    }
+
+    function laddaStop(l) {
+        l.stop();
+    }
+
+    function showLoader() {
+        $("body").LoadingOverlay("show", {
+            background: "rgba(136,251,155 0.3)",
+            imageColor: '#8833ff'
+        });
+    }
+
+    function hideloader() {
+        $("body").LoadingOverlay("hide", true);
+    }
+
+    $(function () {
+        hideloader();
+    });
+    $(function () {
+        //hideLoader();
+        ////Handle tooltip behaviour (It will init in all controls)
+        //var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        //var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        //    return new bootstrap.Tooltip(tooltipTriggerEl)
+        //});
+    });
+
+</script>
+
+<!--Main Sidebar End-->

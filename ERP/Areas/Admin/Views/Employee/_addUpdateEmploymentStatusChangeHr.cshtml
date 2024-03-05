@@ -1,0 +1,131 @@
+﻿@model Business.Entities.Employee.EmploymentStatus.EmploymentStatusChangeHr
+
+<form method="post" id="formAddUpdateEmploymentStatusChangeHr" class="row g-3 needs-validation" asp-area="Admin" asp-controller="Employee" asp-action="AddUpdateEmploymentStatusChangeHr">
+@*<form asp-action="_addUpdateEmploymentStatusChangeHr">*@
+    <input type="hidden" asp-for="EmployeeID" />
+    <input type="hidden" asp-for="EmploymentStatusTxnID" />
+
+    <div class=" col-sm-12 col-md-12 col-lg-12 px-3">
+
+        <div class="row mb-3">
+            <label for="" class="col-sm-3 col-form-label ">Employment Status</label>
+            <div class="col-sm-9">
+                <select class="form-select " asp-for="EmploymentStatusID" id="EmploymentStatusID" name="EmploymentStatusID" asp-items="@EmployeeExtension.GetAllEmploymentStatus()">
+                    <option value="">--Select--</option>
+                </select>
+                <span asp-validation-for="EmploymentStatusID" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="" class="col-sm-3 col-form-label ">Date</label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control" asp-for="EmploymentStatusDate" id="EmploymentStatusDate" name="EmploymentStatusDate" placeholder="">
+                <span asp-validation-for="EmploymentStatusDate" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="" class="col-sm-3 col-form-label ">Note</label>
+            <div class="col-sm-9">
+                <textarea class="form-control" rows="4" cols="50" id="EmploymentStatusNote" name="EmploymentStatusNote" asp-for="EmploymentStatusNote" placeholder=""></textarea>
+                <span asp-validation-for="EmploymentStatusNote" class="text-danger"></span>
+            </div>
+        </div>
+
+        @if(Model != null && Model.listEmploymentStatusChangeHrs.Count() > 0)
+        {
+        <div class="row mb-3">
+            <div class="table-responsive-sm">
+                <table class="table">
+                    <thead class="userProfileTableTHead">
+                        <tr>
+                            <th scope="col">Sr No.</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model.listEmploymentStatusChangeHrs)
+                        {
+                            <tr>
+                                <th scope="row">@i.EmploymentStatusID</th>
+                                <td>@i.EmploymentStatusText</td>
+                                <td>@i.EmploymentStatusDate.ToDate()</td>
+                                <td>@i.EmploymentStatusNote</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="modal-footer-sticky text-center">
+        <button type="button" onclick="fnSaveEmploymentStatusHr()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveEmploymentStatusHr">Save</button>
+        <button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Cancel</button>
+
+    </div>
+</form>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+
+    function fnSaveEmploymentStatusHr() {
+        //alert('fnSaveEmploymentStatusHr is invoked');
+        var ls = laddaStart('btnSaveEmploymentStatusHr');
+        modeldata = $("#formAddUpdateEmploymentStatusChangeHr").serialize();
+        $.ajax({
+            type: 'POST',
+            url: '/Admin/Employee/AddUpdateEmploymentStatusChangeHr/',
+            data: modeldata,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                console.log(data.status);
+                if (data.status) {
+                    //AddUpdateEmploymentStatusChangeHr
+                    var test = Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message,
+                    });
+                    setTimeout(
+                        function () {
+                            $("#canvasEmploymentStatusChangeHr").hide();//('hide');
+                        }, 3000);
+                }
+
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: '@MessageHelper.Error'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(ls);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: '@MessageHelper.Error'
+                });
+            }
+        }).always(function () {
+            hideloader();
+        });
+        // };
+    };
+</script>

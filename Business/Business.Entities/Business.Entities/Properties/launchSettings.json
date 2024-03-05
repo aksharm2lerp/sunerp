@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Business.Entities": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharm2l",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53861;http://localhost:53862"
+    }
+  }
+}

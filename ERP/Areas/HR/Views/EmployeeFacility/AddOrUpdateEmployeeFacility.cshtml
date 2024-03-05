@@ -1,0 +1,182 @@
+@using Business.Entities.HR.EmployeeFacilityModel;
+@model EmployeeFacility;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formEmployeeFacility">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="EmployeeFacilityID" />
+                <div class="col-sm-9">
+                  @*  <input type="text" required="" class="form-control" id="EmployeeFacilityText" name="EmployeeFacilityText" asp-for="EmployeeFacilityText">
+                    <span asp-validation-for="EmployeeFacilityText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'><div class='col-12'><div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Employee:</label>
+ <div class='col-sm-9'>
+ <select class='form-select' id='choices-multiple-remove-button-EmployeeID' asp-items='@CommonExtension.GetAllEmployeeAsync()'>
+ <option value=''>Select here...</option>
+ </select>
+ </div>
+ </div>
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Facility Type:</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='FacilityTypeMasterID' asp-for='FacilityTypeMasterID' name='FacilityTypeMasterID'>
+ <span asp-validation-for='FacilityTypeMasterID' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Issue Date:</label>
+ <div class='col-sm-9'>
+ <input type='date' class='form-control' id='IssueDate' asp-for='IssueDate' name='IssueDate'>
+ <span asp-validation-for='IssueDate' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Purpose:</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='Purpose' asp-for='Purpose' name='Purpose'>
+ <span asp-validation-for='Purpose' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Product Code:</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='ProductCode' asp-for='ProductCode' name='ProductCode'>
+ <span asp-validation-for='ProductCode' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Product Description:</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='ProductDescription' asp-for='ProductDescription' name='ProductDescription'>
+ <span asp-validation-for='ProductDescription' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ <div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>Is Returnable:</label><div class='col-sm-9'><input type='checkbox' class='form-check-input' role='switch' asp-for='IsReturnable'><span asp-validation-for='IsReturnable' class='text-danger'></span></div></div><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>Is Chargeable:</label><div class='col-sm-9'><input type='checkbox' class='form-check-input' role='switch' asp-for='IsChargeable'><span asp-validation-for='IsChargeable' class='text-danger'></span></div></div>
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Issued By:</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='IssuedBy' asp-for='IssuedBy' name='IssuedBy'>
+ <span asp-validation-for='IssuedBy' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Received By:</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='ReceivedBy' asp-for='ReceivedBy' name='ReceivedBy'>
+ <span asp-validation-for='ReceivedBy' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ </div></div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateEmployeeFacility", "EmployeeFacility")';
+    function fnSubmit() {
+        if ($("#formEmployeeFacility").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formEmployeeFacility").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+						window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+     $(document).ready(function () {
+
+          let EmployeeIDs = document.getElementById(EmployeeID).value;
+    $.each(EmployeeIDs.split(","), function (i, e) {
+    $("#choices-multiple-remove-button-EmployeeID option[value=" + e + "]").prop("selected", true);
+   });
+ 
+
+
+       
+
+           var multipleCancelButtonParty = new Choices("#choices-multiple-remove-button-EmployeeID", {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+ 
+
+
+    });
+
+
+</script>

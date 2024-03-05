@@ -1,0 +1,134 @@
+@using Business.Entities.DevelopmentArea.FormDatabaseTableModel;
+@model FormDatabaseTable;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formFormDatabaseTable">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="FormDatabaseTableID" />
+                <div class="col-sm-9">
+                  @*  <input type="text" required="" class="form-control" id="FormDatabaseTableText" name="FormDatabaseTableText" asp-for="FormDatabaseTableText">
+                    <span asp-validation-for="FormDatabaseTableText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'><div class='col-12'>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Form ID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for='FormID' id='choices-multiple-remove-button-FormID' asp-items='@CommonExtension.GetAllFormAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Table Name</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for='TableName' id='TableName' asp-items='@CommonExtension.GetAllDatabaseTablesAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Remark</label>
+                        <div class='col-sm-9'>
+                            <textarea type='text' class='form-control' id='Remark' asp-for='Remark' name='Remark' rows="4"></textarea>
+                            <span asp-validation-for='Remark' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+ 
+ </div></div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateFormDatabaseTable", "FormDatabaseTable")';
+    function fnSubmit() {
+        if ($("#formFormDatabaseTable").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formFormDatabaseTable").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+						window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+     $(document).ready(function () {
+
+
+        var multipleCancelButtonTableName = new Choices('#TableName', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-FormID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+ 
+
+
+    });
+
+
+</script>

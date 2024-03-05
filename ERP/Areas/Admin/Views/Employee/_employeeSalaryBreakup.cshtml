@@ -1,0 +1,626 @@
+﻿@using System.Data;
+@*@model Business.Entities.Employee.EmployeeSalaryBreakup*@
+@model System.Data.DataTable;
+@{
+    var dataset = Model;
+    string dataTable = string.Empty;
+    //string jsCode = string.Empty;
+    int? empId = ViewBag.EmployeeID;
+    Dictionary<string, string> dynamicModel = new Dictionary<string, string>();
+}
+<form method="post" id="formAddUpdateEmployeeSalaryBreakup" class="row needs-validation">
+    <input type="hidden" asp-for="@empId" id="employeeId" />
+    @*<input type="hidden" asp-for="EmployeeSalaryBreakupID" />*@
+
+    <!--
+    <div class=" col-sm-12 col-md-6 col-lg-6 border border-dark">
+
+        <div class="row mb-2">
+            <label for="" class="col-sm-3 col-form-label ">Gross Earnings (A):</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="GrossEarnings" name="GrossEarnings" placeholder="">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="" class="col-sm-3 col-form-label ">Net Salary Payable(A-B):</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="NetSalaryPayable" name="NetSalaryPayable" placeholder="">
+            </div>
+        </div>
+
+    </div>
+    <div class=" col-sm-12 col-md-6 col-lg-6 border border-dark">
+
+        <div class="row mb-2">
+            <label for="" class="col-sm-3 col-form-label ">Gross Deductions (B):</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="GrossDeduction" name="GrossDeduction" placeholder="">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="" class="col-sm-3 col-form-label ">Cost To Company (A+B):</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="CostToCompany" name="CostToCompany" placeholder="">
+            </div>
+        </div>
+
+    </div>
+    -->
+
+    <div class=" col-sm-12 col-md-6 col-lg-6">
+
+        <div class="row mb-3">
+            <b>
+                <label for="" class="col-sm-3 col-form-label " color="blue">Employee name:</label><label for="" class="col-sm-8 col-form-label " color="blue">@ViewBag.EmployeeName</label>
+            </b>
+        </div>
+
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-6">
+
+        <div class="row mb-3">
+            <b>
+                <label for="" class="col-sm-3 col-form-label " color="blue">Employee code:</label><label for="" class="col-sm-8 col-form-label " color="blue">@ViewBag.EmployeeCode</label>
+            </b>
+        </div>
+
+    </div>
+
+    <div class=" col-sm-12 col-md-6 col-lg-6 border border-dark" id="divForEarnings">
+
+        <div class="row mb-2">
+            <b>
+                <label for="" class="col-sm-3 col-form-label " color="blue">EARNINGS:</label>
+            </b>
+        </div>
+        @{
+            if (Model != null && Model.Rows.Count > 0)
+            {
+                dataTable = Newtonsoft.Json.JsonConvert.SerializeObject(Model).ToString();
+                //jsCode = $"var jsonObject = JSON.parse('{dataTable}');";
+                int i = 0;
+                var columnName = Model.Columns["SalaryTypeID"].ToString();
+                foreach (DataRow item in Model.Rows)
+                {
+                    /*int salaryTypeId = Convert.ToInt32(item[columnName]);
+                    if (salaryTypeId == 1)
+                    {
+                    dynamicModel.Add(Convert.ToString(item[8]).Replace(" ", ""), Convert.ToString(item[12]));
+                    <div class="row mb-1">
+                    <div class="col-sm-3">
+                    <label for="" class="col-form-label">@Convert.ToString(item[7])</label>
+                    </div>
+                    <div class="col-sm-1">
+                    <label for="" class="col-form-label">(@Convert.ToString(item[8]).Replace(" ",""))</label>
+                    </div>
+                    <div class="col-sm-5">
+                    <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" name="Basic"placeholder="@Convert.ToString(item[9])" value="@Convert.ToString(item[12])">
+                    </div>
+                    <div class="col-sm-3">
+                    <label for="" class="col-form-label">@Convert.ToString(item[9])</label>
+                    </div>
+                    </div>
+                    }*/
+
+                    int salaryTypeId = Convert.ToInt32(item[columnName]);
+                    if (salaryTypeId == 1)
+                    {
+                        string labelValue = Convert.ToString(item[12]);
+                        string formulatext = Convert.ToString(item[9]);
+                        string finalValue = (string.IsNullOrEmpty(labelValue) && string.IsNullOrEmpty(formulatext) && labelValue.Equals("") && formulatext.Equals("")) ? "0.00" : labelValue;
+
+                        <div class="row mb-1">
+                            <div class="col-sm-3">
+                                <label for="" class="col-form-label">@Convert.ToString(item[7])</label>
+                            </div>
+                            <div class="col-sm-1">
+                                <label for="" class="col-form-label">(@Convert.ToString(item[8]).Replace(" ", ""))</label>
+                            </div>
+                            <div class="col-sm-5">
+                                @{
+                                    if (!string.IsNullOrEmpty(Convert.ToString(item[9])))
+                                    {
+                                        <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" readonly>
+                                    }
+                                    else
+                                    {
+                                        <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnCalculateSalary()">
+                                    }
+                                }
+
+
+                                @*<input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" @(Convert.ToString(item[8]).Replace(" ", "").Equals("K") ? "oninput=fnUpdateHRA()" : "oninput=fnUpdateAmount()") @(Convert.ToString(item[8]).Replace(" ", "").Equals("L") ? "oninput=fnUpdateTA()" : "oninput=fnUpdateAmount()") @(Convert.ToString(item[8]).Replace(" ", "").Equals("J") ? "oninput=fnUpdateBasic()" : "oninput=fnUpdateAmount()")>*@
+
+                                <input type="hidden" value="@Convert.ToString(item[6])">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="col-form-label">@Convert.ToString(item[9])</label>
+                            </div>
+                        </div>
+                    }
+                    i++;
+                }
+            }
+        }
+
+    </div>
+
+    <div class=" col-sm-12 col-md-6 col-lg-6 border border-dark" id="divForDeductions">
+
+        @*        <div class="row mb-3">
+        <label for="" class="col-sm-3 col-form-label ">Website:</label>
+        <div class="col-sm-9">
+        <input type="text" class="form-control" asp-for="Website" id="Website" name="Website" placeholder="">
+        </div>
+        </div>*@
+        <div class="row">
+            <b>
+                <label for="" class="col-sm-3 col-form-label " color="blue">DEDUCTIONS:</label>
+            </b>
+        </div>
+
+        @{
+            if (Model != null && Model.Rows.Count > 0)
+            {
+                int i = 0;
+                var columnName = Model.Columns["SalaryTypeID"].ToString();
+                foreach (DataRow item in Model.Rows)
+                {
+                    int salaryTypeId = Convert.ToInt32(item[columnName]);
+                    if (salaryTypeId == 2)
+                    {
+                        string labelValue = Convert.ToString(item[12]);
+                        string formulatext = Convert.ToString(item[9]);
+                        string finalValue = (string.IsNullOrEmpty(labelValue) && string.IsNullOrEmpty(formulatext) && labelValue.Equals("") && formulatext.Equals("")) ? "0.00" : labelValue;
+                        <div class="row mb-1">
+                            <div class="col-sm-3">
+                                <label for="" class="col-form-label">@Convert.ToString(item[7])</label>
+                            </div>
+                            <div class="col-sm-1">
+                                <label for="" class="col-form-label">(@Convert.ToString(item[8]).Replace(" ", ""))</label>
+                            </div>
+                            <div class="col-sm-5">
+                                @{
+                                    if (!string.IsNullOrEmpty(Convert.ToString(item[9])))
+                                    {
+                                        <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" readonly>
+                                    }
+                                    else
+                                    {
+                                        <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnCalculateSalary()">
+                                    }
+                                }<input type="hidden" value="@Convert.ToString(item[6])">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="col-form-label">@Convert.ToString(item[9])</label>
+                            </div>
+                        </div>
+                    }
+                    i++;
+                }
+            }
+        }
+
+    </div>
+
+    @*<div class="col-12 my-3">
+    <button type="button" class="btn btn-primary btn-info px-5 ladda-button" onclick="fnUpdateAmount()">Calculation on Formula</button>
+
+    <label for="" class="col-sm-4 col-form-label text-end">Salary Calculation with Formula</label>&nbsp;
+    <input type="checkbox" class="form-check-input" asp-for="SalaryCalculateWithFormula">
+    </div>*@
+    <div class="col-12 my-3">
+        <button type="button" onclick="fnSaveCalculatedSalary()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveEmployeeSalaryBreakup">Save</button>
+        @* <button type="submit" onclick="fnSaveEmployeeSalaryBreakup()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveEmployeeSalaryBreakup">Save</button>*@
+        @*<button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Cancel</button>*@
+    </div>
+</form>
+
+<link href="~/admin/assets/vendors/typehead/jquery.typeahead.min.css" rel="stylesheet" />
+<script src="~/admin/assets/vendors/typehead/jquery.typeahead.min.js"></script>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+
+<script type="text/javascript">
+    function fnSaveEmployeeSalaryBreakup() {
+        var ls = laddaStart('btnSaveEmployeeSalaryBreakup');
+        modeldata = $("#formAddUpdateEmployeeSalaryBreakup").serialize();
+        $.ajax({
+            type: 'POST',
+            url: '/Admin/Employee/AddUpdateEmployeeSalaryBreakup/',
+            data: modeldata,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                console.log(data.status);
+                if (data.status) {
+                    //notification
+                    //$("#canvasEmployeeHRAdministration").hide();//('hide');
+                    var test = Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message,
+                    });
+                    setTimeout(
+                        function () {
+                            //window.location.reload();
+                            $("#formAddUpdateEmployeeSalaryBreakup").load(window.location.href + " #formAddUpdateEmployeeSalaryBreakup");
+                        }, 3000);
+
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: '@MessageHelper.Error'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(ls);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: '@MessageHelper.Error'
+                });
+            }
+        }).always(function () {
+            hideloader();
+        });
+
+    };
+
+
+    var jsonObjectOK = @Html.Raw(dataTable);
+    var filteredResult;
+    $(document).ready(function () {
+        fnCalculateSalary();
+    });
+    function fnCalculateSalary() {
+
+        var dataTableObject = jsonObjectOK;
+
+        // let ctc = document.getElementById('CostToCompany').value;
+
+        filteredResult = dataTableObject.filter((obj) => {
+            return obj.SalaryFormulaText !== null && obj.SalaryFormulaText !== '';
+        });
+
+        //alert(test[0].SalaryFormulaText);
+        const divEarnings = document.getElementById('divForEarnings');
+        const divWithInput = divEarnings.querySelectorAll('input[type=text]');
+        //for (let i = 0; i < divWithInput.length; i++) {
+        //    const inputId = divWithInput[i].id;
+        //    debugger;
+        //}
+        let indexLength = Number(filteredResult.length - 1);
+        if (filteredResult.length > 0) {
+            $.each(filteredResult, function (i, k) {
+                let test = k.SalaryFormulaText;
+                let targetId = test.charAt(0);
+                var slicedValues = test.slice(2);
+                if (test !== null && test !== "") {
+                    for (const strChar of slicedValues) {
+                        var replaceValue = document.getElementById(strChar);
+                        if (replaceValue) {
+                            let repValue = replaceValue.value;
+                            slicedValues = slicedValues.replace(strChar, repValue);
+                        }
+                        else {
+                            if (!replaceValue && slicedValues.includes('-' + strChar) && (strChar !== '0' && strChar !== '.')) {
+                                slicedValues = slicedValues.replace(strChar, 0)
+                            }
+                            if (!replaceValue && slicedValues.includes('*' + strChar) && (strChar !== '0' && strChar !== '.')) {
+                                slicedValues = slicedValues.replace(strChar, 1)
+                            }
+                        }
+                    }
+                }
+                let calcValue = slicedValues;//.replace('D', 1).replace('I', 1);
+
+                let id = document.getElementById(targetId);
+                var vals = eval(calcValue);
+
+                if (id && vals) {
+                    id.value = Number(parseFloat(vals.toFixed(0)));
+                    // if (indexLength === i) {
+
+                    //     // document.getElementById('NetSalaryPayable').value = Number(parseFloat(vals.toFixed(0)));
+                    // }
+                }
+            });
+        }
+    }
+
+    // window.onload = function () {
+    //ACTUAL_DAYS
+    // let urlEmployeeActualDays = '@@Url.Action("GetEmployeeSalaryBreakupDetail","Employee")';
+    // let employeeId = document.getElementById('employeeId').value;
+    // let params = { employeeId: employeeId };
+    // debugger;
+    // $.ajax({
+    //     type: 'GET',
+    //     url: urlEmployeeActualDays,
+    //     data: params,
+    //     dataType: 'json',
+    //     success: function (data) {
+    //         debugger;
+    //         if (data.status) {
+
+    //         }
+    //         else {
+    //             Lobibox.notify('error', {
+    //                 pauseDelayOnHover: true,
+    //                 size: 'mini',
+    //                 icon: 'bx bx-check-circle',
+    //                 continueDelayOnInactiveTab: false,
+    //                 position: 'bottom right',
+    //                 msg: 'Error to load employees actual days.'
+    //             });
+    //         }
+    //     },
+    //     error: function (error) {
+    //         laddaStop(ls);
+    //         Lobibox.notify('error', {
+    //             pauseDelayOnHover: true,
+    //             size: 'mini',
+    //             icon: 'bx bx-check-circle',
+    //             continueDelayOnInactiveTab: false,
+    //             position: 'bottom right',
+    //             msg: '@@MessageHelper.Error'
+    //         });
+    //     }
+    // }).always(function () {
+    //     hideloader();
+    // });
+    // fnCalculateSalary();
+    // };
+
+    function fnSaveCalculatedSalary() {
+
+        let employeeId = @empId;
+
+        const divEarnings = document.getElementById('divForEarnings');
+        const divEarningsWithInput = divEarnings.querySelectorAll('input[type=text]');
+        const divEarningsWithHidden = divEarnings.querySelectorAll('input[type=hidden]');
+
+        const divDeductions = document.getElementById('divForDeductions');
+        const divDeductionsWithInput = divDeductions.querySelectorAll('input[type=text]');
+        const divDeductionsWithHidden = divDeductions.querySelectorAll('input[type=hidden]');
+
+        var jsonObjectCalculationData = [];
+        for (let i = 0; i < divEarningsWithHidden.length; i++) {
+
+            const salaryHeadID = divEarningsWithHidden[i].value;
+            const salaryHeadValue = divEarningsWithInput[i].value;
+
+            const tempJson = { 'EmployeeSalaryBreakupID': 0, 'EmployeeID': employeeId, 'SalaryHeadID': salaryHeadID, 'SalaryHeadValue': salaryHeadValue };
+            jsonObjectCalculationData.push(tempJson);
+            //jsonObjectCalculationData['EmployeeSalaryBreakupID'] = 0;
+            //jsonObjectCalculationData['EmployeeID'] = employeeId;
+            //jsonObjectCalculationData['SalaryHeadID'] = salaryHeadID;
+            //jsonObjectCalculationData['SalaryHeadValue'] = salaryHeadValue;
+        }
+
+        for (let i = 0; i < divDeductionsWithHidden.length; i++) {
+
+            const salaryHeadID = divDeductionsWithHidden[i].value;
+            const salaryHeadValue = divDeductionsWithInput[i].value;
+
+            const tempJson = { 'EmployeeSalaryBreakupID': 0, 'EmployeeID': employeeId, 'SalaryHeadID': salaryHeadID, 'SalaryHeadValue': salaryHeadValue };
+            jsonObjectCalculationData.push(tempJson);
+        }
+
+        var jsonString = JSON.stringify(jsonObjectCalculationData);
+        var params = { employeeSalaryBreakupJson: jsonString };
+        $.ajax({
+            type: 'POST',
+            url: '/Admin/Employee/AddUpdateEmployeeSalaryBreakup/',
+            data: params,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    //notification
+                    //$("#canvasEmployeeHRAdministration").hide();//('hide');
+                    var test = Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message,
+                    });
+                    setTimeout(
+                        function () {
+                            //window.location.reload();
+                            $("#formAddUpdateEmployeeSalaryBreakup").load(window.location.href + " #formAddUpdateEmployeeSalaryBreakup");
+                        }, 3000);
+
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: '@MessageHelper.Error'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(ls);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: '@MessageHelper.Error'
+                });
+            }
+        }).always(function () {
+            hideloader();
+        });
+    }
+
+    function fnUpdateAmount() {
+
+        let actualDays = parseFloat(document.getElementById('A').value) ?? 0;
+        let actualWages = parseFloat(document.getElementById('B').value) ?? 0;
+        let otHours = parseFloat(document.getElementById('C').value) ?? 0;
+        let actualPayable = parseFloat(document.getElementById('E').value) ?? 0;
+        let noOfDays = parseFloat(document.getElementById('F').value) ?? 0;
+        let basicPerDay = parseFloat(document.getElementById('G').value) ?? 0;
+        let daPerDay = parseFloat(document.getElementById('H').value) ?? 0;
+
+
+        let total = basicPerDay + daPerDay;
+        let daPercent = Number(((daPerDay / total) * 100).toFixed(2));
+        let basicPercent = Number((100 - daPercent).toFixed(2));
+
+
+        if (actualDays !== NaN && actualDays >= 0 && actualPayable !== NaN && actualPayable >= 0) {
+
+            document.getElementById('B').value = Number((actualPayable / actualDays).toFixed(2));
+
+            let jValue = document.getElementById('J');
+            jValue.value = Number(total * noOfDays);
+
+            let kValue = document.getElementById('K');
+            kValue.value = Number(actualPayable * 0.3);
+
+            let lValue = document.getElementById('L');
+            lValue.value = Number(actualPayable - parseFloat(jValue.value) - parseFloat(kValue.value));
+
+            let qValue = document.getElementById('Q');
+            qValue.value = Number(parseFloat(jValue.value) + parseFloat(kValue.value) + parseFloat(lValue.value));
+
+            let nValue = document.getElementById('N');
+            nValue.value = Number((parseFloat(jValue.value) * 0.12).toFixed(2));
+
+            let oValue = document.getElementById('O');
+            oValue.value = Number((parseFloat(jValue.value) * 0.0833).toFixed(2));
+
+            let pValue = document.getElementById('P');
+            pValue.value = Number((parseFloat(jValue.value) * 0.0367).toFixed(2));
+
+            let xValue = document.getElementById('X');
+            let rValue = 0;
+
+            if (qValue.value > 11999) {
+                let newRValue = document.getElementById('R');
+                rValue = newRValue.value;
+            }
+
+            let sValue = document.getElementById('S');
+            let tValue = document.getElementById('T');
+            let uValue = document.getElementById('U');
+            let vValue = document.getElementById('V');
+            let wValue = document.getElementById('W');
+
+            xValue.value = Number(parseFloat(qValue.value) - parseFloat(rValue) - parseFloat(sValue.value) - parseFloat(tValue.value) - parseFloat(uValue.value) - parseFloat(wValue.value) - parseFloat(vValue.value));
+        }
+    };
+
+    function fnUpdateHRA() {
+
+        let eValue = document.getElementById('E').value;
+        let jValue = document.getElementById('J').value;
+        let kValue = document.getElementById('K').value;
+        let lValue = document.getElementById('L').value;
+
+        // Calculate when HRA value changed
+        if (kValue !== NaN && kValue > 0) {
+            let result = Number(parseInt(jValue) + parseInt(kValue));
+            document.getElementById('L').value = Number((eValue - result).toFixed(2));
+        }
+        // if (lValue !== NaN && lValue > 0){
+        //     document.getElementById('K').value = Number((jValue - lValue).toFixed(2));
+        // }
+
+
+        // if (jValue !== NaN && jValue > 0) {
+
+        //     if (kValue !== NaN && kValue > 0) {
+        //         document.getElementById('L').value = Number( (jValue - kValue).toFixed(2));
+        //     }
+        //     if (lValue !== NaN && lValue > 0){
+        //         document.getElementById('K').value = Number((jValue - lValue).toFixed(2));
+        //     }
+        // }
+        //let nValue = document.getElementById('N').value;
+        //let oValue = document.getElementById('O').value;
+        //let pValue = document.getElementById('P').value;
+    }
+
+    function fnUpdateTA() {
+
+        let eValue = document.getElementById('E').value;
+        let jValue = document.getElementById('J').value;
+        let kValue = document.getElementById('K').value;
+        let lValue = document.getElementById('L').value;
+
+        // Calculate when TA value changed
+        if (lValue !== NaN && lValue > 0) {
+            let result = Number(parseInt(jValue) + parseInt(lValue));
+            document.getElementById('K').value = Number((eValue - result).toFixed(2));
+        }
+    }
+
+    function fnUpdateBasic() {
+
+        let jValue = document.getElementById('J').value;
+
+        // Calculate when Basic value changed
+        if (jValue !== NaN && jValue > 0) {
+
+            let eValue = document.getElementById('E').value;
+            let fValue = document.getElementById('F').value;
+            let kValue = document.getElementById('K').value;
+            let lValue = document.getElementById('L').value;
+
+            document.getElementById('G').value = Number(parseInt(jValue) / parseInt(fValue));
+
+            let nValue = document.getElementById('N');
+            nValue.value = Number((parseFloat(jValue) * 0.12).toFixed(2));
+
+            let oValue = document.getElementById('O');
+            oValue.value = Number((parseFloat(jValue) * 0.0833).toFixed(2));
+
+            let pValue = document.getElementById('P');
+            pValue.value = Number((parseFloat(jValue) * 0.0367).toFixed(2));
+
+            let result = Number(parseInt(jValue) + parseInt(kValue));
+            document.getElementById('L').value = Number((eValue - result).toFixed(2));
+        }
+    }
+
+    function fnUpdateActualPayable() {
+        let aValue = document.getElementById('A').value;
+        let bValue = document.getElementById('B').value;
+        let cValue = document.getElementById('C').value;
+        let eValue = document.getElementById('E');
+
+        if (aValue !== NaN && aValue > 0 && bValue !== NaN && bValue > 0) {
+            eValue.value = Number(parseInt(aValue) * parseInt(bValue));
+            if (cValue !== NaN && cValue > 0) {
+                let perHourAmount = Number(parseInt(bValue) / 12);
+                let otResult = Number(parseInt(perHourAmount) * parseInt(cValue));
+                eValue.value = Number(parseInt(eValue.value) + parseInt(otResult));
+            }
+        }
+    }
+
+</script>

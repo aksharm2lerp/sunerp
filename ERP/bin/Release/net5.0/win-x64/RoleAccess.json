@@ -1,0 +1,44 @@
+{
+  "roleAccess": [
+    {
+      "id": 0,
+      "roleId": null,
+      "userID": "7",
+      "compnayID": "1",
+      "userClaims": [
+        {
+          "id": 0,
+          "userID": 7,
+          "companyID": 0,
+          "claimType": null,
+          "claimValue": "Admin-Home-Index",
+          "roleID": 0,
+          "roleName": null
+        },
+        {
+          "id": 0,
+          "userID": 7,
+          "companyID": 0,
+          "claimType": null,
+          "claimValue": "Admin-Users-Index",
+          "roleID": 0,
+          "roleName": null
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "roleId": null,
+      "userID": "29",
+      "compnayID": "1",
+      "userClaims": []
+    },
+    {
+      "id": 3,
+      "roleId": null,
+      "userID": "1",
+      "compnayID": "1",
+      "userClaims": []
+    }
+  ]
+}

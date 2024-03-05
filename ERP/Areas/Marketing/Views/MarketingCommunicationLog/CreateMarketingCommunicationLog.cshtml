@@ -1,0 +1,423 @@
+﻿@using ERP.Helpers
+@model Business.Entities.Marketing.CommunicationLog.CommunicationLog;
+@{
+    int i = 0;
+    int index = Model.marketingCommunicationLogDetails.Count();
+}
+<form class="form-horizontal" role="form" id="formMarketingCommunicationLog">
+    <input type="hidden" asp-for="PositiveNotesArray" name="PositiveNotesArray" id="PositiveNotesArray" />
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="MarketingCommunicationLogID" />
+                <label class="col-sm-3 col-form-label">Contact By Person<span class="required">*</span></label>
+                <div class="col-sm-9">
+                    <input type="text" required="" class="form-control" id="ContactByPerson" name="ContactByPerson" asp-for="ContactByPerson">
+                    <span asp-validation-for="ContactByPerson" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Contact To<span class="required">*</span></label>
+                <div class="col-sm-9">
+                    <input type="text" required="" class="form-control" id="ContactTo" name="ContactTo" asp-for="ContactTo">
+                    <span asp-validation-for="ContactTo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Contact Channel<span class="required">*</span></label>
+                <div class="col-sm-9">
+                    <select asp-for="ContactChannelTypeID" asp-items="ViewBag.ContactChannelText" class="form-control" required="">
+                        <option value="">Select Contact Channel...</option>
+                    </select>
+                    <span asp-validation-for="ContactChannelTypeID" class="text-danger "></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="Email" name="Email" asp-for="Email">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Mobile No.<span class="required">*</span></label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="MobileNo" name="MobileNo" asp-for="MobileNo" required="">
+                    <span asp-validation-for="MobileNo" class="text-danger "></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Venue Type</label>
+                <div class="col-sm-9">
+                    <select asp-for="VenueTypeID" asp-items="ViewBag.VenueTypeText" class="form-control">
+                        <option value="">Select Venue Type...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Party Type</label>
+                <div class="col-sm-9">
+                    <select asp-for="PartyTypeID" asp-items="ViewBag.PartyTypeText" class="form-control">
+                        <option value="">Select Party Type...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Date</label>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control" id="CommunicationLogDate" name="CommunicationLogDate" asp-for="CommunicationLogDate">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Place Of Meeting</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="PlaceOfMeeting" name="PlaceOfMeeting" asp-for="PlaceOfMeeting">
+                </div>
+            </div>
+
+
+            <!-- Important code, Commented by Rahul Mistry
+            @*<div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Feedback</label>
+                <div class="col-sm-9">
+                    <select class="form-select" id="choices-multiple-remove-button" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" multiple>
+                        @*<option value="">--Select--</option>
+                    </select>
+                </div>
+            </div>*@-->
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Feedback</label>
+                <div class="col-sm-9">
+                   
+                    <a class="MCLFAB fa-lg" id="btnAddFeedback"><iconify-icon icon="material-symbols:add-circle-outline-rounded" class="parent-icon"></iconify-icon></a>
+                    <div class="col-sm-12">
+                    </div>
+
+                    <div id="addMoreFeedback">
+
+                        @if (Model != null)
+                        {
+                            if (Model.marketingCommunicationLogDetails.Count > 0)
+                            {
+                                foreach (var item in Model.marketingCommunicationLogDetails)
+                                {
+                                    <div id="@("removeAddMoreDiv" +i)" class="col-xs-12 col-sm-12 form-group">
+                                        <input type="hidden" asp-for="@item.MarketingCommunicationLogDetailID" id="MarketingCommunicationLogDetailID" name="MarketingCommunicationLogDetailID"/>
+                                        <input type="hidden" asp-for="@item.MarketingCommunicationLogID" id="MarketingCommunicationLogID" name="MarketingCommunicationLogID"/>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <select class='form-select' asp-for="@item.PositiveNoteID" name="@("SelectName"+i)" id="@("selectedId" + i)" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()">
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input placeholder="Response" type="text" class="form-control" asp-for="@item.Response" name="@("Response"+i)" id="@("selectedResponse"+i)" />
+                                            </div>
+                                            <div class="col-md-4">
+
+                                                @*MCLFSB MarketingCommunicationLogFeedbackStoreButton*@
+                                               @* <a class="MCLFSB fa-2x" id="btnRemove" onclick="@("fnLockDiv("+i+")")"><iconify-icon icon="material-symbols:arrow-circle-right-outline-rounded"></iconify-icon></a>&ensp;*@
+                                               
+                                                @*MCLFRB MarketingCommunicationLogFeedbackRemoveButton*@
+                                                <a class="MCLFRB fa-2x" id="btnRemove" onclick="@("fnRemoveDiv("+i+")")"><iconify-icon icon="mdi:remove-circle-outline"></iconify-icon></a>
+                                            </div>
+                                        </div>                                   
+                                    </div>
+                                    i++;
+                                }
+                            }
+                        }
+                    </div>
+
+                    @*     <select class="form-select" id="choices-multiple-remove-button" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" multiple>
+                    @*<option value="">--Select--</option>
+                    </select>*@
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Notes</label>
+                <div class="col-sm-9">
+                    <textarea class="form-control" rows="4" id="Note" name="Note" asp-for="Note"></textarea>
+                    <span asp-validation-for="Note" class="text-danger "></span>
+                </div>
+            </div>
+
+            @*<div class="row mb-3 pb-3">
+            <label class="col-sm-3 col-form-label">Feedback</label>
+            <div class="col-sm-9">
+            <textarea class="form-control" rows="4" id="Feedback" name="Feedback" asp-for="Feedback"></textarea>
+            <span asp-validation-for="Feedback" class="text-danger "></span>
+            </div>
+            </div>*@
+
+
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-lx-6">
+                    <label for="" class="col-form-label">Sent Document</label>
+                    @*<div class="col-sm-9">*@
+                    <input type="checkbox" class="form-check-input" asp-for="IsSentDocument" data-on-text="Yes" data-off-text="No">
+                    @*</div>*@
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-6 col-lx-6">
+                    <label for="" class="col-form-label">Sent Marketing Document</label>
+                    @*<div class="col-sm-9">*@
+                    <input type="checkbox" class="form-check-input" asp-for="IsSentMarketingDocument" data-on-text="Yes" data-off-text="No">
+                    @*</div>*@
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-lx-12">
+                    <label for="" class="col-form-label">They provided any other reference for better business</label>
+                    <input type="checkbox" class="form-check-input" asp-for="ReferenceBetterBusiness" data-on-text="Yes" data-off-text="No">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">If provided reference, Mobile No / Email Id</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="ReferenceMobileOrEmail" name="ReferenceMobileOrEmail" asp-for="ReferenceMobileOrEmail">
+                </div>
+            </div>
+
+            <input type="hidden" id="FeedbackNoteID" asp-for="FeedbackNoteID" name="FeedbackNoteID" />
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var i = 0;
+    var urlsave = '@Url.Action("InsertOrUpdateMarketingCommunicationLog", "MarketingCommunicationLog")';
+    var div = document.getElementById('addMoreFeedback');
+    var selectedValue = div.querySelectorAll("select");
+    var inputValues = div.querySelectorAll("input[type='text']");
+    var divIdsArray = [];
+    //$(document).ready(function () {
+    //    let feedbackNoteIds = document.getElementById("FeedbackNoteID").value;
+    //    $.each(feedbackNoteIds.split(","), function (i, e) {
+    //        $("#choices-multiple-remove-button option[value='" + e + "']").prop("selected", true);
+    //    });
+    //});
+
+    function fnSubmit() {
+
+        var drpArray = [];
+        var elements1 = div.querySelectorAll('select, input');
+        if (elements1.length > 0) {
+            for (var k = 0; k < elements1.length; k++) {
+                drpArray.push(elements1[k].value);
+            }
+        }
+        let feedbackIds = document.getElementById("FeedbackNoteID");
+        let positiveIdsNotes = document.getElementById('PositiveNotesArray');
+        positiveIdsNotes.value = drpArray.toString();
+
+        if ($("#formMarketingCommunicationLog").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formMarketingCommunicationLog").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_CommunicatioLog").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                    window.location.reload().delay(6000);
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    // Added by Rahul Mistry on 17 Apr 2023
+
+    $(document).ready(function () {
+        $('#btnAddFeedback').click(function () {
+
+            //$('#btnAddFeedback').on('click', function () {
+            let noOfIs = @index;
+            if (noOfIs > 0 && i <= noOfIs) {
+                i = noOfIs;
+                //i++;
+            }
+
+            var newDiv = "<div id='removeAddMoreDiv" + i + "' class='col-xs-12 col-sm-12 form-group'><input type='hidden' id='MarketingCommunicationLogDetailID' name='MarketingCommunicationLogDetailID' value='0'/><input type='hidden' id='MarketingCommunicationLogID' name='MarketingCommunicationLogID' value='" + @Model.MarketingCommunicationLogID+"'/><div class='row'><div class='col-md-4'><select class='form-select' name='SelectName" + i + "' id='selectedId" + i + "' onchange='fnLockDiv(" + i + ")'></select></div><div class='col-md-4'><input type='text' class='form-control' name='Response" + i + "' id='selectedResponse" + i + "' onchange='fnLockDiv(" + i + ")'/></div><div class='col-md-4'><a class='MCLFRB fa-2x' id='btnRemove' onclick='fnRemoveDiv(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></div></div></div>";
+
+            /*BELOW CODE IMPORTANT CODE
+
+            //var newDiv = "<div id='removeAddMoreDiv" + i + "' class='col-xs-12 col-sm-12 form-group'><input type='hidden' id='MarketingCommunicationLogDetailID' name='MarketingCommunicationLogDetailID' value='0'/><input type='hidden' id='MarketingCommunicationLogID' name='MarketingCommunicationLogID' value='" + @Model.MarketingCommunicationLogID+"'/><div class='row'><div class='col-md-4'><select class='form-select' name='SelectName" + i + "' id='selectedId" + i + "' onchange='fnLockDiv(" + i + ")'></select></div><div class='col-md-4'><input type='text' class='form-control' name='Response" + i + "' id='selectedResponse" + i + "' onchange='fnLockDiv(" + i + ")'/></div><div class='col-md-4'><a class='MCLFSB fa-2x' id='btnRemove' onclick='fnLockDiv(" + i + ")'><iconify-icon icon='material-symbols:arrow-circle-right-outline-rounded'></iconify-icon><a>&ensp;<a class='MCLFRB fa-2x' id='btnRemove' onclick='fnRemoveDiv(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></div></div></div>";
+            
+            ABOVE CODE IMPORTANT CODE   */
+
+            div.innerHTML += newDiv;
+
+            var myselected = document.getElementById('selectedId' + i);
+
+            $.getJSON("/Marketing/MarketingCommunicationLog/GetAllMarketingClientFeedbackNote/",
+                function (data) {
+                    var newHTML = "";
+                    for (var l = 0; l < data.length; l++) {
+                        newHTML += "<option id='" + data[l].positiveNoteID + "' value='" + data[l].positiveNoteID + "'>" + data[l].positiveNoteText + "</option>";
+                    }
+                    //employeeDropdown.innerHTML = newHTML;
+                    myselected.innerHTML = newHTML;
+                });
+            i++;
+
+
+            $(function () {
+                for (var j = 0; j < divIdsArray.length; j++) {
+                    var divContent = divIdsArray[j];
+                    //var inputvalue = inputValues[j].value;
+                    var test = localStorage.getItem(divContent);
+                    document.getElementById(divIdsArray[j]).value = test;
+                    //selectedValues.push(selectedDrps[j].value);
+                }
+            });
+            //$(function () {   //  Code block for hold selected values.
+
+
+            //    $("#removeAddMoreDiv" + i).load(window.location.href + " #removeAddMoreDiv" + i);
+
+            //    var selectedDrps = div.querySelectorAll("select");
+            //    var selectedValues = [];
+            //    for (var m = 0; m < selectedDrps.length; m++) {
+
+            //        selectedDrps[m].onchange = function () {
+            //            debugger;
+            //            var selectedKey = this.id;
+            //            var selectedValue = this.value;
+            //            localStorage.setItem(selectedKey, selectedValue);
+            //        };
+            //        //selectedValues.push(selectedDrps[m].value);
+            //    }
+
+            //    for (var n = 0; n < selectedDrps.length; n++) {
+            //        var selectedKey = selectedDrps[n].id; // Get the ID of the <select> element
+            //        var savedValue = localStorage.getItem(selectedKey);
+            //        debugger;
+            //        if (savedValue) {
+            //            selectedDrps[n].value = savedValue;
+            //        }
+            //    }
+
+            //    for (var h = 0; h < inputValues.length; h++) {
+            //        debugger;
+            //        var inputkey = inputValues[h].id; // Get the ID of the <select> element
+            //        document.getElementById(inputkey).value = localStorage.getItem(inputkey);
+            //        //var test = '#'+inputkey+'';
+            //        //var vals = '';
+            //        //vals = savedinputValues;
+            //        //debugger
+            //        //if (savedinputValues!=null) {
+            //        //    document.getElementById(inputkey).value = vals;
+            //        //    //inputValues[h].value = savedinputValues;
+            //        //}
+            //    }
+            //});
+
+
+        });
+    });
+
+    function fnRemoveDiv(removeid) {
+        const _id = removeid;
+        const divRemove = document.getElementById('removeAddMoreDiv' + _id);
+        divRemove.remove();
+        //$("#addMoreFeedback").load(window.location.href + " #addMoreFeedback");
+    };
+
+    function fnLockDiv(lockId){
+        //alert('lock fn invoked with id no.:' + lockId);
+        //divIdsArray.push('removeAddMoreDiv' + lockId);
+        //const divElement = document.getElementById('removeAddMoreDiv' + lockId);
+        
+        const elselect = document.getElementById('selectedId' + lockId);
+        divIdsArray.push('selectedId' + lockId);
+        localStorage.setItem('selectedId' + lockId, elselect.value);
+
+        const elInput = document.getElementById('selectedResponse' + lockId);
+        divIdsArray.push('selectedResponse' + lockId);
+        localStorage.setItem('selectedResponse' + lockId, elInput.value);
+        //const divElementString = divElement.outerHTML;
+    };
+
+                                                    //function btnClick() {
+                                                    //    alert('submited');
+                                                    //    var drpArray = [];
+                                                    //    var elements1 = div.querySelectorAll('select, input');
+                                                    //    if (elements1.length > 0) {
+                                                    //        for (var k = 0; k < elements1.length; k++) {
+                                                    //            drpArray.push(elements1[k].value);
+                                                    //        }
+                                                    //    }
+                                                    //};
+
+                                                //$(function () {   //  Code block for hold selected values.
+                                                //    var selectedDrps = div.querySelectorAll("select");
+                                                //    var selectedValues = [];
+                                                //    for (var i = 0; i < selectedDrps.length; i++) {
+                                                //        selectedDrps[i].onchange = function(){
+                                                //        debugger;
+                                                //            var key = this.id;
+                                                //            var value = this.value;
+                                                //            localStorage.setItem(key,value);
+                                                //        };
+                                                //        //selectedValues.push(selectedDrps[i].value);
+                                                //    }
+                                                //});
+                                                                    // Added by Rahul Mistry on 17 Apr 2023
+</script>

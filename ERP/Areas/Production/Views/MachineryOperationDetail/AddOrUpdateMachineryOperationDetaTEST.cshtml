@@ -1,0 +1,261 @@
+@using Business.Entities.Production.MachineryOperationDetailModel;
+@model MachineryOperationDetail;
+@{
+    //$ViewBag$
+}
+@{
+    var test = Model;
+    var newTest = Model.machineryUtilityConsumptions;
+    int index = (newTest == null || newTest.Count() <= 0) ? 0 : newTest.Count();
+    int i = 0;
+}
+<form class="form-horizontal" role="form" id="formMachineryOperationDetail">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="MachineryOperationDetailID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="MachineryOperationDetailText" name="MachineryOperationDetailText" asp-for="MachineryOperationDetailText">
+                    <span asp-validation-for="MachineryOperationDetailText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Operation/Uses</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='OperationUses' asp-for='OperationUses' name='OperationUses'>
+                            <span asp-validation-for='OperationUses' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Production Capacity</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ProductionCapacity' asp-for='ProductionCapacity' name='ProductionCapacity'>
+                            <span asp-validation-for='ProductionCapacity' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>No of Operators</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='NoOfOperators' asp-for='NoOfOperators' name='NoOfOperators'>
+                            <span asp-validation-for='NoOfOperators' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>No of Helpers</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='NoOfHelpers' asp-for='NoOfHelpers' name='NoOfHelpers'>
+                            <span asp-validation-for='NoOfHelpers' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Power Consumption</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='PowerConsumption' asp-for='PowerConsumption' name='PowerConsumption'>
+                            <span asp-validation-for='PowerConsumption' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Utility</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for="UtilityID" id='choices-multiple-remove-button-UtilityID' asp-items='@CommonExtension.GetAllUtilityAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <div class='col-sm-9'>
+                            <a class="MCLFAB fa-lg" id="btnAddFeedback" onclick="fnAddUtilityConsumptionDiv()"><iconify-icon icon="material-symbols:add-circle-outline-rounded" class="parent-icon"></iconify-icon></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>UOM</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for="UOMID" id='choices-multiple-remove-button-UOMID' asp-items='@CommonExtension.GetAllUOMAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Risk Factor</label>
+                        <div class='col-sm-9'>
+                            <textarea class="form-control" rows="4" cols="50" id="RiskFactor" name="RiskFactor" asp-for="RiskFactor"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="row mb-3">
+                @*<label class="col-sm-3 col-form-label">Feedback</label>*@
+                <div class="col-sm-9">
+                    <div class="col-sm-12">
+                    </div>
+
+                    <div id="addMoreUtilityConsumptions">
+
+                        @if (Model != null)
+                        {
+                            if (Model.machineryUtilityConsumptions.Count > 0)
+                            {
+                                foreach (var item in Model.machineryUtilityConsumptions)
+                                {
+                                    <div id="@("removeAddMoreDivUtilityConsumptions" +i)" class="col-xs-12 col-sm-12 form-group">
+                                        <input type="hidden" asp-for="@item.MachineryUtilityConsumptionID" id="MachineryUtilityConsumptionID" name="MachineryUtilityConsumptionID">
+                                        <input type="hidden" asp-for="@item.MachineryOperationDetailID" id="MachineryOperationDetailID" name="MachineryOperationDetailID">
+                                        <div id="@("removeAddMoreDivUtilityConsumptions"+i)" class="col-xs-12 col-sm-12 form-group">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <select class='form-select' asp-for="@item.UtilityID" name="@("SelectUtility"+i)" id="@("selectedUtilityId" + i)" asp-items="@CommonExtension.GetAllUtilityAsync()">
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input placeholder="Number" class="form-control" asp-for="@item.Number" name="@("Number"+i)" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <select class='form-select' asp-for="@item.UOMID" name="@("SelectUOM"+i)" id="@("selectedUOMId" + i)" asp-items="@CommonExtension.GetAllUOMAsync()">
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <a class="MCLFRB fa-2x" id="btnRemove" onclick="@("fnRemoveDiv("+i+")")"><iconify-icon icon="mdi:remove-circle-outline"></iconify-icon></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    i++;
+                                }
+                            }
+                        }
+
+                    </div>
+                    @*     <select class="form-select" id="choices-multiple-remove-button" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" multiple>
+                    @*<option value="">--Select--</option>
+                    </select>*@
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer-sticky text-center">
+            <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+            <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateMachineryOperationDetail", "MachineryOperationDetail")';
+    //var div = document.getElementById('addMoreUtilityConsumptions');
+    var divIdsArray = [];
+    var i = 0;
+
+    function fnSubmit() {
+        if ($("#formMachineryOperationDetail").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formMachineryOperationDetail").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+        let UOMIDs = document.getElementById('choices-multiple-remove-button-UOMID').value;
+        $.each(UOMIDs.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-UOMID option[value=" + e + "]").prop('selected', true);
+        });
+
+        let UtilityIDs = document.getElementById('choices-multiple-remove-button-UtilityID').value;
+        $.each(UtilityIDs.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-UtilityID option[value=" + e + "]").prop('selected', true);
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-UOMID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-UtilityID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+    });
+
+</script>

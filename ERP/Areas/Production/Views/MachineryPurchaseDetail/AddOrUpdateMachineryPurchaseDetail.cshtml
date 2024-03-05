@@ -1,0 +1,242 @@
+@using Business.Entities.Production.MachineryPurchaseDetailModel;
+@model MachineryPurchaseDetail;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formMachineryPurchaseDetail">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="MachineryPurchaseDetailID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="MachineryPurchaseDetailText" name="MachineryPurchaseDetailText" asp-for="MachineryPurchaseDetailText">
+                    <span asp-validation-for="MachineryPurchaseDetailText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Item Code</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ItemCode' asp-for='ItemCode' name='ItemCode' disabled readonly>
+                            <span asp-validation-for='ItemCode' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Machinery</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' onchange="fnFillItemCode()" id='choices-multiple-remove-button-MachineryID' asp-items='@CommonExtension.GetAllMachineryAsync()' asp-for='MachineryID'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>GRN No</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='GRNNo' asp-for='GRNNo' name='GRNNo'>
+                            <span asp-validation-for='GRNNo' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>GRN Date</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='GRNDate' asp-for='GRNDate' name='GRNDate'>
+                            <span asp-validation-for='GRNDate' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Invoice No</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='InvoiceNo' asp-for='InvoiceNo' name='InvoiceNo'>
+                            <span asp-validation-for='InvoiceNo' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Invoice Date</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='InvoiceDate' asp-for='InvoiceDate' name='InvoiceDate'>
+                            <span asp-validation-for='InvoiceDate' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Company Manufacturer Name</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='CompanyManufacturerName' asp-for='CompanyManufacturerName' name='CompanyManufacturerName'>
+                            <span asp-validation-for='CompanyManufacturerName' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Country Origin</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='CountryOrigin' asp-for='CountryOrigin' name='CountryOrigin'>
+                            <span asp-validation-for='CountryOrigin' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Model Number</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ModelNumber' asp-for='ModelNumber' name='ModelNumber'>
+                            <span asp-validation-for='ModelNumber' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Manufacturing Date</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='ManufacturingDate' asp-for='ManufacturingDate' name='ManufacturingDate'>
+                            <span asp-validation-for='ManufacturingDate' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Part Number</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='PartNumber' asp-for='PartNumber' name='PartNumber'>
+                            <span asp-validation-for='PartNumber' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Account Head</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='AccountHead' asp-for='AccountHead' name='AccountHead'>
+                            <span asp-validation-for='AccountHead' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Manufacturing Serial Number</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ManufacturingSerialNumber' asp-for='ManufacturingSerialNumber' name='ManufacturingSerialNumber'>
+                            <span asp-validation-for='ManufacturingSerialNumber' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Purchase Amount</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='PurchaseAmount' asp-for='PurchaseAmount' name='PurchaseAmount'>
+                            <span asp-validation-for='PurchaseAmount' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateMachineryPurchaseDetail", "MachineryPurchaseDetail")';
+    function fnSubmit() {
+        if ($("#formMachineryPurchaseDetail").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formMachineryPurchaseDetail").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+
+    function fnFillItemCode() {
+
+        let machineryNameDrp = document.getElementById('choices-multiple-remove-button-MachineryID');
+        let selectedMachineIndex = machineryNameDrp.options[machineryNameDrp.selectedIndex];
+        let machineryIdValue = selectedMachineIndex.value;
+
+        let urlFillItemCode = '@Url.Action("GetItemCode","Machinery")';
+        $.ajax({
+            url: urlFillItemCode,
+            type: "GET",
+            data: { id: machineryIdValue },
+            dataType:'json',
+            success: function (data) {
+                if (data.status && data.itemCode != null) {
+                    document.getElementById('ItemCode').value = data.itemCode;
+                }
+            }
+        });
+    };
+
+</script>

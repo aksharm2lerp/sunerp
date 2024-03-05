@@ -1,0 +1,264 @@
+﻿<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+    <div onclick="fnOpenReminderDRP()">
+        <span class="alert-count" id="reminderAlertCount"></span>
+        <iconify-icon icon="fluent-mdl2:reminder-time"></iconify-icon>
+    </div>
+</a>
+<div class="dropdown-menu dropdown-menu-end">
+    <a href="javascript:;">
+        <div class="msg-header">
+            <label class="msg-header-title">Reminder</label>
+            @*<label type="button" class="msg-header-clear ms-auto" id="viewAllRemainder" onclick="fnViewAllReminder()">Marks all as read</label>*@
+        </div>
+    </a>
+    <div class="header-message-list">
+        <div id="reminderLists">
+            @*<a class="dropdown-item" href="javascript:;">
+            <div class="d-flex align-items-center">
+            <div class="user-online">
+            <img src="~/assets/images/avatars/avatar-1.png" class="msg-avatar" alt="user avatar">
+            </div>
+            <div class="flex-grow-1">
+            <h6 class="msg-name">Daisy Anderson <span class="msg-time float-end">5 sec ago</span></h6>
+            <p class="msg-info">The standard chunk of lorem</p>
+            </div>
+            </div>
+            </a>*@
+        </div>
+    </div>
+
+    
+
+    <div class="msg-footer row">
+       @* <a class="col-6">
+            View All Remainder
+        </a>*@
+        <a class="col-12 text-end" data-bs-toggle="modal" data-bs-target="#ModalAddReminder" onclick="fnRemainderAddDetailsModal()">
+            Add New Remainder
+        </a>
+    </div>
+</div>
+
+
+<div class="modal fade" id="ModalAddReminder" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-top">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:aliceblue;">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"><iconify-icon icon="fluent-mdl2:reminder-time"></iconify-icon><span>&nbsp; &nbsp; Add Reminder</span></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class=".col-sm-4">
+                        <h6 for="reminderDate">Date:</h6>
+                    </div>
+                    <div class=".col-sm-8">
+                        <input type="date" class="form-control h6" id="reminderDate" name="reminderDate" placeholder="dd-mm-yyyy" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=".col-sm-4">
+                        <h6 for="reminderTime">Time:</h6>
+                    </div>
+                    <div class=".col-sm-8">
+                        <input type="time" class="form-control h6" id="reminderTime" name="reminderTime">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=".col-sm-6">
+                        <h6 for="reminderText">Subject</h6>
+                    </div>
+                    <div class=".col-sm-6">
+                        <input type="text" class="form-control h6" id="reminderSubject">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=".col-sm-4">
+                        <h6 for="reminderText">Description</h6>
+                    </div>
+                    <div class=".col-sm-8">
+                        <textarea class="form-control h6" id="reminderText" rows="3"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer" style="background-color:aliceblue;">
+                <button type="button" class="btn h6 btn-primary" onclick="fnAddReminder()">Save</button>
+                <button type="button" class="btn h6 btn-secondary" data-bs-dismiss="modal">Back</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    //var urlGetReminder = 'Url.Action("GetReminderCount", "Notification")';
+    $(function () {
+
+        // Call the updateNotificationCount function every 3 seconds
+        setInterval(function () {
+            //alert('GetReminderCount fn invoked');
+            //alert('GetNotificationCount ajax invoked "urlGetReminder" - ' + urlGetReminder);
+            // code to be executed
+            $.ajax({
+                url: '/Notification/GetReminderCount',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    //debugger;
+                    var reminderCount = data.count.length;
+                    if (reminderCount > 0) {
+                        $('#reminderAlertCount').text(reminderCount);
+                    }
+                    else {
+                        $('#reminderAlertCount').text('');
+                        $('#reminderAlertCount').removeClass('alert-count');
+                    }
+                    // Get the element with the class you want to disable
+                    var element = document.getElementById('alert-count');
+
+                    // Disable the class by adding a disabled class
+                    element.classList.add('disabled');
+
+                    //// Create an Audio object with the path to your sound file
+                    //var notificationSound = new Audio('C:/Users/Lenovo/Documents/GitHub/aksharm2l/ERP/wwwroot/audio/notification/Simple-notification.mp3');
+
+                    //// Call the play() method when you want to play the sound
+                    //notificationSound.play();
+
+                    //notificationSound.addEventListener('error', function () {
+                    //    alert('Notification sound not paly');
+                    //    // Code to be executed if there is an error playing the sound
+                    //});
+                },
+                Error: function () {
+                    alert('error function occured.');
+                }
+            });
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
+
+    var urlViewAllReminder = '@Url.Action("ViewAllReminder","Notification")';
+    function fnViewAllReminder() {
+
+        var l = laddaStart('viewAllReminder');
+        console.log('l-- ' + l);
+        modeldata = $("#viewAllReminder").serialize();
+        alert("urlViewAllReminder---" + urlViewAllReminder);
+        $.ajax({
+            url: urlViewAllReminder,
+            type: 'POST',
+            dataType: 'json',
+            data: modeldata,
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status) {
+                    //alert('Viewed All Notification');
+                    //notification
+                    //$("#canvas_masterentity2").hide();//('hide');
+                    //Lobibox.notify('success', {
+                    //    pauseDelayOnHover: true,
+                    //    size: 'mini',
+                    //    icon: 'bx bx-check-circle',
+                    //    continueDelayOnInactiveTab: false,
+                    //    position: 'bottom right',
+                    //    msg: data.message
+                    //});
+                }
+                else {
+                    //alert('error - 1');
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                //alert('error - 2');
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+
+    };
+
+    function fnRemainderAddDetailsModal() {
+        $("#ModalAddReminder").modal("show");
+    }
+
+    function fnAddReminder() {
+        // alert('fnAddReminder invoked');
+        let reminderDate = $('#reminderDate').val();
+        let reminderTime = $('#reminderTime').val();
+        let reminderSubject = $('#reminderSubject').val();
+        let reminderText = $('#reminderText').val();
+        // alert(`reminderDate ${reminderDate},reminderTime ${reminderTime}, reminderText ${reminderText}, reminderSubject ${reminderSubject} `);
+        //let addReminderUrl = 'Url.Action("AddReminder","Notification")';
+        //alert('addReminderUrl-- ' + addReminderUrl)
+        let _parameters = { reminderDate: reminderDate, reminderTime: reminderTime, reminderText: reminderText, reminderSubject: reminderSubject }
+        $.ajax({
+            type: 'POST',
+            //url: addReminderUrl,
+            url: '/Notification/AddReminder',
+            data: _parameters,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status) {
+                    //Remainder
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    $("#ModalAddReminder").modal("hide");
+                    window.location.reload().delay(5000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                //window.location.reload().delay(5000);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    };
+
+</script>

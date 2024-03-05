@@ -1,0 +1,36 @@
+﻿@model Business.Entities.Machinery.MachineryMaster.MachinerySearch
+@{
+    
+}
+<form method="get" id="frmMachinerySearch" asp-action="Search" asp-controller="Machinery" asp-area="Production" class="g-3" novalidate>
+    <div class="mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <div class="col-md-4">
+                                <label for="Keyword" class="col-form-label">Search keyword</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" asp-for="keyword" maxlength="50" placeholder="----- Search By Input Value -------">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="">
+                        <div class="text-end">
+                            <button class="btn btn-primary btn-info px-5 ladda-button" type="submit">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+
+</script>

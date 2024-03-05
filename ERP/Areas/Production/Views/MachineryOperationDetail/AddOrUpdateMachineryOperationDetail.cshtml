@@ -1,0 +1,620 @@
+﻿@model Business.Entities.Production.MachineryOperationDetailModel.MachineryOperationDetail;
+@{
+    int i = 0;
+    var test = Model;
+    int index = Model.machineryUtilityConsumptions.Count();
+}
+
+<div class="row">
+    <h5 class="text-success">
+        <marquee>
+            Machinery operation capacity per hr. So we can easily calculate hourly based the work capacity and operation cost.
+        </marquee>
+    </h5>
+    <form class="form-horizontal" role="form" id="formMachineryOperationDetail">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row mb-3">
+                    <input type="hidden" asp-for="MachineryOperationDetailID" name="MachineryOperationDetailID" id="MachineryOperationDetailID" />
+                    <input type="hidden" asp-for="UtilityString" id="UtilityString" name="UtilityString" />
+                    <div class="col-sm-9">
+                        @*  <input type="text" required="" class="form-control" id="MachineryOperationDetailText" name="MachineryOperationDetailText" asp-for="MachineryOperationDetailText">
+                        <span asp-validation-for="MachineryOperationDetailText" class="text-danger"></span>*@
+                    </div>
+                </div>
+
+                <div class='row mt-3'>
+                    <div class='col-12'>
+
+                        <div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>Operation/Uses</label>
+                            <div class='col-sm-9'>
+                                <input type='text' class='form-control' id='OperationUses' asp-for='OperationUses' name='OperationUses'>
+                                <span asp-validation-for='OperationUses' class='text-danger'>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>Production Capacity</label>
+                            <div class='col-sm-9'>
+                                <input type='text' class='form-control' id='ProductionCapacity' asp-for='ProductionCapacity' name='ProductionCapacity'>
+                                <span asp-validation-for='ProductionCapacity' class='text-danger'>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>No of Operators</label>
+                            <div class='col-sm-9'>
+                                <input type='text' class='form-control' id='NoOfOperators' asp-for='NoOfOperators' name='NoOfOperators'>
+                                <span asp-validation-for='NoOfOperators' class='text-danger'>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>No of Helpers</label>
+                            <div class='col-sm-9'>
+                                <input type='text' class='form-control' id='NoOfHelpers' asp-for='NoOfHelpers' name='NoOfHelpers'>
+                                <span asp-validation-for='NoOfHelpers' class='text-danger'>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>Power Consumption</label>
+                            <div class='col-sm-9'>
+                                <input type='text' class='form-control' id='PowerConsumption' asp-for='PowerConsumption' name='PowerConsumption'>
+                                <span asp-validation-for='PowerConsumption' class='text-danger'>
+                                </span>
+                            </div>
+                        </div>
+
+                        @*<div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>Utility</label>
+                            <div class='col-sm-9'>
+                                <select class='form-select' asp-for="UtilityID" id='choices-multiple-remove-button-UtilityID' asp-items='@CommonExtension.GetAllUtilityAsync()'>
+                                    <option value=''>Select here...</option>
+                                </select>
+                            </div>
+                        </div>*@
+                        <div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>Add Utility</label>
+                            <div class='col-sm-9 col-form-label'>
+                                <a class="MCLFAB fa-lg" id="btnAddUtility" onclick="fnAddUtilityDiv()"><iconify-icon icon="material-symbols:add-circle-outline-rounded" class="parent-icon"></iconify-icon></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class='row mt-3'>
+                    <div class='col-12'>
+
+                        <div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>UOM</label>
+                            <div class='col-sm-9'>
+                                <select class='form-select' asp-for="UOMID" id='choices-multiple-remove-button-UOMID' asp-items='@CommonExtension.GetAllUOMAsync()'>
+                                    <option value=''>Select here...</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class='row mb-3'>
+                            <label for='' class='col-sm-3 col-form-label'>Risk Factor</label>
+                            <div class='col-sm-9'>
+                                <textarea class="form-control" rows="4" cols="50" id="RiskFactor" name="RiskFactor" asp-for="RiskFactor"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <div class="col-sm-12">
+        <div id="addMoreUtilityConsumptions">
+
+            @if (Model != null)
+            {
+                if (Model.machineryUtilityConsumptions.Count > 0)
+                {
+                    foreach (var item in Model.machineryUtilityConsumptions)
+                    {
+                        <div id="@("removeAddMoreDivUtilityConsumptions" +i)" class="col-xs-12 col-sm-12 form-group">
+                            <input type="hidden" asp-for="@item.MachineryUtilityConsumptionID" id="MachineryUtilityConsumptionID" name="MachineryUtilityConsumptionID">
+                            <input type="hidden" asp-for="@item.MachineryOperationDetailID" id="MachineryOperationDetailID" name="MachineryOperationDetailID">
+                            <div class="row">
+                                <div class="col-md-1"><label for="" class="col-form-label">Utility</label></div>
+                                <div class="col-md-3">
+                                    <select class='form-select' asp-for="@item.UtilityID" name="@("SelectUtility"+i)" id="@("selectedUtilityId" + i)" asp-items="@CommonExtension.GetAllUtilityAsync()">
+                                    </select>
+                                </div>
+                                <div class="col-md-1"><label for="" class="col-form-label">Number</label></div>
+                                <div class="col-md-2">
+                                    <input placeholder="Number" class="form-control" asp-for="@item.Number" name="@("Number"+i)" />
+                                </div>
+                                <div class="col-md-1"><label for="" class="col-form-label">UOM</label></div>
+                                <div class="col-md-3">
+                                    <select class='form-select' asp-for="@item.UOMID" name="@("SelectUOM"+i)" id="@("selectedUOMId" + i)" asp-items="@CommonExtension.GetAllUOMAsync()">
+                                    </select>
+                                </div>
+                                <div class="col-md-1">
+                                    <a class="MCLFRB fa-2x" id="btnRemove" onclick="@("fnRemoveUtilityDiv("+i+")")"><iconify-icon icon="mdi:remove-circle-outline"></iconify-icon></a>
+                                </div>
+                            </div>
+                        </div>
+                        i++;
+                    }
+                }
+            }
+
+        </div>
+        @*     <select class="form-select" id="choices-multiple-remove-button" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" multiple>
+        @*<option value="">--Select--</option>
+        </select>*@
+    </div>
+
+    <div class="modal-footer-sticky text-center">
+        <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+        <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+    </div>
+</div>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+
+<script type="text/javascript">
+    var urlsaveMachineryOperationDetail = '@Url.Action("AddOrUpdateMachineryOperationDetail", "MachineryOperationDetail")';
+    var divUtilityConsumption = document.getElementById('addMoreUtilityConsumptions');
+    var divIdsArray = [];
+    var i = 0;
+
+    function fnSubmit() {
+
+        var drpArray = [];
+        const strUtilityJson = [];
+        var divUtilityElements = divUtilityConsumption.querySelectorAll('select, input');
+        if (divUtilityElements.length > 0) {
+            //for (var k = 0; k < divUtilityElements.length; k += 5) {
+            for (var k = 0; k < divUtilityElements.length; k++) {
+                //const tempJson = {
+                    //"MachineryUtilityConsumptionID": 0,
+                    //"MachineryOperationDetailID": document.getElementById('MachineryOperationDetailID').value,
+                    //"UtilityID": divUtilityElements[k + 2].value,
+                    //"Number": divUtilityElements[k + 3].value,
+                    //"UOMID": divUtilityElements[k + 4].value,
+                //};
+                //strUtilityJson.push(tempJson);
+                drpArray.push(divUtilityElements[k].value);
+            }
+        }
+
+        const finalstring = JSON.stringify(strUtilityJson);
+        document.getElementById('UtilityString').value = drpArray.toString();
+        //document.getElementById('UtilityString').value = finalstring;
+        const test = document.getElementById('UtilityString').value;
+        var l = laddaStart('btnSave');
+        const modeldata = $("#formMachineryOperationDetail").serialize();
+        $.ajax({
+            type: 'POST',
+            url: urlsaveMachineryOperationDetail,
+            data: modeldata,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    //notification
+                    $("#canvas_masterentity2").hide();//('hide');
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    window.location.reload().delay(3000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+
+            hideLoader();
+        });
+    };
+
+    $(document).ready(function () {
+
+        let UOMIDs = document.getElementById('choices-multiple-remove-button-UOMID').value;
+        $.each(UOMIDs.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-UOMID option[value=" + e + "]").prop('selected', true);
+        });
+
+        let UtilityIDs = document.getElementById('choices-multiple-remove-button-UtilityID').value;
+        $.each(UtilityIDs.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-UtilityID option[value=" + e + "]").prop('selected', true);
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-UOMID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-UtilityID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+    });
+
+    function fnRemoveUtilityDiv(id) {
+        var _id = id;
+        var divRemove = document.getElementById('removeAddMoreDivUtilityConsumptions' + _id);
+        divRemove.remove();
+    };
+
+    function fnAddUtilityDiv() {
+
+        let noOfIs = @index;
+        if (noOfIs > 0 && i <= noOfIs) {
+            i = noOfIs;
+        }
+
+        var newUtilityDiv = "<div id='removeAddMoreDivUtilityConsumptions" + i + "' class='col-xs-12 col-sm-12 form-group'><input type='hidden' id = 'MachineryUtilityConsumptionID' name='MachineryUtilityConsumptionID' value='0'><input type='hidden' id = 'MachineryOperationDetailID' name = 'MachineryOperationDetailID' value = '" + @Model.MachineryOperationDetailID+"'><div class='row'><div class='col-md-1'><label for='' class='col-form-label'>Utility</label></div><div class='col-md-3'><select class= 'form-select' name = 'SelectUtility" + i + "' id = 'selectedUtilityId" + i + "' onchange = 'fnLockUtilityDiv(" + i + ")'></select></div><div class='col-md-1'><label for='' class='col-form-label'>Number</label></div><div class='col-md-2'><input placeholder= '' type='text' class='form-control' name='Number" + i + "' id='selectedNumber" + i + "' oninput='fnLockUtilityDiv(" + i + ")'/></div><div class='col-md-1'><label for='' class='col-form-label'>UOM</label></div><div class= 'col-md-3'><select class='form-select' name='SelectUOM" + i + "' id='selectedUOMId" + i + "' onchange='fnLockUtilityDiv(" + i + ")'></select></div><div class='col-md-1'><a class='MCLFRB fa-2x' id='btnRemove' onclick='fnRemoveUtilityDiv(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></div></div></div>";
+
+        divUtilityConsumption.innerHTML += newUtilityDiv;
+
+        var selectedUtilityId = document.getElementById('selectedUtilityId' + i);
+        var selectedUOMId = document.getElementById('selectedUOMId' + i);
+
+        $.getJSON("/Production/MachineryOperationDetail/GetAllUOMDropdown/",
+            function (data) {
+                var newUOMHTML = "";
+                for (var j = 0; j < data.length; j++) {
+                    newUOMHTML += "<option id='" + data[j].uomid + "' value='" + data[j].uomid + "'>" + data[j].uomText + "</option>";
+                }
+                //employeeDropdown.innerHTML = newHTML;
+                selectedUOMId.innerHTML = newUOMHTML;
+            });
+
+        $.getJSON("/Production/MachineryOperationDetail/GetAllUtilityDropdown/",
+            function (data) {
+                var newUtilityHTML = "";
+                for (var j = 0; j < data.length; j++) {
+                    newUtilityHTML += "<option id='" + data[j].utilityID + "' value='" + data[j].utilityID + "'>" + data[j].utilityName + "</option>";
+                }
+                //employeeDropdown.innerHTML = newHTML;
+                selectedUtilityId.innerHTML = newUtilityHTML;
+            });
+
+        i++;
+
+        $(function () {
+            for (var j = 0; j < divIdsArray.length; j++) {
+                var divContent = divIdsArray[j];
+                var test = localStorage.getItem(divContent);
+                document.getElementById(divIdsArray[j]).value = test;
+            }
+        });
+    }
+
+    function fnLockUtilityDiv(lockId) {
+
+        const selectedUtility = document.getElementById('selectedUtilityId' + lockId);
+        divIdsArray.push('selectedUtilityId' + lockId);
+        localStorage.setItem('selectedUtilityId' + lockId, selectedUtility.value);
+
+        const inputNumber = document.getElementById('selectedNumber' + lockId);
+        divIdsArray.push('selectedNumber' + lockId);
+        localStorage.setItem('selectedNumber' + lockId, inputNumber.value);
+
+        const selectedUOM = document.getElementById('selectedUOMId' + lockId);
+        divIdsArray.push('selectedUOMId' + lockId);
+        localStorage.setItem('selectedUOMId' + lockId, selectedUOM.value);
+    };
+
+</script>
+
+<script type="text/javascript">
+    var urlsave = '@Url.Action("CreateMarketingFeedback", "Feedback")';
+    //var div = document.getElementById('addMoreFeedback');
+    //var divIdsArray = [];
+    //var i = 0;
+
+    function fnSubmi() {
+
+        var drpArray = [];
+        var elements1 = div.querySelectorAll('select, input');
+        if (elements1.length > 0) {
+            for (var k = 0; k < elements1.length; k++) {
+                drpArray.push(elements1[k].value);
+            }
+        }
+
+        let positiveids = document.getElementById("PositiveNoteID");
+        let positiveIdsNotes = document.getElementById('PositiveNotesArray');
+        positiveIdsNotes.value = drpArray.toString();
+
+        let partyNameDrp = document.getElementById('choices-multiple-remove-button');
+        let selectedPartyIndex = partyNameDrp.options[partyNameDrp.selectedIndex];
+
+        let partyNameLabel = selectedPartyIndex.text;
+        let partyIdValue = selectedPartyIndex.value;
+
+        let partyName = document.getElementById("PartyName");
+        partyName.value = partyNameLabel;
+
+        let partyIds = document.getElementById("PartyID");
+        partyIds.value = partyIdValue;
+
+        //var selected = [];
+        //for (var option of document.getElementById('choices-multiple-remove-button').options) {
+        //    if (option.selected) {
+        //        selected.push(option.value);
+        //    }
+        //}
+        //let partyNameIds = document.getElementById("PartyID");
+        //partyNameIds.value = selected.toString();
+
+        if ($("#formFeedback").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formFeedback").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        //$("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                    window.location.reload().delay(5000);
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    // Added by Rahul Mistry on 21 Apr 2023
+
+    $(document).ready(function () {
+        $('#btnAddFeedback').click(function () {
+
+            let noOfIs = @index;
+            if (noOfIs > 0 && i <= noOfIs) {
+                i = noOfIs;
+            }
+
+            var newDiv = "<div id='removeAddMoreDiv" + i + "' class='col-xs-12 col-sm-12 form-group'><input type='hidden' id='MarketingFeedbackDetailID' name='MarketingFeedbackDetailID' value='0'><input type='hidden' id='MarketingFeedbackID' name='MarketingFeedbackID' value='" + @Model.MachineryOperationDetailID+"'><div class='row'><div class='col-md-4'><select class='form-select' name='SelectName" + i + "' id='selectedId" + i + "'  onchange='fnLockDiv(" + i + ")'></select></div><div class='col-md-4'><input placeholder='Response' type='text' class='form-control' name='Response" + i + "'  id='selectedResponse" + i + "' onchange='fnLockDiv(" + i + ")'/></div><div class='col-md-4'><a class='MCLFRB fa-2x' id='btnRemove' onclick='fnRemoveDiv(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></div></div></div>";
+
+            div.innerHTML += newDiv;
+
+            var myselected = document.getElementById('selectedId' + i);
+
+            $.getJSON("/Marketing/MarketingCommunicationLog/GetAllMarketingClientFeedbackNote/",
+                function (data) {
+                    var newHTML = "";
+                    for (var j = 0; j < data.length; j++) {
+                        newHTML += "<option id='" + data[j].positiveNoteID + "' value='" + data[j].positiveNoteID + "'>" + data[j].positiveNoteText + "</option>";
+                    }
+                    //employeeDropdown.innerHTML = newHTML;
+                    myselected.innerHTML = newHTML;
+                });
+
+            i++;
+
+            $(function () {
+                for (var j = 0; j < divIdsArray.length; j++) {
+                    var divContent = divIdsArray[j];
+                    var test = localStorage.getItem(divContent);
+                    document.getElementById(divIdsArray[j]).value = test;
+                }
+            });
+        });
+    });
+
+    //function fnRemoveDiv(id) {
+    //    var _id = id;
+    //    var divRemove = document.getElementById('removeAddMoreDiv' + _id);
+    //    divRemove.remove();
+    //};
+
+    function fnLockDiv(lockId) {
+
+        const elselect = document.getElementById('selectedId' + lockId);
+        divIdsArray.push('selectedId' + lockId);
+        localStorage.setItem('selectedId' + lockId, elselect.value);
+
+        const elInput = document.getElementById('selectedResponse' + lockId);
+        divIdsArray.push('selectedResponse' + lockId);
+        localStorage.setItem('selectedResponse' + lockId, elInput.value);
+    };
+
+    // Added by Rahul Mistry on 21 Apr 2023
+    // Added by Rahul Mistry on 1 Jun 2023
+
+    $(document).ready(function () {
+        let partyids = document.getElementById("PartyID").value;
+        $.each(partyids.split(","), function (i, e) {
+            $("#choices-multiple-remove-button option[value='" + e + "']").prop("selected", true);
+        });
+    });
+
+    $(document).ready(function () {
+
+        var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+    });
+
+    // Added by Rahul Mistry on 1 Jun 2023
+
+    // Added by Rahul Mistry on 26 June 2023
+
+    function fnFillPartyMobileEmail() {
+        let partyNameDrp = document.getElementById('choices-multiple-remove-button');
+        let selectedPartyIndex = partyNameDrp.options[partyNameDrp.selectedIndex];
+
+        //let partyNameLabel = selectedPartyIndex.text;
+        let partyIdValue = selectedPartyIndex.value;
+        let _parameters = { partyId: partyIdValue };
+        let urlFillMobEmail = '@Url.Action("GetPartyMobileEmailByPartyID","Feedback")';
+
+        $.ajax({
+            url: urlFillMobEmail,
+            type: "GET",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                //document.getElementById('Email').value = data.email;
+                //document.getElementById('MobileNo').value = data.mobileNo;
+                if (data.status) {
+                    if (data.partyMobileEmail.email != null || data.partyMobileEmail.email != "") {
+                        document.getElementById('Email').value = data.partyMobileEmail.email;
+                    }
+                    if (data.partyMobileEmail.mobile1 != null || data.partyMobileEmail.mobile1 != "") {
+                        document.getElementById('MobileNo').value = data.partyMobileEmail.mobile1;
+                    }
+                }
+            }
+        });
+
+    };
+
+    function fnAddParty() {
+        let partyName = $('#partyName').val();
+        let partyMobile = $('#partyMobile').val();
+        let partyEmail = $('#partyEmail').val();
+
+        let addPartyUrl = '@Url.Action("AddParty","Feedback")';
+        let _parameters = { partyName: partyName, partyMobile: partyMobile, partyEmail: partyEmail }
+        $.ajax({
+            type: 'POST',
+            url: addPartyUrl,
+            data: _parameters,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status) {
+                    //notification
+
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    $("#ModalMail").modal("hide");
+                    //$("#formFeedback").load(window.location.href + " #formFeedback");
+                    //$('#ModalMail').hide();
+                    window.location.reload().delay(10000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                //window.location.reload().delay(10000);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    };
+
+                                                    //function openPopupAddNewParty(){
+                                                    //    //$('#popupContainer').load('/Marketing/Feedback/OpenAddPartyPopup');
+                                                    //    $.ajax({
+                                                    //        url: "/Marketing/Feedback/OpenAddPartyPopup",
+                                                    //        type: "GET",
+                                                    //        success: function (data) {
+                                                    //            debugger;
+                                                    //            $("#popupContainer").html(data);
+                                                    //        },
+                                                    //        error: function () {
+                                                    //            alert("An error occurred while loading the popup.");
+                                                    //        }
+                                                    //    });
+                                                    //};
+                                                            // Added by Rahul Mistry on 26 June 2023
+</script>

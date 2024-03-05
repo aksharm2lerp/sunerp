@@ -1,0 +1,125 @@
+@using Business.Entities.HR.ExpenseTypeMasterModel;
+@model ExpenseTypeMaster;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formExpenseTypeMaster">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="ExpenseTypeID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="ExpenseTypeMasterText" name="ExpenseTypeMasterText" asp-for="ExpenseTypeMasterText">
+                    <span asp-validation-for="ExpenseTypeMasterText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                   @*  <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>ExpenseTypeID</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ExpenseTypeID' asp-for='ExpenseTypeID' name='ExpenseTypeID'>
+                            <span asp-validation-for='ExpenseTypeID' class='text-danger'>
+                            </span>
+                        </div>
+                    </div> *@
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Expense Type</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ExpenseTypeText' asp-for='ExpenseTypeText' name='ExpenseTypeText'>
+                            <span asp-validation-for='ExpenseTypeText' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Description</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='Description' asp-for='Description' name='Description'>
+                            <span asp-validation-for='Description' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateExpenseTypeMaster", "ExpenseTypeMaster")';
+    function fnSubmit() {
+        if ($("#formExpenseTypeMaster").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formExpenseTypeMaster").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+
+
+
+
+
+
+    });
+
+
+</script>

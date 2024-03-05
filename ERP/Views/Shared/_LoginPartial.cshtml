@@ -1,0 +1,174 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@inject SignInManager<UserMasterMetadata> SignInManager
+@inject UserManager<UserMasterMetadata> UserManager
+@{
+    int claimEID = 0;
+}
+@if (SignInManager.IsSignedIn(User))
+{
+    ClaimsPrincipal user = User;
+    var claimEmail = user.Claims.FirstOrDefault(x => x.Type == "Email");
+    var claimDisplayName = user.Claims.FirstOrDefault(x => x.Type == "DisplayName");
+    var claimRoleName = user.Claims.FirstOrDefault(x => x.Type == "RoleName");
+    claimEID = Convert.ToInt32(user.Claims.FirstOrDefault(x => x.Type == "Id").Value);
+
+
+    string userEmail = claimEmail != null ? claimEmail.Value : string.Empty; ;
+    string userDisplayName = claimDisplayName != null ? claimDisplayName.Value : string.Empty; ;
+    string userRoleName = claimRoleName != null ? claimRoleName.Value : string.Empty; ;
+    <div class="user-box dropdown">
+        <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+            @if (UserManager.GetUserAsync(User).Result.NormalizedEmail != null)
+            {
+                <img class="user-img" alt="User" src="~/assets/images/DefaultProfilePicture/DefaultProfilePicture.png" id="userImage">
+            }
+            <div class="user-info ps-3">
+                <p class="user-name mb-0">Hello @userDisplayName!</p>
+               @* <p class="user-name mb-0">Role @userRoleName!</p>*@
+
+            </div>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+                <div class="text-center">
+                    <span class="dropdown-item">
+                        <img src="~/assets/images/DefaultProfilePicture/DefaultProfilePicture.png" class="rounded-circle border border-dark" id="LayoutMenuBarProfileUserImage" alt="Profile Picture" width="30%" height="auto" border-radius="50%">
+                    </span>
+                    <div class="row">
+                        <span>@userDisplayName</span>
+                    </div>
+                    <div class="row">
+                        <span id="employeeCode"></span>
+                    </div>
+                    @if (@userRoleName == "Developer")
+                    {
+                        <div class="row">
+                            <span>@userRoleName</span>
+                        </div>
+                    }
+                    <div class="row">
+                        <div class="col-6">
+                            <span id="designation"></span>
+                        </div>
+                        <div class="col-6">
+                            <span id="department"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown-divider mb-0"></div>
+            </li>
+            @if (SignInManager.IsSignedIn(User) && userRoleName == "Developer")
+            {
+                <li>
+                    <secure-content asp-area="SuperAdmin" asp-controller="Home" asp-action="Index">
+                        <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-area="SuperAdmin"><i class="bx bx-user"></i><span>Super Admin Panel</span></a>
+                    </secure-content>
+                </li>
+
+                <li>
+                    <secure-content asp-area="Admin" asp-controller="Home" asp-action="Index">
+                        <a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="bx bx-user"></i><span>Admin Panel</span></a>
+                    </secure-content>
+                </li>
+            }
+            @if (SignInManager.IsSignedIn(User) && userRoleName == "Admin")
+            {
+                <li>
+                    <secure-content asp-area="Admin" asp-controller="Home" asp-action="Index">
+                        <a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="bx bx-user"></i><span>Admin Panel</span></a>
+                    </secure-content>
+                </li>
+            }
+            <li>
+                <a asp-area="HR" asp-controller="UserProfile" asp-action="Index" class="dropdown-item">
+                    <iconify-icon icon="line-md:moon-to-sunny-outline-loop-transition"></iconify-icon>&nbsp;
+                    <span class="NavBarMenuUserProfile">User Profile</span>`
+                </a>
+            </li>
+            @*<li>
+                <a class="dropdown-item" href="javascript:;"><i class="bx bx-cog"></i><span>Change Password</span></a>
+            </li>*@
+
+            <li>
+                <div class="dropdown-divider mb-0"></div>
+            </li>
+            <li>
+                <form class="form-inline" asp-area="" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="dropdown-item"><iconify-icon icon="line-md:log-out"></iconify-icon><span>&nbsp;&nbsp;Logout</span></button>
+                </form>
+
+            </li>
+        </ul>
+    </div>
+}
+<script type="text/javascript">     
+    // start
+
+    var urlGetLoginUserDetail = '/Settings/GetLoginUserDetail/'; //'Url.Action("GetLoginUserDetail","Settings")';
+    window.onload = function () {
+        const eid = @claimEID;
+        var parameter = { userId: eid };
+        //alert(urlGetLoginUserDetail);
+        $.ajax({
+            type: 'GET',
+            url: urlGetLoginUserDetail,  
+            data: parameter,
+            dataType: 'json',
+            success: function (data) {
+                if (data != null) {
+                    document.getElementById('employeeCode').innerHTML = data.employeeCode;
+                    document.getElementById('designation').innerHTML = data.designation;
+                    document.getElementById('department').innerHTML = data.department;
+
+                    if (data.imagePath != null && data.imagePath != "") {
+                        const fileUrl = data.imagePath;
+                        return fetch(fileUrl, { method: 'HEAD' })
+                            .then(response => {
+                                if (response.ok) {
+                                    $('#LayoutMenuBarProfileUserImage').attr('src', data.imagePath);
+                                    $('#userImage').attr('src', data.imagePath);
+                                }
+                            })
+                            .catch(() => {
+                                alert('Error occurred, file doesnt exist');
+                            });
+                    }
+                    else {
+                        $('#LayoutMenuBarProfileUserImage').attr('src', '/assets/images/DefaultProfilePicture/DefaultProfilePicture.png');
+                        $('#userImage').attr('src', '/assets/images/DefaultProfilePicture/DefaultProfilePicture.png');
+                    }
+
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+
+    };
+                                // end
+</script>

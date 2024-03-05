@@ -1,0 +1,205 @@
+@using Business.Entities.HR.ExpensesTxnModel;
+@model ExpensesTxn;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formExpensesTxn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="ExpensesID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="ExpensesTxnText" name="ExpensesTxnText" asp-for="ExpensesTxnText">
+                    <span asp-validation-for="ExpensesTxnText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    @*                  <div class='row mb-3'>
+                    <label for='' class='col-sm-3 col-form-label'>ExpensesID</label>
+                    <div class='col-sm-9'>
+                    <input type='text' class='form-control' id='ExpensesID' asp-for='ExpensesID' name='ExpensesID'>
+                    <span asp-validation-for='ExpensesID' class='text-danger'>
+                    </span>
+                    </div>
+                    </div>*@
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>EmployeeID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for="EmployeeID" id='choices-multiple-remove-button-EmployeeID' asp-items='@CommonExtension.GetAllEmployeeAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div><div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>ExpenseTypeID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for="ExpenseTypeID" id='choices-multiple-remove-button-ExpenseTypeID' asp-items='@CommonExtension.GetAllExpenseTypeAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>StartDate</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='StartDate' asp-for='StartDate' name='StartDate'>
+                            <span asp-validation-for='StartDate' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>EndDate</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='EndDate' asp-for='EndDate' name='EndDate'>
+                            <span asp-validation-for='EndDate' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Purpose</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='Purpose' asp-for='Purpose' name='Purpose'>
+                            <span asp-validation-for='Purpose' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>ExpensesDetail</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ExpensesDetail' asp-for='ExpensesDetail' name='ExpensesDetail'>
+                            <span asp-validation-for='ExpensesDetail' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>ExpensesAmount</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ExpensesAmount' asp-for='ExpensesAmount' name='ExpensesAmount'>
+                            <span asp-validation-for='ExpensesAmount' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>IsPaidByEmployee:</label>
+                        <div class='col-sm-9'>
+                            <input type='checkbox' class='form-check-input' role='switch' asp-for='IsPaidByEmployee'>
+                            <span asp-validation-for='IsPaidByEmployee' class='text-danger'></span>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>IsPaidByCompany:</label>
+                        <div class='col-sm-9'>
+                            <input type='checkbox' class='form-check-input' role='switch' asp-for='IsPaidByCompany'>
+                            <span asp-validation-for='IsPaidByCompany' class='text-danger'></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSaveExpensesTxn" type="button" onclick="fnSubmitExpensesTxn()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsaveExpensesTxn = '@Url.Action("AddOrUpdateExpensesTxn", "ExpensesTxn")';
+    function fnSubmitExpensesTxn() {
+        alert('fnSubmit exp txn');
+        //var l = laddaStart('btnSave');
+        //console.log(l);
+        modeldataExpensesTxn = $("#formExpensesTxn").serialize();
+        $.ajax({
+            type: 'POST',
+            url: urlsaveExpensesTxn,
+            data: modeldataExpensesTxn,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    //notification
+                    $("#canvas_ExpensesTxn").hide();//('hide');
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    window.location.reload().delay(3000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    }
+
+    $(document).ready(function () {
+
+        let EmployeeIDs = document.getElementById(EmployeeID).value;
+        $.each(EmployeeIDs.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-EmployeeID option[value=" + e + "]").prop("selected", true);
+        });
+
+        let ExpenseTypeIDs = document.getElementById(ExpenseTypeID).value;
+        $.each(ExpenseTypeIDs.split(","), function (i, e) {
+            $("#choices-multiple-remove-button-ExpenseTypeID option[value=" + e + "]").prop("selected", true);
+        });
+
+
+
+
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-EmployeeID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-ExpenseTypeID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+
+    });
+
+
+</script>

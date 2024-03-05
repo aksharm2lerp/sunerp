@@ -1,0 +1,461 @@
+﻿@using Business.Entities.HR.MachineryResourceAllocationModel;
+@using Newtonsoft.Json;
+@model DailyMachineryResourceTxn
+@{
+    ViewData["Title"] = "Daily Machinery Resource Log..";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@{
+
+    //int? shiftId = Model.ShiftID ?? 0;
+    //int? departmentId = Model.DepartmentID ?? 0;
+    //int? machineryId = Model.MachineryID ?? 0;
+
+    var machineryDropDownList = CommonExtension.GetAllMachineryAsync().Select(x => new { MachineryID = x.Value, MachineryName = x.Text }).ToList();
+    string jsonString = JsonConvert.SerializeObject(machineryDropDownList);
+    //var presentEmployeeList = CommonExtension.GetAllAvialableEmployeesForMachineryAsync(DateTime.Today.Date, shiftId, departmentId, machineryId).Select(y => new { EmployeeID = y.Value, EmployeeName = y.Text }).ToList();
+    var presentEmployeeList = CommonExtension.GetAllAvailableEmployeesForMachineryAsync(DateTime.Today.Date).Select(y => new { EmployeeID = y.Value, EmployeeName = y.Text }).ToList();
+    string jsonStringEmployeeList = JsonConvert.SerializeObject(presentEmployeeList);
+}
+
+<div class="container" id="dailyMachineryResourceLog">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+            <div class="card border-0 shadow rounded-3">
+                <form id="formDailyMachineryResourceLog">
+                    <div class="card-body">
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="page-breadcrumb align-items-center">
+                                <div class="p-2">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb mb-0 p-0">
+                                            <li class="breadcrumb-item">
+                                                <a asp-area="HR" asp-controller="MachineryResourceAllocation" asp-action="GetDailyMachineryResourceLog"><i class="bx bx-home-alt"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item active" aria-current="page">Daily Machinery Resource Log</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="row sm-12">
+                            <label class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" asp-for="EntryDate" id="todayDate">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label ">Shift</label>
+                            <div class="col-sm-4">
+                                <select class="form-select" id="ShiftID" name="ShiftID" asp-for="ShiftID" asp-items="@CommonExtension.GetAllShiftAsync()">
+                                    <option value="">Select Shift</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row sm-12">
+                            <label class="col-sm-2 col-form-label">Department</label>
+                            <div class="col-sm-4">
+                                <select class="form-control  text-start" id="choices-multiple-remove-button-DepartmentID" asp-for="DepartmentID" asp-items="@CommonExtension.GetAllDepartmentAsync()">
+                                    <option value="">Select Department</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-2 col-form-label">Machinery</label>
+                            <div class="col-sm-4">
+                                <select class="form-control  text-start" id="choices-multiple-remove-button-MachineryID" asp-for="MachineryID" asp-items="@CommonExtension.GetAllMachineryAsync()">
+                                    <option value="">Select Machinery</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="text-end mb-3">
+                            <input type="button" value="Search" class="btn btn-outline-primary px-5 btn-sm" onclick="fnSearchMachineryResourceLog()" />
+                        </div>
+                    </div>
+                    <div id="newResultsHere">
+                    </div>
+                    <input type="hidden" id="MachineryResourceLogArray" asp-for="MachineryResourceLogArray" name="MachineryResourceLogArray" />
+                    <input type="hidden" id="DailyMachineryResourceLogID" asp-for="DailyMachineryResourceLogID" name="DailyMachineryResourceLogID" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="canvasAddEmployee" style="visibility: visible; width : 75% !important">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="canvasHeaderAddEmployee"></h5>
+        <button type="button" class="btn-close te xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3 pb-5">
+        <div id="dvInfoAddEmployee">
+            <div class="row mb-1">
+                <label class="col-sm-2 col-form-label">Employee List</label>
+                <div class="col-sm-6">
+                    <input type="hidden" id="indexNoControl" />
+                    <select class="form-control" id="choices-multiple-remove-button-EmployeeID" asp-items="@CommonExtension.GetAllAvailableEmployeesForMachineryAsync(DateTime.Today.Date)" onchange="fnAddSelectedEmployee()">
+                        <option value="">Select Employee</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+
+    let index = 0;
+    var jsonEmployeeListStringFromCSharp = @Html.Raw(Json.Serialize(jsonStringEmployeeList));
+    var listnewEmployeeList = JSON.parse(jsonEmployeeListStringFromCSharp);
+    // var newAvailableForMachineryEmployeeList;
+
+    $(document).ready(function () {
+        document.getElementById('todayDate').valueAsDate = new Date();
+
+        var multipleCancelButtonDepartmentID = new Choices('#choices-multiple-remove-button-DepartmentID', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+        var multipleCancelButtonMachineryID = new Choices('#choices-multiple-remove-button-MachineryID', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+
+        var multipleCancelButtonEmployeeID = new Choices('#choices-multiple-remove-button-EmployeeID', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+    });
+
+    function fnSearchMachineryResourceLog() {
+
+        let date = document.getElementById('todayDate').value;
+        let shiftid = document.getElementById('ShiftID').value;
+        let departmentid = document.getElementById('choices-multiple-remove-button-DepartmentID').value;
+        let machineryid = document.getElementById('choices-multiple-remove-button-MachineryID').value;
+
+        // var newParams = { todayDate: date, shiftId: shiftid, departmentId: departmentid, machineryId: machineryid };
+        // newAvailableForMachineryEmployeeList = fnAvailableForMachineryEmployeeList(newParams);
+        // debugger;
+        let urlForLog = '@Url.Action("GetDailyMachineryResourceLog","MachineryResourceAllocation")';
+        let params = { todayDate: date, shiftId: shiftid, departmentId: departmentid, machineryId: machineryid };
+
+        $.ajax({
+            type: 'get',
+            url: urlForLog,
+            data: params,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status && data.dailyMachineryResourceLogs.length > 0) {
+
+                    var existingDiv = document.getElementById("newResultsHere");
+
+                    existingDiv.innerHTML = "<div class=card><div class=card-body><div class=row><div class=col-1 style=width:1.333%!important><iconify-icon class=GDMLIconClass icon=healthicons:truck-driver-outline></iconify-icon></div><div class=col-11> Operator List</div></div><span class=classUserProfileHrTag></span><div class=row><div class=table-responsive-sm><table class=table id=operatorTable><thead class=userProfileTableTHead><tr><th scope=col><th scope=col>Operator<th scope=col>Present<th scope=col>Transfer To<tbody></table></div></div></div></div><div class=card><div class=card-body><div class=row><div class=col-1 style=width:1.333%!important><iconify-icon class=GDMLIconClass icon=carbon:help-desk></iconify-icon></div><div class=col-11> Helper List</div></div><span class=classUserProfileHrTag></span><div class=row><div class=table-responsive-sm><table class=table id=helperTable><thead class=userProfileTableTHead><tr><th scope=col><th scope=col>Helper<th scope=col>Present<th scope=col>Transfer To<tbody></table></div></div></div></div><div class=card><div class=card-body><a class='MCLFAB fa-lg pb-1'id=btnAddResource onclick=fnAddNewRescource()><iconify-icon class=parent-icon icon=material-symbols:add-circle-outline-rounded></iconify-icon></a><div class=row><div class=col-1 style=width:1.333%!important><iconify-icon class=GDMLIconClass icon=fluent:people-community-add-28-regular></iconify-icon></div><div class=col-11>  Additional Resource / Require Worker(Presented)</div></div><span class=classUserProfileHrTag></span><div class=row><div class=table-responsive-sm><table class=table id=additionalResourceTable><thead class=userProfileTableTHead><tr><th scope=col><th scope=col>Name<th scope=col>Add Employee<th scope=col>IsOperator<th scope=col>Remove<tbody></table></div></div></div></div><div class=card><div class=card-body><div class='row mb-3'><label class='col-form-label col-sm-2'for=''>HOD Approved</label><div class=col-sm-5><input asp-for=ApprovedByHOD class=form-control id=ApprovedByHOD name=ApprovedByHOD placeholder='HOD Name'></div></div><div class='row mb-3'><label class='col-form-label col-sm-2'for=''>HR Approved</label><div class=col-sm-5><input asp-for=ApprovedByHR class=form-control id=ApprovedByHR name=ApprovedByHR placeholder='HR Name'></div></div><div class=text-center><button class='btn btn-info btn-primary ladda-button px-5'id=btnSave onclick=fnSubmitLog() type=button>Save</button></div></div></div>";
+
+
+                    $('#operatorTable tbody').empty();
+                    $('#helperTable tbody').empty();
+                    $('#additionalResourceTable tbody').empty();
+
+                    var listData = data.dailyMachineryResourceLogs;
+
+                    $.each(listData, function (i, item) {
+                        if (item.dailyMachineryResourceLogID > 0) {
+                            document.getElementById('DailyMachineryResourceLogID').value = item.dailyMachineryResourceLogID;
+                            document.getElementById('ApprovedByHOD').value = item.approvedByHOD;
+                            document.getElementById('ApprovedByHR').value = item.approvedByHR;
+                        }
+
+                        var jsonStringFromCSharp = @Html.Raw(Json.Serialize(jsonString));
+                        var listnew = JSON.parse(jsonStringFromCSharp);
+
+                        let result = 'unchecked';
+                        if (Boolean(item.isPresent)) {
+                            result = 'checked';
+                        }
+                        if (Boolean(item.resourceType) && !Boolean(item.isAdditionalResource)) {
+                            // DailyMachineryResourceLogID
+                            // DailyMachineryResourceTxnID
+                            rows = "<tr><td><input type='hidden' value = " + item.dailyMachineryResourceLogID + "><input type='hidden' value = " + item.dailyMachineryResourceTxnID + "><input type='hidden' value = " + item.employeeID + "><input type='hidden' value = " + item.resourceType + "></td><td> " + item.employeeName + " </td><td><input type='checkbox' class='form-check-input' " + result + "></td><td><select class='form-control' id='machineryOperatorDropDown" + i + "'></select></td></tr>";
+                            $('#operatorTable tbody').append(rows);
+
+                            var machineryOperatorDropDown = document.getElementById('machineryOperatorDropDown' + i);
+                            var newHTML = "<option value='0'>Select Machine</option>";
+                            for (var l = 0; l < listnew.length; l++) {
+
+                                newHTML += "<option id='" + listnew[l].MachineryName + "' value='" + listnew[l].MachineryID + "'>" + listnew[l].MachineryName + "</option>";
+                            }
+                            machineryOperatorDropDown.innerHTML = newHTML;
+                            machineryOperatorDropDown.value = item.transferToMachineID;
+                        }
+                        if (!Boolean(item.resourceType) && !Boolean(item.isAdditionalResource)) {
+                            //<h5 class='text-center pt-1'><a class='MCLFRB' id='btnRemove' onclick='fnRemoveAdditionaResource(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></h5>
+                            rows = "<tr><td><input type='hidden' value = " + item.dailyMachineryResourceLogID + "><input type='hidden' value = " + item.dailyMachineryResourceTxnID + "><input type='hidden' value = " + item.employeeID + "><input type='hidden' value = " + item.resourceType + "></td><td> " + item.employeeName + " </td><td><input type='checkbox' class='form-check-input' " + result + "></td><td><select class='form-control' id='machineryHelperDropDown" + i + "'></select></td></tr>";
+                            $('#helperTable tbody').append(rows);
+                            var machineryHelperDropDown = document.getElementById('machineryHelperDropDown' + i);
+                            var newHTML = "<option value='0'>Select Machine</option>";
+                            for (var l = 0; l < listnew.length; l++) {
+
+                                newHTML += "<option id='" + listnew[l].MachineryName + "' value='" + listnew[l].MachineryID + "'>" + listnew[l].MachineryName + "</option>";
+                            }
+                            machineryHelperDropDown.innerHTML = newHTML;
+                            machineryHelperDropDown.value = item.transferToMachineID;
+
+                        }
+                        if (Boolean(item.isAdditionalResource)) {
+                            let isAditionResource = 'unchecked';
+                            if (Boolean(item.resourceType)) {
+                                isAditionResource = 'checked';
+                            }
+                            // rows = "<tr><td><input type='hidden' value = " + item.dailyMachineryResourceLogID + "><input type='hidden' value = " + item.dailyMachineryResourceTxnID + "></td><td><select class='form-control' id='presentEmployeeDropDown" + i + "'></select></td><td><input type='checkbox' class='form-check-input' id='isPresentCheckBox" + i + "' " + isAditionResource + "></td></tr>";
+
+                            rows = "<tr><td><input type='hidden' value = " + item.dailyMachineryResourceLogID + "><input type='hidden' value = " + item.dailyMachineryResourceTxnID + "></td><td><input type='hidden' value='" + item.employeeID + "'><input type='text' value='" + item.employeeName + "' class='form-control' id='presentEmployeeDropDown" + i + "'></td><td><a class='MCLFAB fa-lg' id='btnAddResource' onclick='fnAddEmployeeName(" + i + ")' href = 'javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddEmployee' aria-controls='canvasAddEmployee' ><iconify-icon icon='material-symbols:add-circle-outline-rounded' class='parent-icon'></iconify-icon></a></td><td><input type='checkbox' class='form-check-input' id='isPresentCheckBox" + i + "' " + isAditionResource + "></td><td><h5 class='pt-1'><a class='MCLFRB' id='btnRemove' onclick='fnRemoveAdditionaResource(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+                            $('#additionalResourceTable tbody').append(rows);
+
+                            // var presentEmployeeDropDown = document.getElementById('presentEmployeeDropDown' + i);
+                            // var newUpdatedHTML = "<option value='0'>Select Person</option>";
+                            // for (var l = 0; l < listnewEmployeeList.length; l++) {
+
+                            //     newUpdatedHTML += "<option id='" + listnewEmployeeList[l].EmployeeName + "' value='" + listnewEmployeeList[l].EmployeeID + "'>" + listnewEmployeeList[l].EmployeeName + "</option>";
+                            // }
+                            // presentEmployeeDropDown.innerHTML = newUpdatedHTML;
+                            // presentEmployeeDropDown.value = item.employeeID;
+                        }
+                        index = i;
+                    });
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: 'Log not found, Please check given information.'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(ls);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: '@MessageHelper.Error'
+                });
+            }
+        }).always(function () {
+            hideloader();
+        });
+    }
+
+    function fnAddNewRescource() {
+
+        index++;
+        // rows = "<tr id='newRowId" + index + "'><td></td><td><select class='form-control' id='presentEmployeeDropDown" + index + "'></select></td><td><input type='checkbox' class='form-check-input' id='isPresentCheckBox" + index + "'></td><td><h5 class='pt-1'><a class='MCLFRB' id='btnRemove' onclick='fnRemoveAdditionaResource(" + index + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+        rows = "<tr id='newRowId" + index + "'><td><input type='hidden' id='dailyMachineryResourceLogIDindex" + index + "'><input type='hidden' id='dailyMachineryResourceTxnIDindex" + index + "'></td><td><input type='hidden' id='hiddenEmployeeID" + index + "'><input type='text' class='form-control' id='presentEmployeeDropDown" + index + "'></td><td><a class='MCLFAB fa-lg' id='btnAddResource' onclick='fnAddEmployeeName(" + index + ")' href = 'javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddEmployee' aria-controls='canvasAddEmployee' ><iconify-icon icon='material-symbols:add-circle-outline-rounded' class='parent-icon'></iconify-icon></a></td><td><input type='checkbox' class='form-check-input' id='isPresentCheckBox" + index + "'></td><td><h5 class='pt-1'><a class='MCLFRB' id='btnRemove' onclick='fnRemoveAdditionaResource(" + index + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+
+        $('#additionalResourceTable tbody').append(rows);
+
+        // const presentEmployeeDropDown = document.getElementById('presentEmployeeDropDown' + index);
+        // var newUpdatedHTML = "<option value>Select Person</option>";
+        // for (var l = 0; l < listnewEmployeeList.length; l++) {
+
+        //     newUpdatedHTML += "<option id='" + listnewEmployeeList[l].EmployeeName + "' value='" + listnewEmployeeList[l].EmployeeID + "'>" + listnewEmployeeList[l].EmployeeName + "</option>";
+        // }
+        // presentEmployeeDropDown.innerHTML = newUpdatedHTML;
+    }
+
+    function fnRemoveAdditionaResource(id) {
+        const tableRow = document.getElementById('newRowId' + id);
+        tableRow.remove();
+    }
+
+    function fnSubmitLog() {
+
+        var operatorTable = document.getElementById('operatorTable');
+        var helperTable = document.getElementById('helperTable');
+        var additionalResourceTable = document.getElementById('additionalResourceTable');
+
+        var allTableData = [];
+
+        for (var i = 1; i < operatorTable.rows.length; i++) {
+            var rowData = {
+
+                DailyMachineryResourceLogID: operatorTable.rows[i].cells[0].children[0].value,
+                DailyMachineryResourceTxnID: operatorTable.rows[i].cells[0].children[1].value,
+                ResourceType: operatorTable.rows[i].cells[0].children[3].value,
+                EmployeeID: operatorTable.rows[i].cells[0].children[2].value,
+                //EmployeeName: null,
+                TransferToMachineID: operatorTable.rows[i].cells[3].children[0].value,
+                IsAdditionalResource: false,
+                IsPresent: operatorTable.rows[i].cells[2].children[0].checked
+            };
+
+            allTableData.push(rowData);
+        }
+        for (var i = 1; i < helperTable.rows.length; i++) {
+            var rowData = {
+
+                DailyMachineryResourceLogID: helperTable.rows[i].cells[0].children[0].value,
+                DailyMachineryResourceTxnID: helperTable.rows[i].cells[0].children[1].value,
+                ResourceType: helperTable.rows[i].cells[0].children[3].value,
+                EmployeeID: helperTable.rows[i].cells[0].children[2].value,
+                TransferToMachineID: helperTable.rows[i].cells[3].children[0].value,
+                IsAdditionalResource: false,
+                IsPresent: helperTable.rows[i].cells[2].children[0].checked
+            };
+
+            allTableData.push(rowData);
+        }
+
+        var allNewTableData = [];
+        for (var i = 1; i < additionalResourceTable.rows.length; i++) {
+            dailyMachineryResourceLogID = additionalResourceTable.rows[i].cells[0].children[0].value;
+            dailyMachineryResourceTxnID = additionalResourceTable.rows[i].cells[0].children[1].value;
+
+            var aditionalRescourceData = {
+                DailyMachineryResourceLogID: dailyMachineryResourceLogID !== '' ? dailyMachineryResourceLogID : 0,
+                DailyMachineryResourceTxnID: dailyMachineryResourceTxnID !== '' ? dailyMachineryResourceTxnID : 0,
+                ResourceType: additionalResourceTable.rows[i].cells[3].children[0].checked,
+                EmployeeID: additionalResourceTable.rows[i].cells[1].children[0].value,
+                TransferToMachineID: 0,
+                IsAdditionalResource: true,
+                IsPresent: true
+            };
+            allTableData.push(aditionalRescourceData);
+        }
+
+        document.getElementById('MachineryResourceLogArray').value = JSON.stringify(allTableData);
+
+        let submitLogURL = '@Url.Action("AddUpdateMachineryResourceLog","MachineryResourceAllocation")';
+        var modeldata = $("#formDailyMachineryResourceLog").serialize();
+        $.ajax({
+            type: 'post',
+            url: submitLogURL,
+            data: modeldata,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: 'Log not found, Please check given information.'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(ls);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: '@MessageHelper.Error'
+                });
+            }
+        }).always(function () {
+            hideloader();
+        });
+    }
+
+    function fnAddEmployeeName(indexNo) {
+
+        document.getElementById('canvasHeaderAddEmployee').innerHTML = "Select Employee";
+        document.getElementById('indexNoControl').value = indexNo;
+        $('#canvasAddEmployee').show();//('hide');
+        $('#dvInfoAddEmployee').html();
+
+    }
+
+    function fnAddSelectedEmployee() {
+        var employeeName = document.getElementById('presentEmployeeDropDown' + document.getElementById('indexNoControl').value);
+        var employeeId = document.getElementById('hiddenEmployeeID' + document.getElementById('indexNoControl').value);
+        employeeName.value = document.getElementById('choices-multiple-remove-button-EmployeeID').textContent;
+        employeeId.value = document.getElementById('choices-multiple-remove-button-EmployeeID').value;
+        let closeCanvas = document.querySelector('[data-bs-dismiss="offcanvas"]');
+        closeCanvas.click();
+        $("#choices-multiple-remove-button-EmployeeID").load(window.location.href + " #choices-multiple-remove-button-EmployeeID");
+    }
+
+                // function fnAvailableForMachineryEmployeeList(params) {
+                                        //     debugger;
+
+                                        //     let date = document.getElementById('todayDate').value;
+                                        //     let shiftid = document.getElementById('ShiftID').value;
+                                        //     let departmentid = document.getElementById('choices-multiple-remove-button-DepartmentID').value;
+                                        //     let machineryid = document.getElementById('choices-multiple-remove-button-MachineryID').value;
+
+                                        //     let availableForMachineryEmployeeListURL = '@@Url.Action("GetAllAvailableEmployeesForMachineryAsync","MachineryResourceAllocation")';
+
+                                        //     $.ajax({
+                                        //         type: 'post',
+                                        //         url: availableForMachineryEmployeeListURL,
+                                        //         data: params,
+                                        //         dataType: 'json',
+                                        //         success: function (data) {
+                                        //             debugger;
+                                        //             if (data.status) {
+                                        //                 // Lobibox.notify('success', {
+                                        //                 //     pauseDelayOnHover: true,
+                                        //                 //     size: 'mini',
+                                        //                 //     icon: 'bx bx-check-circle',
+                                        //                 //     continueDelayOnInactiveTab: false,
+                                        //                 //     position: 'bottom right',
+                                        //                 //     msg: data.message
+                                        //                 // });
+                                        //             }
+                                        //             else {
+                                        //                 Lobibox.notify('error', {
+                                        //                     pauseDelayOnHover: true,
+                                        //                     size: 'mini',
+                                        //                     icon: 'bx bx-check-circle',
+                                        //                     continueDelayOnInactiveTab: false,
+                                        //                     position: 'bottom right',
+                                        //                     msg: 'Log not found, Please check given information.'
+                                        //                 });
+                                        //             }
+                                        //         },
+                                        //         error: function (error) {
+                                        //             laddaStop(ls);
+                                        //             Lobibox.notify('error', {
+                                        //                 pauseDelayOnHover: true,
+                                        //                 size: 'mini',
+                                        //                 icon: 'bx bx-check-circle',
+                                        //                 continueDelayOnInactiveTab: false,
+                                        //                 position: 'bottom right',
+                                        //                 msg: '2@MessageHelper.Error'
+                                        //             });
+                                        //         }
+                                        //     }).always(function () {
+                                        //         hideloader();
+                                        //     });
+                                        // }
+</script>

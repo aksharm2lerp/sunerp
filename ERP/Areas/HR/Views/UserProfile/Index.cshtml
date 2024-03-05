@@ -1,0 +1,480 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using Business.Entities.Master.MasterModalForUserProfile
+@using System.Globalization;
+@model MasterModalForUserProfile
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.Title = "User Profile...";
+    CultureInfo cultureInfo = new CultureInfo("en-US");
+    var test = Model;
+    var result = test;
+}
+@*<div class="page-breadcrumb d-none d-sm-flex align-items-center pb-3 border-bottom">
+    <div class="ps-3 col-md-6">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0 p-0">
+    <li class="breadcrumb-item">
+    <a asp-area="" asp-controller="" asp-action="" ><i class="bx bx-home-alt"></i></a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Form Name</li>
+    </ol>
+    </nav>
+    </div>
+    <div class="col-md-6 text-align-right">
+    <a class="btn btn-primary px-5" asp-area="" asp-controller="" asp-action="" >
+    Add Form Name
+    </a>
+    </div>
+    </div>
+<div class="row pt-1">
+    <div class="col-md-12">
+        <grid model="@Model" />
+    </div>
+</div>*@
+
+<div class="row pt-1">
+
+    @{
+        DateTime currentTime = DateTime.Now;
+        TimeSpan MTime = new TimeSpan(9, 0, 0); // Define your start time
+        TimeSpan ATime = new TimeSpan(12, 0, 0); // Define your end time
+        TimeSpan ETime = new TimeSpan(16, 0, 0); // Define your end time
+    }
+
+    @if (currentTime.TimeOfDay >= MTime && currentTime.TimeOfDay <= ATime)
+    {
+        <h3 class="text-center py-3 bg-dark text-white"> Good Morning, <span id="FirstName"></span>&nbsp;<span id="MiddleName"></span>&nbsp;<span id="LastName"></span></h3>
+    }
+    else if (currentTime.TimeOfDay >= ATime && currentTime.TimeOfDay <= ETime)
+    {
+        <h3 class="text-center py-3 bg-dark text-white"> Good Afternoon, <span id="FirstName"></span>&nbsp;<span id="MiddleName"></span>&nbsp;<span id="LastName"></span></h3>
+    }
+    else
+    {
+        <h3 class="text-center py-3 bg-dark text-white"> Good Evening, <span id="FirstName"></span>&nbsp;<span id="MiddleName"></span>&nbsp;<span id="LastName"></span></h3>
+    }
+
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
+        <!--Basic Details-->
+        <div class="card">
+            <div class="text-center my-1">
+                <img id="UserImage" class="card-img-top-ConversationActivities rounded-circle border border-dark" src="~/assets/images/DefaultProfilePicture/DefaultProfilePicture.png" />
+                <script>
+                    var loadFile = function (event) {
+                        var image = document.getElementById('UserImage');
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                </script>
+            </div>
+            @*<span id="UserImage"></span>*@
+
+            <div class="card-body">
+                <h6 class="card-title text-center">
+                    <span id="DisplayFirstName"></span>&nbsp;<span id="DisplayMiddleName"></span>&nbsp;<span id="DisplayLastName"></span>
+                </h6>
+                <hr class="userProfileHR">
+                <p class="card-text">Person No.: <span id="PhoneNumber"></span></p>
+                <p class="card-text">Alternate No.: <span id="AlternateNumber"></span></p>
+                <p class="card-text">Email: <span id="Email"></span></p>
+                <p class="card-text">DOB : <span id="DOB"></span></p>
+                <p class="card-text">Religion : <span id="Religion"></span></p>
+                <p class="card-text">Blood Group : <span id="BloodGroup"></span></p>
+            </div>
+        </div>
+        <!--Basic Details-->
+        <!--Address Details-->
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">Plot No./Name : <span id="PlotNoName"></span></p>
+                <p class="card-text">Street No./Name : <span id="StreetNoName"></span></p>
+                <p class="card-text">Landmark : <span id="Landmark"></span></p>
+                <p class="card-text">Area/City : <span id="Area"></span></p>
+                <p class="card-text">Taluka : <span id="Taluka"></span></p>
+                <p class="card-text">District : <span id="DistrictName"></span></p>
+                <p class="card-text">State : <span id="StateName"></span></p>
+                <p class="card-text">Country : <span id="CountryName"></span></p>
+            </div>
+        </div>
+        <!--Address Details-->
+        <!--Referenced By Details-->
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">Referenced By : <span id="ReferenceBy"></span></p>
+            </div>
+        </div>
+        <!--Referenced By Details-->
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-9 col-xl-9">
+        <!--Personal Details-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h6 class="text-left"><iconify-icon icon="fluent:person-32-regular"></iconify-icon>&nbsp;Personal Details</h6>
+                </div>
+                <span class="classUserProfileHrTag"></span>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="card-text">Company Name : <span id="CompanyName"></span></p>
+                        <p class="card-text">Employee Code : <span id="EmployeeCode"></span></p>
+                        <p class="card-text">Designation : <span id="DesignationText"></span></p>
+                        <p class="card-text">Department : <span id="DepartmentName"></span></p>
+                        <p class="card-text">Date of Joining : <span id="JoiningDate"></span></p>
+                        <p class="card-text">Employement Status : <span id="EmploymentStatusText"></span></p>
+                        <p class="card-text">Confirmation Date : <span id="ConfirmationDate"></span></p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text">Job Title : <span id="JobTitle"></span></p>
+                        <p class="card-text">Reporting to : <span id="ReportingToName"></span></p>
+                        <p class="card-text">Employement Type : <span id="EmploymentTypeText"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Personal Details-->
+        <!--Banking Details-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h6 class="text-left"><iconify-icon icon="ph:bank-thin"></iconify-icon>&nbsp;Banking Details</h6>
+                </div>
+                <span class="classUserProfileHrTag"></span>
+                <div class="row">
+                    <div class="table-responsive-sm">
+                        <table class="table">
+                            <thead class="userProfileTableTHead">
+                                <tr>
+                                    <th scope="col">SrNo</th>
+                                    <th scope="col">Bank Name</th>
+                                    <th scope="col">Account No.</th>
+                                    <th scope="col">IFSC Code</th>
+                                    <th scope="col">Branch</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model.EmployeeBankDetails)
+                                {
+                                    
+                                    <tr>
+                                        @{
+
+                                            string statusTF = @i.IsActive == true ? "Active" : "Disable";
+                                        }
+                                        <th scope="row">@i.SrNo</th>
+                                        <td>@i.BankName</td>
+                                        <td>@i.AccountNO</td>
+                                        <td>@i.IFSCCode</td>
+                                        <td>@i.BranchLocation</td>
+                                        <td>@statusTF</td>
+                                        @*<td>@i.IsActive</td>*@
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Banking Details-->
+        <!--Document Details-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h6 class="text-left"><iconify-icon icon="ph:file-doc-thin"></iconify-icon>&nbsp;Document Sumitted</h6>
+                </div>
+                <span class="classUserProfileHrTag"></span>
+                <div class="row">
+                    <div class="table-responsive-sm">
+                        <table class="table">
+                            <thead class="userProfileTableTHead">
+                                <tr>
+                                    <th scope="col">SrNo</th>
+                                    <th scope="col">Document Name</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Open</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model.EmployeeDocuments)
+                                {
+                                    <tr>
+                                        <th scope="row">@i.SrNo</th>
+                                        <td>@i.DocumentName</td>
+                                        <td>@i.Description</td>
+                                        <td>@i.IsActive</td>
+                                        <td>
+                                            <a asp-area="HR" asp-controller="UserProfile" asp-action="OpenImage" asp-route-fileName="@i.DocumentName">
+                                                <iconify-icon icon="icon-park-outline:eyes"></iconify-icon>
+                                            </a>
+
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Document Details-->
+        <!--Family Details-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h6 class="text-left"><iconify-icon icon="mdi:family"></iconify-icon>&nbsp;Family Details</h6>
+                </div>
+                <span class="classUserProfileHrTag"></span>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="card-text">Father : <span id=""><label>@Model.employeeFamilyDetail.FatherName</label></span></p>
+                        <p class="card-text">Mother : <span id=""><label>@Model.employeeFamilyDetail.MotherName</label></span></p>
+                        <p class="card-text">Brother : <span id=""><label>@Model.employeeFamilyDetail.BrotherName</label></span></p>
+                        <p class="card-text">Sister : <span id=""><label>@Model.employeeFamilyDetail.SisterName</label></span></p>
+                        <p class="card-text">Marital Status : <span id=""><label>@Model.employeeFamilyDetail.MaritalStatusText</label></span></p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text">Father Contact : <span id=""><label>@Model.employeeFamilyDetail.FatherContact</label></span></p>
+                        <p class="card-text">Mother Contact : <span id=""><label>@Model.employeeFamilyDetail.MotherContact</label></span></p>
+                        <p class="card-text">Brother Contact : <span id=""><label>@Model.employeeFamilyDetail.BrotherContact</label></span></p>
+                        <p class="card-text">Sister Contact : <span id=""><label>@Model.employeeFamilyDetail.SisterContact</label></span></p>
+                        <p class="card-text">Wife Contact : <span id=""><label>@Model.employeeFamilyDetail.WifeContact</label></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Family Details-->
+        <!--Education Details-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h6 class="text-left"><iconify-icon icon="carbon:education"></iconify-icon>&nbsp;Educational Details</h6>
+                </div>
+                <span class="classUserProfileHrTag"></span>
+                <div class="row">
+                    <div class="table-responsive-sm">
+                        <table class="table">
+                            <thead class="userProfileTableTHead">
+                                <tr>
+                                    <th scope="col">Sr No.</th>
+                                    <th scope="col">Degree</th>
+                                    <th scope="col">Passing Year</th>
+                                    <th scope="col">Marks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model.EmployeeEducation)
+                                {
+                                    <tr>
+                                        <th scope="row">@i.SrNo</th>
+                                        <td>@i.Degree</td>
+                                        <td>@i.EndDate.ToDate()</td>
+                                        <td>@i.Grade</td>                                        
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Education Details-->
+        <!--Experience Details-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <h6 class="text-left"><iconify-icon icon="fluent-mdl2:work-item-alert"></iconify-icon>&nbsp;Experience Details</h6>
+                </div>
+                <span class="classUserProfileHrTag"></span>
+                <div class="row">
+                    <div class="table-responsive-sm">
+                        <table class="table">
+                            <thead class="userProfileTableTHead">
+                                <tr>
+                                    <th scope="col">Sr No.</th>
+                                    <th scope="col">Company Name</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model.EmployeeExperience)
+                                {
+                                    <tr>
+                                        <th scope="row">@i.SrNo</th>
+                                        <td>@i.CompanyName</td>
+                                        <td>@i.JobTitle</td>
+                                        @*<td>
+                                            @System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(i.StartMonth)) - @i.StartYear
+                                        </td>
+                                        <td>@System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(i.EndMonth)) - @i.EndYear</td>*@
+                                        <td>
+                                            @string.Concat(Convert.ToString(cultureInfo.DateTimeFormat.GetMonthName(Convert.ToInt32(i.StartMonth))) + "-" + i.StartYear)
+                                        </td>
+                                        <td>
+                                            @Convert.ToString(i.EndMonth == "" || i.EndYear <= 0 ? "Working" : string.Concat(Convert.ToString(cultureInfo.DateTimeFormat.GetMonthName(Convert.ToInt32(i.EndMonth))) + "-" + i.EndYear))
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Experience Details-->
+
+    </div>
+</div>
+
+
+@*<div class="offcanvas offcanvas-end" tabindex="-1" id="canvas_Employee" style="width: 65% !important; visibility: visible;">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="canvasHeader"></h5>
+        <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3 pb-5">
+        <div id="dvInfo">
+        </div>
+    </div>
+</div>*@
+
+@*<script type="text/javascript">
+    var urladd = '@Url.Action("GetEmployee", "Employee")';
+    function fnEmployee(obj) {
+        var _key = $(obj).data('key');
+        var _id = $(obj).data('id');
+        if (_id > 0)
+            document.getElementById("canvasHeader").innerHTML = "Update Employee";
+        else
+            document.getElementById("canvasHeader").innerHTML = "Add Employee";
+        var _parameters = { id: _id, key: _key };
+        $.ajax({
+            url: urladd,
+            type: "GET",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                $('#dvInfo').html(data);
+                $("#canvas_Employee").show();//('hide');
+            }
+        });
+    }
+</script>*@
+
+<script>
+
+    $(document).ready(function () {
+        var urlUserProfile = '@Url.Action("GetUserProfileBasicDetails", "UserProfile")';
+        // alert('urlUserProfile...' + urlUserProfile);
+        $.ajax({
+            url: urlUserProfile,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                //alert("Success "+data);
+                $.each(data.count, function (i, item) {
+                    //alert("item " + item);
+                    //var $profiles = $('#UserImage').attr('src', item.logoImagePath);
+                    //let userProfileDetail = '';
+                    //userProfileDetail = '<div class="d-flex align-items-center">' + item.groupName + '</div>';
+                    document.getElementById('DepartmentName').innerHTML += item.departmentName.trim();
+                    document.getElementById('DesignationText').innerHTML += item.designationText.trim();
+                    document.getElementById('EmployeeCode').innerHTML += item.employeeCode.trim();
+                    document.getElementById('DisplayFirstName').innerHTML += item.firstName.trim();
+                    document.getElementById('DisplayMiddleName').innerHTML += item.middleName.trim();
+                    document.getElementById('DisplayLastName').innerHTML += item.lastName.trim();
+                    document.getElementById('FirstName').innerHTML += item.firstName.trim();
+                    document.getElementById('MiddleName').innerHTML += item.middleName.trim();
+                    document.getElementById('LastName').innerHTML += item.lastName.trim();
+                    document.getElementById('PhoneNumber').innerHTML += item.personalMobileNo;
+                    document.getElementById('Email').innerHTML += item.personalEmail.trim();
+                    document.getElementById('DOB').innerHTML += item.birthDate.substring(0, 10);
+                    document.getElementById('Religion').innerHTML += item.religion.trim();
+                    document.getElementById('BloodGroup').innerHTML += item.bloodGroupText.trim();
+                    document.getElementById('AlternateNumber').innerHTML += item.alternativeMobileNo;
+                    document.getElementById('ReferenceBy').innerHTML += item.referenceBy.trim();
+                    document.getElementById('JoiningDate').innerHTML += item.joiningDate.substring(0, 10);
+                    document.getElementById('ConfirmationDate').innerHTML += item.confirmationDate.substring(0, 10);
+                    document.getElementById('ReportingToName').innerHTML += item.reportingToName.trim();
+                    document.getElementById('EmploymentTypeText').innerHTML += item.employmentTypeText.trim();
+                    document.getElementById('CompanyName').innerHTML += item.companyName.trim();
+                    document.getElementById('EmploymentStatusText').innerHTML += item.employmentStatusText.trim();
+                    document.getElementById('JobTitle').innerHTML += item.jobTitle.trim();
+                    //$('#UserImage').attr('src', item.logoImagePath);
+                    if (item.imagePath != null && item.imagePath != "") {
+                        //alert('imagePath-- ' + item.imagePath)
+                        const fileUrl = item.imagePath;
+                        return fetch(fileUrl, { method: 'HEAD' })
+                            .then(response => {
+                                if (response.ok) {
+                                    //alert('File exists');
+                                    //debugger;
+
+                                    $('#UserImage').attr('src', item.imagePath);
+                                }
+                            })
+                            .catch(() => {
+                                alert('Error occurred, file doesnt exist');//
+                            });
+                    }
+                    else {
+                        //alert('else');
+                        //debugger;
+
+                        $('#UserImage').attr('src', '/assets/images/DefaultProfilePicture/DefaultProfilePicture.png');
+                    }
+                });
+            },
+            error: function () {
+                alert("Error detected");
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        var urlUserProfileAddress = '@Url.Action("GetUserProfileAddressDetails", "UserProfile")';
+        //alert('urlUserProfileAddress...' + urlUserProfileAddress);
+        $.ajax({
+            url: urlUserProfileAddress,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                //alert("Success "+data);
+                $.each(data.count, function (i, item) {
+                    //debugger;
+                    document.getElementById('PlotNoName').textContent = item.plotNoName;
+                    document.getElementById('StreetNoName').textContent = item.streetNoName;
+                    document.getElementById('Landmark').textContent = item.landmark;
+                    document.getElementById('Area').textContent = item.area;
+                    document.getElementById('Taluka').textContent = item.taluka;
+                    document.getElementById('StateName').textContent = item.stateName;
+                    document.getElementById('CountryName').textContent = item.countryName;
+                    document.getElementById('DistrictName').textContent = item.districtName;
+                    document.getElementById('StateID').textContent = item.stateID;
+                    document.getElementById('CountryID').textContent = item.countryID;
+                    document.getElementById('AddressTypeID').textContent = item.addressTypeID;
+                    document.getElementById('City').textContent = item.city;
+                    document.getElementById('EmployeeAddressTxnID').textContent = item.employeeAddressTxnID;
+                    document.getElementById('IsActive').textContent = item.isActive;
+                    document.getElementById('ZipCode').textContent = item.zipCode;
+                    document.getElementById('Address1').textContent = item.address1;
+                    document.getElementById('Address2').textContent = item.address2;
+                    document.getElementById('Address3').textContent = item.address3;
+                    document.getElementById('AddressID').textContent = item.addressID;
+                    document.getElementById('AddressType').textContent = item.addressType;
+                    document.getElementById('MainAddress').textContent = item.mainAddress;
+                    document.getElementById('SrNo').textContent = item.srNo;
+                    document.getElementById('Street').textContent = item.street;
+                });
+            },
+            error: function () {
+                alert("Error detected");
+            }
+        });
+    });
+</script>
+

@@ -1,0 +1,220 @@
+﻿@model IEnumerable<Business.Entities.PackageFormTxn.PackageFormTxn>
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    int packageId = 0;
+
+    if (ViewBag.PackageID != null && ViewBag.PackageID > 0)
+        packageId = ViewBag.PackageID;
+}
+
+<h1>Package :@ViewBag.PackageName</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FormName)
+            </th>
+            <th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormName)
+                </td>
+                <td>
+                    @Html.HiddenFor(modelItem => item.FormID)
+                </td>                
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.IsActive, htmlAttributes: new { @checked = false, @class = "packageFormAllChecked"})
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="col-md-12 text-center mb-3">
+    <button type="button" class="btn btn-primary btn-info px-5 ladda-button" id="CheckedAllForm" value="Select All">Select All</button>
+    <button type="button" class="btn btn-primary btn-info px-5 ladda-button" onclick="fnSaveTable()"> Submit</button>
+    @*<button type="reset" class="btn btn-primary btn-info px-5 ladda-button">Reset</button>*@
+    <input type="button" onclick="uncheckAll()" class="btn btn-primary btn-info px-5 ladda-button" value="Reset">
+    <a class="btn btn-primary btn-info px-5 ladda-button" asp-area="SuperAdmin" asp-controller="Package" asp-action="Index">Back</a>
+</div>
+
+<script type="text/javascript">
+    var urladd = '@Url.Action("Get", "Package")';
+    function fnPackage(obj) {
+        var _key = $(obj).data('key');
+        var _id = $(obj).data('id');
+        if (_id > 0)
+            document.getElementById("canvasHeader").innerHTML = "Update Package";
+        else
+            document.getElementById("canvasHeader").innerHTML = "Add Package";
+        var _parameters = { id: _id, key: _key };
+        $.ajax({
+            url: urladd,
+            type: "POST",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                $('#dvInfo').html(data);
+                $("#canvas_Package").show();//('hide');
+            }
+        });
+    }
+
+    var urlisActiveInActive = '@Url.Action("ActiveInActivePackageForm","Package")';
+    function fnPackageFormActiveInactive(PackageID, FormID) {
+        var _packageID = PackageID;//$(this).data('id');
+        var _formID = FormID; //$("#EmployeeID").val();
+        var _checkBox = $("#packageFormActiveInactive").is(':checked');
+        var _docParameters = { packageID: _packageID, formID: _formID, isActive: _checkBox };
+        $.ajax({
+            url: urlisActiveInActive,
+            type: 'POST',
+            data: _docParameters,
+            success: function (data) {
+                if (data.status) {
+                    var test = Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message,
+                    });
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: '@MessageHelper.Error'
+                    });
+                }
+                $("#packageFormActiveInactive").load(window.location.href + " #packageFormActiveInactive");
+            },
+            error: function (error) {
+                laddaStop(ls);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: '@MessageHelper.Error'
+                });
+            }
+        }).always(function () {
+            hideloader();
+        });
+    }
+
+    //checkall function
+    $(document).ready(function () {
+        $("#CheckedAllForm").click(function () {
+            $('.packageFormAllChecked').prop('checked', true);
+        });
+    });
+
+    //uncheckall function
+    function uncheckAll() {
+        var inputs = document.querySelectorAll('.packageFormAllChecked');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].checked = false;
+        }
+    }
+
+
+    //DataTable Code start
+
+    function fnSaveTable() {
+
+        let packageId = @packageId;
+        //alert('package id is' + packageId);
+        var gridTableSaveUrl = '@Url.Action("AssingFormToPackage","Package")';
+        var gridTable = document.getElementsByTagName('table');
+        var gridTableData = [];
+
+        //alert('Before for loop');
+        for (var i = 1; i < gridTable[0].rows.length; i++) {
+            var test = gridTable[0].rows;
+            var rowData = {
+
+                //SrNo: gridTable[0].rows[i].cells[0].textContent,
+                PackageID: packageId,
+                //FormName: gridTable[0].rows[i].cells[1].textContent,
+                FormID: gridTable[0].rows[i].cells[1].children[0].value,
+                IsChecked: gridTable[0].rows[i].cells[2].children[0].checked
+            };
+
+            gridTableData.push(rowData);
+        }
+
+        //alert('After for loop');
+        $.ajax({
+            type: 'POST',
+            url: gridTableSaveUrl,
+            data: { 'tableData': JSON.stringify(gridTableData) },
+            success: function (response) {
+
+                if (response.status) {
+                    //notification
+                    // $("#canvasCanteenCharges").hide();//('hide');
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: response.message
+                    });
+                    setTimeout(
+                        function () {
+                            window.location.reload();
+                        }, 3000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: response.message
+                    });
+                }
+
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+
+    };
+
+   //DataTable Code end
+</script>

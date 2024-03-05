@@ -1,0 +1,59 @@
+﻿@using ERP.Areas.SuperAdmin.Controllers;
+@model Business.Entities.Master.ItemTableCollection
+<style>
+    fieldset {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+
+    legend {
+        font-weight: bold;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        background-color: #fff;
+        margin: -30px 0px 20px 0;
+        width: 50%;
+        text-align: center;
+        color: black;
+    }
+    .box {
+        width: auto;
+        height: auto;
+    }
+</style>
+<form method="post" asp-action="AddControls" asp-controller="FinishGoodItem">
+    <div id="exampleModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@ViewBag.TableName</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>@ViewBag.Column1:</label>
+                        <input type="@ViewBag.Column1Type" asp-items="@ViewBag.Column1" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>@ViewBag.Column2:</label>
+                        <input type="@ViewBag.Column2Type" asp-items="@ViewBag.Column2" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>@ViewBag.Column3:</label>
+                        <input type="@ViewBag.Column3Type" asp-items="@ViewBag.Column3" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")

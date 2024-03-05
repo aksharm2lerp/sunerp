@@ -1,0 +1,260 @@
+@using Business.Entities.HR.MachineryResourceAllocationModel;
+@model MachineryResourceAllocation;
+@{
+    //$ViewBag$
+    ViewBag.Title = "Machinery Resource Allocation Details..";
+}
+<form class="form-horizontal" role="form" id="formMachineryResourceAllocation">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="MachineryResourceAllocationID" />
+                <input type="hidden" asp-for="Operators" id="Operators" />
+                <input type="hidden" asp-for="Helpers" id="Helpers" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="MachineryResourceAllocationText" name="MachineryResourceAllocationText" asp-for="MachineryResourceAllocationText">
+                    <span asp-validation-for="MachineryResourceAllocationText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Allocation Date</label>
+                        <div class='col-sm-9'>
+                            <input type='date' class='form-control' id='AllocationDate' asp-for='AllocationDate' name='AllocationDate'>
+                            <span asp-validation-for='AllocationDate' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Shift</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' id='choices-multiple-remove-button-ShiftID' asp-for="ShiftID" asp-items='@CommonExtension.GetAllShiftAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Department</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' id='choices-multiple-remove-button-DepartmentID' asp-for="DepartmentID" asp-items='@CommonExtension.GetAllDepartmentAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Machinery</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' id='choices-multiple-remove-button-MachineryID' asp-for="MachineryID" asp-items='@CommonExtension.GetAllMachineryAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Operators</label>
+                        <div class='col-sm-9'>
+                            @* <input type='text' class='form-control' id='Operators' asp-for='Operators' name='Operators'> *@
+                            @*    <select class="form-select" id="choices-multiple-remove-button-Operators" asp-items="@CommonExtension.GetAllEmployeeAsync()" multiple="" name="Operators" tabindex="-1" aria-hidden="true" data-choice="active">
+                            </select> *@
+                            <select asp-items="@CommonExtension.GetAllEmployeeAsync()" class="form-select" id="choices-multiple-remove-button-Operators" multiple>
+                                <option value="">Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Helpers</label>
+                        <div class='col-sm-9'>
+                            @* <input type='text' class='form-control' id='Helpers' asp-for='Helpers' name='Helpers'> *@
+                            <select class="form-select" id="choices-multiple-remove-button-Helpers" asp-items="@CommonExtension.GetAllEmployeeAsync()" multiple>
+                                <option value="">Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="" class="col-sm-3 col-form-label">Is Active</label>
+                        <div class="col-sm-9">
+                            <input type="checkbox" class="form-check-input" id="IsActive" name="IsActive" asp-for="IsActive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateMachineryResourceAllocation", "MachineryResourceAllocation")';
+
+    var operatorMultipleDropdown = document.getElementById("choices-multiple-remove-button-Operators");
+    var helpersMultipleDropdown = document.getElementById("choices-multiple-remove-button-Helpers");
+
+    function fnSubmit() {
+
+        var selectedOperators = [];
+        var selectedHelpers = [];
+
+        // Loop through the options and check if they are selected
+        for (let i = 0; i < operatorMultipleDropdown.options.length; i++) {
+            const option = operatorMultipleDropdown.options[i];
+            if (option.selected) {
+                selectedOperators.push(option.value);
+                //selectedItems.push(option.value);
+            }
+        }
+        for (let i = 0; i < helpersMultipleDropdown.options.length; i++) {
+            const option = helpersMultipleDropdown.options[i];
+            if (option.selected) {
+                selectedHelpers.push(option.value);
+                //selectedItems.push(option.value);
+            }
+        }
+        document.getElementById("Operators").value = selectedOperators.toString();
+        document.getElementById("Helpers").value = selectedHelpers.toString();
+
+        if ($("#formMachineryResourceAllocation").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formMachineryResourceAllocation").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_MachineryResourceAllocation").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(5000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+        const operators = document.getElementById('Operators').value;
+        const helpers = document.getElementById('Helpers').value;
+
+        if (operators !== '') {
+            $.each(operators.split(","), function (i, e) {
+                $("#choices-multiple-remove-button-Operators option[value='" + e + "']").prop("selected", true);
+            });
+        }
+        if (helpers !== '') {
+            $.each(helpers.split(","), function (i, e) {
+                $("#choices-multiple-remove-button-Helpers option[value='" + e + "']").prop("selected", true);
+            });
+        }
+
+        var multipleCancelButtonOperators = new Choices('#choices-multiple-remove-button-Operators', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+
+        var multipleCancelButtonHelpers = new Choices('#choices-multiple-remove-button-Helpers', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+
+
+        var multipleCancelButtonShiftID = new Choices('#choices-multiple-remove-button-ShiftID', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+        var multipleCancelButtonDepartmentID = new Choices('#choices-multiple-remove-button-DepartmentID', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+        var multipleCancelButtonMachineryID = new Choices('#choices-multiple-remove-button-MachineryID', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+    });
+
+                        // $(document).ready(function () {
+                        //     let ShiftIDs = document.getElementById(choices - multiple - remove - button - ShiftID).value;
+                        //     $.each(ShiftIDs.split('', ''), function (i, e) {
+                        //         $('#choices-multiple-remove-button-ShiftID option[value='' + e + '']').prop('selected', true);
+                        //     });
+                        //     let DepartmentIDs = document.getElementById(choices - multiple - remove - button - DepartmentID).value;
+                        //     $.each(DepartmentIDs.split('', ''), function (i, e) {
+                        //         $('#choices-multiple-remove-button-DepartmentID option[value='' + e + '']').prop('selected', true);
+                        //     });
+                        //     let MachineryIDs = document.getElementById(choices - multiple - remove - button - MachineryID).value;
+                        //     $.each(MachineryIDs.split('', ''), function (i, e) {
+                        //         $('#choices-multiple-remove-button-MachineryID option[value='' + e + '']').prop('selected', true);
+                        //     });
+                        //     var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-ShiftID', {
+                        //         removeItemButton: false,
+                        //         maxItemCount: 10,
+                        //         searchResultLimit: 10,
+                        //         renderChoiceLimit: 10
+                        //     });
+                        //     var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-DepartmentID', {
+                        //         removeItemButton: false,
+                        //         maxItemCount: 10,
+                        //         searchResultLimit: 10,
+                        //         renderChoiceLimit: 10
+                        //     });
+                        //     var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-MachineryID', {
+                        //         removeItemButton: false,
+                        //         maxItemCount: 10,
+                        //         searchResultLimit: 10,
+                        //         renderChoiceLimit: 10
+                        //     });
+                        // });
+
+
+</script>

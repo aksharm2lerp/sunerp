@@ -1,0 +1,106 @@
+﻿@using Business.Entities.Party
+@model PagedDataTable<PartyBankDetails>
+<link href="~/admin/assets/vendors/simple-datatables/style.css" rel="stylesheet" />
+<div id="PartyBankAccountTable">
+    <div class="row">
+        <div class="col-lg-6">
+            <h6 class="cards-title">
+                Bank Account List
+            </h6>
+        </div>
+        <div class="col-lg-12 text-align-right">
+            <a onclick="fnPartyBankAccount(0)"
+               class="btn btn-primary px-5"
+               href="javascript:void(0)"
+               data-id="0"
+               data-bs-toggle="offcanvas"
+               data-bs-target="#canvasPartyBankAccount"
+               aria-controls="canvasPartyBankAccount">
+                Add Bank Account
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped" id="tblPartyBankAccounts">
+            <thead>
+                <tr>
+                    <td>SrNo</td>
+                    <td>Bank Name</td>
+                    <td>Bank Code</td>
+                    <td>Account No</td>
+                    <td>Account Name</td>
+                    <td>IFSC Code</td>
+                    <td>Branch</td>
+                    <td>Country</td>
+                    <td>IsActive</td>
+                    <td>Update</td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>@item.SrNo</td>
+                            <td>@item.BankName</td>
+                            <td>@item.BankCode</td>
+                            <td>@item.AccountNO</td>
+                            <td>@item.AccountName</td>
+                            <td>@item.IFSCCode</td>
+                            <td>@item.BranchLocation</td>
+                            <td>@item.CountryName</td>
+                            <td>@item.IsActive</td>
+                            <td>
+                                <a class='btn editaddress' onclick="fnPartyBankAccount(@item.PartyBankDetailsID)"
+                           href="javascript:void(0)"
+                           data-bs-toggle="offcanvas"
+                           data-bs-target="#canvasPartyBankAccount"
+                           aria-controls="canvasPartyBankAccount"
+                           data-id="@item.PartyBankDetailsID"
+                           Partyid="@item.PartyID"><i class='bx bx-edit'></i></a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="canvasPartyBankAccount" style="visibility: visible; width : 75% !important">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="canvasHeaderNamePartyBank"></h5>
+        <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3 pb-5" >
+        <div id="dvInfoPartyBank">
+        </div>
+    </div>
+</div>
+
+<script src="~/admin/assets/vendors/simple-datatables/simple-datatables.js"></script>
+<script type="text/javascript">
+    //var urlDeleteCompanyFromUser = 'Url.Action("DeleteBankAccount", "Party")';
+    var urlAddUpdateBankAccount = '@Url.Action("AddUpdatePartyBankAccount", "Party")';
+    function fnPartyBankAccount(PartyBankDetailId) {
+        var _id = PartyBankDetailId;//$(this).data('id');
+        var _PartyId = $("#PartyID").val();
+        if (_id > 0) {
+            document.getElementById("canvasHeaderNamePartyBank").innerHTML = "Update Party bank details";
+        }
+        else {
+            document.getElementById("canvasHeaderNamePartyBank").innerHTML = "Add Party bank details";
+        }
+        var _parameters = { PartyBankDetailId: _id, PartyId: _PartyId };
+        $.ajax({
+            url: urlAddUpdateBankAccount,
+            type: "GET",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                $("#canvasPartyBankAccount").show();//('hide');
+                $('#dvInfoPartyBank').html(data);
+            }
+        });
+    }
+</script>

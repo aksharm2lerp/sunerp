@@ -1,0 +1,144 @@
+@using Business.Entities.HR.TestHTMLForm2Model;
+@model TestHTMLForm2;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formTestHTMLForm2">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="TestHTMLForm2ID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="TestHTMLForm2Text" name="TestHTMLForm2Text" asp-for="TestHTMLForm2Text">
+                    <span asp-validation-for="TestHTMLForm2Text" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>TestHTMLForm2Name</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='TestHTMLForm2Name' asp-for='TestHTMLForm2Name' name='TestHTMLForm2Name'>
+                            <span asp-validation-for='TestHTMLForm2Name' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>AddressID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' id='choices-multiple-remove-button-AddressID' asp-items='@CommonExtension.GetAllAddressAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div><div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>RoleID</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' id='choices-multiple-remove-button-RoleID' asp-items='@CommonExtension.GetAllRoleAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateTestHTMLForm2", "TestHTMLForm2")';
+    function fnSubmit() {
+        if ($("#formTestHTMLForm2").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formTestHTMLForm2").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+        let AddressIDs = document.getElementById(AddressID).value;
+        $.each(AddressIDs.split('', ''), function (i, e) {
+            $('#choices-multiple-remove-button-AddressID option[value='' + e + '']').prop('selected', true);
+        });
+
+        let RoleIDs = document.getElementById(RoleID).value;
+        $.each(RoleIDs.split('', ''), function (i, e) {
+            $('#choices-multiple-remove-button-RoleID option[value='' + e + '']').prop('selected', true);
+        });
+
+
+
+
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-AddressID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-RoleID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+
+    });
+
+
+</script>

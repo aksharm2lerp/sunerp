@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using GridCore
+@addTagHelper *, GridMvc
+@model ISGrid
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.Title = "Party List..";
+}
+<div class="page-breadcrumb d-none d-sm-flex align-items-center pb-3 border-bottom">
+    <div class="ps-3 col-md-6">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item">
+                    <a asp-controller="Party" asp-action="Index" asp-area="Marketing"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Party List</li>
+            </ol>
+        </nav>
+    </div>
+    @*<div class="col-md-6 text-align-right">
+        <a class="btn btn-primary px-5" asp-controller="Party" asp-action="AddUpdateParty" asp-area="Marketing">
+            Add Party
+        </a>
+    </div>*@
+</div>
+<div class="row pt-1">
+    <div class="col-md-12">
+        <grid model="@Model" />
+    </div>
+</div>

@@ -1,0 +1,372 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using GridCore
+@using System.Data;
+@addTagHelper *, GridMvc
+@model ISGrid
+@{
+    var test = Model;
+    List<string> strTimeforRow = new List<string>();
+    string itemGroup = ViewBag.ItemGroup;
+    string wareHouse = ViewBag.WareHouse;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+            <div class="card border-0 shadow rounded-3">
+                <div class="card-body">
+                    <div class="row pt-1">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    @* <input type="hidden" asp-for="WarehouseID" />*@
+
+
+                                    <label class="col-form-label">UOM</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <select class="form-select" onchange="fnStoreUOMValue(this)" id="choices-multiple-UOMID" asp-items="@CommonExtension.GetAllUOMAsync()">
+                                        <option value="" selected>Select UOM Here...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="partyListSummary">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+            <div class="card border-0 shadow rounded-3">
+                <div class="card-body">
+                    <div class="row pt-1">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        @* <input type="hidden" asp-for="WarehouseID" />*@
+
+                                        <label class="col-form-label">Warehouse</label>
+                                        <select class="form-select" id="choices-multiple-WareHouse" asp-items="@MarketingExtension.GetAllSAPWareHouseAsync()">
+                                            <option value="" selected>Select Warehouse Here...</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        @*<input type="hidden" asp-for="ItemGroupNameID" />*@
+                                        <label class="col-form-label">Item Group Name</label>
+                                        <select class="form-select" id="choices-multiple-ItemGroup" asp-items="@MarketingExtension.GetAllSAPItemGroupAsync()">
+                                            <option value="" selected>Select Item Group Here...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <label class="col-form-label">Search In Item Desc.</label>
+                                        <input type="text" class="form-control" id="SearchString" placeholder="Search by string." value="@ViewBag.SearchString">
+                                        @* style="line-height: 2.7;" *@
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="SAPItemCollectionSreachButton pt-3">
+                                            <button id="btnSearchEmployeeDetail" type="button" onclick="fnSearchSAPItem(true)" class="btn btn-outline-primary searchbtn btn-sm py-2">Search</button> &nbsp;
+                                            <button id="btnResetEmployeeDetail" type="button" onclick="fnresetSAPItem(true)" class="btn btn-outline-primary searchbtn btn-sm py-2">Reset</button>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row pt-1">
+                        <div class="col-md-12">
+                            <grid model="@Model" />
+                        </div>
+                    </div>
+                    <div class="modal fade" id="BuyerListModal" tabindex="-1" aria-labelledby="BuyerModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #dee3f9;">
+                                    <h1 class="modal-title fs-6">
+                                        <label>Item Name:</label><br>
+                                        <label id="BuyerModalLabel" style="font-style:"></label>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="itemModalBody">
+                                    <div id="CustomerListTable">
+                                        <div class="row" style="overflow:auto;padding:0px 25px 0px 25px;">
+                                            <table class="table border border-dark text-center" style="white-space: nowrap; font-size:inherit !important;" id="customerTable">
+                                                <thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                    <tr>
+                                                        <th>Customer Name</th>
+                                                        <th>Volume</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="border border-dark"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    function fnresetSAPItem() {
+        var searchString = "";
+        let SAPItemUrl = '@Url.Action("GetSAPItemCollection", "OfferAcceptedMaster")';
+        let itemgroupValue = "";
+        let whValue = "";
+        let viewAllSAPItemList = SAPItemUrl + '?search=' + searchString + '&itemGroup=' + itemgroupValue + '&wareHouse=' + whValue;
+        // window.location.href = viewAllSAPItemList;
+        $.ajax({
+            url: viewAllSAPItemList,
+            type: "GET",
+            success: function (data, textStatus, jqXHR) {
+                $("#canvasAddNewRow").show();//('hide');
+                $('#dvInfoAddNewRow').html(data);
+                //document.getElementById('tempValue').value = obj;
+            }
+        });
+
+    }
+    function fnSearchSAPItem() {
+        var searchString = $('#SearchString').val();
+        let SAPItemUrl = '@Url.Action("GetSAPItemCollection", "OfferAcceptedMaster")';
+        let itemgroup = document.getElementById("choices-multiple-ItemGroup");
+        let itemgroupIndex = itemgroup.options[itemgroup.selectedIndex];
+        let itemgroupValue = itemgroupIndex.value;
+
+        let wareHouse = document.getElementById("choices-multiple-WareHouse");
+        let whIndex = wareHouse.options[wareHouse.selectedIndex];
+        let whValue = whIndex.value;
+
+
+        let viewAllSAPItemList = SAPItemUrl + '?search=' + searchString + '&itemGroup=' + itemgroupValue + '&wareHouse=' + whValue;
+        // window.location.href = viewAllSAPItemList;
+        $.ajax({
+            url: viewAllSAPItemList,
+            type: "GET",
+            success: function (data, textStatus, jqXHR) {
+                $("#canvasAddNewRow").show();//('hide');
+                $('#dvInfoAddNewRow').html(data);
+                //document.getElementById('tempValue').value = obj;
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+
+        var storedValue = localStorage.getItem("storedUOMValue");
+        if (storedValue !== null) {
+            $("#choices-multiple-UOMID option[value='" + storedValue + "']").prop("selected", true);
+
+            // localStorage.clear();
+
+        }
+        var multipleCancelButtonItemGroup = new Choices('#choices-multiple-UOMID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+        // $("#choices-multiple-UOMID option[value='" + '@@Html.Raw(itemGroup)' + "']").prop("selected", true);
+
+        // var multipleCancelButtonItemGroup = new Choices('#choices-multiple-UOMID', {
+        //     removeItemButton: false,
+        //     maxItemCount: 10,
+        //     searchResultLimit: 10,
+        //     renderChoiceLimit: 10
+        // });
+
+        $("#choices-multiple-ItemGroup option[value='" + '@Html.Raw(itemGroup)' + "']").prop("selected", true);
+
+        var multipleCancelButtonItemGroup = new Choices('#choices-multiple-ItemGroup', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+        $("#choices-multiple-WareHouse option[value='" + '@Html.Raw(wareHouse)' + "']").prop("selected", true);
+
+        var multipleCancelButtonWareHouse = new Choices('#choices-multiple-WareHouse', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+    });
+
+    function fnOpenBuyerList(obj) {
+        let itemCode = obj.dataset.id;
+        const headLabel = document.getElementById('BuyerModalLabel');
+        headLabel.textContent = obj.dataset.name;
+
+        // $('#BuyerListModal').modal('show');
+
+        let urlOpenBuyerList = '@Url.Action("GetCustomerListByItemCode", "SAPItemCollection")';
+        let _parameters = { itemCode: itemCode };
+        $.ajax({
+            url: urlOpenBuyerList,
+            type: "GET",
+            data: _parameters,
+            dataType: 'json',
+            success: function (data) {
+                // $("#BuyerListModal").show();//('hide');
+                //$('#itemModalBody').html(data);
+                if (data != null && data.status) {
+                    var table = document.getElementById('customerTable');
+
+                    // Loop through the dataArray and create a row for each item
+                    // data.customerListByItemCodes.forEach(function (item) {
+                    //     debugger;
+                    //     // Create a new table row (tr element)
+                    //     var row = table.insertRow();
+                    //     // Create cells for "ID," "Name," and "Age"
+                    //     var idCell = row.insertCell(0);
+                    //     var nameCell = row.insertCell(1);
+                    //     // Set the cell values
+                    //     idCell.innerHTML = item.customerName;
+                    //     nameCell.innerHTML = item.volume;
+
+                    $('#customerTable tbody').empty();
+                    var listData = data.customerListByItemCodes;
+                    if (listData.length > 0) {
+                        $.each(listData, function (i, item) {
+                            let custName = item.customerName.replace(/ /g, "+");
+                            const rows = '<tr><td><a onclick="fnShowSummury(this)" data-custName=' + custName + ' data-indexNo=' + i + ' data-itemCode=' + itemCode + ' data-bs-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample' + i + '">' + item.customerName + '</a><div class="collapse" id="collapseExample' + i + '"></div></td><td><a>' + item.volume + '</a></td></tr>';
+
+                            // BELOW CODE IS FOr AUTO GENERATE TABLE
+                            //<table class="table table-striped border border-dark text-center" style="white-space: nowrap; font-size:inherit !important;" id ="customerTable' + i + '"><thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;" ><tr><th>Month - Year</th><th>Volume</th></tr></thead><tbody class="border border-dark" id="colapseTableId' + i + '"></tbody></table>
+                            //<table class="table table-striped border border-dark text-center" style="white-space: nowrap; font-size:inherit !important;" id ="customerTable'+i+'"><thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;" ><tr><th>Customer Name </th><th>Volume</th></tr></thead><tbody class="border border-dark" id="colapseTableId'+i+'"><tr><td>Test Success</td><td>Volume List</td></tr></tbody></table>
+
+                            // const rows = '<tr><td><a onclick="fnShoWSummury(this)" data-itemCode=' + itemCode + ' data-customerName=' + item.customerName + ' data-bs-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample' + i + '">' + item.customerName + '</a><div class="collapse" id="collapseExample' + i + '"></div></td><td><a>' + item.volume + '</a></td></tr>';
+
+                            $('#customerTable tbody').append(rows);
+                            // $('tbody').append(rows);
+
+                        });
+                    }
+                    else {
+                        $('tbody').append('<tr><h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1><h3 style="color: red;">No customer found.</h3></tr>');
+                    }
+                    $('#BuyerListModal').modal('show');
+                    // $('#itemModalBody').html(data);
+                }
+            }
+        });
+    }
+
+    /*
+    function fnShowSummury(obj) {
+
+        let customerName = obj.dataset.custname.replace(/\+/g, ' ');
+        let indexNo = obj.dataset.indexno;
+        let itemCode = obj.dataset.itemcode;
+        const tableDiv = document.getElementById('collapseExample' + indexNo);
+        let urlOpenBuyerList = '@@Url.Action("GetClientSalesSummary", "SAPItemCollection")';
+        let _parameters = { itemCode: itemCode, customerName: customerName };
+        $.ajax({
+            url: urlOpenBuyerList,
+            type: "GET",
+            data: _parameters,
+            dataType: 'json',
+            success: function (data) {
+                // $("#BuyerListModal").show();//('hide');
+                //$('#itemModalBody').html(data);
+                if (data != null && data.status) {
+                    let tempTable = '<table class="table table-striped border border-dark text-center" style="white-space: nowrap; font-size:inherit !important;" id ="customerTable' + indexNo + '"><thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;" ><tr><th>Month - Year</th><th>Volume</th></tr></thead><tbody class="border border-dark" id="colapseTableId' + indexNo + '"></tbody></table>';
+                    tableDiv.innerHTML = tempTable;
+
+                    var listData = data.listClientSalesSummaryModel;
+
+                    if (listData.length > 0) {
+                        $.each(listData, function (j, item) {
+
+                            const newTablerows = '<tr><td>' + item.monthYear + '</td><td>' + item.volume + '</td></tr>';
+
+                            $('#colapseTableId' + indexNo).append(newTablerows);
+
+                        });
+                    }
+                    else {
+                        $('tbody').append('<tr><h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1><h3 style="color: red;">No customer found.</h3></tr>');
+                    }
+                }
+            }
+        });
+    }
+    */
+
+    function fnPassItemDetail(obj) {
+        var newTest = document.getElementById('tempValue').value;
+        var i = 0;
+        var index = 'newRowIndex' + newTest;
+        var tableElement = document.getElementsByTagName('Table');
+        var srCount = tableElement[0].rows.length;
+
+        var umid = document.getElementById('UOMID' + index);
+        var itemcodeindex = document.getElementById('itemCodeIndex' + index);
+        var itemnameindex = document.getElementById('itemNameIndex' + index);
+        var uomindex = document.getElementById('UOMIndex' + index);
+        var dropdown = document.getElementById('choices-multiple-UOMID');
+
+        var selectedOption = dropdown.options[dropdown.selectedIndex];
+
+        // Get the selected value and label
+        var selectedValue = selectedOption.value;
+        var selectedLabel = selectedOption.text;
+
+        umid.value = selectedValue;
+        itemcodeindex.value = obj.dataset.code;
+        itemnameindex.value = obj.dataset.name;
+        uomindex.value = selectedLabel;
+    }
+
+    $(".page-link").on("click", function () {
+        // alert('Page fn invoked');
+        //Get the href attribute value of the clicked element
+        var hrefValue = $(this).attr("href");
+        $(this).removeAttr("href");
+        $.ajax({
+            url: hrefValue,
+            type: "GET",
+            success: function (data, textStatus, jqXHR) {
+                $("#canvasAddNewRow").show();//('hide');
+                $('#dvInfoAddNewRow').html(data);
+                //document.getElementById('tempValue').value = obj;
+            }
+        });
+        // Log the href value to the console (you can perform any other actions with the hrefValue)
+        // console.log("Href value:", hrefValue);
+    });
+    $(".grid-goto-page-input").on("input", function () {
+        var hrefValue = '/Marketing/OfferAcceptedMaster/GetSAPItemCollection/?grid-page=' +this.value;
+        $.ajax({
+            url: hrefValue,
+            type: "GET",
+            success: function (data, textStatus, jqXHR) {
+                $("#canvasAddNewRow").show();//('hide');
+                $('#dvInfoAddNewRow').html(data);
+                //document.getElementById('tempValue').value = obj;
+            }
+        });
+    });
+    function fnStoreUOMValue(obj) {
+        localStorage.setItem("storedUOMValue", obj.value);
+    }
+</script>

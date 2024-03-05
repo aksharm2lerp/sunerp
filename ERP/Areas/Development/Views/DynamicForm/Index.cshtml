@@ -1,0 +1,202 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.Title = "Add new form";
+    int i = 0;
+}
+<div class="page-breadcrumb d-none d-sm-flex align-items-center pb-3 border-bottom">
+    <div class="ps-3 col-md-6">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item active" aria-current="page">Generate source code tool</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class=" col-sm-12 col-md-12 col-lg-12">
+    <div class="row mt-3">
+        <div class="col-2">
+            <label class="col-form-label">Table Name</label>
+            <br>
+            <label class="col-form-label">Package</label>
+        </div>
+
+
+        <div class="col-4">
+            <input type="text" class="form-control" id="tableName">
+            <br>
+            <select class="form-select" id="selectedPackage" asp-items="@PackageExtension.GetAllPackage()">
+                <option value="">Select Package</option>
+            </select>
+        </div>
+        <label for="" class="col-1 col-form-label ">Description:</label>
+        <div class="col-5">
+            <textarea class="form-control" rows="5" cols="50" id="tableDescription" placeholder=""></textarea>
+        </div>
+    </div>
+    @*<div class="row">
+    <label class="col-2 col-form-label">Package</label>
+    <div class="col-4">
+    <select class="form-select" id="selectedPackage" asp-items="@PackageExtension.GetAllPackage()">
+    <option value="">Select Package</option>
+    </select>
+    </div>
+    </div>*@
+    <hr />
+    <a class="MCLFAB fa-lg" id="btnAddColumn" onclick="fnAddRowInTable()"><iconify-icon icon="material-symbols:add-circle-outline-rounded" class="parent-icon"></iconify-icon></a>
+
+    <table class="table" id="tableAddRowsColumns" style="font-size:small;">
+        <thead style="position: sticky; top: 0; background-color:#6c97a1; color:white; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: x-small;">
+            <tr>
+                <th class="col-md-2">Column Name</th>
+                <th class="col-md-2">Datatype</th>
+                <th class="col-md-1">Size</th>
+                <th class="col-md-1">IsMandatory</th>
+                <th class="col-md-1">IsReference</th>
+                <th class="col-md-2">Reference Table</th>
+                <th class="col-md-1">IsSearchable</th>
+                <th class="col-md-1">IsDefault</th>
+                <th class="col-md-1">Default Value</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</div>
+
+@*     <select class="form-select" id="choices-multiple-remove-button" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" multiple>
+    @*<option value="">--Select--</option>
+    </select>*@
+
+<div>
+    <button type="submit" onclick="fnSaveTable()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveTable">Save</button>
+    @*<button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Cancel</button>*@
+</div>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var i = 0;
+    var urlsave = '@Url.Action("AddUpdateTable", "DynamicForm")';
+
+    function fnRemoveRow(removeid) {
+        const _id = removeid;
+        const tableRow = document.getElementById('tableRow' + _id);
+        tableRow.remove();
+    };
+
+    function fnAddRowInTable() {
+        var appendRows = "<tr id='tableRow" + i + "'><td><input type='text' class='form-control' id='columnNameId" + i + "'></td><td><select class='form-control' id='dataTypeId" + i + "'></select></td><td><input type='text' class='form-control' id='dataTypeSizeId" + i + "' value=''></td><td><input type='checkbox' role='switch' class='form-check-input' id='isMandetoryId" + i + "'></td><td><input type='checkbox' role='switch' class='form-check-input' id='isReferenceId" + i + "'></td><td><select class='form-control' id='referenceTableId" + i + "'></select></td><td><input type='checkbox' role='switch' class='form-check-input' id='isSearchableId" + i + "'></td><td><input type='checkbox' class='form-check-input' role='switch' id='isDefaultId" + i + "'></td><td><input type='text' class='form-control' id='defaultValueId" + i + "' value=''></td><td><h5 class='text-center pt-1'><a class='MCLFRB' id='btnRemove' onclick='fnRemoveRow(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+
+
+        $('tbody').append(appendRows);
+
+
+        var dataTypeDropDown = document.getElementById('dataTypeId' + i);
+        var referenceTableDropDown = document.getElementById('referenceTableId' + i);
+
+        $.getJSON("/Development/DynamicForm/GetAllDataTypes/",
+            function (data) {
+                var newHTML = "";
+                for (var l = 0; l < data.length; l++) {
+
+                    //newHTML += "<option value='" + data[l].dataTypeText + "'>" + data[l].dataTypeText + "</option>";
+                    newHTML += "<option id='" + data[l].dataTypeText + "' value='" + data[l].sqlSrvDataType + "'>" + data[l].dataTypeText + "</option>";
+                }
+                //employeeDropdown.innerHTML = newHTML;
+                dataTypeDropDown.innerHTML = newHTML;
+            });
+
+        $.getJSON("/Development/DynamicForm/GetAllDatabaseTables/",
+            function (data) {
+                var newHTML = "";
+                for (var l = 0; l < data.length; l++) {
+                    //debugger;
+                    newHTML += "<option value='" + data[l].tableName + "'>" + data[l].tableName + "</option>";
+                    //newHTML += "<option id='" + data[l].positiveNoteID + "' value='" + data[l].positiveNoteID + "'>" + data[l].positiveNoteText + "</option>";
+                }
+                //employeeDropdown.innerHTML = newHTML;
+                referenceTableDropDown.innerHTML = newHTML;
+            });
+        i++;
+    }
+
+    function fnSaveTable() {
+        var l = laddaStart('btnSaveTable');
+        var table = document.getElementById('tableAddRowsColumns');
+        var tableData = [];
+        for (var i = 1; i < table.rows.length; i++) {
+
+            var rowData = {
+
+                ColumnName: table.rows[i].cells[0].children[0].value,
+                Datatype: table.rows[i].cells[1].children[0].value,
+                Size: table.rows[i].cells[2].children[0].value,
+                IsMandatory: table.rows[i].cells[3].children[0].checked,
+                IsReference: table.rows[i].cells[4].children[0].checked,
+                ReferenceTable: table.rows[i].cells[5].children[0].value,
+                IsSearchable: table.rows[i].cells[6].children[0].checked,
+                IsDefault: table.rows[i].cells[7].children[0].checked,
+                DefaultValue: table.rows[i].cells[8].children[0].value
+            };
+
+            tableData.push(rowData);
+        }
+
+        let tableName = document.getElementById('tableName').value;
+        let tableDescription = document.getElementById('tableDescription').value;
+
+        let selectedItem = document.getElementById('selectedPackage');
+        let selectedLabel = selectedItem.options[selectedItem.selectedIndex].text;
+
+        $.ajax({
+            type: 'POST',
+            url: urlsave,
+            data: { 'tableData': JSON.stringify(tableData), 'tableName': tableName, 'tableDescription': tableDescription, 'selectedPackage': selectedLabel },
+            success: function (response) {
+
+                if (response.status) {
+                    //notification
+                    $("#canvasCanteenCharges").hide();//('hide');
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: response.message
+                    });
+                    setTimeout(
+                        function () {
+                            window.location.reload();
+                        }, 3000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: response.message
+                    });
+                }
+
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+
+    };
+</script>
+

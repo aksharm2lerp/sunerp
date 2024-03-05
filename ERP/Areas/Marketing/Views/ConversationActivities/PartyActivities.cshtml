@@ -1,0 +1,618 @@
+﻿@*@using Business.Entities.PartyMasterModel;*@
+@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using GridCore
+@using Business.Entities.Master.MasterModalForPartyActivity
+@model MasterModalForPartyActivity
+@*@addTagHelper *, GridMvc
+@model PartyMaster*@
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.Title = "Conversation Activities..";
+    var modal = Model;
+    var test = modal;
+    string message = string.Empty;
+}
+
+<!--Calender File Start-->
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+<!--Calender File End-->
+
+<div class="row pt-1">
+    <div class="col-md-12">
+        @*<grid model="@Model" />*@
+
+        @{
+            DateTime currentTime = DateTime.Now;
+            TimeSpan MTime = new TimeSpan(9, 0, 0); // Define your start time
+            TimeSpan ATime = new TimeSpan(12, 0, 0); // Define your end time
+            TimeSpan ETime = new TimeSpan(16, 0, 0); // Define your end time
+        }
+
+        @if (currentTime.TimeOfDay >= MTime && currentTime.TimeOfDay <= ATime)
+        {
+            <h1 class="text-center"> Good Morning, <span id="ConAtivityUserPartyName"><label>@Model.partyMaster.PartyName</label></span></h1>
+        }
+        else if (currentTime.TimeOfDay >= ATime && currentTime.TimeOfDay <= ETime)
+        {
+            <h1 class="text-center"> Good Afternoon, <span id="ConAtivityUserPartyName"><label>@Model.partyMaster.PartyName</label></span></h1>
+        }
+        else
+        {
+            <h1 class="text-center"> Good Evening, <span id="ConAtivityUserPartyName"><label>@Model.partyMaster.PartyName</label></span></h1>
+        }
+
+        @* <h1 class="text-center"> Good Morning, Dravesh Lokhande</h1>*@
+        <p class="text-center">Here's where you'll view a Lead’s basic profile with their activities and Request for Quot. detail.</p>
+        <div class="row">
+
+            <div class="col-3">
+                <div class="card">
+                    <!--style="width: 16rem;"-->
+                    <div class="text-center my-1">
+                        @*<img class="card-img-top-ConversationActivities rounded-circle border border-dark" id="ConAtivityUserImage" src="~/assets/images/avatars/avatar-1.png" alt="Card image cap">*@
+                        @if (Model != null && !string.IsNullOrEmpty(Model.partyMaster.LogoImagePath))
+                        {
+                            <img id="ConAtivityUserImage" class="card-img-top-ConversationActivities rounded-circle border border-dark" src="@Model.partyMaster.LogoImagePath" />
+                        }
+                        else
+                        {
+                            <img id="ConAtivityUserImage" class="card-img-top-ConversationActivities rounded-circle border border-dark" src="~/assets/images/DefaultProfilePicture/DefaultProfilePicture.png" />
+                        }
+
+
+
+                        <script>
+                            var loadFile = function (event) {
+                                var image = document.getElementById('ConAtivityUserImage');
+                                image.src = URL.createObjectURL(event.target.files[0]);
+                            };
+                        </script>
+
+
+
+                    </div>
+                    <span id="ConAtivityUserImage"></span>
+
+                    <div class="card-body">
+
+                        <h5 class="card-title text-center" id="PartyName"> </h5>
+                        <hr />
+                        <p class="card-text"><b><u>Company:</u></b> <span id="ConAtivityUserGroupName"><label>@Model.partyMaster.PartyName</label></span></p>
+                        <p class="card-text"><b><u>Contact:</u></b> <span id="ConAtivityUserPhone"><label>@Model.partyMaster.ContactPhone1</label></span></p>
+                        <p class="card-text"><b><u>Office No:</u></b> <span id="ConAtivityUserMobile"><label>@Model.partyMaster.Mobile1</label></span></p>
+                        <p class="card-text"><b><u>Email:</u></b> <span id="ConAtivityUserEmail"><label>@Model.partyMaster.Email</label></span></p>
+                        @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+                    </div>
+                    <div class="text-center my-1 h3">
+                        <span title="Party Migrate To Customer" data-bs-toggle="modal" data-bs-target="#ModalMigrate">
+                            <iconify-icon icon="carbon:migrate"></iconify-icon>
+                        </span>
+                        <span title="Whatsapp" data-bs-toggle="modal" data-bs-target="#ModalWhatsapp">
+                            <iconify-icon icon="ic:baseline-whatsapp"></iconify-icon>
+                        </span>
+                        <span title="Short Message Service" data-bs-toggle="modal" data-bs-target="#ModalWhatsapp">
+                            <iconify-icon icon="fa-solid:sms"></iconify-icon>
+                            @*<i class="fa-thin fa-comment-sms"></i>*@
+                        </span>
+                        <span title="Notification" data-bs-toggle="modal" data-bs-target="#ModalNotification">
+                            <iconify-icon icon="basil:notification-on-outline"></iconify-icon>
+                        </span>
+                        <span title="Mail" data-bs-toggle="modal" data-bs-target="#ModalMail">
+                            <iconify-icon icon="basil:gmail-outline"></iconify-icon>
+                        </span>
+                    </div>
+
+                    @*Migrate*@
+                    <div class="modal fade" id="ModalMigrate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Party convert to customer !</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <h2 for="recipient-name" class="col-form-label">Are you want to convert party to cust</h2>
+                                    <button type="button" class="btn btn-primary" onclick="fnConvertPartyToCustomer()">Convert</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        Back
+                                    </button>
+                                    @* <form>
+                                    <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Mobile No.:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Message:</label>
+                                    <textarea class="form-control" id="message-text" rows="4"></textarea>
+                                    </div>
+                                    </form> *@
+                                </div>
+                                @* <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Send SMS</button>
+                                <button type="button" class="btn btn-primary">Send Whatsapp</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                                </div> *@
+                            </div>
+                        </div>
+                    </div>
+                    @*Migrate*@
+
+                    @*Whatsapp and SMS*@
+                    <div class="modal fade" id="ModalWhatsapp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Send Message!</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Mobile No.:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="message-text" class="col-form-label">Message:</label>
+                                            <textarea class="form-control" id="message-text" rows="4"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Send SMS</button>
+                                    <button type="button" class="btn btn-primary">Send Whatsapp</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*Whatsapp and SMS*@
+
+                    @*Notification*@
+                    <div class="modal fade" id="ModalNotification" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Send Message!</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Mobile No.:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="message-text" class="col-form-label">Message:</label>
+                                            <textarea class="form-control" id="message-text" rows="4"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Send Notification</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*Notification*@
+
+                    @*Mail*@
+                    <div class="modal fade" id="ModalMail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Send Mail!</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="row mb-3">
+                                            <div class="col-3">
+                                                <label for="recipient-name" class=" col-form-label">To:</label>
+                                            </div>
+                                            <div class="col-9">
+                                                <input type="email" class="form-control" id="recipientToName">
+                                            </div>
+                                        </div>
+                                        @*<div class="row mb-3">
+                                        <div class="col-3">
+                                        <label for="recipient-name" class="col-form-label">Cc:</label>
+                                        </div>
+                                        <div class="col-9">
+                                        <input type="email" class="form-control" id="recipientCcName">
+                                        </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                        <div class="col-3">
+                                        <label for="recipient-name" class="col-form-label">Bcc:</label>
+                                        </div>
+                                        <div class="col-9">
+                                        <input type="email" class="form-control" id="recipientBccName">
+                                        </div>
+                                        </div>*@
+                                        <div class="row mb-3">
+                                            <div class="col-3">
+                                                <label for="recipient-name" class="col-form-label">Subject:</label>
+                                            </div>
+                                            <div class="col-9">
+                                                <input type="text" class="form-control" id="subjectLine">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-3">
+                                                <label for="message-text" class="col-form-label">Message:</label>
+                                            </div>
+                                            <div class="col-9">
+                                                <textarea class="form-control" id="messageBox" rows="5"></textarea>
+                                                @*<textarea class="form-control" id="editor" name="editor"></textarea>*@
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" onclick="fnSendMail()">Send Mail</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*Mail*@
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-9">
+                <div class="card">
+                    <div class="mt-3 ms-3 row">
+                        <h5 class="card-title"><iconify-icon icon="ic:twotone-recent-actors"></iconify-icon>&nbsp;&nbsp;&nbsp;&nbsp;Recent activity</h5>
+                    </div>
+                    <hr />
+                    <div class="card-body" style="max-height: 500px; overflow-y: auto;">
+                        @*<div id="ConAtivityLists"></div>*@
+                        <hr />
+                        @foreach (var i in Model.notification)
+                        {
+                            <div class="d-flex align-items-center">@Html.Raw(i.NotificationText) </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Requested for Quot</h6>
+                        <hr />
+                        <div class="table-responsive-sm">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sr No.</th>
+                                        <th scope="col">Item Description</th>
+                                        <th scope="col">UOM</th>
+                                        <th scope="col">Qty.</th>
+                                        <th scope="col">Status.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>PVC SL-S 8015 / H86 (SL-05)</td>
+                                        <td>Mtrs</td>
+                                        <td>1500</td>
+                                        <td>Quoted</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>PVC SL-I 7052FRLS / H92 (SL-131FRLS)</td>
+                                        <td>Mtrs</td>
+                                        <td>1500</td>
+                                        <td>Pending</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Meeting Schedule Information</h6>
+                        <hr />
+                        @*<div id="calendar"></div>*@
+
+                        @*<a asp-area="Marketing" asp-controller="MarketingMeeting" asp-action="Index">*@
+                        <div id="calender"></div>
+                        @*</a>*@
+
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #c2e0f9;">
+                                        <h4 class="modal-title"><span id="eventTitle"></span></h4>
+                                        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="pDetails"></p>
+                                    </div>
+                                    @*<div class="modal-footer">
+                                    <a asp-area="Marketing" asp-controller="MarketingMeeting" asp-action="Create" asp-route-id="" class="btn btn-default border border-primary">Edit</a>
+                                    <button type="button" class="btn btn-default border border-primary" data-bs-dismiss="modal">Close</button>
+                                    </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+<script>
+    $(document).ready(function () {
+        var events = [];
+        let id = @Model.partyMaster.PartyID;
+        //alert("You are redirecting : "+"/Marketing/MarketingMeeting/MarketingMeet?partyId="+id);
+        $.ajax({
+            type: "GET",
+            url: "/Marketing/MarketingMeeting/MarketingMeetPartyWise?partyId=" + id,
+            success: function (data) {
+
+                $.each(data, function (i, v) {
+                    let id = v.meetingStatusID;
+                    if (id == 1) {
+                        events.push({
+                            subject: v.subject,
+                            title: v.subject,
+                            description: v.description,
+                            start: moment(v.startDate),
+                            end: v.endDate != null ? moment(v.endDate) : null,
+                            data: v.marketingMeetingID,
+                            statusId: v.meetingStatusID,
+                            statusText: v.meetingStatusTypeText,
+                            color: '#EEE034', //Schedule color-yellow
+                            //allDay: 'true',
+                        });
+                    }
+                    if (id == 2) {
+                        events.push({
+                            subject: v.subject,
+                            title: v.subject,
+                            description: v.description,
+                            start: moment(v.startDate),
+                            end: v.endDate != null ? moment(v.endDate) : null,
+                            data: v.marketingMeetingID,
+                            statusId: v.meetingStatusID,
+                            statusText: v.meetingStatusTypeText,
+                            color: '#E79028', //Reschedule color-orange
+                            //allDay: 'true',
+                        });
+                    }
+                    if (id == 3) {
+                        events.push({
+                            subject: v.subject,
+                            title: v.subject,
+                            description: v.description,
+                            start: moment(v.startDate),
+                            end: v.endDate != null ? moment(v.endDate) : null,
+                            data: v.marketingMeetingID,
+                            statusId: v.meetingStatusID,
+                            statusText: v.meetingStatusTypeText,
+                            color: '#22D122', //Complete  color-green
+                            //allDay: 'true',
+                        });
+                    }
+                    if (id == 4) {
+                        events.push({
+                            subject: v.subject,
+                            title: v.subject,
+                            description: v.description,
+                            start: moment(v.startDate),
+                            end: v.endDate != null ? moment(v.endDate) : null,
+                            data: v.marketingMeetingID,
+                            statusId: v.meetingStatusID,
+                            statusText: v.meetingStatusTypeText,
+                            color: '#EF2525', // Cancel color-red
+                            //allDay: 'true',
+                        });
+                    }
+
+                });
+                GenerateCalender(events);
+            },
+            error: function (error) {
+                alert('failed');
+            }
+        })
+        function GenerateCalender(events) {
+            $('#calender').fullCalendar('destroy');
+            $('#calender').fullCalendar({
+                contentHeight: 400,
+                defaultDate: new Date(),
+                timeFormat: 'h(:mm) a - ',
+
+
+                //header: {
+                //    //left: 'prev,next today',
+                //    //center: 'title',
+                //    //right: 'month,basicWeek,basicDay,agenda'
+                //},
+
+                eventLimit: true,
+                //eventColor: '#378006',
+                events: events,
+
+                eventClick: function (calEvent, jsEvent, view) {
+
+                    $('#myModal #eventTitle').text(calEvent.subject);
+                    console.log('calEvent.subject---' + calEvent.subject);
+
+                    var $description = $('<div/>');
+
+                    $description.append($('<p/>').html('<b>Start: </b>' + calEvent.start.format("DD-MMM-YYYY HH:mm a")));
+                    console.log('calEvent.start--- ' + calEvent.start.format("DD-MMM-YYYY HH:mm a"));
+
+                    console.log('$description-- ' + $description);
+
+                    if (calEvent.end != null) {
+                        $description.append($('<p/>').html('<b>End: </b>' + calEvent.end.format("DD-MMM-YYYY HH:mm a")));
+                        console.log('calEvent.end---' + calEvent.end.format("DD-MMM-YYYY HH:mm a"));
+                    }
+                    $description.append($('<p/>').html('<b>Description: </b>' + calEvent.description));
+                    //$description.append($('<p/>').html('<b>Status: </b>' + calEvent.statusId));
+                    $description.append($('<p/>').html('<b>Status: </b>' + calEvent.statusText));
+
+                    if (calEvent.statusId == 3 && calEvent.statusText == 'Complete') {
+                        $description.append("<div class='modal-footer'> <button type='button' class='btn btn-default border border-primary' data-bs-dismiss='modal'>Close</button> </div>");
+                    }
+                    else {
+                        $description.append("<div class='modal-footer'> <a onclick=fnEdit('" + calEvent.data + "') class='btn btn-default border border-primary'>Edit</a> &nbsp; <button type='button' class='btn btn-default border border-primary' data-bs-dismiss='modal'>Close</button> </div>");
+                    }
+
+                    console.log('calEvent.description---' + calEvent.description);
+                    $('#myModal #pDetails').empty().html($description);
+                    $('#myModal').modal('show');
+                }
+            });
+        }
+    });
+
+    function fnEdit(obj) {
+        var urlMMEMID = '@Url.Action("Create", "MarketingMeeting")';
+        var urlWithId = urlMMEMID + '?id=' + obj;
+        window.location.href = urlWithId;
+    };
+
+    function fnSendMail() {
+        let recipientToName = $('#recipientToName').val();
+        //let recipientCcName = $('#recipientCcName').val();
+        //let recipientBccName = $('#recipientBccName').val();
+        let subjectLine = $('#subjectLine').val();
+        let messageBox = $('#messageBox').val();
+        //messageBoxText.value = CKEDITOR.instances.editor.getData();
+
+        let sendMailUrl = '@Url.Action("SendMail", "ConversationActivities")';
+        //let sendMailUrlList = sendMailUrl + '?recipientToName=' + recipientToName + '&recipientCcName=' + recipientCcName + '&recipientBccName=' + recipientBccName + '&subjectLine=' + subjectLine + '&messageBox=' + messageBox;
+        let sendMailUrlList = sendMailUrl + '?recipientToName=' + recipientToName + '&subjectLine=' + subjectLine + '&messageBox=' + messageBox;
+        //window.location.href = sendMailUrlList;
+
+        $.ajax({
+            type: 'POST',
+            url: sendMailUrlList,
+            //data: modeldata,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status) {
+                    //notification
+
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    $("#ModalMail").modal("hide");
+                    window.location.reload().delay(10000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                //window.location.reload().delay(10000);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+
+    }
+
+
+    function fnConvertPartyToCustomer() {
+        let URLPTC = '@Url.Action("PartyToCustomer", "ConversationActivities")';
+        //URLPTC Url Party To Customer
+        let _id = @Model.partyMaster.PartyID;
+        var _parameters = { PartyID: _id };
+        $.ajax({
+            type: 'POST',
+            url: URLPTC,
+            data: _parameters,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status) {
+                    //notification
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    $("#ModalMigrate").modal("hide");
+                    window.location.reload().delay(10000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                //window.location.reload().delay(10000);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    }
+    CKEDITOR.replace('editor');
+</script>

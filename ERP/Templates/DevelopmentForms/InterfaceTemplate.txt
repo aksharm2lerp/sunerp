@@ -1,0 +1,16 @@
+﻿using Business.Entities.$ModuleName$.$TableName$Model;
+using Business.SQL;
+using System.Threading.Tasks;
+
+namespace Business.Interface.$ModuleName$.I$TableName$
+{
+    public interface $TableName$Interface
+    {        
+        Task<PagedDataTable<$TableName$>> GetAll$TableName$Async(int pageNo, int pageSize, string searchString = "", string orderBy = "$TableName$ID", string sortBy = "ASC");
+
+        Task<$TableName$> Get$TableName$Async(int $TableName$ID);
+
+        Task<int> AddOrUpdate$TableName$($TableName$ model);
+
+    }
+}

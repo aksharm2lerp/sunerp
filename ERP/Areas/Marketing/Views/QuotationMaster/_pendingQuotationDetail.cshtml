@@ -1,0 +1,93 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using GridCore
+@using System.Data;
+@addTagHelper *, GridMvc
+@model ISGrid
+@{
+
+}
+<script src="~/GridResource/js/gridmvc-ajax.js" type="text/javascript"></script>
+<script src="~/lib/URI.js/URI.js" type="text/javascript"></script>
+@* <div class="row card" id="PendingSearchPanel">
+    @{
+        Html.RenderPartial("_pendingQuotationSearch", new Business.Entities.Marketing.RequestForQuotMasterModel.RequestForQuotSearch());
+    }
+</div> *@
+
+<div class="row card" id="PendingSearchPanel">
+    <div class="mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <div class="col-md-4">
+                                <label for="Keyword" class="col-form-label">Search keyword</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="searchKeyword" maxlength="50" placeholder="----- Search By Input Value -------">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="">
+                        <div class="text-end">
+                            <button class="btn btn-primary btn-info px-5 ladda-button" type="button" onclick="fnSearchPendingORCompletedQuotations(true)">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="PendingSearchResult">
+    <div class="col-md-12">
+        <grid model="@Model" />
+    </div>
+</div>
+
+
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script>
+
+    $(function () {
+
+        pageGrids.RequestForQuotMasterGrid.ajaxify({
+            getPagedData: "/QuotationMaster/PendingSearch",
+            getSubGridData: "/QuotationMaster/GetSubgridPendingQuot"
+                alert('Hello');
+        });
+
+        pageGrids.RequestForQuotMasterGrid.onRowSelect(function (e) {
+            alert('Hello');
+            $.get("/QuotationMaster/GetSubgridPendingQuot?id=" + e.row.RequestForQuotID, function (data) {
+                if (data.status <= 0) {
+                    alert(data.message);
+                    return;
+                }
+                alert(data.message);
+
+                $("#PendingSearchPanel").html(data.content);
+            });
+        });
+    });
+
+
+    // $(function () {
+    //     pageGrids.RequestForQuotMasterGrid.addFilterWidget(new CustomersFilterWidget());
+
+    //     pageGrids.RequestForQuotMasterGrid.ajaxify({
+    //         getPagedData: "/QuotationMaster/PendingSearch",
+    //         getSubGridData: "/QuotationMaster/GetSubgridPendingQuot"
+    //     });
+
+
+
+    //    // pageGrids.ordersGrid.applyExtSortValues("Customer.CompanyName", 0, 1);
+    // });
+</script>

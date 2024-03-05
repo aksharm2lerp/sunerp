@@ -1,0 +1,220 @@
+﻿@using ERP.Areas.SuperAdmin.Controllers;
+@model Business.Entities.Master.ItemTableCollection
+@{
+    List<ColumnType> colTypes = Enum.GetValues(typeof(ColumnType)).Cast<ColumnType>().ToList();
+    if (colTypes != null)
+    {
+        ViewData["ColType"] = new SelectList(colTypes);
+    }
+}
+<style>
+    fieldset {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+
+    legend {
+        font-weight: 200;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        background-color: #ccc;
+        margin: -30px 0px 20px 0;
+        width: 50%;
+        text-align: center;
+        color: black;
+    }
+    .box {
+        width: auto;
+        height: auto;
+    }
+     
+</style>
+<form method="post" id="frmfgItem" asp-area="SuperAdmin" class="g-3 needs-validation" novalidate>
+    <div class="mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <fieldset>
+                    <legend style="">Finish Good Item Configuration</legend>
+                    @*<span>User Define Tables for Finish Good part</span>*@
+                    <div class="box">
+                        <div class="row col-md-12">
+                            <input type="hidden" asp-for="ItemTableCollectionID" />
+                            <div class="mb-3 row">
+                                <div class="col-md-2">
+                                    <label for="Name" class="col-form-label">Table Name<span class="required">*</span></label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" asp-for="TableName" maxlength="50">
+                                    <span asp-validation-for="TableName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-md-12">
+                            <div class="mb-3 row">
+                                <div class="col-md-2">
+                                    <label for="Column1Name" class="col-form-label">Column1 <span class="required">*</span></label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" asp-for="Column1Name" maxlength="50">
+                                    <span asp-validation-for="Column1Name" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <select asp-for="Column1Type" asp-items="@ViewBag.ColType" class="form-control">
+                                        </select>
+                                    <span asp-validation-for="Column1Type" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-md-12">
+                            <div class="mb-3 row">
+                                <div class="col-md-2">
+                                    <label for="Column2Name" class="col-form-label">Column2 <span class="required">*</span></label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" asp-for="Column2Name" maxlength="50">
+                                    <span asp-validation-for="Column2Name" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <select asp-for="Column2Type" asp-items="@ViewBag.ColType" class="form-control">
+                                         </select>
+                                    <span asp-validation-for="Column2Type" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-md-12">
+                            <div class="mb-3 row">
+                                <div class="col-md-2">
+                                    <label for="Column3Name" class="col-form-label">Column3 <span class="required">*</span></label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" asp-for="Column3Name" maxlength="50">
+                                    <span asp-validation-for="Column3Name" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <select asp-for="Column3Type" asp-items="@ViewBag.ColType" class="form-control">
+                                    </select>
+                                    <span asp-validation-for="Column3Type" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        
+        <div>
+            <button class="btn btn-primary btn-info px-5 ladda-button" id="btnSave" type="button" onclick="fnSubmit()">
+                Ok-Submit
+            </button>
+            <button type="reset" class="btn btn-default btn-info px-5 ladda-button" data-itemid="@Model.ItemTableCollectionID" onclick="fnReset(this)">Clear</button>
+        </div>
+    </div> 
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+
+    (function ($) {
+
+        //re-set all client validation given a jQuery selected form or child
+        $.fn.resetValidation = function () {
+
+            var $form = this.closest('form');
+
+            //reset jQuery Validate's internals
+            $form.validate().resetForm();
+
+            //reset unobtrusive validation summary, if it exists
+            $form.find("[data-valmsg-summary=true]")
+                .removeClass("validation-summary-errors")
+                .addClass("validation-summary-valid")
+                .find("ul").empty();
+
+            //reset unobtrusive field level, if it exists
+            $form.find("[data-valmsg-replace]")
+                .removeClass("field-validation-error")
+                .addClass("field-validation-valid")
+                .empty();
+
+            return $form;
+        };
+
+        //reset a form given a jQuery selected form or a child
+        //by default validation is also reset
+        $.fn.formReset = function (resetValidation) {
+            var $form = this.closest('form');
+
+            $form[0].reset();
+
+            if (resetValidation == undefined || resetValidation) {
+                $form.resetValidation();
+            }
+
+            return $form;
+        }
+    })(jQuery);
+    function fnReset(obj){
+        debugger;
+        if ($(obj).attr("dataitem-id") == 0){
+            var $form = $("#frmfgItem");
+            $form[0].reset();
+            $form.resetValidation();
+        }
+        else{
+            fnFinishGoodItem(undefined, 0);
+        }
+    }
+    function fnSubmit() {
+        if ($("#frmfgItem").valid()) {
+            var l = laddaStart('btnSave');
+            modeldata = $("#frmfgItem").serialize();
+            $.ajax({
+                type: 'POST',
+                url: '../SuperAdmin/FinishGoodItem/Save',
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    console.log(data.status);                    
+                    if (data.status) {
+                        //notification
+                        //$("#canvas_fgitem").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                location.reload(true);
+            });
+        }
+    };
+</script>

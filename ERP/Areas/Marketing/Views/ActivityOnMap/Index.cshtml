@@ -1,0 +1,415 @@
+﻿@*@using System.Data;
+@using GridCore
+@addTagHelper *, GridMvc
+@model ISGrid*@
+@using Business.Entities.ActivityOnMapModel;
+@model EmployeeDetails;
+@{
+    ViewData["Title"] = "User Permission";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+
+}
+@{
+    int userId = ViewBag.UserID;
+    int companyId = ViewBag.CompanyID;
+    var test = Model;
+    if (Model != null && Model.activityOnMap.Count > 0)
+    {
+        var activityMap = Model.activityOnMap;
+    }
+    List<string> strTimeforRow = new List<string>();
+    int EmployeeId = 0;
+    if (ViewBag.EmployeeID != null && ViewBag.EmployeeID > 0)
+    {
+        EmployeeId = ViewBag.EmployeeID;
+    }
+ 
+}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="~/js/markerclusterer.min.js"></script>
+  
+<div class="container" id="">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+            <div class="card border-0 shadow rounded-3">
+                <div class="card-body">
+
+
+
+                    <div class="row pt-1">
+                        <div class="col-md-12">
+
+                            <div class="row">
+                                <label class="col-2 col-form-label">Select Employee:</label>
+                                <div class="col-4">
+                                    <select class="form-control" id="EmployeeId" name="EmployeeId" asp-items="@EmployeeExtension.GetAllEmployeesForDropDown(userId,companyId)" asp-for="@EmployeeId" required>
+                                        <option value="">Select Employee</option>
+                                    </select>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <button id="btnSearchPackageDetail" type="button" onclick="fnSearchEmployeeDetail();"
+                                            class="btn btn-outline-primary px-5 btn-sm">Search</button>
+                                            <div id="detail"></div>
+                                </div>  
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+
+                    @*     @if (Model != null)
+                    {*@
+                    <div id="empDetailDiv" hidden>
+                        <div class="card border-0 shadow rounded-3">
+                            <div class="card-body">
+                                <div class="row mx-3" id="empDetail">
+                                    <div class="col-2">
+                                        @*if (Model.ImagePath != null)
+                                        {
+                                        <img src="@Model.ImagePath" class="rounded-circle border border-dark" id="UserImage" alt="Profile Picture" width="100%" height="auto">
+
+                                        }
+                                        else
+                                        {*@
+                                        <img src="~/assets/images/DefaultProfilePicture/DefaultProfilePicture.png" class="rounded-circle border border-dark" id="UserImage" alt="Profile Picture" width="100%" height="auto">
+                                        @*}*@
+
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="row my-2">
+                                            <div class="col-6">
+                                                Name : <span class="text-end fw-bold text-uppercase" id="firstName"></span>&nbsp;<span class="fw-bold text-uppercase" id="lastName"></span>
+                                            </div>
+                                            <div class="col-6">
+                                                Personal Mobile No. : <span class="text-end fw-bold text-uppercase" id="PersonalMobileNo"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row my-2">
+                                            <div class="col-6">
+                                                Alternate Mobile no. : <span class="text-end fw-bold text-uppercase" id="AlternateMobileNo"></span>
+                                            </div>
+                                            <div class="col-6">
+                                                Personal Email ID : <span class="text-end fw-bold text-uppercase" id="PersonalEmail"></span>
+                                            </div>
+                                        </div>
+                                        @*<p class="card-text">Date of Birth: <b><span id="DOB"></span></b></p>
+                                        <p class="card-text">Religion: <b><span id="Religion"></span></b></p>
+                                        <p class="card-text">Blood Group: <b><span id="BG"></span></b></p>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-6" >
+                                 
+                                        <div id="dvMap" style="width: 450px; height: 300px">
+                                        </div> 
+
+                                 
+                            </div>
+
+                            <div class="col-6">
+                                
+                                        <div class="row my-2">
+                                            <div class="col-2">
+                                                <label class="form-label">Date:</label>
+                                            </div>
+                                            <div class="col-6">
+                                        <input type="date" class="form-control" id="dtsearch" value="@DateTime.Now.Date.ToString("yyyy-MM-dd")">
+                                            </div>
+
+                                            <div class="col-4 text-end">
+                                                <button id="btnSearchDateWiseGoogleMapDetail" type="button" onclick="fnSearchEmployeeDetailByDate();"
+                                                    class="btn btn-outline-primary px-5 btn-sm">Search</button>
+                                            </div>
+                                        </div>
+                                        @*   @if (Model != null && Model.activityOnMap.Count > 0)  
+                                        {*@
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="tableLoationData" style="height: 100px;overflow-y: scroll;">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">SrNo.</th>
+                                                        <th scope="col">TrackTimeStamp</th>
+                                                        <th scope="col">Latitude</th>
+                                                        <th scope="col">longitude</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @*           @foreach (var item in Model.activityOnMap)
+                                                    {
+                                                    <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Umargaon</td>
+                                                    <td>396170</td>
+                                                    <td>@item.TrackTimeStamp</td>
+                                                    <td>@item.Latitude</td>
+                                                    <td>@item.Longitude</td>
+                                                    </tr>
+                                                    }*@
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        @*  }*@
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                    @*}*@
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQG4UAJOeOjPGIUluGz4KGPp1PaJaJGxQ&libraries=drawing&v=weekly"></script>
+<script src="/Scripts/GMap.NET/gmaps.js"></script>
+
+
+
+
+<script type="text/javascript">
+    var urlGetEmployeeDetail = '@Url.Action("GetEmployeeDetail","ActivityOnMap")';
+    var listData = "";
+    function fnSearchEmployeeDetail() {
+        var getEmpDetailValue = document.getElementById('EmployeeId');
+        var empId = getEmpDetailValue.options[getEmpDetailValue.selectedIndex].value;
+        //alert('empId----' + empId);
+        var parameter = {
+            employeeId: empId,
+            startDate: ""
+        };
+
+
+        $.ajax({
+            type: 'GET',
+            url: urlGetEmployeeDetail,
+            data: parameter,
+            dataType: 'json',
+            success: function (data) {
+                if (data != null) {
+
+                    document.getElementById('firstName').innerHTML = data.firstName;
+                    document.getElementById('lastName').innerHTML = data.lastName;
+                    document.getElementById('PersonalMobileNo').innerHTML = data.personalMobileNo;
+                    document.getElementById('AlternateMobileNo').innerHTML = data.alternativeMobileNo;
+                    document.getElementById('PersonalEmail').innerHTML = data.personalEmail;
+
+                    $('#tableLoationData tbody').empty();
+                    listData = data.activityOnMap;
+                    //let mrk = '@ViewBag.Markers';
+
+                    //if (mrk.length > 0) {
+                    //    alert("jdhdsfadgahgdhsadjsadsadas");
+                    //}
+                    //debugger;
+                    let sr = 1;
+                    $.each(listData, function (i, item) {
+
+                        var rows = '<tr><td>' + sr + '</td><td>' + item.trackTimeStamp + '</td><td>' + item.lat + '</td><td>' + item.lng + '</td></tr>';
+
+                        $('tbody').append(rows);
+                        sr++;
+                    });
+
+                    initialize(listData);
+
+                    document.getElementById('empDetailDiv').removeAttribute("hidden");
+
+                    if (data.imagePath != null && data.imagePath != "") {
+                        //alert('imagePath-- ' + data.imagePath)
+                        const fileUrl = data.imagePath;
+                        return fetch(fileUrl, {
+                            method: 'HEAD'
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    //alert('File exists');
+                                    //debugger;
+
+                                    $('#UserImage').attr('src', data.imagePath);
+                                }
+                            })
+                            .catch(() => {
+                                alert('Error occurred, file doesnt exist'); //
+                            });
+                    } else {
+                        $('#UserImage').attr('src', '/assets/images/DefaultProfilePicture/DefaultProfilePicture.png');
+                    }
+                } else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+
+
+    };
+    var markersabc = [
+            { lat: -31.56391, lng: 147.154312 },
+            { lat: -33.718234, lng: 150.363181 },
+            { lat: -33.727111, lng: 150.371124 },
+            { lat: -33.848588, lng: 151.209834 },
+            { lat: -33.851702, lng: 151.216968 },
+            { lat: -34.671264, lng: 150.863657 },
+            { lat: -35.304724, lng: 148.662905 },
+            { lat: -36.817685, lng: 175.699196 },
+            { lat: -36.828611, lng: 175.790222 }]
+
+    function initialize(listData) {
+
+        var mapOptions = {
+            center: new google.maps.LatLng(listData[0].lat, listData[0].lng),
+            zoom: 17,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var infoWindow = new google.maps.InfoWindow();
+        var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+        for (i = 0; i < listData.length; i++) {
+            var data = listData[i]
+            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: data.title
+            });
+            (function (marker, data) {
+                google.maps.event.addListener(marker, "click", function (e) {
+                    infoWindow.setContent(data.description);
+                    infoWindow.open(map, marker);
+                });
+            })(marker, data);
+        };
+
+
+    };
+
+
+
+
+    function fnSearchEmployeeDetailByDate() {
+        var getEmpDetailValue = document.getElementById('EmployeeId');
+        var empId = getEmpDetailValue.options[getEmpDetailValue.selectedIndex].value;
+        var getDateValue = document.getElementById('dtsearch').value;
+        //alert('Select date:' + getDateValue);
+        var parameter = {
+            employeeId: empId,
+            startDate: getDateValue
+        };
+
+
+        $.ajax({
+            type: 'GET',
+            url: urlGetEmployeeDetail,
+            data: parameter,
+            dataType: 'json',
+            success: function (data) {
+                if (data != null) {
+
+                    document.getElementById('firstName').innerHTML = data.firstName;
+                    document.getElementById('lastName').innerHTML = data.lastName;
+                    document.getElementById('PersonalMobileNo').innerHTML = data.personalMobileNo;
+                    document.getElementById('AlternateMobileNo').innerHTML = data.alternativeMobileNo;
+                    document.getElementById('PersonalEmail').innerHTML = data.personalEmail;
+
+                    $('#tableLoationData tbody').empty();
+                    listData = data.activityOnMap;
+                    
+                    //let mrk = '@ViewBag.Markers';
+
+                    //if (mrk.length>0)
+                    //{
+                    //    alert("jdhdsfadgahgdhsadjsadsadas");
+                    //}
+                    //debugger;
+                    let sr = 1;
+                    $.each(listData, function (i, item) {
+
+                        var rows = '<tr><td>' + sr + '</td><td>' + item.trackTimeStamp + '</td><td>' + item.lat + '</td><td>' + item.lng + '</td></tr>';
+
+                        $('tbody').append(rows);
+                        sr++;
+                    });
+
+                    initialize(listData);
+
+                    document.getElementById('empDetailDiv').removeAttribute("hidden");
+
+                    if (data.imagePath != null && data.imagePath != "") {
+                        //alert('imagePath-- ' + data.imagePath)
+                        const fileUrl = data.imagePath;
+                        return fetch(fileUrl, {
+                            method: 'HEAD'
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    //alert('File exists');
+                                    //debugger;
+
+                                    $('#UserImage').attr('src', data.imagePath);
+                                }
+                            })
+                            .catch(() => {
+                                alert('Error occurred, file doesnt exist'); //
+                            });
+                    } else {
+                        $('#UserImage').attr('src', '/assets/images/DefaultProfilePicture/DefaultProfilePicture.png');
+                    }
+                } else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+
+
+    };
+
+
+    
+    </script>
+ 

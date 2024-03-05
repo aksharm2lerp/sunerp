@@ -1,0 +1,154 @@
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.deps.json
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.dll
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.pdb
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.dll
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.dll
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.pdb
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.pdb
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfo.cs
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CopyComplete
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.dll
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\refint\Business.Entities.dll
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.pdb
+C:\Users\Lenovo\Documents\GitHub\ERP\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\ref\Business.Entities.dll
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.deps.json
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.dll
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.pdb
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.dll
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.dll
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.pdb
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.pdb
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.AssemblyReference.cache
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfoInputs.cache
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfo.cs
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CoreCompileInputs.cache
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CopyComplete
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.dll
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\refint\Business.Entities.dll
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.pdb
+C:\Projects\ERP Backups\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\ref\Business.Entities.dll
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.deps.json
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.dll
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.pdb
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.dll
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.dll
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.pdb
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.pdb
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfo.cs
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CopyComplete
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.dll
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\refint\Business.Entities.dll
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.pdb
+C:\Users\Lenovo\Documents\GitHub\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\ref\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.deps.json
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.AssemblyReference.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfoInputs.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfo.cs
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CoreCompileInputs.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CopyComplete
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\refint\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l27Jun2023\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\ref\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.deps.json
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\GridCore.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\GridShared.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\GridCore.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\GridShared.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\ar\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\bg\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\ca-ES\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\cs\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\de\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\es\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\eu-ES\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\fa-IR\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\fr\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\gl-ES\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\hr\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\it\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\nb-NO\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\nl\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\pt-BR\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\ru\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\se\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\sl\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\sr\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\tr\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\uk\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.AssemblyReference.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfoInputs.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfo.cs
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CoreCompileInputs.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.sourcelink.json
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CopyComplete
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\refint\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\ref\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.deps.json
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.Entities.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\GridCore.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\GridShared.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\GridCore.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\GridShared.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Utils.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\Business.SQL.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\ar\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\bg\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\ca-ES\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\cs\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\de\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\es\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\eu-ES\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\fa-IR\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\fr\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\gl-ES\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\hr\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\it\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\nb-NO\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\nl\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\pt-BR\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\ru\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\se\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\sl\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\sr\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\tr\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\bin\Debug\net5.0\uk\GridCore.resources.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.AssemblyReference.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfoInputs.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfo.cs
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CoreCompileInputs.cache
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.sourcelink.json
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CopyComplete
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\refint\Business.Entities.dll
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.pdb
+D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\ref\Business.Entities.dll

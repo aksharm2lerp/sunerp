@@ -1,0 +1,128 @@
+﻿@{
+    int reminderId = 0;
+}
+<div class="modal fade" id="ModalReminder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"><span id="reminderTitle"></span></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        @*<label class="col-form-label" id="labelMessage"> </label>*@
+                        <span id="reminderSubject"></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" id="reminderId" />
+                <button type="button" class="btn btn-secondary" onclick="fnReviewReminder()">Got it!</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var reminderId;
+
+    $(function () {
+        setInterval(function () {
+            let reminderUrl = '@Url.Action("GetReminder", "Notification")';
+            $.ajax({
+                url: reminderUrl,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    if (data.status) {
+                        document.getElementById('reminderSubject').innerHTML = data.reminderModel.reminderSubject;
+                        document.getElementById('reminderTitle').innerHTML = data.reminderModel.reminderTitle;
+                        document.getElementById('reminderId').value = data.reminderModel.reminderID;
+                        //reminderId =  data.reminderModel.reminderSubject;
+                        //alert(reminderId);
+                        //debugger;
+                        //$("#ModalReminder").show();
+                        $("#ModalReminder").modal("show");
+                        //Lobibox.notify('success', {
+                        //    pauseDelayOnHover: true,
+                        //    size: 'mini',
+                        //    icon: 'bx bx-check-circle',
+                        //    continueDelayOnInactiveTab: false,
+                        //    position: 'bottom right',
+                        //    msg: data.message
+                        //});
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }, 10000);
+    });
+
+    function fnReviewReminder() {
+        let id = document.getElementById('reminderId').value;
+        let reminderReviweUrl = '@Url.Action("ReviewReminder", "Notification")';
+        let params = { reminderId: id };
+        $.ajax({
+            url: reminderReviweUrl,
+            type: 'POST',
+            data: params,
+            dataType: 'json',
+            success: function (data, textStatus, jqXHR) {
+                if (data.status) {
+                    $("#ModalReminder").modal("hide");
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                else {
+                    $("#ModalReminder").modal("hide");
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                $("#ModalReminder").modal("hide");
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    };
+</script>

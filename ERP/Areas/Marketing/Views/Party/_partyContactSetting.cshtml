@@ -1,0 +1,101 @@
+﻿@model Business.Entities.Party.PartySetting
+<form method="post" id="formAddUpdatePartySetting" class="row g-3 needs-validation" asp-area="Marketing" asp-controller="Party" asp-action="AddUpdatePartySetting">
+    <input type="hidden" asp-for="PartyID" />
+    <input type="hidden" asp-for="PartySettingID" />
+
+    <div class=" col-sm-12 col-md-9 col-lg-9">
+
+        <div class="row mb-2">
+            @*<label for="" class="col-sm-3 col-form-label ">Office phone no.:<span class="required">*</span></label>*@
+            <label for="" class="col-sm-3 col-form-label ">Credit Limit:</label>
+            <div class="col-sm-9">
+                <input type="text" required="" class="form-control" asp-for="CreditLimit" id="CreditLimit" name="CreditLimit" placeholder="">
+                @*<span asp-validation-for="CreditLimit" class="text-danger"></span>*@
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="" class="col-sm-3 col-form-label ">Commitement Limit::</label>
+            <div class="col-sm-9">
+                <input type="text" required="" class="form-control" asp-for="CommitementLimit" id="CommitementLimit" name="CommitementLimit" placeholder="">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="" class="col-sm-3 col-form-label ">Payment Term:</label>
+            <div class="col-sm-9">
+                <textarea type="text" row="4" class="form-control" asp-for="PaymentTerm" id="PaymentTerm" name="PaymentTerm" placeholder=""></textarea>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label for="" class="col-sm-3 col-form-label ">Allow Discount (%) per PO:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" asp-for="AllowDiscountPerPO" id="AllowDiscountPerPO" name="AllowDiscountPerPO" placeholder="">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center">
+        <button type="submit" onclick="fnSavePartySetting()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSavePartySetting">Save</button>
+        <button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Cancel</button>
+    </div>
+</form>
+
+<link href="~/admin/assets/vendors/typehead/jquery.typeahead.min.css" rel="stylesheet" />
+<script src="~/admin/assets/vendors/typehead/jquery.typeahead.min.js"></script>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    function fnSavePartySetting() {
+        var ls = laddaStart('btnSavePartySetting');
+        modeldata = $("#formAddUpdatePartySetting").serialize();
+        $.ajax({
+            type: 'POST',
+            url: '/Marketing/Party/AddUpdatePartySetting/',
+            data: modeldata,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                console.log(data.status);
+                if (data.status) {
+                    //notification
+                    //$("#canvasPartySetting").hide();//('hide');
+                    var test = Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message,
+                    });
+                    $("#PartyDocumentTable").load(window.location.href + " #PartyDocumentTable");
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: '@MessageHelper.Error'
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(ls);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: '@MessageHelper.Error'
+                });
+            }
+        }).always(function () {
+            hideloader();
+        });
+
+    };
+</script>

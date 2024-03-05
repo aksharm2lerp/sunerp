@@ -1,0 +1,94 @@
+﻿@using Business.Entities.Marketing.Dashboard;
+@model DashboardModel;
+<!--Card box-->
+<div class="row my-3">
+    <div class="col-sm-4 text-center">
+        <div class="column">
+            <div class="card">
+                @* <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> *@
+                <div class="container my-3">
+                    <h2>Total Login</h2>
+                    <h4>@Model.TotalLogin</h4>
+                    @*<p><button class="button">Contact</button></p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 text-center">
+        <div class="column">
+            <div class="card">
+                @* <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> *@
+                <div class="container my-3">
+                    <h2>Total Visit's</h2>
+                    <h4>10</h4>
+                    @*<p><button class="button">Contact</button></p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 text-center">
+        <div class="column">
+            <div class="card">
+                @* <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> *@
+                <div class="container my-3">
+                    <h2>Total Calls</h2>
+                    <h4>50</h4>
+                    @*<p><button class="button">Contact</button></p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Card box-->
+<!--Table-->
+<div class="row my-3">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sr No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Login Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Browser</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Rahul Mistry</td>
+                    <td>19-10-2023</td>
+                    <td>11:30</td>
+                    <td>Google Chrome</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Dravesh Lokhande</td>
+                    <td>18-10-2023</td>
+                    <td>14:35</td>
+                    <td>Microsoft Edge</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Sagar Parmar</td>
+                    <td>17-10-2023</td>
+                    <td>09:30</td>
+                    <td>FireFox</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Sandip Patel</td>
+                    <td>16-10-2023</td>
+                    <td>21:40</td>
+                    <td>Opera</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--Table-->
+<!--Bar Graph-->
+<div class="row my-3">
+    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+</div>
+<!--Bar Graph-->
