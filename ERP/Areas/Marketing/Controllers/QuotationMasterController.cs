@@ -218,7 +218,7 @@ namespace ERP.Areas.Marketing.Controllers
                 .Sanitized(false)
                 .Css("hidden-xs") //hide on phones
                 .SetWidth(10)
-                .RenderValueAs(o => $"<a class='fa-2x' href='/Marketing/QuotationMaster/GetSubgridPendingQuot/requestforQuotid={o.RequestForQuotID}' ><iconify-icon icon=\"ei:arrow-down\"></iconify-icon></a>");
+                .RenderValueAs(o => $"<a class='fa-2x' href='/Marketing/QuotationMaster/GetSubgridPendingQuot/{o.RequestForQuotID}' ><iconify-icon icon='material-symbols-light:arrow-circle-down-outline' width='24' height='24' ></iconify-icon></a>");
 
                     //c.Add()
                     //.Titled("Open")
@@ -250,7 +250,7 @@ namespace ERP.Areas.Marketing.Controllers
                         .SetWidth(5)
                         .Css("hidden-xs") 
                         
-                    .RenderValueAs(o => $"<a class='fa-2x' href='/Marketing/QuotationMaster/Get/id=0&requestforQuotid={o.RequestForQuotID}' ><i class='bx bx-edit'></i></a>");
+                    .RenderValueAs(o => $"<a class='fa-2x' href='/Marketing/QuotationMaster/Get/id=0&requestforQuotid={o.RequestForQuotID}' ><iconify-icon icon='material-symbols-light:bubble-rounded' width='24' height='24' ></iconify-icon></a>");
                 };
                 GridSettings settings = new GridSettings();
                 
@@ -267,7 +267,7 @@ namespace ERP.Areas.Marketing.Controllers
                     .ChangeSkip(false)
                     .EmptyText("No record found")
                     .Named("RequestForQuotMasterGrid") 
-                    .SubGrid("RequestForQuotID")
+                    //.SubGrid("RequestForQuotID")
                     .CommonSettings(settings);
                 return PartialView("_pendingQuotationDetail", server.Grid);
 
@@ -280,10 +280,10 @@ namespace ERP.Areas.Marketing.Controllers
         }
 
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult GetSubgridPendingQuot(int requestforQuotid)
         {
-
+            
             try
             {
                 PagedDataTable<RequestForQuotDetail> pds = _iRequestForQuotMaster.GetRequestForQuotDetailAsync(requestforQuotid).Result;
@@ -395,7 +395,7 @@ namespace ERP.Areas.Marketing.Controllers
 
                 //.RenderValueAs(o => $"<a class='btn IndexPagebtnEidtPadding' onclick='fnQuotationMaster(this)' href='javascript:void(0)' data-id='{o.QuotationID}' data-bs-toggle='offcanvas' data-bs-target='#canvas_QuotationMaster' aria-controls='canvas_masterentity' ><i class='bx bx-edit'></i></a>");
             };
-            PagedDataTable<QuotationDetail> pds = (PagedDataTable<QuotationDetail>)iQuotationMaster.GetQuotationDetailAsync(QuotationID).Result;
+            PagedDataTable<QuotationDetail> pds = (PagedDataTable<QuotationDetail>)iQuotationMaster.GetQuotationDetailAsync(QuotationID,0).Result;
 
             var server = new GridCoreServer<QuotationDetail>(pds, query, false, "QuotationDetailGrid", columns, 1, pds.TotalItemCount)
                 .Sortable()
@@ -533,7 +533,7 @@ namespace ERP.Areas.Marketing.Controllers
 
                             //.RenderValueAs(o => $"<a class='btn IndexPagebtnEidtPadding' onclick='fnQuotationMaster(this)' href='javascript:void(0)' data-id='{o.QuotationID}' data-bs-toggle='offcanvas' data-bs-target='#canvas_QuotationMaster' aria-controls='canvas_masterentity' ><i class='bx bx-edit'></i></a>");
                         };
-                        PagedDataTable<QuotationDetail> pds = (PagedDataTable<QuotationDetail>)iQuotationMaster.GetQuotationDetailAsync(id).Result;
+                        PagedDataTable<QuotationDetail> pds = (PagedDataTable<QuotationDetail>)iQuotationMaster.GetQuotationDetailAsync(id, requestforQuotid).Result;
 
                         var server = new GridCoreServer<QuotationDetail>(pds, query, false, "QuotationDetailGrid", columns, 1, pds.TotalItemCount)
                             .Sortable(false)
@@ -547,9 +547,6 @@ namespace ERP.Areas.Marketing.Controllers
 
                         model.iSGrid = server.Grid;
                         //return  View(server.Grid);
-
-
-
 
                     }
                     return View("AddOrUpdateQuotationMaster", model);

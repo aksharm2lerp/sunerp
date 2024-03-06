@@ -97,13 +97,15 @@ namespace Business.Service.Marketing.SQuotationMaster
         #endregion Get Singal Record
 
         #region Get Quotation detail by selecting Quotation ID
-        public async Task<PagedDataTable<QuotationDetail>> GetQuotationDetailAsync(int QuotationMasterID)
+        public async Task<PagedDataTable<QuotationDetail>> GetQuotationDetailAsync(int QuotationMasterID, int RequestForQuotID)
         {
             PagedDataTable<QuotationDetail> result = null;
             try
             {
                 SqlParameter[] param = {
-                        new SqlParameter("@QuotationID", QuotationMasterID)
+                        new SqlParameter("@QuotationID", QuotationMasterID),
+                        new SqlParameter("@RequestForQuotID", RequestForQuotID),
+
                 };
                 DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_QuotationDetail", param);
                 if (ds != null)
