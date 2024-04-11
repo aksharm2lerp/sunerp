@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {}
+    "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {}
   },
   "projects": {
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
       "version": "5.2.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj",
         "projectName": "GridShared",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

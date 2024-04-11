@@ -23,3 +23,16 @@ D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Infrastructure\GridShared
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.pdb
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Infrastructure\GridShared\obj\Release\net5.0\ref\GridShared.dll
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.sourcelink.json
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\bin\Release\net5.0\GridShared.deps.json
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\bin\Release\net5.0\GridShared.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\bin\Release\net5.0\GridShared.pdb
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.csproj.AssemblyReference.cache
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.AssemblyInfoInputs.cache
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.AssemblyInfo.cs
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.csproj.CoreCompileInputs.cache
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.sourcelink.json
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\refint\GridShared.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\GridShared.pdb
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridShared\obj\Release\net5.0\ref\GridShared.dll

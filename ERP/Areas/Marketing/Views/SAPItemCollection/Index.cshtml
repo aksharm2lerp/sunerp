@@ -14,7 +14,6 @@
 }
 <div class="container" id="partyListSummary">
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
             <div class="card border-0 shadow rounded-3">
                 <div class="card-body">
 
@@ -59,6 +58,48 @@
                     </div>
                     <hr>
                     <div class="row pt-1">
+                    <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                        <!--Basic Details-->
+                        <div class="card">
+
+
+                            <div class="card-body">
+                                <h6 class="card-title text-center">
+                                    <span id="DisplayFirstName"></span>&nbsp;<span id="DisplayMiddleName"></span>&nbsp;<span id="DisplayLastName"></span>
+                                </h6>
+                                <hr class="userProfileHR">
+                                <p class="card-text">Person No.: <span id="PhoneNumber"></span></p>
+                                <p class="card-text">Alternate No.: <span id="AlternateNumber"></span></p>
+                                <p class="card-text">Email: <span id="Email"></span></p>
+                                <p class="card-text">DOB : <span id="DOB"></span></p>
+                                <p class="card-text">Religion : <span id="Religion"></span></p>
+                                <p class="card-text">Blood Group : <span id="BloodGroup"></span></p>
+                            </div>
+                        </div>
+                        <!--Basic Details-->
+                        <!--Address Details-->
+                        @* <div class="card">
+                        <div class="card-body">
+                        <p class="card-text">Plot No./Name : <span id="PlotNoName"></span></p>
+                        <p class="card-text">Street No./Name : <span id="StreetNoName"></span></p>
+                        <p class="card-text">Landmark : <span id="Landmark"></span></p>
+                        <p class="card-text">Area/City : <span id="Area"></span></p>
+                        <p class="card-text">Taluka : <span id="Taluka"></span></p>
+                        <p class="card-text">District : <span id="DistrictName"></span></p>
+                        <p class="card-text">State : <span id="StateName"></span></p>
+                        <p class="card-text">Country : <span id="CountryName"></span></p>
+                        </div>
+                        </div> *@
+                        <!--Address Details-->
+                        <!--Referenced By Details-->
+                        @* <div class="card">
+                        <div class="card-body">
+                        <p class="card-text">Referenced By : <span id="ReferenceBy"></span></p>
+                        </div>
+                        </div> *@
+                        <!--Referenced By Details-->
+                    </div>
+                    <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
                         <div class="col-md-12">
                             <grid model="@Model" />
                         </div>

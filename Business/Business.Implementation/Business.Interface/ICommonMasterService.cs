@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using Business.Entities.PartyMasterModel;
 using Business.Entities.Marketing.RequestForQuotTypeMasterModel;
 using Business.Entities.HR.MachineryResourceAllocationModel;
+using Business.Entities.Marketing.QuotationApprovalStatusModel;
+using Business.Entities.Marketing.SAPItem;
 //$AddUsing$
 
 namespace Business.Interface
@@ -77,6 +79,9 @@ namespace Business.Interface
         Task<PagedDataTable<RequestForQuotTypeMaster>> GetAllRequestForQuotTypeAsync();
 
         Task<PagedDataTable<MachineryResourceAllocation>> MachineNameByDepartmentID(int departmentId);
+        Task<PagedDataTable<QuotationApprovalStatus>> GetAllQuotationApprovalStatusAsync();
+        Task<PagedDataTable<SAPItemSearchKeywordLog>> GetAllMostUsedSAPItemSearchKeywordAsync();
+         
 
 
         //$AddICommonMasterServiceMethod$

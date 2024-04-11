@@ -23,6 +23,10 @@ namespace Business.Entities.SalesDistribution.SalesOrderMasterModel
         public DateTime? ShopOrderDate { get; set; } 
         public decimal? NetAmount { get; set; }
         public decimal? GrossAmount { get; set; }
+        public decimal? FreightPercentage { get; set; }
+        public decimal? FreightAmount { get; set; }
+        public decimal? PackingChargesPer { get; set; }
+        public decimal? PackingAmount { get; set; }
         public string PaymentTerm { get; set; }
         public string DeliveryTerm { get; set; }
         public string OtherRemark { get; set; }
@@ -46,7 +50,7 @@ namespace Business.Entities.SalesDistribution.SalesOrderMasterModel
         public int? ItemID { get; set; }
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
-        public string HSNcodes { get; set; }
+        public string HSNcodes { get; set; } = "";
         public int? UOMID { get; set; }
         public string UOMText { get; set; }
         public string UOM { get; set; }
@@ -66,6 +70,15 @@ namespace Business.Entities.SalesDistribution.SalesOrderMasterModel
         public int? ModifiedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public int CreatedOrModifiedBy { get; set; }
+        public decimal StockNoOfCoil { get; set; }  //Added by Rahul Mistry.
+        public decimal StockCoilLength { get; set; }  //Added by Rahul Mistry.
+        public decimal OrderCoilLength { get; set; }  //Added by Rahul Mistry.
+        public string OrderNoOfCoil { get; set; }  //Added by Rahul Mistry.
+        public decimal OrderQtyInMeter { get; set; }  //Added by Rahul Mistry.
+        public decimal PriceListAmt { get; set; }  //Added by Rahul Mistry.
+        public decimal PerMeterPrice { get; set; }  //Added by Rahul Mistry.
+        public decimal SpecialDiscount { get; set; }  //Added by Rahul Mistry.
+        public decimal CashDiscount { get; set; }  //Added by Rahul Mistry.
     }
    
     public class SalesOrderSearch

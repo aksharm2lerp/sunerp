@@ -1558,6 +1558,7 @@ namespace Business.Service
                         foreach (DataRow item in ds.Tables["Table1"].Rows)
                         {
                             EmploymentStatusChangeHr employmentStatusChangeHr = new EmploymentStatusChangeHr();
+                            employmentStatusChangeHr.SrNo = item["SrNo"].ToInt();
                             employmentStatusChangeHr.EmploymentStatusID = item["EmploymentStatusID"].ToInt();
                             employmentStatusChangeHr.EmploymentStatusText = item["EmploymentStatusText"].ToString();
                             employmentStatusChangeHr.EmploymentStatusDate = Convert.ToDateTime(item["EmploymentStatusDate"]);
@@ -1635,6 +1636,7 @@ namespace Business.Service
                         foreach (DataRow item in ds.Tables["Table2"].Rows)
                         {
                             EmploymentTypeChangeHr employmentTypeChangeHr = new EmploymentTypeChangeHr();
+                            employmentTypeChangeHr.SrNo = item["SrNo"].ToInt();
                             employmentTypeChangeHr.EmploymentTypeID = item["EmploymentTypeID"].ToInt();
                             employmentTypeChangeHr.EmploymentTypeText = item["EmploymentTypeText"].ToString();
                             employmentTypeChangeHr.EmploymentTypeDate = Convert.ToDateTime(item["EmploymentTypeDate"]);

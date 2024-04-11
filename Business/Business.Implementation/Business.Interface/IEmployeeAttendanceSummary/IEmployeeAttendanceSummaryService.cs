@@ -9,7 +9,7 @@ namespace Business.Interface.IEmployeeAttendanceSummary
     {
         Task<int> ApproveSaveEmployeeSalaryAsync(EmployeeFinalSalaryCalculationModel employeeFinalSalaryCalculationModel, DataTable dataTable);
         public Task<DataSet> GetEmployeeAllAttendanceSummary(int employeeCategoryId = 0, int userId = 0, int month = 0, int year = 0, int departmentId = 0, string searchString = "");
-        Task<DataSet> GetEmployeeAllDetailSummary(int employeecategoryId = 0, int departmentId = 0, string searchstring = null);
+        Task<DataSet> GetEmployeeAllDetailSummary(int employeecategoryId = 0, int departmentId = 0, string searchstring = null, int employmentStatusid = 0);
         Task<DataSet> GetEmployeeSalaryDetail(int year, int month, int companyId, int employeeId, int employeeCategoryId, int userId);
         Task<DataSet> GetEmployeeSalarySummary(int employeeCategoryId = 0, int userId = 0, int companyId = 0, int month = 0, int year = 0, int employeeId = 0);
         Task<DataTable> GetEmployeeSalarySummaryEdit(int employeeId, int year, int month, int companyId);

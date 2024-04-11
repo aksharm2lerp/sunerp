@@ -1,0 +1,214 @@
+﻿@using Business.Entities.Production.ShiftMasterModel
+@model ManageShift
+@{
+    ViewData["Title"] = "Manage Shift..";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+@{
+    var test = Model;
+    var data = test;
+}
+
+
+<div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+    <div class="card border-1 shadow rounded-7 p-1">
+        <div class="row border-bottom">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="page-breadcrumb align-items-center">
+                    <div class="p-2">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item">
+                                    <a asp-area="Production" asp-controller="ShiftMaster" asp-action="CompanyLists"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item" aria-current="page">
+                                    <a asp-area="Production" asp-controller="ShiftMaster" asp-action="CompanyLists">Company List</a>
+                                </li>
+                                @* <li class="breadcrumb-item" aria-current="page">
+                                    <a asp-area="Production" asp-controller="ShiftMaster" asp-action="ShiftLists" asp-route-id="CompanyID">Shift Lists</a>
+                                </li> *@
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Manage Shift
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 text-end my-2">
+            </div>
+        </div>
+
+
+        <form class="form-horizontal" role="form" id="formAddOrUpdateManageShift">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <input type="hidden" asp-for="EmployeeShiftTnxID" />
+                            <input type="hidden" asp-for="EmployeeID" id="EmployeesID" />
+                            <div class="row mb-3">
+                                <div class="col-4 ">Company :<span class="required">*</span></div>
+                                <div class="col-8">
+                                    <select class="form-control text-start" id="CompanyID" name="CompanyID" asp-for="CompanyID" asp-items="@CommonExtension.GetAllCompanyAsync()" disabled>
+                                        <option value="">Select Shift</option>
+                                    </select>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-4 ">Shift:<span class="required">*</span></div>
+                                <div class="col-8">
+                                    <select class="form-control text-start" id="ShiftID" name="ShiftID" asp-for="ShiftID" asp-items="@CommonExtension.GetAllShiftAsync()" disabled>
+                                        <option value="">Select Shift</option>
+                                    </select>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-4 ">Employees:<span class="required">*</span></div>
+                                <div class="col-8">
+                                    <select class="form-control text-start" id="choices-multiple-remove-button-Employees" name="EmployeeID" asp-for="EmployeeID" asp-items="@CommonExtension.GetAllEmployeeAsync()" multiple>
+                                        <option value="">Select Employees</option>
+                                    </select>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="text-end">
+                                    <button id="btnSave" type="button" onclick="fnAddOrUpdateManageShift()" class="btn btn-primary btn-info px-5 ladda-button">Sumbit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        const Employees = document.getElementById('EmployeesID').value;
+        var compID = document.getElementById('CompanyID');
+        let companyId = compID.options[compID.selectedIndex].value;
+        var shift = document.getElementById('ShiftID');
+        let shiftId = shift.options[shift.selectedIndex].value;
+
+        if (Employees !== '') {
+            $.each(Employees.split(","), function (i, e) {
+                $("#choices-multiple-remove-button-Employees option[value='" + e + "']").prop("selected", true);
+            });
+        }
+
+        var multipleCancelButtonEmployees = new Choices('#choices-multiple-remove-button-Employees', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+
+        if (companyId == '' && shiftId == '') {
+            document.getElementById('CompanyID').removeAttribute('disabled');
+            document.getElementById('ShiftID').removeAttribute('disabled');
+        }
+    });
+
+    var urlAddOrUpdate = '@Url.Action("InsertOrUpdateManageShift", "ShiftMaster")';
+    var employeesMultipleDropdown = document.getElementById("choices-multiple-remove-button-Employees");
+    function fnAddOrUpdateManageShift() {
+        //alert('fnAddOrUpdateManageShift invoked');
+        var selectedEmployees = [];
+        let companyID = document.getElementById('CompanyID').value;
+        let shiftID = document.getElementById('ShiftID').value;
+        let employeesID = document.getElementById('choices-multiple-remove-button-Employees').value;
+        if (companyID == null || companyID == "") {
+            alert("Select Company...");
+            return false;
+        }
+        if (shiftID == null || shiftID == "") {
+            alert("Select Shift...");
+            return false;
+        }
+        if (employeesID == null || employeesID == "") {
+            alert("Select Employees...");
+            return false;
+        }
+
+        //alert('Before Loop');
+        // Loop through the options and check if they are selected
+        for (let i = 0; i < employeesMultipleDropdown.options.length; i++) {
+            const option = employeesMultipleDropdown.options[i];
+            if (option.selected) {
+                selectedEmployees.push(option.value);
+            }
+        }
+        //alert('After Loop');
+        document.getElementById("EmployeesID").value = selectedEmployees.toString();
+        if ($("#formAddOrUpdateManageShift").valid()) {
+            var l = laddaStart('btnSave');
+            document.getElementById('CompanyID').removeAttribute('disabled');
+            document.getElementById('ShiftID').removeAttribute('disabled');
+            modeldata = $("#formAddOrUpdateManageShift").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlAddOrUpdate,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_MachineryResourceAllocation").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(5000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    //Search employees according to shiftID start
+    function fnGetEmployeeListByShiftID() {
+        //alert('fnGetEmployeeListByShiftID invoked');
+        var companyID = $('#CompanyID').val();
+        var shiftID = $('#ShiftID').val();
+        alert(`CompanyID is ${companyID} and ShiftID is ${shiftID}`);
+        var shiftUrl = '@Url.Action("AddOrUpdateManageShift", "ShiftMaster")';
+        var employeeListByShiftIDUrl = shiftUrl + '?companyID=' + companyID + '&shiftID=' + shiftID;
+        window.location.href = employeeListByShiftIDUrl;
+    };
+    //Search employees according to shiftID end
+</script>

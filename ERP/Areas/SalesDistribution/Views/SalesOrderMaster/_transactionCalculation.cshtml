@@ -1,0 +1,65 @@
+﻿<div class="row">
+    <div class="col-sm-8 col-md-8 col-lg-8">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-4 col-md-4 col-lg-4">
+        <div class="row mb-3">
+            <label for="" class="col-sm-5 col-form-label">Net Amount</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="NetAmountSource" readonly placeholder="Net Amount">
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-7 col-md-7 col-lg-7">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-5 col-md-5 col-lg-5">
+        <div class="row mb-3">
+            <label for="" class="col-sm-3 col-form-label">Freight tax(%)</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="FreightPercentageSource" oninput="fnUpdateTaxAmt()">
+            </div>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="FreightAmountSource" placeholder="Freight Amount" oninput="fnUpdateTaxAmt()">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-7 col-md-7 col-lg-7">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-5 col-md-5 col-lg-5">
+        <div class="row">
+            <label for="" class="col-sm-3 col-form-label">Packing charges(%)</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="PackingChargesPerSource" oninput="fnUpdateTaxAmt()">
+            </div>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="PackingAmountSource" placeholder="Packing Amount" oninput="fnUpdateTaxAmt()">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-8 col-md-8 col-lg-8">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-4 col-md-4 col-lg-4">
+        <div class="row mb-3">
+            <label for="" class="col-sm-5 col-form-label">Gross Amount</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" placeholder="Gross Amount" id="GrossAmountSource" readonly>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+@await Html.PartialAsync("_ValidationScriptsPartial")

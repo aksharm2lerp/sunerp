@@ -35,7 +35,7 @@
                 <a class="nav-link" data-bs-toggle="tab" aria-current="page" href="#PendingQuotation" role="tab" aria-controls="PendingQuotation" onclick="fnShowOtherTabwisePanel(1)" ; aria-selected="true">Pending Quotation</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" data-bs-toggle="tab" aria-current="page" href="#CompletedQuotation" role="tab" aria-controls="CompletedQuotation" onclick="fnShowOtherTabwisePanel(2)" aria-selected="true">Completed Quotation</a>
+                <a class="nav-link" data-bs-toggle="tab" aria-current="page" href="#CompletedQuotation" role="tab" aria-controls="CompletedQuotation" onclick="fnShowOtherTabwisePanel(2)" id="anchorCompletedQuotation" aria-selected="true">Completed Quotation</a>
             </li>
         </ul>
        <div id="PendingQuotation" class="tab-pane fade" role="tabpanel" aria-labelledby="PendingQuotation-tab">
@@ -88,6 +88,9 @@
     $(document).ready(function () {
         document.getElementById('CompletedQuotation').hidden = true;
         document.getElementById('PendingQuotation').hidden = false;
+
+        var buttonElement = document.getElementById("anchorCompletedQuotation");
+        buttonElement.click();
 
     });
     function fnShowOtherTabwisePanel(obj) {
@@ -163,8 +166,22 @@
         });
     };
 
-    function fnCollapseTable(obj) {
-        alert('fnCollapseTable fn invoked.');
+    function fnOpenRFQDetailTable(obj) {
+        let urlTable = '@Url.Action("GetSubgridPendingQuot", "QuotationMaster")';
+        var _parameters = { requestforQuotid: obj };
+        $.ajax({
+            url: urlTable,
+            type: "GET",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                $('#rfqModalBody').html(data);
+                 $('#openRFQDetailTable').modal('show');
+            },
+            error: function (errString) {
+                alert('Error is: ' + errString);
+            }
+        });
+
     }
 
 </script>

@@ -23,3 +23,16 @@ D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.SQL\Bus
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.pdb
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\ref\Business.SQL.dll
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.sourcelink.json
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\bin\Release\net5.0\Business.SQL.deps.json
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\bin\Release\net5.0\Business.SQL.dll
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\bin\Release\net5.0\Business.SQL.pdb
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.csproj.AssemblyReference.cache
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.AssemblyInfoInputs.cache
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.AssemblyInfo.cs
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.csproj.CoreCompileInputs.cache
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.sourcelink.json
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.dll
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\refint\Business.SQL.dll
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\Business.SQL.pdb
+D:\GitHub\SUN\sunerpm2l\Business\Business.SQL\Business.SQL\obj\Release\net5.0\ref\Business.SQL.dll

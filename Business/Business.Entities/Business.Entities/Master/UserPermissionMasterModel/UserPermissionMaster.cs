@@ -16,5 +16,7 @@
         public object SrNo { get; set; }
         public bool IsActive { get; set; } = true;
         public int CreatedOrModifiedBy { get; set; }
+        public bool Edit { get; set; }
+        public bool View { get; set; }
     }
 }

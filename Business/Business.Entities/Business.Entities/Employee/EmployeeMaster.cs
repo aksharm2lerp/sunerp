@@ -16,6 +16,7 @@ namespace Business.Entities.Employee
         public string ReportingToMan { get; set; }
         public string GenderText { get; set; }
         public bool IsActive { get; set; } = true;
+        public bool IsHRDataExist { get; set; } 
         public int DepartmentID { get; set; }
         public int CompanyID { get; set; }
 

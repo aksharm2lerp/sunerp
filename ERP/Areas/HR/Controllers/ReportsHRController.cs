@@ -85,7 +85,7 @@ namespace ERP.Areas.HR.Controllers
             }
         }
 
-        public IActionResult GetEmployeeDetailSummary(int employeeCategoryId, int departmentId, string searchstring, bool isDownload)
+        public IActionResult GetEmployeeDetailSummary(int employeeCategoryId, int departmentId, string searchstring, bool isDownload, int employmentStatusid)
 
         {
             try
@@ -93,7 +93,8 @@ namespace ERP.Areas.HR.Controllers
                 ViewData["EmployeeCategoryID"] = employeeCategoryId;
                 ViewData["DepartmentID"] = departmentId;
                 ViewData["SearchString"] = searchstring;
-                System.Data.DataSet dataSet = _employeeAttendanceSummaryService.GetEmployeeAllDetailSummary(employeeCategoryId, departmentId, searchstring).Result;
+                ViewData["employmentStatusid"] = employmentStatusid;
+                System.Data.DataSet dataSet = _employeeAttendanceSummaryService.GetEmployeeAllDetailSummary(employeeCategoryId, departmentId, searchstring, employmentStatusid).Result;
 
                 if (dataSet.Tables.Count > 0)
                 {

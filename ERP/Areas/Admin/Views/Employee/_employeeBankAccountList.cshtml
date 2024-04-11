@@ -97,8 +97,7 @@
             url: urlAddUpdateBankAccount,
             type: "GET",
             data: _parameters,
-            success: function (data, textStatus, jqXHR) {
-                debugger;
+            success: function (data, textStatus, jqXHR) {                
                 $("#canvasBankAccount").show();//('hide');
                 $('#dvInfoBank').html(data);
             }

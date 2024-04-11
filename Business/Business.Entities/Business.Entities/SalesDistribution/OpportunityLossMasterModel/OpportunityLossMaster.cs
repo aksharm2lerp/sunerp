@@ -13,6 +13,7 @@ namespace Business.Entities.SalesDistribution.OpportunityLossMasterModel
         public int SrNo { get; set; }
         public int OpportunityLossID { get; set; }
         public DateTime? OpportunityLossDate { get; set; } = DateTime.Today;
+        [Required(ErrorMessage = "Please select Financial year.")]
         public int? FinancialYearID { get; set; }
         public int? CustomerID { get; set; }
         public string Reference { get; set; }

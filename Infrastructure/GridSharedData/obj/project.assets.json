@@ -6187,11 +6187,11 @@
   "project": {
     "version": "5.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridSharedData\\GridSharedData.csproj",
+      "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridSharedData\\GridSharedData.csproj",
       "projectName": "GridSharedData",
-      "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridSharedData\\GridSharedData.csproj",
+      "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridSharedData\\GridSharedData.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridSharedData\\obj\\",
+      "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridSharedData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6213,8 +6213,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-              "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+            "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+              "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
             }
           }
         }

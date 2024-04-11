@@ -87,7 +87,7 @@
                     <div class='row mb-4'>
                         <label for='' class='col-sm-5 col-form-label'>Financial Year</label>
                         <div class='col-sm-7'>
-                            <select class='form-select' asp-for="FinancialYearID" id='choices-multiple-remove-button-FinancialYearID' asp-items='@CommonExtension.GetAllFinancialYearAsync()'>
+                            <select class='form-select' asp-for="FinancialYearID" id='choices-multiple-remove-button-FinancialYearID' asp-items='@CommonExtension.GetAllFinancialYearAsync()' required="Please select Financial year">
                                 <option value=''>Select here...</option>
                             </select>
                         </div>
@@ -159,7 +159,81 @@
                     }
                     else
                     {
-                        <div class='grid-mvc' data-lang='en' data-gridname='OpportunityLossDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'></div></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>OpportunityLossDetailID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Opportunity Loss ID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th><th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody></tbody></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div></div></div></div>
+                        @* <div class='grid-mvc' data-lang='en' data-gridname='OpportunityLossDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'></div></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>OpportunityLossDetailID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Opportunity Loss ID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th><th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody></tbody></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div></div></div></div> *@
+                        <div class='grid-mvc' data-lang='en' data-gridname='OpportunityLossDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'>
+                            <div class='grid-wrap'>
+                                <div class='row'>
+                                    <div class='col-md-6 grid-header-buttons' />
+                                </div>
+                                <div class='grid-table-wrap'>
+                                    <table class='table  grid-table'>
+                                        <thead>
+                                            <tr>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Sr No</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=" grid-header" style=" display:none;">
+                                                    <div class="grid-header-group">
+                                                        <div class="grid-header-title">
+                                                            <span>OpportunityLossDetailID</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=" grid-header" style=" display:none;">
+                                                    <div class="grid-header-group">
+                                                        <div class="grid-header-title">
+                                                            <span>Opportunity Loss ID</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Item Name</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>UOM</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Qty</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class='hidden-xs grid-header' style='width:20px;'>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Remove</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody />
+                                    </table>
+                                </div>
+                                <div class='grid-footer'>
+                                    <div class='grid-pager-sizer'>&nbsp;</div>
+                                    <div class='grid-itemscount'>
+                                        <div class='grid-itemscount-label'>Items:</div>
+                                        <div class='grid-itemscount-caption'>
+                                            <b>0</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     }
                 </div>
             </div>
@@ -224,49 +298,49 @@
             </div>
             </div> *@
             @* <div class="row">
-                <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Shop Order No</label>
-                        <div class='col-sm-9'>
-                            <input type='text' class='form-control' id='ShopOrderID' asp-for='ShopOrderID' name='ShopOrderID'>
-                            <span asp-validation-for='ShopOrderID' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Shop Order Date</label>
-                        <div class='col-sm-4'>
-                            <input type='date' class='form-control' id='ShopOrderDate' asp-for='ShopOrderDate' name='ShopOrderDate'>
-                            <span asp-validation-for='ShopOrderDate' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div> *@
-            <div class="row">
-                <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Net Amount</label>
-                        <div class='col-sm-4'>
-                            <input type='text' class='form-control' id='NetAmount' asp-for='NetAmount' name='NetAmount' value="0.00">
-                            <span asp-validation-for='NetAmount' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Gross Amount</label>
-                        <div class='col-sm-4'>
-                            <input type='text' class='form-control' id='GrossAmount' asp-for='GrossAmount' name='GrossAmount' value="0.00">
-                            <span asp-validation-for='GrossAmount' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Shop Order No</label>
+            <div class='col-sm-9'>
+            <input type='text' class='form-control' id='ShopOrderID' asp-for='ShopOrderID' name='ShopOrderID'>
+            <span asp-validation-for='ShopOrderID' class='text-danger'>
+            </span>
             </div>
+            </div>
+            </div>
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Shop Order Date</label>
+            <div class='col-sm-4'>
+            <input type='date' class='form-control' id='ShopOrderDate' asp-for='ShopOrderDate' name='ShopOrderDate'>
+            <span asp-validation-for='ShopOrderDate' class='text-danger'>
+            </span>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Net Amount</label>
+            <div class='col-sm-4'>
+            <input type='text' class='form-control' id='NetAmount' asp-for='NetAmount' name='NetAmount' value="0.00">
+            <span asp-validation-for='NetAmount' class='text-danger'>
+            </span>
+            </div>
+            </div>
+            </div>
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Gross Amount</label>
+            <div class='col-sm-4'>
+            <input type='text' class='form-control' id='GrossAmount' asp-for='GrossAmount' name='GrossAmount' value="0.00">
+            <span asp-validation-for='GrossAmount' class='text-danger'>
+            </span>
+            </div>
+            </div>
+            </div>
+            </div>*@
 
 
             <div class=" col-sm-12 col-md-12 col-lg-12">
@@ -357,28 +431,28 @@
             if (OpportunityLossId === '') {
                 OpportunityLossId = 0;
             }
-            let itemId = finalTable[0].rows[i].cells[3].children[0].value;
-            if (itemId === '') {
-                itemId = 0;
-            }
-            var rowData = {
+            // let itemId = finalTable[0].rows[i].cells[3].children[0].value;
+            // if (itemId === '') {
+            //     itemId = 0;
+            // }
 
+            var rowData = {
                 OpportunityLossDetailID: OpportunityLossDetailId,
                 OpportunityLossID: OpportunityLossId,
-                ItemID: itemId,
-                UOMID: finalTable[0].rows[i].cells[4].children[0].value,
-                ItemCode: finalTable[0].rows[i].cells[5].children[0].value,
-                ItemName: finalTable[0].rows[i].cells[6].children[0].value,
-                HSNcodes: finalTable[0].rows[i].cells[8].children[0].value,
-                // UOM: finalTable[0].rows[i].cells[0].children[0].value,
-                Qty: finalTable[0].rows[i].cells[10].children[0].value,
-                Rate: finalTable[0].rows[i].cells[11].children[0].value,
-                TotalAmount: finalTable[0].rows[i].cells[12].children[0].value
+                ItemName: finalTable[0].rows[i].cells[3].children[0].value,
+                UOM: finalTable[0].rows[i].cells[4].children[0].value,
+                Qty: finalTable[0].rows[i].cells[5].children[0].value,
 
+                // ItemID: itemId,
+                // UOMID: finalTable[0].rows[i].cells[4].children[0].value,
+                // ItemCode: finalTable[0].rows[i].cells[5].children[0].value,
+                // HSNcodes: finalTable[0].rows[i].cells[0].children[0].value,
+                // Rate: finalTable[0].rows[i].cells[11].children[0].value,
+                // TotalAmount: finalTable[0].rows[i].cells[12].children[0].value
             };
-
             tableData.push(rowData);
         }
+
         sapStringJson.value = JSON.stringify(tableData);
 
         if ($("#formOpportunityLossMaster").valid()) {
@@ -504,16 +578,26 @@
 
     });
 
+
+    //document.getElementById('choices-multiple-remove-button-FinancialYearID').value = '11';
+    function selectElement(id, valueToSelect) {
+        var year = (new Date()).getFullYear();
+        //alert('year-- ' + year);
+        let element = document.getElementById(id);        
+        element.value = valueToSelect;       
+    }
+    selectElement('choices-multiple-remove-button-FinancialYearID', '11');
+
     function fnCalcAmt(inputValue) {
         var qtyVal = document.getElementById('qtyIndex' + inputValue).value;
         var rateVal = document.getElementById('rateIndex' + inputValue).value;
         var amtVal = document.getElementById('amtIndex' + inputValue);
         amtVal.value = Number(qtyVal * rateVal);
     }
-    function fnCalcNetAndGrossAmount() { 
+    function fnCalcNetAndGrossAmount() {
         //debugger;
         var netAmt = document.getElementById('NetAmount').value;
-        var grossAmt  = document.getElementById('GrossAmount').value;
+        var grossAmt = document.getElementById('GrossAmount').value;
 
         var tableElement = document.getElementsByTagName('Table');
         var srCount = tableElement[0].rows.length;
@@ -539,13 +623,15 @@
         if (tableElement.length > 0) {
             var srCount = tableElement[0].rows.length;
             var index = 'newRowIndex' + srCount;
-            var newRow = "<tr class='grid-row'><td class='grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='OpportunityLossDetailId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='OpportunityLossId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='itemId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='UOMID" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemCodeIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemNameIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue(" + srCount + ")' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded' /></a></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='hsnCodeIndex" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value ='' id='UOMIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnCalcAmt(" + srCount + ")' id='qtyIndex" + srCount + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnCalcAmt(" + srCount + ")' id='rateIndex" + srCount + "'> </td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='amtIndex" + srCount + "' readonly=''> </td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon = 'mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+            var newRow = "<tr class='grid-row'><td class='grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class='grid-cell' style ='display:none;' data-name='' ><input type='hidden' class='form-control' value='' id='OpportunityLossDetailId" + srCount + "'></td><td class='grid-cell' style = 'display:none;' data-name='' > <input type='hidden' class='form-control' value='' id='OpportunityLossId" + srCount + "'> </td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemNameIndex" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' width: '25px' class='form-control' value ='' id='UOMIndex" + index + "' ></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnCalcAmt(" + srCount + ")' id='qtyIndex" + srCount + "'></td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon = 'mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
             $('Table tbody').append(newRow);
         }
         else {
 
             var newTableInDiv = document.getElementById('newDivForRow');
-            var newTable = "<div class='grid-mvc' data-lang='en' data-gridname='OpportunityLossDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'></div></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>OpportunityLossDetailID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Opportunity Loss ID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th><th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody></tbody></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div></div></div></div>";
+            // var newTable = "<div class='grid-mvc' data-lang='en' data-gridname='OpportunityLossDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'></div></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>OpportunityLossDetailID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Opportunity Loss ID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th><th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody></tbody></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div></div></div></div>";
+
+            var newTable = "<div class='grid-mvc' data-lang='en' data-gridname='OpportunityLossDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'/></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>OpportunityLossDetailID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Opportunity Loss ID</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th><th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody/></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div></div></div></div>";
 
             newTableInDiv.innerHTML += newTable;
         }
@@ -563,61 +649,64 @@
 
         let OpportunityLossDetailId = row.cells[1].children[0].value;
         let OpportunityLossId = row.cells[2].children[0].value;
-        var params = { OpportunityLossDetailId: OpportunityLossDetailId, OpportunityLossId: OpportunityLossId };
-        $.ajax({
-            type: 'POST',
-            url: '/SalesDistribution/OpportunityLossMaster/OpportunityLossDetailItemDeactivation',
-            data: params,
-            dataType: 'json',
-            success: function (data) {
-                if (data.status) {
-                    //notification
-                    // $("#canvas_masterentity2").hide();//('hide');
-                    Lobibox.notify('success', {
-                        pauseDelayOnHover: true,
-                        size: 'mini',
-                        icon: 'bx bx-check-circle',
-                        continueDelayOnInactiveTab: false,
-                        position: 'bottom right',
-                        msg: 'Item removed.'
-                    });
-                    //window.location.href = '/SalesDistribution/OpportunityLossMaster/';
-                    row.parentNode.removeChild(row);
-                }
-                else {
+        if (OpportunityLossDetailId !== '' && OpportunityLossDetailId !== NaN && OpportunityLossId !== '' && OpportunityLossId !== NaN) {
+            var params = { OpportunityLossDetailId: OpportunityLossDetailId, OpportunityLossId: OpportunityLossId };
+            $.ajax({
+                type: 'POST',
+                url: '/SalesDistribution/OpportunityLossMaster/OpportunityLossDetailItemDeactivation',
+                data: params,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        // $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: 'Item removed.'
+                        });
+                        //window.location.href = '/SalesDistribution/OpportunityLossMaster/';
+                        row.parentNode.removeChild(row);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: 'Something went wrong to remove item.'
+                        });
+                        row.parentNode.removeChild(row);//  added by sandip, when after add new row abd then remove it from table but it is not in Database, then current row has to be removed from table.
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
                     Lobibox.notify('error', {
                         pauseDelayOnHover: true,
                         size: 'mini',
                         icon: 'bx bx-check-circle',
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
-                        msg: 'Something went wrong to remove item.'
+                        msg: "@MessageHelper.Error"
                     });
-                    row.parentNode.removeChild(row);//  added by sandip, when after add new row abd then remove it from table but it is not in Database, then current row has to be removed from table.
                 }
-            },
-            error: function (error) {
-                laddaStop(l);
-                Lobibox.notify('error', {
-                    pauseDelayOnHover: true,
-                    size: 'mini',
-                    icon: 'bx bx-check-circle',
-                    continueDelayOnInactiveTab: false,
-                    position: 'bottom right',
-                    msg: "@MessageHelper.Error"
-                });
-            }
-        }).always(function () {
-            hideLoader();
-        });
-
+            }).always(function () {
+                hideLoader();
+            });
+        }
+        else {
+            row.parentNode.removeChild(row);
+        }
     }
 
     function fnAddNewRowValue(obj) {
         // alert('fnAddNewRowValue fn invoked.');
         // var tableElement = document.getElementsByTagName('table');
         document.getElementById('canvasHeaderAddNewRow').innerHTML = "Add Info";
-
         $.ajax({
             url: '/SalesDistribution/OpportunityLossMaster/GetSAPItemCollection/',
             type: "GET",

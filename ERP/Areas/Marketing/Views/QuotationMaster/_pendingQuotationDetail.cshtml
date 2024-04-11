@@ -51,6 +51,25 @@
 </div>
 
 
+<div class="modal fade bd-example-modal-lg" id="openRFQDetailTable" tabindex="-1" aria-labelledby="openRFQDetailTableModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg-Custom">
+        <div class="modal-content bg-light">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="openRFQDetailTableModalLabel">RFQ Detail</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="rfqModalBody">
+
+            </div>
+            @*<div class="modal-footer">
+                 <a onclick="fnApprovSaveCalculatedSalary()" class="btn btn-primary">Confirm</a>
+                <button type="button" class="btn btn-primary" onclick="fnAddParty()">Save</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button> 
+            </div>*@
+        </div>
+    </div>
+</div>
+
 
 @await Html.PartialAsync("_ValidationScriptsPartial")
 <script>
@@ -77,6 +96,26 @@
         });
     });
 
+    function fnOpenRFQDetailTable(obj) {
+        let urlTable = '@Url.Action("GetSubgridPendingQuot", "QuotationMaster")';
+        //alert('fnOpenRFQDetailTable fn invoked.');
+         //debugger;
+        // $('#openRFQDetailTable').modal('show');
+        //GetSubgridPendingQuot(int requestforQuotid
+        var _parameters = { requestforQuotid: obj };
+        $.ajax({
+            url: urlTable,
+            type: "GET",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                debugger;
+                $('#rfqModalBody').html(data);
+                // $("#canvas_Employee").show();//('hide');
+                $('#openRFQDetailTable').modal('show');
+            }
+        });
+
+    }
 
     // $(function () {
     //     pageGrids.RequestForQuotMasterGrid.addFilterWidget(new CustomersFilterWidget());

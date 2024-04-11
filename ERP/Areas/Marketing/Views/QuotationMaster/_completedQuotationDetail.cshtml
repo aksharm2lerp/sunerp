@@ -47,9 +47,94 @@
         <grid model="@Model" />
     </div>
 </div>
- 
+<div class="modal fade" id="approveQuotationModal" tabindex="-1099" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Approve quotation</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="qoutationApprovalBody">
+                @* Ready to approve? *@
+            </div>
+            <div class="modal-footer">
+                <a onclick="fnApprovQuotation()" class="btn btn-primary">Submit</a>
+                <!--<button type="button" class="btn btn-primary" onclick="fnAddParty()">Save</button>-->
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @await Html.PartialAsync("_ValidationScriptsPartial")
 <script type="text/javascript">
+    var urladd = '@Url.Action("Get", "QuotationMaster")';
+    //int id, int requestforQuotid, bool isApproveRequest = false
+    function fnOpenQuotationOverviewPopup(obj) {
+        var _key = $(obj).data('key');
+        var _id = $(obj).data('id');
+        // if (_id > 0)
+        //     document.getElementById("canvasHeaderQuotationMaster").innerHTML = "Update Quotation Master";
+        // else
+        //     document.getElementById("canvasHeaderQuotationMaster").innerHTML = "Add Quotation Master";
+        var _parameters = { id: _id, requestforQuotid: _key, isApproveRequest: true };
+        $.ajax({
+            url: urladd,
+            type: "POST",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                // $('#dvInfoQuotationMaster').html(data);
+                // $("#approveQuotationModal").show();//('hide');
+                $('#qoutationApprovalBody').html(data);
+                $('#approveQuotationModal').modal('show');
+            }
+        });
+    }
 
+    function fnApprovQuotation() {
+        var urlsave = '@Url.Action("AddOrUpdateQuotationApproval", "QuotationMaster")';
+        modeldata = $("#quotationReviewForm").serialize();
+        $.ajax({
+            type: 'POST',
+            url: urlsave,
+            data: modeldata,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    $('#approveQuotationModal').modal('hide');
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    }
 </script>

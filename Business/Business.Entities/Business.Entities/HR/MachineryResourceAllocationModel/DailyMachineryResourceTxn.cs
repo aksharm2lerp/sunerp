@@ -13,7 +13,7 @@ namespace Business.Entities.HR.MachineryResourceAllocationModel
         public int DailyMachineryResourceLogID { get; set; }
         public bool ResourceType { get; set; }
         public int EmployeeID { get; set; }
-        public string EmployeeName { get; set; }
+        public string EmployeeOperatorHelperName { get; set; }
         public int? TransferToMachineID { get; set; }
         public bool IsAdditionalResource { get; set; }
         public bool IsPresent { get; set; }

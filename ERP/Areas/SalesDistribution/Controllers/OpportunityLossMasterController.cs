@@ -64,8 +64,8 @@ namespace ERP.Areas.SalesDistribution.Controllers
                 c.Add(o => o.CustomerName).Titled("Customer Name").SetWidth(20);
                 c.Add(o => o.GrossAmount).Titled("Gross Amt").SetWidth(20);
 
-                c.Add(o => o.IsActive).Titled("Active").Encoded(false).Sanitized(false).SetWidth(60).Css("hidden-xs")
-                    .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.OpportunityLossID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.OpportunityLossID}'   data-id='{o.OpportunityLossID}' data-key='{o.OpportunityLossID}' " + (o.IsActive ? "checked" : "unchecked") + " disabled >");
+                //c.Add(o => o.IsActive).Titled("Active").Encoded(false).Sanitized(false).SetWidth(60).Css("hidden-xs")
+                //    .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.OpportunityLossID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.OpportunityLossID}'   data-id='{o.OpportunityLossID}' data-key='{o.OpportunityLossID}' " + (o.IsActive ? "checked" : "unchecked") + " disabled >");
 
                 c.Add()
                     .Titled("Edit")
@@ -260,7 +260,7 @@ namespace ERP.Areas.SalesDistribution.Controllers
                         Action<IGridColumnCollection<OpportunityLossDetail>> columns = c =>
                         {
                             c.Add(o => o.SrNo)
-                                .Titled("Sr No");
+                                .Titled("Sr No").SetWidth(5);
 
                             c.Add().Titled("OpportunityLossDetailID").Encoded(false)
                                 .Sanitized(false).RenderValueAs(o => $"<input type='hidden' class='form-control' value='{o.OpportunityLossDetailID}' id='OpportunityLossDetailId{o.SrNo}'>").Hidden = true;
@@ -268,18 +268,18 @@ namespace ERP.Areas.SalesDistribution.Controllers
                             c.Add().Titled("Opportunity Loss ID").Encoded(false)
                                 .Sanitized(false).RenderValueAs(o => $"<input type='hidden' class='form-control' value='{o.OpportunityLossID}' id='OpportunityLossId{o.SrNo}'>").Hidden = true;
 
-                            c.Add().Titled("ItemID").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='hidden' class='form-control' value='{o.ItemID}' id='itemId{o.SrNo}'>").Hidden = true;
+                            //c.Add().Titled("ItemID").Encoded(false)
+                            //    .Sanitized(false).RenderValueAs(o => $"<input type='hidden' class='form-control' value='{o.ItemID}' id='itemId{o.SrNo}'>").Hidden = true;
 
-                            c.Add().Titled("UOMID").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='hidden' class='form-control' value='{o.UOMID}' id='UOMIDnewRowIndex{o.SrNo}'>").Hidden = true;
+                            //c.Add().Titled("UOMID").Encoded(false)
+                            //    .Sanitized(false).RenderValueAs(o => $"<input type='hidden' class='form-control' value='{o.UOMID}' id='UOMIDnewRowIndex{o.SrNo}'>").Hidden = true;
 
-                            c.Add().Titled("Item Code").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.ItemCode}' id='itemCodeIndexnewRowIndex{o.SrNo}' readonly >");
+                            //c.Add().Titled("Item Code").Encoded(false)
+                            //    .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.ItemCode}' id='itemCodeIndexnewRowIndex{o.SrNo}' readonly >");
 
-                            c.Add().Titled("Item Name").Encoded(false).Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.ItemName}' id='itemNameIndexnewRowIndex{o.SrNo}' readonly >");
+                            c.Add().Titled("Item Name").Encoded(false).Sanitized(false).SetWidth(60).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.ItemName}' id='itemNameIndexnewRowIndex{o.SrNo}'  >");
 
-                            c.Add().Titled("Add").Encoded(false).Sanitized(false).RenderValueAs(o => $"<a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue({o.SrNo})' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded'></iconify-icon></a>");
+                            //c.Add().Titled("Add").Encoded(false).Sanitized(false).RenderValueAs(o => $"<a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue({o.SrNo})' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded'></iconify-icon></a>");
 
                             //c.Add()
                             //    .Titled("")
@@ -290,8 +290,8 @@ namespace ERP.Areas.SalesDistribution.Controllers
                             //href='/SalesDistribution/OpportunityLossMaster/Get/{o.ItemID}'
 
 
-                            c.Add().Titled("HSN Code").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.HSNcodes}' id='hsnCodeIndex{o.SrNo}' >");
+                            //c.Add().Titled("HSN Code").Encoded(false)
+                            //    .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.HSNcodes}' id='hsnCodeIndex{o.SrNo}' >");
 
 
 
@@ -300,17 +300,17 @@ namespace ERP.Areas.SalesDistribution.Controllers
 
                             //c.Add().Titled("UOM").Encoded(false);
                             //.SetSelectField(true, o => o.UOMText, o => this.GetAllUOM());
-                            c.Add().Titled("UOM").Encoded(false)
-                       .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.UOM}' id='UOMIndexnewRowIndex{o.SrNo}' readonly>");
+                            c.Add().Titled("UOM").Encoded(false).SetWidth(5)
+                       .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.UOM}' id='UOMIndexnewRowIndex{o.SrNo}' >");
 
-                            c.Add().Titled("Qty").Encoded(false)
+                            c.Add().Titled("Qty").Encoded(false).SetWidth(10)
                                 .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.Qty}' oninput='fnCalcAmt({o.SrNo})' id='qtyIndex{o.SrNo}' >");
 
-                            c.Add().Titled("Rate").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.Rate}' oninput='fnCalcAmt({o.SrNo})' id='rateIndex{i}'>");
+                            //c.Add().Titled("Rate").Encoded(false)
+                            //    .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.Rate}' oninput='fnCalcAmt({o.SrNo})' id='rateIndex{i}'>");
 
-                            c.Add().Titled("Total Amt").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.TotalAmount}'  id='amtIndex{o.SrNo}' readonly>");
+                            //c.Add().Titled("Total Amt").Encoded(false)
+                            //    .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.TotalAmount}'  id='amtIndex{o.SrNo}' readonly>");
                             //c.Add(o => o.Remark).Titled("Remark").SetWidth(30);
 
                             //c.Add()
@@ -325,7 +325,7 @@ namespace ERP.Areas.SalesDistribution.Controllers
                                 .Titled("Remove")
                                 .Encoded(false)
                                 .Sanitized(false)
-                                .SetWidth(20)
+                                .SetWidth(5)
                                 .Css("hidden-xs")
                                  .RenderValueAs(o => $"<h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></h5>");
                             i++;
@@ -346,10 +346,6 @@ namespace ERP.Areas.SalesDistribution.Controllers
 
                         model.iSGrid = server.Grid;
                         //return  View(server.Grid);
-
-
-
-
                     }
                     return View("AddOrUpdateOpportunityLossMaster", model);
                 }
@@ -419,7 +415,7 @@ namespace ERP.Areas.SalesDistribution.Controllers
                     dataTable.Columns.Add(new DataColumn("OpportunityLossID", typeof(int)));
                     dataTable.Columns.Add(new DataColumn("ItemID", typeof(int)));
                     dataTable.Columns.Add(new DataColumn("HSNcodes", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("UOMID", typeof(int)));
+                    dataTable.Columns.Add(new DataColumn("UOM", typeof(string)));
                     dataTable.Columns.Add(new DataColumn("Qty", typeof(decimal)));
                     dataTable.Columns.Add(new DataColumn("Rate", typeof(decimal)));
                     dataTable.Columns.Add(new DataColumn("DiscountInPer", typeof(decimal)));
@@ -452,10 +448,10 @@ namespace ERP.Areas.SalesDistribution.Controllers
                         //dataRow["TotalAmount"] = item.TotalAmount;
 
                         dataRow["OpportunityLossDetailID"] = item.OpportunityLossDetailID;
-                        dataRow["OpportunityLossID"] = item.OpportunityLossID;
-                        dataRow["ItemID"] = item.ItemID;
+                        dataRow["OpportunityLossID"] = item.OpportunityLossID ;
+                        dataRow["ItemID"] = item.ItemID ?? 0;
                         dataRow["HSNcodes"] = item.HSNcodes;
-                        dataRow["UOMID"] = item.UOMID;
+                        dataRow["UOM"] = item.UOM;
                         dataRow["Qty"] = item.Qty;
                         dataRow["Rate"] = item.Rate;
                         dataRow["DiscountInPer"] = 0;

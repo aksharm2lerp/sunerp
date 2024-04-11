@@ -56,6 +56,7 @@
             <div class=" col-sm-12 col-md-12 col-lg-12 text-center fs-3 text">
                 <div class="row mb-3">
                     <input type="hidden" asp-for="QuotationID" />
+                    <input type="hidden" asp-for="RequestForQuotID" />
                     <input type="hidden" asp-for="SAPCollectionJSONString" id="SAPCollectionJSONString" />
                 </div>
             </div>
@@ -92,7 +93,7 @@
 
             <div class="row">
 
-                <div class=" col-sm-4 col-md-4 col-lg-4">
+                <div class=" col-sm-3 col-md-3 col-lg-3">
                     <div class='row mb-4'>
                         <label for='' class='col-sm-5 col-form-label'>Quotation Code</label>
                         <div class='col-sm-7'>
@@ -100,7 +101,15 @@
                         </div>
                     </div>
                 </div>
-                <div class=" col-sm-4 col-md-4 col-lg-4">
+                <div class=" col-sm-3 col-md-3 col-lg-3">
+                    <div class='row mb-4'>
+                        <label for='' class='col-sm-5 col-form-label'>Revised No</label>
+                        <div class='col-sm-7'>
+                            <input type='text' class='form-control' id='ReviseNo' asp-for='ReviseNo' name='ReviseNo' placeholder="You should changed revision No.">
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-sm-3 col-md-3 col-lg-3">
                     <div class='row mb-4'>
                         <label for='' class='col-sm-5 col-form-label'>Quotation Date</label>
                         <div class='col-sm-7'>
@@ -112,7 +121,7 @@
                 </div>
                 @*  </div>
                 <div class="row"> *@
-                <div class=" col-sm-4 col-md-4 col-lg-4">
+                <div class=" col-sm-3 col-md-3 col-lg-3">
                     <div class='row mb-4'>
                         <label for='' class='col-sm-5 col-form-label'>Quot FinYear</label>
                         <div class='col-sm-7'>
@@ -161,27 +170,27 @@
             <div class="row" id="divAddressInfo">
                 @await Html.PartialAsync("QuotationPartyAddress", PartyAddressLists);
             </div>
-         @*    <div class="row">
-                <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Shop Order No</label>
-                        <div class='col-sm-9'>
-                            <input type='text' class='form-control' id='ShopOrderID' asp-for='ShopOrderID' name='ShopOrderID'>
-                            <span asp-validation-for='ShopOrderID' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Shop Order Date</label>
-                        <div class='col-sm-4'>
-                            <input type='date' class='form-control' id='ShopOrderDate' asp-for='ShopOrderDate' name='ShopOrderDate'>
-                            <span asp-validation-for='ShopOrderDate' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+            @*    <div class="row">
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Shop Order No</label>
+            <div class='col-sm-9'>
+            <input type='text' class='form-control' id='ShopOrderID' asp-for='ShopOrderID' name='ShopOrderID'>
+            <span asp-validation-for='ShopOrderID' class='text-danger'>
+            </span>
+            </div>
+            </div>
+            </div>
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Shop Order Date</label>
+            <div class='col-sm-4'>
+            <input type='date' class='form-control' id='ShopOrderDate' asp-for='ShopOrderDate' name='ShopOrderDate'>
+            <span asp-validation-for='ShopOrderDate' class='text-danger'>
+            </span>
+            </div>
+            </div>
+            </div>
             </div> *@
             <div class="row">
                 <div class=" col-sm-6 col-md-6 col-lg-6">
@@ -201,73 +210,258 @@
             </div>
             <div class="row">
                 <div class="col-md-12" id="newDivForRow">
-                    @if (Model.iSGrid != null)
+                    @if (Model != null && Model.iSGrid != null)
                     {
                         <grid model="@Model.iSGrid" />
                     }
                     else
                     {
-                        <div class='grid-mvc' data-lang='en' data-gridname='QuotationDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'></div></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>QuotationDetailID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Quotation ID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th><th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody></tbody></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div></div></div></div>
+                        <div class='grid-mvc' data-lang='en' data-gridname='QuotationDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'>
+                            <div class='grid-wrap'>
+                                <div class='row'>
+                                    <div class='col-md-6 grid-header-buttons'></div>
+                                </div>
+                                <div class='grid-table-wrap'>
+                                    <table class='table  grid-table'>
+                                        <thead>
+                                            <tr>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Sr No</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=' display:none;'>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>QuotationDetailID</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=' display:none;'>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Quotation ID</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=' display:none;'>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>ItemID</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=' display:none;'>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>UOMID</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Item Code</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Item Name</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Add</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>HSN Code</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>UOM</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Qty</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Cancel Qty</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Rate</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Discount Rer(%)</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Discount Amt</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=''>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Total Amt</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=' display:none;'>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Request For Quot ID</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class=' grid-header' style=' display:none;'>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Request For Quot Detail ID</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <th class='hidden-xs grid-header' style='width:20px;'>
+                                                    <div class='grid-header-group'>
+                                                        <div class='grid-header-title'>
+                                                            <span>Remove</span>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody />
+                                    </table>
+                                </div>
+                                <div class='grid-footer'>
+                                    <div class='grid-pager-sizer'>&nbsp;</div>
+                                    <div class='grid-itemscount'>
+                                        <div class='grid-itemscount-label'>Items:</div>
+                                        <div class='grid-itemscount-caption'>
+                                            <b>0</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     }
                 </div>
             </div>
-            
-            
+
             <div class="row">
-                <div class=" col-sm-6 col-md-6 col-lg-6">
+                <div class=" col-sm-8 col-md-8 col-lg-8">
                     <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Net Amount</label>
-                        <div class='col-sm-4'>
-                            <input type='text' class='form-control' id='NetAmount' asp-for='NetAmount' name='NetAmount'>
+                    </div>
+                </div>
+                <div class=" col-sm-4 col-md-4 col-lg-4">
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-5 col-form-label'>Net Amount</label>
+                        <div class='col-sm-7'>
+                            <input type='text' class='form-control' id='NetAmount' asp-for='NetAmount' name='NetAmount' readonly>
                             <span asp-validation-for='NetAmount' class='text-danger'>
                             </span>
                         </div>
                     </div>
                 </div>
-                <div class=" col-sm-6 col-md-6 col-lg-6">
+            </div>
+            <div class="row">
+                <div class=" col-sm-8 col-md-8 col-lg-8">
                     <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Gross Amount</label>
-                        <div class='col-sm-4'>
-                            <input type='text' class='form-control' id='GrossAmount' asp-for='GrossAmount' name='GrossAmount'>
+                    </div>
+                </div>
+                <div class=" col-sm-4 col-md-4 col-lg-4">
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-5 col-form-label'>Tax Per(%)</label>
+                        <div class='col-sm-7'>
+                            <input type='text' class='form-control' id='TaxPercentage' asp-for='TaxPercentage' name='TaxPercentage' oninput="fnUpdateTaxAmt()">
+                            <span asp-validation-for='TaxPercentage' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-sm-8 col-md-8 col-lg-8">
+                    <div class='row mb-3'>
+                    </div>
+                </div>
+                <div class=" col-sm-4 col-md-4 col-lg-4">
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-5 col-form-label'>Tax Amount</label>
+                        <div class='col-sm-7'>
+                            <input type='text' class='form-control' id='TaxAmount' asp-for='TaxAmount' name='TaxAmount' oninput="fnUpdateTaxPer()">
+                            <span asp-validation-for='TaxAmount' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-sm-8 col-md-8 col-lg-8">
+                    <div class='row mb-3'>
+                    </div>
+                </div>
+                <div class=" col-sm-4 col-md-4 col-lg-4">
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-5 col-form-label'>Gross Amount</label>
+                        <div class='col-sm-7'>
+                            <input type='text' class='form-control' id='GrossAmount' asp-for='GrossAmount' name='GrossAmount' readonly>
                             <span asp-validation-for='GrossAmount' class='text-danger'>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
-
-
             <div class=" col-sm-12 col-md-12 col-lg-12">
-
                 <div class='row mb-3'>
                     <label for='' class='col-sm-2 col-form-label'>Payment Term</label>
                     <div class='col-sm-10'>
                         <textarea class='form-control' id='PaymentTerm' asp-for='PaymentTerm' name='PaymentTerm'></textarea>
                     </div>
                 </div>
-
-
                 <div class='row mb-3'>
                     <label for='' class='col-sm-2 col-form-label'>Delivery Term</label>
                     <div class='col-sm-10'>
                         <textarea class='form-control' id='DeliveryTerm' asp-for='DeliveryTerm' name='DeliveryTerm'></textarea>
                     </div>
                 </div>
-
-
                 <div class='row mb-3'>
                     <label for='' class='col-sm-2 col-form-label'>Other Remark</label>
                     <div class='col-sm-10'>
                         <textarea class='form-control' id='OtherRemark' asp-for='OtherRemark' name='OtherRemark'></textarea>
                     </div>
                 </div>
-
-
-
-
-
             </div>
-
             <hr />
             <div class=" col-sm-12 col-md-12 col-lg-12">
                 <div class="text-center">
@@ -307,13 +501,14 @@
 @await Html.PartialAsync("_ValidationScriptsPartial")
 <script type="text/javascript">
     var urlsave = '@Url.Action("AddOrUpdateQuotationMaster", "QuotationMaster")';
+    var orgTotalAmt = 0;
     function fnSubmit() {
 
         var sapStringJson = document.getElementById('SAPCollectionJSONString');
 
         var finalTable = document.getElementsByTagName('table');
         var rowLen = finalTable[0].rows.length;
-
+        var netAmount = 0;
         var tableData = [];
         for (var i = 1; i < rowLen; i++) {
 
@@ -329,6 +524,7 @@
             if (itemId === '') {
                 itemId = 0;
             }
+            var tester = finalTable[0].rows[i].cells[11].children[0].value;
             var rowData = {
 
                 QuotationDetailID: QuotationDetailId,
@@ -340,11 +536,15 @@
                 HSNcodes: finalTable[0].rows[i].cells[8].children[0].value,
                 // UOM: finalTable[0].rows[i].cells[0].children[0].value,
                 Qty: finalTable[0].rows[i].cells[10].children[0].value,
-                Rate: finalTable[0].rows[i].cells[11].children[0].value,
-                TotalAmount: finalTable[0].rows[i].cells[12].children[0].value
+                Cancel_Qty: finalTable[0].rows[i].cells[11].children[0].value,
+                Rate: finalTable[0].rows[i].cells[12].children[0].value,
+                DiscountInPer: finalTable[0].rows[i].cells[13].children[0].value,
+                DiscountAmount: finalTable[0].rows[i].cells[14].children[0].value,
+                TotalAmount: finalTable[0].rows[i].cells[15].children[0].value,
+                RequestForQuotID: finalTable[0].rows[i].cells[16].children[0].value,
+                RequestForQuotDetailID: finalTable[0].rows[i].cells[17].children[0].value
 
             };
-
             tableData.push(rowData);
         }
         sapStringJson.value = JSON.stringify(tableData);
@@ -371,7 +571,7 @@
                             position: 'bottom right',
                             msg: data.message
                         });
-                        window.location.href = '/Marketing/QuotationMaster/';
+                        // window.location.href = '/Marketing/QuotationMaster/';
                     }
                     else {
                         Lobibox.notify('error', {
@@ -446,7 +646,6 @@
     $(document).ready(function () {
         getSelectedRespectiveValues();
 
-
         var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-FinancialYearID', {
             removeItemButton: false,
             maxItemCount: 10,
@@ -467,17 +666,35 @@
             searchResultLimit: 10,
             renderChoiceLimit: 10
         });
-
-
-
     });
 
-    function fnCalcAmt(inputValue) {
-        var qtyVal = document.getElementById('qtyIndex' + inputValue).value;
-        var rateVal = document.getElementById('rateIndex' + inputValue).value;
-        var amtVal = document.getElementById('amtIndex' + inputValue);
-        amtVal.value = Number(qtyVal * rateVal);
-    }
+
+
+    // function fnCalcAmt(inputValue) {
+    //     var testqtyVal = document.getElementById('qtyIndex' + inputValue);
+    //     var orgQtyVal = 0;
+    //     var qtyVal = document.getElementById('qtyIndex' + inputValue).value;
+    //     if (orgQtyVal === 0) {
+    //         orgQtyVal = qtyVal;
+    //     }
+    //     var canQtyVal = document.getElementById('cancelQtyIndex' + inputValue).value;
+    //     var rateVal = document.getElementById('rateIndex' + inputValue).value;
+    //     var amtVal = document.getElementById('amtIndex' + inputValue);
+    //     if (canQtyVal > 0) {
+    //         var newQtyVal = Number(orgQtyVal - canQtyVal);
+    //         document.getElementById('qtyIndex' + inputValue).value = newQtyVal;
+    //     }
+    //     amtVal.value = Number(document.getElementById('qtyIndex' + inputValue).value * rateVal);
+
+    //     var netAmount = 0;
+    //     var finalTable = document.getElementsByTagName('table');
+    //     var rowLen = finalTable[0].rows.length;
+    //     for (var i = 1; i < rowLen; i++) {
+    //         netAmount = Number(netAmount + parseFloat(finalTable[0].rows[i].cells[13].children[0].value));
+    //     }
+    //     document.getElementById('NetAmount').value = netAmount;
+
+    // }
 
     function fnOpenNewRowInfo() {
         var i = 0;
@@ -489,13 +706,15 @@
         if (tableElement.length > 0) {
             var srCount = tableElement[0].rows.length;
             var index = 'newRowIndex' + srCount;
-            var newRow = "<tr class='grid-row'><td class='grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='QuotationDetailId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='QuotationId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='itemId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='UOMID" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemCodeIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemNameIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue(" + srCount + ")' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded' /></a></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='hsnCodeIndex" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value ='' id='UOMIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnCalcAmt(" + srCount + ")' id='qtyIndex" + srCount + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnCalcAmt(" + srCount + ")' id='rateIndex" + srCount + "'> </td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='amtIndex" + srCount + "' readonly=''> </td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon = 'mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+            // var newRow = "<tr class='grid-row'><td class='grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='QuotationDetailId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='QuotationId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='itemId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='UOMID" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemCodeIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemNameIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue(" + srCount + ")' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded' /></a></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='hsnCodeIndex" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value ='' id='UOMIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateQuantity(" + srCount + ")' id='qtyIndex" + srCount + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateQuantity(" + srCount + ")' id='cancelQtyIndex" + srCount + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateRate(" + srCount + ")' id='rateIndex" + srCount + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateDiscount(" + srCount + ")' id='discountPerIndex" + srCount + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateDiscount(" + srCount + ")' id='discountAmtIndex" + srCount + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='amtIndex" + srCount + "' readonly=''></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='requestForQuot" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='requestForQuotDetail" + index + "'></td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon = 'mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+
+            var newRow = "<tr class='grid-row'><td class='grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='QuotationDetailId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='QuotationId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='itemId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='UOMID" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemCodeIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemNameIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue(" + srCount + ")' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded' /></a></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='hsnCodeIndex" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value ='' id='UOMIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' onchange='fnUpdateNewQuantity(" + srCount + ")' id='qtyIndex" + srCount + "'><input type='hidden' id='rowOrgQty" + srCount + "' value=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateQuantity(" + srCount + ")' id='cancelQtyIndex" + srCount + "'><input type='hidden' id='rowOrgCanclQty" + srCount + "' value=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateRate(" + srCount + ")' id='rateIndex" + srCount + "'><input type='hidden' id='rowOrgRate" + srCount + "' value=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateDiscount(" + srCount + ")' id='discountPerIndex" + srCount + "'><input type='hidden' id='rowOrgDiscPer" + srCount + "' value=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnUpdateDiscountPercentage(" + srCount + ")' id='discountAmtIndex" + srCount + "'><input type='hidden' id='rowOrgDiscAmt" + srCount + "' value=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='amtIndex" + srCount + "' oninput='fnUpdateNetAmount()' readonly=''><input type='hidden' id='rowOrgTotalAmt" + srCount + "' value=''></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='requestForQuot" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='requestForQuotDetail" + index + "'></td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon = 'mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
             $('Table tbody').append(newRow);
         }
         else {
 
             var newTableInDiv = document.getElementById('newDivForRow');
-            var newTable = "<div class='grid-mvc' data-lang='en' data-gridname='QuotationDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'></div></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>QuotationDetailID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Quotation ID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th><th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody></tbody></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div></div></div></div>";
+            var newTable = "<div class='grid-mvc' data-lang='en' data-gridname='QuotationDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'></div></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Sr No</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>QuotationDetailID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Quotation ID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Cancel Qty</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Discount Rer(%)</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Discount Amt</span></div></div></th><th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Request For Quot ID</span></div></div></th><th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Request For Quot Detail ID</span></div></div></th><th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th></tr></thead><tbody></tbody></table></div><div class='grid-footer'><div class='grid-pager-sizer'>&nbsp;</div><div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div></div></div></div>";
 
             newTableInDiv.innerHTML += newTable;
         }
@@ -513,53 +732,57 @@
 
         let QuotationDetailId = row.cells[1].children[0].value;
         let QuotationId = row.cells[2].children[0].value;
-        var params = { QuotationDetailId: QuotationDetailId, QuotationId: QuotationId };
-        $.ajax({
-            type: 'POST',
-            url: '/Marketing/QuotationMaster/QuotationDetailItemDeactivation',
-            data: params,
-            dataType: 'json',
-            success: function (data) {
-                if (data.status) {
-                    //notification
-                    // $("#canvas_masterentity2").hide();//('hide');
-                    Lobibox.notify('success', {
-                        pauseDelayOnHover: true,
-                        size: 'mini',
-                        icon: 'bx bx-check-circle',
-                        continueDelayOnInactiveTab: false,
-                        position: 'bottom right',
-                        msg: 'Item removed.'
-                    });
-                    //window.location.href = '/Marketing/QuotationMaster/';
-                    row.parentNode.removeChild(row);
-                }
-                else {
+        if (QuotationDetailId !== '' && QuotationDetailId !== NaN && QuotationId !== '' && QuotationId !== NaN) {
+            var params = { QuotationDetailId: QuotationDetailId, QuotationId: QuotationId };
+            $.ajax({
+                type: 'POST',
+                url: '/Marketing/QuotationMaster/QuotationDetailItemDeactivation',
+                data: params,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        // $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: 'Item removed.'
+                        });
+                        //window.location.href = '/Marketing/QuotationMaster/';
+                        row.parentNode.removeChild(row);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: 'Something went wrong to remove item.'
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
                     Lobibox.notify('error', {
                         pauseDelayOnHover: true,
                         size: 'mini',
                         icon: 'bx bx-check-circle',
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
-                        msg: 'Something went wrong to remove item.'
+                        msg: "@MessageHelper.Error"
                     });
                 }
-            },
-            error: function (error) {
-                laddaStop(l);
-                Lobibox.notify('error', {
-                    pauseDelayOnHover: true,
-                    size: 'mini',
-                    icon: 'bx bx-check-circle',
-                    continueDelayOnInactiveTab: false,
-                    position: 'bottom right',
-                    msg: "@MessageHelper.Error"
-                });
-            }
-        }).always(function () {
-            hideLoader();
-        });
-
+            }).always(function () {
+                hideLoader();
+            });
+        }
+        else {
+            row.parentNode.removeChild(row);
+        }
     }
 
     function fnAddNewRowValue(obj) {
@@ -578,4 +801,213 @@
         });
 
     }
+
+    function fnUpdateQuantity(inputValue) {
+        const orgQty = parseFloat(document.getElementById('rowOrgQty' + inputValue).value || document.getElementById('qtyIndex' + inputValue).value);
+        const orgCanclQty = document.getElementById('rowOrgCanclQty' + inputValue).value;
+        const orgRate = document.getElementById('rowOrgRate' + inputValue).value;
+        const orgDiscPer = document.getElementById('rowOrgDiscPer' + inputValue).value;
+        const orgDiscAmt = document.getElementById('rowOrgDiscAmt' + inputValue).value;
+        // const totalAmt;
+
+        const inputCancelQty = document.getElementById('cancelQtyIndex' + inputValue).value;
+
+        if (inputCancelQty !== '' && inputCancelQty !== '0.00' && inputCancelQty !== '0' && inputCancelQty !== NaN) {
+            var inputQty = parseFloat(Number(orgQty - inputCancelQty)).toFixed(2);
+            document.getElementById('qtyIndex' + inputValue).value = inputQty;
+        }
+        else {
+            document.getElementById('qtyIndex' + inputValue).value = orgQty;
+        }
+        fnUpdateRate(inputValue);
+        fnUpdateDiscount(inputValue);
+        fnUpdateDiscountPercentage(inputValue);
+    };
+
+    function fnUpdateRate(inputValue) {
+        const orgRate = document.getElementById('rowOrgRate' + inputValue).value;
+        const inputRate = document.getElementById('rateIndex' + inputValue).value;
+        const qty = document.getElementById('qtyIndex' + inputValue).value;
+
+        if (inputRate !== '' && inputRate !== '0.00' && inputRate !== '0' && inputRate !== NaN) {
+            document.getElementById('amtIndex' + inputValue).value = parseFloat(Number(qty * inputRate)).toFixed(2);
+            document.getElementById('rowOrgTotalAmt' + inputValue).value = parseFloat(Number(qty * inputRate)).toFixed(2);
+            if (parseFloat(document.getElementById('amtIndex' + inputValue).value) > 0) {
+                fnUpdateNetAmount();
+            }
+        }
+        else {
+            document.getElementById('amtIndex' + inputValue).value = orgCanclQty;
+        }
+    }
+
+    function fnUpdateDiscount(inputValue) {
+        const inputDiscAmt = document.getElementById('discountAmtIndex' + inputValue).value;
+        const inputDiscPer = document.getElementById('discountPerIndex' + inputValue).value;
+        const rateAmt = document.getElementById('amtIndex' + inputValue).value;
+        const orgTotalAmt = document.getElementById('rowOrgTotalAmt' + inputValue).value;
+        var updatedAmt = 0;
+        // if (inputDiscAmt !== '' && inputDiscAmt !== '0.00' && inputDiscAmt !== '0' && inputDiscAmt !== NaN) {
+        //     let discount = Number(document.getElementById('discountAmtIndex' + inputValue).value * 100);
+        //     const discountPer = Number(discount / rateAmt);
+        //     const afterDiscAmt = Number(rateAmt - inputDiscAmt);
+        //     updatedAmt = afterDiscAmt;
+        //     document.getElementById('discountPerIndex' + inputValue).value = discountPer;
+        // }
+        if (inputDiscPer !== '' && inputDiscPer !== '0.00' && inputDiscPer !== '0' && inputDiscPer !== NaN) {
+            const discount = parseFloat(Number(orgTotalAmt * document.getElementById('discountPerIndex' + inputValue).value)).toFixed(2);
+            const discountAmt = parseFloat(Number(discount / 100)).toFixed(2);
+            const afterDiscAmt = parseFloat(Number(orgTotalAmt - discountAmt)).toFixed(2);
+            updatedAmt = afterDiscAmt;
+            document.getElementById('discountAmtIndex' + inputValue).value = discountAmt;
+        }
+        document.getElementById('amtIndex' + inputValue).value = updatedAmt;
+        fnUpdateNetAmount();
+    }
+
+    function fnUpdateDiscountPercentage(inputValue) {
+        const orgDiscAmt = document.getElementById('rowOrgDiscAmt' + inputValue).value;
+        const inputDiscAmt = document.getElementById('discountAmtIndex' + inputValue).value;
+        const inputDiscPer = document.getElementById('discountPerIndex' + inputValue).value;
+        const rateAmt = document.getElementById('amtIndex' + inputValue).value;
+        const orgTotalAmt = document.getElementById('rowOrgTotalAmt' + inputValue).value;
+        var updatedAmt = 0;
+        if (inputDiscAmt !== '' && inputDiscAmt !== '0.00' && inputDiscAmt !== '0' && inputDiscAmt !== NaN) {
+            let discount = parseFloat(Number(document.getElementById('discountAmtIndex' + inputValue).value * 100)).toFixed(2);
+            const discountPer = parseFloat(Number(discount / orgTotalAmt)).toFixed(2);
+            const afterDiscAmt = parseFloat(Number(orgTotalAmt - inputDiscAmt)).toFixed(2);
+            updatedAmt = afterDiscAmt;
+            document.getElementById('discountPerIndex' + inputValue).value = discountPer;
+        }
+        document.getElementById('amtIndex' + inputValue).value = updatedAmt;
+        fnUpdateNetAmount();
+    }
+
+    function fnUpdateNewQuantity(inputValue) {
+        var orgQtyValue = document.getElementById('rowOrgQty' + inputValue);
+        orgQtyValue.value = document.getElementById('qtyIndex' + inputValue).value;
+    }
+
+    function fnUpdateNetAmount() {
+        let netAmount = 0;
+        var finalTable = document.getElementsByTagName('table');
+        var rowLen = finalTable[0].rows.length;
+        for (var i = 1; i < rowLen; i++) {
+            let tester = parseFloat(finalTable[0].rows[i].cells[15].children[0].value).toFixed(2);
+            netAmount = Number(parseFloat(netAmount) + parseFloat(finalTable[0].rows[i].cells[15].children[0].value)).toFixed(2);
+        }
+        document.getElementById('NetAmount').value = netAmount;
+    }
+
+    function fnUpdateTaxPer() {
+        const inputTaxAmount = document.getElementById('TaxAmount').value;
+        const orgNetAmount = document.getElementById('NetAmount').value;
+        var updatedAmt = 0;
+        if (inputTaxAmount !== '' && inputTaxAmount !== '0.00' && inputTaxAmount !== '0' && inputTaxAmount !== NaN) {
+            let tax = parseFloat(Number(inputTaxAmount * 100)).toFixed(2);
+            const taxPer = parseFloat(Number(tax / orgNetAmount)).toFixed(2);
+            const afterTaxAmt = parseFloat(Number(orgNetAmount - inputTaxAmount)).toFixed(2);
+            updatedAmt = afterTaxAmt;
+            document.getElementById('TaxPercentage').value = taxPer;
+        }
+        document.getElementById('GrossAmount').value = updatedAmt;
+    }
+    function fnUpdateTaxAmt() {
+        const inputTaxPer = document.getElementById('TaxPercentage').value;
+        const netAmount = document.getElementById('NetAmount').value;
+        if (inputTaxPer !== '' && inputTaxPer !== '0.00' && inputTaxPer !== '0' && inputTaxPer !== NaN) {
+            const tax = parseFloat(Number(netAmount * inputTaxPer)).toFixed(2);
+            const taxAmt = parseFloat(Number(tax / 100)).toFixed(2);
+            const afterTaxAmt = parseFloat(Number(netAmount - taxAmt)).toFixed(2);
+            updatedAmt = afterTaxAmt;
+            document.getElementById('TaxAmount').value = taxAmt;
+        }
+        document.getElementById('GrossAmount').value = updatedAmt;
+    }
+
+    // function fnUpdateCancelQuantity(inputValue) {
+    //     alert('fnUpdateCancelQuantity');
+    //     var qtyVal = document.getElementById('qtyIndex' + inputValue);
+    //     qtyVal.value = Number(qtyVal.value - document.getElementById('cancelQtyIndex' + inputValue).value);
+    // }
+
+    // function fnUpdateQuantity(inputValue) {
+    //     const totalAmt;
+    //     const discountAmt;
+    //     const discountPer;
+
+    //     const inputQty = document.getElementById('qtyIndex' + inputValue).value;
+    //     const orgQty = inputQty;
+    //     const inputCancelQty = document.getElementById('cancelQtyIndex' + inputValue).value;
+    //     const inputRate = document.getElementById('rateIndex' + inputValue).value;
+    //     const inputDiscAmt = document.getElementById('discountAmtIndex' + inputValue).value;
+    //     const inputDiscPer = document.getElementById('discountPerIndex' + inputValue).value;
+    //     const rateAmt;
+
+    //     if (inputCancelQty !== '' && inputCancelQty !== '0.00' && inputCancelQty !== '0' && inputCancelQty !== NaN) {
+    //         var qtyVal = document.getElementById('qtyIndex' + inputValue);
+    //         inputQty = Number(orgQty - inputCancelQty)
+    //         qtyVal.value = inputQty;
+    //         // qtyVal.value = Number(qtyVal.value - document.getElementById('cancelQtyIndex' + inputValue).value);
+    //     }
+    //     if (inputRate !== '' && inputRate !== '0.00' && inputRate !== '0' && inputRate !== NaN) {
+    //         rateAmt = Number(inputQty * inputRate);
+    //     }
+
+    //     if (inputDiscAmt !== '' && inputDiscAmt !== '0.00' && inputDiscAmt !== '0' && inputDiscAmt !== NaN) {
+    //         let discount = Number(document.getElementById('discountAmtIndex' + inputValue).value * 100);
+    //         discountPer = Number(discount / rateAmt);
+    //         rateAmt = Number(rateAmt - inputDiscAmt);
+    //         document.getElementById('discountPerIndex' + inputValue).value = discountPer;
+    //     }
+    //     if (inputDiscPer !== '' && inputDiscPer !== '0.00' && inputDiscPer !== '0' && inputDiscPer !== NaN) {
+    //         let discount = Number(rateAmt * document.getElementById('discountPerIndex' + inputValue).value);
+    //         discountAmt = Number(discount / 100);
+    //         rateAmt = Number(rateAmt - discountAmt);
+    //         document.getElementById('discountAmtIndex' + inputValue).value = discountAmt;
+    //     }
+    //     document.getElementById('amtIndex' + inputValue).value = rateAmt;
+    // }
+
+    // function fnUpdateRate(inputValue) {
+    //     alert('fnUpdateRate');
+    //     let totalAmt;
+    //     let discountAmt;
+    //     let discountPer;
+
+    //     if (document.getElementById('cancelQtyIndex' + inputValue).value !== '') {
+    //         // totalAmt =
+    //     }
+
+    // }
+    // function fnUpdateDiscount(inputValue) {
+    //     // var discountAmt = document.getElementById('discountAmtIndex' + inputValue);
+    //     // var totalAmt = document.getElementById('amtIndex' + inputValue);
+    //     // totalAmt.value = Number(totalAmt.value - discountAmt.value);
+
+    //     // var discount = Number(discountAmt.value * 100);
+    //     // document.getElementById('discountPerIndex' + inputValue).value = Number(discount / totalAmt.value);
+    //     alert('fnUpdateDiscount fn invoked.');
+    //     let totalAmt = Number(document.getElementById('qtyIndex' + inputValue).value * document.getElementById('rateIndex' + inputValue).value);
+    //     let discountAmt;
+    //     let discountPer;
+
+    //     let inputDiscAmt = document.getElementById('discountAmtIndex' + inputValue).value;
+    //     let inputDiscPer = document.getElementById('discountPerIndex' + inputValue).value;
+
+    //     if (inputDiscAmt !== '' && inputDiscAmt !== '0.00' && inputDiscAmt !== '0' && inputDiscAmt !== NaN) {
+    //         let discount = Number(document.getElementById('discountAmtIndex' + inputValue).value * 100);
+    //         discountPer = Number(discount / totalAmt);                                                                              // pending assing.
+    //         totalAmt = Number(totalAmt - inputDiscAmt);
+    //         document.getElementById('discountPerIndex' + inputValue).value = discountPer;
+    //     }
+    //     if (inputDiscPer !== '' && inputDiscPer !== '0.00' && inputDiscPer !== '0' && inputDiscPer !== NaN) {
+    //         let discount = Number(totalAmt * document.getElementById('discountPerIndex' + inputValue).value);
+    //         discountAmt = Number(discount / 100);                                                                                   // pending assing.
+    //         totalAmt = Number(totalAmt - discountAmt);
+    //         document.getElementById('discountAmtIndex' + inputValue).value = discountAmt;
+    //     }
+    //     document.getElementById('amtIndex' + inputValue).value = totalAmt;
+    // }
+
 </script>
