@@ -326,12 +326,14 @@
         for (var i = 1; i < additionalResourceTable.rows.length; i++) {
             dailyMachineryResourceLogID = additionalResourceTable.rows[i].cells[0].children[0].value;
             dailyMachineryResourceTxnID = additionalResourceTable.rows[i].cells[0].children[1].value;
-
+            employeeID = additionalResourceTable.rows[i].cells[1].children[0].value;
+            
             var aditionalRescourceData = {
                 DailyMachineryResourceLogID: dailyMachineryResourceLogID !== '' ? dailyMachineryResourceLogID : 0,
                 DailyMachineryResourceTxnID: dailyMachineryResourceTxnID !== '' ? dailyMachineryResourceTxnID : 0,
                 ResourceType: additionalResourceTable.rows[i].cells[3].children[0].checked,
-                EmployeeID: additionalResourceTable.rows[i].cells[1].children[0].value,
+                EmployeeID: employeeID !== '' ? employeeID : 0,
+                EmployeeOperatorHelperName: additionalResourceTable.rows[i].cells[1].children[1].value,
                 TransferToMachineID: 0,
                 IsAdditionalResource: true,
                 IsPresent: true

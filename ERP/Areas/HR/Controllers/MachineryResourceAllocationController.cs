@@ -183,6 +183,7 @@ namespace ERP.Areas.HR.Controllers
                 dataTable.Columns.Add(new DataColumn("ResourceType", typeof(bool)));
                 dataTable.Columns.Add(new DataColumn("EmployeeID", typeof(int)));
                 //dataTable.Columns.Add(new DataColumn("EmployeeName", typeof(string)));
+                dataTable.Columns.Add(new DataColumn("EmployeeOperatorHelperName", typeof(string)));
                 dataTable.Columns.Add(new DataColumn("TransferToMachineID", typeof(int)));
                 dataTable.Columns.Add(new DataColumn("IsAdditionalResource", typeof(bool)));
                 dataTable.Columns.Add(new DataColumn("IsPresent", typeof(bool)));
@@ -195,7 +196,7 @@ namespace ERP.Areas.HR.Controllers
                     item.DailyMachineryResourceLogID,
                     item.ResourceType,
                     item.EmployeeID,
-                    //item.EmployeeName,
+                    item.EmployeeOperatorHelperName,
                     item.TransferToMachineID,
                     item.IsAdditionalResource,
                     item.IsPresent

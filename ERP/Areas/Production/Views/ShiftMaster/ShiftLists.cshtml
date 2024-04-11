@@ -1,0 +1,75 @@
+﻿@using Business.Entities.Production.ShiftMasterModel
+@model PagedDataTable<ManageShift>
+@{
+    ViewData["Title"] = "Shift Lists..";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
+    <div class="card border-1 shadow rounded-7 p-1">
+        <div class="row border-bottom">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="page-breadcrumb align-items-center">
+                    <div class="p-2">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item">
+                                    <a asp-area="Production" asp-controller="ShiftMaster" asp-action="CompanyLists"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a asp-area="Production" asp-controller="ShiftMaster" asp-action="CompanyLists">Company List</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Shift Lists</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 text-end my-2">
+                <a onclick="fnAddOrUpdateManageShift()" class="btn btn-primary px-5">Add new Shift</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped" id="tblManageShift">
+                    <thead>
+                        <tr>
+                            <td>Sr No.</td>
+                            <td>Company Name</td>
+                            <td>Shift Name</td>
+                            <td>Numbers of Employees</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            int SrNo = 1;
+                            @foreach (var item in Model)
+                            {
+                                <tr class="pointer" onclick="fnAddOrUpdateManageShift(@item.CompanyID, @item.ShiftID)">
+                                    <td>@SrNo</td>
+                                    <td id="CompanyID" value="@item.CompanyID">@item.CompanyName</td>
+                                    <td id="ShiftID" value="@item.ShiftID">@item.ShiftName</td>
+                                    <td>@item.NoOfEmployees</td>
+                                </tr>
+                                SrNo++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    var urlCallingPage = '@Url.Action("AddOrUpdateManageShift", "ShiftMaster")';
+    function fnAddOrUpdateManageShift(companyId, shiftId) {
+        if (companyId > 0 && shiftId > 0) {
+            urlCallingPage = urlCallingPage + '?companyID=' + companyId + '&shiftID=' + shiftId;
+        }        
+        window.location.href = urlCallingPage;
+    }
+</script>

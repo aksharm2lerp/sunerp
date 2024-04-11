@@ -66,7 +66,7 @@ namespace Business.Service.EmployeeAttendanceSummary
             }
         }
 
-        public async Task<DataSet> GetEmployeeAllDetailSummary(int employeecategoryId = 0, int departmentId = 0, string searchstring = null)
+        public async Task<DataSet> GetEmployeeAllDetailSummary(int employeecategoryId = 0, int departmentId = 0, string searchstring = null, int employmentStatusid = 0)
         {
             DataTable table = new DataTable();
             //int totalItemCount = 0;
@@ -77,7 +77,7 @@ namespace Business.Service.EmployeeAttendanceSummary
                         new SqlParameter("@EmployeeCategoryId",employeecategoryId )
                         ,new SqlParameter("@DepartmentID", departmentId)
                         ,new SqlParameter("@SearchString", searchstring)
-
+                        ,new SqlParameter("@EmploymentStatusID", employmentStatusid)
                         };
                 DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Report_EmployeeDetailSummary", param);
                 //{

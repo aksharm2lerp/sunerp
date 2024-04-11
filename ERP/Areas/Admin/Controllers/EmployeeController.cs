@@ -63,25 +63,29 @@ namespace ERP.Areas.Admin.Controllers
 
         public ActionResult Index([FromQuery(Name = "grid-page")] string gridpage = "1", [FromQuery(Name = "grid-column")] string orderby = "", [FromQuery(Name = "grid-dir")] string sortby = "0", [FromQuery(Name = "grid-filter")] string gridfilter = "", [FromQuery(Name = "grid-search")] string search = "")
         {
+            ViewData["DepartmentID"] = 0;
             int userid = USERID;
             IQueryCollection query = Request.Query;
             string value = string.Empty;
             Action<IGridColumnCollection<EmployeeMaster>> columns = c =>
             {
-                c.Add(o => o.SrNo, "SrNo").Titled("Sr.No.").SetWidth(20);
+                c.Add(o => o.SrNo, "SrNo").Titled("Sr.No.").SetWidth(5);
                 c.Add(o => o.EmployeeCode).Titled("Employee Code").Sortable(true);
                 c.Add(o => o.EmployeeName).Titled("Name").Sortable(true);
                 c.Add(o => o.DesignationText).Titled("Designation").Sortable(true);
                 c.Add(o => o.DepartmentName).Titled("Department").Sortable(true);
                 c.Add(o => o.ReportingToMan).Titled("ReportingTo").Sortable(true);
                 c.Add(o => o.GenderText).Titled("Gender").Sortable(false);
-                //c.Add(o => o.IsActive).Titled("IsActive").Sortable(true);
+                //c.Add(o => o.IsActive).Titled("IsActive").Sortable(true);IsHRDataExist
 
-                c.Add(o => o.IsActive).Titled("Active").Encoded(false).Sanitized(false).SetWidth(60).Css("hidden-xs")
-        .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.EmployeeID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.EmployeeID}' data-approval='HOD' data-id='{o.EmployeeID}' data-key='{o.EmployeeID}' " + (o.IsActive ? "checked" : "unchecked") + " disabled >");
+                c.Add(o => o.IsHRDataExist).Titled("IsHRDataExist").Encoded(false).Sanitized(false).SetWidth(10).Css("hidden-xs text-center")
+        .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPIsHRDataExist" + o.EmployeeID}'   href='javascript:void(0)' data-rowid='{"EMPIsHRDataExist" + o.EmployeeID}' data-approval='HR' data-id='{o.EmployeeID}' data-key='{o.EmployeeID}' " + (o.IsHRDataExist ? "checked" : "unchecked") + " disabled >");
+
+                c.Add(o => o.IsActive).Titled("Active").Encoded(false).Sanitized(false).SetWidth(5).Css("hidden-xs  text-center")
+        .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.EmployeeID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.EmployeeID}' data-approval='HR' data-id='{o.EmployeeID}' data-key='{o.EmployeeID}' " + (o.IsActive ? "checked" : "unchecked") + " disabled >");
 
                 //Below code hide on phones
-                c.Add().Titled("Details").Encoded(false).Sanitized(false).SetWidth(60).Css("hidden-xs")
+                c.Add().Titled("Edit").Encoded(false).Sanitized(false).SetWidth(5).Css("hidden-xs  text-center")
                 .RenderValueAs(o => $"<a class='fa-2x' href='/Admin/Employee/AddUpdateEmployee/{o.EncryptedId}' ><iconify-icon icon=\"ep:edit\"></iconify-icon></a>");
             };
             PagedDataTable<EmployeeMaster> pds = _employeeService.GetAllEmployeesAsync(gridpage.ToInt(), PAGESIZE, search, orderby.RemoveSpace(), sortby == "0" ? "ASC" : "DESC").Result;
@@ -128,7 +132,7 @@ namespace ERP.Areas.Admin.Controllers
                 model.keyword = keyword;
                 model.DepartmentID = departmentID;
                 model.CompanyID = companyID;
-
+                //ViewData["DepartmentID"] = departmentID;
 
 
 
@@ -145,7 +149,7 @@ namespace ERP.Areas.Admin.Controllers
 
                 Action<IGridColumnCollection<EmployeeMaster>> columns = c =>
                 {
-                    c.Add(o => o.SrNo, "SrNo").Titled("Sr.No.").SetWidth(20);
+                    c.Add(o => o.SrNo, "SrNo").Titled("Sr.No.").SetWidth(5);
                     c.Add(o => o.EmployeeCode).Titled("Employee Code").Sortable(true);
                     c.Add(o => o.EmployeeName).Titled("Name").Sortable(true);
                     c.Add(o => o.DesignationText).Titled("Designation").Sortable(true);
@@ -153,12 +157,14 @@ namespace ERP.Areas.Admin.Controllers
                     c.Add(o => o.ReportingToMan).Titled("ReportingTo").Sortable(true);
                     c.Add(o => o.GenderText).Titled("Gender").Sortable(false);
                     //c.Add(o => o.IsActive).Titled("IsActive").Sortable(true);
+                    c.Add(o => o.IsHRDataExist).Titled("IsHRDataExist").Encoded(false).Sanitized(false).SetWidth(10).Css("hidden-xs text-center")
+        .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPIsHRDataExist" + o.EmployeeID}'   href='javascript:void(0)' data-rowid='{"EMPIsHRDataExist" + o.EmployeeID}' data-approval='HR' data-id='{o.EmployeeID}' data-key='{o.EmployeeID}' " + (o.IsHRDataExist ? "checked" : "unchecked") + " disabled >");
 
-                    c.Add(o => o.IsActive).Titled("Active").Encoded(false).Sanitized(false).SetWidth(60).Css("hidden-xs")
+                    c.Add(o => o.IsActive).Titled("Active").Encoded(false).Sanitized(false).SetWidth(5).Css("hidden-xs text-center")
             .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.EmployeeID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.EmployeeID}' data-approval='HOD' data-id='{o.EmployeeID}' data-key='{o.EmployeeID}' " + (o.IsActive ? "checked" : "unchecked") + " disabled >");
 
                     //Below code hide on phones
-                    c.Add().Titled("Details").Encoded(false).Sanitized(false).SetWidth(60).Css("hidden-xs")
+                    c.Add().Titled("Details").Encoded(false).Sanitized(false).SetWidth(5).Css("hidden-xs text-center")
                     .RenderValueAs(o => $"<a class='fa-2x' href='/Admin/Employee/AddUpdateEmployee/{o.EncryptedId}' ><iconify-icon icon=\"ep:edit\"></iconify-icon></a>");
 
                 };
@@ -665,7 +671,7 @@ namespace ERP.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                   _logger.LogError(ex, ex.Message);
                 throw;
             }
         }

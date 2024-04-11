@@ -1,0 +1,61 @@
+﻿@model Business.Entities.Marketing.QuotationMasterModel.QuotationReviewDetail
+<form id="quotationReviewForm">
+    <div class="row pt-3">
+        <div class="col-sm-12">
+            <input type="hidden" asp-for="QuotationID" name="QuotationID" />
+            <input type="hidden" asp-for="QuotationReviewID" name="QuotationReviewID" />
+            <div class="row mb-2">
+                <label for="" class="col-sm-4 col-form-label ">Quotation Code:</label>
+                <div class="col-sm-8">
+                    <input type="text" required="" class="form-control" id="QuotationCode" name="QuotationCode" asp-for="QuotationCode" placeholder="" readonly>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="" class="col-sm-4 col-form-label ">Quotation Date:</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" id="QuotationDate" name="QuotationDate" asp-for="QuotationDate" placeholder="" readonly>
+                </div>
+            </div>
+           @*  <div class="row mb-2">
+                <label for="" class="col-sm-4 col-form-label ">Amount:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="Amount" name="Amount" asp-for="Amount" placeholder="">
+                </div>
+            </div> *@
+            @*   <div class="row mb-2">
+            <label for="" class="col-sm-4 col-form-label ">Ready to approve?</label>
+            <div class="col-sm-8">
+            @Html.CheckBoxFor(s => s.IsActive)
+            @*<span asp-validation-for="OwnerName" class="text-danger" />
+            </div>
+            </div> *@
+            <div class="row mb-2">
+                <label for="" class="col-sm-4 col-form-label ">Status:</label>
+                <div class="col-sm-8">
+                    <select class='form-select' asp-for="QuotationApprovalStatusID" id='QuotationApprovalStatusID' asp-items='@CommonExtension.GetAllQuotationApprovalStatusAsync()'>
+                        <option value=''>Select here...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="" class="col-sm-4 col-form-label ">Notes:</label>
+                <div class="col-sm-8">
+                    <textarea type="text" required="" class="form-control" id="Comment" name="Comment" asp-for="Comment" placeholder="" cols="7"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var multipleCancelButtonParty = new Choices('#QuotationApprovalStatusID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+    });
+
+</script>

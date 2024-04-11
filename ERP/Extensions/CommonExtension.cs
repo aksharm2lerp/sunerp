@@ -147,7 +147,7 @@ namespace ERP.Extensions
             try
             {
                 var FYList = _commonmasterService.GetAllFinancialYearAsync().Result;
-                return new SelectList(FYList, "FinancialYearID", "FinancialYear");
+                return new SelectList(FYList, "FinancialYearID", "FinYearDesc");
             }
             catch
             {
@@ -631,6 +631,38 @@ namespace ERP.Extensions
             }
         }
         #endregion  GetAllRequestForQuotTypeAsync -  RequestForQuotType List for dropdown list;
+
+        #region GetAllQuotationApprovalStatusAsync - Quotation Approval Status Dropdown List  
+
+        public static SelectList GetAllQuotationApprovalStatusAsync()
+        {
+            try
+            {
+                var FYList = _commonmasterService.GetAllQuotationApprovalStatusAsync().Result;
+                return new SelectList(FYList, "QuotationApprovalStatusID", "QuotationApprovalStatusName");
+            }
+            catch
+            {
+                return new SelectList(Enumerable.Empty<SelectListItem>());
+            }
+        }
+        #endregion  GetAllQuotationApprovalStatusAsync - Financial Year Dropdown List
+
+        #region GetAllMostUsedSAPItemSearchKeywordAsync - Displayed in List  
+
+        public static SelectList GetAllMostUsedSAPItemSearchKeywordAsync()
+        {
+            try
+            {
+                var FYList = _commonmasterService.GetAllMostUsedSAPItemSearchKeywordAsync().Result;
+                return new SelectList(FYList, "MostUsedSAPItemSearchKeywordID", "MostUsedSAPItemSearchKeywordName");
+            }
+            catch
+            {
+                return new SelectList(Enumerable.Empty<SelectListItem>());
+            }
+        }
+        #endregion  GetAllMostUsedSAPItemSearchKeywordAsync - Displayed in List  
 
         //$AddCommonExtensionMethod$
 

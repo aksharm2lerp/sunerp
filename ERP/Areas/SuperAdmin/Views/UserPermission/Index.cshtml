@@ -21,6 +21,11 @@
     {
         packageId = ViewBag.PackageID;
     }
+    int[] formId;
+    if (ViewBag.FormID != null && ViewBag.FormID > 0)
+    {
+        formId = ViewBag.FormID;
+    }
 
 }
 <div class="container" id="employeeDetailSummary">
@@ -95,18 +100,18 @@
                                 <tr>
                                     <th class="col-md-1">Sr No</th>
                                     <th class="col-md-4">Form Name</th>
-                                    <th class="col-md-1">Assign</th>
-                                    <th class="col-md-1">Readonly</th>
+                                    <th class="col-md-1">Edit</th>
+                                    <th class="col-md-1">View</th>
                                     <th class="col-md-1">Print</th>
                                     <th class="col-md-1">Export To Excel</th>
                                     <th class="col-md-1">Export To PDF</th>
-                                    <th class="col-md-1"></th>
-                                    <th class="col-md-1"></th>
-
+                                    <th style=' display:none;'></th>
+                                    <th style=' display:none;'></th>
                                 </tr>
                             </thead>
                             @if (Model.Count() > 0)
                             {
+                                int SrNo = 1;
                                 <tbody class="border border-dark">
                                     @foreach (var item in Model)
                                     {
@@ -115,16 +120,16 @@
                                         { isTrue = "checked"; }
                                         <tr>
                                             <td>
-                                                @item.SrNo
+                                                @SrNo
                                             </td>
                                             <td>
                                                 <input type="text" class="form-control" id="FormName" asp-for="@item.FormName" name="FormName" readonly />
                                             </td>
                                             <td>
-                                                <input type="checkbox" class="form-check-input" id="Assign" asp-for="@item.Assign" />
+                                                <input type="checkbox" class="form-check-input" id="Edit" asp-for="@item.Edit" name="Edit" />
                                             </td>
                                             <td>
-                                                <input type="checkbox" class="form-check-input" id="Readonly" asp-for="@item.Readonly" name="Readonly" />
+                                                <input type="checkbox" class="form-check-input" id="View" asp-for="@item.View" name="View" />
                                             </td>
                                             <td>
                                                 <input type="checkbox" class="form-check-input" id="Print" asp-for="@item.Print" name="Print" />
@@ -135,15 +140,14 @@
                                             <td>
                                                 <input type="checkbox" class="form-check-input" id="ExportToPDF" asp-for="@item.ExportToPDF" name="ExportToPDF" />
                                             </td>
-                                            <td>
-                                                @*<input type="hidden" id="UserPermissionID" asp-for="@item.UserPermissionID" name="UserPermissionID" hidden />*@
-                                                <input type="hidden" id="FormID" asp-for="@item.FormID" name="FormID" hidden />
+                                            <td style=' display:none;'>
+                                                <input type="hidden" class="FormID" id="@item.FormID" asp-for="@item.FormID" name="FormID" />
                                             </td>
-                                            <td>
-                                                <input type="hidden" id="UserPermissionID" asp-for="@item.UserPermissionID" name="UserPermissionID" hidden />
+                                            <td style=' display:none;'>
+                                                <input type="hidden" id="UserPermissionID" asp-for="@item.UserPermissionID" name="UserPermissionID" />
                                             </td>
                                         </tr>
-
+                                        SrNo++;
                                     }
                                 </tbody>
                             }
@@ -177,14 +181,14 @@
     // Checked All function CodeStart
     $(document).ready(function () {
         $("#CheckedAllForm").click(function () {
-            $('#Assign, #Readonly, #Print, #ExportToExcel, #ExportToPDF').prop('checked', true);
+            $('#Edit, #View, #Print, #ExportToExcel, #ExportToPDF').prop('checked', true);
         });
     });
     // Checked All function CodeEnd
 
     //uncheckall function  Start
     function uncheckAll() {
-        var inputs = document.querySelectorAll('#Assign, #Readonly, #Print, #ExportToExcel, #ExportToPDF');
+        var inputs = document.querySelectorAll('#Edit, #View, #Print, #ExportToExcel, #ExportToPDF');
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].checked = false;
         }
@@ -193,32 +197,18 @@
 
     //Search form according to PackageID start
     function fnSearchPackageDetail() {
-
-        //var userID = $('#UserID').val();
-        //alert('userID=----' + userID);
         var packageID = $('#PackageID').val();
-        //alert('packageID=----' + packageID);
         var packageUrl = '@Url.Action("Index", "UserPermission")';
-
-
         var packageDetailUrl = packageUrl + '?packageID=' + packageID;
-
         window.location.href = packageDetailUrl;
     };
     //Search form according to PackageID end
 
     //Search form according to UserID start
     function fnGetPersmissionListByUserID() {
-
         var userID = $('#UserID').val();
-        //alert('userID=----' + userID);
         var packageID = $('#PackageID').val();
-        //alert('packageID=----' + packageID);
-        var packageUrl = '@Url.Action("Index", "UserPermission")';
-
-
-        var packageDetailByUserIDUrl = packageUrl + '?packageID=' + packageID + '&userId=' + userID;
-
+        var packageUrl = '@Url.Action("Index", "UserPermission")'; var packageDetailByUserIDUrl = packageUrl + '?packageID=' + packageID + '&userId=' + userID;
         window.location.href = packageDetailByUserIDUrl;
     };
     //Search form according to UserID end
@@ -229,24 +219,20 @@
 
         let packageId = @packageId;
         let userID = $('#UserID').val();
-
         var dropdown = document.getElementById("UserID");
         var selectedValue = dropdown.value;
-
         var gridTableSaveUrl = '@Url.Action("AssingFormToUser", "UserPermission")';
         var gridTableAssignFormToUser = document.getElementsByTagName('table');
         var gridTableAssignFormToUserData = [];
-
         for (var i = 1; i < gridTableAssignFormToUser[0].rows.length; i++) {
-            var test = gridTableAssignFormToUser[0].rows;
-            var tableRowData = {
 
+            var tableRowData = {
                 //SrNo: gridTableAssignFormToUser[0].rows[i].cells[0].textContent,
                 PackageID: packageId,
                 UserID: selectedValue,
                 //FormName: gridTableAssignFormToUser[0].rows[i].cells[1].textContent,
-                Assign: gridTableAssignFormToUser[0].rows[i].cells[2].children[0].checked,
-                Readonly: gridTableAssignFormToUser[0].rows[i].cells[3].children[0].checked,
+                Edit: gridTableAssignFormToUser[0].rows[i].cells[2].children[0].checked,
+                View: gridTableAssignFormToUser[0].rows[i].cells[3].children[0].checked,
                 Print: gridTableAssignFormToUser[0].rows[i].cells[4].children[0].checked,
                 ExportToExcel: gridTableAssignFormToUser[0].rows[i].cells[5].children[0].checked,
                 ExportToPDF: gridTableAssignFormToUser[0].rows[i].cells[6].children[0].checked,
@@ -255,7 +241,6 @@
             };
             gridTableAssignFormToUserData.push(tableRowData);
         }
-        //alert('After for loop');
         $.ajax({
             type: 'POST',
             url: gridTableSaveUrl,

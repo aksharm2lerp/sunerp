@@ -8,6 +8,7 @@ namespace Business.Entities.Employee.EmploymentStatus
 {
     public class EmploymentStatusChangeHr
     {
+        public int SrNo { get; set; }
         public int EmploymentStatusTxnID { get; set; }
         public int EmploymentStatusID { get; set; }
         public string EmploymentStatusText { get; set; }

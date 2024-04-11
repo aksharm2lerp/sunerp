@@ -1,5 +1,5 @@
-﻿@model Business.Entities.SalaryPaidHr.SalaryPaidHr
-<form method="post" id="formAddUpdateEmployeeSalaryPaidHr" class="row g-3 needs-validation card" asp-area="Admin" asp-controller="Employee">
+﻿@model Business.Entities.SalaryPaidHr.SalaryPaidHr;
+<form method="post" id="formAddUpdateEmployeeSalaryPaidHr" class="row g-3" asp-area="Admin" asp-controller="Employee">
     <input type="hidden" asp-for="EmployeeID" />
     <input type="hidden" asp-for="SalaryPaidHrID" />
 
@@ -24,41 +24,51 @@
                 <input type="text" class="form-control" asp-for="WagesPerDay" id="WagesPerDay" name="WagesPerDay" placeholder="">
             </div>
         </div>
-        <div class="row mb-12">
-            <label for="" class="col-sm-12 col-form-label ">
+        <div class="row">
+            <label for="" class="col-6 col-form-label ">
                 Select User for showing employee attendance with actual working hours:
                 @*<span class="required">*</span>*@
             </label>
         </div>
-        <div class="row mb-12">
-            <div class="col-sm-4">
-                @*           <select asp-for="UserID" asp-items="ViewBag.UsersByCompanyId" class="form-select">
-                <option value="">Select User</option>
-                </select>*@
+        <div class="row mb-3">
+            <div class="col-6">
                 <select asp-for="actualhourUserID" asp-items="ViewBag.UsersByCompanyId" name="actualhourUserID" id="actualhourUserID" class="form-control">
                     <option value="">Select User Name</option>
                 </select>
-                @*<span asp-validation-for="UserID" class="text-danger" />*@
             </div>
         </div>
 
-        <div class="row mb-12">
-            <label for="" class="col-sm-12 col-form-label ">
+        @*
+        <div class="row mb-3">
+        <select asp-for="UserID" asp-items="ViewBag.UsersByCompanyId" class="form-select">
+        <option value="">Select User</option>
+        </select>
+        <span asp-validation-for="UserID" class="text-danger" />
+        </div>
+        *@
+
+        <div class="row">
+            <label for="" class="col-6 col-form-label ">
                 Select User for showing employee attendance with adjustment hours:
                 @*<span class="required">*</span>*@
             </label>
         </div>
-        <div class="row mb-12">
-            <div class="col-sm-4">
-                @*           <select asp-for="UserID" asp-items="ViewBag.UsersByCompanyId" class="form-select">
-                <option value="">Select User</option>
-                </select>*@
+        <div class="row mb-3">
+            <div class="col-6">
                 <select asp-for="adjustmenthourUserID" asp-items="ViewBag.UsersByCompanyId" name="adjustmenthourUserID" id="adjustmenthourUserID" class="form-control">
                     <option value="">Select User Name</option>
                 </select>
-                @*<span asp-validation-for="UserID" class="text-danger" />*@
             </div>
         </div>
+
+        @*
+        <div class="row mb-3">
+        <select asp-for="UserID" asp-items="ViewBag.UsersByCompanyId" class="form-select">
+        <option value="">Select User</option>
+        </select>
+        <span asp-validation-for="UserID" class="text-danger" />
+        </div>
+        *@
         @*        <div class="row mb-3">
         <label for="" class="col-sm-3 col-form-label ">Attandence show with adjustment hours to user:</label>
         <div class="col-sm-4">

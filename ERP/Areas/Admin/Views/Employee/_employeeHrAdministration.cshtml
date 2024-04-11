@@ -57,12 +57,12 @@
             <div class="row mb-3">
                 <label for="" class="col-sm-3 col-form-label ">Employment Type:</label>
                 <div class="col-sm-8">
-                    <select class="form-select " asp-for="EmploymentTypeID" id="EmploymentTypeID" name="EmploymentTypeID" asp-items="@EmployeeExtension.GetAllEmploymentType()" onchange="hideSecondDropdown()" disabled>
+                    <select class="form-select " asp-for="EmploymentTypeID" id="EmploymentTypeIDHidden" name="EmploymentTypeID" asp-items="@EmployeeExtension.GetAllEmploymentType()" onchange="hideSecondDropdown()" disabled>
                         <option value="">--Select--</option>
                     </select>
                 </div>
-                @if (claimRoleName.Value.Equals("HR Super Admin") || claimRoleName.Value.Equals("Developer"))
-                {
+               @*  @if (claimRoleName.Value.Equals("HR Super Admin") || claimRoleName.Value.Equals("Developer") || claimRoleName.Value.Equals("Admin"))
+                { *@
                     <div class="col-sm-1 h4">
                         <a onclick="fnEmploymentTypeChangeHr(this)"
                                          href="javascript:void(0)"
@@ -73,7 +73,7 @@
                             <iconify-icon icon="fluent:person-edit-48-regular"></iconify-icon>
                         </a>
                     </div>
-                }
+                @* } *@
             </div>
 
          
@@ -109,12 +109,12 @@
             <div class="row mb-3">
                 <label for="" class="col-sm-3 col-form-label ">Employement Status:</label>
                 <div class="col-sm-8">
-                    <select class="form-select " asp-for="EmploymentStatusID" id="EmploymentStatusID" name="EmploymentStatusID" asp-items="@EmployeeExtension.GetAllEmploymentStatus()" disabled>
+                    <select class="form-select " asp-for="EmploymentStatusID" id="EmploymentStatusIDHidden" name="EmploymentStatusID" asp-items="@EmployeeExtension.GetAllEmploymentStatus()" disabled>
                         <option value="">--Select--</option>
                     </select>
                 </div>
-                @if (claimRoleName.Value.Equals("HR Super Admin") || claimRoleName.Value.Equals("Developer"))
-                {
+               @*  @if (claimRoleName.Value.Equals("HR Super Admin") || claimRoleName.Value.Equals("Developer") || claimRoleName.Value.Equals("Admin"))
+                { *@
                     <div class="col-sm-1 h4">
                         <a onclick="fnEmploymentStatusChangeHr(this)"
                                          href="javascript:void(0)"
@@ -125,7 +125,7 @@
                             <iconify-icon icon="fluent:person-edit-48-regular"></iconify-icon>
                         </a>
                     </div>
-                }
+               @*  } *@
             </div>
 
             @if (Model != null && Model.EmployeeID > 0 && Model.EmployeeAdminID > 0 && Model.ConfirmationDate != null)
@@ -299,8 +299,8 @@
     const valueMonthlyCTC = document.getElementById('MonthlyCTC');
     function fnSaveEmployeeHRAdministration() {
         //   $('formAddUpdateEmployeeHRAdministration').valid(){
-        document.getElementById('EmploymentTypeID').removeAttribute('disabled');
-        document.getElementById('EmploymentStatusID').removeAttribute('disabled');
+        document.getElementById('EmploymentTypeIDHidden').removeAttribute('disabled');
+        document.getElementById('EmploymentStatusIDHidden').removeAttribute('disabled');
         var ls = laddaStart('btnSaveEmployeeHRAdministration');
         modeldata = $("#formAddUpdateEmployeeHRAdministration").serialize();
         $.ajax({

@@ -32,6 +32,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Business.Entities.Marketing.RequestForQuotTypeMasterModel;
 using Business.Entities.HR.MachineryResourceAllocationModel;
+using Business.Entities.Marketing.QuotationApprovalStatusModel;
+using Business.Entities.Marketing.SAPItem;
 //$AddUsing$
 
 namespace Business.Service
@@ -1502,6 +1504,88 @@ namespace Business.Service
         }
 
         #endregion Machine name by DepartmentID, Method Added by Dravesh Lokhande  on 22-Feb-2024.
+
+
+        public async Task<PagedDataTable<QuotationApprovalStatus>> GetAllQuotationApprovalStatusAsync()
+        {
+            DataTable table = new DataTable();
+            int totalItemCount = 0;
+            PagedDataTable<QuotationApprovalStatus> lst = new PagedDataTable<QuotationApprovalStatus>();
+            try
+            {
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_QuotationApprovalStatusForDropdown"))
+
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        table = ds.Tables[0];
+                        if (table.Rows.Count > 0)
+                        {
+                            if (table.ContainColumn("TotalCount"))
+                                totalItemCount = Convert.ToInt32(table.Rows[0]["TotalCount"]);
+                            else
+                                totalItemCount = table.Rows.Count;
+                        }
+
+
+                        lst = table.ToPagedDataTableList<QuotationApprovalStatus>();
+                    }
+                    return lst;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (table != null)
+                    table.Dispose();
+            }
+        }
+
+        #region Most Used SAP Item Search Keyword displayed on search page.
+
+        public async Task<PagedDataTable<SAPItemSearchKeywordLog>> GetAllMostUsedSAPItemSearchKeywordAsync()
+        {
+            DataTable table = new DataTable();
+            int totalItemCount = 0;
+            PagedDataTable<SAPItemSearchKeywordLog> lst = new PagedDataTable<SAPItemSearchKeywordLog>();
+            try
+            {
+                
+                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_MostUsedSAPItemSearchKeyword");
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        table = ds.Tables[0];
+                        if (table.Rows.Count > 0)
+                        {
+                            if (table.ContainColumn("TotalCount"))
+                                totalItemCount = Convert.ToInt32(table.Rows[0]["TotalCount"]);
+                            else
+                                totalItemCount = table.Rows.Count;
+                        }
+                    }
+                    lst = table.ToPagedDataTableList<SAPItemSearchKeywordLog>();
+                }
+
+                return lst;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (table != null)
+                    table.Dispose();
+            }
+        }
+
+        #endregion Most Used SAP Item Search Keyword displayed on search page.
+
+
 
 
 

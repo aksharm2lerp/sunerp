@@ -37,6 +37,9 @@ namespace Business.Entities.Marketing.RequestForQuotMasterModel
         public int? RequestForQuotTypeID { get; set; }
         public string RequestForQuotTypeText { get; set; }
         public string FinancialYear { get; set; }
+        
+        public bool IsQuotationPrepared { get; set; }
+        public bool IsApproved { get; set; }
 
         // public List<RequestForQuotDetail> RequestForQuotDetails { get; set; } = new List<RequestForQuotDetail>();
         public ISGrid iSGrid { get; set; } 
@@ -57,6 +60,7 @@ namespace Business.Entities.Marketing.RequestForQuotMasterModel
         public decimal Qty { get; set; } = 0;
         public decimal Supl_Qty { get; set; } = 0;
         public decimal Cancel_Qty { get; set; } = 0;
+        public decimal Pending_Qty { get; set; } = 0;
         public decimal Rate { get; set; } = decimal.Zero;
         public decimal DiscountInPer { get; set; } = decimal.Zero;
         public decimal DiscountAmount { get; set; } = decimal.Zero;

@@ -56,7 +56,9 @@ namespace ERP.Areas.SuperAdmin.Controllers
 
         }
 
-        /*public ActionResult Index(int packageid, [FromQuery(Name = "grid-page")] string gridpage = "1", [FromQuery(Name = "grid-column")] string orderby = "", [FromQuery(Name = "grid-dir")] string sortby = "0", [FromQuery(Name = "grid-filter")] string gridfilter = "", [FromQuery(Name = "grid-search")] string search = "")
+        #region R&D
+
+            /*public ActionResult Index(int packageid, [FromQuery(Name = "grid-page")] string gridpage = "1", [FromQuery(Name = "grid-column")] string orderby = "", [FromQuery(Name = "grid-dir")] string sortby = "0", [FromQuery(Name = "grid-filter")] string gridfilter = "", [FromQuery(Name = "grid-search")] string search = "")
                 {
                     int userid = USERID;
                     IQueryCollection query = Request.Query;
@@ -94,6 +96,9 @@ namespace ERP.Areas.SuperAdmin.Controllers
                     return View("Index", server.Grid);
 
                 }*/
+        #endregion
+
+
         #endregion Index Page
 
         #region GetPackageDetailSummary
@@ -151,13 +156,13 @@ namespace ERP.Areas.SuperAdmin.Controllers
                 dataRow["PackageID"] = item.PackageID;
                 dataRow["FormID"] = item.FormID;
                 dataRow["AddNew"] = 0;
-                dataRow["Edit"] = 0;
+                dataRow["Edit"] = item.Edit;
                 dataRow["Cancel"] = 0;
                 dataRow["Email"] = 0;
                 dataRow["EmailWithAttachment"] = 0;
                 dataRow["Search"] = 0;
-                dataRow["IsActive"] = item.Assign;
-                dataRow["View"] = item.Readonly;
+                dataRow["IsActive"] = item.Edit;
+                dataRow["View"] = item.View;
                 dataRow["Print"] = item.Print;
                 dataRow["ExportToPDF"] = item.ExportToPDF;
                 dataRow["ExportToExcel"] = item.ExportToExcel;

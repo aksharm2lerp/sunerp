@@ -2,5 +2,5 @@
   <ContentRoot BasePath="/Identity" Path="C:\Users\Dell\.nuget\packages\microsoft.aspnetcore.identity.ui\3.1.4\staticwebassets\V4\" />
   <ContentRoot BasePath="_content/Agno.BlazorInputFile" Path="C:\Users\Dell\.nuget\packages\agno.blazorinputfile\0.3.0\build\..\staticwebassets\" />
   <ContentRoot BasePath="_content/AspNetCoreHero.ToastNotification" Path="C:\Users\Dell\.nuget\packages\aspnetcorehero.toastnotification\1.1.0\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/GridBlazor" Path="D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharerp\aksharm2l\Infrastructure\GridBlazor\wwwroot\" />
+  <ContentRoot BasePath="_content/GridBlazor" Path="D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\wwwroot\" />
 </StaticWebAssets>

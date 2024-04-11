@@ -1,6 +1,6 @@
 ﻿@model Business.Entities.Employee.EmployeeSearch
 @{
-    
+    // int deptId = ViewBag.DepartmentID;
 }
 <form method="get" id="frmEmployeeSearch" asp-action="Search" asp-controller="Employee" asp-area="Admin" class="g-3" novalidate>
     <div class="mt-3">
@@ -13,10 +13,22 @@
                                 <label for="Keyword" class="col-form-label">Search keyword</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" asp-for="keyword" maxlength="50" placeholder="----- Search By Input Value -------">
+                                <input type="text" class="form-control" asp-for="keyword" title="Search employee by First,Middle or Last name or Mobile number or Employee Code" maxlength="50" placeholder="----- Search By Input Value -------">
                             </div>
                         </div>
                     </div>
+                   @*  <div class="col-md-4">
+                        <div class="mb-3 row">
+                            <div class="col-md-4">
+                                <label for="Keyword" class="col-form-label">Department</label>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control" asp-for="@deptId" id="DepartmentID" name="DepartmentID" asp-items="@EmployeeExtension.GetAllDepartmentText()">
+                                    <option value="">Select Department</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> *@
                     <div class="col-md-6" style="">
                         <div class="text-end">
                             <button class="btn btn-primary btn-info px-5 ladda-button" type="submit">

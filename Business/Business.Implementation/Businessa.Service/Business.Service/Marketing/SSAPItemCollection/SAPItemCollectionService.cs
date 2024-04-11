@@ -21,7 +21,7 @@ namespace Business.Service.Marketing.SSAPItemCollection
         {
             _config = config;
             connection = _config.GetConnectionString("DefaultConnection");
-            sapconnection = _config.GetConnectionString("SAPDbConnection");
+            sapconnection = _config.GetConnectionString("DefaultConnection"); //_config.GetConnectionString("SAPDbConnection");
         }
 
         #endregion Database Connection
@@ -235,3 +235,6 @@ namespace Business.Service.Marketing.SSAPItemCollection
         #endregion Get customer sales detail by customer name and item code.
     }
 }
+ 
+
+

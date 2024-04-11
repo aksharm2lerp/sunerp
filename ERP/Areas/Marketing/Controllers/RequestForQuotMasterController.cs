@@ -54,32 +54,34 @@ namespace ERP.Areas.Marketing.Controllers
                 c.Add(o => o.SrNo)
                     .Titled("Sr No")
                     .SetWidth(5);
-
-
                 c.Add(o => o.RequestForQuotTypeText).Titled("RFQ Type").SetWidth(10);
                 c.Add(o => o.RequestForQuotCode).Titled("RFQ Code").SetWidth(10);
                 c.Add(o => o.RequestForQuotDate).Titled("Request For Quot Date").Format("{0:dd/MM/yyyy}").SetWidth(20);
                 c.Add(o => o.PartyCode).Titled("Party Code").SetWidth(20);
-                c.Add(o => o.PartyName).Titled("Party Name").SetWidth(20);
- 
+                c.Add(o => o.PartyName).Titled("Party Name").SetWidth(30);
 
-                c.Add(o => o.IsActive).Titled("Active").Encoded(false).Sanitized(false).SetWidth(60).Css("hidden-xs")
-            .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.RequestForQuotID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.RequestForQuotID}'   data-id='{o.RequestForQuotID}' data-key='{o.RequestForQuotID}' " + (o.IsActive ? "checked" : "unchecked") + " disabled >");
+
+                //    c.Add(o => o.IsActive).Titled("Active").Encoded(false).Sanitized(false).SetWidth(60).Css("hidden-xs")
+                //.RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.RequestForQuotID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.RequestForQuotID}'   data-id='{o.RequestForQuotID}' data-key='{o.RequestForQuotID}' " + (o.IsActive ? "checked" : "unchecked") + " disabled >");
+
+                c.Add(o => o.IsQuotationPrepared).Titled("Quot-Completed").Encoded(false).Sanitized(false).SetWidth(5).Css("hidden-xs text-center")
+                .RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.RequestForQuotID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.RequestForQuotID}'   data-id='{o.RequestForQuotID}' data-key='{o.RequestForQuotID}' " + (o.IsQuotationPrepared ? "checked" : "unchecked") + " disabled >");
+
 
                 c.Add()
                     .Titled("Edit")
                     .Encoded(false)
                     .Sanitized(false)
-                    .SetWidth(20)
+                    .SetWidth(5)
                     .Css("hidden-xs")
-                     .RenderValueAs(o => $"<a class='fa-2x' href='/Marketing/RequestForQuotMaster/Get/{o.RequestForQuotID}' ><i class='bx bx-edit'></i></a>");
+                     .RenderValueAs(o => $"<a class='fa-2x' {(o.IsQuotationPrepared == true ? "" : "href='/Marketing/RequestForQuotMaster/Get/"+o.RequestForQuotID+"'")} ><i class='bx bx-edit'></i></a>");
 
                 
             };
             PagedDataTable<RequestForQuotMaster> pds = (PagedDataTable<RequestForQuotMaster>)iRequestForQuotMaster.GetAllRequestForQuotMasterAsync(gridpage.ToInt(), PAGESIZE, search, orderby.RemoveSpace(), sortby == "0" ? "ASC" : "DESC").Result;
 
             var server = new GridCoreServer<RequestForQuotMaster>(pds, query, false, "RequestForQuotMasterGrid", columns, PAGESIZE, pds.TotalItemCount)
-                .Sortable()
+                .Sortable(false)
                 .Searchable(false, false)
                 .Selectable(true)
                 .WithGridItemsCount()
@@ -177,7 +179,7 @@ namespace ERP.Areas.Marketing.Controllers
                 c.Add(o => o.RequestForQuotID).Titled("Request For Quot ID").SetWidth(20);
                 //c.Add(o => o.ItemID).Titled("ItemID").Hidden=true;
                 c.Add(o => o.ItemName).Titled("Item Name");
-                c.Add(o => o.HSNcodes).Titled("HSN Code");
+                //c.Add(o => o.HSNcodes).Titled("HSN Code");
                 //c.Add(o => o.UOMID).Titled("UOMID").Hidden=true;
                 c.Add(o => o.UOMText).Titled("UOM");
                 c.Add(o => o.Qty).Titled("Qty");
@@ -290,8 +292,8 @@ namespace ERP.Areas.Marketing.Controllers
                             //href='/Marketing/RequestForQuotMaster/Get/{o.ItemID}'
 
 
-                            c.Add().Titled("HSN Code").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.HSNcodes}' id='hsnCodeIndex{o.SrNo}' >");
+                            //c.Add().Titled("HSN Code").Encoded(false)
+                            //    .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.HSNcodes}' id='hsnCodeIndex{o.SrNo}' >");
 
 
 
@@ -454,7 +456,7 @@ namespace ERP.Areas.Marketing.Controllers
                         dataRow["RequestForQuotDetailID"] = item.RequestForQuotDetailID;
                         dataRow["RequestForQuotID"] = item.RequestForQuotID;
                         dataRow["ItemID"] = item.ItemID;
-                        dataRow["HSNcodes"] = item.HSNcodes;
+                        dataRow["HSNcodes"] = "";
                         dataRow["UOMID"] = item.UOMID;
                         dataRow["Qty"] = item.Qty;
                         dataRow["Rate"] = item.Rate;

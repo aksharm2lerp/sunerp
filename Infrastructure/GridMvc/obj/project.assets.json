@@ -1112,11 +1112,11 @@
   "project": {
     "version": "5.2.0",
     "restore": {
-      "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
+      "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
       "projectName": "GridMvcCore",
-      "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
+      "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\obj\\",
+      "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -1140,16 +1140,16 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
-              "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj"
+            "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+              "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj"
             }
           }
         },
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
-              "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj"
+            "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+              "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj"
             }
           }
         }

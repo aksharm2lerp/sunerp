@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\ERP.csproj": {}
+    "D:\\GitHub\\SUN\\sunerpm2l\\ERP\\ERP.csproj": {}
   },
   "projects": {
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj",
         "projectName": "Business.Entities",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -33,14 +33,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\Utils.csproj"
               }
             }
           }
@@ -84,14 +84,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj",
         "projectName": "Business.Interface",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Business.Interface\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -113,11 +113,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
               }
             }
           }
@@ -157,14 +157,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj",
         "projectName": "Business.Service",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -186,14 +186,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Business.Interface\\Business.Interface.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
               }
             }
           }
@@ -269,14 +269,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj",
         "projectName": "Business.SQL",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -339,14 +339,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\ERP.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\ERP\\ERP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\ERP.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\ERP\\ERP.csproj",
         "projectName": "ERP",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\ERP.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\ERP\\ERP.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\ERP\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\ERP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -368,26 +368,26 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Implementation\\Businessa.Service\\Business.Service\\Business.Service.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\GridMvc.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\GridMvc.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\Utils.csproj"
               }
             }
           }
@@ -509,14 +509,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj": {
       "version": "3.2.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
         "projectName": "GridBlazor",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -540,16 +540,16 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
               }
             }
           },
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
               }
             }
           }
@@ -663,14 +663,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
       "version": "5.2.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj",
         "projectName": "GridCore",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -695,24 +695,24 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
               }
             }
           },
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
               }
             }
           },
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
               }
             }
           }
@@ -828,14 +828,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\GridMvc.csproj": {
       "version": "5.2.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
         "projectName": "GridMvcCore",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\GridMvc.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridMvc\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridMvc\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -859,16 +859,16 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj"
               }
             }
           },
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj"
               }
             }
           }
@@ -940,14 +940,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
       "version": "5.2.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj",
         "projectName": "GridShared",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -1093,14 +1093,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj",
         "projectName": "Kinfo.JsonStore",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1122,11 +1122,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.Entities\\Business.Entities\\Business.Entities.csproj"
               },
-              "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
-                "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
+              "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj": {
+                "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Business\\Business.SQL\\Business.SQL\\Business.SQL.csproj"
               }
             }
           }
@@ -1174,14 +1174,14 @@
         }
       }
     },
-    "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
+    "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj",
+        "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\Utils.csproj",
+        "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\Utils.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\Util\\Utils\\obj\\",
+        "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

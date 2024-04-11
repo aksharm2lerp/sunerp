@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jkFy5PNVJk+1LfOIYq9w73FUVL3XjY1FAUNgoQ731u0nT15BQVtVWmxQt+0PGqS76+TQUwU/q9omnT5JquDODw==",
+  "dgSpecHash": "YBrcZWenL+bZyntO/jhC7hjSJsIQJjtxFsAH1xF5XZ0eLnZQFxzgkBVYYvIKJagOUW6aUU9pziUwULKGdabXEg==",
   "success": true,
-  "projectFilePath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj",
+  "projectFilePath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\JsonStore\\Kinfo.JsonStore\\Kinfo.JsonStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\jsonflatfiledatastore\\2.2.2\\jsonflatfiledatastore.2.2.2.nupkg.sha512",

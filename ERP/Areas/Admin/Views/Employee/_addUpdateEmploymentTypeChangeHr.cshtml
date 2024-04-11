@@ -50,7 +50,7 @@
                             @foreach (var i in Model.listEmploymentTypeChangeHr)
                             {
                                 <tr>
-                                    <th scope="row">@i.EmploymentTypeID</th>
+                                    <th scope="row">@i.SrNo</th>
                                     <td>@i.EmploymentTypeText</td>
                                     <td>@i.EmploymentTypeDate.ToDate()</td>
                                     <td>@i.EmploymentTypeNote</td>
@@ -76,6 +76,8 @@
 
     function fnSaveEmploymentTypeHr() {
        // alert('fnSaveEmploymentTypeHr is invoked');
+        var selectedEmploymentTypeID = document.getElementById('EmploymentTypeID').value;
+        document.getElementById('EmploymentTypeIDHidden').value = selectedEmploymentTypeID;
         var ls = laddaStart('btnSaveEmploymentTypeHr');
         modeldata = $("#formAddUpdateEmploymentTypeChangeHr").serialize();
         $.ajax({

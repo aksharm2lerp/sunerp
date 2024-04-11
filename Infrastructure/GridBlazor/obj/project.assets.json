@@ -1718,11 +1718,11 @@
   "project": {
     "version": "3.2.0",
     "restore": {
-      "projectUniqueName": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
+      "projectUniqueName": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
       "projectName": "GridBlazor",
-      "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
+      "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridBlazor\\obj\\",
+      "outputPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -1746,16 +1746,16 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-              "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+            "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+              "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
             }
           }
         },
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
-              "projectPath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridShared\\GridShared.csproj"
+            "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj": {
+              "projectPath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridShared\\GridShared.csproj"
             }
           }
         }

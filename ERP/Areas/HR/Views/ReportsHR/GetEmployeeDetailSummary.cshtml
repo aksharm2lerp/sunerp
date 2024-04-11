@@ -11,24 +11,40 @@
     List<string> strTimeforRow = new List<string>();
     int empCatId = ViewBag.EmployeeCategoryID;
     int deptId = ViewBag.DepartmentID;
+    int employmentStatusID = ViewBag.employmentStatusid;
 }
 <div class="container" id="employeeDetailSummary">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
             <div class="card border-0 shadow rounded-3">
                 <div class="card-body">
-
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <div class="page-breadcrumb align-items-center">
-                            <div class="p-2">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb mb-0 p-0">
-                                        <li class="breadcrumb-item">
-                                            <a asp-area="HR" asp-controller="ReportsHR" asp-action="GetEmployeeDetailSummary"><i class="bx bx-home-alt"></i></a>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">Employee List</li>
-                                    </ol>
-                                </nav>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="page-breadcrumb align-items-center">
+                                <div class="p-2">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb mb-0 p-0">
+                                            <li class="breadcrumb-item">
+                                                <a asp-area="HR" asp-controller="ReportsHR" asp-action="GetEmployeeDetailSummary"><i class="bx bx-home-alt"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item active" aria-current="page">Employee List</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="page-breadcrumb align-items-center">
+                                <div class="p-2 text-end">
+                                    <h6 class="pointer">
+                                        <a onclick="listView(this)" id="listGridButton">
+                                            <i class="fa fa-th-list"></i>
+                                            <span>List View</span>
+                                        </a>
+                                    </h6>
+                                    @* <a class="h3" onclick="listView(this)" title="List View"><iconify-icon icon="ic:outline-list"></iconify-icon></a>&nbsp;
+                                    <a class="h3" onclick="gridView(this)" title="Image View"><iconify-icon icon="material-symbols:cards"></iconify-icon></a> *@
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -39,32 +55,37 @@
                             <div class="row">
                                 @*<form id="formEmployeeDetail">*@
                                 <div class="row">
-                                    <label class="col-sm-3 col-form-label">Employee Category</label>
-                                    <div class="col-sm-3">
+                                    <label class="col-sm-2 col-form-label">Employee Category</label>
+                                    <div class="col-sm-2">
                                         <select class="form-control" id="EmployeeCategoryID" name="EmployeeCategoryID" asp-items="@EmployeeExtension.GetAllEmployeeCategoryMaster()" asp-for="@empCatId">
                                             <option value="">Select Category</option>
                                         </select>
                                     </div>
 
-                                    <label class="col-sm-3 col-form-label">Search Keyword</label>
-                                    <div class="col-sm-3">
+                                    <label class="col-sm-2 col-form-label">Search Keyword</label>
+                                    <div class="col-sm-2">
                                         <input type="text" class="form-control" id="EmployeeName" placeholder="Search by Employee detail." value="@ViewBag.SearchString">
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-sm-3 col-form-label">Department</label>
-                                    <div class="col-sm-3">
+                                    <label class="col-sm-2 col-form-label">Employee Status</label>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" asp-for="@employmentStatusID" id="EmploymentStatusID" name="EmploymentStatusID" asp-items="@EmployeeExtension.GetAllEmploymentStatus()">
+                                            <option value="">Select Status</option>
+                                        </select>
+                                    </div>
+
+                                    <label class="col-sm-2 col-form-label">Department</label>
+                                    <div class="col-sm-2">
                                         <select class="form-control" asp-for="@deptId" id="DepartmentID" name="DepartmentID" asp-items="@EmployeeExtension.GetAllDepartmentText()">
                                             <option value="">Select Department</option>
                                         </select>
                                     </div>
-
-                                    <div class="text-end mb-3">
-
-                                        <button id="btnExportEmployeeDetail" type="button" onclick="fnSearchEmployeeDetail(true)" class="btn btn-outline-primary px-5 btn-sm">Export to Excel</button>
-
-                                        <button id="btnSearchEmployeeDetail" type="button" onclick="fnSearchEmployeeDetail(false)" class="btn btn-outline-primary px-5 btn-sm">Search</button>
+                                    <div class="col-sm-4 text-end mb-4">
+                                        <button id="btnExportEmployeeDetail" type="button" onclick="fnSearchEmployeeDetail(true)" class="btn            btn-outline-primary px-5 btn-sm">Export to Excel</button>
+                                     
+                                        <button id="btnSearchEmployeeDetail" type="button" onclick="fnSearchEmployeeDetail(false)" class="btn           btn-outline-primary px-5 btn-sm">Search</button>
                                     </div>
                                 </div>
 
@@ -74,47 +95,107 @@
                         </div>
                     </div>
 
-                    <div id="EmployeeSummaryTable">
-                        @if (Model.Tables[0].Rows.Count > 0)
-                        {
+                    <div id="listView">
+                        <div id="EmployeeSummaryTable">
                             <div class="row" style="overflow:auto; height:auto; width:100%;">
-                                <table class="table table-striped w-auto" style="white-space: nowrap; font-size:inherit !important;">
-                                    <!--style="display:block; overflow: auto; white-space: nowrap;"-->
-                                    <thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                                        <tr>
-                                            @foreach (DataColumn dataColumn in Model.Tables[0].Columns)
+                                @if (Model.Tables[0].Rows.Count > 0)
+                                {
+                                    <div class="col-12">
+                                        <table class="table table-striped" style="white-space: nowrap; font-size:inherit !important;">
+                                            <!--style="display:block; overflow: auto; white-space: nowrap;"-->
+                                            <thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                <tr>
+                                                    @foreach (DataColumn dataColumn in Model.Tables[0].Columns)
+                                                    {
+                                                        @if (dataColumn.ToString() != "ImagePath")
+                                                        {
+                                                            strTimeforRow.Add(dataColumn.ToString());
+                                                            <th>@dataColumn.ToString()</th>
+                                                        }
+                                                    }
+                                                </tr>
+                                            </thead>
+                                            @foreach (DataRow row in Model.Tables[0].Rows)
                                             {
-                                                strTimeforRow.Add(dataColumn.ToString());
-                                                <th>@dataColumn.ToString()</th>
+                                                <tr>
+                                                    @foreach (string timeRow in strTimeforRow)
+                                                    {
+                                                        @if (!string.IsNullOrEmpty(row[timeRow].ToString()))
+                                                        {
+                                                            <td>@row[timeRow]</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>-</td>
+                                                        }
+                                                    }
+                                                </tr>
                                             }
-                                        </tr>
-                                    </thead>
-                                    @foreach (DataRow row in Model.Tables[0].Rows)
-                                    {
-                                        <tr>
-                                            @foreach (string timeRow in strTimeforRow)
-                                            {
-                                                @if (!string.IsNullOrEmpty(row[timeRow].ToString()))
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-12">
+                                        <div class="text-center">
+                                            <h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1>
+                                            <h3 style="color: red;">No Data Found</h3>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div id="gridView">
+                        <div class="row">
+                            @foreach (DataRow row in Model.Tables[0].Rows)
+                            {
+                                <div class="col-sl-12 col-md-4 col-lg-4 col-xl-4">
+                                    <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+                                        <div class="card p-4">
+                                            <div class="image d-flex flex-column justify-content-center align-items-center">
+                                                @if (string.IsNullOrEmpty(row[7].ToString()))
                                                 {
-                                                    <td>@row[timeRow]</td>
+                                                    <span class="border border-dark rounded">
+                                                        <img src="\assets\images\DefaultProfilePicture\DefaultProfilePicture.png" height="80" width="80" class="rounded" title="Default Image" />
+                                                    </span>
                                                 }
                                                 else
                                                 {
-                                                    <td>-</td>
+                                                    <span class="border border-dark rounded">
+                                                        <img src="@row[7]" height="80" width="80" title="@row[7]" />
+                                                    </span>
                                                 }
-                                            }
-                                        </tr>
-                                    }
-                                </table>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="text-center">
-                                <h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1>
-                                <h3 style="color: red;">No Data Found</h3>
-                            </div>
-                        }
+                                                <h5 class="text-center mt-3">@row[1]</h5>
+                                                <h5>@row[0]</h5>
+                                                <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                                                    <h5 class="idd1">@row[2]</h5>
+                                                </div>
+
+                                                <div class="text mt-3">
+                                                    <div class="row">
+                                                        <h6 class="col-6">Department :</h6>
+                                                        <h6 class="col-6">@row[3]</h6>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h6 class="col-6">ReportingTo :</h6>
+                                                        <h6 class="col-6">@row[4]</h6>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h6 class="col-6">Mobile :</h6>
+                                                        <h6 class="col-6">@row[5]</h6>
+                                                    </div>
+                                                    <div class="row">
+                                                        <h6 class="col-6">Office Mobile :</h6>
+                                                        <h6 class="col-6">@row[6]</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,17 +207,38 @@
     function fnSearchEmployeeDetail(obj) {
 
         var employeeCategoryId = $('#EmployeeCategoryID').val();
+        var employmentstatusid = $('#EmploymentStatusID').val();
 
         var departmentId = $('#DepartmentID').val();
 
         var employeeId = $('#EmployeeName').val();
 
-        var empurl = '@Url.Action("GetEmployeeDetailSummary","ReportsHR")';
+        var empurl = '@Url.Action("GetEmployeeDetailSummary", "ReportsHR")';
 
         var isdownload = obj;
 
-        var empDetailUrl = empurl + '?employeeCategoryId=' + employeeCategoryId + '&departmentId=' + departmentId + '&searchstring=' + employeeId + '&isDownload=' + isdownload;
+        var empDetailUrl = empurl + '?employeeCategoryId=' + employeeCategoryId + '&departmentId=' + departmentId + '&searchstring=' + employeeId + '&isDownload=' + isdownload + '&employmentStatusid=' + employmentstatusid;
 
         window.location.href = empDetailUrl;
     };
+
+    // List View
+    function listView(x) {
+        //alert('click on listView');
+        if (document.getElementById('listView')) {
+
+            if (document.getElementById('listView').style.display == 'none') {
+                document.getElementById('listView').style.display = 'block';
+                document.getElementById('gridView').style.display = 'none';
+            }
+            else {
+                document.getElementById('listView').style.display = 'none';
+                document.getElementById('gridView').style.display = 'block';
+            }
+        }
+        var icon = x.querySelector("i");
+        icon.classList.toggle('fa-th-list');
+        icon.classList.toggle('fa-th');
+        x.querySelector("span").textContent = icon.classList.contains('fa-th-list') ? "List View" : "Gird View";
+    }
 </script>

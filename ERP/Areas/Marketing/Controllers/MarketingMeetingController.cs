@@ -154,12 +154,15 @@ namespace ERP.Areas.Marketing.Controllers
 
                     return Json(new { status = true, message = MessageHelper.Added });
                 }
-                else if (_marketingMeetingID > 0 && model.MeetingStatusID == 3)
+
+                if (_marketingMeetingID > 0)
                 {
                     return Json(new { status = true, message = MessageHelper.Added });
                 }
                 else
+                {
                     return Json(new { status = false, message = MessageHelper.Error });
+                }
             }
             catch (Exception)
             {

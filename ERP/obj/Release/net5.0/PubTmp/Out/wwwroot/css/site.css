@@ -5,7 +5,7 @@
 }
 
 .form-check-input {
-   /* margin-top: 0.5em !important;*/
+    /* margin-top: 0.5em !important;*/
     width: 2.5em !important;
     height: 1.5em !important;
 }
@@ -237,7 +237,7 @@ ul, li {
     padding: 0px !important;
 }
 
-.form-selectlist {    
+.form-selectlist {
     padding: .175rem .25rem .175rem .25rem !important;
 }
 
@@ -245,9 +245,10 @@ ul, li {
 .MCLFRB {
     cursor: pointer;
 }
-.MCLFRB:hover {
-    color: red;
-}
+
+    .MCLFRB:hover {
+        color: red;
+    }
 
 /*MCLFAB MarketingCommunicationLogFeedbackAddButton*/
 .MCLFAB {
@@ -278,12 +279,14 @@ ul, li {
     width: 100%;
     overflow-y: scroll;
 }
+
 .searchbtn {
     padding-right: 2rem !important;
     padding-left: 2rem !important;
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
 }
+
 .marketingDashboardPaddingTop {
     padding-top: 33px;
 }
@@ -291,11 +294,73 @@ ul, li {
 .bgColorDashboard {
     background-color: #98BDFF !important;
 }
+
 .SAPItemCollectionSreachButton {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .pointer {
-    cursor:pointer;
+    cursor: pointer;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #printableAreaQRCodeMasterPacking * {
+        visibility: visible;
+    }
+
+    #printableAreaQRCodeMasterPacking {
+        position: absolute;
+        top: 40px;
+        left: 30px;
+    }
+
+    #printAbleAreaMultipleQRCodeMasterPacking * {
+        visibility: visible;
+    }
+
+    #printAbleAreaMultipleQRCodeMasterPacking {
+        width: 150%;
+    }
+}
+
+.bg-ManuallyColorChangeMachineResourceSummary {
+    background-image: linear-gradient(to right, #a3b9be, #6286b6);
+}
+
+/* Below code is added by dravesh for cut the master package multiple print box border.*/
+.printMultipleMasterPackageQRCode {
+    border-style: dashed;
+}
+
+@media (min-width: 992px) {
+    .modal-lg-Custom, .modal-xl-Custom {
+        max-width: 1200px !important;
+    }
+}
+
+#gridView {
+    display: none;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.375rem 0.375rem .375rem!important ;
+    /* font-size: 0.9rem; */
+    font-weight: 400;
+    line-height: 1;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }

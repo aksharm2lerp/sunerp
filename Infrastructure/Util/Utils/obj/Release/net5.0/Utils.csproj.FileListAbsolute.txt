@@ -22,3 +22,15 @@ D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Infrastructure\Util\Utils
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.pdb
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Infrastructure\Util\Utils\obj\Release\net5.0\ref\Utils.dll
 D:\AksharItSolution\M2LERP Detail\ERP Backup\aksharm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.sourcelink.json
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\bin\Release\net5.0\Utils.deps.json
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\bin\Release\net5.0\Utils.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\bin\Release\net5.0\Utils.pdb
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.AssemblyInfoInputs.cache
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.AssemblyInfo.cs
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.csproj.CoreCompileInputs.cache
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.sourcelink.json
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\refint\Utils.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.pdb
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\ref\Utils.dll

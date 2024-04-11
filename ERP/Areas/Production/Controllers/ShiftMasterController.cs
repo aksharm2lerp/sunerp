@@ -1,7 +1,7 @@
+using Business.Entities.Master.UserPermissionMasterModel;
 using Business.Entities.Production.ShiftMasterModel;
 using Business.Interface.Production.IShiftMaster;
 using Business.SQL;
-using DocumentFormat.OpenXml.Drawing;
 using ERP.Controllers;
 using ERP.Helpers;
 using GridCore.Server;
@@ -9,9 +9,11 @@ using GridShared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using ActionResult = Microsoft.AspNetCore.Mvc.ActionResult;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 using PartialViewResult = Microsoft.AspNetCore.Mvc.PartialViewResult;
 
@@ -122,5 +124,95 @@ namespace ERP.Areas.Production.Controllers
         }
 
         #endregion Add or Update ShiftMaster 
+
+        #region ManageShift
+        public ActionResult CompanyListsAsync(ManageShift model)
+        {
+            try
+            {
+                List<ManageShift> lists = new List<ManageShift>();
+                lists = iShiftMaster.GetAllShiftMasterAsync(model).Result;
+                return View("CompanyLists", lists);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+        }
+        #endregion ManageShift
+
+        #region ShiftLists
+        public ActionResult ShiftListsAsync(int companyID)
+        {
+            try
+            {
+                List<ManageShift> lists = new List<ManageShift>();
+                lists = iShiftMaster.GetAllShiftListsMasterAsync(companyID).Result;
+                return View("ShiftLists", lists);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+        }
+        #endregion ShiftLists
+
+        #region AddOrUpdateManageShift Page calls
+        public ActionResult AddOrUpdateManageShift(int companyID, int shiftID)
+        {
+            try
+            {
+                ManageShift manageShift = new ManageShift();
+                if (companyID > 0 && shiftID > 0)
+                {
+                    ViewData["CompanyID"] = companyID;
+                    ViewData["ShiftID"] = shiftID;
+                    manageShift = iShiftMaster.GetEmployeeListByShift(companyID, shiftID).Result;
+                    if(manageShift!=null)
+                        return View("AddOrUpdateManageShift", manageShift);
+                    else
+                        return View("AddOrUpdateManageShift");
+                }
+                else
+                    return View("AddOrUpdateManageShift");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                throw;
+            }
+
+        }
+        #endregion AddOrUpdateManageShift Page calls
+
+        #region AddorUpdateManageShift
+        [HttpPost]
+        public async Task<IActionResult> InsertOrUpdateManageShift(ManageShift model)
+        {
+            try
+            {                
+                model.CreatedOrModifiedBy = USERID;
+                var _employeeShiftTnxID = await iShiftMaster.AddOrUpdateManageShift(model);
+
+                if (_employeeShiftTnxID > 0)
+                {
+                    model.EmployeeShiftTnxID = _employeeShiftTnxID;
+                    return Json(new { status = true, message = MessageHelper.Added });
+                }
+                else
+                    return Json(new { status = false, message = MessageHelper.Error });
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        #endregion AddorUpdateManageShift
+
+        
     }
 }

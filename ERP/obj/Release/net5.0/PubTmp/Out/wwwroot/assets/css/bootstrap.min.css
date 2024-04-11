@@ -5853,7 +5853,8 @@ textarea.form-control-lg {
     padding: 1rem 1rem;
     border-bottom: 1px solid #dee2e6;
     border-top-left-radius: calc(.3rem - 1px);
-    border-top-right-radius: calc(.3rem - 1px)
+    border-top-right-radius: calc(.3rem - 1px);
+    background-color: #a6d2ed;
 }
 
     .modal-header .btn-close {
@@ -5881,7 +5882,8 @@ textarea.form-control-lg {
     padding: .75rem;
     border-top: 1px solid #dee2e6;
     border-bottom-right-radius: calc(.3rem - 1px);
-    border-bottom-left-radius: calc(.3rem - 1px)
+    border-bottom-left-radius: calc(.3rem - 1px);
+    background-color: #a6d2ed;
 }
 
     .modal-footer > * {

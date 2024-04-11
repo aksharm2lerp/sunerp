@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NA4QfnhEOGPl9LTxzjlUQRW0E3CSa3MmNp58z5k/CLlc8BaoDCofeL4QNDFnQ6PkBFNfVu149mgeHittnSduUQ==",
+  "dgSpecHash": "GcnX+Qtj/mOo3GKwzyK2fwiqLHhRkZfhe/eJuvw4uoAhIQm6zvwyskgWxGR+/4ohja86mJdDu60cBCCrHTfP4g==",
   "success": true,
-  "projectFilePath": "D:\\AksharItSolution\\M2LERP Detail\\ERP Backup\\aksharerp\\aksharm2l\\Infrastructure\\GridCore\\GridCore.csproj",
+  "projectFilePath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridCore\\GridCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.0\\microsoft.aspnetcore.authorization.3.1.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.0\\microsoft.aspnetcore.authorization.5.0.0.nupkg.sha512",
