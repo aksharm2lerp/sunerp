@@ -1,4 +1,6 @@
 ﻿
+using ActionResult = Microsoft.AspNetCore.Mvc.ActionResult;
+using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
 using Business.Entities.ProductPhotoPath;
 using Business.Interface;
 using Business.Interface.ProductImages;
@@ -9,11 +11,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Web.Mvc;
-using ActionResult = Microsoft.AspNetCore.Mvc.ActionResult;
-using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
+using System.Linq;
+using JsonResult = Microsoft.AspNetCore.Mvc.JsonResult;
+using ERP.Areas.Admin.Controllers;
+using DocumentFormat.OpenXml.Office2010.Excel;
+using Business.Entities.Machinery.MachineryMaintainance;
+using ERP.Helpers;
+
+
 
 
 
@@ -54,27 +61,32 @@ namespace ERP.Areas.Admin.Controllers
             return View(imagePath);
         }
 
+
+        public IActionResult IndexProductDisplay()
+        {
+            //List<string> pathList = new List<string>();
+            List<ProductPhotoPath> imagePath = _productImages.GetImagePath().Result;
+            //foreach (var path in imagePath)
+            //{
+            //    pathList.Add(path.ImagePath);
+            //}
+            return View(imagePath);
+        }
+
+
         [Microsoft.AspNetCore.Mvc.HttpGet]
         public ActionResult AddOrEditProductImages(int id)
         {
             ProductPhotoPath productPhotoPath = new ProductPhotoPath();
-            var listUOMID = _masterService.GetAllUOMID();
-            ViewData["UOMID"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(listUOMID, "UOMID", "UOMText");
-
-            var listProductCategory = _masterService.GetAllItemCategory();
-            ViewData["ProductCategory"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(listProductCategory, "ProductCategoryID", "ProductCategoryText");
+            //var listUOMID = _masterService.GetAllUOMID();
+            //ViewData["UOMID"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(listUOMID, "UOMID", "UOMText");
 
             if (id > 0)
             {
                productPhotoPath = _iProductImages.GetProductImageDetailAsync(id).Result;
             }
-            else 
-            {
                 return View("AddOrEditProductImages", productPhotoPath);
             }
-
-            return View("AddOrEditProductImages", productPhotoPath);
-        }
 
 
         [HttpPost]
@@ -89,7 +101,7 @@ namespace ERP.Areas.Admin.Controllers
                 // Add logic for save file in image folder. 29-09-2022.
                 path1 = _webHostEnvironment.WebRootPath + link;  //full path Excluding file name ----  0
                 string filepath = path1;  //full path including file name  -----  1
-                string filename = USERID + "_" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace("-", "").Replace(":", "") + "_" + productPhotoPath.ProductPhoto.FileName;
+                string filename = productPhotoPath.ProductPhoto.FileName;
                 string dbfilepath = link + filename;
                 filepath = filepath + filename;
                 //productPhotoPath.ProductImageText = productPhotoPath.ProductPhoto.FileName;
@@ -114,8 +126,31 @@ namespace ERP.Areas.Admin.Controllers
                 return View(ViewData["Message"] = "Root directory not found.");
             }
             else
+            {
+                productPhotoPath.CreatedOrModifiedBy = USERID;
+                productPhotoPath.IsActive = true;
+                var id = _iProductImages.AddOrEditProductImages(productPhotoPath).Result;
+                
+                
+                if (id > 0)
+                {
                 return RedirectToAction("Index", "UploadProductImages");
         }
+                else
+                {
+                    return View(ViewData["Message"] = "Error! Failt to save records!");
 
     }
 }
+        }
+
+        #region Product Group Description By ProductGroup ID
+        public JsonResult ProductGroupDescriptionByProductGroupID(int productGroupID)
+        {
+            var result = _masterService.ProductGroupDescriptionByProductGroupID(productGroupID).Result.Select(x => new { Remark = x.Remark }).FirstOrDefault();
+            return Json(result);
+        }
+        #endregion Product Group Description By ProductGroup ID
+
+    }
+} 

@@ -131,7 +131,7 @@ namespace ERP.Extensions
             try
             {
                 var itemCategoryList = _commonmasterService.GetAllItemCategoryAsync().Result;
-                return new SelectList(itemCategoryList, "ItemCategoryID", "ItemCategoryText");
+                return new SelectList(itemCategoryList, "ProductCategoryID", "ProductCategoryText");
             }
             catch
             {

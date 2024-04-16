@@ -25,6 +25,7 @@ using Business.Entities.SalaryFormula;
 using Business.Entities.Contractor;
 using Business.Entities.Master.MenuMasterM;
 using Business.Entities.Admin.ProductCategoryMasterModel;
+using Business.Entities.ProductPhotoPath;
 
 namespace Business.Interface
 {
@@ -143,6 +144,7 @@ namespace Business.Interface
         Task<PagedDataTable<ItemGroupMaster>> GetAllItemGroupTypes();
         Task<PagedDataTable<LocationMaster>> GetAllLocations();
         Task<PagedDataTable<WareHouseMaster>> GetAllWarehouse();
+        Task<PagedDataTable<ProductPhotoPath>> ProductGroupDescriptionByProductGroupID(int productGroupID);
         #endregion
 
     }
