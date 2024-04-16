@@ -7,6 +7,9 @@
 @{
     ViewData["Title"] = "Upload Product Images";
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    var test = Model;
+    string itemGroup = ViewBag.ItemGroup;
+    string wareHouse = ViewBag.WareHouse;
 }
 <div class="container">
     <div class="row">
@@ -25,40 +28,65 @@
                             </nav>
                         </div>
                         <div class="col-md-6 text-align-right">
-                            <!--<a class="btn btn-primary px-5" onclick="fnUploadProductImage(this)"
-                               href="javascript:void(0)"
-                               data-key="0"
-                               data-bs-toggle="offcanvas"
-                               data-bs-target="#canvas_UploadProductImage"
-                               aria-controls="canvas_UploadProductImage">
-                                Add
-                            </a>-->
                             <a asp-area="Admin" asp-controller="UploadProductImages" asp-action="AddOrEditProductImages" class="btn btn-primary">Add</a>
-
                         </div>
-
                     </div>
 
                     <div class="row pt-1">
-                        <div class="col-md-12">
-                            @*<grid model="@Model" />*@
+                        <hr>
+                        @* <div class="col-12">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <!-- <input type="hidden" asp-for="WarehouseID" />-->
 
+                                    <label class="col-form-label">Warehouse</label>
+                                    <select class="form-select" id="choices-multiple-WareHouse" asp-items="@MarketingExtension.GetAllSAPWareHouseAsync()">
+                                        <option value="">Select Warehouse Here...</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                        <!--<input type="hidden" asp-for="ItemGroupNameID" />-->
+                                    <label class="col-form-label">Item Group Name</label>
+                                    <select class="form-select" id="choices-multiple-ItemGroup" asp-items="@MarketingExtension.GetAllSAPItemGroupAsync()">
+                                        <option value="">Select Item Group Here...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label class="col-form-label">Search In Item Desc.</label>
+                                    <input type="text" class="form-control" id="SearchString" placeholder="Search by string." value="@ViewBag.SearchString">
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="SAPItemCollectionSreachButton pt-3">
+                                        <button id="btnSearchEmployeeDetail" type="button" onclick="fnSearchSAPItem(true)" class="btn btn-outline-primary searchbtn btn-sm py-2">Search</button> &nbsp;
+                                        <button id="btnResetEmployeeDetail" type="button" onclick="fnResetSAPItem()" class="btn btn-outline-primary searchbtn btn-sm py-2">Reset</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> *@
+                        <div class="col-12">
                             <div class="row mb-5" id="imagesLoop">
                                 @foreach (var items in Model)
                                 {
                                     <div class="col-sl-12 col-md-4 col-lg-4 col-xl-4 my-3">
-                                        <div class="card">
-                                            <img id="img01" src="@Html.DisplayFor(modelItem => items.ImagePath)" class="card-img-top rounded mx-auto d-block" alt="Solar Cable" style="width:150px; height:150px;">
+                                        <div class="card rounded">
+                                            <div class="card-body custom-bgColor-ProductImage">
+                                                <img id="img01" src="@Html.DisplayFor(modelItem => items.ImagePath)" class="card-img-top rounded-circle mx-auto d-block border border-dark" alt="@Html.DisplayFor(modelItem => items.ProductCategoryText)" style="width:200px; height:200px;">
+                                            </div>
+
                                             <div class="card-body text-center">
-                                                @*<button type="button" class="btn btn-primary px-5 my-3">RFQ</button>*@
-                                                <h4 class="card-title">@Html.DisplayFor(modelItem => items.ProductImageText)</h4>
+                                                <h4 class="card-title">@Html.DisplayFor(modelItem => items.ProductCategoryText)</h4>
                                                 <p class="card-text">@Html.DisplayFor(modelItem => items.Description)</p>
+                                                <hr />
+                                                <a class="btn" id="@items.ProductCategoryID" value="@items.ProductCategoryText" onclick="fnSelectSAPItem(this.id)"><i class='bx bx-search'></i></a>
                                                 <a class="btn" method="GET" asp-area="Admin" asp-controller="UploadProductImages" asp-action="AddOrEditProductImages" asp-route-id="@items.ProductImageID"><i class='bx bx-edit'></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 }
                             </div>
+                        </div>
 
                         </div>
                     </div>
@@ -66,7 +94,6 @@
             </div>
         </div>
     </div>
-</div>
 
 <!--<div class="offcanvas offcanvas-end" tabindex="-1" id="canvas_UploadProductImage">
     <div class="offcanvas-header">
@@ -78,20 +105,73 @@
         </div>
     </div>
 </div>-->
-<!--<script type="text/javascript">
-    var urladd = '@Url.Action("Get", "UploadProductImages")';
-    function fnUploadProductImage(obj) {
-        var _key = $(obj).data('key');
-        var _id = $(obj).data('id');
-        var _parameters = { id: _id, key: _key };
-        $.ajax({
-            url: urladd,
-            type: "POST",
-            data: _parameters,
-            success: function(data, textStatus, jqXHR) {
-                $('#dvInfo').html(data);
-                $("#canvas_UploadProductImage").show();//('hide');
-            }
+<<script type="text/javascript">
+
+     let UPIIUrl = '@Url.Action("Index", "UploadProductImages")';
+     //UPIIUrl = UploadProductImagesIndexUrl
+     function fnResetSAPItem() {
+         window.location.href = UPIIUrl;
+     };
+
+     function fnSearchSAPItem() {
+         alert('fnSearchSAPItem invoked');
+         //var searchString = $('#SearchString').val();
+         //let SAPItemUrl = '@@Url.Action("Index", "UploadProductImages")';
+         //let itemgroup = document.getElementById("choices-multiple-ItemGroup");
+         //let itemgroupIndex = itemgroup.options[itemgroup.selectedIndex];
+         //let itemgroupValue = itemgroupIndex.value;
+         //let wareHouse = document.getElementById("choices-multiple-WareHouse");
+         //let whIndex = wareHouse.options[wareHouse.selectedIndex];
+         //let whValue = whIndex.value;
+         //let viewAllSAPItemList = SAPItemUrl + '?search=' + searchString + '&itemGroup=' + itemgroupValue + '&wareHouse=' + /whValue;
+         //window.location.href = viewAllSAPItemList;
+     };
+
+     function fnSelectSAPItem(selItemGroup) {
+         //alert('fnSelectSAPItem invoked');
+         let SAPItemUrl = '/Marketing/SAPItemCollection';
+         let itemgroup = document.getElementById(selItemGroup);
+         let selectItemGroupValue = itemgroup.getAttribute("value");
+         let viewAllSAPItemList = SAPItemUrl + '?itemGroup=' + selectItemGroupValue;
+         //window.location.href = viewAllSAPItemList;
+         window.open(viewAllSAPItemList, '_blank');
+     };
+
+     $(document).ready(function () {
+
+         $("#choices-multiple-ItemGroup option[value='" + '@Html.Raw(itemGroup)' + "']").prop("selected", true);
+
+         var multipleCancelButtonItemGroup = new Choices('#choices-multiple-ItemGroup', {
+             removeItemButton: false,
+             maxItemCount: 10,
+             searchResultLimit: 10,
+             renderChoiceLimit: 10
+         });
+
+
+         $("#choices-multiple-WareHouse option[value='" + '@Html.Raw(wareHouse)' + "']").prop("selected", true);
+
+         var multipleCancelButtonWareHouse = new Choices('#choices-multiple-WareHouse', {
+             removeItemButton: false,
+             maxItemCount: 10,
+             searchResultLimit: 10,
+             renderChoiceLimit: 10
+         });
         });
-    }
-</script>-->
+
+     // var urladd = '@@Url.Action("Get", "UploadProductImages")';
+     // function fnUploadProductImage(obj) {
+     //     var _key = $(obj).data('key');
+     //     var _id = $(obj).data('id');
+     //     var _parameters = { id: _id, key: _key };
+     //     $.ajax({
+     //         url: urladd,
+     //         type: "POST",
+     //         data: _parameters,
+     //         success: function(data, textStatus, jqXHR) {
+     //             $('#dvInfo').html(data);
+     //             $("#canvas_UploadProductImage").show();//('hide');
+     //         }
+     //     });
+     // }
+</script>

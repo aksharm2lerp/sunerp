@@ -238,7 +238,7 @@ namespace ERP.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

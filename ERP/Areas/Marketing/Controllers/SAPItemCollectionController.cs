@@ -1,5 +1,4 @@
-﻿using Business.Entities.PartyMasterModel;
-using Business.Interface.Marketing.ISAPItemCollection;
+﻿using Business.Interface.Marketing.ISAPItemCollection;
 using ERP.Controllers;
 using System;
 using Business.SQL;
@@ -13,6 +12,10 @@ using System.Data;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Hosting;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
+using System.Web.Razor.Parser.SyntaxTree;
 
 namespace ERP.Areas.Marketing.Controllers
 {
@@ -22,9 +25,15 @@ namespace ERP.Areas.Marketing.Controllers
         #region Interface
 
         private readonly SAPItemCollectionInterface _sAPItemCollectionInterface;
-        public SAPItemCollectionController(SAPItemCollectionInterface sAPItemCollectionInterface)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IConfiguration _configuration;
+        private readonly string SPAItemCollectionDocumentation;
+        public SAPItemCollectionController(SAPItemCollectionInterface sAPItemCollectionInterface, IWebHostEnvironment webHostEnvironment, IConfiguration configuration)
         {
             _sAPItemCollectionInterface = sAPItemCollectionInterface;
+            _webHostEnvironment = webHostEnvironment;
+            _configuration = configuration;
+            SPAItemCollectionDocumentation = _configuration.GetSection("SPAItemCollectionDocumentationPath")["SPAItemCollectionDocumentation"];
         }
 
         #endregion Interface
@@ -34,7 +43,17 @@ namespace ERP.Areas.Marketing.Controllers
         [HttpGet]
         public IActionResult Index(string search = "", [FromQuery(Name = "grid-page")] string gridpage = "1", [FromQuery(Name = "grid-column")] string orderby = "", [FromQuery(Name = "grid-dir")] string sortby = "0", [FromQuery(Name = "grid-filter")] string gridfilter = "", string itemGroup = "", string wareHouse = "")
         {
-            ViewData["SearchString"] = search;
+            if (string.IsNullOrEmpty(search))
+            {
+                search = null;
+                ViewData["SearchString"] = null;
+            }
+            else
+            {
+                search = search.Replace(",", "%");
+                ViewData["SearchString"] = search.Replace("%", ",");
+            }
+
             int userid = USERID;
             IQueryCollection query = Request.Query;
             ViewData["ItemGroup"] = itemGroup;
@@ -43,8 +62,8 @@ namespace ERP.Areas.Marketing.Controllers
             Action<IGridColumnCollection<SAPUpdateItemStock>> columns = c =>
             {
                 //c.Add(o => o.SrNo, "SrNo").Titled("Sr.No.").SetWidth(20);
-                c.Add(o => o.WareHouse).Titled("WareHouse").Sortable(true);
-                c.Add(o => o.ItemGroupName).Titled("Group Name").Sortable(true);
+                c.Add(o => o.WareHouse).Titled("WareHouse");
+                c.Add(o => o.ItemGroupName).Titled("Group Name");
 
                 //c.Add(o => o.FinishGoodName).Titled("Item Name").Sortable(true);  Old Code
 
@@ -53,17 +72,17 @@ namespace ERP.Areas.Marketing.Controllers
                 //c.Add().Titled("Item Name").Encoded(false).Sanitized(false).Css("hidden-xs")
                 //   .RenderValueAs(o => $"<a href='SAPItemCollection/GetCustomerListByItemCode?itemCode={o.ItemCode}'>{o.FinishGoodName}</a>");
 
-                c.Add(o => o.CoilLenght).Titled("Coil Lenght").Sortable(true);
-                c.Add(o => o.NoOfCoils).Titled("Coils").Sortable(true);
-                c.Add(o => o.TotalMtr).Titled("Total Mtr").Sortable(true);
-                c.Add(o => o.BinLocation).Titled("Bin Location").Sortable(true);
-                c.Add(o => o.AgingInDays).Titled("Aging(Days)").Sortable(true);
+                c.Add(o => o.CoilLenght).Titled("Coil Lenght");
+                c.Add(o => o.NoOfCoils).Titled("Coils");
+                c.Add(o => o.TotalMtr).Titled("Total Mtr");
+                c.Add(o => o.BinLocation).Titled("Bin Location");
+                c.Add(o => o.AgingInDays).Titled("Aging(Days)");
 
             };
             PagedDataTable<SAPUpdateItemStock> pds = _sAPItemCollectionInterface.GetAllSAPItemStockList(gridpage.ToInt(), PAGESIZE, search, orderby.RemoveSpace(), sortby == "0" ? "ASC" : "DESC", itemGroup, wareHouse).Result;
             var server = new GridCoreServer<SAPUpdateItemStock>(pds, query, false, "ordersGrid",
                 columns, PAGESIZE, pds.TotalItemCount)
-                .Sortable(true).ClearFiltersButton(true).Selectable(true).WithGridItemsCount().ChangeSkip(false).EmptyText("No record found").ClearFiltersButton(false);
+                .Sortable(false).ClearFiltersButton(false).Selectable(true).WithGridItemsCount().ChangeSkip(false).EmptyText("No record found");
             return View(server.Grid);
         }
         #endregion Index Page
@@ -131,5 +150,13 @@ namespace ERP.Areas.Marketing.Controllers
 
 
         #endregion Get customer sales detail by customer name and item code.
+
+        #region SPA Item Collection Documentation Download
+        public FileResult OpenDocument(string fileName)
+        {
+            byte[] fileBytes = System.IO.File.ReadAllBytes(_webHostEnvironment.WebRootPath + SPAItemCollectionDocumentation + fileName);
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+        #endregion SPA Item Collection Documentation Download
     }
 }

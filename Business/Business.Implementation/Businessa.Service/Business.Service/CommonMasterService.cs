@@ -34,6 +34,7 @@ using Business.Entities.Marketing.RequestForQuotTypeMasterModel;
 using Business.Entities.HR.MachineryResourceAllocationModel;
 using Business.Entities.Marketing.QuotationApprovalStatusModel;
 using Business.Entities.Marketing.SAPItem;
+using Business.Entities.Admin.ProductCategoryMasterModel;
 //$AddUsing$
 
 namespace Business.Service
@@ -345,11 +346,11 @@ namespace Business.Service
             }
         }
 
-        public async Task<PagedDataTable<ItemCategory>> GetAllItemCategoryAsync()
+        public async Task<PagedDataTable<ProductCategoryMaster>> GetAllItemCategoryAsync()
         {
             DataTable table = new DataTable();
             int totalItemCount = 0;
-            PagedDataTable<ItemCategory> lst = new PagedDataTable<ItemCategory>();
+            PagedDataTable<ProductCategoryMaster> lst = new PagedDataTable<ProductCategoryMaster>();
             try
             {
                 SqlParameter[] param = {
@@ -359,7 +360,7 @@ namespace Business.Service
                         ,new SqlParameter("@OrderBy","")
                         ,new SqlParameter("@SortBy","")
                         };
-                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_ItemCategory", param))
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_ProductCategoryMaster", param))
                 {
                     if (ds.Tables.Count > 0)
                     {
@@ -372,7 +373,7 @@ namespace Business.Service
                                 totalItemCount = table.Rows.Count;
                         }
 
-                        lst = table.ToPagedDataTableList<ItemCategory>();
+                        lst = table.ToPagedDataTableList<ProductCategoryMaster>();
                     }
                     return lst;
                 }

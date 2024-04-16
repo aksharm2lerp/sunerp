@@ -18,6 +18,7 @@ using Business.Entities.Marketing.RequestForQuotTypeMasterModel;
 using Business.Entities.HR.MachineryResourceAllocationModel;
 using Business.Entities.Marketing.QuotationApprovalStatusModel;
 using Business.Entities.Marketing.SAPItem;
+using Business.Entities.Admin.ProductCategoryMasterModel;
 //$AddUsing$
 
 namespace Business.Interface
@@ -34,7 +35,7 @@ namespace Business.Interface
         Task<PagedDataTable<EmployeeMaster>> GetAllEmployeeByUserandCompanyAsync(int? userid, int? companyid);
         Task<PagedDataTable<EmployeeMaster>> GetAllEmployeeByDepartmentAsync(int? departmentid);
         Task<PagedDataTable<UOMIDMetadata>> GetAllUOMAsync();
-        Task<PagedDataTable<ItemCategory>> GetAllItemCategoryAsync();
+        Task<PagedDataTable<ProductCategoryMaster>> GetAllItemCategoryAsync();
         Task<PagedDataTable<FinancialYearMaster>> GetAllFinancialYearAsync();
         Task<PagedDataTable<CompanyMasterMetadata>> GetAllCompanyAsync();
         Task<PagedDataTable<CustomerMasterMetadata>> GetAllCustomerAsync();

@@ -143,7 +143,7 @@ namespace ERP.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult Save(MasterEntityMetadata item)
         {
-            bool flag = false;
+           // bool flag = false;
             
             try
             {

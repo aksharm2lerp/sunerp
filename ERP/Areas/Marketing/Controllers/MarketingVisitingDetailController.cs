@@ -253,7 +253,7 @@ namespace ERP.Areas.Marketing.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
         #endregion Auto fill party mobile and email.
