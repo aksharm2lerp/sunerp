@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_HR_Views_UserProfile_Index), @"mvc.1.0.view", @"/Areas/HR/Views/UserProfile/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,90 +14,79 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-using Business.Entities.Master.MasterModalForUserProfile;
+ using Business.Entities.Master.MasterModalForUserProfile
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-using System.Globalization;
+ using System.Globalization;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"5948bdb9a255b786fb98a28789106c9581f51867f6e91637b745c177465d6204", @"/Areas/HR/Views/UserProfile/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"5948bdb9a255b786fb98a28789106c9581f51867f6e91637b745c177465d6204", @"/Areas/HR/Views/UserProfile/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_HR_Views_UserProfile_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MasterModalForUserProfile>
     #nullable disable
@@ -145,6 +134,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n<div class=\"row pt-1\">\r\n\r\n");
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
@@ -158,6 +148,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n");
 #nullable restore
 #line 45 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
@@ -167,6 +158,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("        <h3 class=\"text-center py-3 bg-secondary bg-gradient text-white\"> Good Morning, <span id=\"FirstName\"></span>&nbsp;<span id=\"MiddleName\"></span>&nbsp;<span id=\"LastName\"></span></h3>\r\n");
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
@@ -177,6 +169,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("        <h3 class=\"text-center py-3 bg-secondary bg-gradient text-white\"> Good Afternoon, <span id=\"FirstName\"></span>&nbsp;<span id=\"MiddleName\"></span>&nbsp;<span id=\"LastName\"></span></h3>\r\n");
 #nullable restore
 #line 52 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
@@ -187,6 +180,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("        <h3 class=\"text-center py-3 bg-secondary bg-gradient text-white\"> Good Evening, <span id=\"FirstName\"></span>&nbsp;<span id=\"MiddleName\"></span>&nbsp;<span id=\"LastName\"></span></h3>\r\n");
 #nullable restore
 #line 56 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
@@ -195,8 +189,9 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n    <div class=\"col-sm-12 col-md-6 col-lg-3 col-xl-3\">\r\n        <!--Basic Details-->\r\n        <div class=\"card\">\r\n            <div class=\"text-center my-1\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5948bdb9a255b786fb98a28789106c9581f51867f6e91637b745c177465d62049776", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5948bdb9a255b786fb98a28789106c9581f51867f6e91637b745c177465d62049540", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -320,6 +315,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                    <tr>\r\n");
 #nullable restore
 #line 161 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
@@ -331,54 +327,67 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        <th scope=\"row\">");
+            Write(
 #nullable restore
 #line 165 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                   Write(i.SrNo);
+                                                         i.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 166 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.BankName);
+                                             i.BankName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 167 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.AccountNO);
+                                             i.AccountNO
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 168 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.IFSCCode);
+                                             i.IFSCCode
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 169 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.BranchLocation);
+                                             i.BranchLocation
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 170 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(statusTF);
+                                             statusTF
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
             WriteLiteral("                                    </tr>\r\n");
 #nullable restore
@@ -388,6 +397,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            </tbody>
                         </table>
                     </div>
@@ -420,40 +430,49 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                    <tr>\r\n                                        <th scope=\"row\">");
+            Write(
 #nullable restore
 #line 204 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                   Write(i.SrNo);
+                                                         i.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 205 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.DocumentName);
+                                             i.DocumentName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 206 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.Description);
+                                             i.Description
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 207 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.IsActive);
+                                             i.IsActive
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5948bdb9a255b786fb98a28789106c9581f51867f6e91637b745c177465d620422118", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5948bdb9a255b786fb98a28789106c9581f51867f6e91637b745c177465d620422230", async() => {
                 WriteLiteral("\r\n                                                <iconify-icon icon=\"icon-park-outline:eyes\"></iconify-icon>\r\n                                            ");
             }
             );
@@ -470,13 +489,15 @@ using System.Globalization;
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-fileName", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 209 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                                                                         WriteLiteral(i.DocumentName);
+                                                                                                                                      i.DocumentName
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["fileName"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-fileName", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["fileName"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -495,6 +516,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            </tbody>
                         </table>
                     </div>
@@ -515,112 +537,132 @@ using System.Globalization;
             BeginWriteAttribute("id", " id=\"", 11342, "\"", 11347, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 232 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                    Write(Model.employeeFamilyDetail.FatherName);
+                                                                          Model.employeeFamilyDetail.FatherName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                        <p class=\"card-text\">Mother : <span");
             BeginWriteAttribute("id", " id=\"", 11474, "\"", 11479, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 233 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                    Write(Model.employeeFamilyDetail.MotherName);
+                                                                          Model.employeeFamilyDetail.MotherName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                        <p class=\"card-text\">Brother : <span");
             BeginWriteAttribute("id", " id=\"", 11607, "\"", 11612, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 234 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                     Write(Model.employeeFamilyDetail.BrotherName);
+                                                                           Model.employeeFamilyDetail.BrotherName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                        <p class=\"card-text\">Sister : <span");
             BeginWriteAttribute("id", " id=\"", 11740, "\"", 11745, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 235 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                    Write(Model.employeeFamilyDetail.SisterName);
+                                                                          Model.employeeFamilyDetail.SisterName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                        <p class=\"card-text\">Marital Status : <span");
             BeginWriteAttribute("id", " id=\"", 11880, "\"", 11885, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 236 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                            Write(Model.employeeFamilyDetail.MaritalStatusText);
+                                                                                  Model.employeeFamilyDetail.MaritalStatusText
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                    </div>\r\n                    <div class=\"col-6\">\r\n                        <p class=\"card-text\">Father Contact : <span");
             BeginWriteAttribute("id", " id=\"", 12096, "\"", 12101, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 239 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                            Write(Model.employeeFamilyDetail.FatherContact);
+                                                                                  Model.employeeFamilyDetail.FatherContact
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                        <p class=\"card-text\">Mother Contact : <span");
             BeginWriteAttribute("id", " id=\"", 12239, "\"", 12244, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 240 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                            Write(Model.employeeFamilyDetail.MotherContact);
+                                                                                  Model.employeeFamilyDetail.MotherContact
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                        <p class=\"card-text\">Brother Contact : <span");
             BeginWriteAttribute("id", " id=\"", 12383, "\"", 12388, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 241 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                             Write(Model.employeeFamilyDetail.BrotherContact);
+                                                                                   Model.employeeFamilyDetail.BrotherContact
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                        <p class=\"card-text\">Sister Contact : <span");
             BeginWriteAttribute("id", " id=\"", 12527, "\"", 12532, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 242 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                            Write(Model.employeeFamilyDetail.SisterContact);
+                                                                                  Model.employeeFamilyDetail.SisterContact
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label></span></p>\r\n                        <p class=\"card-text\">Wife Contact : <span");
             BeginWriteAttribute("id", " id=\"", 12668, "\"", 12673, 0);
             EndWriteAttribute();
             WriteLiteral("><label>");
+            Write(
 #nullable restore
 #line 243 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                                          Write(Model.employeeFamilyDetail.WifeContact);
+                                                                                Model.employeeFamilyDetail.WifeContact
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</label></span></p>
                     </div>
                 </div>
@@ -653,38 +695,47 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                    <tr>\r\n                                        <th scope=\"row\">");
+            Write(
 #nullable restore
 #line 271 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                   Write(i.SrNo);
+                                                         i.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 272 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.Degree);
+                                             i.Degree
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 273 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.EndDate.ToDate());
+                                             i.EndDate.ToDate()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.Grade);
+                                             i.Grade
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>                                        \r\n                                    </tr>\r\n");
 #nullable restore
 #line 276 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
@@ -693,6 +744,7 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            </tbody>
                         </table>
                     </div>
@@ -725,47 +777,58 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                    <tr>\r\n                                        <th scope=\"row\">");
+            Write(
 #nullable restore
 #line 307 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                                   Write(i.SrNo);
+                                                         i.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 308 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.CompanyName);
+                                             i.CompanyName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                        <td>");
+            Write(
 #nullable restore
 #line 309 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(i.JobTitle);
+                                             i.JobTitle
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
             WriteLiteral("                                        <td>\r\n                                            ");
+            Write(
 #nullable restore
 #line 315 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(string.Concat(Convert.ToString(cultureInfo.DateTimeFormat.GetMonthName(Convert.ToInt32(i.StartMonth))) + "-" + i.StartYear));
+                                             string.Concat(Convert.ToString(cultureInfo.DateTimeFormat.GetMonthName(Convert.ToInt32(i.StartMonth))) + "-" + i.StartYear)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                                        </td>\r\n                                        <td>\r\n                                            ");
+            Write(
 #nullable restore
 #line 318 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                       Write(Convert.ToString(i.EndMonth == "" || i.EndYear <= 0 ? "Working" : string.Concat(Convert.ToString(cultureInfo.DateTimeFormat.GetMonthName(Convert.ToInt32(i.EndMonth))) + "-" + i.EndYear)));
+                                             Convert.ToString(i.EndMonth == "" || i.EndYear <= 0 ? "Working" : string.Concat(Convert.ToString(cultureInfo.DateTimeFormat.GetMonthName(Convert.ToInt32(i.EndMonth))) + "-" + i.EndYear))
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                                        </td>\r\n                                    </tr>\r\n");
 #nullable restore
 #line 321 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
@@ -774,16 +837,19 @@ using System.Globalization;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!--Experience Details-->\r\n\r\n    </div>\r\n</div>\r\n\r\n\r\n");
             WriteLiteral("\r\n");
             WriteLiteral("\r\n<script>\r\n\r\n    $(document).ready(function () {\r\n        var urlUserProfile = \'");
+            Write(
 #nullable restore
 #line 371 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                         Write(Url.Action("GetUserProfileBasicDetails", "UserProfile"));
+                               Url.Action("GetUserProfileBasicDetails", "UserProfile")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         // alert('urlUserProfile...' + urlUserProfile);
         $.ajax({
@@ -849,13 +915,15 @@ using System.Globalization;
                 });
           ");
             WriteLiteral("  },\r\n            error: function () {\r\n                alert(\"Error detected\");\r\n            }\r\n        });\r\n    });\r\n\r\n    $(document).ready(function () {\r\n        var urlUserProfileAddress = \'");
+            Write(
 #nullable restore
 #line 439 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\UserProfile\Index.cshtml"
-                                Write(Url.Action("GetUserProfileAddressDetails", "UserProfile"));
+                                      Url.Action("GetUserProfileAddressDetails", "UserProfile")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         //alert('urlUserProfileAddress...' + urlUserProfileAddress);
         $.ajax({

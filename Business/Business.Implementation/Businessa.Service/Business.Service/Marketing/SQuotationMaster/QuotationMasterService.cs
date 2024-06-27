@@ -127,52 +127,59 @@ namespace Business.Service.Marketing.SQuotationMaster
         #endregion
 
         #region Add or Update Positive Note
-        public async Task<int> AddOrUpdateQuotationMaster(QuotationMaster model, DataTable dataTable)
+        public async Task<int> AddOrUpdateQuotationMaster(QuotationMaster model, DataSet dataTable)
         {
             try
             {
                 SqlParameter[] param = {
-                    //new SqlParameter("@QuotationID", model.QuotationID),
-                    //new SqlParameter("@QuotationDate", model.QuotationDate),
-                    //new SqlParameter("@FinancialYearID", model.FinancialYearID),
-                    //new SqlParameter("@PartyID", model.PartyID),
-                    //new SqlParameter("@AddressTypeID", model.AddressTypeID),
-                    //new SqlParameter("@Reference", model.Reference),
-                    //new SqlParameter("@RequestForQuotID", model.RequestForQuotID),----
-                    //new SqlParameter("@ShopOrderID", model.ShopOrderID),
-                    //new SqlParameter("@ShopOrderDate", model.ShopOrderDate),
-                    ////new SqlParameter("@NetAmount", model.NetAmount),
-                    //new SqlParameter("@GrossAmount", model.GrossAmount),
-                    //new SqlParameter("@PaymentTerm", model.PaymentTerm),
-                    //new SqlParameter("@DeliveryTerm", model.DeliveryTerm),
-                    //new SqlParameter("@OtherRemark", model.OtherRemark),
-                    //new SqlParameter("@IsActive", model.IsActive),
-                    //new SqlParameter("@CreatedOrModifiedBy", model.CreatedOrModifiedBy),
-                    new SqlParameter("@QuotationCode", model.QuotationCode),
-                    new SqlParameter("@QuotationID", model.QuotationID ),
-                    new SqlParameter("@QuotationDate", model.QuotationDate ),
-                    new SqlParameter("@FinancialYearID", model.FinancialYearID ),
-                    new SqlParameter("@RequestForQuotID", model.RequestForQuotID ),
-                    new SqlParameter("@PartyID", model.PartyID ),
-                    new SqlParameter("@AddressTypeID", model.AddressTypeID ),
-                    new SqlParameter("@Reference", model.Reference ),
-                    new SqlParameter("@ShopOrderID", model.ShopOrderID ),
-                    new SqlParameter("@ShopOrderDate", model.ShopOrderDate ),
-                    new SqlParameter("@NetAmount", model.NetAmount ),
-                    new SqlParameter("@GrossAmount", model.GrossAmount ),
-                    new SqlParameter("@PaymentTerm", model.PaymentTerm ),
-                    new SqlParameter("@DeliveryTerm", model.DeliveryTerm ),
-                    new SqlParameter("@OtherRemark", model.OtherRemark ),
-                    new SqlParameter("@IsActive", model.IsActive ),
-                    new SqlParameter("@CreatedOrModifiedBy", model.CreatedOrModifiedBy ),
-                    new SqlParameter("@ReviseNo", model.ReviseNo ),
-                    new SqlParameter("@SOItems", dataTable)
-                };
+             //new SqlParameter("@QuotationID", model.QuotationID),
+             //new SqlParameter("@QuotationDate", model.QuotationDate),
+             //new SqlParameter("@FinancialYearID", model.FinancialYearID),
+             //new SqlParameter("@PartyID", model.PartyID),
+             //new SqlParameter("@AddressTypeID", model.AddressTypeID),
+             //new SqlParameter("@Reference", model.Reference),
+             //new SqlParameter("@RequestForQuotID", model.RequestForQuotID),----
+             //new SqlParameter("@ShopOrderID", model.ShopOrderID),
+             //new SqlParameter("@ShopOrderDate", model.ShopOrderDate),
+             ////new SqlParameter("@NetAmount", model.NetAmount),
+             //new SqlParameter("@GrossAmount", model.GrossAmount),
+             //new SqlParameter("@PaymentTerm", model.PaymentTerm),
+             //new SqlParameter("@DeliveryTerm", model.DeliveryTerm),
+             //new SqlParameter("@OtherRemark", model.OtherRemark),
+             //new SqlParameter("@IsActive", model.IsActive),
+             //new SqlParameter("@CreatedOrModifiedBy", model.CreatedOrModifiedBy),
+             new SqlParameter("@QuotationCode", model.QuotationCode),
+             new SqlParameter("@QuotationID", model.QuotationID ),
+             new SqlParameter("@QuotationDate", model.QuotationDate ),
+             new SqlParameter("@FinancialYearID", model.FinancialYearID ),
+             new SqlParameter("@RequestForQuotID", model.RequestForQuotID ),
+             new SqlParameter("@PartyID", model.PartyID ),
+             new SqlParameter("@AddressTypeID", model.AddressTypeID ),
+             new SqlParameter("@Reference", model.Reference ),
+             new SqlParameter("@ShopOrderID", model.ShopOrderID ),
+             new SqlParameter("@ShopOrderDate", model.ShopOrderDate ),
+             new SqlParameter("@NetAmount", model.NetAmount ),
+             new SqlParameter("@GrossAmount", model.GrossAmount ),
+             new SqlParameter("@PaymentTerm", model.PaymentTerm ),
+             new SqlParameter("@DeliveryTerm", model.DeliveryTerm ),
+             new SqlParameter("@OtherRemark", model.OtherRemark ),
+             new SqlParameter("@IsActive", model.IsActive ),
+             new SqlParameter("@CreatedOrModifiedBy", model.CreatedOrModifiedBy ),
+             new SqlParameter("@ReviseNo", model.ReviseNo ),
+             new SqlParameter("@SOItems", dataTable.Tables[0]),
+             new SqlParameter("@QuotationTaxTransactionAmounts", dataTable.Tables[1])
+         };
                 param[18].Direction = ParameterDirection.Input;
                 param[18].SqlDbType = SqlDbType.Structured;
                 param[18].ParameterName = "@SOItems";
-                param[18].TypeName = "UDTT_QuotationDetail ";
-                param[18].Value = dataTable;
+                param[18].TypeName = "UDTT_QuotationDetail";
+                param[18].Value = dataTable.Tables[0];
+
+                param[19].Direction = ParameterDirection.Input;
+                param[19].SqlDbType = SqlDbType.Structured;
+                param[19].ParameterName = "@QuotationTaxTransactionAmounts";
+                param[19].TypeName = "UDTT_QuotationAmountDetail";
+                param[19].Value = dataTable.Tables[1];
 
                 var obj = await SqlHelper.ExecuteScalarAsync(connection, CommandType.StoredProcedure, "Usp_IU_QuotationMaster", param);
 

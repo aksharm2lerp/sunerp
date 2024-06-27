@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_HR_Views_MachineryResourceAllocation_AddOrUpdateMachineryResourceAllocation), @"mvc.1.0.view", @"/Areas/HR/Views/MachineryResourceAllocation/AddOrUpdateMachineryResourceAllocation.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-using Business.Entities.HR.MachineryResourceAllocationModel;
+ using Business.Entities.HR.MachineryResourceAllocationModel;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a", @"/Areas/HR/Views/MachineryResourceAllocation/AddOrUpdateMachineryResourceAllocation.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a", @"/Areas/HR/Views/MachineryResourceAllocation/AddOrUpdateMachineryResourceAllocation.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_HR_Views_MachineryResourceAllocation_AddOrUpdateMachineryResourceAllocation : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MachineryResourceAllocation>
     #nullable disable
@@ -158,22 +148,25 @@ using Business.Entities.HR.MachineryResourceAllocationModel;
 #line default
 #line hidden
 #nullable disable
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a14567", async() => {
+
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a14341", async() => {
                 WriteLiteral("\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <div class=\"row mb-3\">\r\n                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a14970", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a14744", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 11 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.MachineryResourceAllocationID);
+                                              MachineryResourceAllocationID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -183,20 +176,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a16772", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a16628", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 12 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Operators);
+                                              Operators
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -207,20 +202,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a18641", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a18579", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 13 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Helpers);
+                                              Helpers
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -234,7 +231,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 BeginWriteAttribute("for", " for=\'", 714, "\'", 720, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Allocation Date<span class=\"required\">*</span></label>\r\n                    <div class=\'col-sm-9\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a20943", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a20963", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -243,13 +240,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_5);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 20 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.AllocationDate);
+                                                                                             AllocationDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_6.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
@@ -261,19 +260,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a23120", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a23269", async() => {
                     WriteLiteral("\r\n                        ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 21 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.AllocationDate);
+                                                  AllocationDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -287,9 +288,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 1228, "\'", 1234, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Shift<span class=\"required\">*</span></label>\r\n                    <div class=\'col-sm-9\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a25342", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a25577", async() => {
                     WriteLiteral("\r\n                            ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a25663", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a25898", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -311,21 +312,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_9);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_10);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 29 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.ShiftID);
+                                                                                                         ShiftID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 29 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllShiftAsync();
+                                                                                                                              CommonExtension.GetAllShiftAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -338,9 +343,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 BeginWriteAttribute("for", " for=\'", 1747, "\'", 1753, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Department<span class=\"required\">*</span></label>\r\n                    <div class=\'col-sm-9\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a29457", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a29995", async() => {
                     WriteLiteral("\r\n                            ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a29778", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a30316", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -362,21 +367,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_9);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.DepartmentID);
+                                                                                                              DepartmentID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllDepartmentAsync();
+                                                                                                                                        CommonExtension.GetAllDepartmentAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_12);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -390,9 +399,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 BeginWriteAttribute("for", " for=\'", 2318, "\'", 2324, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Machinery<span class=\"required\">*</span></label>\r\n                    <div class=\'col-sm-9\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a33669", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a34525", async() => {
                     WriteLiteral("\r\n                            ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a33990", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a34846", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -414,13 +423,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_9);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.MachineryID);
+                                                                                                             MachineryID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -434,9 +445,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
                 BeginWriteAttribute("for", " for=\'", 3239, "\'", 3245, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Operators<span class=\"required\">*</span></label>\r\n                    <div class=\'col-sm-9\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a37303", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a38304", async() => {
                     WriteLiteral("\r\n                            ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a37624", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a38625", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -456,13 +467,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 61 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllEmployeesAccordingToDesignation("Operator");
+                                            CommonExtension.GetAllEmployeesAccordingToDesignation("Operator")
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
@@ -480,9 +493,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 BeginWriteAttribute("for", " for=\'", 3786, "\'", 3792, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Helpers<span class=\"required\">*</span></label>\r\n                    <div class=\'col-sm-9\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a41206", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a42287", async() => {
                     WriteLiteral("\r\n                            ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a41527", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a42608", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -504,13 +517,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_17);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 70 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllEmployeesAccordingToDesignation("Helper");
+                                                                                                            CommonExtension.GetAllEmployeesAccordingToDesignation("Helper")
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 BeginWriteTagHelperAttribute();
                 __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
@@ -526,7 +541,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 BeginWriteAttribute("for", " for=\"", 4327, "\"", 4333, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\"col-sm-3 col-form-label\">Is Active</label>\r\n                    <div class=\"col-sm-9\">\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a45076", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "000a27d6329fc7e66444234b939e324ee192f766cc5902c53f6491fa06c29d3a46301", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -537,13 +552,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_20);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_21.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_21);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 79 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.IsActive);
+                                                                                                               IsActive
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -581,21 +598,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
+            Write(
 #nullable restore
 #line 91 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n<script type=\"text/javascript\">\r\n    var urlsave = \'");
+            Write(
 #nullable restore
 #line 93 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-              Write(Url.Action("AddOrUpdateMachineryResourceAllocation", "MachineryResourceAllocation"));
+                    Url.Action("AddOrUpdateMachineryResourceAllocation", "MachineryResourceAllocation")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
 
     var operatorMultipleDropdown = document.getElementById(""choices-multiple-remove-button-Operators"");
@@ -706,13 +727,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: """);
+            Write(
 #nullable restore
 #line 198 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                     });
                 }
@@ -770,13 +793,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         //     maxItemCount: 1000,
         //     se");
             WriteLiteral("archResultLimit: 1000,\r\n        //     renderChoiceLimit: 10,\r\n        // });\r\n\r\n        var selectedDept = document.getElementById(\"choices-multiple-remove-button-DepartmentID\").value;\r\n        let machineid = ");
+            Write(
 #nullable restore
 #line 257 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineryResourceAllocation\AddOrUpdateMachineryResourceAllocation.cshtml"
-                   Write(Model.MachineryID);
+                         Model.MachineryID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@";
         $.getJSON(""/HR/MachineryResourceAllocation/SelectMachine/"", { departmentId: selectedDept },
             function (data) {

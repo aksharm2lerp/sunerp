@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_Request__search), @"mvc.1.0.view", @"/Areas/Admin/Views/Request/_search.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_search.cshtml"
-using ERP.Controllers;
+ using ERP.Controllers
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d", @"/Areas/Admin/Views/Request/_search.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d", @"/Areas/Admin/Views/Request/_search.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Request__search : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<RequestSearchMetadata>
     #nullable disable
@@ -135,7 +126,7 @@ using ERP.Controllers;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<div class=\"row pt-3\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d9061", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d8839", async() => {
                 WriteLiteral(@"
         <div class=""col-md-12"">
             <div class=""row"">
@@ -144,9 +135,9 @@ using ERP.Controllers;
                         <label for=""roleName"" class=""col-sm-3 col-form-label text-end"">Entity</label>
                         <div class=""col-sm-9"">
                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d9678", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d9456", async() => {
                     WriteLiteral("\r\n                                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d10002", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d9780", async() => {
                         WriteLiteral("--Select--");
                     }
                     );
@@ -168,21 +159,25 @@ using ERP.Controllers;
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 11 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_search.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.EntityID);
+                                                                                               EntityID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 11 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_search.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CompanyDropdownBinder.EntityType(SettingsController.COMPANYID);
+                                                                                                                     CompanyDropdownBinder.EntityType(SettingsController.COMPANYID)
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -192,18 +187,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CompanyDropdownBin
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d13314", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d13375", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_search.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.EntityID);
+                                                      EntityID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -222,9 +219,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                         <label for=""roleName"" class=""col-sm-3 col-form-label text-end"">Case Type<span class=""required"">*</span></label>
                         <div class=""col-sm-9"">
                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d15365", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d15516", async() => {
                     WriteLiteral("\r\n                                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d15690", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d15841", async() => {
                         WriteLiteral("--Select--");
                     }
                     );
@@ -245,13 +242,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 22 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_search.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.RequestTypeID);
+                                                                 RequestTypeID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -262,18 +261,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d18504", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4be2de0428b04b81d0052d371286197ee5a2371d36ecfb2dcfc4139a4b7d38d18756", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 25 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_search.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.RequestTypeID);
+                                                      RequestTypeID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -334,13 +335,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
             $.ajax({
                 type: 'GET',
                 url: '");
+            Write(
 #nullable restore
 #line 49 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_search.cshtml"
-                 Write(Url.Action("GetRequestTypes","Request"));
+                       Url.Action("GetRequestTypes","Request")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"',
                 datatype: 'html',
                 data: { entityId: entityId },

@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Marketing_Views_ActivityOnMap__GoogleMap), @"mvc.1.0.view", @"/Areas/Marketing/Views/ActivityOnMap/_GoogleMap.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"8ab7412de42f836c1ba09864328adc0844cfb68dc7fb8f249fd5b2048e081150", @"/Areas/Marketing/Views/ActivityOnMap/_GoogleMap.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"8ab7412de42f836c1ba09864328adc0844cfb68dc7fb8f249fd5b2048e081150", @"/Areas/Marketing/Views/ActivityOnMap/_GoogleMap.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Marketing_Views_ActivityOnMap__GoogleMap : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -123,8 +115,9 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n<!DOCTYPE html>\r\n\r\n<html>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ab7412de42f836c1ba09864328adc0844cfb68dc7fb8f249fd5b2048e0811505593", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ab7412de42f836c1ba09864328adc0844cfb68dc7fb8f249fd5b2048e0811505395", async() => {
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Index</title>\r\n");
             }
             );
@@ -138,9 +131,9 @@ using Business.Entities.Dynamic;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ab7412de42f836c1ba09864328adc0844cfb68dc7fb8f249fd5b2048e0811506676", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ab7412de42f836c1ba09864328adc0844cfb68dc7fb8f249fd5b2048e0811506478", async() => {
                 WriteLiteral("\r\n    <div id=\"dvMap\" style=\"width: 500px; height: 300px\">\r\n    </div>\r\n    <script type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCQG4UAJOeOjPGIUluGz4KGPp1PaJaJGxQ&libraries=drawing&v=weekly\"></script>\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ab7412de42f836c1ba09864328adc0844cfb68dc7fb8f249fd5b2048e0811507209", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ab7412de42f836c1ba09864328adc0844cfb68dc7fb8f249fd5b2048e0811507011", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -154,21 +147,25 @@ using Business.Entities.Dynamic;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n\r\n    <script type=\"text/javascript\">\r\n        var markers = ");
+                Write(
 #nullable restore
 #line 20 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\ActivityOnMap\_GoogleMap.cshtml"
-                 Write(Html.Raw(ViewBag.Markers));
+                       Html.Raw(ViewBag.Markers)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(";\r\n        var polygonline = ");
+                Write(
 #nullable restore
 #line 21 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\ActivityOnMap\_GoogleMap.cshtml"
-                     Write(Html.Raw(ViewBag.drawline));
+                           Html.Raw(ViewBag.drawline)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(@";
         //var drawingManager = new google.maps.drawing.DrawingManager();
         //var flightPlanCoordinates = [

@@ -9,8 +9,8 @@ namespace Business.Entities.Employee.EmploymentType
 {
     public class EmploymentTypeChangeHr
     {
-        public int SrNo { get; set; }
         public int EmploymentTypeTxnID { get; set; }
+        public int SrNo { get; set; }
         public int EmploymentTypeID { get; set; }
         public string EmploymentTypeText { get; set; }
         public int EmployeeID { get; set; }

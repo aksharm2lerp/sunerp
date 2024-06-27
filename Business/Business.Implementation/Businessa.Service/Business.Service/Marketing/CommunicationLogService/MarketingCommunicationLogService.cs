@@ -23,7 +23,7 @@ namespace Business.Service.Marketing.CommunicationLogService
             connection = _config.GetConnectionString("DefaultConnection");
         }
 
-        public async Task<PagedDataTable<CommunicationLog>> GetAllMarketingCommunicationLogAsync(int pageNo = 1, int pageSize = 5, string searchString = "", string orderBy = "MarketingCommunicationLogID", string sortBy = "ASC", int userId = 0)
+        public async Task<PagedDataTable<CommunicationLog>> GetAllMarketingCommunicationLogAsync(int pageNo = 1, int pageSize = 5, string searchString = "", string orderBy = "MarketingCommunicationLogID", string sortBy = "DESC", int userId = 0)
         {
             DataTable table = new DataTable();
             int totalItemCount = 0;

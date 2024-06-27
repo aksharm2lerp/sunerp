@@ -354,12 +354,12 @@ namespace ERP.Areas.SalesDistribution.Controllers
                                 .Sanitized(false).RenderValueAs(o => $"<input type='hidden' class='form-control' value='{o.UOMID}' id='UOMIDnewRowIndex{o.SrNo}'>").Hidden = true;
 
                             c.Add().Titled("Item Code").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.ItemCode}' id='itemCodeIndexnewRowIndex{o.SrNo}' readonly >");
+                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.ItemCode}' id='itemCodeIndexnewRowIndex{o.SrNo}' title='{o.ItemCode}' readonly >");
 
-                            c.Add().Titled("Item Name").Encoded(false).Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.ItemName}' id='itemNameIndexnewRowIndex{o.SrNo}' readonly >");
+                            c.Add().Titled("Item Name").Encoded(false).Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.ItemName}'  title='{o.ItemName}' id='itemNameIndexnewRowIndex{o.SrNo}' readonly >");
 
                             c.Add().Titled("UOM").Encoded(false)
-                      .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.UOM}' id='UOMIndexnewRowIndex{o.SrNo}' readonly>");
+                      .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.UOM}' id='UOMIndexnewRowIndex{o.SrNo}' title='{o.UOM}' readonly>");
 
                             c.Add().Titled("Add").Encoded(false).Sanitized(false).RenderValueAs(o => $"<a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue({o.SrNo})' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded'></iconify-icon></a>");
 
@@ -370,37 +370,37 @@ namespace ERP.Areas.SalesDistribution.Controllers
                             //    .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.Rate}' oninput='fnCalcAmt({o.SrNo})' id='rateIndex{o.SrNo}'>");
 
                             c.Add().Titled("Stock no of coil").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.StockNoOfCoil}' id='stockNoOfCoilIndexnewRowIndex{o.SrNo}'>");
+                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.StockNoOfCoil}' oninput='fnCalculateSalesOrderItems({o.SrNo})' id='stockNoOfCoilIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Stock coil length").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.StockCoilLength}' id='stockCoilLengthIndexnewRowIndex{o.SrNo}'>");
+                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.StockCoilLength}' oninput='fnCalculateSalesOrderItems({o.SrNo})' id='stockCoilLengthIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Order no of coil").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.OrderNoOfCoil}' id='orderNoOfCoilIndexnewRowIndex{o.SrNo}'>");
+                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.OrderNoOfCoil}' oninput='fnUpdateOrderQuantityInMeter({o.SrNo})' id='orderNoOfCoilIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Order coil length").Encoded(false)
-                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.OrderCoilLength}' id='orderCoilLengthIndexnewRowIndex{o.SrNo}'>");
+                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.OrderCoilLength}' oninput='fnUpdateOrderQuantityInMeter({o.SrNo})' id='orderCoilLengthIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Order qty in meter").Encoded(false)
-                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.OrderQtyInMeter}' id='orderQtyInMeterIndexnewRowIndex{o.SrNo}'>");
+                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.OrderQtyInMeter}' oninput='fnUpdatePricePerMeter({o.SrNo}); fnUpdatePriceListAmount({o.SrNo})' id='orderQtyInMeterIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Price list amt").Encoded(false)
-                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.PriceListAmt}' id='priceListAmtIndexnewRowIndex{o.SrNo}'>");
+                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.PriceListAmt}' oninput='fnUpdatePricePerMeter({o.SrNo}); fnUpdateDiscountsAmount({o.SrNo})' id='priceListAmtIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Per meter price").Encoded(false)
-                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.PerMeterPrice}' id='perMeterPriceIndexnewRowIndex{o.SrNo}'>");
+                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.PerMeterPrice}' oninput='fnUpdatePriceListAmount({o.SrNo})' id='perMeterPriceIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Discount").Encoded(false)
-                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.DiscountAmount}' id='discountIndexnewRowIndex{o.SrNo}'>");
+                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.DiscountAmount}' oninput='fnUpdateDiscountsAmount({o.SrNo})' id='discountIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Special discount").Encoded(false)
-                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.SpecialDiscount}' id='specialDiscountIndexnewRowIndex{o.SrNo}'>");
+                              .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.SpecialDiscount}' oninput='fnUpdateDiscountsAmount({o.SrNo})' id='specialDiscountIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Cash discount").Encoded(false)
-                            .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.CashDiscount}' id='cashDiscountIndexnewRowIndex{o.SrNo}'>");
+                            .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.CashDiscount}' oninput='fnUpdateDiscountsAmount({o.SrNo})' id='cashDiscountIndexnewRowIndex{o.SrNo}'>");
 
                             c.Add().Titled("Total amt").Encoded(false)
-                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.TotalAmount}'  id='amtIndex{o.SrNo}' readonly>");
+                                .Sanitized(false).RenderValueAs(o => $"<input type='text' class='form-control' value='{o.TotalAmount}'  id='amtIndex{o.SrNo}' title='{o.TotalAmount}' readonly>");
 
                             c.Add()
                                 .Titled("Remove")
@@ -441,6 +441,7 @@ namespace ERP.Areas.SalesDistribution.Controllers
                 throw;
             }
         }
+
         public IEnumerable<SelectItem> GetAllUOM()
         {
             //using (var context = new NorthwindDbContext(_options))
@@ -471,112 +472,74 @@ namespace ERP.Areas.SalesDistribution.Controllers
         [HttpPost]
         public async Task<IActionResult> AddOrUpdateSalesOrderMaster(SalesOrderMaster model)
         {
-
             try
             {
                 model.CreatedOrModifiedBy = USERID;
-                System.Data.DataTable dataTable = new System.Data.DataTable();
+                DataSet dataTable = new System.Data.DataSet();
                 List<SalesOrderDetail> sAPUpdateItemStocks = new List<SalesOrderDetail>();
                 if (!string.IsNullOrEmpty(model.SAPCollectionJSONString))
                 {
                     #region Creating DataTable 
                     sAPUpdateItemStocks = JsonConvert.DeserializeObject<List<SalesOrderDetail>>(model.SAPCollectionJSONString);
+                    dataTable.Tables.Add(new System.Data.DataTable());
+                    dataTable.Tables[0].Columns.Clear();
 
-                    dataTable.Columns.Clear();
-                    //dataTable.Columns.Add(new DataColumn("SalesOrderDetailID", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("SalesOrderID", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("ItemID", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("ItemCode", typeof(string)));
-                    //dataTable.Columns.Add(new DataColumn("ItemName", typeof(string)));
-                    //dataTable.Columns.Add(new DataColumn("HSNcodes", typeof(string)));
-                    //dataTable.Columns.Add(new DataColumn("UOMID", typeof(int)));
-                    ////dataTable.Columns.Add(new DataColumn("UOM", typeof(string)));
-                    //dataTable.Columns.Add(new DataColumn("Qty", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("Rate", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("TotalAmount", typeof(decimal)));
-
-                    //dataTable.Columns.Add(new DataColumn("SalesOrderDetailID", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("SalesOrderID", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("ItemID", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("HSNcodes", typeof(string)));
-                    //dataTable.Columns.Add(new DataColumn("UOMID", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("Qty", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("Rate", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("DiscountInPer", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("DiscountAmount", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("TaxInPer", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("TaxAmount", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("TotalAmount", typeof(decimal)));
-                    //dataTable.Columns.Add(new DataColumn("Remark", typeof(string)));
-                    //dataTable.Columns.Add(new DataColumn("IsInspectionRequired", typeof(bool)));
-                    //dataTable.Columns.Add(new DataColumn("InspectionAgencyID", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("IsActive", typeof(bool)));
-                    //dataTable.Columns.Add(new DataColumn("CreatedOrModifiedBy", typeof(int)));
-                    //dataTable.Columns.Add(new DataColumn("ItemCode", typeof(string)));
-                    //dataTable.Columns.Add(new DataColumn("ItemName", typeof(string)));
-
-                    dataTable.Columns.Add(new DataColumn("SalesOrderDetailID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("SalesOrderID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("ItemID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("UOMID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("ItemCode", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("ItemName", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("UOM", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("StockNoOfCoil", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("StockCoilLength", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("OrderNoOfCoil", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("OrderCoilLength", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("OrderQtyInMeter", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("PriceListAmt", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("PerMeterPrice", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("DiscountAmount", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("SpecialDiscount", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("CashDiscount", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("TotalAmount", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("SalesOrderDetailID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("SalesOrderID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("ItemID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("HSNcodes", typeof(string)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("UOMID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("Qty", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("Rate", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("DiscountInPer", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("DiscountAmount", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("TaxInPer", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("TaxAmount", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("TotalAmount", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("Remark", typeof(string)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("IsInspectionRequired", typeof(bool)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("InspectionAgencyID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("IsActive", typeof(bool)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("CreatedOrModifiedBy", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("CreatedDate", typeof(DateTime)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("ModifiedDate", typeof(DateTime)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("ItemCode", typeof(string)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("ItemName", typeof(string)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("StockNoOfCoil", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("StockCoilLength", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("OrderNoOfCoil", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("OrderCoilLength", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("OrderQtyInMeter", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("PriceListAmt", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("PerMeterPrice", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("SpecialDiscount", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("CashDiscount", typeof(decimal)));
 
                     foreach (var item in sAPUpdateItemStocks)
                     {
-                        DataRow dataRow = dataTable.NewRow();
-
-                        //dataRow["SalesOrderDetailID"] = item.SalesOrderDetailID;
-                        //dataRow["SalesOrderID"] = item.SalesOrderID;
-                        //dataRow["ItemID"] = item.ItemID;
-                        //dataRow["ItemCode"] = item.ItemCode;
-                        //dataRow["ItemName"] = item.ItemName;
-                        //dataRow["HSNcodes"] = item.HSNcodes;
-                        //dataRow["UOMID"] = item.UOMID;
-                        ////dataRow["UOM"] = item.UOM;
-                        //dataRow["Qty"] = item.Qty;
-                        //dataRow["Rate"] = item.Rate;
-                        //dataRow["TotalAmount"] = item.TotalAmount;
-
-                        //dataRow["SalesOrderDetailID"] = item.SalesOrderDetailID;
-                        //dataRow["SalesOrderID"] = item.SalesOrderID;
-                        //dataRow["ItemID"] = item.ItemID;
-                        //dataRow["HSNcodes"] = item.HSNcodes;
-                        //dataRow["UOMID"] = item.UOMID;
-                        //dataRow["Qty"] = item.Qty;
-                        //dataRow["Rate"] = item.Rate;
-                        //dataRow["DiscountInPer"] = 0;
-                        //dataRow["DiscountAmount"] = 0;
-                        //dataRow["TaxInPer"] = 0;
-                        //dataRow["TaxAmount"] = 0;
-                        //dataRow["TotalAmount"] = item.TotalAmount;
-                        //dataRow["Remark"] = string.Empty;
-                        //dataRow["IsInspectionRequired"] = false;
-                        //dataRow["InspectionAgencyID"] = 0;
-                        //dataRow["IsActive"] = true;
-                        //dataRow["CreatedOrModifiedBy"] = USERID;
-                        //dataRow["ItemCode"] = item.ItemCode;
-                        //dataRow["ItemName"] = item.ItemName;
+                        DataRow dataRow = dataTable.Tables[0].NewRow();
 
                         dataRow["SalesOrderDetailID"] = item.SalesOrderDetailID;
                         dataRow["SalesOrderID"] = item.SalesOrderID;
                         dataRow["ItemID"] = item.ItemID;
+                        dataRow["HSNcodes"] = item.HSNcodes ?? string.Empty;
                         dataRow["UOMID"] = item.UOMID;
+                        dataRow["Qty"] = item.Qty;
+                        dataRow["Rate"] = item.Rate;
+                        dataRow["DiscountInPer"] = item.DiscountInPer;
+                        dataRow["DiscountAmount"] = item.DiscountAmount;
+                        dataRow["TaxInPer"] = item.TaxInPer;
+                        dataRow["TaxAmount"] = item.TaxAmount;
+                        dataRow["TotalAmount"] = item.TotalAmount;
+                        dataRow["Remark"] = item.Remark;
+                        dataRow["IsInspectionRequired"] = item.IsInspectionRequired ?? false;
+                        dataRow["InspectionAgencyID"] = item.InspectionAgencyID ?? 0;
+                        dataRow["IsActive"] = item.IsActive;
+                        dataRow["CreatedOrModifiedBy"] = item.CreatedBy ?? USERID;
+                        dataRow["CreatedDate"] = DateTime.Now; //tem.SalesOrderDetailID < 0 ? DateTime.Now : null;// item.CreatedDate;
+                        dataRow["ModifiedDate"] = DateTime.Now;// item.SalesOrderDetailID > 0 ? DateTime.Now : null;
                         dataRow["ItemCode"] = item.ItemCode;
                         dataRow["ItemName"] = item.ItemName;
-                        dataRow["UOM"] = item.UOM;
                         dataRow["StockNoOfCoil"] = item.StockNoOfCoil;
                         dataRow["StockCoilLength"] = item.StockCoilLength;
                         dataRow["OrderNoOfCoil"] = item.OrderNoOfCoil;
@@ -584,17 +547,26 @@ namespace ERP.Areas.SalesDistribution.Controllers
                         dataRow["OrderQtyInMeter"] = item.OrderQtyInMeter;
                         dataRow["PriceListAmt"] = item.PriceListAmt;
                         dataRow["PerMeterPrice"] = item.PerMeterPrice;
-                        dataRow["DiscountAmount"] = item.DiscountAmount;
                         dataRow["SpecialDiscount"] = item.SpecialDiscount;
                         dataRow["CashDiscount"] = item.CashDiscount;
-                        dataRow["TotalAmount"] = item.TotalAmount;
-                        //dataRow["CreatedOrModifiedBy"] = USERID;
 
-                        dataTable.Rows.Add(dataRow);
+                        dataTable.Tables[0].Rows.Add(dataRow);
                     }
 
+                    System.Data.DataTable dataTable1 = JsonConvert.DeserializeObject<System.Data.DataTable>(model.TaxAmountJSONString);
+                    //System.Data.DataTable dataTableClone = dataTable1.Clone();
+                    //dataTableClone.Columns["FormulaPercentage"].DataType = typeof(decimal);
+
+                    foreach (DataRow dr in dataTable1.Rows)
+                    {
+                        dr["FormulaPercentage"] = Convert.ToDecimal(dr["FormulaPercentage"]);
+                        dr["CreatedOrModifiedBy"] = USERID;
+                        //dataTableClone.ImportRow(dr);
+                    }
+                    dataTable.Tables.Add(dataTable1);
                     #endregion Creating DataTable 
                 }
+
                 var _SalesOrderID = await iSalesOrderMaster.AddOrUpdateSalesOrderMaster(model, dataTable);
 
                 if (_SalesOrderID > 0)
@@ -682,7 +654,8 @@ namespace ERP.Areas.SalesDistribution.Controllers
 
                 //c.Add().Titled("Item Name").Encoded(false).Sanitized(false).Css("hidden-xs").RenderValueAs(o => $"<a onclick='fnOpenBuyerList(this)' href='javascript:void(0)' data-id='{o.ItemCode}' data-name='{o.FinishGoodName}' data-bs-toggle='offcanvas' data-bs-target='#canvasEmployeeGatepass' data-key='' aria-controls='canvasEmployeeGatepass'>{o.FinishGoodName}</a>");
 
-                c.Add().Titled("Item Name").Encoded(false).Sanitized(false).Css("hidden-xs").RenderValueAs(o => $"<a onclick='fnPassItemDetail(this)' href='javascript:void(0)' data-code='{o.ItemCode}' data-name='{o.FinishGoodName}' data-bs-toggle='offcanvas' data-bs-target='#canvasEmployeeGatepass' data-key='' aria-controls='canvasEmployeeGatepass'>{o.FinishGoodName}</a>");
+                //c.Add().Titled("Item Name").Encoded(false).Sanitized(false).Css("hidden-xs").RenderValueAs(o => $"<a onclick='fnPassItemDetail(this)' href='javascript:void(0)' data-code='{o.ItemCode}' data-name='{o.FinishGoodName}' data-bs-toggle='offcanvas' data-bs-target='#canvasEmployeeGatepass' data-key='' aria-controls='canvasEmployeeGatepass'>{o.FinishGoodName}</a>");
+                c.Add().Titled("Item Name").Encoded(false).Sanitized(false).Css("hidden-xs").RenderValueAs(o => $"<a onclick='fnPassItemDetail(this)' href='javascript:void(0)' data-code='{o.ItemCode}' data-name='{o.FinishGoodName}' data-coil-len='{o.CoilLenght}' data-noOf-Coils='{o.NoOfCoils}' data-bs-toggle='offcanvas' data-bs-target='#canvasEmployeeGatepass' data-key='' aria-controls='canvasEmployeeGatepass'>{o.FinishGoodName}</a>");
 
 
                 //c.Add().Titled("Item Name").Encoded(false).Sanitized(false).Css("hidden-xs")
@@ -703,5 +676,28 @@ namespace ERP.Areas.SalesDistribution.Controllers
         }
 
         #endregion GetSAPItemCollection
+
+        #region Get formula for calculate taxes and amounts(GetFormulaMasterByCustomerID)
+        [HttpGet]
+        public async Task<PartialViewResult> GetFormulaMasterByCustomerID(int? customerId)
+        {
+            try
+            {
+                System.Data.DataTable dataTable = new System.Data.DataTable();
+                if (customerId > 0)
+                    dataTable = await iSalesOrderMaster.GetFormulaByCustomerIdAsync(customerId);
+
+                if (dataTable.Rows.Count > 0)
+                    return PartialView("_transactionCalculation", dataTable);
+                else
+                    return PartialView("_transactionCalculation", null);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        #endregion Get formula for calculate taxes and amounts(GetFormulaMasterByCustomerID)
     }
 }

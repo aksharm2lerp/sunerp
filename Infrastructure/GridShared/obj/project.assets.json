@@ -50,6 +50,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Buffers/4.5.0": {
         "type": "package",
         "compile": {
@@ -208,6 +221,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.IO.Pipelines/5.0.0": {
         "type": "package",
         "compile": {
@@ -270,6 +296,19 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.IO.Pipelines/5.0.0": {
@@ -470,6 +509,33 @@
         "microsoft.extensions.primitives.6.0.0.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "System.Buffers/4.5.0": {
@@ -853,16 +919,19 @@
     ".NETStandard,Version=v2.1": [
       "Microsoft.AspNetCore.Http.Features >= 3.1.0",
       "Microsoft.Extensions.Primitives >= 3.1.0",
+      "Newtonsoft.Json >= 13.0.1",
       "System.Text.Json >= 4.7.0"
     ],
     "net5.0": [
       "Microsoft.AspNetCore.Http.Features >= 5.0.0",
       "Microsoft.Extensions.Primitives >= 5.0.0",
+      "Newtonsoft.Json >= 13.0.1",
       "System.Text.Json >= 5.0.0"
     ],
     "net6.0": [
       "Microsoft.AspNetCore.Http.Features >= 5.0.0",
       "Microsoft.Extensions.Primitives >= 6.0.0",
+      "Newtonsoft.Json >= 13.0.1",
       "System.Text.Json >= 6.0.0"
     ]
   },
@@ -897,6 +966,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -917,6 +987,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -931,6 +1006,10 @@
             "target": "Package",
             "version": "[5.0.0, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "System.Text.Json": {
             "target": "Package",
             "version": "[5.0.0, )"
@@ -952,7 +1031,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       },
       "net6.0": {
         "targetAlias": "net6.0",
@@ -965,6 +1044,10 @@
             "target": "Package",
             "version": "[6.0.0, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "System.Text.Json": {
             "target": "Package",
             "version": "[6.0.0, )"
@@ -986,7 +1069,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       },
       "netstandard2.1": {
         "targetAlias": "netstandard2.1",
@@ -998,6 +1081,10 @@
           "Microsoft.Extensions.Primitives": {
             "target": "Package",
             "version": "[3.1.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
           },
           "System.Text.Json": {
             "target": "Package",
@@ -1020,7 +1107,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -102,8 +102,8 @@ D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net
 D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\Kinfo.JsonStore.AssemblyInfo.cs
 D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\Kinfo.JsonStore.csproj.CoreCompileInputs.cache
 D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\Kinfo.JsonStore.sourcelink.json
-D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\Kinfo.JsonStore.csproj.CopyComplete
 D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\Kinfo.JsonStore.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\refint\Kinfo.JsonStore.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\Kinfo.JsonStore.pdb
 D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\ref\Kinfo.JsonStore.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\JsonStore\Kinfo.JsonStore\obj\Release\net5.0\Kinfo.Js.5F22EC0E.Up2Date

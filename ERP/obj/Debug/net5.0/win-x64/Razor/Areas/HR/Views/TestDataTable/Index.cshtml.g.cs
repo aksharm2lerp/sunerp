@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_HR_Views_TestDataTable_Index), @"mvc.1.0.view", @"/Areas/HR/Views/TestDataTable/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-using Business.Entities.Employee;
+ using Business.Entities.Employee;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d", @"/Areas/HR/Views/TestDataTable/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d", @"/Areas/HR/Views/TestDataTable/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_HR_Views_TestDataTable_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<EmployeeMaster>>
     #nullable disable
@@ -148,16 +138,19 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n<h1>");
+            Write(
 #nullable restore
 #line 16 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-Write(ViewData["Title"]);
+     ViewData["Title"]
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h1>\r\n\r\n<p>A simple Visual Studio solution using jQuery DataTable with Server-Side processing using .NET, <a href=\"https://github.com/DavidSuescunPelegay/jQuery-datatable-server-side-net-core\" target=\"_blank\">more info here</a></p>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d9609", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d9417", async() => {
                 WriteLiteral("\r\n");
             }
             );
@@ -177,49 +170,59 @@ Write(ViewData["Title"]);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <table id=\"test-registers\" class=\"table\">\r\n            <thead>\r\n                <tr>\r\n                    <th>\r\n                        ");
+            Write(
 #nullable restore
 #line 29 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-                   Write(Html.DisplayNameFor(model => model.SrNo));
+                         Html.DisplayNameFor(model => model.SrNo)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                    </th>\r\n                    <th>\r\n                        ");
+            Write(
 #nullable restore
 #line 32 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-                   Write(Html.DisplayNameFor(model => model.EmployeeCode));
+                         Html.DisplayNameFor(model => model.EmployeeCode)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                    </th>\r\n                    <th>\r\n                        ");
+            Write(
 #nullable restore
 #line 35 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-                   Write(Html.DisplayNameFor(model => model.EmployeeName));
+                         Html.DisplayNameFor(model => model.EmployeeName)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                    </th>\r\n                    <th>\r\n                        ");
+            Write(
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-                   Write(Html.DisplayNameFor(model => model.GenderText));
+                         Html.DisplayNameFor(model => model.GenderText)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                    </th>\r\n                    <th>\r\n                        ");
+            Write(
 #nullable restore
 #line 41 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-                   Write(Html.DisplayNameFor(model => model.IsActive));
+                         Html.DisplayNameFor(model => model.IsActive)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                    </th>\r\n                    <th></th>\r\n                </tr>\r\n            </thead>\r\n        </table>\r\n    </div>\r\n</div>\r\n\r\n");
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d13327", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d13305", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -229,13 +232,15 @@ Write(ViewData["Title"]);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_LinkTagHelper.Href = (string)__tagHelperAttribute_4.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_4);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_LinkTagHelper.AppendVersion = 
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_LinkTagHelper.AppendVersion = true;
+                                                                                                         true
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-append-version", __Microsoft_AspNetCore_Mvc_TagHelpers_LinkTagHelper.AppendVersion, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -250,7 +255,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LinkTagHelper.AppendVersion = true;
             WriteLiteral("\r\n");
             DefineSection("Scripts", async() => {
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d15524", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d15643", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -259,13 +264,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LinkTagHelper.AppendVersion = true;
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.Src = (string)__tagHelperAttribute_5.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = 
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
+                                                                   true
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-append-version", __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -275,7 +282,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d17497", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d17719", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -284,13 +291,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.Src = (string)__tagHelperAttribute_6.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = 
 #nullable restore
 #line 56 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
+                                                                                   true
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-append-version", __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -300,7 +309,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d19470", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d19811", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -309,13 +318,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.Src = (string)__tagHelperAttribute_7.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = 
 #nullable restore
 #line 57 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
+                                                                               true
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-append-version", __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -325,7 +336,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d21443", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d21899", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -334,13 +345,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.Src = (string)__tagHelperAttribute_8.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_8);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = 
 #nullable restore
 #line 58 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
+                                                                                   true
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-append-version", __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -350,7 +363,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d23420", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e29ad7170aeec2185f11121b4b7a3ee8a4a76601148afd6d7b8788ff1d97ba2d23995", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -359,13 +372,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.Src = (string)__tagHelperAttribute_9.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = 
 #nullable restore
 #line 60 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
+                                                                                         true
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-append-version", __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -536,10 +551,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
 </script>");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public UserManager<UserMasterMetadata> UserManager { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
+        UserManager<UserMasterMetadata>
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\TestDataTable\Index.cshtml"
+                                        UserManager
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

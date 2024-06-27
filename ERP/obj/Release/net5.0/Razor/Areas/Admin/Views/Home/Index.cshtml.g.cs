@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_Home_Index), @"mvc.1.0.view", @"/Areas/Admin/Views/Home/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Home\Index.cshtml"
-using Business.Entities;
+ using Business.Entities
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"dbef90b2bc8248accc6fcea0c5e9820030ee1a4e9b2d57e1233d24ed74012022", @"/Areas/Admin/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"dbef90b2bc8248accc6fcea0c5e9820030ee1a4e9b2d57e1233d24ed74012022", @"/Areas/Admin/Views/Home/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<DashbaordCount>
     #nullable disable
@@ -101,6 +93,7 @@ using Business.Entities;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <div class=\"container pt-1\">\r\n            <div class=\"col-sm-9 col-md-7 col-lg-12 mx-auto\">\r\n");
             WriteLiteral(@"
                 <div class=""row"">
@@ -119,13 +112,15 @@ using Business.Entities;
                                 <div class=""card-body"">
                                     <h5 class=""card-title"">Total Visitor Count</h5>
                                     <h1 class=""card-text"">");
+            Write(
 #nullable restore
 #line 30 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Home\Index.cshtml"
-                                                     Write(Model.TotalVisitor);
+                                                           Model.TotalVisitor
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h1>\r\n");
             WriteLiteral(@"                                </div>
                             </div>
@@ -136,13 +131,15 @@ using Business.Entities;
                                 <div class=""card-body"">
                                     <h5 class=""card-title"">Today Upcoming Visitor</h5>
                                     <h1 class=""card-text"">");
+            Write(
 #nullable restore
 #line 41 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Home\Index.cshtml"
-                                                     Write(Model.TodayUpcommingVisitor);
+                                                           Model.TodayUpcommingVisitor
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h1>\r\n");
             WriteLiteral(@"                                </div>
                             </div>
@@ -154,13 +151,15 @@ using Business.Entities;
                                     <h5 class=""card-title"">Today Visit Completed</h5>
 ");
             WriteLiteral("                                    <h1 class=\"card-text\">");
+            Write(
 #nullable restore
 #line 52 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Home\Index.cshtml"
-                                                     Write(Model.TodayVisitCompleted);
+                                                           Model.TodayVisitCompleted
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h1>\r\n");
             WriteLiteral(@"                                </div>
                             </div>
@@ -173,13 +172,15 @@ using Business.Entities;
                                     <h5 class=""card-title"">Upcomming Visitor</h5>
 ");
             WriteLiteral("                                    <h1 class=\"card-text\">");
+            Write(
 #nullable restore
 #line 64 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Home\Index.cshtml"
-                                                     Write(Model.UpcommingVisitor);
+                                                           Model.UpcommingVisitor
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h1>\r\n");
             WriteLiteral(@"                                </div>
                             </div>
@@ -191,13 +192,15 @@ using Business.Entities;
                                     <h5 class=""card-title"">Rejected Visitor</h5>
 ");
             WriteLiteral("                                    <h1 class=\"card-text\">");
+            Write(
 #nullable restore
 #line 75 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Home\Index.cshtml"
-                                                     Write(Model.TotalRejected);
+                                                           Model.TotalRejected
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h1>\r\n");
             WriteLiteral(@"                                </div>
                             </div>

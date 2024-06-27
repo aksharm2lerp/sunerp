@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_IconMaster_AddOrUpdateIconMaster), @"mvc.1.0.view", @"/Areas/Admin/Views/IconMaster/AddOrUpdateIconMaster.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-using Business.Entities.Admin.IconMasterModel;
+ using Business.Entities.Admin.IconMasterModel;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a", @"/Areas/Admin/Views/IconMaster/AddOrUpdateIconMaster.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a", @"/Areas/Admin/Views/IconMaster/AddOrUpdateIconMaster.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_IconMaster_AddOrUpdateIconMaster : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IconMaster>
     #nullable disable
@@ -133,22 +123,24 @@ using Business.Entities.Admin.IconMasterModel;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a8926", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a8698", async() => {
                 WriteLiteral("\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <div class=\"row mb-3\">\r\n                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a9328", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a9100", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.IconMasterID);
+                                              IconMasterID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -162,7 +154,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 BeginWriteAttribute("for", " for=\'", 693, "\'", 699, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>IconName</label><div class=\'col-sm-9\'>");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a11506", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a11360", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -171,13 +163,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_1);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.IconName);
+                                                                                                                                                                                                                               IconName
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_4.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_4);
@@ -188,18 +182,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 }
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a13583", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a13696", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.IconName);
+                                                                                                                                                                                                                                                                                   IconName
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_5);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -213,7 +209,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 963, "\'", 969, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>IconHTMLTag</label><div class=\'col-sm-9\'>");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a15528", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a15952", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -222,13 +218,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_1);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.IconHTMLTag);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   IconHTMLTag
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_7.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
@@ -239,18 +237,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 }
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a17608", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23ec06d07ba244efafdcedd62abb43ec905a03ffa8db6d760ca279d35812a16a18567", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.IconHTMLTag);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             IconHTMLTag
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_5);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -286,21 +286,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
+            Write(
 #nullable restore
 #line 23 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n<script type=\"text/javascript\">\r\n    var urlsave = \'");
+            Write(
 #nullable restore
 #line 25 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-              Write(Url.Action("AddOrUpdateIconMaster", "IconMaster"));
+                    Url.Action("AddOrUpdateIconMaster", "IconMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnSubmit() {
         if ($(""#formIconMaster"").valid()) {
@@ -348,13 +352,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: """);
+            Write(
 #nullable restore
 #line 70 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\IconMaster\AddOrUpdateIconMaster.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                    });\r\n                }\r\n            }).always(function () {\r\n                hideLoader();\r\n            });\r\n        }\r\n    };\r\n</script>");
         }
         #pragma warning restore 1998

@@ -1,5 +1,6 @@
 ﻿using Business.Entities.Marketing.SAPItem;
 using Business.Entities.PartyMasterModel;
+using Business.Entities.ProductPhotoPath;
 using Business.SQL;
 using System.Data;
 using System.Threading.Tasks;
@@ -16,5 +17,6 @@ namespace Business.Interface.Marketing.ISAPItemCollection
         Task<PagedDataTable<WareHouse>> GetAllSAPWareHouseAsync();
         Task<DataTable> GetCustomerListByItemCodeAsync(string itemCode);
         Task<DataTable> GetClientSalesSummaryAsync(string itemCode, string customerName);
+        Task<ProductPhotoPath> GetItemDocumentList();
     }
 }

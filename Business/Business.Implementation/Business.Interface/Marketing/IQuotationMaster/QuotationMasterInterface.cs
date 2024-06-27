@@ -11,7 +11,7 @@ namespace Business.Interface.Marketing.IQuotationMaster
 
         Task<QuotationMaster> GetQuotationMasterAsync(int QuotationMasterID,int RequestforQuotId);
         Task<PagedDataTable<QuotationDetail>> GetQuotationDetailAsync(int QuotationMasterID, int RequestForQuotID);
-        Task<int> AddOrUpdateQuotationMaster(QuotationMaster model,DataTable dataTable);
+        Task<int> AddOrUpdateQuotationMaster(QuotationMaster model, DataSet dataTable);
         Task<PartyAddressTxn> GetPartyAddressDetail(int addressTypeID, int partyId);
         Task<int> QuotationDetailItemDeactivationAsync(int QuotationDetailId, int QuotationId, int userId);
         Task<int> AddOrUpdateQuotationApprovalTypeAsync(QuotationReviewDetail model);

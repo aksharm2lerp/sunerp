@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "V4qTB1gXcE8xwde80jhwNqH97enKBjpCrIUS4p+HD5ZPyJ1LBzTvFN+MAWwOkZ0Ws+IR0SEyjZJ/MRSLPd2hxw==",
+  "dgSpecHash": "vhjSB7WS17A=",
   "success": true,
   "projectFilePath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\Util\\Utils\\Utils.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

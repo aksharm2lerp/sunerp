@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DZf+BReBYOU/VqjiWnDqH65e74ypyzHrmknl6mFO3plzx+PzWz2myt0Ka2YA2dyNyK+GcHkuwJ2OZZyReKtuXw==",
+  "dgSpecHash": "wszax/mGewY=",
   "success": true,
   "projectFilePath": "D:\\GitHub\\SUN\\sunerpm2l\\Infrastructure\\GridBlazor\\GridBlazor.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.jsinterop\\3.1.0\\microsoft.jsinterop.3.1.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.jsinterop\\5.0.0\\microsoft.jsinterop.5.0.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512",

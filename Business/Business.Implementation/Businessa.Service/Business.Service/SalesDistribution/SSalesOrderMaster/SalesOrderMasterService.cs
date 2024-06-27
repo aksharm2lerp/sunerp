@@ -117,38 +117,45 @@ namespace Business.Service.SalesDistribution.SSalesOrderMaster
                 throw ex;
             }
         }
-        #endregion 
+        #endregion
 
         #region Add or Update Positive Note
-        public async Task<int> AddOrUpdateSalesOrderMaster(SalesOrderMaster model, DataTable dataTable)
+        public async Task<int> AddOrUpdateSalesOrderMaster(SalesOrderMaster model, DataSet dataTable)
         {
             try
             {
                 SqlParameter[] param = {
-                    new SqlParameter("@SalesOrderID", model.SalesOrderID),
-                    new SqlParameter("@SalesOrderDate", model.SalesOrderDate),
-                    new SqlParameter("@FinancialYearID", model.FinancialYearID),
-                    new SqlParameter("@CustomerID", model.CustomerID),
-                    new SqlParameter("@AddressTypeID", model.AddressTypeID),
-                    new SqlParameter("@Reference", model.Reference),
-                    new SqlParameter("@ShopOrderID", model.ShopOrderID),
-                    new SqlParameter("@ShopOrderDate", model.ShopOrderDate),
-                    new SqlParameter("@NetAmount", model.NetAmount),
-                    new SqlParameter("@GrossAmount", model.GrossAmount),
-                    new SqlParameter("@PaymentTerm", model.PaymentTerm),
-                    new SqlParameter("@DeliveryTerm", model.DeliveryTerm),
-                    new SqlParameter("@OtherRemark", model.OtherRemark),
-                    new SqlParameter("@IsActive", model.IsActive),
-                    new SqlParameter("@CreatedOrModifiedBy", model.CreatedOrModifiedBy),
-                    new SqlParameter("@SOItems", dataTable)
-                };
-                param[15].Direction = ParameterDirection.Input;
-                param[15].SqlDbType = SqlDbType.Structured;
-                param[15].ParameterName = "@SOItems";
-                param[15].TypeName = "UDTT_SalesOrderDetail ";
-                param[15].Value = dataTable;
+              new SqlParameter("@SalesOrderID", model.SalesOrderID),
+              new SqlParameter("@SalesOrderDate", model.SalesOrderDate),
+              new SqlParameter("@FinancialYearID", model.FinancialYearID),
+              new SqlParameter("@CustomerID", model.CustomerID),
+              new SqlParameter("@AddressTypeID", model.AddressTypeID),
+              new SqlParameter("@Reference", model.Reference),
+              new SqlParameter("@EmployeeID", model.EmployeeID),
+              new SqlParameter("@EmployeeName", model.EmployeeName),
+              new SqlParameter("@ShopOrderID", model.ShopOrderID),
+              new SqlParameter("@ShopOrderDate", model.ShopOrderDate),
+              new SqlParameter("@NetAmount", model.NetAmount),
+              new SqlParameter("@GrossAmount", model.GrossAmount),
+              new SqlParameter("@PaymentTerm", model.PaymentTerm),
+              new SqlParameter("@DeliveryTerm", model.DeliveryTerm),
+              new SqlParameter("@OtherRemark", model.OtherRemark),
+              new SqlParameter("@IsActive", model.IsActive),
+              new SqlParameter("@CreatedOrModifiedBy", model.CreatedOrModifiedBy),
+              new SqlParameter("@SOItems", dataTable.Tables[0]),
+              new SqlParameter("@TaxTransactionAmounts", dataTable.Tables[1])
+          };
+                param[17].Direction = ParameterDirection.Input;
+                param[17].SqlDbType = SqlDbType.Structured;
+                param[17].ParameterName = "@SOItems";
+                param[17].TypeName = "UDTT_SalesOrderDetail";
+                param[17].Value = dataTable.Tables[0];
 
-
+                param[18].Direction = ParameterDirection.Input;
+                param[18].SqlDbType = SqlDbType.Structured;
+                param[18].ParameterName = "@TaxTransactionAmounts";
+                param[18].TypeName = "UDTT_SalesOrderAmountDetail";
+                param[18].Value = dataTable.Tables[1];
                 var obj = await SqlHelper.ExecuteScalarAsync(connection, CommandType.StoredProcedure, "Usp_IU_SalesOrderMaster", param);
 
                 return obj != null ? Convert.ToInt32(obj) : 0;
@@ -170,7 +177,7 @@ namespace Business.Service.SalesDistribution.SSalesOrderMaster
                     new SqlParameter("@AddressTypeID", addressTypeID),
                     new SqlParameter("@CustomerID", customerId)
                 };
-                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_CustomerAddressTxn", param);
+                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_CustomerAddressByAddressTypeIDDropDown", param);
                 if (ds != null)
                 {
                     if (ds.Tables.Count > 0)
@@ -213,6 +220,51 @@ namespace Business.Service.SalesDistribution.SSalesOrderMaster
             }
         }
         #endregion Deactive sales item
+
+        #region Get formula for calculate taxes and amounts(GetFormulaByCustomerIdAsync)
+        public async Task<DataTable> GetFormulaByCustomerIdAsync(int? customerId)
+        {
+            try
+            {
+                DataTable result = new DataTable();
+                SqlParameter[] param = {
+            new SqlParameter("@CustomerID", customerId)
+        };
+                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_FormulaMasterByCustomerID", param);
+                if (ds != null)
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            /*foreach (DataRow item in ds.Tables[0].Rows)
+                            {
+                                FormulaMaster formulaMaster = new FormulaMaster();
+                                formulaMaster.FormulaID = item["FormulaID"].ToInt();
+                                formulaMaster.CustomerID = item["CustomerID"].ToInt();
+                                formulaMaster.FormulaTypeID = item["FormulaTypeID"].ToInt();
+                                formulaMaster.FormulaHead = Convert.ToString(item["FormulaHead"]);
+                                formulaMaster.FormulaLabel = Convert.ToString(item["FormulaLabel"]);
+                                formulaMaster.Formula = Convert.ToString(item["Formula"]);
+                                formulaMaster.FormulaPercentage = Convert.ToDecimal(item["FormulaPercentage"]);
+                                formulaMaster.FormulaValue = Convert.ToString(item["FormulaValue"]);
+                                formulaMaster.IsActive = Convert.ToBoolean(item["IsActive"]);
+                                result.Add(formulaMaster);
+                            }*/
+
+                            result = ds.Tables[0];
+                        }
+                    }
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Get formula for calculate taxes and amounts(GetFormulaByCustomerIdAsync)
+
 
     }
 }

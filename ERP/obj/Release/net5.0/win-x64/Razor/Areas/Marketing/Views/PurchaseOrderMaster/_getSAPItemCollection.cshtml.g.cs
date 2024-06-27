@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Marketing_Views_PurchaseOrderMaster__getSAPItemCollection), @"mvc.1.0.view", @"/Areas/Marketing/Views/PurchaseOrderMaster/_getSAPItemCollection.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,90 +14,79 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-using GridCore;
+ using GridCore
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-using System.Data;
+ using System.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b", @"/Areas/Marketing/Views/PurchaseOrderMaster/_getSAPItemCollection.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b", @"/Areas/Marketing/Views/PurchaseOrderMaster/_getSAPItemCollection.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Marketing_Views_PurchaseOrderMaster__getSAPItemCollection : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ISGrid>
     #nullable disable
@@ -145,6 +134,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<div class=""container"">
     <div class=""row"">
         <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
@@ -156,9 +146,9 @@ using System.Data;
                                 <div class=""col-sm-1"">
 ");
             WriteLiteral("\r\n\r\n                                    <label class=\"col-form-label\">UOM</label>\r\n                                </div>\r\n                                <div class=\"col-sm-5\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b8593", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b8347", async() => {
                 WriteLiteral("\r\n                                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b8917", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b8671", async() => {
                     WriteLiteral("Select UOM Here...");
                 }
                 );
@@ -184,13 +174,15 @@ using System.Data;
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 28 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllUOMAsync();
+                                                                                                                                         CommonExtension.GetAllUOMAsync()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -221,9 +213,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                                     <div class=""col-sm-3"">
 ");
             WriteLiteral("\r\n                                        <label class=\"col-form-label\">Warehouse</label>\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b12865", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b12784", async() => {
                 WriteLiteral("\r\n                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b13194", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b13113", async() => {
                     WriteLiteral("Select Warehouse Here...");
                 }
                 );
@@ -248,13 +240,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 53 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension.GetAllSAPWareHouseAsync();
+                                                                                                                MarketingExtension.GetAllSAPWareHouseAsync()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -265,9 +259,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    </div>\r\n                                    <div class=\"col-sm-3\">\r\n");
             WriteLiteral("                                        <label class=\"col-form-label\">Item Group Name</label>\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b16476", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b16535", async() => {
                 WriteLiteral("\r\n                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b16805", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b16864", async() => {
                     WriteLiteral("Select Item Group Here...");
                 }
                 );
@@ -292,13 +286,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_5);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 60 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension.GetAllSAPItemGroupAsync();
+                                                                                                                MarketingExtension.GetAllSAPItemGroupAsync()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -314,13 +310,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
                                         <label class=""col-form-label"">Search In Item Desc.</label>
                                         <input type=""text"" class=""form-control"" id=""SearchString"" placeholder=""Search by string.""");
             BeginWriteAttribute("value", " value=\"", 3436, "\"", 3465, 1);
+            WriteAttributeValue("", 3444, 
 #nullable restore
 #line 67 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-WriteAttributeValue("", 3444, ViewBag.SearchString, 3444, 21, false);
+                                                                                                                                          ViewBag.SearchString
 
 #line default
 #line hidden
 #nullable disable
+            , 3444, 21, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n");
             WriteLiteral(@"                                    </div>
@@ -341,18 +339,20 @@ WriteAttributeValue("", 3444, ViewBag.SearchString, 3444, 21, false);
                     <div class=""row pt-1"">
                         <div class=""col-md-12"">
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b21583", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fd8fda45aac3940d70a47b818ec74f797476f539b7a1c8e95191ec3a391b6e3b21948", async() => {
             }
             );
             __GridMvc_TagHelpers_GridTagHelper = CreateTagHelper<global::GridMvc.TagHelpers.GridTagHelper>();
             __tagHelperExecutionContext.Add(__GridMvc_TagHelpers_GridTagHelper);
+            __GridMvc_TagHelpers_GridTagHelper.Model = 
 #nullable restore
 #line 86 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-__GridMvc_TagHelpers_GridTagHelper.Model = Model;
+                                          Model
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("model", __GridMvc_TagHelpers_GridTagHelper.Model, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -393,21 +393,25 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
 
             ");
             WriteLiteral("                    </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+            Write(
 #nullable restore
 #line 124 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n<script type=\"text/javascript\">\r\n    function fnresetSAPItem() {\r\n        var searchString = \"\";\r\n        let SAPItemUrl = \'");
+            Write(
 #nullable restore
 #line 128 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-                     Write(Url.Action("GetSAPItemCollection", "PurchaseOrderMaster"));
+                           Url.Action("GetSAPItemCollection", "PurchaseOrderMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         let itemgroupValue = """";
         let whValue = """";
@@ -427,13 +431,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
     function fnSearchSAPItem() {
         var searchString = $('#SearchString').val();
         let SAPItemUrl = '");
+            Write(
 #nullable restore
 #line 146 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-                     Write(Url.Action("GetSAPItemCollection", "PurchaseOrderMaster"));
+                           Url.Action("GetSAPItemCollection", "PurchaseOrderMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         let itemgroup = document.getElementById(""choices-multiple-ItemGroup"");
         let itemgroupIndex = itemgroup.options[itemgroup.selectedIndex];
@@ -485,13 +491,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         // });
 
         $(""#choices-multiple-ItemGroup option[value='"" + '");
+            Write(
 #nullable restore
 #line 194 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-                                                     Write(Html.Raw(itemGroup));
+                                                           Html.Raw(itemGroup)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"' + ""']"").prop(""selected"", true);
 
         var multipleCancelButtonItemGroup = new Choices('#choices-multiple-ItemGroup', {
@@ -503,13 +511,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
 
 
         $(""#choices-multiple-WareHouse option[value='"" + '");
+            Write(
 #nullable restore
 #line 204 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-                                                     Write(Html.Raw(wareHouse));
+                                                           Html.Raw(wareHouse)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"' + ""']"").prop(""selected"", true);
 
         var multipleCancelButtonWareHouse = new Choices('#choices-multiple-WareHouse', {
@@ -528,13 +538,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         // $('#BuyerListModal').modal('show');
 
         let urlOpenBuyerList = '");
+            Write(
 #nullable restore
 #line 221 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\_getSAPItemCollection.cshtml"
-                           Write(Url.Action("GetCustomerListByItemCode", "SAPItemCollection"));
+                                 Url.Action("GetCustomerListByItemCode", "SAPItemCollection")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         let _parameters = { itemCode: itemCode };
         $.ajax({

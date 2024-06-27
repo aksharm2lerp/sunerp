@@ -56,10 +56,10 @@ function fnOpenReminderDRP() {
         type: 'GET',
         dataType: 'json',
         success: function (data) {
-            /*alert('success== ' + data.count);*/
-            $.each(data.count, function (i, item) {
+           // alert(data);
+            $.each(data.count, function (i, item1) {
                 let reminderMassage = '';
-                reminderMassage = '<a class="dropdown-item" href="javascript:;" onclick="fnViewOneReminderOnly(' + item.reminderID + ')"><div class="d-flex align-items-center">' + item.reminderText + '</div></a>';
+                reminderMassage = '<a class="dropdown-item" href="javascript:;" onclick="fnViewOneReminderOnly(' + item1.reminderID + ')"><div class="d-flex align-items-center">' + item1.reminderText + '</div></a>';
                 document.getElementById('reminderLists').innerHTML += reminderMassage;
             });
         }

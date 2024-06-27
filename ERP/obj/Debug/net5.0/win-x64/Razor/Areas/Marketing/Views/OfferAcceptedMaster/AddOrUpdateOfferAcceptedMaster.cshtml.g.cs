@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Marketing_Views_OfferAcceptedMaster_AddOrUpdateOfferAcceptedMaster), @"mvc.1.0.view", @"/Areas/Marketing/Views/OfferAcceptedMaster/AddOrUpdateOfferAcceptedMaster.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-using Business.Entities.Marketing.OfferAcceptedMasterModel;
+ using Business.Entities.Marketing.OfferAcceptedMasterModel;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd561801862", @"/Areas/Marketing/Views/OfferAcceptedMaster/AddOrUpdateOfferAcceptedMaster.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd561801862", @"/Areas/Marketing/Views/OfferAcceptedMaster/AddOrUpdateOfferAcceptedMaster.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Marketing_Views_OfferAcceptedMaster_AddOrUpdateOfferAcceptedMaster : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<OfferAcceptedMaster>
     #nullable disable
@@ -177,6 +167,7 @@ using Business.Entities.Marketing.OfferAcceptedMasterModel;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
   
@@ -193,6 +184,7 @@ using Business.Entities.Marketing.OfferAcceptedMasterModel;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<style>
     fieldset {
         border: 1px solid #ccc;
@@ -221,25 +213,27 @@ using Business.Entities.Marketing.OfferAcceptedMasterModel;
 
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186220429", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186220205", async() => {
                 WriteLiteral("\r\n    <div class=\"row\">\r\n        <div>&nbsp;</div>\r\n        <fieldset class=\"card\">\r\n\r\n            <legend");
                 BeginWriteAttribute("style", " style=\"", 1223, "\"", 1231, 0);
                 EndWriteAttribute();
                 WriteLiteral(">Offer Accepted Master</legend>\r\n\r\n\r\n            <div class=\" col-sm-12 col-md-12 col-lg-12 text-center fs-3 text\">\r\n                <div class=\"row mb-3\">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186221173", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186220949", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 58 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OfferAcceptedID);
+                                                  OfferAcceptedID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -249,20 +243,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186222956", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186222818", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 59 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.SAPCollectionJSONString);
+                                                  SAPCollectionJSONString
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -276,7 +272,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 BeginWriteAttribute("for", " for=\'", 1778, "\'", 1784, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-5 col-form-label\'>Offer Accepted No</label>\r\n                        <div class=\'col-sm-7\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186225336", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186225284", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -285,13 +281,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 68 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OfferAcceptedID);
+                                                                                                  OfferAcceptedID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_5.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
@@ -306,19 +304,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186227832", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186227914", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 69 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OfferAcceptedID);
+                                                      OfferAcceptedID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -332,7 +332,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 2389, "\'", 2395, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-5 col-form-label\'>Offer Accepted Date</label>\r\n                        <div class=\'col-sm-7\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186230140", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186230312", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -341,13 +341,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 78 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OfferAcceptedDate);
+                                                                                                    OfferAcceptedDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_9.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
@@ -359,19 +361,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186232315", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186232623", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 79 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OfferAcceptedDate);
+                                                      OfferAcceptedDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -386,9 +390,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 3067, "\'", 3073, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-5 col-form-label\'>Financial Year</label>\r\n                        <div class=\'col-sm-7\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186234655", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186235053", async() => {
                     WriteLiteral("\r\n                                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186234980", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186235378", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -409,22 +413,26 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 90 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.FinancialYearID);
+                                                                 FinancialYearID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_12);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 90 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllFinancialYearAsync();
+                                                                                                                                                  CommonExtension.GetAllFinancialYearAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -447,9 +455,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 BeginWriteAttribute("for", " for=\'", 3756, "\'", 3762, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Customer Name</label>\r\n                        <div class=\'col-sm-9\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186238902", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186239583", async() => {
                     WriteLiteral("\r\n                                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186239227", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186239908", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -470,22 +478,26 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 104 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.CustomerID);
+                                                                 CustomerID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 104 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllCustomerAsync();
+                                                                                                                                        CommonExtension.GetAllCustomerAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -499,9 +511,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 BeginWriteAttribute("for", " for=\'", 4856, "\'", 4862, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Address Type</label>\r\n                        <div class=\'col-sm-9\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186243131", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186244085", async() => {
                     WriteLiteral("\r\n                                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186243456", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186244410", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -522,22 +534,26 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 124 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.AddressTypeID);
+                                                                 AddressTypeID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_14);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 124 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllAddressTypeAsync();
+                                                                                                                                              CommonExtension.GetAllAddressTypeAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -548,18 +564,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"row\" id=\"divAddressInfo\">\r\n                ");
+                Write(
 #nullable restore
 #line 133 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-           Write(await Html.PartialAsync("OfferAcceptedCustomerAddress", customerAddressLists));
+                 await Html.PartialAsync("OfferAcceptedCustomerAddress", customerAddressLists)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(";\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\" col-sm-6 col-md-6 col-lg-6\">\r\n                    <div class=\'row mb-3\'>\r\n                        <label");
                 BeginWriteAttribute("for", " for=\'", 5744, "\'", 5750, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Shop Order No</label>\r\n                        <div class=\'col-sm-9\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186247904", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186249179", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -568,13 +586,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 140 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.ShopOrderID);
+                                                                                              ShopOrderID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_17.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_17);
@@ -586,19 +606,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186250077", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186251482", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 141 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.ShopOrderID);
+                                                      ShopOrderID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -612,7 +634,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 6326, "\'", 6332, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Shop Order Date</label>\r\n                        <div class=\'col-sm-4\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186252378", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186253873", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -621,13 +643,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_18);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 150 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.ShopOrderDate);
+                                                                                                ShopOrderDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_19.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_19);
@@ -639,19 +663,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186254553", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186256180", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 151 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.ShopOrderDate);
+                                                      ShopOrderDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -673,7 +699,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 6969, "\'", 6975, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Reference</label>\r\n                        <div class=\'col-sm-9\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186256890", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186258607", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -682,13 +708,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_20);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 162 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Reference);
+                                                                                            Reference
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_21.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_21);
@@ -700,19 +728,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186259061", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186260906", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 163 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Reference);
+                                                      Reference
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -743,19 +773,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral("                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186262002", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186263939", async() => {
                 }
                 );
                 __GridMvc_TagHelpers_GridTagHelper = CreateTagHelper<global::GridMvc.TagHelpers.GridTagHelper>();
                 __tagHelperExecutionContext.Add(__GridMvc_TagHelpers_GridTagHelper);
+                __GridMvc_TagHelpers_GridTagHelper.Model = 
 #nullable restore
 #line 179 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__GridMvc_TagHelpers_GridTagHelper.Model = Model.iSGrid;
+                                      Model.iSGrid
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("model", __GridMvc_TagHelpers_GridTagHelper.Model, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -774,6 +807,7 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model.iSGrid;
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral(@"                        <div class='grid-mvc' data-lang='en' data-gridname='OfferAcceptedDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'><div class='grid-wrap'><div class='row'><div class='col-md-6 grid-header-buttons'></div></div><div class='grid-table-wrap'><table class='table  grid-table'><thead><tr><th class=' grid-header'");
                 BeginWriteAttribute("style", " style=\'", 8613, "\'", 8621, 0);
                 EndWriteAttribute();
@@ -810,11 +844,12 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model.iSGrid;
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral("                </div>\r\n            </div>\r\n            \r\n            \r\n            <div class=\"row\">\r\n                <div class=\" col-sm-6 col-md-6 col-lg-6\">\r\n                    <div class=\'row mb-3\'>\r\n                        <label");
                 BeginWriteAttribute("for", " for=\'", 11058, "\'", 11064, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Net Amount</label>\r\n                        <div class=\'col-sm-4\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186268437", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186270452", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -823,13 +858,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model.iSGrid;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_22);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 194 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.NetAmount);
+                                                                                            NetAmount
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_23.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_23);
@@ -841,19 +878,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186270608", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186272751", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 195 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.NetAmount);
+                                                      NetAmount
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -867,7 +906,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 11629, "\'", 11635, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Gross Amount</label>\r\n                        <div class=\'col-sm-4\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186272906", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186275139", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -876,13 +915,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_24);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 204 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.GrossAmount);
+                                                                                              GrossAmount
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_25.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_25);
@@ -894,19 +935,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186275079", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186277442", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 205 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.GrossAmount);
+                                                      GrossAmount
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -920,20 +963,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 12227, "\'", 12233, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-2 col-form-label\'>Payment Term</label>\r\n                    <div class=\'col-sm-10\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186277397", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186279850", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_26);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 218 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.PaymentTerm);
+                                                                                 PaymentTerm
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.Name = (string)__tagHelperAttribute_27.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_27);
@@ -948,20 +993,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                 BeginWriteAttribute("for", " for=\'", 12582, "\'", 12588, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-2 col-form-label\'>Delivery Term</label>\r\n                    <div class=\'col-sm-10\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186279771", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186282341", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_28);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 226 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.DeliveryTerm);
+                                                                                  DeliveryTerm
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.Name = (string)__tagHelperAttribute_29.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_29);
@@ -976,20 +1023,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                 BeginWriteAttribute("for", " for=\'", 12941, "\'", 12947, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-2 col-form-label\'>Other Remark</label>\r\n                    <div class=\'col-sm-10\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186282145", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186284833", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_30);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 234 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OtherRemark);
+                                                                                 OtherRemark
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.Name = (string)__tagHelperAttribute_31.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_31);
@@ -1002,7 +1051,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n            <hr />\r\n            <div class=\" col-sm-12 col-md-12 col-lg-12\">\r\n                <div class=\"text-center\">\r\n");
                 WriteLiteral("                    <button id=\"btnSave\" type=\"button\" onclick=\"fnSubmit()\" class=\"btn btn-primary btn-info px-5 ladda-button\">Submit</button>\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186284542", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f3748b5fd1e432d07d09e3939c2347ec34d4bc640232f6edd98fd56180186287347", async() => {
                     WriteLiteral("Back");
                 }
                 );
@@ -1050,21 +1099,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
         <div id=""dvInfoAddNewRow"">
 ");
             WriteLiteral("        </div>\r\n    </div>\r\n</div>\r\n");
+            Write(
 #nullable restore
 #line 280 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n<script type=\"text/javascript\">\r\n    var urlsave = \'");
+            Write(
 #nullable restore
 #line 282 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-              Write(Url.Action("AddOrUpdateOfferAcceptedMaster", "OfferAcceptedMaster"));
+                    Url.Action("AddOrUpdateOfferAcceptedMaster", "OfferAcceptedMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnSubmit() {
 
@@ -1155,13 +1208,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: """);
+            Write(
 #nullable restore
 #line 368 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                    });\r\n                }\r\n            }).always(function () {\r\n                hideLoader();\r\n            });\r\n        }\r\n    }\r\n\r\n    // $(function () {\r\n    //  var GriddataUrl = \'");
             WriteLiteral(@"@Url.Action(""OfferAcceptedItemDetail"", ""OfferAcceptedMaster"")';
     //     let selectedValue = $(""#OfferAcceptedID"").val();
@@ -1181,13 +1236,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         let selectedCustomert = $(""#choices-multiple-remove-button-CustomerID option:selected"").val();
         // alert(selectedValue);
         var urlGetData = '");
+            Write(
 #nullable restore
 #line 395 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-                     Write(Url.Action("GetActionResultAsyncCustomerAddress", "OfferAcceptedMaster"));
+                           Url.Action("GetActionResultAsyncCustomerAddress", "OfferAcceptedMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         $.ajax({
             url: urlGetData,
@@ -1205,13 +1262,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: """);
+            Write(
 #nullable restore
 #line 411 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                 });
             }
@@ -1339,13 +1398,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: """);
+            Write(
 #nullable restore
 #line 529 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\OfferAcceptedMaster\AddOrUpdateOfferAcceptedMaster.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                 });
             }

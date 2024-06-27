@@ -8,6 +8,7 @@ namespace Business.Entities.Master.ReminderMasterM
 {
     public class ReminderMasterModel
     {
+        public int ReminderID { get; set; }
         public DateTime ReminderDate { get; set; }
         public TimeSpan ReminderTime { get; set; }
         public string ReminderSubject { get; set; }

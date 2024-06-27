@@ -34,3 +34,4 @@ D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\refint\Utils.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.pdb
 D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\ref\Utils.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\Util\Utils\obj\Release\net5.0\Utils.csproj.AssemblyReference.cache

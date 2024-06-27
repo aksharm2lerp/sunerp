@@ -21,47 +21,49 @@
         </div>
     </div>
     <div class="row">
-        <table class="table table-striped" id="tblPartyContactPersonTable">
-            <thead>
-                <tr>
-                    <td>Sr No.</td>
-                    <td>Contact Person</td>
-                    <td>EmailID</td>
-                    <td>Mobile</td>
-                    <td>Department</td>
-                    <td>Designation</td>
-                    <td>IsActive</td>
-                    <td>Detail</td>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null)
-                {
-                    @foreach (var item in Model)
+        <div class="table-responsive">
+            <table class="table table-striped" id="tblPartyContactPersonTable">
+                <thead>
+                    <tr>
+                        <td>Sr No.</td>
+                        <td>Contact Person</td>
+                        <td>EmailID</td>
+                        <td>Mobile</td>
+                        <td>Department</td>
+                        <td>Designation</td>
+                        <td>IsActive</td>
+                        <td>Detail</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
                     {
+                        @foreach (var item in Model)
+                        {
 
-                        <tr>
-                            <td>@item.SrNo</td>
-                            <td>@item.ContactPersonName</td>
-                            <td>@item.OfficeEmailID</td>
-                            <td>@item.OfficeMobile</td>
-                            <td>@item.Department</td>
-                            <td>@item.Designation</td>
-                            <td>@item.IsActive</td>
-                            <td>
-                                <a class='btn editPartyContact' onclick="fnPartyContactDetail(@item.PartyContactID)"
-                           href="javascript:void(0)"
-                           data-bs-toggle="offcanvas"
-                           data-bs-target="#canvasPartyContactDetail"
-                           aria-controls="canvasPartyContactDetail"
-                           data-id="@item.PartyContactID"
-                           Partyid="@item.PartyID"><i class='bx bx-edit'></i></a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>@item.SrNo</td>
+                                <td>@item.ContactPersonName</td>
+                                <td>@item.OfficeEmailID</td>
+                                <td>@item.OfficeMobile</td>
+                                <td>@item.Department</td>
+                                <td>@item.Designation</td>
+                                <td>@item.IsActive</td>
+                                <td>
+                                    <a class='btn editPartyContact' onclick="fnPartyContactDetail(@item.PartyContactID)"
+                                       href="javascript:void(0)"
+                                       data-bs-toggle="offcanvas"
+                                       data-bs-target="#canvasPartyContactDetail"
+                                       aria-controls="canvasPartyContactDetail"
+                                       data-id="@item.PartyContactID"
+                                       Partyid="@item.PartyID"><i class='bx bx-edit'></i></a>
+                                </td>
+                            </tr>
+                        }
                     }
-                }
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="canvasPartyContactDetail" style="visibility: visible; width : 80% !important">

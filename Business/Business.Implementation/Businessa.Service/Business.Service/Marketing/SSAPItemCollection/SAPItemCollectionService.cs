@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System;
 using MailKit.Search;
 using System.Globalization;
+using Business.Entities.Employee;
+using Business.Entities.ProductPhotoPath;
+using System.Collections.Generic;
 
 namespace Business.Service.Marketing.SSAPItemCollection
 {
@@ -233,6 +236,57 @@ namespace Business.Service.Marketing.SSAPItemCollection
             }
         }
         #endregion Get customer sales detail by customer name and item code.
+
+        #region Get Item Document List
+        public async Task<ProductPhotoPath> GetItemDocumentList()
+        {
+            ProductPhotoPath result = null;
+            try
+            {
+                //SqlParameter[] param = {
+                //    new SqlParameter("@EmployeeDocumentID", employeeDocumentId),
+                //    new SqlParameter("@EmployeeID", employeeId)
+                //};
+                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_ProductImagesShortName");
+                //if (ds != null)
+                //{
+                //    if (ds.Tables.Count > 0)
+                //    {
+                //        if (ds.Tables[0].Rows.Count > 0)
+                //        {
+                //            DataRow dr = ds.Tables[0].Rows[0];
+                //            result = dr.ToPagedDataTableList<ProductPhotoPath>();
+                //        }
+                //    }
+                //}
+               if (ds.Tables.Count > 0)
+               {
+                   if (ds.Tables[0].Rows.Count > 0)
+                   {
+                       DataRow dr = ds.Tables[0].Rows[0];
+                       result = dr.ToPagedDataTableList<ProductPhotoPath>();
+
+                       List<ProductPhotoPath> listItemDocument = new List<ProductPhotoPath>();
+
+                       foreach (DataRow item in ds.Tables["Table"].Rows)
+                       {
+                           ProductPhotoPath ItemDocument = new ProductPhotoPath();
+                           ItemDocument.ProductCategoryText = item["ProductCategoryText"].ToString();
+                           ItemDocument.ProductImageText = item["ProductImageText"].ToString();
+                           ItemDocument.SearchKey = item["SearchKey"].ToString();
+                           listItemDocument.Add(ItemDocument);
+                       }
+                       result.listItemDocument = listItemDocument;
+                   }
+               }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Get Item Document List
     }
 }
  

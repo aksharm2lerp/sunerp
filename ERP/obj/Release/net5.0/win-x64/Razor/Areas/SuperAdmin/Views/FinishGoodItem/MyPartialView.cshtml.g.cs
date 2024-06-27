@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SuperAdmin_Views_FinishGoodItem_MyPartialView), @"mvc.1.0.view", @"/Areas/SuperAdmin/Views/FinishGoodItem/MyPartialView.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,90 +14,78 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
-using Business.Entities.Master;
+ using Business.Entities.Master;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
-using System.Data;
+ using System.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"58fc3a1e74d80a30db87dc27f5c79343b07e77012ba2544a3caff7bf25d72a70", @"/Areas/SuperAdmin/Views/FinishGoodItem/MyPartialView.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"58fc3a1e74d80a30db87dc27f5c79343b07e77012ba2544a3caff7bf25d72a70", @"/Areas/SuperAdmin/Views/FinishGoodItem/MyPartialView.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SuperAdmin_Views_FinishGoodItem_MyPartialView : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<DataTable>
     #nullable disable
@@ -139,6 +127,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t<tr>\r\n");
 #nullable restore
 #line 32 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
@@ -148,14 +137,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t<th>");
+            Write(
 #nullable restore
 #line 34 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
-   Write(Model.Columns[i].ColumnName);
+         Model.Columns[i].ColumnName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n");
 #nullable restore
 #line 35 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
@@ -164,6 +156,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t</tr>\r\n");
 #nullable restore
 #line 37 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
@@ -173,6 +166,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t<tr>\r\n");
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
@@ -182,14 +176,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t\t\t<td>");
+            Write(
 #nullable restore
 #line 42 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
-    Write(Model.Rows[i][j].ToString());
+          Model.Rows[i][j].ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
@@ -198,6 +195,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\t\t\t</tr>\r\n");
 #nullable restore
 #line 45 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\MyPartialView.cshtml"
@@ -207,6 +205,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("</table>\r\n");
         }
         #pragma warning restore 1998

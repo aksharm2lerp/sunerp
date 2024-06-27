@@ -1,4 +1,5 @@
 @using Business.Entities.Marketing.QuotationMasterModel;
+@using System.Data
 @model QuotationMaster;
 @addTagHelper *, GridMvc
 @{
@@ -8,6 +9,7 @@
 
 }
 @{
+    DataTable dataTable = CommonExtension.GetFormulaMasterForQuotationByPartyID(Model.PartyID, Model.QuotationID);
     int i = 0;
     var modelA = Model;
     var modelB = modelA;
@@ -42,6 +44,11 @@
         width: auto;
         height: auto;
     }
+
+    .grid-table-wrap {
+        /* overflow-y: scroll !important; */
+        overflow-x: scroll !important;
+    }
 </style>
 
 
@@ -55,9 +62,10 @@
 
             <div class=" col-sm-12 col-md-12 col-lg-12 text-center fs-3 text">
                 <div class="row mb-3">
-                    <input type="hidden" asp-for="QuotationID" />
+                    <input type="hidden" asp-for="QuotationID" id="QuotationID" />
                     <input type="hidden" asp-for="RequestForQuotID" />
                     <input type="hidden" asp-for="SAPCollectionJSONString" id="SAPCollectionJSONString" />
+                    <input type="hidden" asp-for="QuotationTaxAmountJSONString" id="QuotationTaxAmountJSONString" />
                 </div>
             </div>
             <div class="row">
@@ -139,7 +147,7 @@
                     <div class='row mb-3'>
                         <label for='' class='col-sm-3 col-form-label'>Party Name</label>
                         <div class='col-sm-9'>
-                            <select class='form-select' asp-for="PartyID" id='choices-multiple-remove-button-PartyID' asp-items='@CommonExtension.GetAllPartyAsync()'>
+                            <select class='form-select' asp-for="PartyID" id='choices-multiple-remove-button-PartyID' asp-items='@CommonExtension.GetAllPartyAsync()' onchange="getSelectedRespectiveValues()">
                                 <option value=''>Select here...</option>
                             </select>
                         </div>
@@ -209,7 +217,7 @@
                 <label for="" class="col-sm-3 col-form-label"><b>Add Quotation item here</b></label>
             </div>
             <div class="row">
-                <div class="col-md-12" id="newDivForRow">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="newDivForRow">
                     @if (Model != null && Model.iSGrid != null)
                     {
                         <grid model="@Model.iSGrid" />
@@ -378,81 +386,29 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class=" col-sm-8 col-md-8 col-lg-8">
-                    <div class='row mb-3'>
-                    </div>
-                </div>
-                <div class=" col-sm-4 col-md-4 col-lg-4">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-5 col-form-label'>Net Amount</label>
-                        <div class='col-sm-7'>
-                            <input type='text' class='form-control' id='NetAmount' asp-for='NetAmount' name='NetAmount' readonly>
-                            <span asp-validation-for='NetAmount' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="divQuotationTransactionInfo">
+                @await Html.PartialAsync("_transactionCalculation", dataTable);
             </div>
-            <div class="row">
-                <div class=" col-sm-8 col-md-8 col-lg-8">
-                    <div class='row mb-3'>
-                    </div>
-                </div>
-                <div class=" col-sm-4 col-md-4 col-lg-4">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-5 col-form-label'>Tax Per(%)</label>
-                        <div class='col-sm-7'>
-                            <input type='text' class='form-control' id='TaxPercentage' asp-for='TaxPercentage' name='TaxPercentage' oninput="fnUpdateTaxAmt()">
-                            <span asp-validation-for='TaxPercentage' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class=" col-sm-8 col-md-8 col-lg-8">
-                    <div class='row mb-3'>
-                    </div>
-                </div>
-                <div class=" col-sm-4 col-md-4 col-lg-4">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-5 col-form-label'>Tax Amount</label>
-                        <div class='col-sm-7'>
-                            <input type='text' class='form-control' id='TaxAmount' asp-for='TaxAmount' name='TaxAmount' oninput="fnUpdateTaxPer()">
-                            <span asp-validation-for='TaxAmount' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class=" col-sm-8 col-md-8 col-lg-8">
-                    <div class='row mb-3'>
-                    </div>
-                </div>
-                <div class=" col-sm-4 col-md-4 col-lg-4">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-5 col-form-label'>Gross Amount</label>
-                        <div class='col-sm-7'>
-                            <input type='text' class='form-control' id='GrossAmount' asp-for='GrossAmount' name='GrossAmount' readonly>
-                            <span asp-validation-for='GrossAmount' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class=" col-sm-12 col-md-12 col-lg-12">
                 <div class='row mb-3'>
                     <label for='' class='col-sm-2 col-form-label'>Payment Term</label>
                     <div class='col-sm-10'>
-                        <textarea class='form-control' id='PaymentTerm' asp-for='PaymentTerm' name='PaymentTerm'></textarea>
+                        @* <textarea class='form-control' id='PaymentTerm' asp-for='PaymentTerm' name='PaymentTerm'></textarea> *@
+                        <select class='form-select' id='PaymentTermArray' asp-items='@CommonExtension.GetAllTermsMasterAsync("Payment Term")' multiple>
+                            <option value=''>Select here...</option>
+                        </select>
+                        <input type="hidden" asp-for="PaymentTerm" id="PaymentTerm" />
                     </div>
                 </div>
                 <div class='row mb-3'>
                     <label for='' class='col-sm-2 col-form-label'>Delivery Term</label>
                     <div class='col-sm-10'>
-                        <textarea class='form-control' id='DeliveryTerm' asp-for='DeliveryTerm' name='DeliveryTerm'></textarea>
+                        @*  <textarea class='form-control' id='DeliveryTerm' asp-for='DeliveryTerm' name='DeliveryTerm'></textarea> *@
+                        <select class='form-select' id='DeliveryTermArray' asp-items='@CommonExtension.GetAllTermsMasterAsync("Delivery Term")' multiple>
+                            <option value=''>Select here...</option>
+                        </select>
+                        <input type="hidden" asp-for="DeliveryTerm" id="DeliveryTerm" />
                     </div>
                 </div>
                 <div class='row mb-3'>
@@ -504,6 +460,64 @@
     var orgTotalAmt = 0;
     function fnSubmit() {
 
+        var paymentTermDropdown = document.getElementById('PaymentTermArray');
+        var selectedPaymentTerm = [];
+        for (let i = 0; i < paymentTermDropdown.options.length; i++) {
+            const option = paymentTermDropdown.options[i];
+            if (option.selected) {
+                selectedPaymentTerm.push(option.value);
+            }
+        }
+        document.getElementById("PaymentTerm").value = selectedPaymentTerm.toString();
+
+        var deliveryTermDropdown = document.getElementById('DeliveryTermArray');
+        var selectedDeliveryTerm = [];
+        for (let i = 0; i < deliveryTermDropdown.options.length; i++) {
+            const option = deliveryTermDropdown.options[i];
+            if (option.selected) {
+                selectedDeliveryTerm.push(option.value);
+            }
+        }
+        document.getElementById("DeliveryTerm").value = selectedDeliveryTerm.toString();
+
+        const nesteddivForTransactionAmts = document.getElementById('divQuotationTransactionInfo');
+        const divForInputsAmts = nesteddivForTransactionAmts.querySelectorAll('input');
+        var jsonFinalTransactionData = [];
+        for (let i = 0; i < divForInputsAmts.length; i += 5) {
+
+            const pair = [divForInputsAmts[i], divForInputsAmts[i + 1], divForInputsAmts[i + 2], divForInputsAmts[i + 3], divForInputsAmts[i + 4]].filter(Boolean);
+
+            let formulaPercentage;
+
+            // let testerst0 = pair[0].value;
+            // let testerst1 = pair[1].value;
+            // let testerst2 = pair[2].value;
+            // let testerst3 = pair[3].value;
+            // let testerst4 = pair[4].value;
+            // debugger;
+            if (pair[0].value) {
+                formulaPercentage = pair[0].value;
+            }
+            else {
+                formulaPercentage = 0.0;
+            }
+            const tempJson = {
+                'QuotationAmountDetailID': 0,
+                'QuotationID': document.getElementById('QuotationID').value,
+                'FormulaHead': pair[1].value,
+                'FormulaLabel': pair[2].value,
+                'Formula': pair[4].value,
+                'FormulaPercentage': formulaPercentage,//parseFloat(pair[0].value).toFixed(2),
+                'FormulaValue': pair[3].value,
+                'IsActive': true,
+                'CreatedOrModifiedBy': 0
+            };
+
+            jsonFinalTransactionData.push(tempJson);
+        }
+        var quotatinTaxAmountStringJson = document.getElementById('QuotationTaxAmountJSONString');
+        quotatinTaxAmountStringJson.value = JSON.stringify(jsonFinalTransactionData);
+
         var sapStringJson = document.getElementById('SAPCollectionJSONString');
 
         var finalTable = document.getElementsByTagName('table');
@@ -548,6 +562,18 @@
             tableData.push(rowData);
         }
         sapStringJson.value = JSON.stringify(tableData);
+
+        // var selectedPaymentTerm = [];
+        // // Loop through the options and check if they are selected
+        // var paymentTermDropdown = document.getElementById("PaymentTermArray");
+        // for (let i = 0; i < paymentTermDropdown.options.length; i++) {
+        //     const option = paymentTermDropdown.options[i];
+        //     if (option.selected) {
+        //         selectedPaymentTerm.push(option.value);
+        //         //selectedItems.push(option.value);
+        //     }
+        // }
+        // document.getElementById("PaymentTerm").value = selectedPaymentTerm.toString();
 
         if ($("#formQuotationMaster").valid()) {
             var l = laddaStart('btnSave');
@@ -641,6 +667,31 @@
         }).always(function () {
             hideLoader();
         });
+
+        var urlGetFormulas = '@Url.Action("GetFormulaMasterForQuotationByPartyID", "QuotationMaster")';
+        //var urlGetFormulas = '/SalesDistribution/SalesOrderMaster/GetFormulaMasterByCustomerID';
+        let quotationid = document.getElementById("QuotationID").value;
+        $.ajax({
+            url: urlGetFormulas,
+            data: { partyId: selectedPartyt, quotationId: quotationid },
+            type: 'GET',
+            success: function (data) {
+                $('#divQuotationTransactionInfo').html(data);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
     }
 
     $(document).ready(function () {
@@ -661,6 +712,34 @@
         });
 
         var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-AddressTypeID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        let paymentTerm = document.getElementById("PaymentTerm").value;
+        if (paymentTerm !== '') {
+            $.each(paymentTerm.split(","), function (i, e) {
+                $("#PaymentTermArray option[value='" + e + "']").prop("selected", true);
+            });
+        }
+
+        var multipleCancelButtonPaymentTerm = new Choices('#PaymentTermArray', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        let deliveryTerm = document.getElementById("DeliveryTerm").value;
+        if (deliveryTerm !== '') {
+            $.each(deliveryTerm.split(","), function (i, e) {
+                $("#DeliveryTermArray option[value='" + e + "']").prop("selected", true);
+            });
+        }
+
+        var multipleCancelButtondeliveryTerm = new Choices('#DeliveryTermArray', {
             removeItemButton: false,
             maxItemCount: 10,
             searchResultLimit: 10,
@@ -830,10 +909,13 @@
         const qty = document.getElementById('qtyIndex' + inputValue).value;
 
         if (inputRate !== '' && inputRate !== '0.00' && inputRate !== '0' && inputRate !== NaN) {
-            document.getElementById('amtIndex' + inputValue).value = parseFloat(Number(qty * inputRate)).toFixed(2);
+            let newTotalAmt = parseFloat(Number(qty * inputRate)).toFixed(2);
+            document.getElementById('amtIndex' + inputValue).value = newTotalAmt;
             document.getElementById('rowOrgTotalAmt' + inputValue).value = parseFloat(Number(qty * inputRate)).toFixed(2);
-            if (parseFloat(document.getElementById('amtIndex' + inputValue).value) > 0) {
-                fnUpdateNetAmount();
+            if (parseFloat(document.getElementById('amtIndex' + inputValue).value) > '0') {
+                // fnUpdateDiscount(inputValue);
+                // fnUpdateDiscountPercentage(inputValue);
+                fnUpdateQuotationNetAmount();
             }
         }
         else {
@@ -862,7 +944,7 @@
             document.getElementById('discountAmtIndex' + inputValue).value = discountAmt;
         }
         document.getElementById('amtIndex' + inputValue).value = updatedAmt;
-        fnUpdateNetAmount();
+        fnUpdateQuotationNetAmount();
     }
 
     function fnUpdateDiscountPercentage(inputValue) {
@@ -880,7 +962,7 @@
             document.getElementById('discountPerIndex' + inputValue).value = discountPer;
         }
         document.getElementById('amtIndex' + inputValue).value = updatedAmt;
-        fnUpdateNetAmount();
+        fnUpdateQuotationNetAmount();
     }
 
     function fnUpdateNewQuantity(inputValue) {
@@ -888,42 +970,49 @@
         orgQtyValue.value = document.getElementById('qtyIndex' + inputValue).value;
     }
 
-    function fnUpdateNetAmount() {
-        let netAmount = 0;
-        var finalTable = document.getElementsByTagName('table');
-        var rowLen = finalTable[0].rows.length;
-        for (var i = 1; i < rowLen; i++) {
-            let tester = parseFloat(finalTable[0].rows[i].cells[15].children[0].value).toFixed(2);
-            netAmount = Number(parseFloat(netAmount) + parseFloat(finalTable[0].rows[i].cells[15].children[0].value)).toFixed(2);
-        }
-        document.getElementById('NetAmount').value = netAmount;
-    }
+    /* function fnUpdateNetAmount() {
+         alert('fnUpdateNetAmount fn invoked from main view.');
+         let netAmount = 0;
+         var finalTable = document.getElementsByTagName('table');
+         var rowLen = finalTable[0].rows.length;
+         for (var i = 1; i < rowLen; i++) {
+             let tester = parseFloat(finalTable[0].rows[i].cells[15].children[0].value).toFixed(2);
+             netAmount = Number(parseFloat(netAmount) + parseFloat(finalTable[0].rows[i].cells[15].children[0].value)).toFixed(2);
+         }
+         alert('fnUpdateNetAmount fn invoke finished  from main view.');
+         document.getElementById('A').value = netAmount;
+         setTimeout(
+             function () {
+                 //window.location.reload();
+                 fnCalculateTaxesAmounts();
+             }, 2000);
+     }*/
 
-    function fnUpdateTaxPer() {
-        const inputTaxAmount = document.getElementById('TaxAmount').value;
-        const orgNetAmount = document.getElementById('NetAmount').value;
-        var updatedAmt = 0;
-        if (inputTaxAmount !== '' && inputTaxAmount !== '0.00' && inputTaxAmount !== '0' && inputTaxAmount !== NaN) {
-            let tax = parseFloat(Number(inputTaxAmount * 100)).toFixed(2);
-            const taxPer = parseFloat(Number(tax / orgNetAmount)).toFixed(2);
-            const afterTaxAmt = parseFloat(Number(orgNetAmount - inputTaxAmount)).toFixed(2);
-            updatedAmt = afterTaxAmt;
-            document.getElementById('TaxPercentage').value = taxPer;
-        }
-        document.getElementById('GrossAmount').value = updatedAmt;
-    }
-    function fnUpdateTaxAmt() {
-        const inputTaxPer = document.getElementById('TaxPercentage').value;
-        const netAmount = document.getElementById('NetAmount').value;
-        if (inputTaxPer !== '' && inputTaxPer !== '0.00' && inputTaxPer !== '0' && inputTaxPer !== NaN) {
-            const tax = parseFloat(Number(netAmount * inputTaxPer)).toFixed(2);
-            const taxAmt = parseFloat(Number(tax / 100)).toFixed(2);
-            const afterTaxAmt = parseFloat(Number(netAmount - taxAmt)).toFixed(2);
-            updatedAmt = afterTaxAmt;
-            document.getElementById('TaxAmount').value = taxAmt;
-        }
-        document.getElementById('GrossAmount').value = updatedAmt;
-    }
+    // function fnUpdateTaxPer() {
+    //     const inputTaxAmount = document.getElementById('TaxAmount').value;
+    //     const orgNetAmount = document.getElementById('NetAmount').value;
+    //     var updatedAmt = 0;
+    //     if (inputTaxAmount !== '' && inputTaxAmount !== '0.00' && inputTaxAmount !== '0' && inputTaxAmount !== NaN) {
+    //         let tax = parseFloat(Number(inputTaxAmount * 100)).toFixed(2);
+    //         const taxPer = parseFloat(Number(tax / orgNetAmount)).toFixed(2);
+    //         const afterTaxAmt = parseFloat(Number(orgNetAmount - inputTaxAmount)).toFixed(2);
+    //         updatedAmt = afterTaxAmt;
+    //         document.getElementById('TaxPercentage').value = taxPer;
+    //     }
+    //     document.getElementById('GrossAmount').value = updatedAmt;
+    // }
+    // function fnUpdateTaxAmt() {
+    //     const inputTaxPer = document.getElementById('TaxPercentage').value;
+    //     const netAmount = document.getElementById('NetAmount').value;
+    //     if (inputTaxPer !== '' && inputTaxPer !== '0.00' && inputTaxPer !== '0' && inputTaxPer !== NaN) {
+    //         const tax = parseFloat(Number(netAmount * inputTaxPer)).toFixed(2);
+    //         const taxAmt = parseFloat(Number(tax / 100)).toFixed(2);
+    //         const afterTaxAmt = parseFloat(Number(netAmount - taxAmt)).toFixed(2);
+    //         updatedAmt = afterTaxAmt;
+    //         document.getElementById('TaxAmount').value = taxAmt;
+    //     }
+    //     document.getElementById('GrossAmount').value = updatedAmt;
+    // }
 
     // function fnUpdateCancelQuantity(inputValue) {
     //     alert('fnUpdateCancelQuantity');

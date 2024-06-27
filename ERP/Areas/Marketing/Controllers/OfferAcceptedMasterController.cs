@@ -489,7 +489,7 @@ namespace ERP.Areas.Marketing.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
@@ -537,7 +537,7 @@ namespace ERP.Areas.Marketing.Controllers
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
         #endregion Add or Update OfferAcceptedMaster 

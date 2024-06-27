@@ -9,10 +9,11 @@
             </h6>
         </div>
         <div class="col-lg-12 text-align-right">
-            <a onclick="fnAddAddress()"
+            <a onclick="fnAddAddress(this)"
                class="btn btn-primary px-5"
                href="javascript:void(0)"
                data-id="0"
+               data-customerid="0"
                data-bs-toggle="offcanvas"
                data-bs-target="#canvas_customerAddress"
                aria-controls="canvas_customerAddress">
@@ -21,47 +22,49 @@
         </div>
     </div>
     <div class="row">
-        <table class="table table-striped" id="tblCustomerAddress">
-            <thead>
-                <tr>
-                    <th>Sr. No.</th>
-                    <th>Address Type</th>
-                    <th>Plot No Name</th>
-                    <th>Street No Name</th>
-                    <th>Main Address</th>
-                    <th>State</th>
-                    <th>Country</th>
-                    <th>IsActive</th>
-                    <th>Update</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null)
-                {
-                    @foreach (var item in Model)
+        <div class="table-responsive">
+            <table class="table table-striped" id="tblCustomerAddress">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Address Type</th>
+                        <th>Plot No Name</th>
+                        <th>Street No Name</th>
+                        <th>Main Address</th>
+                        <th>State</th>
+                        <th>Country</th>
+                        <th>IsActive</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
                     {
-                                <tr>
-                                    <td>@item.SrNo</td>
-                                    <td>@item.AddressType</td>
-                                    <td>@item.PlotNoName</td>
-                                    <td>@item.StreetNoName</td>
-                                    <td>@item.MainAddress</td>
-                                    <td>@item.StateName</td>
-                                    <td>@item.CountryName</td>
-                                    <td>@item.IsActive</td>
-                                    <td>
-                                        <a class='btn editaddress' onclick="fnAddAddress(@item.CustomerAddressTxnID)"
-                           href="javascript:void(0)"
-                           data-bs-toggle="offcanvas"
-                           data-bs-target="#canvas_customerAddress"
-                           aria-controls="canvas_customerAddress"
-                           data-id="@item.CustomerAddressTxnID"
-                           customerid="@item.CustomerID"><i class='bx bx-edit'></i></a>
-                                </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SrNo</td>
+                                <td>@item.AddressType</td>
+                                <td>@item.PlotNoName</td>
+                                <td>@item.StreetNoName</td>
+                                <td>@item.MainAddress</td>
+                                <td>@item.StateName</td>
+                                <td>@item.CountryName</td>
+                                <td>@item.IsActive</td>
+                                <td>
+                                    <a class='btn editaddress' onclick="fnAddAddress(this)"
+                                       href="javascript:void(0)"
+                                       data-bs-toggle="offcanvas"
+                                       data-bs-target="#canvas_customerAddress"
+                                       aria-controls="canvas_customerAddress"
+                                       data-id="@item.CustomerAddressTxnID"
+                                       data-customerid="@item.CustomerID"><i class='bx bx-edit'></i></a>
+                            </tr>
+                        }
                     }
-                }
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="canvas_customerAddress">
@@ -78,27 +81,30 @@
 <script src="~/admin/assets/vendors/simple-datatables/simple-datatables.js"></script>
 <script>
     var urlAddAddress = '@Url.Action("AddUpdateCustomerAddress", "Customer")';
-    function fnAddAddress(customerAddTxnId) {
-        var _id = customerAddTxnId;//$(this).data('id');
-        var _customerId = $("#CustomerID").val();
-
-        if(_id>0)
-        {
+    function fnAddAddress(obj) {
+        const _id = obj.dataset.id;
+        var _customerId = 0;
+        if (obj.dataset.customerid === '0') {
+            _customerId = document.getElementById('CustomerID').value;
+        }
+        else {
+            _customerId = obj.dataset.customerid;
+        }
+        if (_id > 0) {
             document.getElementById("canvasHeaderCustomerAddress").innerHTML = "Update customer address";
         }
-        else
-        {
+        else {
             document.getElementById("canvasHeaderCustomerAddress").innerHTML = "Add customer address";
         }
 
         var _parameters = { customerAddressTxnId: _id, customerId: _customerId };
-        
+
         $.ajax({
             url: urlAddAddress,
             type: "GET",
             data: _parameters,
             success: function (data, textStatus, jqXHR) {
-                
+
                 $("#canvas_customerAddress").show();//('hide');
                 $('#dvInfoCustomerAddress').html(data);
             }

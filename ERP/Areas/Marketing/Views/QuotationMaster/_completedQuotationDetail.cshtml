@@ -55,9 +55,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="qoutationApprovalBody">
+                
                 @* Ready to approve? *@
             </div>
             <div class="modal-footer">
+                <a onclick="fnApprovQuotationPrint()" class="btn btn-primary">Print</a>
                 <a onclick="fnApprovQuotation()" class="btn btn-primary">Submit</a>
                 <!--<button type="button" class="btn btn-primary" onclick="fnAddParty()">Save</button>-->
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -65,6 +67,19 @@
         </div>
     </div>
 </div>
+
+<!--Below code added by dravesh for canvas popup 29-05-2024-->
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvasQuotationMasterStatus" aria-labelledby="offcanvasCompanyLabel" style="height: 60%; width: 60%; margin: 10% 20%;">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="canvasQuotationMasterStatusHeader">Approve quotation</h5>
+        <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3 pb-5">
+        <div id="dvInfoQuotationMasterStatus">
+        </div>
+    </div>
+</div>
+<!--Above code added by dravesh for canvas popup 29-05-2024-->
 
 @await Html.PartialAsync("_ValidationScriptsPartial")
 <script type="text/javascript">
@@ -90,6 +105,24 @@
             }
         });
     }
+    function fnApprovQuotationPrint() {
+        //alert('fnPrintSalary fn invoked.');
+        let _id = document.getElementById('QuotationID').value;
+        // let _month = $(obj).data('month');
+        // let _year = $(obj).data('year');
+        // let _company = $(obj).data('company');
+        // let _category = $(obj).data('category');
+        //let _empId = $(obj).data('key');
+
+        var currentUrl = window.location.href;
+        // debugger;
+        //const index = currentUrl.indexOf('?');
+        //alert("&QuotationID=" + _id);
+        var Para = "&QuotationID=" + _id;
+        var url = "http://sun260880-001-site2.atempurl.com/default.aspx?reportkey=7" + Para;
+        window.open(url, "Report Platform", "toolbar=0, location=0, directories=0, status=, menubar=0, scrollbars=yes, resizable=yes, copyhistory=yes, width=900, height=1200");
+
+    }
 
     function fnApprovQuotation() {
         var urlsave = '@Url.Action("AddOrUpdateQuotationApproval", "QuotationMaster")';
@@ -101,7 +134,8 @@
             dataType: 'json',
             success: function (data) {
                 if (data.status) {
-                    $('#approveQuotationModal').modal('hide');
+                    $('#canvasQuotationMasterStatus').hide();
+                    // window.location.reload();
                     Lobibox.notify('success', {
                         pauseDelayOnHover: true,
                         size: 'mini',
@@ -110,6 +144,7 @@
                         position: 'bottom right',
                         msg: data.message
                     });
+                    window.location.reload();
                 }
                 else {
                     Lobibox.notify('error', {
@@ -137,4 +172,24 @@
             hideLoader();
         });
     }
+
+    //Below code added by dravesh for canvas popup 29-05-2024
+    function fnQuotationMasterStatus(obj) {
+        var _key = $(obj).data('key');
+        var _id = $(obj).data('id');
+        var _parameters = { id: _id, requestforQuotid: _key, isApproveRequest: true };
+        $.ajax({
+            url: urladd,
+            type: "GET",
+            data: _parameters,
+            success: function (data, textStatus, jqXHR) {
+                $("#canvasQuotationMasterStatus").show();//('hide');
+                $('#dvInfoQuotationMasterStatus').html(data);
+            },
+            error: function (error) {
+                //debugger;
+            }
+        });
+    }
+    //Above code added by dravesh for canvas popup 29-05-2024
 </script>

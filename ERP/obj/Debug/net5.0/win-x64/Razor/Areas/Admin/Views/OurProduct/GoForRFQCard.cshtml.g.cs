@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_OurProduct_GoForRFQCard), @"mvc.1.0.view", @"/Areas/Admin/Views/OurProduct/GoForRFQCard.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-using GridCore;
+ using GridCore
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c2", @"/Areas/Admin/Views/OurProduct/GoForRFQCard.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c2", @"/Areas/Admin/Views/OurProduct/GoForRFQCard.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_OurProduct_GoForRFQCard : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Business.Entities.OurProduct.GoForRFQCard>
     #nullable disable
@@ -180,6 +171,7 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<div class=""container"" id=""GoForItemRFQSession"">
     <div class=""row"">
         <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
@@ -192,7 +184,7 @@ using GridCore;
                                 <ol class=""breadcrumb mb-0 p-0"">
                                     <li class=""breadcrumb-item"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c221213", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c220995", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -212,7 +204,7 @@ using GridCore;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    </li>\r\n                                    <li class=\"breadcrumb-item\">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c222980", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c222762", async() => {
                 WriteLiteral("Our Product");
             }
             );
@@ -248,23 +240,25 @@ using GridCore;
                         <div class=""col-md-12"">
                             <div class=""row"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c225204", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c224986", async() => {
                 WriteLiteral("\r\n\r\n");
                 WriteLiteral("                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c225562", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c225344", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_3.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.RFQCardTableData);
+                                                                  RFQCardTableData
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -278,7 +272,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 BeginWriteAttribute("for", " for=\"", 3093, "\"", 3099, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\"col-sm-4 col-form-label \">Buyer Type<span class=\"required\">*</span></label>\r\n                                                <div class=\"col-sm-8 pt-2\">\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c228013", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c227897", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -288,13 +282,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_7.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.BuyerTypeID);
+                                                                                                                           BuyerTypeID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = (string)__tagHelperAttribute_9.Value;
@@ -310,7 +306,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    <label for=\"BuyerTypeCustomer\">Customer</label>&emsp; &emsp;\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c230823", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c230866", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -320,13 +316,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_10);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_7.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 64 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.BuyerTypeID);
+                                                                                                                        BuyerTypeID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = (string)__tagHelperAttribute_12.Value;
@@ -339,18 +337,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    <label for=\"BuyerTypeParty\">Party</label>\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c233296", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c233495", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 66 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.BuyerTypeID);
+                                                                              BuyerTypeID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -371,20 +371,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                                         <div class=""col-md-6"">
                                             <div class=""row mb-3"">
                                                 ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c235416", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c235729", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_3.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 76 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.ItemRFQCardID);
+                                                                              ItemRFQCardID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -395,9 +397,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                <label class=\"col-sm-4 col-form-label\">Buyer Name<span class=\"required\">*</span></label>\r\n                                                <div class=\"col-sm-8\">\r\n");
                 WriteLiteral("                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c237453", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c237880", async() => {
                     WriteLiteral("\r\n                                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c237802", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c238229", async() => {
                         WriteLiteral("Select ");
                     }
                     );
@@ -417,13 +419,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 81 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.BuyerID);
+                                                                     BuyerID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
@@ -435,18 +439,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c240667", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c241199", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 84 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.BuyerID);
+                                                                              BuyerID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -466,7 +472,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                                                 <label class=""col-sm-4 col-form-label"">Cust Request Date</label>
                                                 <div class=""col-sm-8"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c242874", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c243520", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -479,13 +485,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_19);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_20.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_20);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 94 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.CustomerInquiryDate);
+                                                                                               CustomerInquiryDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_21);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -507,7 +515,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                                 <label class=""col-sm-4 col-form-label"">Inquiry Code</label>
                                                 <div class=""col-sm-8"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c245927", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c246704", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -518,13 +526,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_23);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_24.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_24);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 106 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.InquiryNo);
+                                                                                     InquiryNo
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_25);
                 BeginWriteTagHelperAttribute();
@@ -538,18 +548,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c248505", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c249403", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 107 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.InquiryNo);
+                                                                              InquiryNo
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -569,7 +581,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                                                 <label class=""col-sm-4 col-form-label"">Inquiry Date<span class=""required"">*</span></label>
                                                 <div class=""col-sm-8"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c250743", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c251755", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -582,13 +594,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_26);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_27.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_27);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 117 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.InquiryDate);
+                                                                                       InquiryDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_21);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_28);
@@ -600,18 +614,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c253298", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c254433", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.InquiryDate);
+                                                                              InquiryDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -633,7 +649,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                                                 <label class=""col-sm-4 col-form-label"">Mediator</label>
                                                 <div class=""col-sm-8"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c255602", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c256851", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -644,13 +660,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_29);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_30.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_30);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 130 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Mediator);
+                                                                                    Mediator
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_21);
                 BeginWriteTagHelperAttribute();
@@ -664,18 +682,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c258179", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c259548", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 131 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Mediator);
+                                                                              Mediator
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -695,9 +715,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                                                 <label class=""col-sm-4 col-form-label"">Finacial Year<span class=""required"">*</span></label>
                                                 <div class=""col-sm-8"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c260417", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c261900", async() => {
                     WriteLiteral("\r\n                                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c260766", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c262249", async() => {
                         WriteLiteral("Select Financial Year");
                     }
                     );
@@ -717,21 +737,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 140 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.FinYearID);
+                                                                     FinYearID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 140 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.FinYearText;
+                                                                                           ViewBag.FinYearText
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_28);
@@ -743,18 +767,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.FinYearTex
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c264117", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c265832", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 143 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.FinYearID);
+                                                                              FinYearID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -776,7 +802,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                                                 <label class=""col-sm-4 col-form-label"">Inquired By</label>
                                                 <div class=""col-sm-8"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c266422", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c268251", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -787,13 +813,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_31);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_32.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_32);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 155 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.InquiredBy);
+                                                                                      InquiredBy
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_21);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -813,9 +841,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                                 <label class=""col-sm-4 col-form-label"">Inquiry Type:<span class=""required"">*</span></label>
                                                 <div class=""col-sm-8"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c269190", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c271141", async() => {
                     WriteLiteral("\r\n                                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c269539", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c271490", async() => {
                         WriteLiteral("Select Inquriy");
                     }
                     );
@@ -835,21 +863,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 164 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.InquiryType);
+                                                                     InquiryType
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 164 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.InquiryType;
+                                                                                             ViewBag.InquiryType
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_28);
@@ -861,18 +893,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = ViewBag.InquiryTyp
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c272885", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c275070", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 167 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.InquiryType);
+                                                                              InquiryType
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -894,7 +928,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                                                 <label class=""col-sm-4 col-form-label"">Quotation Due Date:<span class=""required"">*</span></label>
                                                 <div class=""col-sm-8"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c275233", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c277532", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -907,13 +941,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_33);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_34.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_34);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 179 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.QuotationDueDate);
+                                                                                            QuotationDueDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_21);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_28);
@@ -925,18 +961,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c277793", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c280220", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 180 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.InquiryDate);
+                                                                              InquiryDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -968,6 +1006,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 205 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
                                                  foreach (var item in Model.LstGoForRFQCardTable)
@@ -976,35 +1015,42 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral("                                                    <tbody class=\"border border-dark\">\r\n                                                        <tr>\r\n                                                            <th scope=\"row\">");
+                Write(
 #nullable restore
 #line 209 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                                                                       Write(item.SrNo);
+                                                                             item.SrNo
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("</th>\r\n                                                            <td>");
+                Write(
 #nullable restore
 #line 210 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                                                           Write(item.ItemDescription);
+                                                                 item.ItemDescription
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("</td>\r\n                                                            <td>");
+                Write(
 #nullable restore
 #line 211 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                                                           Write(item.Item);
+                                                                 item.Item
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("</td>\r\n");
                 WriteLiteral("                                                            <td>\r\n                                                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c282775", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c285446", async() => {
                     WriteLiteral("\r\n                                                                    ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c283136", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c285807", async() => {
                         WriteLiteral("Select Units");
                     }
                     );
@@ -1024,21 +1070,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => 
 #nullable restore
 #line 215 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => item.UOMID);
+                                                                                  item.UOMID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 215 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllUOMAsync();
+                                                                                                          CommonExtension.GetAllUOMAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -1049,7 +1099,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                            </td>\r\n                                                            <td> ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c286490", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c289421", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -1058,13 +1108,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_22);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_35);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => 
 #nullable restore
 #line 219 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => item.Quantity);
+                                                                                                                                 item.Quantity
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -1079,13 +1131,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                                                    href=""javascript:void(0)""
                                                                    data-key=""0""
                                                                    data-id=""");
+                Write(
 #nullable restore
 #line 225 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                                                                       Write(item.ItemForRFQID);
+                                                                             item.ItemForRFQID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(@"""
                                                                    data-bs-toggle=""offcanvas""
                                                                    id=""goForRFQItemInactive"">
@@ -1105,6 +1159,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 233 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
                                                  
@@ -1115,6 +1170,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral(@"                                                <tbody>
                                                     <tr>
                                                         <td>Select your products</td>
@@ -1134,6 +1190,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral(@"                                        </table>
                                     </div>
 
@@ -1143,7 +1200,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                                 <label class=""col-sm-3 col-form-label"">Remark:</label>
                                                 <div class=""col-sm-9"">
                                                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c292045", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c295189", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
@@ -1154,13 +1211,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_38);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.Name = (string)__tagHelperAttribute_39.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_39);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 257 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Remark);
+                                                                                                                                           Remark
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -1178,7 +1237,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                                     <div class=""text-center"">
                                         <button id=""btnSave"" type=""button"" onclick=""fnSubmit()"" class=""btn btn-primary btn-info px-5 ladda-button"">Submit</button>
                                         ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c294619", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9bd2ccc5094a3d00e14fcd141c38facb7c1226a58d1b0c4eea43c09b5cee4c297938", async() => {
                     WriteLiteral("Back");
                 }
                 );
@@ -1241,37 +1300,45 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
 
 <script type=""text/javascript"">
     var urlGoForRFQItemInactive = '");
+            Write(
 #nullable restore
 #line 294 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                              Write(Url.Action("GoForRFQItemInactive","OurProduct"));
+                                    Url.Action("GoForRFQItemInactive","OurProduct")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n    var urlsave = \'");
+            Write(
 #nullable restore
 #line 295 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-              Write(Url.Action("IGoForRFQCardItem", "OurProduct"));
+                    Url.Action("IGoForRFQCardItem", "OurProduct")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n    var urlsaveList = \'");
+            Write(
 #nullable restore
 #line 296 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                  Write(Url.Action("IGoForRFQCardItemList", "OurProduct"));
+                        Url.Action("IGoForRFQCardItemList", "OurProduct")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n    var listModel = ");
+            Write(
 #nullable restore
 #line 297 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-               Write(Json.Serialize(Model.LstGoForRFQCardTable));
+                     Json.Serialize(Model.LstGoForRFQCardTable)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@";
     var inqMstId = 0;
 
@@ -1301,13 +1368,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                         size: 'mini',
                         icon: 'bx ");
             WriteLiteral("bx-check-circle\',\r\n                        continueDelayOnInactiveTab: false,\r\n                        position: \'bottom right\',\r\n                        msg: \'");
+            Write(
 #nullable restore
 #line 327 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"'
                     });
                 }
@@ -1323,13 +1392,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: '");
+            Write(
 #nullable restore
 #line 341 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"'
                 });
             }
@@ -1442,13 +1513,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: """);
+            Write(
 #nullable restore
 #line 448 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\GoForRFQCard.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                     });
                 }

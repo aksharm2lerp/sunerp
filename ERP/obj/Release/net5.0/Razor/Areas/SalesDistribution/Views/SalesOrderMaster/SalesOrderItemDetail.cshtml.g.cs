@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SalesDistribution_Views_SalesOrderMaster_SalesOrderItemDetail), @"mvc.1.0.view", @"/Areas/SalesDistribution/Views/SalesOrderMaster/SalesOrderItemDetail.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,90 +14,78 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
-using Business.Entities.SalesDistribution.SalesOrderMasterModel;
+ using Business.Entities.SalesDistribution.SalesOrderMasterModel;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
-using System.Data;
+ using System.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"c740063b9d7f69ae1ba8866789487271d163b85296e41ebafba06a6eb9f50a45", @"/Areas/SalesDistribution/Views/SalesOrderMaster/SalesOrderItemDetail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SalesDistribution/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"c740063b9d7f69ae1ba8866789487271d163b85296e41ebafba06a6eb9f50a45", @"/Areas/SalesDistribution/Views/SalesOrderMaster/SalesOrderItemDetail.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SalesDistribution/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SalesDistribution_Views_SalesOrderMaster_SalesOrderItemDetail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<DataSet>
     #nullable disable
@@ -115,6 +103,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("<div id=\"EmployeeSummaryTable\">\r\n");
 #nullable restore
 #line 22 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
@@ -124,6 +113,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            <div class=""row"" style=""overflow:auto; height:auto; width:100%;"">
                                 <table class=""table table-striped w-auto"" style=""white-space: nowrap; font-size:inherit !important;"">
                                     <!--style=""display:block; overflow: auto; white-space: nowrap;""-->
@@ -139,14 +129,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                <th>");
+            Write(
 #nullable restore
 #line 32 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
-                                               Write(dataColumn.ToString());
+                                                     dataColumn.ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n");
 #nullable restore
 #line 33 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
@@ -155,6 +148,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        </tr>\r\n                                    </thead>\r\n");
 #nullable restore
 #line 36 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
@@ -164,6 +158,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        <tr>\r\n");
 #nullable restore
 #line 39 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
@@ -174,6 +169,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 41 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
                                                  if (!string.IsNullOrEmpty(row[timeRow].ToString()))
@@ -182,14 +178,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                    <td>");
+            Write(
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
-                                                   Write(row[timeRow]);
+                                                         row[timeRow]
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
 #nullable restore
 #line 44 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
@@ -200,6 +199,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                    <td>-</td>\r\n");
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
@@ -208,6 +208,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
                                                  
@@ -216,6 +217,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        </tr>\r\n");
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
@@ -224,6 +226,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                </table>\r\n                            </div>\r\n");
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
@@ -234,6 +237,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            <div class=""text-center"">
                                 <h1><iconify-icon icon=""mdi:text-box-remove-outline"" style=""color: #37569d;"" width=""100""></iconify-icon></h1>
                                 <h3 style=""color: red;"">No Data Found</h3>
@@ -246,14 +250,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("</div>\r\n\r\n\r\n");
+            Write(
 #nullable restore
 #line 65 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\SalesOrderMaster\SalesOrderItemDetail.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n");
         }
         #pragma warning restore 1998

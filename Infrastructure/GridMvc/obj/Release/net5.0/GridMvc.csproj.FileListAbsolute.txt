@@ -283,8 +283,8 @@ D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\staticwebasset
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\staticwebassets\msbuild.build.GridMvcCore.props
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\staticwebassets\msbuild.buildMultiTargeting.GridMvcCore.props
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\staticwebassets\msbuild.buildTransitive.GridMvcCore.props
-D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\GridMvc.csproj.CopyComplete
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\GridMvc.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\refint\GridMvc.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\GridMvc.pdb
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\ref\GridMvc.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\net5.0\GridMvc.csproj.Up2Date

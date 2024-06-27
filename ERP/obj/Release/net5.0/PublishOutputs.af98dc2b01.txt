@@ -2329,37 +2329,56 @@ D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\Contractor\2_03032023112118_WIN_20230213_14_50_22_Pro.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\Contractor\2_05042023112910_tree-736885_1280.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CustomerDocuments\PAN CARD_12_18012023180639.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\10_20122022182630_dn-brochure.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\12_18012023172116_RatanTata.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\15_01062023133423_VenuSrinivasan.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\1_16122023104354_25184702-fd6c-413f-8ff6-5a694d31b527 (2).jfif
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\2_25122023130323_aum_wallpaper_027.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Ashok-Leyland.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Ashok-Leyland.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Bajaj-distinctly-ahead.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Eicher.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\ford.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Eicher.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\ford.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\honda.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Hyundai.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Lucas TVS.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Hyundai.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Lucas TVS.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\lumax.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Mahindra.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\MAN.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Mahindra.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\MAN.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\minda.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Nissan.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Pricol-logo-original.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\renault-nissan.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\royal-enfield.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Nissan.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Ashok-Leyland.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Bajaj-distinctly-ahead.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Eicher.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\ford.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\honda.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Hyundai.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Lucas TVS.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\lumax.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Mahindra.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\MAN.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\minda.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Nissan.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Pricol-logo-original.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\renault-nissan.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\royal-enfield.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\subros.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\tafe.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Tata_Hitachi.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\toyota.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\tvs.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\Volvo.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\VST Shakti.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Old\yamaha.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Pricol-logo-original.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\renault-nissan.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\royal-enfield.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\subros.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\tafe.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Tata_Hitachi.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\toyota.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\tvs.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Volvo.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\tafe.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Tata_Hitachi.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\toyota.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\tvs.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\Volvo.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\VST Shakti.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\yamaha.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\CUSTOMERS\yamaha.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\DefaultProfilePicture\DefaultProfilePicture.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\EmployeeDocuments\10thMarksheet.docx
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\EmployeeDocuments\PAN119654_89_24022023115947.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\EmployeeDocuments\PANCard.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\EmployeeDocuments\PANCARD.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\EmployeeDocuments\passport.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\EmployeeDocuments\Trith Pan card_71_06022023170609.jpg
@@ -2371,6 +2390,10 @@ D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\10_10072023171606_download1.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\10_19082023132851_bill-gates-profile-pic.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\11752_10072023163555_12.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\191_01052024104941_SL.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\191_02052024150109_ttr.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\191_02052024172739_akshar-logo - Copy.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\191_23042024114631_akshar-logo - Copy.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\49_19082023132942_dummy-profile.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\65_19082023133153_download.jpeg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\employeeimages\65_19082023133154_download.jpeg
@@ -2379,6 +2402,7 @@ D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\errors-images\404-error.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\errors-images\505-error.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\favicon-32x32.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\Favicon-Srini_Link_logo.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\login-images\bg-forgot-password.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\login-images\bg-lock-screen.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\login-images\bg-login-img.jpg
@@ -2394,12 +2418,20 @@ D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\Party\92_18082023133002_250-2503356_class-img-fluid-card-img-bottom-pramukh-swami.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\Party\94_18082023175519_b1.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\Srini_Link_logo.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\Srini_Link_logo_old.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\TravellingExpenseBillsImages\Bill_1_29_2556_24052024202204.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\TravellingExpenseBillsImages\Bill_1_30_1382_24052024200945.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\TravellingExpenseBillsImages\Bill_1_30_1698_4_25052024133212.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\TravellingExpenseBillsImages\Bill_1_30_1698_4_25052024133236.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\TravellingExpenseBillsImages\Bill_1_30_1698_4_25052024135434.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\TravellingExpenseBillsImages\Bill_1_6_701_24052024195051.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\TravellingExpenseBillsImages\Bill_2_30_1698_4_25052024135434.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\TravellingExpenseBillsImages\Bill_3_30_1698_4_25052024135434.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_01012023110228_TELEPHONE CABLE.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_01012023110616_SLBuildingWire.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_01012023110658_5.jpg
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_02122023172325_HouseWire.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_02122023172504_ScreenshotScreenCable.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_02122023172751_PanelWire.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_16042024170115_SRINILINK-1-00-SQMM-45MTR-BLACK-COILpng.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_18012023181203_building-wire.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\1_23122022113512_dn-brochure.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\30_14092023143918_SOLAR CABLE.png
@@ -2409,6 +2441,31 @@ D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\6_01112022161327_mainbanner1.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\6_31102022160154_2.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\6_31102022182553_3.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\building-wire2.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\FlexibleMultiCoreWires.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Armoured cables_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Automobile Wires_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Flexible multi core wires_1.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Flexible multi core wires_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Flexible multi core wires_2.jpeg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\House Wires_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\House Wires_2.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\House Wires_3.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Panel Wires_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Screened Cable_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Solar Cable_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Solar Cable_2.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Solar Cable_3.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Solar Cable_4.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Submersible Cables_1.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Submersible Cables_2.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Telephone Wires_1.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Telephone Wires_2.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\Unarmoured Cable_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\undefined_1.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\PanelWire.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\SLBuildingWire.jpg
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\uploadProductImages\SUBMERSIBLE WIRE.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\1.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\2.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\3.jpg
@@ -2433,7 +2490,20 @@ D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\FlexibleMultiCoreWires\FlexibleMultiCoreWires.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\HouseWire\HouseWire.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\OneBrand.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\OneBrandBig.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\PanelWire\PanelWire.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\ApplianceCableQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\ArmouredCableQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\AutomobileWireQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\BuildingWireQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\FlexibleMultiCoreWiresQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\OneCatalogQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\PanelWireQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\ScreenCablewiresQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\SingleCoreQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\SolarCableQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\SubmersibleWireQRCODE.png
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\QRCodes\TelephoneCableQRCODE.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\ScreenCable\ScreenshotScreenCable.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\SingleCorePVC\ScreenshotSingleCorePVC.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\Solar Cable\Picture-attached2.jpg
@@ -2452,17 +2522,6 @@ D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\SUBMERSIBLE WIRE\SUBMERSIBLE WIRE.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\TELEPHONE CABLE\TELEPHONE CABLE.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Products\TELEPHONE CABLE\TELEPHONE-CABLE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\ApplianceCableQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\ArmouredCableQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\AutomobileWireQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\BuildingWireQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\FlexibleMultiCoreWiresQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\PanelWireQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\ScreenCablewiresQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\SingleCoreQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\SolarCableQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\SubmersibleWireQRCODE.png
-D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\qrcodes\TelephoneCableQRCODE.png
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Testimonial\AnandMahindra.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Testimonial\RatanTata.jpg
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\assets\images\wireImages\Testimonial\SandeepSingh.jpg
@@ -3008,6 +3067,10 @@ D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\ProductsGroupF
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\ProductsGroupFile\SRINILINK UL758 CABLE BRO.pdf
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\Reports\EmployeeGatePass.rdl
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\Reports\Report.rdlc
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\SAPItemCollectionDocumentation\ItemSearchEngineForUpdatedStock.docx
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\SAPItemCollectionDocumentation\ItemSearchEngineForUpdatedStock.pdf
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\SAPItemCollectionDocumentation\mov_bbb.mp4
+D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\SAPItemCollectionDocumentation\Test.mp4
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\Sound\coin-collect-retro-8-bit-sound-effect-145251.mp3
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\Sound\doorbell-ring-99733.mp3
 D:\GitHub\SUN\sunerpm2l\ERP\obj\Release\net5.0\PubTmp\Out\wwwroot\webfonts\fa-solid-900.eot

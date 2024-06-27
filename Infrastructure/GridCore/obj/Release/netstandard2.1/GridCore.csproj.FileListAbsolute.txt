@@ -597,6 +597,6 @@ D:\GitHub\SUN\sunerpm2l\Infrastructure\GridCore\obj\Release\netstandard2.1\pt-BR
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridCore\obj\Release\netstandard2.1\bg\GridCore.resources.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridCore\obj\Release\netstandard2.1\uk\GridCore.resources.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridCore\obj\Release\netstandard2.1\ar\GridCore.resources.dll
-D:\GitHub\SUN\sunerpm2l\Infrastructure\GridCore\obj\Release\netstandard2.1\GridCore.csproj.CopyComplete
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridCore\obj\Release\netstandard2.1\GridCore.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridCore\obj\Release\netstandard2.1\GridCore.pdb
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridCore\obj\Release\netstandard2.1\GridCore.csproj.Up2Date

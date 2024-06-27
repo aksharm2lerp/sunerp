@@ -14,7 +14,7 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>False</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile>~/Views/Shared/_Layout.cshtml</WebStackScaffolding_LayoutPageFile>
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>D:\GitHub\SUN\sunerpm2l\ERP\Properties\PublishProfiles\FTPProfile.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\GitHub\SUN\sunerpm2l\ERP\Properties\PublishProfiles\FolderProfile1.pubxml</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_DbContextTypeFullName>ERP.Data.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

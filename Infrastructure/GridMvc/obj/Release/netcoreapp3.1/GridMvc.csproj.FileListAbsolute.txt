@@ -276,6 +276,6 @@ D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\netcoreapp3.1\staticw
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\netcoreapp3.1\staticwebassets\msbuild.build.GridMvcCore.props
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.GridMvcCore.props
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.GridMvcCore.props
-D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\netcoreapp3.1\GridMvc.csproj.CopyComplete
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\netcoreapp3.1\GridMvc.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\netcoreapp3.1\GridMvc.pdb
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridMvc\obj\Release\netcoreapp3.1\GridMvc.csproj.Up2Date

@@ -16,6 +16,7 @@ using Business.Entities.Master.MarketingCompanyFinancialYearMaster;
 using Business.Entities.Master.MeetingStatus;
 using Business.Entities.Master.MenuMasterM;
 using Business.Entities.Master.Package;
+using Business.Entities.ProductPhotoPath;
 using Business.Entities.SalaryFormula;
 using Business.Entities.SecurityOfficer;
 using Business.Entities.UOMID;
@@ -2588,5 +2589,46 @@ namespace Business.Service
             }
         }
         #endregion
+
+        #region Product Group Description By ProductGroup ID
+
+        public async Task<PagedDataTable<ProductPhotoPath>> ProductGroupDescriptionByProductGroupID(int productGroupID)
+        {
+            DataTable table = new DataTable();
+            int totalItemCount = 0;
+            PagedDataTable<ProductPhotoPath> lst = new PagedDataTable<ProductPhotoPath>();
+            try
+            {
+                SqlParameter[] param = { new SqlParameter("@ProductCategoryID", productGroupID) };
+                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_ProductCategoryMaster", param);
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        table = ds.Tables[0];
+                        if (table.Rows.Count > 0)
+                        {
+                            if (table.ContainColumn("TotalCount"))
+                                totalItemCount = Convert.ToInt32(table.Rows[0]["TotalCount"]);
+                            else
+                                totalItemCount = table.Rows.Count;
+                        }
+                    }
+                    lst = table.ToPagedDataTableList<ProductPhotoPath>();
+                }
+
+                return lst;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (table != null)
+                    table.Dispose();
+            }
+        }
+
+        #endregion Product Group Description By ProductGroup ID
     }
 }

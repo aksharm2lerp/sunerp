@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Production_Views_MasterPacking__printQrCode), @"mvc.1.0.view", @"/Areas/Production/Views/MasterPacking/_printQrCode.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"f03e64fc7c56f15ae6c85b65bb72e93deac4b8da07cda9c6121472878fd47333", @"/Areas/Production/Views/MasterPacking/_printQrCode.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Production/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f03e64fc7c56f15ae6c85b65bb72e93deac4b8da07cda9c6121472878fd47333", @"/Areas/Production/Views/MasterPacking/_printQrCode.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Production/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Production_Views_MasterPacking__printQrCode : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Business.Entities.Production.MasterPackingModel.MasterPacking>
     #nullable disable
@@ -142,7 +134,7 @@ using Business.Entities.Dynamic;
             BeginWriteAttribute("for", " for=\'", 802, "\'", 808, 0);
             EndWriteAttribute();
             WriteLiteral(" class=\'col-sm-4 col-form-label\'>Master Packing Code</label>\r\n                            <div class=\'col-sm-8\'>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f03e64fc7c56f15ae6c85b65bb72e93deac4b8da07cda9c6121472878fd473339383", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f03e64fc7c56f15ae6c85b65bb72e93deac4b8da07cda9c6121472878fd473339183", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
@@ -150,13 +142,15 @@ using Business.Entities.Dynamic;
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_0);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 18 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MasterPacking\_printQrCode.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.MasterPackingCode);
+                                                                                                           MasterPackingCode
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
             __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.Name = (string)__tagHelperAttribute_3.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
@@ -175,7 +169,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
             BeginWriteAttribute("for", " for=\'", 1257, "\'", 1263, 0);
             EndWriteAttribute();
             WriteLiteral(" class=\'col-sm-4 col-form-label\'>Batch No</label>\r\n                            <div class=\'col-sm-3\'>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f03e64fc7c56f15ae6c85b65bb72e93deac4b8da07cda9c6121472878fd4733312164", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f03e64fc7c56f15ae6c85b65bb72e93deac4b8da07cda9c6121472878fd4733312099", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -184,13 +178,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 25 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MasterPacking\_printQrCode.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.BatchNo);
+                                                                                              BatchNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_7.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
@@ -208,7 +204,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
             BeginWriteAttribute("for", " for=\'", 1648, "\'", 1654, 0);
             EndWriteAttribute();
             WriteLiteral(" class=\'col-sm-4 col-form-label\'>User Print Code</label>\r\n                            <div class=\'col-sm-8\'>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f03e64fc7c56f15ae6c85b65bb72e93deac4b8da07cda9c6121472878fd4733314959", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f03e64fc7c56f15ae6c85b65bb72e93deac4b8da07cda9c6121472878fd4733315016", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -217,13 +213,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 32 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MasterPacking\_printQrCode.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.UserBatchCode);
+                                                                                                    UserBatchCode
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_9.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
@@ -247,13 +245,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
             BeginWriteAttribute("for", " for=\'", 2265, "\'", 2271, 0);
             EndWriteAttribute();
             WriteLiteral(" class=\'col-12 col-form-label text-end text-dark h1\'>");
+            Write(
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MasterPacking\_printQrCode.cshtml"
-                                                                                         Write(Model.UserBatchCode);
+                                                                                               Model.UserBatchCode
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</label>\r\n                        </div>\r\n\r\n                </fieldset>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n");
             WriteLiteral(@"                <!--<button type=""button"" class=""btn btn-primary"" onclick=""fnAddParty()"">Save</button>-->
                 <button type=""button"" class=""btn btn-secondary"" onclick=""printDiv('printableAreaQRCodeMasterPacking')"">Print</button>

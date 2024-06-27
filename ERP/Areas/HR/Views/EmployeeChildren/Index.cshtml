@@ -62,9 +62,9 @@
         var _key = $(obj).data('key');
         var _id = $(obj).data('id');
         if (_id > 0)
-            document.getElementById("canvasHeaderEmployeeChildren").innerHTML = "Update EmployeeChildren";
+            document.getElementById("canvasHeaderEmployeeChildren").innerHTML = "Update Employee Children";
         else
-            document.getElementById("canvasHeaderEmployeeChildren").innerHTML = "Add EmployeeChildren";
+            document.getElementById("canvasHeaderEmployeeChildren").innerHTML = "Add Employee Children";
         var _parameters = { id: _id, key: _key };
         $.ajax({
             url: urladd,

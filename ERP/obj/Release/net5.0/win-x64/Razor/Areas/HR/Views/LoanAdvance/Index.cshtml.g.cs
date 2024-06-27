@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_HR_Views_LoanAdvance_Index), @"mvc.1.0.view", @"/Areas/HR/Views/LoanAdvance/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
-using GridCore;
+ using GridCore
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"ecb765086383e4494c816d37ddd360443f1d135997b8424146fe7ccd5e6265b0", @"/Areas/HR/Views/LoanAdvance/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"ecb765086383e4494c816d37ddd360443f1d135997b8424146fe7ccd5e6265b0", @"/Areas/HR/Views/LoanAdvance/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_HR_Views_LoanAdvance_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ISGrid>
     #nullable disable
@@ -137,6 +128,7 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
     <div class=""card border-1 shadow rounded-7 p-1"">
         <div class=""row border-bottom"">
@@ -147,7 +139,7 @@ using GridCore;
                             <ol class=""breadcrumb mb-0 p-0"">
                                 <li class=""breadcrumb-item"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ecb765086383e4494c816d37ddd360443f1d135997b8424146fe7ccd5e6265b06725", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ecb765086383e4494c816d37ddd360443f1d135997b8424146fe7ccd5e6265b06507", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -190,18 +182,20 @@ using GridCore;
         <div class=""row"">
             <div class=""col-md-12"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ecb765086383e4494c816d37ddd360443f1d135997b8424146fe7ccd5e6265b09217", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ecb765086383e4494c816d37ddd360443f1d135997b8424146fe7ccd5e6265b08999", async() => {
             }
             );
             __GridMvc_TagHelpers_GridTagHelper = CreateTagHelper<global::GridMvc.TagHelpers.GridTagHelper>();
             __tagHelperExecutionContext.Add(__GridMvc_TagHelpers_GridTagHelper);
+            __GridMvc_TagHelpers_GridTagHelper.Model = 
 #nullable restore
 #line 50 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
-__GridMvc_TagHelpers_GridTagHelper.Model = Model;
+                              Model
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("model", __GridMvc_TagHelpers_GridTagHelper.Model, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -229,13 +223,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
 </div>
 <script type=""text/javascript"">
     var urlAddUpdateEmployeeLoan = '");
+            Write(
 #nullable restore
 #line 68 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
-                               Write(Url.Action("AddUpdateEmployeeLoan", "LoanAdvance"));
+                                     Url.Action("AddUpdateEmployeeLoan", "LoanAdvance")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnEmployeeLoan(obj) {
         var _id = $(obj).data('id');
@@ -262,14 +258,44 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
 ");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public UserManager<UserMasterMetadata> UserManager { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public 
+#nullable restore
+#line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
+        UserManager<UserMasterMetadata>
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
+                                        UserManager
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public SignInManager<UserMasterMetadata> SignInManager { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
+        SignInManager<UserMasterMetadata>
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\LoanAdvance\Index.cshtml"
+                                          SignInManager
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

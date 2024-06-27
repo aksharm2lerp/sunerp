@@ -160,6 +160,7 @@ namespace ERP.Areas.Marketing.Controllers
         {
 
             var path1 = "";
+            PartyMaster.CreatedOrModifiedBy = USERID;
             var id = await _PartyService.AddUpdateParty(PartyMaster);
 
             if (id > 0)

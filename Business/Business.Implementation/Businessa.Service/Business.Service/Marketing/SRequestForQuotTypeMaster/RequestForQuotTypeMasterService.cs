@@ -71,7 +71,9 @@ namespace Business.Service.Marketing.SRequestForQuotTypeMaster
             RequestForQuotTypeMaster result = null;
             try
             {
-                SqlParameter[] param = { new SqlParameter("@RequestForQuotTypeMasterID", RequestForQuotTypeMasterID) };
+                                                            
+                //SqlParameter[] param = { new SqlParameter("@RequestForQuotTypeMasterID", RequestForQuotTypeMasterID) };
+                SqlParameter[] param = { new SqlParameter("@RequestForQuotTypeID", RequestForQuotTypeMasterID) };
                 DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_RequestForQuotTypeMaster", param);
                 if (ds != null)
                 {

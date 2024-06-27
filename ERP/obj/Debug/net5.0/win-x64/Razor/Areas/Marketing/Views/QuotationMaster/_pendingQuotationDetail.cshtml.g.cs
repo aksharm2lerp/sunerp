@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Marketing_Views_QuotationMaster__pendingQuotationDetail), @"mvc.1.0.view", @"/Areas/Marketing/Views/QuotationMaster/_pendingQuotationDetail.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,90 +14,79 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\QuotationMaster\_pendingQuotationDetail.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\QuotationMaster\_pendingQuotationDetail.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\QuotationMaster\_pendingQuotationDetail.cshtml"
-using GridCore;
+ using GridCore
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\QuotationMaster\_pendingQuotationDetail.cshtml"
-using System.Data;
+ using System.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"03bf37e3924a860b9857564df972ff90a8ff97ba9763076985937a6038531709", @"/Areas/Marketing/Views/QuotationMaster/_pendingQuotationDetail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"03bf37e3924a860b9857564df972ff90a8ff97ba9763076985937a6038531709", @"/Areas/Marketing/Views/QuotationMaster/_pendingQuotationDetail.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Marketing_Views_QuotationMaster__pendingQuotationDetail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ISGrid>
     #nullable disable
@@ -130,7 +119,7 @@ using System.Data;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03bf37e3924a860b9857564df972ff90a8ff97ba9763076985937a60385317096401", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03bf37e3924a860b9857564df972ff90a8ff97ba9763076985937a60385317096153", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -145,7 +134,7 @@ using System.Data;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03bf37e3924a860b9857564df972ff90a8ff97ba9763076985937a60385317097547", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03bf37e3924a860b9857564df972ff90a8ff97ba9763076985937a60385317097299", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -196,18 +185,20 @@ using System.Data;
 <div class=""row"" id=""PendingSearchResult"">
     <div class=""col-md-12"">
         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "03bf37e3924a860b9857564df972ff90a8ff97ba9763076985937a603853170910229", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "03bf37e3924a860b9857564df972ff90a8ff97ba9763076985937a60385317099981", async() => {
             }
             );
             __GridMvc_TagHelpers_GridTagHelper = CreateTagHelper<global::GridMvc.TagHelpers.GridTagHelper>();
             __tagHelperExecutionContext.Add(__GridMvc_TagHelpers_GridTagHelper);
+            __GridMvc_TagHelpers_GridTagHelper.Model = 
 #nullable restore
 #line 49 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\QuotationMaster\_pendingQuotationDetail.cshtml"
-__GridMvc_TagHelpers_GridTagHelper.Model = Model;
+                      Model
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("model", __GridMvc_TagHelpers_GridTagHelper.Model, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -233,13 +224,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
             </div>
 ");
             WriteLiteral("        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n");
+            Write(
 #nullable restore
 #line 74 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\QuotationMaster\_pendingQuotationDetail.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"
 <script>
 
@@ -267,13 +260,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
 
     function fnOpenRFQDetailTable(obj) {
         let urlTable = '");
+            Write(
 #nullable restore
 #line 100 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\QuotationMaster\_pendingQuotationDetail.cshtml"
-                   Write(Url.Action("GetSubgridPendingQuot", "QuotationMaster"));
+                         Url.Action("GetSubgridPendingQuot", "QuotationMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         //alert('fnOpenRFQDetailTable fn invoked.');
          //debugger;

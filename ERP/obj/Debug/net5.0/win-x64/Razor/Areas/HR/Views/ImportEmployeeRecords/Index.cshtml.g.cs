@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_HR_Views_ImportEmployeeRecords_Index), @"mvc.1.0.view", @"/Areas/HR/Views/ImportEmployeeRecords/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Linq;
     using global::System.Threading.Tasks;
@@ -13,97 +13,83 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
-using System.Data;
+ using System.Data;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
-using System.Collections.Generic;
+ using System.Collections.Generic;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
-using Newtonsoft.Json;
+ using Newtonsoft.Json;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"667ab7674537535da4922925e6a9381daa55ab0d724b6419f3751d94432c6bfc", @"/Areas/HR/Views/ImportEmployeeRecords/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"667ab7674537535da4922925e6a9381daa55ab0d724b6419f3751d94432c6bfc", @"/Areas/HR/Views/ImportEmployeeRecords/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_HR_Views_ImportEmployeeRecords_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<DataTable>
     #nullable disable
@@ -151,15 +137,18 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "667ab7674537535da4922925e6a9381daa55ab0d724b6419f3751d94432c6bfc6558", async() => {
+
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "667ab7674537535da4922925e6a9381daa55ab0d724b6419f3751d94432c6bfc6276", async() => {
                 WriteLiteral("\r\n    <script>\r\n        var data = ");
+                Write(
 #nullable restore
 #line 17 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
-              Write(Html.Raw(JsonConvert.SerializeObject(Model)));
+                    Html.Raw(JsonConvert.SerializeObject(Model))
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(@";
         var jsonData = JSON.stringify(data);
         var params = { dataTable: jsonData };
@@ -199,13 +188,15 @@ using Newtonsoft.Json;
                             continueDelayOnInactiveTab: false,
                             position: 'bottom right',
                             msg: '");
+                Write(
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
-                             Write(MessageHelper.Error);
+                                   MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(@"'
                         });
                     }
@@ -219,13 +210,15 @@ using Newtonsoft.Json;
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: '");
+                Write(
 #nullable restore
 #line 66 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\'\r\n                    });\r\n                }\r\n            }).always(function () {\r\n                hideloader();\r\n            });\r\n        };\r\n    </script>\r\n");
             }
             );
@@ -252,7 +245,7 @@ using Newtonsoft.Json;
                                     <ol class=""breadcrumb mb-0 p-0"">
                                         <li class=""breadcrumb-item"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "667ab7674537535da4922925e6a9381daa55ab0d724b6419f3751d94432c6bfc11639", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "667ab7674537535da4922925e6a9381daa55ab0d724b6419f3751d94432c6bfc11483", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -289,6 +282,7 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                        <div class=""my-3"">
                             <div class=""mb-1"">
                                 <small class=""required"">Please select file with .xlsx extension!</small>
@@ -311,6 +305,7 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n                    <div id=\"ImportedExcelTable\">\r\n\r\n");
 #nullable restore
 #line 113 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
@@ -320,6 +315,7 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            <div class=""row"" style=""overflow:auto; height:350px; width:100%;"">
                                 <table class=""table table-striped"" style=""font-size:small;"" id=""importedEmployeeTable"">
                                     <!--style=""display:block; overflow: auto; white-space: nowrap;""-->
@@ -334,14 +330,17 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                <th>");
+            Write(
 #nullable restore
 #line 122 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
-                                               Write(Model.Columns[i].ColumnName);
+                                                     Model.Columns[i].ColumnName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n");
 #nullable restore
 #line 123 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
@@ -350,6 +349,7 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        </tr>\r\n                                    </thead>\r\n");
 #nullable restore
 #line 126 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
@@ -359,6 +359,7 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        <tr>\r\n");
 #nullable restore
 #line 129 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
@@ -368,14 +369,17 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                <td>");
+            Write(
 #nullable restore
 #line 131 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
-                                               Write(Model.Rows[i][j]);
+                                                     Model.Rows[i][j]
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
 #nullable restore
 #line 132 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
@@ -384,6 +388,7 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        </tr>\r\n");
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
@@ -392,6 +397,7 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                </table>\r\n                            </div>\r\n");
 #nullable restore
 #line 137 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ImportEmployeeRecords\Index.cshtml"
@@ -400,6 +406,7 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
         }
         #pragma warning restore 1998

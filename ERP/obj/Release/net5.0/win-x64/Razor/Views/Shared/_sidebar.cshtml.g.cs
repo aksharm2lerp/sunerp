@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared__sidebar), @"mvc.1.0.view", @"/Views/Shared/_sidebar.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-using ERP.Controllers;
+ using ERP.Controllers
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"10738000a5483c69530cff479f99f2c34645712423779c507336d48210a367c2", @"/Views/Shared/_sidebar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"10738000a5483c69530cff479f99f2c34645712423779c507336d48210a367c2", @"/Views/Shared/_sidebar.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__sidebar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -136,6 +127,7 @@ using ERP.Controllers;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("<div class=\"sidebar-wrapper\" data-simplebar=\"true\">\r\n    <div class=\"sidebar-header toggle-icon ms-auto\">\r\n");
 #nullable restore
 #line 15 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
@@ -145,15 +137,18 @@ using ERP.Controllers;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("            <div>\r\n                <img");
             BeginWriteAttribute("src", " src=\"", 493, "\"", 527, 1);
+            WriteAttributeValue("", 499, 
 #nullable restore
 #line 18 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
+                           SettingsController.LOGOPATH
 
 #line default
 #line hidden
 #nullable disable
+            , 499, 28, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"logo-icon\" alt=\"logo icon\">\r\n            </div>\r\n");
 #nullable restore
@@ -165,14 +160,17 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("            <div>\r\n                <h4 class=\"logo-text\">");
+            Write(
 #nullable restore
 #line 24 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                 Write(SettingsController.COMPANYNAME);
+                                       SettingsController.COMPANYNAME
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h4>\r\n            </div>\r\n");
 #nullable restore
 #line 26 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
@@ -181,6 +179,7 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("    </div>\r\n    <!--navigation-->\r\n    <ul class=\"metismenu\" id=\"menu\">\r\n");
 #nullable restore
 #line 30 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
@@ -190,23 +189,28 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("            <li>\r\n                <a href=\"javascript:;\" class=\"has-arrow\">\r\n                    <div class=\"parent-icon\">\r\n");
             WriteLiteral("                        ");
+            Write(
 #nullable restore
 #line 36 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                   Write(Html.Raw(itemPM.PMenuIcon));
+                         Html.Raw(itemPM.PMenuIcon)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                    </div>\r\n                    <div class=\"menu-title\">");
+            Write(
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                       Write(itemPM.ParentMenuName);
+                                             itemPM.ParentMenuName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</div>\r\n                </a>\r\n                <ul>\r\n");
 #nullable restore
 #line 41 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
@@ -218,6 +222,7 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 44 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
                          foreach (var item in mMenu)
@@ -226,23 +231,28 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                            <li class=\"pd-ms-2\">\r\n                                <a href=\"javascript:;\" class=\"ms-4\">\r\n                                    <div class=\"parent-icon\">\r\n");
             WriteLiteral("                                        ");
+            Write(
 #nullable restore
 #line 50 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                   Write(Html.Raw(item.Select(x=> x.MenuIcon).FirstOrDefault()));
+                                         Html.Raw(item.Select(x=> x.MenuIcon).FirstOrDefault())
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                                    </div>\r\n                                    <div class=\"menu-title\">");
+            Write(
 #nullable restore
 #line 52 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                                       Write(Convert.ToString(item.Key));
+                                                             Convert.ToString(item.Key)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</div>\r\n                                </a>\r\n                                <ul>\r\n");
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
@@ -253,6 +263,7 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 58 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
                                      foreach (var fname in formName)
@@ -262,24 +273,29 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        <li>\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "10738000a5483c69530cff479f99f2c34645712423779c507336d48210a367c210566", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "10738000a5483c69530cff479f99f2c34645712423779c507336d48210a367c210587", async() => {
                 WriteLiteral("\r\n                                                <div class=\"parent-icon\">");
+                Write(
 #nullable restore
 #line 63 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                                                    Write(Html.Raw(link.FormIcon));
+                                                                          Html.Raw(link.FormIcon)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("</div>\r\n                                                &nbsp;");
+                Write(
 #nullable restore
 #line 64 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                                 Write(Convert.ToString(fname.Key));
+                                                       Convert.ToString(fname.Key)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("\r\n                                            ");
             }
             );
@@ -287,35 +303,41 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_0);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                                          WriteLiteral(link.Area);
+                                                                       link.Area
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Area = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-area", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Area, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                                                                      WriteLiteral(link.Controller);
+                                                                                                   link.Controller
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-controller", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Controller, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
-                                                                                                                    WriteLiteral(link.Action);
+                                                                                                                                 link.Action
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-action", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -334,6 +356,7 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                </ul>\r\n                            </li>\r\n");
 #nullable restore
 #line 70 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
@@ -342,6 +365,7 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 70 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
                          
@@ -350,6 +374,7 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                </ul>\r\n            </li>\r\n");
 #nullable restore
 #line 74 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Shared\_sidebar.cshtml"
@@ -358,6 +383,7 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"    </ul>
 
     <!--end navigation-->
@@ -402,10 +428,25 @@ WriteAttributeValue("", 499, SettingsController.LOGOPATH, 499, 28, false);
             WriteLiteral("tipTriggerEl)\r\n        //});\r\n    });\r\n\r\n</script>\r\n\r\n<!--Main Sidebar End-->");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public IAuthorizationService AuthorizationService { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+IAuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+AuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SalesDistribution_Views_OpportunityLossMaster_AddOrUpdateOpportunityLossMaster), @"mvc.1.0.view", @"/Areas/SalesDistribution/Views/OpportunityLossMaster/AddOrUpdateOpportunityLossMaster.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-using Business.Entities.SalesDistribution.OpportunityLossMasterModel;
+ using Business.Entities.SalesDistribution.OpportunityLossMasterModel;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d19", @"/Areas/SalesDistribution/Views/OpportunityLossMaster/AddOrUpdateOpportunityLossMaster.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SalesDistribution/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d19", @"/Areas/SalesDistribution/Views/OpportunityLossMaster/AddOrUpdateOpportunityLossMaster.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SalesDistribution/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SalesDistribution_Views_OpportunityLossMaster_AddOrUpdateOpportunityLossMaster : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<OpportunityLossMaster>
     #nullable disable
@@ -170,6 +160,7 @@ using Business.Entities.SalesDistribution.OpportunityLossMasterModel;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
   
@@ -186,6 +177,7 @@ using Business.Entities.SalesDistribution.OpportunityLossMasterModel;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<style>
     fieldset {
         border: 1px solid #ccc;
@@ -214,25 +206,27 @@ using Business.Entities.SalesDistribution.OpportunityLossMasterModel;
 
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1918423", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1918199", async() => {
                 WriteLiteral("\r\n    <div class=\"row\">\r\n        <div>&nbsp;</div>\r\n        <fieldset class=\"card\">\r\n\r\n            <legend");
                 BeginWriteAttribute("style", " style=\"", 1243, "\"", 1251, 0);
                 EndWriteAttribute();
                 WriteLiteral(">Opportunity Loss Master</legend>\r\n\r\n\r\n            <div class=\" col-sm-12 col-md-12 col-lg-12 text-center fs-3 text\">\r\n                <div class=\"row mb-3\">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1919169", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1918945", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 58 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OpportunityLossID);
+                                                  OpportunityLossID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -242,20 +236,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1920966", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1920828", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 59 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.SAPCollectionJSONString);
+                                                  SAPCollectionJSONString
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_1);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -269,7 +265,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 BeginWriteAttribute("for", " for=\'", 1802, "\'", 1808, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-5 col-form-label\'>Opportunity Loss No</label>\r\n                        <div class=\'col-sm-7\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1923360", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1923308", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -278,13 +274,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 68 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OpportunityLossID);
+                                                                                                    OpportunityLossID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_5.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
@@ -299,19 +297,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1925870", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1925954", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 69 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OpportunityLossID);
+                                                      OpportunityLossID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -325,7 +325,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 2423, "\'", 2429, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-5 col-form-label\'>Opportunity Loss Date</label>\r\n                        <div class=\'col-sm-7\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1928194", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1928368", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -334,13 +334,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_7);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 78 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OpportunityLossDate);
+                                                                                                      OpportunityLossDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_9.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
@@ -352,19 +354,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1930383", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1930695", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 79 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OpportunityLossDate);
+                                                      OpportunityLossDate
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -379,9 +383,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 BeginWriteAttribute("for", " for=\'", 3111, "\'", 3117, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-5 col-form-label\'>Financial Year</label>\r\n                        <div class=\'col-sm-7\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1932737", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1933139", async() => {
                     WriteLiteral("\r\n                                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1933062", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1933464", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -402,22 +406,26 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 90 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.FinancialYearID);
+                                                                 FinancialYearID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_12);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 90 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllFinancialYearAsync();
+                                                                                                                                                  CommonExtension.GetAllFinancialYearAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -441,9 +449,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 BeginWriteAttribute("for", " for=\'", 3840, "\'", 3846, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Customer Name</label>\r\n                        <div class=\'col-sm-9\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1937096", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1937781", async() => {
                     WriteLiteral("\r\n                                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1937421", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1938106", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -464,22 +472,26 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 104 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.CustomerID);
+                                                                 CustomerID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_14);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 104 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllCustomerAsync();
+                                                                                                                                        CommonExtension.GetAllCustomerAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -493,9 +505,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 BeginWriteAttribute("for", " for=\'", 4940, "\'", 4946, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Address Type</label>\r\n                        <div class=\'col-sm-9\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1941349", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1942307", async() => {
                     WriteLiteral("\r\n                                ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1941674", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1942632", async() => {
                         WriteLiteral("Select here...");
                     }
                     );
@@ -516,22 +528,26 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_11);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 124 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.AddressTypeID);
+                                                                 AddressTypeID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_15);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 124 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllAddressTypeAsync();
+                                                                                                                                              CommonExtension.GetAllAddressTypeAsync()
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_16);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -542,18 +558,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"row\" id=\"divAddressInfo\">\r\n                ");
+                Write(
 #nullable restore
 #line 133 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-           Write(await Html.PartialAsync("OpportunityLossCustomerAddress", customerAddressLists));
+                 await Html.PartialAsync("OpportunityLossCustomerAddress", customerAddressLists)
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(";\r\n            </div>\r\n\r\n            <div class=\"row\">\r\n                <div class=\" col-sm-6 col-md-6 col-lg-6\">\r\n                    <div class=\'row mb-3\'>\r\n                        <label");
                 BeginWriteAttribute("for", " for=\'", 5832, "\'", 5838, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-3 col-form-label\'>Reference</label>\r\n                        <div class=\'col-sm-9\'>\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1946160", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1947439", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -562,13 +580,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.Ge
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_17);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 141 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Reference);
+                                                                                            Reference
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_18.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_18);
@@ -580,19 +600,21 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1948343", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1949750", async() => {
                     WriteLiteral("\r\n                            ");
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 142 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Reference);
+                                                      Reference
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-validation-for", __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
@@ -623,19 +645,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral("                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1951310", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1952809", async() => {
                 }
                 );
                 __GridMvc_TagHelpers_GridTagHelper = CreateTagHelper<global::GridMvc.TagHelpers.GridTagHelper>();
                 __tagHelperExecutionContext.Add(__GridMvc_TagHelpers_GridTagHelper);
+                __GridMvc_TagHelpers_GridTagHelper.Model = 
 #nullable restore
 #line 158 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__GridMvc_TagHelpers_GridTagHelper.Model = Model.iSGrid;
+                                      Model.iSGrid
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("model", __GridMvc_TagHelpers_GridTagHelper.Model, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -655,6 +680,7 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model.iSGrid;
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral(@"                        <div class='grid-mvc' data-lang='en' data-gridname='OpportunityLossDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'>
                             <div class='grid-wrap'>
                                 <div class='row'>
@@ -751,25 +777,28 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model.iSGrid;
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral("                </div>\r\n            </div>\r\n");
                 WriteLiteral("\r\n\r\n            <div class=\" col-sm-12 col-md-12 col-lg-12\">\r\n\r\n                <div class=\'row mb-3\'>\r\n                    <label");
                 BeginWriteAttribute("for", " for=\'", 20364, "\'", 20370, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-2 col-form-label\'>Payment Term</label>\r\n                    <div class=\'col-sm-10\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1959750", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1961327", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_19);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 351 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.PaymentTerm);
+                                                                                 PaymentTerm
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.Name = (string)__tagHelperAttribute_20.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_20);
@@ -784,20 +813,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                 BeginWriteAttribute("for", " for=\'", 20719, "\'", 20725, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-2 col-form-label\'>Delivery Term</label>\r\n                    <div class=\'col-sm-10\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1962136", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1963830", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_21);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 359 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.DeliveryTerm);
+                                                                                  DeliveryTerm
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.Name = (string)__tagHelperAttribute_22.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_22);
@@ -812,20 +843,22 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                 BeginWriteAttribute("for", " for=\'", 21078, "\'", 21084, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\'col-sm-2 col-form-label\'>Other Remark</label>\r\n                    <div class=\'col-sm-10\'>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1964522", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1966334", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_3);
                 __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_23);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 367 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.OtherRemark);
+                                                                                 OtherRemark
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.SingleQuotes);
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.Name = (string)__tagHelperAttribute_24.Value;
                 __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_24);
@@ -838,7 +871,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n\r\n\r\n            </div>\r\n\r\n            <hr />\r\n            <div class=\" col-sm-12 col-md-12 col-lg-12\">\r\n                <div class=\"text-center\">\r\n");
                 WriteLiteral("                    <button id=\"btnSave\" type=\"button\" onclick=\"fnSubmit()\" class=\"btn btn-primary btn-info px-5 ladda-button\">Submit</button>\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1966931", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72c83b36e7337a342df14666ea47ed04ab81a518d0a1eff93c3a772b4e81d1968860", async() => {
                     WriteLiteral("Back");
                 }
                 );
@@ -886,21 +919,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper.For = ModelExpressionPro
         <div id=""dvInfoAddNewRow"">
 ");
             WriteLiteral("        </div>\r\n    </div>\r\n</div>\r\n");
+            Write(
 #nullable restore
 #line 413 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n<script type=\"text/javascript\">\r\n    var urlsave = \'");
+            Write(
 #nullable restore
 #line 415 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-              Write(Url.Action("AddOrUpdateOpportunityLossMaster", "OpportunityLossMaster"));
+                    Url.Action("AddOrUpdateOpportunityLossMaster", "OpportunityLossMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnSubmit() {
 
@@ -991,13 +1028,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: """);
+            Write(
 #nullable restore
 #line 501 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                    });\r\n                }\r\n            }).always(function () {\r\n                hideLoader();\r\n            });\r\n        }\r\n    }\r\n\r\n    // $(function () {\r\n    //  var GriddataUrl = \'");
             WriteLiteral(@"@Url.Action(""OpportunityLossItemDetail"", ""OpportunityLossMaster"")';
     //     let selectedValue = $(""#OpportunityLossID"").val();
@@ -1017,13 +1056,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         let selectedCustomert = $(""#choices-multiple-remove-button-CustomerID option:selected"").val();
         // alert(selectedValue);
         var urlGetData = '");
+            Write(
 #nullable restore
 #line 528 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-                     Write(Url.Action("GetActionResultAsyncCustomerAddress", "OpportunityLossMaster"));
+                           Url.Action("GetActionResultAsyncCustomerAddress", "OpportunityLossMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         $.ajax({
             url: urlGetData,
@@ -1041,13 +1082,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: """);
+            Write(
 #nullable restore
 #line 544 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                 });
             }
@@ -1209,13 +1252,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: """);
+            Write(
 #nullable restore
 #line 694 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SalesDistribution\Views\OpportunityLossMaster\AddOrUpdateOpportunityLossMaster.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                     });
                 }

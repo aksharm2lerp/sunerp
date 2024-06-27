@@ -190,7 +190,7 @@ D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\n
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.AssemblyInfo.cs
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CoreCompileInputs.cache
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.sourcelink.json
-D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.csproj.CopyComplete
+D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.40527FD7.Up2Date
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.dll
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\refint\Business.Entities.dll
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Debug\net5.0\Business.Entities.pdb

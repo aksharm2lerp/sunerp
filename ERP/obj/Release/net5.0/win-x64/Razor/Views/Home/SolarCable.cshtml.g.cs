@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Home_SolarCable), @"mvc.1.0.view", @"/Views/Home/SolarCable.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"73f13403f02dbd6d2289137c75bc15c3b6a2b91a42582e62a9a2b8746ee36397", @"/Views/Home/SolarCable.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"73f13403f02dbd6d2289137c75bc15c3b6a2b91a42582e62a9a2b8746ee36397", @"/Views/Home/SolarCable.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_SolarCable : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Business.Entities.ProductPhotoPath.ProductPhotoPath>>
     #nullable disable
@@ -123,6 +115,7 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("<div class=\"container margin-top-80\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-12 col-md-12 col-lg-12 mx-auto\">\r\n            <div class=\"card border-0 shadow rounded-3\">\r\n                <div class=\"card-body\">\r\n");
             WriteLiteral("                    <div class=\"ProductImage\">\r\n                        <h1 class=\"text-center pt-3\">SOLAR CABLE</h1>\r\n                        <div class=\"row mb-5\" id=\"imagesLoop\">\r\n");
 #nullable restore
@@ -133,35 +126,42 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                            <div class=\"col-sl-12 col-md-4 col-lg-4 col-xl-4 my-3\">\r\n                                <div class=\"card\">\r\n                                    <img id=\"img01\"");
             BeginWriteAttribute("src", " src=\"", 2735, "\"", 2787, 1);
+            WriteAttributeValue("", 2741, 
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\SolarCable.cshtml"
-WriteAttributeValue("", 2741, Html.DisplayFor(modelItem => items.ImagePath), 2741, 46, false);
+                                                          Html.DisplayFor(modelItem => items.ImagePath)
 
 #line default
 #line hidden
 #nullable disable
+            , 2741, 46, false);
             EndWriteAttribute();
             WriteLiteral(@" class=""card-img-top rounded mx-auto d-block"" alt=""Solar Cable"" style=""width:150px; height:150px;"">
                                     <div class=""card-body text-center"">
                                         <button type=""button"" class=""btn btn-primary px-5 my-3"">RFQ</button>
                                         <h4 class=""card-title"">");
+            Write(
 #nullable restore
 #line 50 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\SolarCable.cshtml"
-                                                          Write(Html.DisplayFor(modelItem => items.ProductImageText));
+                                                                Html.DisplayFor(modelItem => items.ProductImageText)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h4>\r\n                                        <p class=\"card-text\">");
+            Write(
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\SolarCable.cshtml"
-                                                        Write(Html.DisplayFor(modelItem => items.Description));
+                                                              Html.DisplayFor(modelItem => items.Description)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</p>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n");
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\SolarCable.cshtml"
@@ -170,6 +170,7 @@ WriteAttributeValue("", 2741, Html.DisplayFor(modelItem => items.ImagePath), 274
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            
                         </div>
 
@@ -233,7 +234,7 @@ WriteAttributeValue("", 2741, Html.DisplayFor(modelItem => items.ImagePath), 274
                             <div class=""download-part-all"">
                                 <div class=""download-btn"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "73f13403f02dbd6d2289137c75bc15c3b6a2b91a42582e62a9a2b8746ee3639713846", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "73f13403f02dbd6d2289137c75bc15c3b6a2b91a42582e62a9a2b8746ee3639713806", async() => {
                 WriteLiteral("\r\n                                        <img src=\"../../assets/images/wireImages/Brochure/dn-brochure.png\" alt=\"Download Brochure\" class=\"ProductBrochure\">\r\n                                    ");
             }
             );
@@ -278,10 +279,25 @@ WriteAttributeValue("", 2741, Html.DisplayFor(modelItem => items.ImagePath), 274
 </script>");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public IAuthorizationService AuthorizationService { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+IAuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+AuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

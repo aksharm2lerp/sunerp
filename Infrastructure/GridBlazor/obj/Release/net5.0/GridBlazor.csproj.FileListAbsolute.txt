@@ -502,8 +502,8 @@ D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\staticwebas
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\staticwebassets\msbuild.buildMultiTargeting.GridBlazor.props
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\staticwebassets\msbuild.buildTransitive.GridBlazor.props
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\staticwebassets\GridBlazor.StaticWebAssets.xml
-D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\GridBlazor.csproj.CopyComplete
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\GridBlazor.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\refint\GridBlazor.dll
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\GridBlazor.pdb
 D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\ref\GridBlazor.dll
+D:\GitHub\SUN\sunerpm2l\Infrastructure\GridBlazor\obj\Release\net5.0\GridBlazor.csproj.Up2Date

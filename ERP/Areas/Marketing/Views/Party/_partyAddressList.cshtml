@@ -21,47 +21,49 @@
         </div>
     </div>
     <div class="row">
-        <table class="table table-striped" id="tblPartyAddress">
-            <thead>
-                <tr>
-                    <th>Sr. No.</th>
-                    <th>Address Type</th>
-                    <th>Plot No Name</th>
-                    <th>Street No Name</th>
-                    <th>Main Address</th>
-                    <th>State</th>
-                    <th>Country</th>
-                    <th>IsActive</th>
-                    <th>Update</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null)
-                {
-                    @foreach (var item in Model)
+        <div class="table-responsive">
+            <table class="table table-striped" id="tblPartyAddress">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Address Type</th>
+                        <th>Plot No Name</th>
+                        <th>Street No Name</th>
+                        <th>Main Address</th>
+                        <th>State</th>
+                        <th>Country</th>
+                        <th>IsActive</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
                     {
-                                <tr>
-                                    <td>@item.SrNo</td>
-                                    <td>@item.AddressType</td>
-                                    <td>@item.PlotNoName</td>
-                                    <td>@item.StreetNoName</td>
-                                    <td>@item.MainAddress</td>
-                                    <td>@item.StateName</td>
-                                    <td>@item.CountryName</td>
-                                    <td>@item.IsActive</td>
-                                    <td>
-                                        <a class='btn editaddress' onclick="fnAddAddress(@item.PartyAddressTxnID)"
-                           href="javascript:void(0)"
-                           data-bs-toggle="offcanvas"
-                           data-bs-target="#canvas_PartyAddress"
-                           aria-controls="canvas_PartyAddress"
-                           data-id="@item.PartyAddressTxnID"
-                           Partyid="@item.PartyID"><i class='bx bx-edit'></i></a>
-                                </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SrNo</td>
+                                <td>@item.AddressType</td>
+                                <td>@item.PlotNoName</td>
+                                <td>@item.StreetNoName</td>
+                                <td>@item.MainAddress</td>
+                                <td>@item.StateName</td>
+                                <td>@item.CountryName</td>
+                                <td>@item.IsActive</td>
+                                <td>
+                                    <a class='btn editaddress' onclick="fnAddAddress(@item.PartyAddressTxnID)"
+                                       href="javascript:void(0)"
+                                       data-bs-toggle="offcanvas"
+                                       data-bs-target="#canvas_PartyAddress"
+                                       aria-controls="canvas_PartyAddress"
+                                       data-id="@item.PartyAddressTxnID"
+                                       Partyid="@item.PartyID"><i class='bx bx-edit'></i></a>
+                            </tr>
+                        }
                     }
-                }
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="canvas_PartyAddress">
@@ -82,23 +84,21 @@
         var _id = PartyAddTxnId;//$(this).data('id');
         var _PartyId = $("#PartyID").val();
 
-        if(_id>0)
-        {
+        if (_id > 0) {
             document.getElementById("canvasHeaderPartyAddress").innerHTML = "Update Party address";
         }
-        else
-        {
+        else {
             document.getElementById("canvasHeaderPartyAddress").innerHTML = "Add Party address";
         }
 
         var _parameters = { PartyAddressTxnId: _id, PartyId: _PartyId };
-        
+
         $.ajax({
             url: urlAddAddress,
             type: "GET",
             data: _parameters,
             success: function (data, textStatus, jqXHR) {
-                
+
                 $("#canvas_PartyAddress").show();//('hide');
                 $('#dvInfoPartyAddress').html(data);
             }

@@ -1,4 +1,5 @@
 @using Business.Entities.SalesDistribution.SalesOrderMasterModel;
+@using System.Data
 @model SalesOrderMaster;
 @addTagHelper *, GridMvc
 @{
@@ -8,6 +9,7 @@
 
 }
 @{
+    DataTable dataTable = CommonExtension.GetFormulaMasterByCustomerID(Model.CustomerID);
     int i = 0;
     var modelA = Model;
     var modelB = modelA;
@@ -62,6 +64,7 @@
                 <div class="row mb-3">
                     <input type="hidden" asp-for="SalesOrderID" />
                     <input type="hidden" asp-for="SAPCollectionJSONString" id="SAPCollectionJSONString" />
+                    <input type="hidden" asp-for="TaxAmountJSONString" id="TaxAmountJSONString" />
                 </div>
             </div>
             <div class="row">
@@ -106,7 +109,7 @@
                     <div class='row mb-3'>
                         <label for='' class='col-sm-3 col-form-label'>Customer Name</label>
                         <div class='col-sm-9'>
-                            <select class='form-select' asp-for="CustomerID" id='choices-multiple-remove-button-CustomerID' asp-items='@CommonExtension.GetAllCustomerAsync()'>
+                            <select class='form-select' asp-for="CustomerID" id='choices-multiple-remove-button-CustomerID' asp-items='@CommonExtension.GetAllCustomerAsync()' onchange="getSelectedRespectiveValues()">
                                 <option value=''>Select here...</option>
                             </select>
                         </div>
@@ -137,36 +140,41 @@
             <div class="row" id="divAddressInfo">
                 @await Html.PartialAsync("SalesOrderCustomerAddress", customerAddressLists);
             </div>
-            <div class="row">
-                <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Shop Order No</label>
-                        <div class='col-sm-9'>
-                            <input type='text' class='form-control' id='ShopOrderID' asp-for='ShopOrderID' name='ShopOrderID'>
-                            <span asp-validation-for='ShopOrderID' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Shop Order Date</label>
-                        <div class='col-sm-4'>
-                            <input type='date' class='form-control' id='ShopOrderDate' asp-for='ShopOrderDate' name='ShopOrderDate'>
-                            <span asp-validation-for='ShopOrderDate' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+            @* <div class="row">
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Shop Order No</label>
+            <div class='col-sm-9'>
+            <input type='text' class='form-control' id='ShopOrderID' asp-for='ShopOrderID' name='ShopOrderID'>
+            <span asp-validation-for='ShopOrderID' class='text-danger'>
+            </span>
             </div>
+            </div>
+            </div>
+            <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Shop Order Date</label>
+            <div class='col-sm-4'>
+            <input type='date' class='form-control' id='ShopOrderDate' asp-for='ShopOrderDate' name='ShopOrderDate'>
+            <span asp-validation-for='ShopOrderDate' class='text-danger'>
+            </span>
+            </div>
+            </div>
+            </div>
+            </div> *@
             <div class="row">
                 <div class=" col-sm-6 col-md-6 col-lg-6">
                     <div class='row mb-3'>
                         <label for='' class='col-sm-3 col-form-label'>Reference</label>
-                        <div class='col-sm-9'>
+                        <div class='col-sm-8'>
                             <input type='text' class='form-control' id='Reference' asp-for='Reference' name='Reference'>
-                            <span asp-validation-for='Reference' class='text-danger'>
-                            </span>
+                            <input type="hidden" id="EmployeeID" asp-for='EmployeeID' name='EmployeeID' />
+                            <input type="hidden" id="EmployeeName" asp-for='EmployeeName' name='EmployeeName' />
+                            @* <span asp-validation-for='Reference' class='text-danger'>
+                            </span> *@
+                        </div>
+                        <div class='col-sm-1'>
+                            <a class='MCLFAB fa-lg pb-1' id='btnAddEmployeeIDName' onclick='fnAddEmployeeIdName()' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddReference' aria-controls='canvasAddReference'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded'></iconify-icon></a>
                         </div>
                     </div>
                 </div>
@@ -185,53 +193,53 @@
                     }
                     else
                     {
-                       @*  <div class='grid-mvc' data-lang='en' data-gridname='SalesOrderDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'>
-                            <div class='grid-wrap'>
-                                <div class='row'>
-                                    <div class='col-md-6 grid-header-buttons'></div>
-                                </div>
-                                <div class='grid-table-wrap'>
-                                    <table class='table  grid-table'>
-                                        <thead>
-                                            <tr>
-                                                <th class=' grid-header' style=''>
-                                                    <div class='grid-header-group'>
-                                                        <div class='grid-header-title'>
-                                                            <span>Sr No</span>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th class=' grid-header' style=' display:none;'>
-                                                    <div class='grid-header-group'>
-                                                        <div class='grid-header-title'>
-                                                            <span>SalesOrderDetailID</span>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Sales Order ID</span></div></div></th>
-                                                <th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th>
-                                                <th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th>
-                                                <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th>
-                                                <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th>
-                                                <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th>
-                                                 <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th> 
-                                                <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th>
-                                                <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th>
-                                                <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th>
-                                                <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th>
-                                                <th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class='grid-footer'>
-                                    <div class='grid-pager-sizer'>&nbsp;</div>
-                                    <div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div>
-                                </div>
-                            </div>
-                        </div> *@
+                        @*  <div class='grid-mvc' data-lang='en' data-gridname='SalesOrderDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'>
+                    <div class='grid-wrap'>
+                    <div class='row'>
+                    <div class='col-md-6 grid-header-buttons'></div>
+                    </div>
+                    <div class='grid-table-wrap'>
+                    <table class='table  grid-table'>
+                    <thead>
+                    <tr>
+                    <th class=' grid-header' style=''>
+                    <div class='grid-header-group'>
+                    <div class='grid-header-title'>
+                    <span>Sr No</span>
+                    </div>
+                    </div>
+                    </th>
+                    <th class=' grid-header' style=' display:none;'>
+                    <div class='grid-header-group'>
+                    <div class='grid-header-title'>
+                    <span>SalesOrderDetailID</span>
+                    </div>
+                    </div>
+                    </th>
+                    <th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>Sales Order ID</span></div></div></th>
+                    <th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>ItemID</span></div></div></th>
+                    <th class=' grid-header' style=' display:none;'><div class='grid-header-group'><div class='grid-header-title'><span>UOMID</span></div></div></th>
+                    <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Code</span></div></div></th>
+                    <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Item Name</span></div></div></th>
+                    <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Add</span></div></div></th>
+                    <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>HSN Code</span></div></div></th>
+                    <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>UOM</span></div></div></th>
+                    <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Qty</span></div></div></th>
+                    <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Rate</span></div></div></th>
+                    <th class=' grid-header' style=''><div class='grid-header-group'><div class='grid-header-title'><span>Total Amt</span></div></div></th>
+                    <th class='hidden-xs grid-header' style='width:20px;'><div class='grid-header-group'><div class='grid-header-title'><span>Remove</span></div></div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    </table>
+                    </div>
+                    <div class='grid-footer'>
+                    <div class='grid-pager-sizer'>&nbsp;</div>
+                    <div class='grid-itemscount'><div class='grid-itemscount-label'>Items:</div><div class='grid-itemscount-caption'><b>0</b></div></div>
+                    </div>
+                    </div>
+                    </div> *@
 
                         <div class='grid-mvc' data-lang='en' data-gridname='SalesOrderDetailTable' data-selectable='true' data-extsortable='false' data-groupable='false' data-multiplefilters='false' data-initfilters='' dir='ltr'>
                             <div class='grid-wrap'>
@@ -406,35 +414,35 @@
                     }
                 </div>
             </div>
-            <br/>
-           @*  
+            <br />
+            @*
             <div class="row">
-                <div class=" col-sm-8 col-md-8 col-lg-8">
-                </div>
-                <div class=" col-sm-4 col-md-4 col-lg-4">
-                    <div class='row mb-6'>
-                        <label for='' class='col-sm-7 col-form-label'>Net Amount</label>
-                        <div class='col-sm-5'>
-                            <input type='text' class='form-control' id='NetAmount' asp-for='NetAmount' name='NetAmount'>
-                            <span asp-validation-for='NetAmount' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-@*                 <div class=" col-sm-6 col-md-6 col-lg-6">
-                    <div class='row mb-3'>
-                        <label for='' class='col-sm-3 col-form-label'>Gross Amount</label>
-                        <div class='col-sm-4'>
-                            <input type='text' class='form-control' id='GrossAmount' asp-for='GrossAmount' name='GrossAmount'>
-                            <span asp-validation-for='GrossAmount' class='text-danger'>
-                            </span>
-                        </div>
-                    </div>
-                </div> 
+            <div class=" col-sm-8 col-md-8 col-lg-8">
             </div>
- *@
-            <div>
-                @await Html.PartialAsync("_transactionCalculation");
+            <div class=" col-sm-4 col-md-4 col-lg-4">
+            <div class='row mb-6'>
+            <label for='' class='col-sm-7 col-form-label'>Net Amount</label>
+            <div class='col-sm-5'>
+            <input type='text' class='form-control' id='NetAmount' asp-for='NetAmount' name='NetAmount'>
+            <span asp-validation-for='NetAmount' class='text-danger'>
+            </span>
+            </div>
+            </div>
+            </div>
+            @*                 <div class=" col-sm-6 col-md-6 col-lg-6">
+            <div class='row mb-3'>
+            <label for='' class='col-sm-3 col-form-label'>Gross Amount</label>
+            <div class='col-sm-4'>
+            <input type='text' class='form-control' id='GrossAmount' asp-for='GrossAmount' name='GrossAmount'>
+            <span asp-validation-for='GrossAmount' class='text-danger'>
+            </span>
+            </div>
+            </div>
+            </div>
+            </div>
+            *@
+            <div class="row" id="divTransactionInfo">
+                @await Html.PartialAsync("_transactionCalculation", dataTable);
                 <input type="hidden" asp-for="NetAmount" id="NetAmountDestination" />
                 <input type="hidden" asp-for="FreightPercentage" id="FreightPercentageDestination" />
                 <input type="hidden" asp-for="FreightAmount" id="FreightAmountDestination" />
@@ -507,17 +515,86 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="canvasAddReference" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add reference</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="fnCloseOpupModel()" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <label class="col-sm-5 col-form-label">Marketing person</label>
+                    <div class="col-sm-7">
+                        <select onchange="fnPassEmployeeIDName()" id="SelectedEmployeeID" name="SelectedEmployeeID" asp-items="@CommonExtension.GetAllEmployeeAsyncForReferenceDropDown()" multiple>
+                            <option value="" selected>--- All ---</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                @* <a onclick="fnApprovSaveCalculatedSalary()" class="btn btn-primary">Confirm</a> *@
+                <!--<button type="button" class="btn btn-primary" onclick="fnAddParty()">Save</button>-->
+                <button type="button" onclick="fnCloseOpupModel()" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+            </div>
+        </div>
+    </div>
+</div>
 @await Html.PartialAsync("_ValidationScriptsPartial")
 <script type="text/javascript">
     var urlsave = '@Url.Action("AddOrUpdateSalesOrderMaster", "SalesOrderMaster")';
     function fnSubmit() {
 
-        document.getElementById('NetAmountDestination').value = document.getElementById('NetAmountSource').value;
-        document.getElementById('FreightPercentageDestination').value = document.getElementById('FreightPercentageSource').value;
-        document.getElementById('FreightAmountDestination').value = document.getElementById('FreightAmountSource').value;
-        document.getElementById('PackingChargesPerDestination').value = document.getElementById('PackingChargesPerSource').value;
-        document.getElementById('PackingAmountDestination').value = document.getElementById('PackingAmountSource').value;
-        document.getElementById('GrossAmountDestination').value = document.getElementById('GrossAmountSource').value;
+        // document.getElementById('NetAmountDestination').value = document.getElementById('NetAmountSource').value;
+        // document.getElementById('FreightPercentageDestination').value = document.getElementById('FreightPercentageSource').value;
+        // document.getElementById('FreightAmountDestination').value = document.getElementById('FreightAmountSource').value;
+        // document.getElementById('PackingChargesPerDestination').value = document.getElementById('PackingChargesPerSource').value;
+        // document.getElementById('PackingAmountDestination').value = document.getElementById('PackingAmountSource').value;
+        // document.getElementById('GrossAmountDestination').value = document.getElementById('GrossAmountSource').value;
+
+        //Added on 14th May 2024.
+
+        const nesteddivForTransactionAmts = document.getElementById('divTransactionInfo');
+        const divForInputsAmts = nesteddivForTransactionAmts.querySelectorAll('input');
+
+        var jsonFinalTransactionData = [];
+
+        for (let i = 0; i < divForInputsAmts.length; i += 5) {
+
+            const pair = [divForInputsAmts[i], divForInputsAmts[i + 1], divForInputsAmts[i + 2], divForInputsAmts[i + 3], divForInputsAmts[i + 4]].filter(Boolean);
+
+            let formulaPercentage;
+
+            // let testerst0 = pair[0].value;
+            // let testerst1 = pair[1].value;
+            // let testerst2 = pair[2].value;
+            // let testerst3 = pair[3].value;
+            // let testerst4 = pair[4].value;
+            // debugger;
+            if (pair[0].value) {
+                formulaPercentage = pair[0].value;
+            }
+            else {
+                formulaPercentage = 0.0;
+            }
+            const tempJson = {
+                'SalesOrderAmountDetailID': 0,
+                'SalesOrderID': document.getElementById('SalesOrderID').value,
+                'FormulaHead': pair[1].value,
+                'FormulaLabel': pair[2].value,
+                'Formula': pair[4].value,
+                'FormulaPercentage': formulaPercentage,//parseFloat(pair[0].value).toFixed(2),
+                'FormulaValue': pair[3].value,
+                'IsActive': true,
+                'CreatedOrModifiedBy': 0
+            };
+            jsonFinalTransactionData.push(tempJson);
+        }
+        var taxAmountStringJson = document.getElementById('TaxAmountJSONString');
+        taxAmountStringJson.value = JSON.stringify(jsonFinalTransactionData);
+
+        //Added on 14th May 2024.
 
         var sapStringJson = document.getElementById('SAPCollectionJSONString');
 
@@ -669,9 +746,33 @@
         }).always(function () {
             hideLoader();
         });
+
+        var urlGetFormulas = '@Url.Action("GetFormulaMasterByCustomerID", "SalesOrderMaster")';
+        $.ajax({
+            url: urlGetFormulas,
+            data: { customerId: selectedCustomert },
+            type: 'GET',
+            success: function (data) {
+                $('#divTransactionInfo').html(data);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
     }
 
     $(document).ready(function () {
+
         getSelectedRespectiveValues();
 
 
@@ -696,8 +797,13 @@
             renderChoiceLimit: 10
         });
 
-
-
+        var multipleCancelButtonWareHouse = new Choices('#SelectedEmployeeID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+        fnUpdateNetAmount();
     });
 
     function fnCalcAmt(inputValue) {
@@ -706,12 +812,11 @@
         var amtVal = document.getElementById('amtIndex' + inputValue);
         amtVal.value = Number(qtyVal * rateVal);
     }
-    function fnSumOfTotleAmount(){
+    function fnSumOfTotleAmount() {
 
     }
     function fnOpenNewRowInfo() {
         var i = 0;
-        // alert('fnOpenNewRowInfo fn invoked');
         var tableElement = document.getElementsByTagName('Table');
 
         // var srCount = tableElement[0].rows.length;
@@ -721,7 +826,7 @@
             var index = 'newRowIndex' + srCount;
             // var newRow = "<tr class='grid-row'><td class='grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='salesOrderDetailId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='salesOrderId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='itemId" + index + "'></td><td class='grid-cell' style='display:none;' data-name=''><input type='hidden' class='form-control' value='' id='UOMID" + index + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemCodeIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemNameIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue(" + srCount + ")' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded' /></a></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value ='' id='UOMIndex" + index + "' readonly=''></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnCalcAmt(" + srCount + ")' id='qtyIndex" + srCount + "'></td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' oninput='fnCalcAmt(" + srCount + ")' id='rateIndex" + srCount + "'> </td><td class='grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='amtIndex" + srCount + "' readonly=''> </td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon = 'mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
 
-            var newRow = "<tr class='grid-row '><td class=' grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0' id='salesOrderDetailId" + srCount + "'></td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0' id='salesOrderId" + srCount + "'></td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0' id='itemId" + srCount + "'></td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0' id='UOMID" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemCodeIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemNameIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='UOMIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue(" + srCount + ")' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded'></iconify-icon></a></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='stockNoOfCoilIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='stockCoilLengthIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='orderNoOfCoilIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='orderCoilLengthIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='orderQtyInMeterIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='priceListAmtIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='perMeterPriceIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0.00' id='discountIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='specialDiscountIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='cashDiscountIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0.00' id='amtIndex" + srCount + "' readonly=''></td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
+            var newRow = "<tr class='grid-row '><td class=' grid-cell' style='' data-name='SrNo'>" + srCount + "</td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0' id='salesOrderDetailId" + srCount + "'></td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0' id='salesOrderId" + srCount + "'></td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0' id='itemId" + srCount + "'></td><td class=' grid-cell' style=' display:none;' data-name=''><input type='hidden' class='form-control' value='0' id='UOMID" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemCodeIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='itemNameIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='' id='UOMIndex" + index + "' readonly=''></td><td class=' grid-cell' style='' data-name=''><a class='MCLFAB fa-lg pb-1' id='btnAddNewRow' onclick='fnAddNewRowValue(" + srCount + ")' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasAddNewRow' aria-controls='canvasAddNewRow'><iconify-icon class='parent-icon' icon='material-symbols:add-circle-outline-rounded'></iconify-icon></a></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='stockNoOfCoilIndex" + index + "' oninput='fnCalculateSalesOrderItems(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='stockCoilLengthIndex" + index + "' oninput='fnCalculateSalesOrderItems(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='orderNoOfCoilIndex" + index + "' oninput='fnUpdateOrderQuantityInMeter(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='orderCoilLengthIndex" + index + "' oninput='fnUpdateOrderQuantityInMeter(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='orderQtyInMeterIndex" + index + "' oninput='fnUpdatePriceListAmount(" + srCount + "); fnUpdatePricePerMeter(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='priceListAmtIndex" + index + "' oninput='fnUpdatePricePerMeter(" + srCount + "); fnUpdateDiscountsAmount(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='perMeterPriceIndex" + index + "' oninput='fnUpdatePriceListAmount(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0.00' id='discountIndex" + index + "' oninput='fnUpdateDiscountsAmount(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0' id='specialDiscountIndex" + index + "' oninput='fnUpdateDiscountsAmount(" + srCount + ")'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' oninput='fnUpdateDiscountsAmount(" + srCount + ")' value='0' id='cashDiscountIndex" + index + "'></td><td class=' grid-cell' style='' data-name=''><input type='text' class='form-control' value='0.00' id='amtIndex" + srCount + "' readonly='' oninput='fnUpdateNetAmount()'></td><td class='hidden-xs grid-cell' style='' data-name=''><h5 class='fa-2x pt-1'><a class='MCLFRB' id='btnRemoveRow' onclick='removeRow(this)'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></h5></td></tr>";
             $('Table tbody').append(newRow);
         }
         else {
@@ -795,18 +900,17 @@
                 hideLoader();
             });
         }
-        else{
+        else {
             row.parentNode.removeChild(row);
         }
     }
 
     function fnAddNewRowValue(obj) {
-        // alert('fnAddNewRowValue fn invoked.');
         // var tableElement = document.getElementsByTagName('table');
         document.getElementById('canvasHeaderAddNewRow').innerHTML = "Add Info";
-
+        //'/SalesDistribution/SalesOrderMaster/GetSAPItemCollection/
         $.ajax({
-            url: '/SalesDistribution/SalesOrderMaster/GetSAPItemCollection/',
+            url: '@Url.ActionLink("GetSAPItemCollection", "SalesOrderMaster")',
             type: "GET",
             success: function (data, textStatus, jqXHR) {
                 $("#canvasAddNewRow").show();//('hide');
@@ -816,4 +920,143 @@
         });
 
     }
+
+    function fnAddEmployeeIdName() {
+        $("#canvasAddReference").show();
+    }
+
+    function fnCloseOpupModel() {
+        $("#canvasAddReference").hide();
+        var divToremove = document.getElementsByClassName("offcanvas-backdrop fade show");
+        divToremove[0].classList.remove('show');
+        divToremove.style = 'display: none';
+        document.getElementsByTagName('fieldset').focus();
+
+    }
+
+    function fnPassEmployeeIDName() {
+        document.getElementById('Reference').value = '';
+        var employeeId = document.getElementById('EmployeeID');
+        var employeeNameReference = document.getElementById('Reference');  //Reference but consider Employee Name.
+        var employeeName = document.getElementById('EmployeeName');  //Reference but consider Employee Name.
+
+        var dropdown = document.getElementById('SelectedEmployeeID');
+
+        var selectedOption = dropdown.options[dropdown.selectedIndex];
+
+        // Get the selected value and label
+        var selectedEmployeeID = selectedOption.value;
+        var selectedEmployeeName = selectedOption.text;
+
+        employeeId.value = selectedEmployeeID;
+        employeeNameReference.value = selectedEmployeeName;
+        employeeName.value = selectedEmployeeName;
+        $("#canvasAddReference").hide();
+        var divToremove = document.getElementsByClassName("offcanvas-backdrop fade show");
+        divToremove[0].classList.remove('show');
+        divToremove.style = 'display: none';
+        document.getElementsByTagName('fieldset').focus();
+    }
+
+    // function fnCalculateSalesOrderItems(indexNo) {
+    //     var stockNoOfCoil = document.getElementById('stockNoOfCoilIndexnewRowIndex' + indexNo);
+    //     var stockCoilLength = document.getElementById('stockCoilLengthIndexnewRowIndex' + indexNo);
+    //     var orderNoOfCoil = document.getElementById('orderNoOfCoilIndexnewRowIndex' + indexNo);
+    //     var orderCoilLength = document.getElementById('orderCoilLengthIndexnewRowIndex' + indexNo);
+    //     var orderQtyInMeter = document.getElementById('orderQtyInMeterIndexnewRowIndex' + indexNo);
+    //     var priceListAmt = document.getElementById('priceListAmtIndexnewRowIndex' + indexNo);
+    //     var perMeterPrice = document.getElementById('perMeterPriceIndexnewRowIndex' + indexNo);
+    //     var discount = document.getElementById('discountIndexnewRowIndex' + indexNo);
+    //     var specialDiscount = document.getElementById('specialDiscountIndexnewRowIndex' + indexNo);
+    //     var cashDiscount = document.getElementById('cashDiscountIndexnewRowIndex' + indexNo);
+    //     var amtIndex = document.getElementById('amtIndex' + indexNo);
+
+    //     if (orderNoOfCoil.value !== 0 && orderCoilLength.value !== 0 && orderNoOfCoil.value !== '' && orderCoilLength.value !== '' && orderNoOfCoil.value !== NaN && orderCoilLength.value !== NaN) {
+    //         orderQtyInMeter.value = parseFloat(Number(orderNoOfCoil.value * orderCoilLength.value)).toFixed(2);
+    //     }
+    //     if (priceListAmt.value !== 0 && orderQtyInMeter.value !== 0 && priceListAmt.value !== '' && orderQtyInMeter.value !== '' && priceListAmt.value !== NaN && orderQtyInMeter.value !== NaN) {
+    //         perMeterPrice.value = parseFloat(Number(priceListAmt.value / orderQtyInMeter.value)).toFixed(2);
+    //     }
+    //     if (perMeterPrice.value !== 0 && orderQtyInMeter.value !== 0 && perMeterPrice.value !== '' && orderQtyInMeter.value !== '' && perMeterPrice.value !== NaN && orderQtyInMeter.value !== NaN) {
+    //         priceListAmt.value = parseFloat(Number(orderQtyInMeter.value * perMeterPrice.value)).toFixed(2);
+    //     }
+    //     if (discount.value === 0 || discount.value === '' || discount.value === NaN || specialDiscount.value === 0 || specialDiscount.value === '' || specialDiscount.value === NaN || cashDiscount.value === 0 || cashDiscount.value === '' || cashDiscount.value === NaN) {
+    //         discount.value = 0;
+    //         specialDiscount.value = 0;
+    //         cashDiscount.value = 0;
+    //     }
+    //     if (priceListAmt.value !== 0 && priceListAmt.value !== '' && priceListAmt.value !== NaN) {
+    //         amtIndex.value = parseFloat(Number(priceListAmt.value - discount.value - specialDiscount.value - cashDiscount.value)).toFixed(2);
+    //     }
+    //     //fnUpdateNetAmount();
+    // }
+
+    function fnUpdateOrderQuantityInMeter(indexNo) {
+        var orderNoOfCoil = document.getElementById('orderNoOfCoilIndexnewRowIndex' + indexNo);
+        var orderCoilLength = document.getElementById('orderCoilLengthIndexnewRowIndex' + indexNo);
+        var orderQtyInMeter = document.getElementById('orderQtyInMeterIndexnewRowIndex' + indexNo);
+
+        if (orderNoOfCoil.value !== 0 && orderCoilLength.value !== 0 && orderNoOfCoil.value !== '' && orderCoilLength.value !== '' && orderNoOfCoil.value !== NaN && orderCoilLength.value !== NaN) {
+            orderQtyInMeter.value = parseFloat(Number(orderNoOfCoil.value * orderCoilLength.value)).toFixed(2);
+        }
+
+        fnUpdateNetAmount();
+    }
+
+    function fnUpdatePricePerMeter(indexNo) {
+        var orderQtyInMeter = document.getElementById('orderQtyInMeterIndexnewRowIndex' + indexNo);
+        var priceListAmt = document.getElementById('priceListAmtIndexnewRowIndex' + indexNo);
+        var perMeterPrice = document.getElementById('perMeterPriceIndexnewRowIndex' + indexNo);
+
+        if (priceListAmt.value !== 0 && orderQtyInMeter.value !== 0 && priceListAmt.value !== '' && orderQtyInMeter.value !== '' && priceListAmt.value !== NaN && orderQtyInMeter.value !== NaN) {
+            perMeterPrice.value = parseFloat(Number(priceListAmt.value / orderQtyInMeter.value)).toFixed(2);
+        }
+
+        fnUpdateDiscountsAmount(indexNo);
+        fnUpdateNetAmount();
+    }
+
+    function fnUpdatePriceListAmount(indexNo) {
+        var orderQtyInMeter = document.getElementById('orderQtyInMeterIndexnewRowIndex' + indexNo);
+        var priceListAmt = document.getElementById('priceListAmtIndexnewRowIndex' + indexNo);
+        var perMeterPrice = document.getElementById('perMeterPriceIndexnewRowIndex' + indexNo);
+
+        if (perMeterPrice.value !== 0 && orderQtyInMeter.value !== 0 && perMeterPrice.value !== '' && orderQtyInMeter.value !== '' && perMeterPrice.value !== NaN && orderQtyInMeter.value !== NaN) {
+            priceListAmt.value = parseFloat(Number(orderQtyInMeter.value * perMeterPrice.value)).toFixed(2);
+        }
+
+        fnUpdateDiscountsAmount(indexNo);
+        fnUpdateNetAmount();
+    }
+
+    function fnUpdateDiscountsAmount(indexNo) {
+        var priceListAmt = document.getElementById('priceListAmtIndexnewRowIndex' + indexNo);
+        var discount = document.getElementById('discountIndexnewRowIndex' + indexNo);
+        var specialDiscount = document.getElementById('specialDiscountIndexnewRowIndex' + indexNo);
+        var cashDiscount = document.getElementById('cashDiscountIndexnewRowIndex' + indexNo);
+        var amtIndex = document.getElementById('amtIndex' + indexNo);
+
+        if (discount.value === 0 || discount.value === '' || discount.value === NaN || specialDiscount.value === 0 || specialDiscount.value === '' || specialDiscount.value === NaN || cashDiscount.value === 0 || cashDiscount.value === '' || cashDiscount.value === NaN) {
+            discount.value = 0;
+            specialDiscount.value = 0;
+            cashDiscount.value = 0;
+        }
+        if (priceListAmt.value !== 0 && priceListAmt.value !== '' && priceListAmt.value !== NaN) {
+            amtIndex.value = parseFloat(Number(priceListAmt.value - discount.value - specialDiscount.value - cashDiscount.value)).toFixed(2);
+        }
+        fnUpdateNetAmount();
+    }
+    // function fnUpdateNetAmount() {
+    //     let netAmount = 0;
+    //     var finalTable = document.getElementsByTagName('table');
+    //     var rowLen = finalTable[0].rows.length;
+    //     for (var i = 1; i < rowLen; i++) {
+    //         let tester = parseFloat(finalTable[0].rows[i].cells[19].children[0].value).toFixed(2);
+    //         netAmount = Number(parseFloat(netAmount) + parseFloat(finalTable[0].rows[i].cells[19].children[0].value)).toFixed(2);
+    //     }
+    //     document.getElementById('A').value = netAmount;
+    //     let testeres = document.getElementById('A').value;
+    //     alert('fnUpdateNetAmount fn invoked from main view');
+    // }
+
 </script>

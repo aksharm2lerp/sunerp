@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Marketing_Views_PurchaseOrderMaster_Index), @"mvc.1.0.view", @"/Areas/Marketing/Views/PurchaseOrderMaster/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\Index.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\Index.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\Index.cshtml"
-using GridCore;
+ using GridCore
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"50f7fb0e7b959dce3b6d47176a5a4ad16e133d9ffa24f54b5bb81e79463a9546", @"/Areas/Marketing/Views/PurchaseOrderMaster/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"50f7fb0e7b959dce3b6d47176a5a4ad16e133d9ffa24f54b5bb81e79463a9546", @"/Areas/Marketing/Views/PurchaseOrderMaster/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Marketing_Views_PurchaseOrderMaster_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ISGrid>
     #nullable disable
@@ -135,6 +126,7 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"
 <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
     <div class=""card border-1 shadow rounded-7 p-1"">
@@ -146,7 +138,7 @@ using GridCore;
                             <ol class=""breadcrumb mb-0 p-0"">
                                 <li class=""breadcrumb-item"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50f7fb0e7b959dce3b6d47176a5a4ad16e133d9ffa24f54b5bb81e79463a95467614", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50f7fb0e7b959dce3b6d47176a5a4ad16e133d9ffa24f54b5bb81e79463a95467396", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -186,19 +178,22 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "50f7fb0e7b959dce3b6d47176a5a4ad16e133d9ffa24f54b5bb81e79463a954610365", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "50f7fb0e7b959dce3b6d47176a5a4ad16e133d9ffa24f54b5bb81e79463a954610149", async() => {
             }
             );
             __GridMvc_TagHelpers_GridTagHelper = CreateTagHelper<global::GridMvc.TagHelpers.GridTagHelper>();
             __tagHelperExecutionContext.Add(__GridMvc_TagHelpers_GridTagHelper);
+            __GridMvc_TagHelpers_GridTagHelper.Model = 
 #nullable restore
 #line 53 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\Index.cshtml"
-__GridMvc_TagHelpers_GridTagHelper.Model = Model;
+                              Model
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("model", __GridMvc_TagHelpers_GridTagHelper.Model, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -224,13 +219,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
 </div>
 <script type=""text/javascript"">
     var urladd = '");
+            Write(
 #nullable restore
 #line 69 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PurchaseOrderMaster\Index.cshtml"
-             Write(Url.Action("Get", "PurchaseOrderMaster"));
+                   Url.Action("Get", "PurchaseOrderMaster")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
 
     function fnPurchaseOrderMaster(obj) {
@@ -253,7 +250,7 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
     }
 </script>
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50f7fb0e7b959dce3b6d47176a5a4ad16e133d9ffa24f54b5bb81e79463a954613391", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50f7fb0e7b959dce3b6d47176a5a4ad16e133d9ffa24f54b5bb81e79463a954613267", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

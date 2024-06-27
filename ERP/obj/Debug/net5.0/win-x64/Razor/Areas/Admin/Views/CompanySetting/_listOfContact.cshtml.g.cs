@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_CompanySetting__listOfContact), @"mvc.1.0.view", @"/Areas/Admin/Views/CompanySetting/_listOfContact.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-using Business.SQL;
+ using Business.SQL
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"f4ecccdb8ad31bc38887ae648c280f216e38c841f61a137ef0ede6c3caf4f252", @"/Areas/Admin/Views/CompanySetting/_listOfContact.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f4ecccdb8ad31bc38887ae648c280f216e38c841f61a137ef0ede6c3caf4f252", @"/Areas/Admin/Views/CompanySetting/_listOfContact.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_CompanySetting__listOfContact : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagedDataTable<CompanyContactTxnMetadata>>
     #nullable disable
@@ -115,7 +107,7 @@ using Business.SQL;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f4ecccdb8ad31bc38887ae648c280f216e38c841f61a137ef0ede6c3caf4f2525848", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f4ecccdb8ad31bc38887ae648c280f216e38c841f61a137ef0ede6c3caf4f2525649", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -173,72 +165,89 @@ using Business.SQL;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    <tr>\r\n                        <td>");
+            Write(
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-                       Write(item.SrNo);
+                             item.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                        <td>");
+            Write(
 #nullable restore
 #line 44 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-                       Write(item.DesignationText);
+                             item.DesignationText
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                        <td>");
+            Write(
 #nullable restore
 #line 45 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-                       Write(item.PersonName);
+                             item.PersonName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                        <td>");
+            Write(
 #nullable restore
 #line 46 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-                       Write(item.PersonEmail);
+                             item.PersonEmail
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                        <td>");
+            Write(
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-                       Write(item.PersonalMobileNo);
+                             item.PersonalMobileNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                        <td>");
+            Write(
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-                       Write(item.DepartmentName);
+                             item.DepartmentName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                        <td>\r\n                            <a class=\'btn deletecontact\' href=\"#!\"");
             BeginWriteAttribute("id", " id=\"", 1790, "\"", 1824, 1);
+            WriteAttributeValue("", 1795, 
 #nullable restore
 #line 50 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-WriteAttributeValue("", 1795, item.CompanyContactPersonsID, 1795, 29, false);
+                                                                        item.CompanyContactPersonsID
 
 #line default
 #line hidden
 #nullable disable
+            , 1795, 29, false);
             EndWriteAttribute();
             BeginWriteAttribute("compnayid", " compnayid=\"", 1825, "\"", 1852, 1);
+            WriteAttributeValue("", 1837, 
 #nullable restore
 #line 50 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-WriteAttributeValue("", 1837, item.CompanyID, 1837, 15, false);
+                                                                                                                  item.CompanyID
 
 #line default
 #line hidden
 #nullable disable
+            , 1837, 15, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\'icon dripicons-trash\'></i></a>\r\n                        </td>\r\n                    </tr>\r\n");
 #nullable restore
@@ -249,6 +258,7 @@ WriteAttributeValue("", 1837, item.CompanyID, 1837, 15, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"            </tbody>
         </table>
     </div>
@@ -265,7 +275,7 @@ WriteAttributeValue("", 1837, item.CompanyID, 1837, 15, false);
 </div>
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f4ecccdb8ad31bc38887ae648c280f216e38c841f61a137ef0ede6c3caf4f25211895", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f4ecccdb8ad31bc38887ae648c280f216e38c841f61a137ef0ede6c3caf4f25212146", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -279,21 +289,25 @@ WriteAttributeValue("", 1837, item.CompanyID, 1837, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n<script>\r\n    var urlDeleteCompanyFromUser = \'");
+            Write(
 #nullable restore
 #line 72 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-                               Write(Url.Action("DeleteContact", "CompanySetting"));
+                                     Url.Action("DeleteContact", "CompanySetting")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n    var urlAddContact = \'");
+            Write(
 #nullable restore
 #line 73 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfContact.cshtml"
-                    Write(Url.Action("AddContact", "CompanySetting"));
+                          Url.Action("AddContact", "CompanySetting")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     $(document).ready(function () {
         let table1 = document.querySelector('#tblContact');

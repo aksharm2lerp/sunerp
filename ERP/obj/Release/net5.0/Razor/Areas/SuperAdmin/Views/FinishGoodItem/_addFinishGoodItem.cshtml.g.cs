@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SuperAdmin_Views_FinishGoodItem__addFinishGoodItem), @"mvc.1.0.view", @"/Areas/SuperAdmin/Views/FinishGoodItem/_addFinishGoodItem.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-using ERP.Areas.SuperAdmin.Controllers;
+ using ERP.Areas.SuperAdmin.Controllers;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"77b678bc8b57270aef40845e77e4709f1b8afea7d95d34ed6a011281195feefc", @"/Areas/SuperAdmin/Views/FinishGoodItem/_addFinishGoodItem.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"77b678bc8b57270aef40845e77e4709f1b8afea7d95d34ed6a011281195feefc", @"/Areas/SuperAdmin/Views/FinishGoodItem/_addFinishGoodItem.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SuperAdmin_Views_FinishGoodItem__addFinishGoodItem : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Business.Entities.Master.ItemTableCollection>
     #nullable disable
@@ -148,7 +138,7 @@ using ERP.Areas.SuperAdmin.Controllers;
     }
 </style>
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77b678bc8b57270aef40845e77e4709f1b8afea7d95d34ed6a011281195feefc6591", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "77b678bc8b57270aef40845e77e4709f1b8afea7d95d34ed6a011281195feefc6363", async() => {
                 WriteLiteral(@"
     <div id=""exampleModalFGI"" class=""modal"" tabindex=""-1"" role=""dialog"">
         <div class=""modal-dialog"" role=""document"">
@@ -162,85 +152,103 @@ using ERP.Areas.SuperAdmin.Controllers;
                 <div class=""modal-body"">
                     <div class=""form-group"">
                         <label>");
+                Write(
 #nullable restore
 #line 39 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-                          Write(ViewBag.Column1);
+                                ViewBag.Column1
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(":</label>\r\n                        <input");
                 BeginWriteAttribute("type", " type=\"", 1362, "\"", 1389, 1);
+                WriteAttributeValue("", 1369, 
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-WriteAttributeValue("", 1369, ViewBag.Column1Type, 1369, 20, false);
+                                      ViewBag.Column1Type
 
 #line default
 #line hidden
 #nullable disable
+                , 1369, 20, false);
                 EndWriteAttribute();
                 BeginWriteAttribute("asp-items", " asp-items=\"", 1390, "\"", 1418, 1);
+                WriteAttributeValue("", 1402, 
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-WriteAttributeValue("", 1402, ViewBag.Column1, 1402, 16, false);
+                                                                       ViewBag.Column1
 
 #line default
 #line hidden
 #nullable disable
+                , 1402, 16, false);
                 EndWriteAttribute();
                 WriteLiteral(" class=\"form-control\" />\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>");
+                Write(
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-                          Write(ViewBag.Column2);
+                                ViewBag.Column2
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(":</label>\r\n                        <input");
                 BeginWriteAttribute("type", " type=\"", 1607, "\"", 1634, 1);
+                WriteAttributeValue("", 1614, 
 #nullable restore
 #line 44 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-WriteAttributeValue("", 1614, ViewBag.Column2Type, 1614, 20, false);
+                                      ViewBag.Column2Type
 
 #line default
 #line hidden
 #nullable disable
+                , 1614, 20, false);
                 EndWriteAttribute();
                 BeginWriteAttribute("asp-items", " asp-items=\"", 1635, "\"", 1663, 1);
+                WriteAttributeValue("", 1647, 
 #nullable restore
 #line 44 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-WriteAttributeValue("", 1647, ViewBag.Column2, 1647, 16, false);
+                                                                       ViewBag.Column2
 
 #line default
 #line hidden
 #nullable disable
+                , 1647, 16, false);
                 EndWriteAttribute();
                 WriteLiteral(" class=\"form-control\" />\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>");
+                Write(
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-                          Write(ViewBag.Column3);
+                                ViewBag.Column3
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral(":</label>\r\n                        <input");
                 BeginWriteAttribute("type", " type=\"", 1852, "\"", 1879, 1);
+                WriteAttributeValue("", 1859, 
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-WriteAttributeValue("", 1859, ViewBag.Column3Type, 1859, 20, false);
+                                      ViewBag.Column3Type
 
 #line default
 #line hidden
 #nullable disable
+                , 1859, 20, false);
                 EndWriteAttribute();
                 BeginWriteAttribute("asp-items", " asp-items=\"", 1880, "\"", 1908, 1);
+                WriteAttributeValue("", 1892, 
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-WriteAttributeValue("", 1892, ViewBag.Column3, 1892, 16, false);
+                                                                       ViewBag.Column3
 
 #line default
 #line hidden
 #nullable disable
+                , 1892, 16, false);
                 EndWriteAttribute();
                 WriteLiteral(@" class=""form-control"" />
                     </div>
@@ -273,13 +281,15 @@ WriteAttributeValue("", 1892, ViewBag.Column3, 1892, 16, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
+            Write(
 #nullable restore
 #line 59 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\FinishGoodItem\_addFinishGoodItem.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n");
         }
         #pragma warning restore 1998

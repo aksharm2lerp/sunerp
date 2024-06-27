@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_Contractor_ContactPerson__ContractorContactPersonList), @"mvc.1.0.view", @"/Areas/Admin/Views/Contractor/ContactPerson/_ContractorContactPersonList.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-using Business.Entities.Contractor;
+ using Business.Entities.Contractor
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"f8f823dcea7c2ee5462edb8a770d774ee0c9f4740c9959ced112edfe4c89b5d8", @"/Areas/Admin/Views/Contractor/ContactPerson/_ContractorContactPersonList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"f8f823dcea7c2ee5462edb8a770d774ee0c9f4740c9959ced112edfe4c89b5d8", @"/Areas/Admin/Views/Contractor/ContactPerson/_ContractorContactPersonList.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Contractor_ContactPerson__ContractorContactPersonList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagedDataTable<ContractorContactTxn>>
     #nullable disable
@@ -122,7 +113,7 @@ using Business.Entities.Contractor;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f8f823dcea7c2ee5462edb8a770d774ee0c9f4740c9959ced112edfe4c89b5d86164", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f8f823dcea7c2ee5462edb8a770d774ee0c9f4740c9959ced112edfe4c89b5d85942", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -175,6 +166,7 @@ using Business.Entities.Contractor;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
                      foreach (var item in Model)
@@ -184,57 +176,70 @@ using Business.Entities.Contractor;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                        <tr>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 44 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-                           Write(item.SrNo);
+                                 item.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 45 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-                           Write(item.ContactPersonName);
+                                 item.ContactPersonName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 46 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-                           Write(item.OfficeEmailID);
+                                 item.OfficeEmailID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-                           Write(item.OfficeMobile);
+                                 item.OfficeMobile
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
             WriteLiteral("                            <td>");
+            Write(
 #nullable restore
 #line 50 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-                           Write(item.IsActive);
+                                 item.IsActive
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>\r\n                                <a class=\'btn\'");
             BeginWriteAttribute("onclick", " onclick=\"", 2003, "\"", 2065, 3);
             WriteAttributeValue("", 2013, "fnContractorContactDetail(", 2013, 26, true);
+            WriteAttributeValue("", 2039, 
 #nullable restore
 #line 52 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-WriteAttributeValue("", 2039, item.ContractorContactID, 2039, 25, false);
+                                                                                   item.ContractorContactID
 
 #line default
 #line hidden
 #nullable disable
+            , 2039, 25, false);
             WriteAttributeValue("", 2064, ")", 2064, 1, true);
             EndWriteAttribute();
             WriteLiteral(@"
@@ -243,22 +248,26 @@ WriteAttributeValue("", 2039, item.ContractorContactID, 2039, 25, false);
                            data-bs-target=""#canvasContractorContactDetail""
                            aria-controls=""canvasContractorContactDetail""
                            data-id=""");
+            Write(
 #nullable restore
 #line 57 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-                               Write(item.ContractorContactID);
+                                     item.ContractorContactID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"");
             BeginWriteAttribute("Contractorid", "\r\n                           Contractorid=\"", 2389, "\"", 2450, 1);
+            WriteAttributeValue("", 2432, 
 #nullable restore
 #line 58 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-WriteAttributeValue("", 2432, item.ContractorID, 2432, 18, false);
+                                          item.ContractorID
 
 #line default
 #line hidden
 #nullable disable
+            , 2432, 18, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\'bx bx-edit\'></i></a>\r\n                            </td>\r\n                        </tr>\r\n");
 #nullable restore
@@ -268,6 +277,7 @@ WriteAttributeValue("", 2432, item.ContractorID, 2432, 18, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 61 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
                      
@@ -276,6 +286,7 @@ WriteAttributeValue("", 2432, item.ContractorID, 2432, 18, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"            </tbody>
         </table>
     </div>
@@ -293,7 +304,7 @@ WriteAttributeValue("", 2432, item.ContractorID, 2432, 18, false);
 </div>
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f8f823dcea7c2ee5462edb8a770d774ee0c9f4740c9959ced112edfe4c89b5d813550", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f8f823dcea7c2ee5462edb8a770d774ee0c9f4740c9959ced112edfe4c89b5d813721", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -307,13 +318,15 @@ WriteAttributeValue("", 2432, item.ContractorID, 2432, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n<script>\r\n    var urlAddUpdateContractorContactPerson = \'");
+            Write(
 #nullable restore
 #line 81 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Contractor\ContactPerson\_ContractorContactPersonList.cshtml"
-                                          Write(Url.Action("AddUpdateContractorContactPerson", "Contractor"));
+                                                Url.Action("AddUpdateContractorContactPerson", "Contractor")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnContractorContactDetail(ContractorContactID) {
         var _id = ContractorContactID;//$(this).data('id');

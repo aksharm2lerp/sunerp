@@ -27,7 +27,7 @@ namespace Business.Entities.Marketing.CommunicationLog
         public string VenueTypeText { get; set; }
         public int? PartyTypeID { get; set; }
         public string PartyTypeText { get; set; }
-        public DateTime CommunicationLogDate { get; set; } = DateTime.Now.Date;
+        public DateTime CommunicationLogDate { get; set; } = DateTime.Now;
         public string PlaceOfMeeting { get; set; }
         public bool IsSentDocument { get; set; }
         public bool IsSentMarketingDocument { get; set; }
@@ -43,5 +43,8 @@ namespace Business.Entities.Marketing.CommunicationLog
         [NotMapped]
         public string EncryptedId { get; set; }
         public List<MarketingCommunicationLogDetail> marketingCommunicationLogDetails { get; set; } = new List<MarketingCommunicationLogDetail>();
+        public string keyword { get; set; }
+        public int DepartmentID { get; set; }
+        public int CompanyID { get; set; }
     }
 }

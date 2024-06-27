@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SuperAdmin_Views_Package_Index), @"mvc.1.0.view", @"/Areas/SuperAdmin/Views/Package/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d", @"/Areas/SuperAdmin/Views/Package/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d", @"/Areas/SuperAdmin/Views/Package/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SuperAdmin_Views_Package_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Business.Entities.Master.Package.PackageMaster>>
     #nullable disable
@@ -128,6 +120,7 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"
 
 <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
@@ -141,7 +134,7 @@ using Business.Entities.Dynamic;
                             <ol class=""breadcrumb mb-0 p-0"">
                                 <li class=""breadcrumb-item"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d7580", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d7382", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -193,29 +186,34 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                        <div class=\"col-sl-12 col-md-4 col-lg-3 col-xl-3 my-3\">\r\n                            <div class=\"card bg-info \" style=\"height:100px\">\r\n                                <div class=\"card-body text-center text-white rounded\"");
             BeginWriteAttribute("style", " style=\"", 2150, "\"", 2225, 3);
             WriteAttributeValue("", 2158, "background-color:", 2158, 17, true);
+            WriteAttributeValue("", 2175, 
 #nullable restore
 #line 53 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-WriteAttributeValue("", 2175, Html.DisplayFor(modelItem => items.PackageColor), 2175, 49, false);
+                                                                                                               Html.DisplayFor(modelItem => items.PackageColor)
 
 #line default
 #line hidden
 #nullable disable
+            , 2175, 49, false);
             WriteAttributeValue("", 2224, ";", 2224, 1, true);
             EndWriteAttribute();
             WriteLiteral(">\r\n");
             WriteLiteral("                                    <h5 class=\"card-title text-white mb-4\">");
+            Write(
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-                                                                      Write(Html.DisplayFor(modelItem => items.PackageName));
+                                                                            Html.DisplayFor(modelItem => items.PackageName)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h5>\r\n\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d11647", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d11624", async() => {
                 WriteLiteral("\r\n                                        <iconify-icon icon=\"icon-park-outline:more-app\" style=\"font-size: 20px; color:aliceblue\" title=\"Information\"></iconify-icon>\r\n                                    ");
             }
             );
@@ -232,13 +230,15 @@ WriteAttributeValue("", 2175, Html.DisplayFor(modelItem => items.PackageColor), 
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 57 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-                                                                                                            WriteLiteral(items.PackageID);
+                                                                                                                         items.PackageID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-id", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -251,7 +251,7 @@ WriteAttributeValue("", 2175, Html.DisplayFor(modelItem => items.PackageColor), 
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("&emsp;\r\n\r\n");
             WriteLiteral("                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d14581", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d14599", async() => {
                 WriteLiteral("\r\n                                        <iconify-icon icon=\"vaadin:form\" style=\"font-size: 20px; color:aliceblue\" title=\"Form Assign\"></iconify-icon>\r\n                                    ");
             }
             );
@@ -268,13 +268,15 @@ WriteAttributeValue("", 2175, Html.DisplayFor(modelItem => items.PackageColor), 
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-packageid", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 63 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-                                                                                                                   WriteLiteral(items.PackageID);
+                                                                                                                                items.PackageID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["packageid"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-packageid", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["packageid"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -286,7 +288,7 @@ WriteAttributeValue("", 2175, Html.DisplayFor(modelItem => items.PackageColor), 
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("&emsp;\r\n\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d17504", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d17563", async() => {
                 WriteLiteral("\r\n                                        <iconify-icon icon=\"grommet-icons:user-admin\" style=\"font-size: 20px; color:aliceblue\" title=\"User Assign\"></iconify-icon>\r\n                                    ");
             }
             );
@@ -303,13 +305,15 @@ WriteAttributeValue("", 2175, Html.DisplayFor(modelItem => items.PackageColor), 
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 67 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-                                                                                                            WriteLiteral(items.PackageID);
+                                                                                                                         items.PackageID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-id", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -323,13 +327,15 @@ WriteAttributeValue("", 2175, Html.DisplayFor(modelItem => items.PackageColor), 
             WriteLiteral("&emsp;\r\n\r\n                                    <a");
             BeginWriteAttribute("onclick", " onclick=\"", 3874, "\"", 3911, 3);
             WriteAttributeValue("", 3884, "fnPackage(", 3884, 10, true);
+            WriteAttributeValue("", 3894, 
 #nullable restore
 #line 71 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-WriteAttributeValue("", 3894, items.PackageID, 3894, 16, false);
+                                                           items.PackageID
 
 #line default
 #line hidden
 #nullable disable
+            , 3894, 16, false);
             WriteAttributeValue("", 3910, ")", 3910, 1, true);
             EndWriteAttribute();
             WriteLiteral(@"
@@ -339,22 +345,26 @@ WriteAttributeValue("", 3894, items.PackageID, 3894, 16, false);
                                    data-bs-target=""#canvas_Package""
                                    aria-controls=""canvas_Package""
                                    data-id=""");
+            Write(
 #nullable restore
 #line 77 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-                                       Write(items.PackageID);
+                                             items.PackageID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"");
             BeginWriteAttribute("packageid", "\r\n                                   packageid=\"", 4285, "\"", 4349, 1);
+            WriteAttributeValue("", 4333, 
 #nullable restore
 #line 78 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-WriteAttributeValue("", 4333, items.PackageID, 4333, 16, false);
+                                               items.PackageID
 
 #line default
 #line hidden
 #nullable disable
+            , 4333, 16, false);
             EndWriteAttribute();
             WriteLiteral(@">
                                         <iconify-icon icon=""material-symbols:edit-square-outline-rounded"" style=""font-size: 20px; color:aliceblue"" title=""Edit Package""></iconify-icon>
@@ -370,6 +380,7 @@ WriteAttributeValue("", 4333, items.PackageID, 4333, 16, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                </div>
 
             </div>
@@ -392,13 +403,15 @@ WriteAttributeValue("", 4333, items.PackageID, 4333, 16, false);
 </div>
 <script type=""text/javascript"">
     var urladd = '");
+            Write(
 #nullable restore
 #line 106 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Index.cshtml"
-             Write(Url.Action("Get", "Package"));
+                   Url.Action("Get", "Package")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnPackage(obj) {
         var _id = obj;   //$(obj).data('id')
@@ -420,7 +433,7 @@ WriteAttributeValue("", 4333, items.PackageID, 4333, 16, false);
 
 </script>
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d24042", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef8c3dd1683a7be5b837a2cf76e3c564fd1dc30f239279e65103f298350ec4d24374", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

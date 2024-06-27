@@ -24,16 +24,17 @@ namespace Business.Service.Marketing.SDashboard
         #endregion Database Connection
 
         #region Index Page
-
-        public async Task<DashboardModel> GetUserLoginList(DateTime? startDate, DateTime? endDate)
+        public async Task<DashboardModel> GetUserLoginList(DateTime? startDate, DateTime? endDate, int employee)
         {
             DashboardModel result = null;
             try
             {
-                SqlParameter[] param = { 
-                    new SqlParameter("@StartDate", startDate), 
-                    new SqlParameter("@EndDate", endDate)
-                };
+                SqlParameter[] param = {
+             new SqlParameter("@StartDate", startDate),
+             new SqlParameter("@EndDate", endDate),
+             new SqlParameter("@UserID", employee),
+
+         };
                 DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Dashbord_UserLoginSummary", param);
                 if (ds.Tables.Count > 0)
                 {
@@ -55,7 +56,7 @@ namespace Business.Service.Marketing.SDashboard
                             loginHistoryModel.Browser = item["Browser"].ToString();
                             loginHistoryModel.Latitude = item["Latitude"].ToInt();
                             loginHistoryModel.longitude = item["longitude"].ToInt();
-                            loginHistoryModel.DeviceIP  = item["DeviceIP"].ToString();
+                            loginHistoryModel.DeviceIP = item["DeviceIP"].ToString();
                             //loginHistoryModel.TotalLogin = item["UOMID"].ToInt();
 
                             listLoginHistoryModel.Add(loginHistoryModel);
@@ -72,8 +73,6 @@ namespace Business.Service.Marketing.SDashboard
                 throw ex;
             }
         }
-
-
         #endregion Index Page
     }
 }

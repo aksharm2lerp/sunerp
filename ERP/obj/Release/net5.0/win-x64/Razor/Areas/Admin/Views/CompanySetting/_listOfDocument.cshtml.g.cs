@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_CompanySetting__listOfDocument), @"mvc.1.0.view", @"/Areas/Admin/Views/CompanySetting/_listOfDocument.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-using Business.SQL;
+ using Business.SQL
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"13439f76bda633f4a64f6da5ff645320344124da2cfd4e281748314a7a5dab39", @"/Areas/Admin/Views/CompanySetting/_listOfDocument.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"13439f76bda633f4a64f6da5ff645320344124da2cfd4e281748314a7a5dab39", @"/Areas/Admin/Views/CompanySetting/_listOfDocument.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_CompanySetting__listOfDocument : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagedDataTable<CompanyDocumentMetadata>>
     #nullable disable
@@ -119,7 +111,7 @@ using Business.SQL;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "13439f76bda633f4a64f6da5ff645320344124da2cfd4e281748314a7a5dab396964", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "13439f76bda633f4a64f6da5ff645320344124da2cfd4e281748314a7a5dab396765", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -174,40 +166,49 @@ using Business.SQL;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                        <tr>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-                           Write(item.SrNo);
+                                 item.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 39 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-                           Write(item.DocumentName);
+                                 item.DocumentName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-                           Write(item.DocumentDesc);
+                                 item.DocumentDesc
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n\r\n                            <td>\r\n                                <a class=\'btn editdocument\'");
             BeginWriteAttribute("onclick", " onclick=\"", 1493, "\"", 1542, 3);
             WriteAttributeValue("", 1503, "fnAddDocument(", 1503, 14, true);
+            WriteAttributeValue("", 1517, 
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-WriteAttributeValue("", 1517, item.CompanyDocumentsID, 1517, 24, false);
+                                                                                    item.CompanyDocumentsID
 
 #line default
 #line hidden
 #nullable disable
+            , 1517, 24, false);
             WriteAttributeValue("", 1541, ")", 1541, 1, true);
             EndWriteAttribute();
             WriteLiteral(@"
@@ -216,25 +217,29 @@ WriteAttributeValue("", 1517, item.CompanyDocumentsID, 1517, 24, false);
                            data-bs-target=""#canvas_document""
                            aria-controls=""canvas_document""
                            data-id=""");
+            Write(
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-                               Write(item.CompanyDocumentsID);
+                                     item.CompanyDocumentsID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"");
             BeginWriteAttribute("compnayid", "\r\n                           compnayid=\"", 1837, "\"", 1892, 1);
+            WriteAttributeValue("", 1877, 
 #nullable restore
 #line 49 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-WriteAttributeValue("", 1877, item.CompanyID, 1877, 15, false);
+                                       item.CompanyID
 
 #line default
 #line hidden
 #nullable disable
+            , 1877, 15, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\'bx bx-edit\'></i></a>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13439f76bda633f4a64f6da5ff645320344124da2cfd4e281748314a7a5dab3911923", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13439f76bda633f4a64f6da5ff645320344124da2cfd4e281748314a7a5dab3912041", async() => {
                 WriteLiteral("<i class=\'bx bx-download\'></i>");
             }
             );
@@ -246,13 +251,15 @@ WriteAttributeValue("", 1877, item.CompanyID, 1877, 15, false);
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-                                    WriteLiteral(item.CompanyDocumentsID);
+                                                 item.CompanyDocumentsID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-id", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -268,22 +275,26 @@ WriteAttributeValue("", 1877, item.CompanyID, 1877, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                <a class=\'btn deletedocument\' href=\"#!\" data-id=\"");
+            Write(
 #nullable restore
 #line 52 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-                                                                            Write(item.CompanyDocumentsID);
+                                                                                  item.CompanyDocumentsID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"");
             BeginWriteAttribute("compnayid", " compnayid=\"", 2266, "\"", 2293, 1);
+            WriteAttributeValue("", 2278, 
 #nullable restore
 #line 52 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-WriteAttributeValue("", 2278, item.CompanyID, 2278, 15, false);
+                                                                                                                       item.CompanyID
 
 #line default
 #line hidden
 #nullable disable
+            , 2278, 15, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\'icon dripicons-trash\'></i></a>\r\n                            </td>\r\n                        </tr>\r\n");
 #nullable restore
@@ -294,6 +305,7 @@ WriteAttributeValue("", 2278, item.CompanyID, 2278, 15, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"            </tbody>
         </table>
     </div>
@@ -310,7 +322,7 @@ WriteAttributeValue("", 2278, item.CompanyID, 2278, 15, false);
 </div>
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13439f76bda633f4a64f6da5ff645320344124da2cfd4e281748314a7a5dab3916045", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13439f76bda633f4a64f6da5ff645320344124da2cfd4e281748314a7a5dab3916387", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -324,21 +336,25 @@ WriteAttributeValue("", 2278, item.CompanyID, 2278, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n<script>\r\n    var urlDeleteCompanyFromUser = \'");
+            Write(
 #nullable restore
 #line 74 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-                               Write(Url.Action("DeleteDocument", "CompanySetting"));
+                                     Url.Action("DeleteDocument", "CompanySetting")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n    var urlAddDocument = \'");
+            Write(
 #nullable restore
 #line 75 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\CompanySetting\_listOfDocument.cshtml"
-                     Write(Url.Action("AddDocument", "CompanySetting"));
+                           Url.Action("AddDocument", "CompanySetting")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     $(document).ready(function () {
         let table1 = document.querySelector('#tblDocument');

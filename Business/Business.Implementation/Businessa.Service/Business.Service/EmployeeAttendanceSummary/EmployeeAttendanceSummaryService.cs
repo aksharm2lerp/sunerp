@@ -158,7 +158,7 @@ namespace Business.Service.EmployeeAttendanceSummary
             try
             {
                 SqlParameter[] param = {
-                    new SqlParameter("@YR", year)
+                    new SqlParameter("@YR", year) 
                     ,new SqlParameter("@MTH", month)
                     ,new SqlParameter("@CompanyID", companyId)
                     ,new SqlParameter("@EmploymentTypeID", employmentTypeId)

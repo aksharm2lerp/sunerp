@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SuperAdmin_Views_Package_Detail2), @"mvc.1.0.view", @"/Areas/SuperAdmin/Views/Package/Detail2.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-using GridCore;
+ using GridCore
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c", @"/Areas/SuperAdmin/Views/Package/Detail2.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c", @"/Areas/SuperAdmin/Views/Package/Detail2.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SuperAdmin_Views_Package_Detail2 : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ISGrid>
     #nullable disable
@@ -145,32 +136,37 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("<div class=\"col-sm-12 col-md-12 col-lg-12 mx-auto\">\r\n    <div class=\"card border-1 shadow rounded-7 p-1\">\r\n        <div class=\"row border-bottom\">\r\n\r\n");
             WriteLiteral("\r\n");
             WriteLiteral("\r\n        </div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c9089", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c8871", async() => {
                 WriteLiteral("\r\n\r\n            <div class=\"row\">\r\n\r\n                <div class=\"col-md-12 mt-3\">\r\n                    <h3>\r\n                        <h1>Package :");
+                Write(
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-                                Write(ViewBag.PackageName);
+                                      ViewBag.PackageName
 
 #line default
 #line hidden
 #nullable disable
+                );
                 WriteLiteral("</h1>\r\n                    </h3>\r\n                </div>\r\n                <div class=\"col-md-12\">\r\n");
                 WriteLiteral("                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c9944", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c9768", async() => {
                 }
                 );
                 __GridMvc_TagHelpers_GridTagHelper = CreateTagHelper<global::GridMvc.TagHelpers.GridTagHelper>();
                 __tagHelperExecutionContext.Add(__GridMvc_TagHelpers_GridTagHelper);
+                __GridMvc_TagHelpers_GridTagHelper.Model = 
 #nullable restore
 #line 60 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-__GridMvc_TagHelpers_GridTagHelper.Model = Model;
+                                  Model
 
 #line default
 #line hidden
 #nullable disable
+                ;
                 __tagHelperExecutionContext.AddTagHelperAttribute("model", __GridMvc_TagHelpers_GridTagHelper.Model, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
                 await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
                 if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -186,7 +182,7 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
                     <button type=""button"" class=""btn btn-primary btn-info px-5 ladda-button"" onclick=""fnSaveTable()""> Submit</button>
                     <button type=""reset"" class=""btn btn-primary btn-info px-5 ladda-button"">Reset</button>
                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c11818", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c11712", async() => {
                     WriteLiteral("Back");
                 }
                 );
@@ -241,13 +237,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
 </div>
 <script type=""text/javascript"">
     var urladd = '");
+            Write(
 #nullable restore
 #line 86 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-             Write(Url.Action("Get", "Package"));
+                   Url.Action("Get", "Package")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnPackage(obj) {
         var _key = $(obj).data('key');
@@ -269,13 +267,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
     }
 
     var urlisActiveInActive = '");
+            Write(
 #nullable restore
 #line 106 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-                          Write(Url.Action("ActiveInActivePackageForm","Package"));
+                                Url.Action("ActiveInActivePackageForm","Package")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnPackageFormActiveInactive(PackageID, FormID) {
         var _packageID = PackageID;//$(this).data('id');
@@ -306,13 +306,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: '");
+            Write(
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"'
                     });
                 }
@@ -327,13 +329,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: '");
+            Write(
 #nullable restore
 #line 147 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"'
                 });
             }
@@ -357,21 +361,25 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
     function fnSaveTable() {
 
         let packageId = ");
+            Write(
 #nullable restore
 #line 169 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-                   Write(packageId);
+                         packageId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(";\r\n        //alert(\'package id is\' + packageId);\r\n        var gridTableSaveUrl = \'");
+            Write(
 #nullable restore
 #line 171 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-                           Write(Url.Action("AssingFormToPackage","Package"));
+                                 Url.Action("AssingFormToPackage","Package")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         var gridTable = document.getElementsByTagName('table');
         var gridTableData = [];
@@ -438,15 +446,17 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: """);
+            Write(
 #nullable restore
 #line 234 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail2.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                });\r\n            }\r\n        }).always(function () {\r\n            hideLoader();\r\n        });\r\n\r\n    };\r\n\r\n        //DataTable Code end\r\n</script>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c23156", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e958c2c9cdbd965ef3929c3f04df46f580cf2f1646a90c51a860b88ebd42556c23288", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

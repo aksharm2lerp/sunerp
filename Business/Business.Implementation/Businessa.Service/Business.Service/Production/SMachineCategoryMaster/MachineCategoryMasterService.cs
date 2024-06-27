@@ -71,7 +71,8 @@ namespace Business.Service.Production.SMachineCategoryMaster
             MachineCategoryMaster result = null;
             try
             {
-                SqlParameter[] param = { new SqlParameter("@MachineCategoryMasterID", MachineCategoryMasterID) };
+                //SqlParameter[] param = { new SqlParameter("@MachineCategoryMasterID", MachineCategoryMasterID) };
+                SqlParameter[] param = { new SqlParameter("@MachineCategoryID", MachineCategoryMasterID) };
                 DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_MachineCategoryMaster", param);
                 if (ds != null)
                 {

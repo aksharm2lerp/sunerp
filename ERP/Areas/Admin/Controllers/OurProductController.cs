@@ -47,11 +47,11 @@ namespace ERP.Areas.Admin.Controllers
             _commonMasterService = commonMasterService;
             _partyService = partyService;
         }
-        public IActionResult Index()
-        {
-            List<ProductPhotoPath> imagePath = _productImages.GetImagePath().Result;
-            return View(imagePath);
-        }
+        //public IActionResult Index()
+        //{
+        //    List<ProductPhotoPath> imagePath = _productImages.GetImagePath().Result;
+        //    return View(imagePath);
+        //}
 
         [HttpGet]
         public IActionResult Get(int id, string collectionId)/*, string itemName*/
@@ -238,7 +238,7 @@ namespace ERP.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

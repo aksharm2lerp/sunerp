@@ -1,0 +1,115 @@
+@using Business.Entities.Admin.TicketManagementStatusMasterModel;
+@model TicketManagementStatusMaster;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formTicketManagementStatusMaster">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="TicketManagementStatusID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="TicketManagementStatusMasterText" name="TicketManagementStatusMasterText" asp-for="TicketManagementStatusMasterText">
+                    <span asp-validation-for="TicketManagementStatusMasterText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>TicketManagementStatusID</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='TicketManagementStatusID' asp-for='TicketManagementStatusID' name='TicketManagementStatusID'>
+                            <span asp-validation-for='TicketManagementStatusID' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>TicketManagementStatusText</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='TicketManagementStatusText' asp-for='TicketManagementStatusText' name='TicketManagementStatusText'>
+                            <span asp-validation-for='TicketManagementStatusText' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateTicketManagementStatusMaster", "TicketManagementStatusMaster")';
+    function fnSubmit() {
+        if ($("#formTicketManagementStatusMaster").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formTicketManagementStatusMaster").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+
+
+
+
+
+
+    });
+
+
+</script>

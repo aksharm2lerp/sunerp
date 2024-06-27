@@ -170,7 +170,7 @@ namespace Business.Service.Marketing.SOfferAcceptedMaster
                     new SqlParameter("@AddressTypeID", addressTypeID),
                     new SqlParameter("@CustomerID", customerId)
                 };
-                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_CustomerAddressTxn", param);
+                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_CustomerAddressByAddressTypeIDDropDown", param);
                 if (ds != null)
                 {
                     if (ds.Tables.Count > 0)

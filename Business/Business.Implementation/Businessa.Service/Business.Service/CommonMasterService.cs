@@ -34,6 +34,7 @@ using Business.Entities.Marketing.RequestForQuotTypeMasterModel;
 using Business.Entities.HR.MachineryResourceAllocationModel;
 using Business.Entities.Marketing.QuotationApprovalStatusModel;
 using Business.Entities.Marketing.SAPItem;
+using Business.Entities.Admin.ProductCategoryMasterModel;
 //$AddUsing$
 
 namespace Business.Service
@@ -345,11 +346,11 @@ namespace Business.Service
             }
         }
 
-        public async Task<PagedDataTable<ItemCategory>> GetAllItemCategoryAsync()
+        public async Task<PagedDataTable<ProductCategoryMaster>> GetAllItemCategoryAsync()
         {
             DataTable table = new DataTable();
             int totalItemCount = 0;
-            PagedDataTable<ItemCategory> lst = new PagedDataTable<ItemCategory>();
+            PagedDataTable<ProductCategoryMaster> lst = new PagedDataTable<ProductCategoryMaster>();
             try
             {
                 SqlParameter[] param = {
@@ -359,7 +360,7 @@ namespace Business.Service
                         ,new SqlParameter("@OrderBy","")
                         ,new SqlParameter("@SortBy","")
                         };
-                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_ItemCategory", param))
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_ProductCategoryMaster", param))
                 {
                     if (ds.Tables.Count > 0)
                     {
@@ -372,7 +373,7 @@ namespace Business.Service
                                 totalItemCount = table.Rows.Count;
                         }
 
-                        lst = table.ToPagedDataTableList<ItemCategory>();
+                        lst = table.ToPagedDataTableList<ProductCategoryMaster>();
                     }
                     return lst;
                 }
@@ -1506,14 +1507,18 @@ namespace Business.Service
         #endregion Machine name by DepartmentID, Method Added by Dravesh Lokhande  on 22-Feb-2024.
 
 
-        public async Task<PagedDataTable<QuotationApprovalStatus>> GetAllQuotationApprovalStatusAsync()
+        public async Task<PagedDataTable<QuotationApprovalStatus>> GetAllQuotationApprovalStatusAsync(string useFor)
         {
             DataTable table = new DataTable();
             int totalItemCount = 0;
             PagedDataTable<QuotationApprovalStatus> lst = new PagedDataTable<QuotationApprovalStatus>();
+
             try
             {
-                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_QuotationApprovalStatusForDropdown"))
+                SqlParameter[] param = {
+                         new SqlParameter("@UseFor",useFor)
+                         };
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_QuotationApprovalStatusForDropdown", param))
 
                 {
                     if (ds.Tables.Count > 0)
@@ -1587,6 +1592,204 @@ namespace Business.Service
 
 
 
+
+
+        public async Task<PagedDataTable<TermTypeMasterModelDropdown>> GetAllTermTypeAsync()
+        {
+            DataTable table = new DataTable();
+            int totalItemCount = 0;
+            PagedDataTable<TermTypeMasterModelDropdown> lst = new PagedDataTable<TermTypeMasterModelDropdown>();
+            try
+            {
+
+                SqlParameter[] sp = new SqlParameter[] { new SqlParameter("@SearchString", null) };
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_TermTypeMasterForDropdown", sp))
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        table = ds.Tables[0];
+                        if (table.Rows.Count > 0)
+                        {
+                            if (table.ContainColumn("TotalCount"))
+                                totalItemCount = Convert.ToInt32(table.Rows[0]["TotalCount"]);
+                            else
+                                totalItemCount = table.Rows.Count;
+                        }
+                        lst = table.ToPagedDataTableList<TermTypeMasterModelDropdown>(0, 0, totalItemCount);
+                    }
+                    return lst;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (table != null)
+                    table.Dispose();
+            }
+        }
+        public async Task<PagedDataTable<EmployeeMaster>> GetAllEmployeeAsync(int? departmentId)
+        {
+            DataTable table = new DataTable();
+            int totalItemCount = 0;
+            PagedDataTable<EmployeeMaster> lst = new PagedDataTable<EmployeeMaster>();
+            try
+            {
+                SqlParameter[] param = {
+             new SqlParameter("@DepartmentID",departmentId)
+         //         new SqlParameter("@PageNo",1)
+         //         ,new SqlParameter("@PageSize","0")
+         //         ,new SqlParameter("@SearchString","")
+         //         ,new SqlParameter("@OrderBy","")
+         //         ,new SqlParameter("@SortBy","")
+                  };
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_EmployeeMasterForDropDown", param))
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        table = ds.Tables[0];
+                        if (table.Rows.Count > 0)
+                        {
+                            if (table.ContainColumn("TotalCount"))
+                                totalItemCount = Convert.ToInt32(table.Rows[0]["TotalCount"]);
+                            else
+                                totalItemCount = table.Rows.Count;
+                        }
+
+                        lst = table.ToPagedDataTableList<EmployeeMaster>();
+                    }
+                    return lst;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (table != null)
+                    table.Dispose();
+            }
+        }
+
+        public async Task<PagedDataTable<TermsMasterModelDropdown>> GetAllTermsMasterAsync(string term)
+        {
+            DataTable table = new DataTable();
+            int totalItemCount = 0;
+            PagedDataTable<TermsMasterModelDropdown> lst = new PagedDataTable<TermsMasterModelDropdown>();
+            try
+            {
+
+                SqlParameter[] sp = new SqlParameter[] { new SqlParameter("@SearchString", term) };
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_GetAll_TermsMasterForDropdown", sp))
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        table = ds.Tables[0];
+                        if (table.Rows.Count > 0)
+                        {
+                            if (table.ContainColumn("TotalCount"))
+                                totalItemCount = Convert.ToInt32(table.Rows[0]["TotalCount"]);
+                            else
+                                totalItemCount = table.Rows.Count;
+                        }
+                        lst = table.ToPagedDataTableList<TermsMasterModelDropdown>(0, 0, totalItemCount);
+                    }
+                    return lst;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (table != null)
+                    table.Dispose();
+            }
+        }
+
+        #region Get employee id from user id
+        public async Task<int> GetEmployeeIDFromUserID(int userId)
+        {
+            int employeeId = 0;
+            try
+            {
+                SqlParameter[] param = {
+                         new SqlParameter("@UserID",userId)
+                         };
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_UserMapToEmployeeByUserID", param))
+                {
+                    if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    {
+                        employeeId = Convert.ToInt32(ds.Tables[0].Rows[0]["EmployeeID"]);
+                    }
+                    return employeeId;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        #endregion Get employee id from user id
+
+        #region Get userid from employee id
+        public async Task<int> GetUserIDFromEmployeeID(int employeeId)
+        {
+            int userId = 0;
+            try
+            {
+                SqlParameter[] param = {
+                         new SqlParameter("@EmployeeID",employeeId)
+                         };
+                using (DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_UserIDFromEmployeeID", param))
+                {
+                    if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    {
+                        userId = Convert.ToInt32(ds.Tables[0].Rows[0]["UserID"]);
+                    }
+                    return userId;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        #endregion Get userid from employee id
+
+        #region Get formula for calculate taxes and amounts(GetFormulaByCustomerIdAsync)
+        public async Task<DataTable> GetFormulaMasterForQuotationByPartyIDAsync(int? partyId,int? quotationId)
+        {
+            try
+            {
+                DataTable result = new DataTable();
+                SqlParameter[] param = {
+            new SqlParameter("@PartyID", partyId),
+            new SqlParameter("@QuotationID", quotationId)
+        };
+                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_Quot_TaxFormulaByCustomerID", param);
+                if (ds != null)
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            result = ds.Tables[0];
+                        }
+                    }
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Get formula for calculate taxes and amounts(GetFormulaByCustomerIdAsync)
 
 
         //$AddCommonMasterServiceMethod$

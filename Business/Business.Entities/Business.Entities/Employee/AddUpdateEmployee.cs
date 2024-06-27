@@ -43,7 +43,7 @@ namespace Business.Entities.Employee
         [Required(ErrorMessage = "Personal mobile no. cannot be null.")]
         public string PersonalMobileNo { get; set; }
 
-        [Required(ErrorMessage = "Office mobile no. cannot be null.")]
+        //[Required(ErrorMessage = "Office mobile no. cannot be null.")]
         public string OfficeMobileNo { get; set; }
 
         [Required(ErrorMessage = "Alternative mobile no. cannot be null.")]

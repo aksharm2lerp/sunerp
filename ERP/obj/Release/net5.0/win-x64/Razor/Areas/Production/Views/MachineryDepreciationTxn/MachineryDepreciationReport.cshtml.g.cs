@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Production_Views_MachineryDepreciationTxn_MachineryDepreciationReport), @"mvc.1.0.view", @"/Areas/Production/Views/MachineryDepreciationTxn/MachineryDepreciationReport.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Linq;
     using global::System.Threading.Tasks;
@@ -13,90 +13,78 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
-using System.Data;
+ using System.Data;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
-using System.Collections.Generic;
+ using System.Collections.Generic;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"2345da1478cc19f9bd2c2748d307fc0f39d88d656520f31809decdaca157b2f4", @"/Areas/Production/Views/MachineryDepreciationTxn/MachineryDepreciationReport.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Production/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"2345da1478cc19f9bd2c2748d307fc0f39d88d656520f31809decdaca157b2f4", @"/Areas/Production/Views/MachineryDepreciationTxn/MachineryDepreciationReport.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Production/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Production_Views_MachineryDepreciationTxn_MachineryDepreciationReport : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<DataSet>
     #nullable disable
@@ -115,6 +103,7 @@ using System.Collections.Generic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<div class=""container"" id=""machineDepreciationList"">
     <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
         <div class=""card border-0 shadow rounded-3"">
@@ -143,13 +132,15 @@ using System.Collections.Generic;
                     <div class=""col-3"">
                         <input type=""text"" class=""form-control"" style=""line-height: 2.7;"" id=""SearchString"" placeholder=""Search Machine""");
             BeginWriteAttribute("value", " value=\"", 1730, "\"", 1758, 1);
+            WriteAttributeValue("", 1738, 
 #nullable restore
 #line 35 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
-WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
+                                                                                                                                                 ViewBag.SearchValue
 
 #line default
 #line hidden
 #nullable disable
+            , 1738, 20, false);
             EndWriteAttribute();
             WriteLiteral(@" />
                     </div>
@@ -177,6 +168,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        <div class=\"row\" style=\"overflow:auto;\">\r\n                                            <table class=\"table table-striped w-auto\" style=\"white-space: nowrap; font-size:inherit !important;\">\r\n");
             WriteLiteral("                                                <thead style=\"position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:\'Segoe UI\', Tahoma, Geneva, Verdana, sans-serif;\">\r\n                                                    <tr>\r\n");
 #nullable restore
@@ -187,14 +179,17 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                            <th>");
+            Write(
 #nullable restore
 #line 61 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
-                                                           Write(dataColumn.ToString());
+                                                                 dataColumn.ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n");
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
@@ -204,6 +199,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                    </tr>\r\n                                                </thead>\r\n");
 #nullable restore
 #line 66 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
@@ -213,6 +209,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                    <tr>\r\n");
 #nullable restore
 #line 69 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
@@ -223,6 +220,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 71 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
                                                              if (!string.IsNullOrEmpty(row[timeRow].ToString()))
@@ -231,14 +229,17 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                <td>");
+            Write(
 #nullable restore
 #line 73 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
-                                                               Write(row[timeRow]);
+                                                                     row[timeRow]
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
 #nullable restore
 #line 74 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
@@ -249,6 +250,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                <td>-</td>\r\n");
 #nullable restore
 #line 78 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
@@ -257,6 +259,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 78 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
                                                              
@@ -265,6 +268,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                    </tr>\r\n");
 #nullable restore
 #line 81 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
@@ -273,6 +277,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                            </table>\r\n                                        </div>\r\n");
 #nullable restore
 #line 84 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
@@ -283,6 +288,7 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                        <div class=""text-center"">
                                             <h1><iconify-icon icon=""mdi:text-box-remove-outline"" style=""color: #37569d;"" width=""100""></iconify-icon></h1>
                                             <h3 style=""color: red;"">No Data Found</h3>
@@ -295,14 +301,17 @@ WriteAttributeValue("", 1738, ViewBag.SearchValue, 1738, 20, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+            Write(
 #nullable restore
 #line 102 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"
 <script type=""text/javascript"">
     //function fnresetSAPItem() {
@@ -322,13 +331,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
     function fnSearchString(isExport) {
         let searchStr = document.getElementById('SearchString').value;
         let searchReportUrl = '");
+            Write(
 #nullable restore
 #line 120 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\MachineryDepreciationTxn\MachineryDepreciationReport.cshtml"
-                          Write(Url.Action("MachineryDepreciationReport","MachineryDepreciationTxn"));
+                                Url.Action("MachineryDepreciationReport","MachineryDepreciationTxn")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         const param = { searchString: searchStr, isExport: isExport };
 

@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_Request__controls), @"mvc.1.0.view", @"/Areas/Admin/Views/Request/_controls.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"2dc06aa5d4b0da78a1aff21382c52970a6c9be1324477e6f32b4b88ea972d43a", @"/Areas/Admin/Views/Request/_controls.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"2dc06aa5d4b0da78a1aff21382c52970a6c9be1324477e6f32b4b88ea972d43a", @"/Areas/Admin/Views/Request/_controls.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Request__controls : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ModelCaseSubmit>
     #nullable disable
@@ -121,6 +113,7 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("    <div>\r\n\r\n\r\n");
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -132,14 +125,17 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n\r\n                    <div class=\"row pt-3\">\r\n\r\n                        <div class=\"card-title d-flex align-items-center\">\r\n                            <h5 class=\"mb-0 text-info \">");
+            Write(
 #nullable restore
 #line 17 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                   Write(Html.Raw(headeritem.Name));
+                                                         Html.Raw(headeritem.Name)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h5>\r\n                        </div>\r\n                        <hr />\r\n\r\n                    </div>\r\n                    <div class=\"row pt-3\">\r\n\r\n                        <div class=\"form-body\">\r\n");
 #nullable restore
 #line 25 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -161,13 +157,16 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
+            Write(
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                       Write(Html.Raw("</div>"));
+                                             Html.Raw("</div>")
 
 #line default
 #line hidden
 #nullable disable
+            );
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
                                                                
@@ -176,6 +175,7 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                        <div class=""row control-row"">
                                             <div class=""col-md-12"">
                                                 <hr />
@@ -197,13 +197,16 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
+            Write(
 #nullable restore
 #line 53 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                           Write(Html.Raw("<div class='row control-row'>"));
+                                                 Html.Raw("<div class='row control-row'>")
 
 #line default
 #line hidden
 #nullable disable
+            );
 #nullable restore
 #line 53 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
                                                                                           
@@ -217,26 +220,31 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                                <div class=""col-md-6"">
                                                     <div class=""row mb-3"">
                                                         <label class=""col-sm-3 col-form-label text-end"" data-toggle=""tooltip""");
             BeginWriteAttribute("title", " title=\"", 2994, "\"", 3015, 1);
+            WriteAttributeValue("", 3002, 
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 3002, item.Tooltip, 3002, 13, false);
+                                                                                                                                      item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            , 3002, 13, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n                                                            ");
+            Write(
 #nullable restore
 #line 63 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                       Write(item.Label);
+                                                             item.Label
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n");
 #nullable restore
 #line 64 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -246,6 +254,7 @@ WriteAttributeValue("", 3002, item.Tooltip, 3002, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                <span class=\"required\" aria-required=\"true\">* </span>\r\n");
 #nullable restore
 #line 67 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -254,30 +263,35 @@ WriteAttributeValue("", 3002, item.Tooltip, 3002, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                        </label>\r\n                                                        <input type=\"hidden\" id=\"requiredmessage\"");
             BeginWriteAttribute("value", " value=\"", 3583, "\"", 3625, 5);
             WriteAttributeValue("", 3591, "Please", 3591, 6, true);
             WriteAttributeValue(" ", 3597, "enter", 3598, 6, true);
             WriteAttributeValue(" ", 3603, "value", 3604, 6, true);
             WriteAttributeValue(" ", 3609, "for", 3610, 4, true);
+            WriteAttributeValue(" ", 3613, 
 #nullable restore
 #line 69 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue(" ", 3613, item.Label, 3614, 11, false);
+                                                                                                                                 item.Label
 
 #line default
 #line hidden
 #nullable disable
+            , 3614, 11, false);
             EndWriteAttribute();
             WriteLiteral(" />\r\n                                                        <div");
             BeginWriteAttribute("class", " class=\"", 3691, "\"", 3815, 2);
             WriteAttributeValue("", 3699, "col-sm-9", 3699, 8, true);
+            WriteAttributeValue(" ", 3707, 
 #nullable restore
 #line 70 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue(" ", 3707, item.Type.Equals(ConstVariable.TYPE_RADIOLIST) || item.Type.Equals(ConstVariable.TYPE_BOOLEAN)?"pt-2":"", 3708, 107, false);
+                                                                               item.Type.Equals(ConstVariable.TYPE_RADIOLIST) || item.Type.Equals(ConstVariable.TYPE_BOOLEAN)?"pt-2":""
 
 #line default
 #line hidden
 #nullable disable
+            , 3708, 107, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n");
 #nullable restore
@@ -292,105 +306,130 @@ WriteAttributeValue(" ", 3707, item.Type.Equals(ConstVariable.TYPE_RADIOLIST) ||
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <input type=\"text\"");
             BeginWriteAttribute("id", " id=\"", 4421, "\"", 4436, 1);
+            WriteAttributeValue("", 4426, 
 #nullable restore
 #line 77 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 4426, elementId, 4426, 10, false);
+                                                                                                elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 4426, 10, false);
             EndWriteAttribute();
             BeginWriteAttribute("name", " name=\"", 4437, "\"", 4454, 1);
+            WriteAttributeValue("", 4444, 
 #nullable restore
 #line 77 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 4444, elementId, 4444, 10, false);
+                                                                                                                  elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 4444, 10, false);
             EndWriteAttribute();
             WriteLiteral(" ");
+            Write(
 #nullable restore
 #line 77 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                         Write(item.IsRequired ? "required" : "");
+                                                                                                                               item.IsRequired ? "required" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                                               class=\"form-control input-control contorl-to-save  ");
+            Write(
 #nullable restore
 #line 78 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                              Write(item.ValidationRuleName.Replace("+", "").Replace(" ", "").ToLower());
+                                                                                                    item.ValidationRuleName.Replace("+", "").Replace(" ", "").ToLower()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                                                                                ");
+            Write(
 #nullable restore
 #line 79 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                            Write(string.IsNullOrWhiteSpace(item.ValidationRuleFormula) ? "" : "validation-rule");
+                                                                                  string.IsNullOrWhiteSpace(item.ValidationRuleFormula) ? "" : "validation-rule"
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                                               value=\"");
+            Write(
 #nullable restore
 #line 80 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                 Write(item.DefaultValue);
+                                                       item.DefaultValue
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-key=\"");
+            Write(
 #nullable restore
 #line 80 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                       Write(item.RequestTypeControlID);
+                                                                                             item.RequestTypeControlID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                                               data-control-type=\"");
+            Write(
 #nullable restore
 #line 81 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                             Write(item.Type);
+                                                                   item.Type
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-toggle=\"tooltip\" title=\"");
+            Write(
 #nullable restore
 #line 81 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                      Write(item.Tooltip);
+                                                                                                            item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                                               data-validation-rule=\"");
+            Write(
 #nullable restore
 #line 82 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                Write(item.ValidationRuleFormula);
+                                                                      item.ValidationRuleFormula
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-min-length=\"");
+            Write(
 #nullable restore
 #line 82 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                              Write(item.MinLength);
+                                                                                                                    item.MinLength
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-max-length=\"");
+            Write(
 #nullable restore
 #line 82 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                Write(item.MaxLength);
+                                                                                                                                                      item.MaxLength
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" autocomplete=\"off\" />\r\n");
 #nullable restore
 #line 83 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -400,14 +439,17 @@ WriteAttributeValue("", 4444, elementId, 4444, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                            <span class=\"text-danger\" data-valmsg-for=\"");
+            Write(
 #nullable restore
 #line 85 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                  Write(elementId);
+                                                                                                                        elementId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-valmsg-replace=\"true\"></span>\r\n");
 #nullable restore
 #line 86 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -424,14 +466,17 @@ WriteAttributeValue("", 4444, elementId, 4444, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <span class=\"form-control-static\">");
+            Write(
 #nullable restore
 #line 95 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                     Write(item.DefaultValue);
+                                                                                                           item.DefaultValue
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n");
 #nullable restore
 #line 96 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -446,65 +491,80 @@ WriteAttributeValue("", 4444, elementId, 4444, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <input type=\"date\"");
             BeginWriteAttribute("id", " id=\"", 7243, "\"", 7258, 1);
+            WriteAttributeValue("", 7248, 
 #nullable restore
 #line 103 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 7248, elementId, 7248, 10, false);
+                                                                                                elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 7248, 10, false);
             EndWriteAttribute();
             BeginWriteAttribute("name", " name=\"", 7259, "\"", 7276, 1);
+            WriteAttributeValue("", 7266, 
 #nullable restore
 #line 103 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 7266, elementId, 7266, 10, false);
+                                                                                                                  elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 7266, 10, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"form-control input-control contorl-to-save date-picker \" ");
+            Write(
 #nullable restore
 #line 103 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                         Write(item.IsRequired ? "required" : "");
+                                                                                                                                                                                               item.IsRequired ? "required" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" value=\"");
+            Write(
 #nullable restore
 #line 103 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                    Write(item.DefaultValue);
+                                                                                                                                                                                                                                          item.DefaultValue
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-key=\"");
+            Write(
 #nullable restore
 #line 103 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                          Write(item.RequestTypeControlID);
+                                                                                                                                                                                                                                                                                item.RequestTypeControlID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-type=\"");
+            Write(
 #nullable restore
 #line 103 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                         Write(item.Type);
+                                                                                                                                                                                                                                                                                                                               item.Type
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-toggle=\"tooltip\" title=\"");
+            Write(
 #nullable restore
 #line 103 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                  Write(item.Tooltip);
+                                                                                                                                                                                                                                                                                                                                                                        item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" autocomplete=\"off\" />\r\n");
 #nullable restore
 #line 104 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -514,14 +574,17 @@ WriteAttributeValue("", 7266, elementId, 7266, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                            <span class=\"text-danger\" data-valmsg-for=\"");
+            Write(
 #nullable restore
 #line 106 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                  Write(elementId);
+                                                                                                                        elementId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-valmsg-replace=\"true\"></span>\r\n");
 #nullable restore
 #line 107 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -533,14 +596,17 @@ WriteAttributeValue("", 7266, elementId, 7266, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <span class=\"form-control-static\">");
+            Write(
 #nullable restore
 #line 111 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                     Write(item.DefaultValue);
+                                                                                                           item.DefaultValue
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n");
 #nullable restore
 #line 112 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -554,65 +620,80 @@ WriteAttributeValue("", 7266, elementId, 7266, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <input type=\"text\"");
             BeginWriteAttribute("id", " id=\"", 8886, "\"", 8901, 1);
+            WriteAttributeValue("", 8891, 
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 8891, elementId, 8891, 10, false);
+                                                                                                elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 8891, 10, false);
             EndWriteAttribute();
             BeginWriteAttribute("name", " name=\"", 8902, "\"", 8919, 1);
+            WriteAttributeValue("", 8909, 
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 8909, elementId, 8909, 10, false);
+                                                                                                                  elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 8909, 10, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"form-control input-control contorl-to-save timepicker-no-seconds\" ");
+            Write(
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                  Write(item.IsRequired ? "required" : "");
+                                                                                                                                                                                                        item.IsRequired ? "required" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" value=\"");
+            Write(
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                             Write(item.DefaultValue);
+                                                                                                                                                                                                                                                   item.DefaultValue
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-key=\"");
+            Write(
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                   Write(item.RequestTypeControlID);
+                                                                                                                                                                                                                                                                                         item.RequestTypeControlID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-type=\"");
+            Write(
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                  Write(item.Type);
+                                                                                                                                                                                                                                                                                                                                        item.Type
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-toggle=\"tooltip\" title=\"");
+            Write(
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                           Write(item.Tooltip);
+                                                                                                                                                                                                                                                                                                                                                                                 item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" autocomplete=\"off\" />\r\n");
 #nullable restore
 #line 119 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -622,14 +703,17 @@ WriteAttributeValue("", 8909, elementId, 8909, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                            <span class=\"text-danger\" data-valmsg-for=\"");
+            Write(
 #nullable restore
 #line 121 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                  Write(elementId);
+                                                                                                                        elementId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-valmsg-replace=\"true\"></span>\r\n");
 #nullable restore
 #line 122 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -642,14 +726,17 @@ WriteAttributeValue("", 8909, elementId, 8909, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <span class=\"form-control-static\">");
+            Write(
 #nullable restore
 #line 127 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                     Write(item.DefaultValue);
+                                                                                                           item.DefaultValue
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n");
 #nullable restore
 #line 128 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -663,65 +750,80 @@ WriteAttributeValue("", 8909, elementId, 8909, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <input type=\"checkbox\"");
             BeginWriteAttribute("id", " id=\"", 10547, "\"", 10562, 1);
+            WriteAttributeValue("", 10552, 
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 10552, elementId, 10552, 10, false);
+                                                                                                    elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 10552, 10, false);
             EndWriteAttribute();
             BeginWriteAttribute("name", " name=\"", 10563, "\"", 10580, 1);
+            WriteAttributeValue("", 10570, 
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 10570, elementId, 10570, 10, false);
+                                                                                                                      elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 10570, 10, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"make-switch input-control contorl-to-save control-checkbox\" ");
+            Write(
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                Write(item.IsRequired ? "required" : "");
+                                                                                                                                                                                                      item.IsRequired ? "required" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" ");
+            Write(
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                     Write(Convert.ToBoolean(string.IsNullOrEmpty(item.DefaultValue) ? "false" : item.DefaultValue) ? "checked" : "");
+                                                                                                                                                                                                                                           Convert.ToBoolean(string.IsNullOrEmpty(item.DefaultValue) ? "false" : item.DefaultValue) ? "checked" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" data-control-key=\"");
+            Write(
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                   Write(item.RequestTypeControlID);
+                                                                                                                                                                                                                                                                                                                                                                         item.RequestTypeControlID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-type=\"");
+            Write(
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                                                                  Write(item.Type);
+                                                                                                                                                                                                                                                                                                                                                                                                                        item.Type
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-toggle=\"tooltip\" title=\"");
+            Write(
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                           Write(item.Tooltip);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                 item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-on-text=\"Yes\" data-off-text=\"No\" />\r\n");
 #nullable restore
 #line 135 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -732,14 +834,17 @@ WriteAttributeValue("", 10570, elementId, 10570, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                            <span class=\"text-danger\" data-valmsg-for=\"");
+            Write(
 #nullable restore
 #line 138 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                  Write(elementId);
+                                                                                                                        elementId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-valmsg-replace=\"true\"></span>\r\n");
 #nullable restore
 #line 139 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -751,14 +856,17 @@ WriteAttributeValue("", 10570, elementId, 10570, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <span class=\"form-control-static\">");
+            Write(
 #nullable restore
 #line 143 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                      Write(Convert.ToBoolean(string.IsNullOrEmpty(item.DefaultValue) ? "false" : item.DefaultValue) ? "Yes" : "No");
+                                                                                                            Convert.ToBoolean(string.IsNullOrEmpty(item.DefaultValue) ? "false" : item.DefaultValue) ? "Yes" : "No"
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n");
 #nullable restore
 #line 144 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -771,81 +879,100 @@ WriteAttributeValue("", 10570, elementId, 10570, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                    <select");
             BeginWriteAttribute("id", " id=\"", 12284, "\"", 12299, 1);
+            WriteAttributeValue("", 12289, 
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 12289, elementId, 12289, 10, false);
+                                                                                 elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 12289, 10, false);
             EndWriteAttribute();
             BeginWriteAttribute("name", " name=\"", 12300, "\"", 12317, 1);
+            WriteAttributeValue("", 12307, 
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 12307, elementId, 12307, 10, false);
+                                                                                                   elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 12307, 10, false);
             EndWriteAttribute();
             WriteLiteral(" ");
+            Write(
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                          Write(item.IsRequired ? "required" : "");
+                                                                                                                item.IsRequired ? "required" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" class=\"form-control input-control contorl-to-save ");
+            Write(
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                 Write(item.Type.Equals(ConstVariable.TYPE_DROPDOWN_MULTISELECT) ? "mt-multiselect dropdown-toggle" : "");
+                                                                                                                                                                                                       item.Type.Equals(ConstVariable.TYPE_DROPDOWN_MULTISELECT) ? "mt-multiselect dropdown-toggle" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" ");
+            Write(
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                       Write(item.Type.Equals(ConstVariable.TYPE_DROPDOWN_MULTISELECT) ? "multiple" : "");
+                                                                                                                                                                                                                                                                                                             item.Type.Equals(ConstVariable.TYPE_DROPDOWN_MULTISELECT) ? "multiple" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" ");
+            Write(
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                                      Write(item.Type.Equals(ConstVariable.TYPE_DROPDOWN_MULTISELECT) ? "data-role=multiselect" : "");
+                                                                                                                                                                                                                                                                                                                                                                                            item.Type.Equals(ConstVariable.TYPE_DROPDOWN_MULTISELECT) ? "data-role=multiselect" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" data-control-key=\"");
+            Write(
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Write(item.RequestTypeControlID);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         item.RequestTypeControlID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-type=\"");
+            Write(
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Write(item.Type);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        item.Type
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-toggle=\"tooltip\" title=\"");
+            Write(
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Write(item.Tooltip);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\">\r\n");
 #nullable restore
 #line 150 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -856,8 +983,9 @@ WriteAttributeValue("", 12307, elementId, 12307, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dc06aa5d4b0da78a1aff21382c52970a6c9be1324477e6f32b4b88ea972d43a44142", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dc06aa5d4b0da78a1aff21382c52970a6c9be1324477e6f32b4b88ea972d43a47216", async() => {
                 WriteLiteral("--Select--");
             }
             );
@@ -887,15 +1015,18 @@ WriteAttributeValue("", 12307, elementId, 12307, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dc06aa5d4b0da78a1aff21382c52970a6c9be1324477e6f32b4b88ea972d43a46568", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dc06aa5d4b0da78a1aff21382c52970a6c9be1324477e6f32b4b88ea972d43a49644", async() => {
+                Write(
 #nullable restore
 #line 162 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                       Write(dropdownItem.Value);
+                                                                                                                                             dropdownItem.Value
 
 #line default
 #line hidden
 #nullable disable
+                );
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
@@ -904,13 +1035,15 @@ WriteAttributeValue("", 12307, elementId, 12307, 10, false);
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __tagHelperExecutionContext.AddHtmlAttribute("selected", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 162 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                    WriteLiteral(dropdownItem.MasterListID);
+                                                                                                                 dropdownItem.MasterListID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -931,27 +1064,32 @@ WriteAttributeValue("", 12307, elementId, 12307, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dc06aa5d4b0da78a1aff21382c52970a6c9be1324477e6f32b4b88ea972d43a49410", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dc06aa5d4b0da78a1aff21382c52970a6c9be1324477e6f32b4b88ea972d43a52571", async() => {
+                Write(
 #nullable restore
 #line 166 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                              Write(dropdownItem.Value);
+                                                                                                                                    dropdownItem.Value
 
 #line default
 #line hidden
 #nullable disable
+                );
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 166 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                           WriteLiteral(dropdownItem.MasterListID);
+                                                                                                        dropdownItem.MasterListID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -974,6 +1112,7 @@ WriteAttributeValue("", 12307, elementId, 12307, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                    </select>\r\n");
 #nullable restore
 #line 173 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -983,14 +1122,17 @@ WriteAttributeValue("", 12307, elementId, 12307, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <span class=\"text-danger\" data-valmsg-for=\"");
+            Write(
 #nullable restore
 #line 175 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                              Write(elementId);
+                                                                                                                    elementId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-valmsg-replace=\"true\"></span>\r\n");
 #nullable restore
 #line 176 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1008,57 +1150,70 @@ WriteAttributeValue("", 12307, elementId, 12307, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                    <input type=\"file\"");
             BeginWriteAttribute("id", " id=\"", 16445, "\"", 16460, 1);
+            WriteAttributeValue("", 16450, 
 #nullable restore
 #line 186 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 16450, elementId, 16450, 10, false);
+                                                                                            elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 16450, 10, false);
             EndWriteAttribute();
             BeginWriteAttribute("name", " name=\"", 16461, "\"", 16478, 1);
+            WriteAttributeValue("", 16468, 
 #nullable restore
 #line 186 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 16468, elementId, 16468, 10, false);
+                                                                                                              elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 16468, 10, false);
             EndWriteAttribute();
             WriteLiteral(" class=\"form-control input-control contorl-to-save  fileupload\" ");
+            Write(
 #nullable restore
 #line 186 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                    Write(item.IsRequired && (files == null || files.Count == 0) ? "required" : "");
+                                                                                                                                                                                          item.IsRequired && (files == null || files.Count == 0) ? "required" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" data-control-key=\"");
+            Write(
 #nullable restore
 #line 186 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                 Write(item.RequestTypeControlID);
+                                                                                                                                                                                                                                                                                       item.RequestTypeControlID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-type=\"");
+            Write(
 #nullable restore
 #line 186 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                Write(item.Type);
+                                                                                                                                                                                                                                                                                                                                      item.Type
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-toggle=\"tooltip\" title=\"");
+            Write(
 #nullable restore
 #line 186 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                         Write(item.Tooltip);
+                                                                                                                                                                                                                                                                                                                                                                               item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" multiple style=\"width:90%\" />\r\n");
 #nullable restore
 #line 187 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1068,14 +1223,17 @@ WriteAttributeValue("", 16468, elementId, 16468, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <span class=\"text-danger\" data-valmsg-for=\"");
+            Write(
 #nullable restore
 #line 189 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                              Write(elementId);
+                                                                                                                    elementId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-valmsg-replace=\"true\"></span>\r\n");
 #nullable restore
 #line 190 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1093,16 +1251,19 @@ WriteAttributeValue("", 16468, elementId, 16468, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                                                            <div class=""row"">
                                                                                 <div class=""col-md-12"" style=""padding-top: 5px"">
                                                                                     ");
+            Write(
 #nullable restore
 #line 202 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                               Write(Html.ActionLink(fileCount + ". " + file.FileName, "DownloadFile", "Request", new { id = file.RequestDetailFileID }, null));
+                                                                                     Html.ActionLink(fileCount + ". " + file.FileName, "DownloadFile", "Request", new { id = file.RequestDetailFileID }, null)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                                                                                </div>\r\n                                                                            </div>\r\n");
 #nullable restore
 #line 205 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1120,6 +1281,7 @@ WriteAttributeValue("", 16468, elementId, 16468, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <div class=\"radio-list\">\r\n");
 #nullable restore
 #line 216 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1131,86 +1293,105 @@ WriteAttributeValue("", 16468, elementId, 16468, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                                    <label class=\"radio-inline\">\r\n                                                                                        <input type=\"radio\"");
             BeginWriteAttribute("id", " id=\"", 20579, "\"", 20594, 1);
+            WriteAttributeValue("", 20584, 
 #nullable restore
 #line 221 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 20584, elementId, 20584, 10, false);
+                                                                                                                 elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 20584, 10, false);
             EndWriteAttribute();
             BeginWriteAttribute("name", " name=\"", 20595, "\"", 20612, 1);
+            WriteAttributeValue("", 20602, 
 #nullable restore
 #line 221 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 20602, elementId, 20602, 10, false);
+                                                                                                                                   elementId
 
 #line default
 #line hidden
 #nullable disable
+            , 20602, 10, false);
             EndWriteAttribute();
             BeginWriteAttribute("value", "\r\n                                                           value=\"", 20613, "\"", 20707, 1);
+            WriteAttributeValue("", 20681, 
 #nullable restore
 #line 222 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 20681, dropdownItem.MasterListID, 20681, 26, false);
+                                                                   dropdownItem.MasterListID
 
 #line default
 #line hidden
 #nullable disable
+            , 20681, 26, false);
             EndWriteAttribute();
             BeginWriteAttribute("class", "\r\n                                                           class=\"", 20708, "\"", 20832, 2);
             WriteAttributeValue("", 20776, "input-control", 20776, 13, true);
+            WriteAttributeValue(" ", 20789, 
 #nullable restore
 #line 223 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue(" ", 20789, isFirstElement ? "contorl-to-save" : "", 20790, 42, false);
+                                                                                  isFirstElement ? "contorl-to-save" : ""
 
 #line default
 #line hidden
 #nullable disable
+            , 20790, 42, false);
             EndWriteAttribute();
             WriteLiteral("\r\n                                                           data-control-key=\"");
+            Write(
 #nullable restore
 #line 224 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                        Write(item.RequestTypeControlID);
+                                                                              item.RequestTypeControlID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                                                           data-control-type=\"");
+            Write(
 #nullable restore
 #line 225 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                         Write(item.Type);
+                                                                               item.Type
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                                                           data-toggle=\"tooltip\"");
             BeginWriteAttribute("title", "\r\n                                                           title=\"", 21112, "\"", 21193, 1);
+            WriteAttributeValue("", 21180, 
 #nullable restore
 #line 227 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 21180, item.Tooltip, 21180, 13, false);
+                                                                   item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            , 21180, 13, false);
             EndWriteAttribute();
             WriteLiteral("\r\n                                                           ");
+            Write(
 #nullable restore
 #line 228 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                       Write(defaultValuesList.Contains(dropdownItem.MasterListID.ToString()) ? isFirstElement && item.IsRequired ? "required checked" : "checked" :isFirstElement && item.IsRequired?"required":"");
+                                                             defaultValuesList.Contains(dropdownItem.MasterListID.ToString()) ? isFirstElement && item.IsRequired ? "required checked" : "checked" :isFirstElement && item.IsRequired?"required":""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(">\r\n                                                                                        ");
+            Write(
 #nullable restore
 #line 229 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                   Write(dropdownItem.Value);
+                                                                                         dropdownItem.Value
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                                                                                    </label>\r\n");
 #nullable restore
 #line 231 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1221,6 +1402,7 @@ WriteAttributeValue("", 21180, item.Tooltip, 21180, 13, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 233 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
                                                                                                   
@@ -1232,6 +1414,7 @@ WriteAttributeValue("", 21180, item.Tooltip, 21180, 13, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 237 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
                                                                                                   
@@ -1242,6 +1425,7 @@ WriteAttributeValue("", 21180, item.Tooltip, 21180, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        </div>\r\n");
 #nullable restore
 #line 242 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1252,14 +1436,17 @@ WriteAttributeValue("", 21180, item.Tooltip, 21180, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <span class=\"text-danger\" data-valmsg-for=\"");
+            Write(
 #nullable restore
 #line 245 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                              Write(elementId);
+                                                                                                                    elementId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-valmsg-replace=\"true\"></span>\r\n");
 #nullable restore
 #line 246 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1270,6 +1457,7 @@ WriteAttributeValue("", 21180, item.Tooltip, 21180, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                        </div>\r\n                                                    </div>\r\n                                                </div>\r\n");
 #nullable restore
 #line 252 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1281,6 +1469,7 @@ WriteAttributeValue("", 21180, item.Tooltip, 21180, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                <div style=\"clear:both;margin-bottom:10px;\" class=\"col-md-12\">\r\n\r\n");
 #nullable restore
 #line 258 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1290,24 +1479,29 @@ WriteAttributeValue("", 21180, item.Tooltip, 21180, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                        <div class=\"col-md-12\">\r\n                                                            <label class=\"col-sm-3 col-form-label text-start\" data-toggle=\"tooltip\"");
             BeginWriteAttribute("title", " title=\"", 24110, "\"", 24131, 1);
+            WriteAttributeValue("", 24118, 
 #nullable restore
 #line 261 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 24118, item.Tooltip, 24118, 13, false);
+                                                                                                                                            item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            , 24118, 13, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n                                                                ");
+            Write(
 #nullable restore
 #line 262 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                           Write(item.Label);
+                                                                 item.Label
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n");
 #nullable restore
 #line 263 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1317,6 +1511,7 @@ WriteAttributeValue("", 24118, item.Tooltip, 24118, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                    <span class=\"required\" aria-required=\"true\">* </span>\r\n");
 #nullable restore
 #line 266 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1325,19 +1520,22 @@ WriteAttributeValue("", 24118, item.Tooltip, 24118, 13, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                            </label>\r\n                                                            <input type=\"hidden\" id=\"requiredmessage\"");
             BeginWriteAttribute("value", " value=\"", 24727, "\"", 24769, 5);
             WriteAttributeValue("", 24735, "Please", 24735, 6, true);
             WriteAttributeValue(" ", 24741, "enter", 24742, 6, true);
             WriteAttributeValue(" ", 24747, "value", 24748, 6, true);
             WriteAttributeValue(" ", 24753, "for", 24754, 4, true);
+            WriteAttributeValue(" ", 24757, 
 #nullable restore
 #line 268 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue(" ", 24757, item.Label, 24758, 11, false);
+                                                                                                                                     item.Label
 
 #line default
 #line hidden
 #nullable disable
+            , 24758, 11, false);
             EndWriteAttribute();
             WriteLiteral(" />\r\n                                                            <div class=\"col-md-12\">\r\n");
 #nullable restore
@@ -1350,81 +1548,100 @@ WriteAttributeValue(" ", 24757, item.Label, 24758, 11, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <textarea");
             BeginWriteAttribute("id", " id=\"", 25283, "\"", 25299, 1);
+            WriteAttributeValue("", 25288, 
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 25288, elementIdd, 25288, 11, false);
+                                                                                       elementIdd
 
 #line default
 #line hidden
 #nullable disable
+            , 25288, 11, false);
             EndWriteAttribute();
             BeginWriteAttribute("name", " name=\"", 25300, "\"", 25318, 1);
+            WriteAttributeValue("", 25307, 
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
+                                                                                                          elementIdd
 
 #line default
 #line hidden
 #nullable disable
+            , 25307, 11, false);
             EndWriteAttribute();
             WriteLiteral(" rows=\"8\" class=\"form-control input-control contorl-to-save\" ");
+            Write(
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                              Write(item.IsRequired ? "required" : "");
+                                                                                                                                                                                    item.IsRequired ? "required" : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" data-control-key=\"");
+            Write(
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                    Write(item.RequestTypeControlID);
+                                                                                                                                                                                                                                          item.RequestTypeControlID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-control-type=\"");
+            Write(
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                   Write(item.Type);
+                                                                                                                                                                                                                                                                                         item.Type
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-toggle=\"tooltip\" title=\"");
+            Write(
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                            Write(item.Tooltip);
+                                                                                                                                                                                                                                                                                                                                  item.Tooltip
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-min-length=\"");
+            Write(
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                            Write(item.MinLength);
+                                                                                                                                                                                                                                                                                                                                                                  item.MinLength
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-max-length=\"");
+            Write(
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                                              Write(item.MaxLength);
+                                                                                                                                                                                                                                                                                                                                                                                                    item.MaxLength
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\">");
+            Write(
 #nullable restore
 #line 274 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                                                                                                                                                                                                                                                                                                               Write(item.DefaultValue);
+                                                                                                                                                                                                                                                                                                                                                                                                                     item.DefaultValue
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</textarea>\r\n");
 #nullable restore
 #line 275 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1434,14 +1651,17 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                            <span class=\"text-danger\" data-valmsg-for=\"");
+            Write(
 #nullable restore
 #line 277 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                                  Write(elementIdd);
+                                                                                                                        elementIdd
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-valmsg-replace=\"true\"></span>\r\n");
 #nullable restore
 #line 278 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1456,14 +1676,17 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                                        <span class=\"form-control-static\">");
+            Write(
 #nullable restore
 #line 285 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                                                                                     Write(item.DefaultValue);
+                                                                                                           item.DefaultValue
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</span>\r\n");
 #nullable restore
 #line 286 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1473,6 +1696,7 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                            </div>\r\n\r\n                                                        </div>\r\n");
 #nullable restore
 #line 291 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1481,6 +1705,7 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                </div>\r\n");
 #nullable restore
 #line 293 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1493,13 +1718,16 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
+            Write(
 #nullable restore
 #line 297 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                                           Write(Html.Raw("</div>"));
+                                                 Html.Raw("</div>")
 
 #line default
 #line hidden
 #nullable disable
+            );
 #nullable restore
 #line 297 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
                                                                    
@@ -1517,13 +1745,16 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
+            Write(
 #nullable restore
 #line 307 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
-                               Write(Html.Raw("</div>"));
+                                     Html.Raw("</div>")
 
 #line default
 #line hidden
 #nullable disable
+            );
 #nullable restore
 #line 307 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
                                                        
@@ -1533,6 +1764,7 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                        </div>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n");
 #nullable restore
 #line 315 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1541,6 +1773,7 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("    </div>\r\n");
 #nullable restore
 #line 317 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Request\_controls.cshtml"
@@ -1549,6 +1782,7 @@ WriteAttributeValue("", 25307, elementIdd, 25307, 11, false);
 #line default
 #line hidden
 #nullable disable
+
         }
         #pragma warning restore 1998
         #nullable restore

@@ -218,7 +218,7 @@ D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Busin
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Business.Service\obj\Debug\net5.0\Business.Service.AssemblyInfo.cs
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Business.Service\obj\Debug\net5.0\Business.Service.csproj.CoreCompileInputs.cache
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Business.Service\obj\Debug\net5.0\Business.Service.sourcelink.json
-D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Business.Service\obj\Debug\net5.0\Business.Service.csproj.CopyComplete
+D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Business.Service\obj\Debug\net5.0\Business.47CDEF83.Up2Date
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Business.Service\obj\Debug\net5.0\Business.Service.dll
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Business.Service\obj\Debug\net5.0\refint\Business.Service.dll
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Businessa.Service\Business.Service\obj\Debug\net5.0\Business.Service.pdb

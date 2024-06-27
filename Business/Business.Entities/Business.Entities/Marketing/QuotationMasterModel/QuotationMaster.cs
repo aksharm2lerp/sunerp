@@ -31,9 +31,10 @@ namespace Business.Entities.Marketing.QuotationMasterModel
         public decimal? TaxPercentage { get; set; }
         public decimal? TaxAmount { get; set; }
         public decimal? GrossAmount { get; set; }
-        public string PaymentTerm { get; set; }
-        public string DeliveryTerm { get; set; }
+        public string PaymentTerm { get; set; } = "";
+        public string DeliveryTerm { get; set; } = "";
         public string OtherRemark { get; set; }
+        public string QuotationTaxAmountJSONString { get; set; }
         public bool IsActive { get; set; } = true;
         public int CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
@@ -53,6 +54,7 @@ namespace Business.Entities.Marketing.QuotationMasterModel
 
         // public List<QuotationDetail> QuotationDetails { get; set; } = new List<QuotationDetail>();
         public ISGrid iSGrid { get; set; }
+        public string QuotationApprovalStatusText { get; set; }
     }
 
     public class QuotationDetail

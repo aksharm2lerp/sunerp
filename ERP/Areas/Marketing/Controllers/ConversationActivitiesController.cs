@@ -78,6 +78,8 @@ namespace ERP.Areas.Marketing.Controllers
                 MasterModalForPartyActivity masterModalForPartyActivity = new MasterModalForPartyActivity();
                 masterModalForPartyActivity.notification = _conversationActivitiesInterface.GetNotificationConversationActivities(id,USERID).Result;
                 masterModalForPartyActivity.partyMaster = _conversationActivitiesInterface.GetUserProfileConversationActivities(id).Result;
+                masterModalForPartyActivity.requestedforQuotLists = _conversationActivitiesInterface.GetPartyRFQListConversationActivities(id).Result;
+
                 //var notificationCount2 = _conversationActivitiesInterface.GetRFQListConversationActivities(id).Result;
                 return View("PartyActivities", masterModalForPartyActivity);
             }

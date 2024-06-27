@@ -319,6 +319,7 @@ namespace Business.Service.Customer
                     ,new SqlParameter("@AddressTypeID", customerAddressTxn.AddressTypeID)
                     ,new SqlParameter("@CountryID", customerAddressTxn.CountryID)
                     ,new SqlParameter("@StateID", customerAddressTxn.StateID)
+                    ,new SqlParameter("@CreatedOrModifiedBy", customerAddressTxn.CreatedOrModifiedBy)
                 };
 
                 var obj = await SqlHelper.ExecuteScalarAsync(connection, CommandType.StoredProcedure, "Usp_IU_CustomerAddressTxn", param);

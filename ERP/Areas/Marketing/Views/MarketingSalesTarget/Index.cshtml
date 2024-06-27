@@ -7,9 +7,15 @@
     ViewData["Title"] = "Sales Target List..";
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
+<style>
+    .grid-table-wrap {
+        /* overflow-y: scroll !important; */
+        overflow-x: scroll !important;
+    }
+</style>
 <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
     <div class="card border-1 shadow rounded-7 p-1">
-        <div class="row border-bottom">
+        <div class="row border-bottom py-2">
 
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="page-breadcrumb align-items-center">
@@ -26,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-6 col-lg-6 text-end">
+            <div class="col-sm-12 col-md-6 col-lg-6 text-end ">
                 <a class="btn btn-primary px-5" onclick="fnSalesTarget(this)"
                    href="javascript:void(0)"
                    data-key="0"

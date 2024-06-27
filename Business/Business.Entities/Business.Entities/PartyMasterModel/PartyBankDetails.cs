@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Business.Entities.Party
 {
@@ -7,10 +8,20 @@ namespace Business.Entities.Party
         public int SrNo { get; set; }
         public int PartyBankDetailsID { get; set; }
         public int PartyID { get; set; }
+
+        [Required(ErrorMessage = "Enter this detail!")]
         public string BankName { get; set; }
+
+        [Required(ErrorMessage = "Enter this detail!")]
         public string IFSCCode { get; set; }
+
+        [Required(ErrorMessage = "Enter this detail!")]
         public string AccountNO { get; set; }
+
+        [Required(ErrorMessage = "Enter this detail!")]
         public string AccountName { get; set; }
+
+        [Required(ErrorMessage = "Enter this detail!")]
         public string BranchLocation { get; set; }
         public string City { get; set; }
         public string BankCode { get; set; }

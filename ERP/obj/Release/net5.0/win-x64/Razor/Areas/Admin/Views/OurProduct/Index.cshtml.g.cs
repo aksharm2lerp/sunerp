@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_OurProduct_Index), @"mvc.1.0.view", @"/Areas/Admin/Views/OurProduct/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-using Microsoft.AspNetCore.Http;
+ using Microsoft.AspNetCore.Http;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"cf3d87c624ed09796682bfb0f614414e448d0bfdb6a6178cc1c34275a56ad6d7", @"/Areas/Admin/Views/OurProduct/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"cf3d87c624ed09796682bfb0f614414e448d0bfdb6a6178cc1c34275a56ad6d7", @"/Areas/Admin/Views/OurProduct/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_OurProduct_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Business.Entities.ProductPhotoPath.ProductPhotoPath>>
     #nullable disable
@@ -133,6 +123,7 @@ using Microsoft.AspNetCore.Http;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<div class=""container"">
     <div class=""row"">
         <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
@@ -144,7 +135,7 @@ using Microsoft.AspNetCore.Http;
                                 <ol class=""breadcrumb mb-0 p-0"">
                                     <li class=""breadcrumb-item"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf3d87c624ed09796682bfb0f614414e448d0bfdb6a6178cc1c34275a56ad6d77223", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf3d87c624ed09796682bfb0f614414e448d0bfdb6a6178cc1c34275a56ad6d76997", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -181,6 +172,7 @@ using Microsoft.AspNetCore.Http;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n");
 #nullable restore
 #line 30 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
@@ -191,8 +183,9 @@ using Microsoft.AspNetCore.Http;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf3d87c624ed09796682bfb0f614414e448d0bfdb6a6178cc1c34275a56ad6d79858", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf3d87c624ed09796682bfb0f614414e448d0bfdb6a6178cc1c34275a56ad6d79636", async() => {
                 WriteLiteral("Go For RFQ Card");
             }
             );
@@ -209,13 +202,15 @@ using Microsoft.AspNetCore.Http;
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-CollectionID", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 33 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-                                                                                                                      WriteLiteral(CollectionID);
+                                                                                                                                   CollectionID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["CollectionID"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-CollectionID", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["CollectionID"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -235,6 +230,7 @@ using Microsoft.AspNetCore.Http;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n\r\n                        </div>\r\n\r\n                    </div>\r\n\r\n                    <hr />\r\n                    <div class=\"lightbox\">\r\n                        <div class=\"row pt-1\">\r\n                            <div class=\"col-md-12\">\r\n");
             WriteLiteral("\r\n                                <div class=\"row\" id=\"imagesLoop\">\r\n");
 #nullable restore
@@ -247,40 +243,47 @@ using Microsoft.AspNetCore.Http;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<div class=""col-sl-12 col-md-4 col-lg-4 col-xl-4 my-2"">
                                             <div class=""card"">
                                                 <a href=""#"" class=""pop"">
                                                     <img id=""img01""");
             BeginWriteAttribute("src", " src=\"", 2708, "\"", 2760, 1);
+            WriteAttributeValue("", 2714, 
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-WriteAttributeValue("", 2714, Html.DisplayFor(modelItem => items.ImagePath), 2714, 46, false);
+                                                                          Html.DisplayFor(modelItem => items.ImagePath)
 
 #line default
 #line hidden
 #nullable disable
+            , 2714, 46, false);
             EndWriteAttribute();
             WriteLiteral(@" class=""card-img-top rounded-circle mx-auto d-block border border-dark mt-3"" alt=""Wire Images"" style=""width:180px; height:180px;"">
                                                 </a>
                                                 <div class=""card-body text-center"">
                                                     <h5>");
+            Write(
 #nullable restore
 #line 57 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-                                                   Write(productImageText);
+                                                         productImageText
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h5>\r\n\r\n\r\n\r\n\r\n\r\n                                                    <a");
             BeginWriteAttribute("onclick", " onclick=\"", 3176, "\"", 3219, 3);
             WriteAttributeValue("", 3186, "openImages(", 3186, 11, true);
+            WriteAttributeValue("", 3197, 
 #nullable restore
 #line 63 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-WriteAttributeValue("", 3197, items.ProductImageID, 3197, 21, false);
+                                                                            items.ProductImageID
 
 #line default
 #line hidden
 #nullable disable
+            , 3197, 21, false);
             WriteAttributeValue("", 3218, ")", 3218, 1, true);
             EndWriteAttribute();
             WriteLiteral(@" data-bs-toggle=""modal"" data-bs-target=""#exampleModal"" class=""btn"">
@@ -291,13 +294,15 @@ WriteAttributeValue("", 3197, items.ProductImageID, 3197, 21, false);
                                                     <a class=""btn""");
             BeginWriteAttribute("onclick", " onclick=\"", 3567, "\"", 3627, 3);
             WriteAttributeValue("", 3577, "fnOurProductImageMoreDetail(", 3577, 28, true);
+            WriteAttributeValue("", 3605, 
 #nullable restore
 #line 68 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-WriteAttributeValue("", 3605, items.ProductImageID, 3605, 21, false);
+                                                                                                         items.ProductImageID
 
 #line default
 #line hidden
 #nullable disable
+            , 3605, 21, false);
             WriteAttributeValue("", 3626, ")", 3626, 1, true);
             EndWriteAttribute();
             WriteLiteral(@"
@@ -314,13 +319,15 @@ WriteAttributeValue("", 3605, items.ProductImageID, 3605, 21, false);
                                                     <a class=""btn""");
             BeginWriteAttribute("onclick", " onclick=\"", 4437, "\"", 4487, 3);
             WriteAttributeValue("", 4447, "fnOurProductImage(", 4447, 18, true);
+            WriteAttributeValue("", 4465, 
 #nullable restore
 #line 79 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-WriteAttributeValue("", 4465, items.ProductImageID, 4465, 21, false);
+                                                                                               items.ProductImageID
 
 #line default
 #line hidden
 #nullable disable
+            , 4465, 21, false);
             WriteAttributeValue("", 4486, ")", 4486, 1, true);
             EndWriteAttribute();
             WriteLiteral(@"
@@ -344,6 +351,7 @@ WriteAttributeValue("", 4465, items.ProductImageID, 4465, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                </div>
 
                             </div>
@@ -426,21 +434,25 @@ WriteAttributeValue("", 4465, items.ProductImageID, 4465, 21, false);
     }
 
     var urladd = '");
+            Write(
 #nullable restore
 #line 173 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-             Write(Url.Action("Get", "OurProduct"));
+                   Url.Action("Get", "OurProduct")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n    var urlGoForRFQ = \'");
+            Write(
 #nullable restore
 #line 174 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
-                  Write(Url.Action("GoForRFQCard", "OurProduct"));
+                        Url.Action("GoForRFQCard", "OurProduct")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnOurProductImage(id) {
         // alert(_itemName);
@@ -541,10 +553,25 @@ WriteAttributeValue("", 4465, items.ProductImageID, 4465, 21, false);
 ");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
+        Microsoft.AspNetCore.Http.IHttpContextAccessor
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\OurProduct\Index.cshtml"
+                                                       HttpContextAccessor
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

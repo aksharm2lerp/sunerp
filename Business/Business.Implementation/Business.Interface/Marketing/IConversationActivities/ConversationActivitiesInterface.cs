@@ -14,6 +14,7 @@ namespace Business.Interface.Marketing.IConversationActivities
     {
         #region NotificationConversationActivities
         Task<PagedDataTable<Notification>> GetNotificationConversationActivities(int partyid, int userid);
+        Task<PagedDataTable<RequestedforQuotLists>> GetPartyRFQListConversationActivities(int partyid);
         #endregion NotificationConversationActivities
 
         #region UserProfileConversationActivities

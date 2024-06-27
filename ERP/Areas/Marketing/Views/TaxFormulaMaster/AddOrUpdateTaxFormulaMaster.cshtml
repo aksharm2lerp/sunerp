@@ -1,0 +1,179 @@
+@using Business.Entities.Marketing.TaxFormulaMasterModel;
+@model TaxFormulaMaster;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formTaxFormulaMaster">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="TaxFormulaID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="TaxFormulaMasterText" name="TaxFormulaMasterText" asp-for="TaxFormulaMasterText">
+                    <span asp-validation-for="TaxFormulaMasterText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    @* <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Tax Formula ID</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='TaxFormulaID' asp-for='TaxFormulaID' name='TaxFormulaID'>
+                            <span asp-validation-for='TaxFormulaID' class='text-danger'>
+                            </span>
+                        </div>
+                    </div> *@
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Customer</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for='CustomerID' id='choices-multiple-remove-button-CustomerID' asp-items='@CommonExtension.GetAllCustomerAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Formula Type ID</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='FormulaTypeID' asp-for='FormulaTypeID' name='FormulaTypeID'>
+                            <span asp-validation-for='FormulaTypeID' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Formula Head</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='FormulaHead' asp-for='FormulaHead' name='FormulaHead'>
+                            <span asp-validation-for='FormulaHead' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Formula Label</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='FormulaLabel' asp-for='FormulaLabel' name='FormulaLabel'>
+                            <span asp-validation-for='FormulaLabel' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Formula</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='Formula' asp-for='Formula' name='Formula'>
+                            <span asp-validation-for='Formula' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Formula Percentage</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='FormulaPercentage' asp-for='FormulaPercentage' name='FormulaPercentage'>
+                            <span asp-validation-for='FormulaPercentage' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Formula Value</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='FormulaValue' asp-for='FormulaValue' name='FormulaValue'>
+                            <span asp-validation-for='FormulaValue' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateTaxFormulaMaster", "TaxFormulaMaster")';
+    function fnSubmit() {
+        if ($("#formTaxFormulaMaster").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formTaxFormulaMaster").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+
+
+
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-CustomerID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+
+    });
+
+
+</script>

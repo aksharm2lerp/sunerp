@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Home_Image), @"mvc.1.0.view", @"/Views/Home/Image.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"d3df789e71049677ac58e553233db2054182e21672b443fc2b65b340a87ecf48", @"/Views/Home/Image.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"d3df789e71049677ac58e553233db2054182e21672b443fc2b65b340a87ecf48", @"/Views/Home/Image.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_Image : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Business.Entities.ProductPhotoPath.ProductPhotoPath>>
     #nullable disable
@@ -114,7 +106,7 @@ using Business.Entities.Dynamic;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3df789e71049677ac58e553233db2054182e21672b443fc2b65b340a87ecf484812", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3df789e71049677ac58e553233db2054182e21672b443fc2b65b340a87ecf484612", async() => {
                 WriteLiteral("Create New");
             }
             );
@@ -130,61 +122,75 @@ using Business.Entities.Dynamic;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n</p>\r\n<table class=\"table\">\r\n    <thead>\r\n        <tr>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayNameFor(model => model.ProductImageID));
+                 Html.DisplayNameFor(model => model.ProductImageID)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 13 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayNameFor(model => model.ProductImageText));
+                 Html.DisplayNameFor(model => model.ProductImageText)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 16 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayNameFor(model => model.ImagePath));
+                 Html.DisplayNameFor(model => model.ImagePath)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 19 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayNameFor(model => model.UOMID));
+                 Html.DisplayNameFor(model => model.UOMID)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 22 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayNameFor(model => model.Description));
+                 Html.DisplayNameFor(model => model.Description)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 25 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayNameFor(model => model.IsActive));
+                 Html.DisplayNameFor(model => model.IsActive)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 28 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayNameFor(model => model.CreatedOrModifiedBy));
+                 Html.DisplayNameFor(model => model.CreatedOrModifiedBy)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n            <th></th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n");
 #nullable restore
 #line 34 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
@@ -193,86 +199,107 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("        <tr>\r\n            <td>\r\n                ");
+            Write(
 #nullable restore
 #line 37 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayFor(modelItem => item.ProductImageID));
+                 Html.DisplayFor(modelItem => item.ProductImageID)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
+            Write(
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayFor(modelItem => item.ProductImageText));
+                 Html.DisplayFor(modelItem => item.ProductImageText)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
+            Write(
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayFor(modelItem => item.ImagePath));
+                 Html.DisplayFor(modelItem => item.ImagePath)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
+            Write(
 #nullable restore
 #line 46 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayFor(modelItem => item.UOMID));
+                 Html.DisplayFor(modelItem => item.UOMID)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
+            Write(
 #nullable restore
 #line 49 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayFor(modelItem => item.Description));
+                 Html.DisplayFor(modelItem => item.Description)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
+            Write(
 #nullable restore
 #line 52 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayFor(modelItem => item.IsActive));
+                 Html.DisplayFor(modelItem => item.IsActive)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
+            Write(
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.DisplayFor(modelItem => item.CreatedOrModifiedBy));
+                 Html.DisplayFor(modelItem => item.CreatedOrModifiedBy)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
+            Write(
 #nullable restore
 #line 58 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }));
+                 Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" |\r\n                ");
+            Write(
 #nullable restore
 #line 59 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }));
+                 Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" |\r\n                ");
+            Write(
 #nullable restore
 #line 60 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
-           Write(Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }));
+                 Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </td>\r\n        </tr>\r\n");
 #nullable restore
 #line 63 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Home\Image.cshtml"
@@ -281,13 +308,29 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("    </tbody>\r\n</table>\r\n");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public IAuthorizationService AuthorizationService { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+IAuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+AuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

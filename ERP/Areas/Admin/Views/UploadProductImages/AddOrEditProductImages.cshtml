@@ -4,6 +4,12 @@
     ViewData["Title"] = "Add Product Images and Description ";
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
+
+@{
+    var test = Model;
+    var test2 = test;
+    //string wareHouse = ViewBag.WareHouse;
+}
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
@@ -32,22 +38,23 @@
                             <div class="row">
 
                                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-
-                                    <div class="row mb-3">
-                                        <input type="hidden" asp-for="ProductImageID" />
-                                        <label for="" class="col-sm-3 col-form-label text-end">UOM</label>
-                                        <div class="col-sm-9">
-                                            <select asp-for="UOMID" asp-items="ViewBag.UOMID" class="form-control">
-                                                <option value="">Select Units</option>
-                                            </select>
-                                            <span asp-validation-for="UOMID" class="text-danger"></span>
-                                        </div>
+                                    <input type="hidden" asp-for="ProductImageID" />
+                                    <input type="hidden" asp-for="ProductCategoryText" id="productGroupText" />
+                                    <input type="hidden" asp-for="Warehouse" id="WareHousesID" />
+                                    @*<div class="row mb-3">
+                                    <label for="" class="col-sm-3 col-form-label text-end">UOM</label>
+                                    <div class="col-sm-9">
+                                    <select asp-for="UOMID" asp-items="ViewBag.UOMID" class="form-control">
+                                    <option value="">Select Units</option>
+                                    </select>
+                                    <span asp-validation-for="UOMID" class="text-danger"></span>
                                     </div>
+                                    </div> *@
 
                                     <div class="row mb-3">
                                         <label for="" class="col-sm-3 col-form-label text-end">Product Group</label>
                                         <div class="col-sm-9">
-                                            <select asp-for="ProductCategoryID" asp-items="ViewBag.ProductCategory" class="form-control">
+                                            <select asp-for="ProductCategoryID" asp-items="@CommonExtension.GetAllItemCategoryAsync()" class="form-control" onchange="fnAddProductGroupDescription()" name="ProductCategoryID" id="ProductCategoryID" disabled>
                                                 <option value="">Select Category</option>
                                             </select>
                                             <span asp-validation-for="ProductCategoryID" class="text-danger"></span>
@@ -55,9 +62,10 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="" class="col-sm-3 col-form-label text-end">Product Name</label>
+                                        <label for="" class="col-sm-3 col-form-label text-end">Product Name / synonyms</label>
                                         <div class="col-sm-9">
-                                            <input type="text" required="" class="form-control" id="ProductImageText" name="ProductImageText" asp-for="ProductImageText" placeholder="">
+                                            @* <input type="text" required="" class="form-control" id="ProductImageText" name="ProductImageText" asp-for="ProductImageText" placeholder=""> *@
+                                            <textarea required="" class="form-control" rows="4" id="ProductImageText" name="ProductImageText" asp-for="ProductImageText" placeholder=""></textarea>
                                             <span asp-validation-for="ProductImageText" class="text-danger"></span>
                                         </div>
                                     </div>
@@ -71,7 +79,18 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="" class="col-sm-3 col-form-label text-end">Product Status</label>
+                                        <label for="" class="col-sm-3 col-form-label text-end">Product Warehouses</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-select" name="Warehouse" asp-for="Warehouse" id="choices-multiple-WareHouse" asp-items="@MarketingExtension.GetAllSAPWareHouseAsync()" multiple>
+                                                @* <option value="">Select Warehouse Here...</option> *@
+                                            </select>
+                                            <span asp-validation-for="Warehouse" class="text-danger"></span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-sm-3 col-form-label text-end">IsActive</label>
                                         <div class="col-sm-9">
                                             @Html.CheckBoxFor(s => s.IsActive)
                                         </div>
@@ -83,17 +102,21 @@
                                     <div class="row mb-3">
                                         <label for="" class="col-sm-3 col-form-label text-end">Product Image:</label>
                                         <div class="col-sm-9">
-                                            <input asp-for="ProductPhoto" type="file" class="form-control custom-file-input" accept="image/*" name="ProductPhoto" id="ProductPhoto" onchange="loadFile(event)" style="display: none;" />
+                                            @*<input asp-for="ProductPhoto" type="file" class="form-control custom-file-input" accept="image/*" name="ProductPhoto" id="ProductPhoto" onchange="loadFile(event)" multiple style="display:none;" />                                            
                                             <label for="ProductPhoto" style="cursor: pointer; color:darkblue">
                                                 Upload the image<br />
-                                                <img id="output" width="150" height="150" src="@Model.ImagePath" />
-                                            </label>
+                                                <img class="border rounded" id="output" width="150" height="150" src="@Model.ImagePath" />
+                                            </label> 
                                             <script>
-                                                var loadFile = function(event) {
+                                                var loadFile = function (event) {
+                                                    const fileInput = document.getElementById('ProductPhoto');
+                                                    const fileCount = fileInput.files.length;
+                                                    alert(`Number of selected files: ${fileCount}`);
                                                     var image = document.getElementById('output');
                                                     image.src = URL.createObjectURL(event.target.files[0]);
                                                 };
-                                            </script>
+                                            </script>*@
+                                            <input type="file" id="fileInput" name="MultipleFiles" multiple class="form-control" onchange="validateFileType()" />
                                         </div>
                                     </div>
 
@@ -106,7 +129,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label"></label>
                                 <div class="col-sm-9">
-                                    <button type="submit" class="btn btn-primary btn-info px-5">Submit</button>
+                                    <button type="submit" onclick="fnSelectMultipleWareHouse()" class="btn btn-primary btn-info px-5">Submit</button>
                                 </div>
                             </div>
 
@@ -120,4 +143,55 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
 
+    $(document).ready(function () {
+        let wareHouses = document.getElementById("WareHousesID").value;
+        if (wareHouses !== '') {
+            $.each(wareHouses.split(","), function (i, e) {
+                $("#choices-multiple-WareHouse option[value='" + e + "']").prop("selected", true);
+            });
+        }
+
+        var multipleCancelButtonWareHouse = new Choices('#choices-multiple-WareHouse', {
+            removeItemButton: true,
+            maxItemCount: 1000,
+            searchResultLimit: 1000,
+            renderChoiceLimit: 10,
+        });
+    });
+
+    function fnAddProductGroupDescription() {
+        var productGroupID = document.getElementById("ProductCategoryID");
+        let selectedProductGroupID = productGroupID.value;
+        document.getElementById('productGroupText').value = productGroupID.text;
+        $.getJSON("/Admin/UploadProductImages/ProductGroupDescriptionByProductGroupID/", { productGroupID: selectedProductGroupID },
+            function (data) {
+                document.getElementById("Description").value = data.remark;
+            });
+    };
+
+    var selectedMultipleWareHouseDropdown = document.getElementById("choices-multiple-WareHouse");    
+    function fnSelectMultipleWareHouse() {
+        document.getElementById('ProductCategoryID').removeAttribute('disabled');
+        var selectedMultipleWareHouse = [];
+        // Loop through the options and check if they are selected
+        for (let i = 0; i < selectedMultipleWareHouseDropdown.options.length; i++) {
+            const option = selectedMultipleWareHouseDropdown.options[i];
+            if (option.selected) {
+                selectedMultipleWareHouse.push(option.value);
+            }
+        }
+        document.getElementById("WareHousesID").value = selectedMultipleWareHouse.toString();
+    }
+
+    function validateFileType() {
+        var selectedFile = document.getElementById('fileInput').files[0];
+        var allowedTypes = ['image/jpeg', 'image/png'];
+
+        if (!allowedTypes.includes(selectedFile.type)) {
+            alert('Invalid file type. Please upload a JPEG or PNG file.');
+            document.getElementById('fileInput').value = '';
+        }
+    }
+</script>

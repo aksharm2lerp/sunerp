@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SuperAdmin_Views_MasterEntity_P_list), @"mvc.1.0.view", @"/Areas/SuperAdmin/Views/MasterEntity/P_list.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"913e19ad0d6b28bddb4dd7a23cfe7271c003b2e288ef095c52595216a12d7da1", @"/Areas/SuperAdmin/Views/MasterEntity/P_list.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"913e19ad0d6b28bddb4dd7a23cfe7271c003b2e288ef095c52595216a12d7da1", @"/Areas/SuperAdmin/Views/MasterEntity/P_list.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SuperAdmin_Views_MasterEntity_P_list : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -92,13 +84,15 @@ using Business.Entities.Dynamic;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<div class=\"portlet light\">\r\n    <div class=\"portlet-title\">\r\n        <div class=\"caption\">\r\n            <i class=\"fa fa-list-alt\"></i>\r\n            <span class=\"caption-subject bold uppercase\"> Master Key List ");
+            Write(
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                                                                      Write(!string.IsNullOrEmpty(ViewBag.Name) ? " - " + ViewBag.Name : "");
+                                                                            !string.IsNullOrEmpty(ViewBag.Name) ? " - " + ViewBag.Name : ""
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</span>
         </div>
         <div class=""actions"">
@@ -137,76 +131,93 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        <tr>\r\n                                            <td class=\"text-center\">");
+            Write(
 #nullable restore
 #line 36 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                                                               Write(item.MasterListID);
+                                                                     item.MasterListID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                            <td class=\"text-left\">");
+            Write(
 #nullable restore
 #line 37 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                                                             Write(item.Value);
+                                                                   item.Value
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                            <td class=\"text-center\">");
+            Write(
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                                                                Write(item.IsActive ? "Yes" : "No");
+                                                                      item.IsActive ? "Yes" : "No"
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                            <td class=\"text-center\">");
+            Write(
 #nullable restore
 #line 39 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                                                                Write(item.IsDefaultSelected ? "Yes" : "No");
+                                                                      item.IsDefaultSelected ? "Yes" : "No"
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                            <td class=\"text-center\">");
+            Write(
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                                                               Write(item.EntryTypeName);
+                                                                     item.EntryTypeName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                            <td class=\"text-center\">");
+            Write(
 #nullable restore
 #line 41 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                                                               Write(item.SortOrder);
+                                                                     item.SortOrder
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                            <td class=\"text-center\">\r\n                                                <a href=\"javascript:void(0);\"");
             BeginWriteAttribute("onclick", " onclick=\"", 2598, "\"", 2643, 3);
             WriteAttributeValue("", 2608, "EditMasterList(", 2608, 15, true);
+            WriteAttributeValue("", 2623, 
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-WriteAttributeValue("", 2623, item.MasterListID, 2623, 18, false);
+                                                                                                       item.MasterListID
 
 #line default
 #line hidden
 #nullable disable
+            , 2623, 18, false);
             WriteAttributeValue("", 2641, ");", 2641, 2, true);
             EndWriteAttribute();
             WriteLiteral(" class=\"btn btn-success btn-sm\">Edit</a>\r\n\r\n                                                <a href=\"javascript:void(0);\"");
             BeginWriteAttribute("onclick", " onclick=\"", 2765, "\"", 2812, 3);
             WriteAttributeValue("", 2775, "DeleteMasterList(", 2775, 17, true);
+            WriteAttributeValue("", 2792, 
 #nullable restore
 #line 45 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-WriteAttributeValue("", 2792, item.MasterListID, 2792, 18, false);
+                                                                                                         item.MasterListID
 
 #line default
 #line hidden
 #nullable disable
+            , 2792, 18, false);
             WriteAttributeValue("", 2810, ");", 2810, 2, true);
             EndWriteAttribute();
             WriteLiteral(" class=\"btn btn-danger btn-sm\">Delete</a>\r\n                                            </td>\r\n                                        </tr>\r\n");
@@ -218,6 +229,7 @@ WriteAttributeValue("", 2792, item.MasterListID, 2792, 18, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            </tbody>
                             <tfoot>
                             </tfoot>
@@ -236,21 +248,25 @@ WriteAttributeValue("", 2792, item.MasterListID, 2792, 18, false);
     try {
         $(document).ready(function () {
             defaultType = '");
+            Write(
 #nullable restore
 #line 67 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                      Write(ViewBag.DefaultType);
+                            ViewBag.DefaultType
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n            defaultName = \'");
+            Write(
 #nullable restore
 #line 68 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\MasterEntity\P_list.cshtml"
-                      Write(ViewBag.Name);
+                            ViewBag.Name
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n        });\r\n    } catch (e) {\r\n\r\n    }\r\n</script>\r\n");
         }
         #pragma warning restore 1998

@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_Employee_MedicalInsurance__employeeMedicalInsuranceList), @"mvc.1.0.view", @"/Areas/Admin/Views/Employee/MedicalInsurance/_employeeMedicalInsuranceList.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-using Business.Entities.Employee.EmployeeMedicalInsurance;
+ using Business.Entities.Employee.EmployeeMedicalInsurance;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"ca1089e74d329e25a53c7423a28f11429fa64b43ea96d4d18a87659a33eda3ea", @"/Areas/Admin/Views/Employee/MedicalInsurance/_employeeMedicalInsuranceList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"ca1089e74d329e25a53c7423a28f11429fa64b43ea96d4d18a87659a33eda3ea", @"/Areas/Admin/Views/Employee/MedicalInsurance/_employeeMedicalInsuranceList.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Employee_MedicalInsurance__employeeMedicalInsuranceList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagedDataTable<EmployeeMedicalInsurance>>
     #nullable disable
@@ -122,7 +112,7 @@ using Business.Entities.Employee.EmployeeMedicalInsurance;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ca1089e74d329e25a53c7423a28f11429fa64b43ea96d4d18a87659a33eda3ea6203", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ca1089e74d329e25a53c7423a28f11429fa64b43ea96d4d18a87659a33eda3ea5975", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -184,6 +174,7 @@ using Business.Entities.Employee.EmployeeMedicalInsurance;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 42 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
                      foreach (var item in Model)
@@ -193,88 +184,109 @@ using Business.Entities.Employee.EmployeeMedicalInsurance;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                        <tr>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 46 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.SrNo);
+                                 item.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.InsuranceCompany);
+                                 item.InsuranceCompany
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.PolicyName);
+                                 item.PolicyName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 49 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.PolicyNumber);
+                                 item.PolicyNumber
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 50 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.PolicyStartDate.ToDate());
+                                 item.PolicyStartDate.ToDate()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.PolicyExpiryDate.ToDate());
+                                 item.PolicyExpiryDate.ToDate()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 52 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.PolicyPremiumAmt);
+                                 item.PolicyPremiumAmt
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 53 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.AgentName);
+                                 item.AgentName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                           Write(item.NomineeName);
+                                 item.NomineeName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>\r\n                                <a class=\'btn editaddress\'");
             BeginWriteAttribute("onclick", " onclick=\"", 2287, "\"", 2357, 3);
             WriteAttributeValue("", 2297, "fnEmployeeMedicalInsurance(", 2297, 27, true);
+            WriteAttributeValue("", 2324, 
 #nullable restore
 #line 56 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-WriteAttributeValue("", 2324, item.EmployeeMedicalInsuranceID, 2324, 32, false);
+                                                                                                item.EmployeeMedicalInsuranceID
 
 #line default
 #line hidden
 #nullable disable
+            , 2324, 32, false);
             WriteAttributeValue("", 2356, ")", 2356, 1, true);
             EndWriteAttribute();
             WriteLiteral(@"
@@ -283,22 +295,26 @@ WriteAttributeValue("", 2324, item.EmployeeMedicalInsuranceID, 2324, 32, false);
                            data-bs-target=""#canvasEmployeeMedicalInsurance""
                            aria-controls=""canvasEmployeeMedicalInsurance""
                            data-id=""");
+            Write(
 #nullable restore
 #line 61 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                               Write(item.EmployeeMedicalInsuranceID);
+                                     item.EmployeeMedicalInsuranceID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"");
             BeginWriteAttribute("employeeid", "\r\n                           employeeid=\"", 2690, "\"", 2747, 1);
+            WriteAttributeValue("", 2731, 
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-WriteAttributeValue("", 2731, item.EmployeeID, 2731, 16, false);
+                                        item.EmployeeID
 
 #line default
 #line hidden
 #nullable disable
+            , 2731, 16, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\'bx bx-edit\'></i></a>\r\n                            </td>\r\n                        </tr>\r\n");
 #nullable restore
@@ -308,6 +324,7 @@ WriteAttributeValue("", 2731, item.EmployeeID, 2731, 16, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 65 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
                      
@@ -316,6 +333,7 @@ WriteAttributeValue("", 2731, item.EmployeeID, 2731, 16, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"            </tbody>
         </table>
     </div>
@@ -332,7 +350,7 @@ WriteAttributeValue("", 2731, item.EmployeeID, 2731, 16, false);
 </div>
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca1089e74d329e25a53c7423a28f11429fa64b43ea96d4d18a87659a33eda3ea15006", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca1089e74d329e25a53c7423a28f11429fa64b43ea96d4d18a87659a33eda3ea15318", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -346,13 +364,15 @@ WriteAttributeValue("", 2731, item.EmployeeID, 2731, 16, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n<script type=\"text/javascript\">\r\n    //var urlDeleteCompanyFromUser = \'Url.Action(\"DeleteEmployeeExperience\", \"Employee\")\';\r\n    var urlAddUpdateEmployeeMedicalInsurance = \'");
+            Write(
 #nullable restore
 #line 85 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\Employee\MedicalInsurance\_employeeMedicalInsuranceList.cshtml"
-                                           Write(Url.Action("AddUpdateEmployeeMedicalInsurance", "Employee"));
+                                                 Url.Action("AddUpdateEmployeeMedicalInsurance", "Employee")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnEmployeeMedicalInsurance(employeeMedicalInsuranceId) {
         var _id = employeeMedicalInsuranceId;//$(this).data('id');

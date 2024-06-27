@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SuperAdmin_Views_Company__CompanyBankAccountList), @"mvc.1.0.view", @"/Areas/SuperAdmin/Views/Company/_CompanyBankAccountList.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-using Business.Entities.Company;
+ using Business.Entities.Company
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"5b5cf317b9aeac3489c6f992e5cece5f8b44abc432cb48d968f4817fb4a6fd3c", @"/Areas/SuperAdmin/Views/Company/_CompanyBankAccountList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"5b5cf317b9aeac3489c6f992e5cece5f8b44abc432cb48d968f4817fb4a6fd3c", @"/Areas/SuperAdmin/Views/Company/_CompanyBankAccountList.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SuperAdmin_Views_Company__CompanyBankAccountList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagedDataTable<CompanyBankDetails>>
     #nullable disable
@@ -122,7 +113,7 @@ using Business.Entities.Company;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5b5cf317b9aeac3489c6f992e5cece5f8b44abc432cb48d968f4817fb4a6fd3c6112", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5b5cf317b9aeac3489c6f992e5cece5f8b44abc432cb48d968f4817fb4a6fd3c5890", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -169,6 +160,7 @@ using Business.Entities.Company;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 35 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
                      foreach (var item in Model)
@@ -178,88 +170,109 @@ using Business.Entities.Company;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                        <tr>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 39 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.SrNo);
+                                 item.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.BankName);
+                                 item.BankName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 41 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.BankCode);
+                                 item.BankCode
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 42 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.AccountNO);
+                                 item.AccountNO
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.AccountName);
+                                 item.AccountName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 44 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.IFCICode);
+                                 item.IFCICode
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 45 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.BranchLocation);
+                                 item.BranchLocation
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 46 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.CountryName);
+                                 item.CountryName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                           Write(item.IsActive);
+                                 item.IsActive
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>\r\n                                <a class=\'btn editaddress IndexPagebtnEidtPadding\'");
             BeginWriteAttribute("onclick", " onclick=\"", 2169, "\"", 2223, 3);
             WriteAttributeValue("", 2179, "fnCompanyBankAccount(", 2179, 21, true);
+            WriteAttributeValue("", 2200, 
 #nullable restore
 #line 49 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-WriteAttributeValue("", 2200, item.CompanyBankingID, 2200, 22, false);
+                                                                                                                  item.CompanyBankingID
 
 #line default
 #line hidden
 #nullable disable
+            , 2200, 22, false);
             WriteAttributeValue("", 2222, ")", 2222, 1, true);
             EndWriteAttribute();
             WriteLiteral(@"
@@ -268,22 +281,26 @@ WriteAttributeValue("", 2200, item.CompanyBankingID, 2200, 22, false);
                                    data-bs-target=""#canvasCompanyBankAccount""
                                    aria-controls=""canvasCompanyBankAccount""
                                    data-id=""");
+            Write(
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                                       Write(item.CompanyBankingID);
+                                             item.CompanyBankingID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"");
             BeginWriteAttribute("Companyid", "\r\n                                   Companyid=\"", 2574, "\"", 2637, 1);
+            WriteAttributeValue("", 2622, 
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-WriteAttributeValue("", 2622, item.CompanyID, 2622, 15, false);
+                                               item.CompanyID
 
 #line default
 #line hidden
 #nullable disable
+            , 2622, 15, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\'bx bx-edit\'></i></a>\r\n                            </td>\r\n                        </tr>\r\n");
 #nullable restore
@@ -293,6 +310,7 @@ WriteAttributeValue("", 2622, item.CompanyID, 2622, 15, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 58 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
                      
@@ -301,6 +319,7 @@ WriteAttributeValue("", 2622, item.CompanyID, 2622, 15, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"            </tbody>
         </table>
     </div>
@@ -317,7 +336,7 @@ WriteAttributeValue("", 2622, item.CompanyID, 2622, 15, false);
 </div>
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b5cf317b9aeac3489c6f992e5cece5f8b44abc432cb48d968f4817fb4a6fd3c14591", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b5cf317b9aeac3489c6f992e5cece5f8b44abc432cb48d968f4817fb4a6fd3c14934", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -331,13 +350,15 @@ WriteAttributeValue("", 2622, item.CompanyID, 2622, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n<script type=\"text/javascript\">\r\n    //var urlDeleteCompanyFromUser = \'Url.Action(\"DeleteBankAccount\", \"Company\")\';\r\n    var urlAddUpdateBankAccount = \'");
+            Write(
 #nullable restore
 #line 78 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_CompanyBankAccountList.cshtml"
-                              Write(Url.Action("AddUpdateCompanyBankAccount", "Company"));
+                                    Url.Action("AddUpdateCompanyBankAccount", "Company")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnCompanyBankAccount(CompanyBankDetailId) {
         var _id = CompanyBankDetailId;//$(this).data('id');

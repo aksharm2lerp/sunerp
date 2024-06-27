@@ -3,16 +3,13 @@ using Business.Entities.Employee.EmployeeMedicalHistory;
 using Business.Entities.Employee.EmployeeMedicalInsurance;
 using Business.Entities.Employee.EmploymentStatus;
 using Business.Entities.Employee.EmploymentType;
-using Business.Entities.Master;
 using Business.Entities.SalaryPaidHr;
 using Business.Interface;
 using Business.Interface.IEmployee;
 using Business.Interface.ISalaryFormula;
 using Business.SQL;
 using ERP.Controllers;
-using ERP.Extensions;
 using ERP.Helpers;
-using GridCore.Pagination;
 using GridCore.Server;
 using GridShared;
 using Microsoft.AspNetCore.Authorization;
@@ -28,7 +25,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ERP.Areas.Admin.Controllers

@@ -99,7 +99,7 @@
         </div>
 
         <div class="text-center">
-            <button type="button" onclick="fnSaveEmployeePromotionIncrement()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveEmployeePromotionIncrement">Save</button>
+            <button type="button" onclick="fnSaveEmployeePromotionIncrement()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveEmployeePromotionIncrement">Submit</button>
         </div>
         <div>
             &nbsp;
@@ -171,6 +171,75 @@
                             </tr>
                             i++;
                         }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="col-11"><h6>&nbsp;Previous promotion history</h6></div>
+            <div class="table-responsive-md">
+                <table class="table" id="tblPromotionIncrement" style="font-size:small;">
+                    <thead style="position: sticky; top: 0; background-color:#6c97a1; color:white; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: x-small;">
+                        <tr>
+                            <th>Sr No</th>
+                            <th></th>
+                            <th>Promotion Increment Date</th>
+                            <th>Old Department</th>
+                            <th>Old Designation</th>
+                            <th>Old CTC</th>
+                            <th>Old CTC (Yearly)</th>
+                            <th>Approved By HR</th>
+                            <th>Approved By Admin</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody class="border border-dark">
+                        @* @foreach (var item in Model.employeePromotionIncrements)
+                        { *@
+                            string tblrow = "tableRow" + i;
+                            <tr>
+                                <td>
+                                    SrNo
+                                </td>
+                                <td>
+                                    <input type="hidden" class="form-control" id="EmployeeID" name="EmployeeID" />
+                                    <input type="hidden" class="form-control" id="EmployeePromotionIncrementID" name="EmployeePromotionIncrementID" />
+                                </td>
+                                <td>
+                                    PromotionIncrementDate.ToDate()
+                                    @*  <input type="date" class="form-control" id="PromotionIncrementDate" asp-for="@item.PromotionIncrementDate" name="PromotionIncrementDate" readonly /> *@
+                                </td>
+                                <td>
+                                   DepartmentName
+                                    <input type="hidden" class="form-control" id="DepartmentID" name="DepartmentID" />
+                                    @* <select asp-for="@item.DepartmentID" asp-items="@CustomerExtension.GetAllDepartments()" class="form-control">
+                            </select> *@
+                                </td>
+                                <td>
+                                   DesignationText
+                                    <input type="hidden" class="form-control" id="DesignationID" name="DesignationID" />
+                                    @* <select asp-for="@item.DesignationID" asp-items="@CommonExtension.GetAllDesignationAsync()" class="form-control">
+                            </select> *@
+                                </td>
+                                <td>
+                                    CurrentCTC
+                                </td>
+                                <td>
+                                    YearlyCTC
+                                </td>
+                                <td>
+                                    ApprovedByHR
+                                </td>
+                                <td>
+                                    ApprovedByAdmin
+                                </td>
+                                <td>
+                                    <a class='btn IndexPagebtnEidtPadding'><i class='bx bx-edit'></i></a>
+                                </td>
+                            </tr>
+                        @*     i++;
+                        } *@
                     </tbody>
                 </table>
             </div>

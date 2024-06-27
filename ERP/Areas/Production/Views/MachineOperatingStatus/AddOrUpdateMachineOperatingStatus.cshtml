@@ -6,25 +6,27 @@
 <form class="form-horizontal" role="form" id="formMachineOperatingStatus">
     <div class="row">
         <div class="col-md-12">
-            <div class="row mb-3">
-                <input type="hidden" asp-for="MachineOperatingStatusID" />
-                <div class="col-sm-9">
-                  @*  <input type="text" required="" class="form-control" id="MachineOperatingStatusText" name="MachineOperatingStatusText" asp-for="MachineOperatingStatusText">
-                    <span asp-validation-for="MachineOperatingStatusText" class="text-danger"></span>*@
+           @*<div class="row mb-3"> *@
+            <input type="hidden" asp-for="MachineOperatingStatusID" name="MachineOperatingStatusID" id="MachineOperatingStatusID" />
+                @* <div class="col-sm-9">                    
+                      <input type="text" required="" class="form-control" id="MachineOperatingStatusText" name="MachineOperatingStatusText" asp-for="MachineOperatingStatusText">
+                    <span asp-validation-for="MachineOperatingStatusText" class="text-danger"></span>
+                </div>
+            </div> *@
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>MachineOperatingStatusText</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='MachineOperatingStatusText' asp-for='MachineOperatingStatusText' name='MachineOperatingStatusText'>
+                            <span asp-validation-for='MachineOperatingStatusText' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class='row mt-3'><div class='col-12'>
- <div class='row mb-3'>
- <label for='' class='col-sm-3 col-form-label'>MachineOperatingStatusText</label>
- <div class='col-sm-9'>
- <input type='text' class='form-control' id='MachineOperatingStatusText' asp-for='MachineOperatingStatusText' name='MachineOperatingStatusText'>
- <span asp-validation-for='MachineOperatingStatusText' class='text-danger'>
- </span>
- </div>
- </div>
- 
- </div></div>
 
             <div class="modal-footer-sticky text-center">
                 <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
@@ -59,7 +61,7 @@
                             position: 'bottom right',
                             msg: data.message
                         });
-						window.location.reload().delay(3000);
+                        window.location.reload().delay(3000);
                     }
                     else {
                         Lobibox.notify('error', {
@@ -89,13 +91,13 @@
         }
     };
 
-     $(document).ready(function () {
+    $(document).ready(function () {
 
-          
 
-       
 
-          
+
+
+
 
     });
 

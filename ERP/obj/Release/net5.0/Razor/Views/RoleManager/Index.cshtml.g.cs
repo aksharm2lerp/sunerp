@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_RoleManager_Index), @"mvc.1.0.view", @"/Views/RoleManager/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"bd8d7bbfa1f131ced2d0c4bf3d675512c0c88a904e3c182a11afbb381c861386", @"/Views/RoleManager/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"bd8d7bbfa1f131ced2d0c4bf3d675512c0c88a904e3c182a11afbb381c861386", @"/Views/RoleManager/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_RoleManager_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Microsoft.AspNetCore.Identity.IdentityRole>>
     #nullable disable
@@ -130,6 +122,7 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n<h1>Role Manager</h1>\r\n\r\n\r\n<table class=\"table table-striped\">\r\n    <thead>\r\n        <tr>\r\n            <th>Role</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n");
 #nullable restore
 #line 23 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
@@ -139,16 +132,19 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("<tr>\r\n    <td>\r\n        ");
+            Write(
 #nullable restore
 #line 27 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
-   Write(role.Name);
+         role.Name
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n    </td>\r\n    <td class=\"text-end\">\r\n\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd8d7bbfa1f131ced2d0c4bf3d675512c0c88a904e3c182a11afbb381c8613867239", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd8d7bbfa1f131ced2d0c4bf3d675512c0c88a904e3c182a11afbb381c8613867078", async() => {
                 WriteLiteral("\r\n            <i class=\"bx bx-edit\"></i>\r\n        ");
             }
             );
@@ -162,13 +158,15 @@ using Microsoft.AspNetCore.Identity;
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 31 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
-                                            WriteLiteral(role.Id);
+                                                         role.Id
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-id", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -180,7 +178,7 @@ using Microsoft.AspNetCore.Identity;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd8d7bbfa1f131ced2d0c4bf3d675512c0c88a904e3c182a11afbb381c8613869537", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd8d7bbfa1f131ced2d0c4bf3d675512c0c88a904e3c182a11afbb381c8613869417", async() => {
                 WriteLiteral("\r\n            <i class=\"bx bx-trash\"></i>\r\n        ");
             }
             );
@@ -194,13 +192,15 @@ using Microsoft.AspNetCore.Identity;
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 34 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
-                                              WriteLiteral(role.Id);
+                                                           role.Id
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-id", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["id"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -220,7 +220,8 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd8d7bbfa1f131ced2d0c4bf3d675512c0c88a904e3c182a11afbb381c86138612013", async() => {
+
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd8d7bbfa1f131ced2d0c4bf3d675512c0c88a904e3c182a11afbb381c86138611936", async() => {
                 WriteLiteral("\r\n    <i class=\"bx bx-group\"></i>\r\n");
             }
             );
@@ -236,13 +237,15 @@ using Microsoft.AspNetCore.Identity;
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-roleId", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
-                                                                     WriteLiteral(role.Id);
+                                                                                  role.Id
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["roleId"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-roleId", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["roleId"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -260,6 +263,7 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n\r\n    </td>\r\n\r\n\r\n</tr>");
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
@@ -268,21 +272,67 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n    </tbody>\r\n</table>\r\n");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public UserManager<ApplicationUser> UserManager { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public 
+#nullable restore
+#line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
+        UserManager<ApplicationUser>
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
+                                     UserManager
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public SignInManager<ApplicationUser> SignInManager { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public 
+#nullable restore
+#line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
+        SignInManager<ApplicationUser>
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Views\RoleManager\Index.cshtml"
+                                       SignInManager
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public IAuthorizationService AuthorizationService { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+IAuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+AuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

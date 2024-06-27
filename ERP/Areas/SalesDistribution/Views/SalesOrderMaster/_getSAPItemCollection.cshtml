@@ -312,7 +312,7 @@
     }
     */
 
-    function fnPassItemDetail(obj) {
+    /*function fnPassItemDetail(obj) {
         var newTest = document.getElementById('tempValue').value;
         var i = 0;
         var index = 'newRowIndex' + newTest;
@@ -335,6 +335,41 @@
         itemcodeindex.value = obj.dataset.code;
         itemnameindex.value = obj.dataset.name;
         uomindex.value = selectedLabel;
+    }*/
+
+    function fnPassItemDetail(obj) {
+        var newTest = document.getElementById('tempValue').value;
+        var i = 0;
+        var index = 'newRowIndex' + newTest;
+        var tableElement = document.getElementsByTagName('Table');
+        var srCount = tableElement[0].rows.length;
+     
+                          //newRowIndex1
+        //stockNoOfCoilIndexnewRowIndex3
+        //stockCoilLengthIndexnewRowIndex3
+        var stockCoilLength = document.getElementById('stockCoilLengthIndex' + index);
+        var stockNoOfCoil = document.getElementById('stockNoOfCoilIndex' + index);
+        var umid = document.getElementById('UOMID' + index);
+        var itemcodeindex = document.getElementById('itemCodeIndex' + index);
+        var itemnameindex = document.getElementById('itemNameIndex' + index);
+        var uomindex = document.getElementById('UOMIndex' + index);
+        var dropdown = document.getElementById('choices-multiple-UOMID');
+
+        var selectedOption = dropdown.options[dropdown.selectedIndex];
+
+        // Get the selected value and label
+        var selectedValue = selectedOption.value;
+        var selectedLabel = selectedOption.text;
+
+        umid.value = selectedValue;
+        itemcodeindex.value = obj.dataset.code;
+        itemcodeindex.title = obj.dataset.code;
+        itemnameindex.value = obj.dataset.name;
+        itemnameindex.title = obj.dataset.name;
+        uomindex.value = selectedLabel;
+        uomindex.title = selectedLabel;
+        stockCoilLength.value = obj.dataset.coilLen;
+        stockNoOfCoil.value = obj.dataset.noofCoils;
     }
 
     $(".page-link").on("click", function () {

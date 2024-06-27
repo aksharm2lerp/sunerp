@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Notification_ViewAllNotificationList), @"mvc.1.0.view", @"/Views/Notification/ViewAllNotificationList.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,90 +14,78 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-using Business.Entities.NotificationModel;
+ using Business.Entities.NotificationModel;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-using System.Data;
+ using System.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"90d124d8c536c70513be5d2cfb44d9c46f7f0e38adf5779358c918550b225553", @"/Views/Notification/ViewAllNotificationList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"90d124d8c536c70513be5d2cfb44d9c46f7f0e38adf5779358c918550b225553", @"/Views/Notification/ViewAllNotificationList.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"9af2a5bd844c76fa2170a48777822dbd4537e1a6e69a69cabcf43956cc6762c3", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Notification_ViewAllNotificationList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -115,6 +103,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n");
 #nullable restore
 #line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -126,6 +115,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n<div class=\"container\" id=\"notificationListSummary\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-12 col-md-12 col-lg-12 mx-auto\">\r\n            <div class=\"card border-0 shadow rounded-3\">\r\n                <div class=\"card-body\">\r\n\r\n");
             WriteLiteral("\r\n                    <div class=\"row pt-1\">\r\n                        <div class=\"col-md-12\">\r\n                            <div class=\"row\">\r\n");
             WriteLiteral(@"
@@ -140,13 +130,15 @@ using System.Data;
                                     <div class=""col-sm-3"">
                                         <input type=""text"" class=""form-control"" id=""SearchString"" placeholder=""Search by string.""");
             BeginWriteAttribute("value", " value=\"", 2551, "\"", 2580, 1);
+            WriteAttributeValue("", 2559, 
 #nullable restore
 #line 56 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
+                                                                                                                                          ViewBag.SearchString
 
 #line default
 #line hidden
 #nullable disable
+            , 2559, 21, false);
             EndWriteAttribute();
             WriteLiteral(@">
                                     </div>
@@ -175,6 +167,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            <div class=""row"" style=""overflow:auto; height:auto; width:100%;"">
                                 <table class=""table table-striped"" style=""white-space: nowrap; font-size:inherit !important;"">
                                     <!--style=""display:block; overflow: auto; white-space: nowrap;""-->
@@ -191,6 +184,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 92 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
                                                  if (dataColumn.ColumnName.Equals("SrNo") || dataColumn.ColumnName.Equals("NotificationText") || dataColumn.ColumnName.Equals("IsView"))
@@ -200,14 +194,17 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                    <th>");
+            Write(
 #nullable restore
 #line 95 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-                                                   Write(dataColumn.ToString().Replace("SrNo","Sr No.").Replace("NotificationText","Notification").Replace("IsView","Status"));
+                                                         dataColumn.ToString().Replace("SrNo","Sr No.").Replace("NotificationText","Notification").Replace("IsView","Status")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n");
 #nullable restore
 #line 96 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -216,6 +213,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 96 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
                                                  
@@ -225,6 +223,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        </tr>\r\n                                    </thead>\r\n\r\n");
 #nullable restore
 #line 104 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -234,6 +233,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        <tr>\r\n");
 #nullable restore
 #line 107 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -244,6 +244,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 109 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
                                                  if (!string.IsNullOrEmpty(row[timeRow].ToString()))
@@ -253,6 +254,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 111 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
                                                      if (timeRow.Equals("SrNo") || timeRow.Equals("IsView"))
@@ -262,14 +264,17 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                        <td>");
+            Write(
 #nullable restore
 #line 114 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-                                                       Write(row[timeRow].ToString());
+                                                             row[timeRow].ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" </td>\r\n");
 #nullable restore
 #line 115 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -282,33 +287,40 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                        <td>\r\n");
             WriteLiteral("                                                            <div class=\"flex-grow-1\">\r\n                                                                <h6 class=\"msg-name my-0\">\r\n                                                                    ");
+            Write(
 #nullable restore
 #line 130 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-                                                               Write(row[4].ToString());
+                                                                     row[4].ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n");
             WriteLiteral("                                                                </h6>\r\n");
             WriteLiteral("                                                                <p class=\"msg-info my-0\">");
+            Write(
 #nullable restore
 #line 134 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-                                                                                    Write(row[5].ToString());
+                                                                                          row[5].ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</p>\r\n                                                                <p class=\"my-0\">");
+            Write(
 #nullable restore
 #line 135 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-                                                                           Write(row[7].ToString());
+                                                                                 row[7].ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</p>\r\n                                                            </div>\r\n                                                        </td>\r\n");
 #nullable restore
 #line 138 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -317,6 +329,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 138 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
                                                      
@@ -327,6 +340,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                    <td>-</td>\r\n");
 #nullable restore
 #line 143 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -335,6 +349,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 143 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
                                                  
@@ -343,6 +358,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                        </tr>\r\n");
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -351,6 +367,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                </table>\r\n\r\n                            </div>\r\n");
 #nullable restore
 #line 153 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
@@ -361,6 +378,7 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            <div class=""text-center"">
                                 <h1><iconify-icon icon=""mdi:text-box-remove-outline"" style=""color: #37569d;"" width=""100""></iconify-icon></h1>
                                 <h3 style=""color: red;"">No Data Found</h3>
@@ -373,14 +391,17 @@ WriteAttributeValue("", 2559, ViewBag.SearchString, 2559, 21, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+            Write(
 #nullable restore
 #line 167 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"
 <script type=""text/javascript"">
     function fnSearchNotification(obj) {
@@ -389,20 +410,37 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         var endDate = $('#EndDate').val();
         var searchString = $('#SearchString').val();
         var notificationurl = '");
+            Write(
 #nullable restore
 #line 174 "D:\GitHub\SUN\sunerpm2l\ERP\Views\Notification\ViewAllNotificationList.cshtml"
-                          Write(Url.Action("ViewAllNotificationList","Notification"));
+                                Url.Action("ViewAllNotificationList","Notification")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\';\r\n        var isdownload = obj;\r\n        var empDetailUrl = notificationurl + \'?startDate=\' + startDate + \'&endDate=\' + endDate + \'&searchString=\' + searchString;\r\n       \r\n        window.location.href = empDetailUrl;\r\n    };\r\n\r\n    \r\n\r\n</script>\r\n");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public IAuthorizationService AuthorizationService { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+IAuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 14 "D:\GitHub\SUN\sunerpm2l\ERP\Views\_ViewImports.cshtml"
+AuthorizationService
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

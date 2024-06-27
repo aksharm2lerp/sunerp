@@ -102,8 +102,8 @@ D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\Business.Interface.AssemblyInfo.cs
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\Business.Interface.csproj.CoreCompileInputs.cache
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\Business.Interface.sourcelink.json
-D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\Business.Interface.csproj.CopyComplete
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\Business.Interface.dll
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\refint\Business.Interface.dll
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\Business.Interface.pdb
 D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\ref\Business.Interface.dll
+D:\GitHub\SUN\sunerpm2l\Business\Business.Implementation\Business.Interface\obj\Release\net5.0\Business.EFCC8B7E.Up2Date

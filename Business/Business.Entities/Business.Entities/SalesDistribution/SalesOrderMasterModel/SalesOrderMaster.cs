@@ -16,6 +16,8 @@ namespace Business.Entities.SalesDistribution.SalesOrderMasterModel
         public int? FinancialYearID { get; set; }
         public int? CustomerID { get; set; }
         public string Reference { get; set; }
+        public int EmployeeID { get; set; }
+        public string EmployeeName { get; set; }
         public string CustomerCode { get; set; }
         public string SAPCollectionJSONString { get; set; }
         public string CustomerName { get; set; }
@@ -39,7 +41,8 @@ namespace Business.Entities.SalesDistribution.SalesOrderMasterModel
         public int? AddressTypeID { get; set; }
 
        // public List<SalesOrderDetail> SalesOrderDetails { get; set; } = new List<SalesOrderDetail>();
-        public ISGrid iSGrid { get; set; } 
+        public ISGrid iSGrid { get; set; }
+        public string TaxAmountJSONString { get; set; }
     }
 
     public class SalesOrderDetail 

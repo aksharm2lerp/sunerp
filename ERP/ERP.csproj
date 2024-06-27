@@ -3,10 +3,10 @@
 	
 	
   <PropertyGroup Label="Globals">
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
+    <SccProjectName></SccProjectName>
+    <SccProvider></SccProvider>
+    <SccAuxPath></SccAuxPath>
+    <SccLocalPath></SccLocalPath>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -117,6 +117,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4" />
     <PackageReference Include="Microsoft.ReportViewer.WebForms" Version="10.0.40219.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NLog" Version="5.0.4" />
 
 	  <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
@@ -145,8 +146,11 @@
     <Folder Include="Areas\Sales\Views\" />
     <Folder Include="bin\" />
     <Folder Include="Filters\" />
+    <Folder Include="Video\" />
     <Folder Include="wwwroot\assets\images\Contractor\" />
     <Folder Include="wwwroot\assets\images\CustomerDocuments\" />
+    <Folder Include="wwwroot\assets\images\TravellingExpenseBillsImages\" />
+    <Folder Include="wwwroot\assets\images\uploadProductImages\MultipleUploadedFiles\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -214,6 +218,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Areas\Marketing\Views\MarketingCommunicationLog\_marketingCommunicationLogSearch.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\assets\images\wireImages\Products\BuildingWire\building-wire.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

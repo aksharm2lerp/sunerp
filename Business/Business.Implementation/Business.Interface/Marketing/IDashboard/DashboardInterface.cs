@@ -11,7 +11,7 @@ namespace Business.Interface.Marketing.IDashboard
 {
     public interface DashboardInterface
     {
-    //    DashboardModel GetUserLoginList(DateTime? startDate, DateTime? endDate);
-        Task<DashboardModel> GetUserLoginList(DateTime? startDate, DateTime? endDate);
+        //    DashboardModel GetUserLoginList(DateTime? startDate, DateTime? endDate);
+        Task<DashboardModel> GetUserLoginList(DateTime? startDate, DateTime? endDate, int employee);
     }
 }

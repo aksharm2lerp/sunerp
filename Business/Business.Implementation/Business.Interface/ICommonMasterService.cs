@@ -1,23 +1,20 @@
 using Business.Entities.Department;
 using Business.Entities.Designation;
 using Business.Entities.Employee;
-using Business.Entities.ItemCategory;
 using Business.Entities.Master.MarketingCompanyFinancialYearMaster;
 using Business.Entities.Master;
-using Business;
 using Business.Entities.UOMID;
 using Business.Entities;
 using Business.SQL;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Business.Entities.PartyMasterModel;
 using Business.Entities.Marketing.RequestForQuotTypeMasterModel;
 using Business.Entities.HR.MachineryResourceAllocationModel;
 using Business.Entities.Marketing.QuotationApprovalStatusModel;
 using Business.Entities.Marketing.SAPItem;
+using Business.Entities.Admin.ProductCategoryMasterModel;
+using System.Data;
 //$AddUsing$
 
 namespace Business.Interface
@@ -34,7 +31,7 @@ namespace Business.Interface
         Task<PagedDataTable<EmployeeMaster>> GetAllEmployeeByUserandCompanyAsync(int? userid, int? companyid);
         Task<PagedDataTable<EmployeeMaster>> GetAllEmployeeByDepartmentAsync(int? departmentid);
         Task<PagedDataTable<UOMIDMetadata>> GetAllUOMAsync();
-        Task<PagedDataTable<ItemCategory>> GetAllItemCategoryAsync();
+        Task<PagedDataTable<ProductCategoryMaster>> GetAllItemCategoryAsync();
         Task<PagedDataTable<FinancialYearMaster>> GetAllFinancialYearAsync();
         Task<PagedDataTable<CompanyMasterMetadata>> GetAllCompanyAsync();
         Task<PagedDataTable<CustomerMasterMetadata>> GetAllCustomerAsync();
@@ -79,10 +76,16 @@ namespace Business.Interface
         Task<PagedDataTable<RequestForQuotTypeMaster>> GetAllRequestForQuotTypeAsync();
 
         Task<PagedDataTable<MachineryResourceAllocation>> MachineNameByDepartmentID(int departmentId);
-        Task<PagedDataTable<QuotationApprovalStatus>> GetAllQuotationApprovalStatusAsync();
+        Task<PagedDataTable<QuotationApprovalStatus>> GetAllQuotationApprovalStatusAsync(string useFor);
         Task<PagedDataTable<SAPItemSearchKeywordLog>> GetAllMostUsedSAPItemSearchKeywordAsync();
-         
 
+        Task<PagedDataTable<EmployeeMaster>> GetAllEmployeeAsync(int? departmentId);
+
+        Task<PagedDataTable<TermTypeMasterModelDropdown>> GetAllTermTypeAsync();
+        Task<PagedDataTable<TermsMasterModelDropdown>> GetAllTermsMasterAsync(string term);
+        Task<int> GetEmployeeIDFromUserID(int userId);
+        Task<int> GetUserIDFromEmployeeID(int employeeId);
+        Task<DataTable> GetFormulaMasterForQuotationByPartyIDAsync(int? partyId, int? quotationId);
 
         //$AddICommonMasterServiceMethod$
 

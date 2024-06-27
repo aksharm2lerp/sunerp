@@ -257,5 +257,40 @@ namespace Business.Service.Marketing.ConversationActivitiesService
 
         #endregion Party To Customer
 
+        #region party List of RFQ 
+        public async Task<PagedDataTable<RequestedforQuotLists>> GetPartyRFQListConversationActivities(int partyid)
+        {
+            DataTable table = new DataTable();
+            int totalItemCount = 0;
+            try
+            {
+                SqlParameter[] param = {
+                    new SqlParameter("@PartyID", partyid)
+                };
+                DataSet ds = await SqlHelper.ExecuteDatasetAsync(connection, CommandType.StoredProcedure, "Usp_Get_RequestForQuotPartyList", param);
+                if (ds.Tables.Count > 0)
+                {
+                    table = ds.Tables[0];
+                    if (table.Rows.Count > 0)
+                    {
+                        if (table.ContainColumn("TotalCount"))
+                            totalItemCount = Convert.ToInt32(table.Rows[0]["TotalCount"]);
+                        else
+                            totalItemCount = 0;
+                    }
+                }
+                PagedDataTable<RequestedforQuotLists> lst = table.ToPagedDataTableList<RequestedforQuotLists>
+                    (0, 0, totalItemCount, "", "", "");
+                return lst;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        #endregion party List of RFQ 
+
     }
 }

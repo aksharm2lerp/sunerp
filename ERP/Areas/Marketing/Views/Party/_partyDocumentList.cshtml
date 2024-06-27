@@ -29,50 +29,52 @@
         </div>
     }
     <div class="row">
-        <table class="table table-striped" id="tblBankAccounts">
-            <thead>
-                <tr>
-                    <td>Sr No</td>
-                    <td>Document Name</td>
-                    <td>Description</td>
-                    <td>IsActive</td>
-                    <td>Open</td>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null)
-                {
-                    @foreach (var item in Model)
+        <div class="table-responsive">
+            <table class="table table-striped" id="tblBankAccounts">
+                <thead>
+                    <tr>
+                        <td>Sr No</td>
+                        <td>Document Name</td>
+                        <td>Description</td>
+                        <td>IsActive</td>
+                        <td>Open</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
                     {
-                        <tr>
-                            <td>@item.SrNo</td>
-                            <td>@item.DocumentName</td>
-                            <td>@item.DocumentDescription</td>
-                            <td>
-                                <input type="checkbox" class="form-check-input" asp-for="@item.IsActive" onchange="fnPartyDocumentActiveInactive(@item.PartyDocumentID)" id="docActiveInactive">
-                                @*<a class='btn editaddress' onchange="fnPartyDocumentActiveInactive(@item.PartyDocumentID)"
-                        href="javascript:void(0)"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#canvasPartyDocument"
-                        aria-controls="canvasPartyDocument"
-                        data-id="@item.PartyDocumentID"
-                        Partyid="@item.PartyID"><i class='bx bx-checkbox' id="docActiveInactive"></i></a>*@
-                            </td>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SrNo</td>
+                                <td>@item.DocumentName</td>
+                                <td>@item.DocumentDescription</td>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" asp-for="@item.IsActive" onchange="fnPartyDocumentActiveInactive(@item.PartyDocumentID)" id="docActiveInactive">
+                                    @*<a class='btn editaddress' onchange="fnPartyDocumentActiveInactive(@item.PartyDocumentID)"
+                            href="javascript:void(0)"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#canvasPartyDocument"
+                            aria-controls="canvasPartyDocument"
+                            data-id="@item.PartyDocumentID"
+                            Partyid="@item.PartyID"><i class='bx bx-checkbox' id="docActiveInactive"></i></a>*@
+                                </td>
 
-                            <td>
-                                <a class='btn editaddress' onclick="fnPartyDocument(@item.PartyDocumentID)"
-                           href="javascript:void(0)"
-                           data-bs-toggle="offcanvas"
-                           data-bs-target="#canvasPartyDocument"
-                           aria-controls="canvasPartyDocument"
-                           data-id="@item.PartyDocumentID"
-                           Partyid="@item.PartyID"><i class='bx bx-edit'></i></a>
-                            </td>
-                        </tr>
+                                <td>
+                                    <a class='btn editaddress' onclick="fnPartyDocument(@item.PartyDocumentID)"
+                                       href="javascript:void(0)"
+                                       data-bs-toggle="offcanvas"
+                                       data-bs-target="#canvasPartyDocument"
+                                       aria-controls="canvasPartyDocument"
+                                       data-id="@item.PartyDocumentID"
+                                       Partyid="@item.PartyID"><i class='bx bx-edit'></i></a>
+                                </td>
+                            </tr>
+                        }
                     }
-                }
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -92,7 +94,7 @@
 <script type="text/javascript">
     //var urlDeleteCompanyFromUser = 'Url.Action("DeleteBankAccount", "Party")';
     var urlAddUpdateDocument = '@Url.Action("AddUpdatePartyDocument", "Party")';
-    var urlisActiveInActive = '@Url.Action("ActiveInActivePartyDocument","Party")';
+    var urlisActiveInActive = '@Url.Action("ActiveInActivePartyDocument", "Party")';
 
     function fnPartyDocument(PartyDocumentId) {
         var _id = PartyDocumentId;//$(this).data('id');

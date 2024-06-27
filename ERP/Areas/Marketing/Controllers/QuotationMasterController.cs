@@ -32,6 +32,10 @@ using Microsoft.AspNetCore.Localization;
 using GridMvc.Server;
 using PartyAddressTxn = Business.Entities.Marketing.QuotationMasterModel.PartyAddressTxn;
 using DocumentFormat.OpenXml.Wordprocessing;
+using Business.Entities.SalesDistribution.SalesOrderMasterModel;
+using Business.Entities.Marketing.QuotationApprovalStatusModel;
+using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace ERP.Areas.Marketing.Controllers
 {
@@ -131,21 +135,39 @@ namespace ERP.Areas.Marketing.Controllers
                 foreach (var item in pds)
                 {
                     /*      default color was   :#8ed7a7
-                    *    3  orange color code   :#FFA500
-                    *    2  red color code      :#FF0000
-                    *    1  yellow color code   :#FFFF00
-                    *    4  green color code    :#03ab03
+                    *    3  orange color code   :#FFA500        Reviewing Quotation
+                    *    2  red color code      :#FF0000        On - Hold On Hold
+                    *    1  yellow color code   :#FFFF00        Waiting for Approval
+                    *    4  green color code    :#03ab03        Approve Quotation
                     */
+
                     if (item.QuotationApprovalStatusID == 1)
+                    {
                         item.ApprovalStatusColorCode = "#FFFF00";
+                        item.QuotationApprovalStatusText = "Waiting for Approval";
+                    }
                     else if (item.QuotationApprovalStatusID == 2)
+                    {
                         item.ApprovalStatusColorCode = "#FF0000";
+                        item.QuotationApprovalStatusText = "On - Hold On Hold";
+                    }
+
                     else if (item.QuotationApprovalStatusID == 3)
+                    {
                         item.ApprovalStatusColorCode = "#FFA500";
+                        item.QuotationApprovalStatusText = "Reviewing Quotation";
+                    }
+
                     else if (item.QuotationApprovalStatusID == 4)
+                    {
                         item.ApprovalStatusColorCode = "#03ab03";
+                        item.QuotationApprovalStatusText = "Quotation Approved";
+                    }
                     else
+                    {
                         item.ApprovalStatusColorCode = "#FF0000";
+                        item.QuotationApprovalStatusText = "Waiting for Approval";
+                    }
                 }
 
                 Action<IGridColumnCollection<QuotationMaster>> columns = c =>
@@ -168,7 +190,11 @@ namespace ERP.Areas.Marketing.Controllers
                     //.RenderValueAs(o => $"<input type='checkbox' class='form-check-input' id='{"EMPActiveInactive" + o.QuotationID}'   href='javascript:void(0)' data-rowid='{"EMPActiveInactive" + o.QuotationID}'   data-id='{o.QuotationID}' data-key='{o.QuotationID}' " + (o.IsActive ? "checked" : "unchecked") + " disabled >");<iconify-icon icon='mdi:approve' width='24' height='24'></iconify-icon>
 
                     //<iconify-icon icon="heroicons:rectangle-group-solid" style='color: {o.ApprovalStatusColorCode}'>></iconify-icon>
-                    c.Add(o => o.IsApproved).Titled("IsApproved").Encoded(false).Sanitized(false).SetWidth(5).Css("hidden-xs").RenderValueAs(o => $"<a class='pointer' onclick='fnOpenQuotationOverviewPopup(this)' href='javascript:void(0)' data-id='{o.QuotationID}' data-key='{o.RequestForQuotID}' title='Approve here' data-bs-toggle='modal' data-bs-target='.bd-example-modal-lg' ><iconify-icon icon='heroicons:rectangle-group-solid' width='50' height='31' style='color: {o.ApprovalStatusColorCode}'>></iconify-icon></a>");
+                    //c.Add(o => o.IsApproved).Titled("IsApproved").Encoded(false).Sanitized(false).SetWidth(5).Css("hidden-xs").RenderValueAs(o => $"<a class='pointer' onclick='fnOpenQuotationOverviewPopup(this)' href='javascript:void(0)' data-id='{o.QuotationID}' data-key='{o.RequestForQuotID}' title='Approve here' data-bs-toggle='modal' data-bs-target='.bd-example-modal-lg' ><iconify-icon icon='heroicons:rectangle-group-solid' width='50' height='31' style='color: {o.ApprovalStatusColorCode}'>></iconify-icon></a>");
+
+                    //Below code added by dravesh for canvas popup 29-05-2024
+                    c.Add(o => o.IsApproved).Titled("Status").Encoded(false).Sanitized(false).SetWidth(5).Css("hidden-xs").RenderValueAs(o => $"<a class='pointer' onclick='fnQuotationMasterStatus(this)' href='javascript:void(0)' data-id='{o.QuotationID}' data-key='{o.RequestForQuotID}' title='{o.QuotationApprovalStatusText}' data-bs-toggle='offcanvas' data-bs-target='#canvasQuotationMasterStatus' aria-controls='canvasQuotationMasterStatus'><iconify-icon icon = 'heroicons:rectangle-group-solid' width='50' height='31' style='color:{o.ApprovalStatusColorCode}'></iconify-icon></a>");
+                    //Above code added by dravesh for canvas popup 29-05-2024
 
                     c.Add()
                         .Titled("Edit")
@@ -401,7 +427,7 @@ namespace ERP.Areas.Marketing.Controllers
 
 
         #endregion
-        
+
         #region Quotation Item detail 
         [Microsoft.AspNetCore.Mvc.HttpGet]
         public PartialViewResult QuotationItemDetail(int QuotationID = 0)
@@ -599,7 +625,7 @@ namespace ERP.Areas.Marketing.Controllers
                             .Sortable(false)
                             .Searchable(false, false)
                             .Selectable(true).ChangePageSize(true)
-                           
+
                             .ChangeSkip(false)
                             .EmptyText("No record found").SetTableLayout(tableLayout)
                             .ClearFiltersButton(false).Named("QuotationDetailTable")
@@ -667,42 +693,42 @@ namespace ERP.Areas.Marketing.Controllers
             try
             {
                 model.CreatedOrModifiedBy = USERID;
-                System.Data.DataTable dataTable = new System.Data.DataTable();
+                DataSet dataTable = new System.Data.DataSet();
                 List<QuotationDetail> sAPUpdateItemStocks = new List<QuotationDetail>();
                 if (!string.IsNullOrEmpty(model.SAPCollectionJSONString))
                 {
                     #region Creating DataTable 
                     sAPUpdateItemStocks = JsonConvert.DeserializeObject<List<QuotationDetail>>(model.SAPCollectionJSONString);
+                    dataTable.Tables.Add(new System.Data.DataTable());
+                    dataTable.Tables[0].Columns.Clear();
 
-                    dataTable.Columns.Clear();
-
-                    dataTable.Columns.Add(new DataColumn("QuotationDetailID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("QuotationID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("RequestForQuotID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("RequestForQuotDetailID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("ItemID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("ItemCode", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("ItemName", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("HSNcodes", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("UOMID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("Qty", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("Supl_Qty", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("Cancel_Qty", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("Rate", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("DiscountInPer", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("DiscountAmount", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("TaxInPer", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("TaxAmount", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("TotalAmount", typeof(decimal)));
-                    dataTable.Columns.Add(new DataColumn("Remark", typeof(string)));
-                    dataTable.Columns.Add(new DataColumn("IsInspectionRequired", typeof(bool)));
-                    dataTable.Columns.Add(new DataColumn("InspectionAgencyID", typeof(int)));
-                    dataTable.Columns.Add(new DataColumn("IsActive", typeof(bool)));
-                    dataTable.Columns.Add(new DataColumn("CreatedOrModifiedBy", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("QuotationDetailID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("QuotationID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("RequestForQuotID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("RequestForQuotDetailID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("ItemID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("ItemCode", typeof(string)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("ItemName", typeof(string)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("HSNcodes", typeof(string)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("UOMID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("Qty", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("Supl_Qty", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("Cancel_Qty", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("Rate", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("DiscountInPer", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("DiscountAmount", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("TaxInPer", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("TaxAmount", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("TotalAmount", typeof(decimal)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("Remark", typeof(string)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("IsInspectionRequired", typeof(bool)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("InspectionAgencyID", typeof(int)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("IsActive", typeof(bool)));
+                    dataTable.Tables[0].Columns.Add(new DataColumn("CreatedOrModifiedBy", typeof(int)));
 
                     foreach (var item in sAPUpdateItemStocks)
                     {
-                        DataRow dataRow = dataTable.NewRow();
+                        DataRow dataRow = dataTable.Tables[0].NewRow();
 
                         //dataRow["QuotationDetailID"] = item.QuotationDetailID;
                         //dataRow["QuotationID"] = item.QuotationID;
@@ -752,12 +778,18 @@ namespace ERP.Areas.Marketing.Controllers
                         dataRow["IsActive"] = true;
                         dataRow["CreatedOrModifiedBy"] = USERID;
 
-                        dataTable.Rows.Add(dataRow);
+                        dataTable.Tables[0].Rows.Add(dataRow);
                     }
-
+                    System.Data.DataTable dataTable1 = JsonConvert.DeserializeObject<System.Data.DataTable>(model.QuotationTaxAmountJSONString);
+                    foreach (DataRow dr in dataTable1.Rows)
+                    {
+                        dr["FormulaPercentage"] = Convert.ToDecimal(dr["FormulaPercentage"]);
+                        dr["CreatedOrModifiedBy"] = USERID;
+                        //dataTableClone.ImportRow(dr);
+                    }
+                    dataTable.Tables.Add(dataTable1);
                     #endregion Creating DataTable 
                 }
-                //Environment.Exit(0);
                 var _QuotationID = await iQuotationMaster.AddOrUpdateQuotationMaster(model, dataTable);
 
                 if (_QuotationID > 0)
@@ -797,7 +829,7 @@ namespace ERP.Areas.Marketing.Controllers
                 _logger.LogError(ex, ex.Message);
                 throw;
             }
-            
+
         }
 
         [HttpPost]
@@ -882,6 +914,10 @@ namespace ERP.Areas.Marketing.Controllers
             try
             {
                 model.CreatedOrModifiedBy = USERID;
+                model.ApprovedBy = USERID;
+                model.ApprovedDate = DateTime.Now;
+                model.AuthenticatedBy = USERID;
+                model.AuthenticatedDate = DateTime.Now;
                 var quotationReviewID = await iQuotationMaster.AddOrUpdateQuotationApprovalTypeAsync(model);
 
                 if (quotationReviewID > 0)
@@ -899,5 +935,28 @@ namespace ERP.Areas.Marketing.Controllers
         }
 
         #endregion Add Update Quotation Approval Type
+
+        #region Get formula for calculate taxes and amounts(GetFormulaMasterByCustomerID)
+        [HttpGet]
+        public async Task<PartialViewResult> GetFormulaMasterForQuotationByPartyID(int? partyId, int? quotationId)
+        {
+            try
+            {
+                System.Data.DataTable dataTable = new System.Data.DataTable();
+                if (partyId > 0)
+                    dataTable = await commonMasterService.GetFormulaMasterForQuotationByPartyIDAsync(partyId, quotationId);
+
+                if (dataTable.Rows.Count > 0)
+                    return PartialView("_transactionCalculation", dataTable);
+                else
+                    return PartialView("_transactionCalculation", null);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        #endregion Get formula for calculate taxes and amounts(GetFormulaMasterByCustomerID)
     }
 }

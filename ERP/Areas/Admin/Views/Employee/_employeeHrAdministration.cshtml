@@ -156,12 +156,34 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
+
+            @if (Model != null && Model.EmployeeID > 0 && Model.EmployeeAdminID > 0 && Model.PFDate != null)
+            {
+                <div class="row mb-3">
+                    <label for="" class="col-sm-3 col-form-label ">PF Date:</label>
+                    <div class="col-sm-8">
+                        <input type="date" class="form-control" asp-for="PFDate" id="PFDate" name="PFDate" placeholder="">
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="row mb-3">
+                    <label for="" class="col-sm-3 col-form-label ">PF Date:</label>
+                    <div class="col-sm-8">
+                        <input type="date" value="" class="form-control" asp-for="PFDate" id="PFDate" name="PFDate" placeholder="">
+                    </div>
+                </div>
+
+            }
+
+            @* <div class="row mb-3">
                 <label for="" class="col-sm-3 col-form-label ">PF Date:</label>
                 <div class="col-sm-8">
-                    <input type="date" class="form-control" asp-for="PFDate" id="PFDate" name="PFDate" placeholder="">
+                    <input type="date" value="" class="form-control" asp-for="PFDate" id="PFDate" name="PFDate" placeholder="">
                 </div>
-            </div>
+            </div> *@
 
             <div class="row mb-3">
                 <label for="" class="col-sm-3 col-form-label ">UANNO:</label>
@@ -171,7 +193,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="" class="col-sm-3 col-form-label ">Yearly Salary:</label>
+                <label for="" class="col-sm-3 col-form-label ">Yearly Salary:<span class="required">*</span></label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" asp-for="YearlyCTC" id="YearlyCTC" name="YearlyCTC" placeholder="" oninput="updateYearlyCTCValue()" required>
                     <span asp-validation-for="YearlyCTC"></span>
@@ -179,7 +201,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="" class="col-sm-3 col-form-label ">Monthly Salary:</label>
+                <label for="" class="col-sm-3 col-form-label ">Monthly Salary:<span class="required">*</span></label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" asp-for="MonthlyCTC" id="MonthlyCTC" name="MonthlyCTC" placeholder="" oninput="updateMonthlyCTCValue()" required>
                     <span asp-validation-for="MonthlyCTC"></span>
@@ -252,7 +274,7 @@
         -->
 
         <div class="text-center">
-            <button type="submit" onclick="fnSaveEmployeeHRAdministration()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveEmployeeHRAdministration">Save</button>
+            <button type="submit" onclick="fnSaveEmployeeHRAdministration()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveEmployeeHRAdministration">Submit</button>
             @*<button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Cancel</button>*@
         </div>
     </form>
@@ -268,7 +290,7 @@
     </div>
 </div>
 
-<div class="offcanvas" tabindex="-1" id="canvasEmploymentStatusChangeHr" aria-labelledby="offcanvasCompanyLabel" style="height: 70%; width: 60%;">
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvasEmploymentStatusChangeHr" aria-labelledby="offcanvasCompanyLabel" style="height: 70%; width: 60%; margin: 6% 20%;">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="canvasEmploymentStatusChangeHr">Update Employement Status By Hr</h5>
         <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
@@ -279,7 +301,7 @@
     </div>
 </div>
 
-<div class="offcanvas" tabindex="-1" id="canvasEmploymentTypeChangeHr" aria-labelledby="offcanvasCompanyLabel" style="height: 70%; width: 60%;">
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvasEmploymentTypeChangeHr" aria-labelledby="offcanvasCompanyLabel" style="height: 70%; width: 60%; margin: 6% 20%;">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="canvasEmploymentTypeChangeHr">Update Employement Type By Hr</h5>
         <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
@@ -298,11 +320,34 @@
     const valueYearlyCTC = document.getElementById('YearlyCTC');
     const valueMonthlyCTC = document.getElementById('MonthlyCTC');
     function fnSaveEmployeeHRAdministration() {
+        //alert("fnSaveEmployeeHRAdministration invoked...");
+        let companyID = document.getElementById('CompanyID').value;
+        let monthlyCTC = document.getElementById('MonthlyCTC').value;
+        let yearlyCTC = document.getElementById('YearlyCTC').value;
+        let employeeCategoryID = document.getElementById('EmployeeCategoryID').value;
+        if (companyID == null || companyID == "") {
+            alert("Select Company Name...");
+            return false;
+        }
+        if (monthlyCTC == null || monthlyCTC == "") {
+            alert("Enter Monthly CTC...");
+            return false;
+        }
+        if (yearlyCTC == null || yearlyCTC == "") {
+            alert("Enter Monthly CTC...");
+            return false;
+        }
+        if (employeeCategoryID == null || employeeCategoryID == "") {
+            alert("Select Employee Category...");
+            return false;
+        }
         //   $('formAddUpdateEmployeeHRAdministration').valid(){
         document.getElementById('EmploymentTypeIDHidden').removeAttribute('disabled');
         document.getElementById('EmploymentStatusIDHidden').removeAttribute('disabled');
         var ls = laddaStart('btnSaveEmployeeHRAdministration');
         modeldata = $("#formAddUpdateEmployeeHRAdministration").serialize();
+               
+
         $.ajax({
             type: 'POST',
             url: '/Admin/Employee/AddUpdateEmployeeHRAdministration/',
@@ -433,6 +478,20 @@
             valueYearlyCTC.value = Number(valueMonthlyCTC.value * 12).toFixed(2);
         }
     }
+
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+
+    // document.getElementById("PFDate").value = today;
+    // document.getElementById("ConfirmationDate").value = today;
+    // document.getElementById("JoiningDate").value = today;
 </script>
 <script type="text/javascript">
     //var urlDeleteCompanyFromUser = 'Url.Action("DeleteSalaryPaidHr", "Employee")';

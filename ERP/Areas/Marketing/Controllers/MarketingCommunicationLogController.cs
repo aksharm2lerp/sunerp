@@ -1,4 +1,5 @@
 ﻿using Business.Entities.AddNewFeedback;
+using Business.Entities.Employee;
 using Business.Entities.Marketing.CommunicationLog;
 using Business.Entities.PartyMasterModel;
 using Business.Interface;
@@ -38,8 +39,9 @@ namespace ERP.Areas.Marketing.Controllers
         private readonly IMarketingFeedbackService _marketingFeedbackService;
         private readonly IDataProtector protector;
         private readonly IPartyService _PartyService;
+        private readonly ICommonMasterService _commonMasterService;
 
-        public MarketingCommunicationLogController(IWebHostEnvironment hostEnvironment, IMasterService masterService, IMarketingCommunicationLogService iMarketingCommunicationLogService, IMarketingFeedbackService marketingFeedbackService, IDataProtectionProvider dataProtectionProvider, DataProtectionPurposeStrings dataProtectionPurposeStrings, IPartyService partyService)
+        public MarketingCommunicationLogController(IWebHostEnvironment hostEnvironment, IMasterService masterService, IMarketingCommunicationLogService iMarketingCommunicationLogService, IMarketingFeedbackService marketingFeedbackService, IDataProtectionProvider dataProtectionProvider, DataProtectionPurposeStrings dataProtectionPurposeStrings, IPartyService partyService, ICommonMasterService commonMasterService)
         {
             _webHostEnvironment = hostEnvironment;
             this._masterService = masterService;
@@ -47,11 +49,16 @@ namespace ERP.Areas.Marketing.Controllers
             _marketingFeedbackService = marketingFeedbackService;
             protector = dataProtectionProvider.CreateProtector(dataProtectionPurposeStrings.MarketingCommunicationLogIdRouteValue);
             _PartyService = partyService;
+            _commonMasterService = commonMasterService;
         }
         #endregion Interface
 
+
+
+
+
         #region /*Communicaton Log Index Start*/
-        public IActionResult Index([FromQuery(Name = "grid-page")] string gridpage = "1", [FromQuery(Name = "grid-column")] string orderby = "", [FromQuery(Name = "grid-dir")] string sortby = "0", [FromQuery(Name = "grid-filter")] string gridfilter = "", [FromQuery(Name = "grid-search")] string search = "")
+        public IActionResult Index([FromQuery(Name = "grid-page")] string gridpage = "1", [FromQuery(Name = "grid-column")] string orderby = "MarketingCommunicationLogID", [FromQuery(Name = "grid-dir")] string sortby = "1", [FromQuery(Name = "grid-filter")] string gridfilter = "", [FromQuery(Name = "grid-search")] string search = "")
         {
             int userid = USERID;
             ViewBag.UserID = USERID;
@@ -62,32 +69,27 @@ namespace ERP.Areas.Marketing.Controllers
 
                 c.Add(o => o.SrNo, "SrNo")
                     .Titled("SrNo")
-                    .Sortable(true)
                     .SetWidth(10);
 
                 c.Add(o => o.ContactByPerson)
                     .Titled("Contact By")
-                    .Sortable(true)
                     .SetWidth(50);
 
                 c.Add(o => o.ContactTo)
                    .Titled("Contact To")
-                   .Sortable(true)
                    .SetWidth(50);
 
                 c.Add(o => o.MobileNo)
                     .Titled("Mobile No")
-                    .Sortable(true)
                     .SetWidth(50);
 
                 c.Add(o => o.CommunicationLogDate)
                    .Titled("Communication Date")
                    .SetWidth(20)
-                   .Format("{0:dd/MM/yyyy}").Sortable(true); ;
+                   .Format("{0:dd/MM/yyyy hh:mm:ss}").Sortable(true); 
 
                 c.Add(o => o.ContactChannelTypeText)
                     .Titled("Contact Channel")
-                    .Sortable(true)
                     .SetWidth(50);
 
                 /* c.Add(o => o.PartyTypeText)
@@ -147,7 +149,7 @@ namespace ERP.Areas.Marketing.Controllers
             };
 
             PagedDataTable<CommunicationLog> pds = _iMarketingCommunicationLogService.GetAllMarketingCommunicationLogAsync(gridpage.ToInt(),
-               PAGESIZE, search, orderby.RemoveSpace(), sortby == "0" ? "ASC" : "DESC",USERID).Result;
+               PAGESIZE, search, "MarketingCommunicationLogID", sortby == "0" ? "ASC" : "DESC",USERID).Result;
             foreach (var item in pds)
             {
                 item.EncryptedId = protector.Protect(item.MarketingCommunicationLogID.ToString());
@@ -171,6 +173,80 @@ namespace ERP.Areas.Marketing.Controllers
             return View("Index", server.Grid);
         }
         #endregion /*Communicaton Log Index End*/
+
+
+        public ActionResult Search(string keyword, int departmentID, int companyID)
+        {
+            try
+            {
+                //var itemtype = _masterService.GetAllItemTypes();
+                //if (itemtype != null)
+                //{
+                //    ViewData["ItemSubGroup"] = new SelectList(itemtype.Result, "ItemSubGroupID", "ItemSubGroupText");
+                //}
+                //var itemGroup = _masterService.GetAllItemGroupTypes();
+                //if (itemGroup != null)
+                //{
+                //    ViewData["SubGroup"] = new SelectList(itemGroup.Result, "ItemGroupID", "ItemGroupName");
+                //}
+                //var itemLocation = _masterService.GetAllLocations();
+                //if (itemLocation != null && !itemLocation.IsFaulted)
+                //{
+                //    ViewData["PrimaryLocation"] = new SelectList(itemLocation.Result, "LocationID", "LocationName"); ;
+                //}
+                CommunicationLog model = new CommunicationLog();
+                model.keyword = keyword;
+                model.DepartmentID = departmentID;
+                model.CompanyID = companyID;
+                //ViewData["DepartmentID"] = departmentID;
+                PagedDataTable<CommunicationLog> pds = _iMarketingCommunicationLogService.GetAllMarketingCommunicationLogAsync(1, PAGESIZE, keyword, "MarketingCommunicationLogID", "DESC", USERID).Result;
+                
+                foreach (var item in pds)
+                {
+                    item.EncryptedId = protector.Protect(item.MarketingCommunicationLogID.ToString());
+                }
+                Action<IGridColumnCollection<CommunicationLog>> columns = c =>
+                {
+                    c.Add(o => o.SrNo, "SrNo").Titled("Sr.No.").SetWidth(5);
+                    c.Add(o => o.ContactByPerson).Titled("Contact By");
+                    c.Add(o => o.ContactTo).Titled("Contact To");
+                    c.Add(o => o.MobileNo).Titled("Mobile No");
+                    c.Add(o => o.CommunicationLogDate).Titled("Communication Date").Format("{0:dd/MM/yyyy hh:mm:ss}").Sortable(true); ;
+                    c.Add(o => o.ContactChannelTypeText).Titled("Contact Channel");
+                    //c.Add(o => o.IsActive).Titled("IsActive").Sortable(true);
+
+                    c.Add()
+                    .Titled("Edit")
+                    .Encoded(false)
+                    .Sanitized(false)
+                    .SetWidth(10)
+                    .Css("hidden-xs") //hide on phones
+                    .RenderValueAs(o => $"<a class='btn IndexPagebtnEidtPadding' href='/Marketing/MarketingCommunicationLog/Get/{o.EncryptedId}' ><i class='bx bx-edit'></i></a>");
+
+                };
+                GridSettings settings = new GridSettings();
+                //settings.QueryString = id.ToString();
+                IQueryCollection query = Request.Query;
+                var server = new GridCoreServer<CommunicationLog>(pds, query, false, "ordersGridCommLog",
+                    columns, PAGESIZE, pds.TotalItemCount)
+                    .Sortable(false)
+                    .Searchable(false, false)
+                    .ClearFiltersButton(false)
+                    .SetStriped(true)
+                    .ChangePageSize(true)
+                    .WithGridItemsCount()
+                    .WithPaging(PAGESIZE, pds.TotalItemCount)
+                    .ChangeSkip(false)
+                    .EmptyText("No record found")
+                    .CommonSettings(settings);
+                return View("Index", server.Grid);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
 
         #region /*Communicaton Log  silder Start*/
         [HttpPost]
@@ -202,6 +278,7 @@ namespace ERP.Areas.Marketing.Controllers
                         return View("AddUpdateMarketingCommunicationLog", model);
                     }
                 }
+                model.EmployeeID = _commonMasterService.GetEmployeeIDFromUserID(USERID).Result;
                 return View("AddUpdateMarketingCommunicationLog", model);
             }
             catch (Exception ex)
@@ -279,7 +356,7 @@ namespace ERP.Areas.Marketing.Controllers
             try
             {
                 //var test = MarketingExtension.GetAllMarketingClientFeedbackNote();
-                var newTest = _marketingFeedbackService.GetAllFeedbackNote().Select(x => new { PositiveNoteID = x.PositiveNoteID, PositiveNoteText = x.PositiveNoteText }).ToList();
+                var newTest = _marketingFeedbackService.GetAllFeedbackNote().Select(x => new { PositiveNoteID = x.PositiveNoteID, PositiveNoteText = x.PositiveNoteText, ActionTaken = x.ActionTaken }).ToList();
                 return Json(newTest);
             }
             catch (Exception)
@@ -323,6 +400,7 @@ namespace ERP.Areas.Marketing.Controllers
                 if (!string.IsNullOrEmpty(partyName) && !string.IsNullOrEmpty(partyMobile))
                 {
                     PartyMaster partyMaster = new PartyMaster() { PartyName = partyName, Mobile1 = partyMobile, Email = partyEmail, IsActive = true };
+                    partyMaster.CreatedOrModifiedBy = USERID;
                     int partId = _PartyService.AddUpdateParty(partyMaster).Result;
                     if (partId > 0)
                         return Json(new { status = true, message = "New party added." });

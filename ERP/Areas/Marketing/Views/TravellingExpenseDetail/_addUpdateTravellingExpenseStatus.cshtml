@@ -1,0 +1,131 @@
+﻿@using Business.Entities.Marketing.TravellingExpenseDetailModel
+@model TravellingExpenseStatus;
+
+<form id="travellingExpenseReviewForm">
+    <div class="row pt-3">
+        <div class="col-sm-12">
+            <input type="hidden" asp-for="TravellingExpenseStatusID" id="TravellingExpenseStatusID" name="TravellingExpenseStatusID" />
+            <input type="hidden" asp-for="TravellingExpenseDetailID" id="TravellingExpenseDetailID" name="TravellingExpenseDetailID" />
+            <div class="row mb-2">
+                <label for="" class="col-sm-4 col-form-label ">Date:<span class="required">*</span></label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" id="TravellingExpenseStatusDate" name="TravellingExpenseStatusDate" asp-for="TravellingExpenseStatusDate" placeholder="" readonly>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="" class="col-sm-4 col-form-label ">Status:<span class="required">*</span></label>
+                <div class="col-sm-8">
+                    <select class='form-select' asp-for="StatusID" id='StatusID' asp-items='@CommonExtension.GetAllQuotationApprovalStatusAsync("TravelExpense")' required>
+                        <option value=''>Select here...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="" class="col-sm-4 col-form-label ">Status Note:<span class="required">*</span></label>
+                <div class="col-sm-8">
+                    <textarea type="text" required="" class="form-control" id="StatusNote" name="StatusNote" asp-for="StatusNote" placeholder="" cols="7" required></textarea>
+                </div>
+            </div>
+            @if (Model != null && Model.listTravellingExpenseStatus.Count() > 0)
+            {
+                <div class="row mb-3">
+                    <div class="table-responsive-sm">
+                        <table class="table">
+                            <thead class="userProfileTableTHead">
+                                <tr>
+                                    <th scope="col">Sr No.</th>
+                                    <th scope="col">Person Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model.listTravellingExpenseStatus)
+                                {
+                                    <tr>
+                                        <th scope="row">@i.SrNo</th>
+                                        <td>@i.UserFullName</td>
+                                        <td>@i.StatusText</td>
+                                        <td>@i.TravellingExpenseStatusDate.ToDate()</td>
+                                        <td>@i.StatusNote</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+
+            <div class="modal-footer-sticky text-center">
+                <button type="button" onclick="fnSaveTravellingExpenseStatus()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSaveTravellingExpenseStatus">Submit</button>
+                <button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Cancel</button>
+
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    // $(document).ready(function () {
+
+    //     var multipleCancelButtonParty = new Choices('#TravellingExpenseStatusID', {
+    //         removeItemButton: false,
+    //         maxItemCount: 10,
+    //         searchResultLimit: 10,
+    //         renderChoiceLimit: 10
+    //     });
+    // });
+
+    function fnSaveTravellingExpenseStatus() {
+        //alert('fnSaveTravellingExpenseStatus invoked');
+        var urlsave = '@Url.Action("AddTravellingExpenseStatus", "TravellingExpenseDetail")';
+        var _travellingExpenseDetailID = $("#TravellingExpenseDetailID").val();
+        //alert('TravellingExpenseDetailID-- ' + _travellingExpenseDetailID);
+        modeldata = $("#travellingExpenseReviewForm").serialize();
+        $.ajax({
+            type: 'POST',
+            url: urlsave,
+            data: modeldata,
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    //$('#approveQuotationModal').modal('hide');
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    window.location.reload().delay(3000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    }
+
+</script>

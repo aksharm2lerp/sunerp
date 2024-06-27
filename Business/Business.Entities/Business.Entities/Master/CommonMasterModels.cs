@@ -142,6 +142,18 @@ namespace Business.Entities.Master
         public string LocationName { get; set; }
     }
  
+ 	 
+ public class TermTypeMasterModelDropdown
+    {
+        public int TermTypeID { get; set; }
+        public string TermTypeText { get; set; }
+    }
+public class TermsMasterModelDropdown
+    {
+        public int TermsID { get; set; }
+        public string TermText { get; set; }
+    }
+ 
  	 //$AddCommonMasterModel$
 
 }

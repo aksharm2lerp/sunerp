@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SuperAdmin_Views_Package_Detail), @"mvc.1.0.view", @"/Areas/SuperAdmin/Views/Package/Detail.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"16916573234e865fe604dafc8bbc457cb8ceb821fa0950377c02fb621338e16a", @"/Areas/SuperAdmin/Views/Package/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"16916573234e865fe604dafc8bbc457cb8ceb821fa0950377c02fb621338e16a", @"/Areas/SuperAdmin/Views/Package/Detail.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SuperAdmin_Views_Package_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Business.Entities.PackageFormTxn.PackageFormTxn>>
     #nullable disable
@@ -130,30 +122,37 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n<h1>Package :");
+            Write(
 #nullable restore
 #line 12 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-        Write(ViewBag.PackageName);
+              ViewBag.PackageName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</h1>\r\n\r\n\r\n<table class=\"table\">\r\n    <thead>\r\n        <tr>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 19 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-           Write(Html.DisplayNameFor(model => model.FormName));
+                 Html.DisplayNameFor(model => model.FormName)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n            <th>\r\n            </th>\r\n            <th>\r\n                ");
+            Write(
 #nullable restore
 #line 24 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-           Write(Html.DisplayNameFor(model => model.IsActive));
+                 Html.DisplayNameFor(model => model.IsActive)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n            </th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n");
 #nullable restore
 #line 29 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
@@ -163,30 +162,37 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("            <tr>\r\n                \r\n                <td>\r\n                    ");
+            Write(
 #nullable restore
 #line 34 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-               Write(Html.DisplayFor(modelItem => item.FormName));
+                     Html.DisplayFor(modelItem => item.FormName)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
+            Write(
 #nullable restore
 #line 37 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-               Write(Html.HiddenFor(modelItem => item.FormID));
+                     Html.HiddenFor(modelItem => item.FormID)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                </td>                \r\n                <td>\r\n                    ");
+            Write(
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-               Write(Html.CheckBoxFor(modelItem => item.IsActive, htmlAttributes: new { @checked = false, @class = "packageFormAllChecked"}));
+                     Html.CheckBoxFor(modelItem => item.IsActive, htmlAttributes: new { @checked = false, @class = "packageFormAllChecked"})
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\r\n                </td>\r\n                \r\n            </tr>\r\n");
 #nullable restore
 #line 44 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
@@ -195,6 +201,7 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"    </tbody>
 </table>
 
@@ -203,7 +210,7 @@ using Business.Entities.Dynamic;
     <button type=""button"" class=""btn btn-primary btn-info px-5 ladda-button"" onclick=""fnSaveTable()""> Submit</button>
 ");
             WriteLiteral("    <input type=\"button\" onclick=\"uncheckAll()\" class=\"btn btn-primary btn-info px-5 ladda-button\" value=\"Reset\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16916573234e865fe604dafc8bbc457cb8ceb821fa0950377c02fb621338e16a9520", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16916573234e865fe604dafc8bbc457cb8ceb821fa0950377c02fb621338e16a9530", async() => {
                 WriteLiteral("Back");
             }
             );
@@ -224,13 +231,15 @@ using Business.Entities.Dynamic;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n</div>\r\n\r\n<script type=\"text/javascript\">\r\n    var urladd = \'");
+            Write(
 #nullable restore
 #line 57 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-             Write(Url.Action("Get", "Package"));
+                   Url.Action("Get", "Package")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnPackage(obj) {
         var _key = $(obj).data('key');
@@ -252,13 +261,15 @@ using Business.Entities.Dynamic;
     }
 
     var urlisActiveInActive = '");
+            Write(
 #nullable restore
 #line 77 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-                          Write(Url.Action("ActiveInActivePackageForm","Package"));
+                                Url.Action("ActiveInActivePackageForm","Package")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnPackageFormActiveInactive(PackageID, FormID) {
         var _packageID = PackageID;//$(this).data('id');
@@ -289,13 +300,15 @@ using Business.Entities.Dynamic;
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
                         msg: '");
+            Write(
 #nullable restore
 #line 105 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-                         Write(MessageHelper.Error);
+                               MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"'
                     });
                 }
@@ -310,13 +323,15 @@ using Business.Entities.Dynamic;
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: '");
+            Write(
 #nullable restore
 #line 118 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"'
                 });
             }
@@ -346,21 +361,25 @@ using Business.Entities.Dynamic;
     function fnSaveTable() {
 
         let packageId = ");
+            Write(
 #nullable restore
 #line 146 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-                   Write(packageId);
+                         packageId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(";\r\n        //alert(\'package id is\' + packageId);\r\n        var gridTableSaveUrl = \'");
+            Write(
 #nullable restore
 #line 148 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-                           Write(Url.Action("AssingFormToPackage","Package"));
+                                 Url.Action("AssingFormToPackage","Package")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         var gridTable = document.getElementsByTagName('table');
         var gridTableData = [];
@@ -426,13 +445,15 @@ using Business.Entities.Dynamic;
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: """);
+            Write(
 #nullable restore
 #line 210 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Package\Detail.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                });\r\n            }\r\n        }).always(function () {\r\n            hideLoader();\r\n        });\r\n\r\n    };\r\n\r\n   //DataTable Code end\r\n</script>\r\n");
         }
         #pragma warning restore 1998

@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_HR_Views_MachineResourceSummary_Index_old14022024), @"mvc.1.0.view", @"/Areas/HR/Views/MachineResourceSummary/Index_old14022024.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-using GridCore;
+ using GridCore
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba48094948251", @"/Areas/HR/Views/MachineResourceSummary/Index_old14022024.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba48094948251", @"/Areas/HR/Views/MachineResourceSummary/Index_old14022024.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_HR_Views_MachineResourceSummary_Index_old14022024 : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Business.Entities.HR.MachineResourceSummaryModel.MachineResourceSummary>
     #nullable disable
@@ -148,6 +139,7 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
   
@@ -159,6 +151,7 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
     <div class=""card border-1 shadow rounded-7 p-1"">
 
@@ -170,7 +163,7 @@ using GridCore;
                             <ol class=""breadcrumb mb-0 p-0"">
                                 <li class=""breadcrumb-item"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825112059", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825111843", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -210,7 +203,7 @@ using GridCore;
                                     <div class=""col-4 "">Date:<span class=""required"">*</span></div>
                                     <div class=""col-8"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825114507", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825114291", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -222,13 +215,15 @@ using GridCore;
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_6.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => 
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => date);
+                                                                                    date
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             BeginWriteTagHelperAttribute();
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
@@ -248,9 +243,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                     <div class=""col-4 "">Shift:<span class=""required"">*</span></div>
                                     <div class=""col-8"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825117352", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825117248", async() => {
                 WriteLiteral("\r\n                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825117681", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825117577", async() => {
                     WriteLiteral("Select Shift");
                 }
                 );
@@ -274,30 +269,36 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_10);
             __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Name = (string)__tagHelperAttribute_11.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_11);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.ShiftID);
+                                                                                                                      ShiftID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllShiftAsync();
+                                                                                                                                           CommonExtension.GetAllShiftAsync()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             BeginAddHtmlAttributeValues(__tagHelperExecutionContext, "value", 1, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            AddHtmlAttributeValue("", 2671, 
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-AddHtmlAttributeValue("", 2671, shiftid, 2671, 8, false);
+                                                                                                                                                                                       shiftid
 
 #line default
 #line hidden
 #nullable disable
+            , 2671, 8, false);
             EndAddHtmlAttributeValues(__tagHelperExecutionContext);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -314,9 +315,9 @@ AddHtmlAttributeValue("", 2671, shiftid, 2671, 8, false);
                                     <div class=""col-4 "">Department:<span class=""required"">*</span></div>
                                     <div class=""col-8"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825121963", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825122383", async() => {
                 WriteLiteral("\r\n                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825122292", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825122712", async() => {
                     WriteLiteral("Select Department");
                 }
                 );
@@ -338,30 +339,36 @@ AddHtmlAttributeValue("", 2671, shiftid, 2671, 8, false);
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_9);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_12);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 63 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.DepartmentID);
+                                                                                                                                           DepartmentID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 63 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllDepartmentAsync();
+                                                                                                                                                                     CommonExtension.GetAllDepartmentAsync()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             BeginAddHtmlAttributeValues(__tagHelperExecutionContext, "value", 1, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            AddHtmlAttributeValue("", 3409, 
 #nullable restore
 #line 63 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-AddHtmlAttributeValue("", 3409, departmentid, 3409, 13, false);
+                                                                                                                                                                                                                      departmentid
 
 #line default
 #line hidden
 #nullable disable
+            , 3409, 13, false);
             EndAddHtmlAttributeValues(__tagHelperExecutionContext);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -378,9 +385,9 @@ AddHtmlAttributeValue("", 3409, departmentid, 3409, 13, false);
                                     <div class=""col-4 "">Machine:<span class=""required"">*</span></div>
                                     <div class=""col-8"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825126390", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825127412", async() => {
                 WriteLiteral("\r\n                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825126719", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825127741", async() => {
                     WriteLiteral("Select Machinery");
                 }
                 );
@@ -402,30 +409,36 @@ AddHtmlAttributeValue("", 3409, departmentid, 3409, 13, false);
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_9);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_13);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 72 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.MachineryID);
+                                                                                                                                          MachineryID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 72 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = CommonExtension.GetAllMachineryAsync();
+                                                                                                                                                                   CommonExtension.GetAllMachineryAsync()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             BeginAddHtmlAttributeValues(__tagHelperExecutionContext, "value", 1, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            AddHtmlAttributeValue("", 4151, 
 #nullable restore
 #line 72 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
+                                                                                                                                                                                                                   machineryid
 
 #line default
 #line hidden
 #nullable disable
+            , 4151, 12, false);
             EndAddHtmlAttributeValues(__tagHelperExecutionContext);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -456,13 +469,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
                             <div class=""card"">
                                 <div class=""card-body"">
                                     <h5 class=""card-title text-center"">Machine Support Team for <br>");
+            Write(
 #nullable restore
 #line 96 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                                                                                               Write(Model.MachineryName);
+                                                                                                     Model.MachineryName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</h5>
                                     <div class=""row"">
                                         <div class=""col-6"">
@@ -471,13 +486,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
                                                     <a  class="" text-center pointer"" onclick=""FunctionShowMachineResourcSummeryEmployeeCount(1)"">
                                                         <h6 class=""card-subtitle mb-2 text-white"">Tota Operators</h6>
                                                         <h1 class=""card-link text-white"">");
+            Write(
 #nullable restore
 #line 103 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                                                                                    Write(Model.TotalOperator);
+                                                                                          Model.TotalOperator
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</h1>
                                                     </a>
                                                 </div>
@@ -489,13 +506,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
                                                     <a  class="" text-center pointer"" onclick=""FunctionShowMachineResourcSummeryEmployeeCount(2)"">
                                                         <h6 class=""card-subtitle mb-2 text-white"">Total Helpers</h6>
                                                         <h1 class=""card-link text-white"">");
+            Write(
 #nullable restore
 #line 113 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                                                                                    Write(Model.TotalHelper);
+                                                                                          Model.TotalHelper
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</h1>
                                                     </a>
                                                 </div>
@@ -523,13 +542,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
                                             <a  class="" text-center pointer"" onclick=""FunctionShowMachineResourcSummeryEmployeeCount(3)"">
                                                 <h6 c");
             WriteLiteral("lass=\"card-subtitle mb-2 text-white\">Present Operators</h6>\r\n                                                <h1 class=\"card-link text-white\">");
+            Write(
 #nullable restore
 #line 139 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                                                                            Write(Model.CurrentPresentOperator);
+                                                                                  Model.CurrentPresentOperator
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</h1>
                                             </a>
                                         </div>
@@ -541,13 +562,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
                                             <a  class="" text-center pointer"" onclick=""FunctionShowMachineResourcSummeryEmployeeCount(7)"">
                                                 <h6 class=""card-subtitle mb-2 text-white"">Absent Operators</h6>
                                                 <h1 class=""card-link text-white"">");
+            Write(
 #nullable restore
 #line 149 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                                                                            Write(Model.AbsentOperator);
+                                                                                  Model.AbsentOperator
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</h1>
                                             </a>
                                         </div>
@@ -562,13 +585,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
                                             <a  class="" text-center pointer"" onclick=""FunctionShowMachineResourcSummeryEmployeeCount(4)"">
                                                 <h6 class=""card-subtitle mb-2 text-white"">Present Helper</h6>
                                                 <h1 class=""card-link text-white"">");
+            Write(
 #nullable restore
 #line 162 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                                                                            Write(Model.CurrentPresentHelper);
+                                                                                  Model.CurrentPresentHelper
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</h1>
                                             </a>
                                         </div>
@@ -580,13 +605,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
                                             <a  class="" text-center pointer"" onclick=""FunctionShowMachineResourcSummeryEmployeeCount(8)"">
                                                 <h6 class=""card-subtitle mb-2 text-white"">Absent Helper</h6>
                                                 <h1 class=""card-link  text-white"">");
+            Write(
 #nullable restore
 #line 172 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                                                                             Write(Model.AbsentHelper);
+                                                                                   Model.AbsentHelper
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"</h1>
                                             </a>
                                         </div>
@@ -650,7 +677,7 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
 </div>
 
 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825141646", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb0718f6a8d6cac617c9596ec7216a97eb4affbbd0b12c9e3a5ba4809494825143502", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -678,13 +705,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
             return false;
         }
         let urlForMRS = '");
+            Write(
 #nullable restore
 #line 245 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                    Write(Url.Action("GetDetailMachineryResourceSummary","MachineResourceSummary"));
+                          Url.Action("GetDetailMachineryResourceSummary","MachineResourceSummary")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         window.location.href = urlForMRS + '?date=' + date + '&shiftid=' + shiftid + '&departmentid=' + departmentid + '&machineryid=' + machineryid;
 
@@ -701,13 +730,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
         let CardNo = id;
         //alert('date-- ' + date + '   MachineryID-- ' + MachineryID + '  CardNo-- ' + CardNo+' ID-- '+id);
         let urlForMRSLD = '");
+            Write(
 #nullable restore
 #line 260 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                      Write(Url.Action("GetDetailMachineryResourceLogDetail","MachineResourceSummary"));
+                            Url.Action("GetDetailMachineryResourceLogDetail","MachineResourceSummary")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
 
 
@@ -756,13 +787,15 @@ AddHtmlAttributeValue("", 4151, machineryid, 4151, 12, false);
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: '");
+            Write(
 #nullable restore
 #line 306 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\MachineResourceSummary\Index_old14022024.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\'\r\n                });\r\n            }\r\n        }).always(function () {\r\n            hideloader();\r\n        });\r\n    }\r\n\r\n</script>");
         }
         #pragma warning restore 1998

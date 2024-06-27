@@ -1,0 +1,143 @@
+@using Business.Entities.SalesDistribution.TermsMasterModel;
+@model TermsMaster;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formTermsMaster">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="TermsID" />
+                <div class="col-sm-9">
+                    @*  <input type="text" required="" class="form-control" id="TermsMasterText" name="TermsMasterText" asp-for="TermsMasterText">
+                    <span asp-validation-for="TermsMasterText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    @* <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>TermsID</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='TermsID' asp-for='TermsID' name='TermsID'>
+                            <span asp-validation-for='TermsID' class='text-danger'>
+                            </span>
+                        </div>
+                    </div> *@
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Term Type</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for='TermTypeID' id='choices-multiple-remove-button-TermTypeID' asp-items='@CommonExtension.GetAllTermTypeAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Customer</label>
+                        <div class='col-sm-9'>
+                            <select class='form-select' asp-for='CustomerID' id='choices-multiple-remove-button-CustomerID' asp-items='@CommonExtension.GetAllCustomerAsync()'>
+                                <option value=''>Select here...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Term (Text)</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='TermText' asp-for='TermText' name='TermText'>
+                            <span asp-validation-for='TermText' class='text-danger'>
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateTermsMaster", "TermsMaster")';
+    function fnSubmit() {
+        if ($("#formTermsMaster").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formTermsMaster").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                        window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+    $(document).ready(function () {
+
+
+
+
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-TermTypeID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+        var multipleCancelButtonParty = new Choices('#choices-multiple-remove-button-CustomerID', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+    });
+
+
+</script>

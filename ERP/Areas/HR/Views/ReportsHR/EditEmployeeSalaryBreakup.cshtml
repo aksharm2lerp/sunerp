@@ -66,7 +66,7 @@
                                                         <label for="" class="col-form-label">@Convert.ToString(item[7])</label>
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <label for="" class="col-form-label">(@Convert.ToString(item[8]).Replace(" ",""))</label>
+                                                        <label for="" class="col-form-label">(@Convert.ToString(item[8]).Replace(" ", ""))</label>
                                                     </div>
                                                     <div class="col-sm-5">
                                                         @*<input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateAmount()">*@
@@ -77,7 +77,10 @@
                                                         @{
                                                             if (Convert.ToString(item[8]).Replace(" ", "").Equals("A") || Convert.ToString(item[8]).Replace(" ", "").Equals("B") || Convert.ToString(item[8]).Replace(" ", "").Equals("C"))
                                                             {
-                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateActualPayable()">
+                                                            // <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateActualPayable()">
+                                                                // Commented above line by Rahul Mistry on 14th June 2024 according to Sandip sir.
+
+                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="">
                                                             }
                                                             @*if (Convert.ToString(item[8]).Replace(" ", "").Equals("B"))
                                         {
@@ -90,19 +93,27 @@
 
                                                             if (Convert.ToString(item[8]).Replace(" ", "").Equals("J"))
                                                             {
-                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateBasic()">
+                                                            //<input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateBasic()">
+                                                                // Commented above line by Rahul Mistry on 14th June 2024 according to Sandip sir.
+                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="">
                                                             }
                                                             if (Convert.ToString(item[8]).Replace(" ", "").Equals("K"))
                                                             {
-                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateHRA()">
+                                                            // <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateHRA()">
+                                                                // Commented above line by Rahul Mistry on 14th June 2024 according to Sandip sir.
+                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="">
                                                             }
                                                             if (Convert.ToString(item[8]).Replace(" ", "").Equals("L"))
                                                             {
-                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateTA()">
+                                                            // <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateTA()">
+                                                                // Commented above line by Rahul Mistry on 14th June 2024 according to Sandip sir.
+                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="">
                                                             }
                                                             if (!Convert.ToString(item[8]).Replace(" ", "").Equals("A") && !Convert.ToString(item[8]).Replace(" ", "").Equals("B") && !Convert.ToString(item[8]).Replace(" ", "").Equals("C") && !Convert.ToString(item[8]).Replace(" ", "").Equals("J") && !Convert.ToString(item[8]).Replace(" ", "").Equals("K") && !Convert.ToString(item[8]).Replace(" ", "").Equals("L"))
                                                             {
-                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateAmount()">
+                                                                // <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateAmount()">
+                                                                // Commented above line by Rahul Mistry on 14th June 2024 according to Sandip sir.
+                                                                <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="">
                                                             }
                                                         }
                                                         <input type="hidden" value="@Convert.ToString(item[6])">
@@ -145,10 +156,13 @@
                                                         <label for="" class="col-form-label">@Convert.ToString(item[7])</label>
                                                     </div>
                                                     <div class="col-sm-1">
-                                                        <label for="" class="col-form-label">(@Convert.ToString(item[8]).Replace(" ",""))</label>
+                                                        <label for="" class="col-form-label">(@Convert.ToString(item[8]).Replace(" ", ""))</label>
                                                     </div>
                                                     <div class="col-sm-5">
-                                                        <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateAmount()">
+
+                                                        @*<input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="fnUpdateAmount()">
+                                                        // Commented above line by Rahul Mistry on 14th June 2024 according to Sandip sir.*@
+                                                        <input type="text" class="form-control" id="@Convert.ToString(item[8]).Replace(" ","")" placeholder="@Convert.ToString(item[9])" value="@finalValue" oninput="">
                                                         <input type="hidden" value="@Convert.ToString(item[6])">
                                                     </div>
                                                     <div class="col-sm-3">
@@ -626,14 +640,14 @@
         }
     }
 
-                        // window.onload = function () {
-                        //     alert('fn invoked for open new window');
-                        //     // Specify the URL and other window features
-                        //     var newWindow = window.open(location, '_blank');
+    // window.onload = function () {
+    //     alert('fn invoked for open new window');
+    //     // Specify the URL and other window features
+    //     var newWindow = window.open(location, '_blank');
 
-                        //     // Optionally focus on the new window
-                        //     if (newWindow) {
-                        //         newWindow.focus();
-                        //     }
-                        // };
+    //     // Optionally focus on the new window
+    //     if (newWindow) {
+    //         newWindow.focus();
+    //     }
+    // };
 </script>

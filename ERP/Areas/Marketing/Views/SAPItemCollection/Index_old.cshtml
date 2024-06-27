@@ -1,0 +1,468 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Business.SQL
+@using GridCore
+@using System.Data;
+@addTagHelper *, GridMvc
+@model ISGrid
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.Title = "SAP Item Collection..";
+    var test = Model;
+    List<string> strTimeforRow = new List<string>();
+    string itemGroup = ViewBag.ItemGroup;
+    string wareHouse = ViewBag.WareHouse;
+}
+<div id="light">
+    <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+    <video id="VisaChipCardVideo" width="1000" controls>
+        <source src="@Url.Content("~/Video/mov_bbb.mp4")" type="video/mp4">
+        @* <source src="@Url.Content("https://www.w3schools.com/html/mov_bbb.mp4")" type="video/mp4">*@
+    </video>
+</div>
+<div id="fade" onClick="lightbox_close();"></div>
+<div class="container" id="partyListSummary">
+    <div class="row">
+        <div class="card border-0 shadow rounded-3">
+            <div class="card-body">
+
+
+                <div class="row pt-1">
+                    <div class="col-3">
+                        @* <input type="hidden" asp-for="WarehouseID" />*@
+
+                        <label class="col-form-label">
+                            Warehouse                            
+                        </label>
+                        <select class="form-select" tabindex="1" id="choices-multiple-WareHouse" asp-items="@MarketingExtension.GetAllSAPWareHouseAsync()">
+                            <option value="" selected>Select Warehouse Here...</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        @*<input type="hidden" asp-for="ItemGroupNameID" />*@
+                        <label class="col-form-label">
+                            Item Group
+                            <a class="bDISU border DUISLIcons" id="btnSAPItemgroup">
+                                <iconify-icon icon="prime:link" width="17" height="11"></iconify-icon>
+                            </a>
+                        </label>
+                        <select class="form-select" tabindex="2" id="choices-multiple-ItemGroup" asp-items="@MarketingExtension.GetAllSAPItemGroupAsync()">
+                            <option value="" selected>Select Item Group Here...</option>
+                        </select>
+                    </div>
+
+                    <div class="col-3">
+                        <label class="col-form-label">Search In Item Desc.</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" tabindex="3" id="SearchString" placeholder="Search by string." value="@ViewBag.SearchString" aria-describedby="btnSearchSAPItemDetail">
+                            @* bDISU = btnDailyItemStockUpdate *@
+                            <a class="bDISU SearchToolTip border DUISLIcons" id="btnSearchSAPItemDetail" onclick="fnSearchSAPItem(true)">
+                                <iconify-icon icon="fluent:box-search-20-regular" tabindex="4" width="25" height="22"></iconify-icon>
+                                <span class="SearchToolTipText">Search</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="SAPItemCollectionSreachButton pt-3">
+                            @* <button id="btnSearchSAPItemDetail" type="button" onclick="fnSearchSAPItem(true)" class="btn btn-outline-primary searchbtn btn-sm py-2">Search</button> &nbsp; *@
+                            @* <button id="btnResetSAPItemDetail" type="button" onclick="fnResetSAPItem(true)" class="btn btn-outline-primary searchbtn btn-sm py-2">Reset</button> *@
+                            <div class="row">
+                                @* <div class="col-3">
+                                <a class="btn SearchToolTip" id="btnSearchSAPItemDetail"  onclick="fnSearchSAPItem(true)">
+                                <iconify-icon icon="fluent:box-search-20-regular" width="27" height="27"></iconify-icon>
+                                <span class="SearchToolTipText">Search</span>
+                                </a>
+                                </div> *@
+                                
+                                <a class="pointer" id="openPdfBtn" @* onclick="window.open('~/wwwroot/assets/images/SAPItemCollectionDocumentation/ItemSearchEngineForUpdatedStock.docx', 'popup', 'location=0,width=750,height=650,left=500,top=55'); return false;" *@>
+                                    PDF
+                                </a>
+
+                                <div class="col-4 ">
+                                    <a class="btn ResetToolTip border rounded DUISLIcons" tabindex="5" id="btnResetSAPItemDetail1" onclick="fnResetSAPItem(true)">
+                                        <iconify-icon icon="system-uicons:reset-temporary" width="27" height="27"></iconify-icon>
+                                        <span class="ResetToolTipText">Reset</span>
+                                    </a>
+                                </div>
+                                <div class="col-4 DocumentToolTip ">
+                                    @* data-bs-toggle="popover" title="Document Guideline" data-bs-content="And here's some amazing help document. It's very usefull to learn effective search in search engine." *@
+                                    <a class="btn border rounded DUISLIcons" asp-area="Marketing" tabindex="6" asp-controller="SAPItemCollection" asp-action="OpenDocument" asp-route-fileName="ItemSearchEngineForUpdatedStock.docx" download>
+                                        <iconify-icon icon="streamline:desktop-help" width="27" height="27"></iconify-icon>
+                                    </a>
+                                    <span class="DocumentToolTipText">Document</span>
+                                </div>
+                                <div class="col-4 VideoToolTip d">
+                                    @* data-bs-toggle="popover" title="Video Guideline" data-bs-content="And here's some amazing help document. It's very usefull to learn effective search in search engine." *@
+                                    <a class="btn border rounde DUISLIcons" onclick="lightbox_open();">
+                                        <iconify-icon icon="fluent:video-switch-24-regular" width="27" height="27"></iconify-icon>
+                                    </a>
+                                    <span class="VideoToolTipText">Video</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-9">
+                        <marquee class="text-danger">You can search string comma separated Eg:- "PW,0.5,BK,100 mtr -> 'PW IS 694 / ABC 0.50 BK (16/0.200/2.10+0.10/A7) / 100 MTRS RoHS''"</marquee>
+                    </div>
+                </div>
+                <hr>
+                <div class="row pt-1">
+                    @*  <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                    <!--Basic Details-->
+                    <div class="card">
+
+
+                    <div class="card-body">
+                    <h6 class="card-title text-center">
+                    <span id="DisplayFirstName"></span>&nbsp;<span id="DisplayMiddleName"></span>&nbsp;<span id="DisplayLastName"></span>
+                    </h6>
+                    <hr class="userProfileHR">
+                    <p class="card-text">Person No.: <span id="PhoneNumber"></span></p>
+                    <p class="card-text">Alternate No.: <span id="AlternateNumber"></span></p>
+                    <p class="card-text">Email: <span id="Email"></span></p>
+                    <p class="card-text">DOB : <span id="DOB"></span></p>
+                    <p class="card-text">Religion : <span id="Religion"></span></p>
+                    <p class="card-text">Blood Group : <span id="BloodGroup"></span></p>
+                    </div>
+                    </div>
+                    <!--Basic Details-->
+                    <!--Address Details-->
+                    @* <div class="card">
+                    <div class="card-body">
+                    <p class="card-text">Plot No./Name : <span id="PlotNoName"></span></p>
+                    <p class="card-text">Street No./Name : <span id="StreetNoName"></span></p>
+                    <p class="card-text">Landmark : <span id="Landmark"></span></p>
+                    <p class="card-text">Area/City : <span id="Area"></span></p>
+                    <p class="card-text">Taluka : <span id="Taluka"></span></p>
+                    <p class="card-text">District : <span id="DistrictName"></span></p>
+                    <p class="card-text">State : <span id="StateName"></span></p>
+                    <p class="card-text">Country : <span id="CountryName"></span></p>
+                    </div>
+                    </div>
+                    <!--Address Details-->
+                    <!--Referenced By Details-->
+                    <div class="card">
+                    <div class="card-body">
+                    <p class="card-text">Referenced By : <span id="ReferenceBy"></span></p>
+                    </div>
+                    </div>
+                    <!--Referenced By Details-->
+                    </div>
+                    <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10"> *@
+                    <div class="col-md-12">
+                        <grid model="@Model" />
+                    </div>
+                    @*  </div> *@
+                    @*<div id="SAPItemStockListTable">
+                    @if (Model != null && Model.Count > 0)
+                    {
+                    <div class="row" style="overflow:auto; height:auto; width:100%;">
+                    <table class="table table-striped" style="white-space: nowrap; font-size:inherit !important;">
+                    <thead class="userProfileTableTHead">
+                    <tr>
+                    <th>Ware House</th>
+                    <th>Item Group Name</th>
+                    <th>Good Name</th>
+                    <th>Coil Lenght</th>
+                    <th>Coils Remain</th>
+                    <th>Total Meters</th>
+                    </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                    <td>@item.WareHouse</td>
+                    <td>@item.ItemGroupName</td>
+                    <td>@item.FinishGoodName</td>
+                    <td>@item.CoilLenght</td>
+                    <td>@item.NoOfCoils</td>
+                    <td>@item.TotalMtr</td>
+                    </tr>
+                    }
+                    </table>
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="text-center">
+                    <h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1>
+                    <h3 style="color: red;">No Data Found</h3>
+                    </div>
+                    }
+                    </div>*@
+
+                    <div class="modal fade" id="BuyerListModal" tabindex="-1" aria-labelledby="BuyerModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #dee3f9;">
+                                    @*     <div class="row">
+                                    <div class="col-12">
+                                    <h1 class="modal-title fs-6">Item Name: </h1>
+                                    </div>
+                                    <div class="col-12">
+                                    <h1 class="modal-title fs-6" id="BuyerModalLabel"></h1>
+                                    </div>
+                                    </div> *@
+                                    <h1 class="modal-title fs-6">
+                                        <label>Item Name:</label><br>
+                                        <label id="BuyerModalLabel" style="font-style:"></label>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="itemModalBody">
+
+                                    <div id="CustomerListTable">
+                                        <div class="row" style="overflow:auto;padding:0px 25px 0px 25px;">
+                                            <table class="table border border-dark text-center" style="white-space: nowrap; font-size:inherit !important;" id="customerTable">
+                                                @* style="display:block; overflow: auto; white-space: nowrap;" *@
+                                                <thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                                    <tr>
+                                                        <th>Customer Name</th>
+                                                        <th>Volume</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="border border-dark"></tbody>
+                                            </table>
+                                        </div>
+
+
+                                        @* <div class="text-center">
+                                        <h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1>
+                                        <h3 style="color: red;">No Data Found</h3>
+                                        </div> *@
+
+                                    </div>
+
+
+                                </div>
+                                @*           <div class="modal-footer">
+                                @* <a onclick="fnApprovSaveCalculatedSalary()" class="btn btn-primary">Confirm</a>
+                                <button type="button" class="btn btn-primary" onclick="fnAddParty()">Save</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                                </div> *@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    function fnResetSAPItem() {
+        let SAPItemUrl = '@Url.Action("Index", "SAPItemCollection")';
+        window.location.href = SAPItemUrl;
+
+    };
+
+    document.getElementById('SearchString').onkeydown = function (event) {
+        var e = event || window.event;
+        if (e.keyCode == 13) {
+            fnSearchSAPItem();
+        }
+    }
+    document.getElementById('btnSearchSAPItemDetail').onkeydown = function (event) {
+        var e = event || window.event;
+        if (e.keyCode == 13) {
+            fnSearchSAPItem();
+        }
+    }
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+
+    function fnSearchSAPItem() {
+        var searchString = $('#SearchString').val();
+        let SAPItemUrl = '@Url.Action("Index", "SAPItemCollection")';
+        let itemgroup = document.getElementById("choices-multiple-ItemGroup");
+        let itemgroupIndex = itemgroup.options[itemgroup.selectedIndex];
+        let itemgroupValue = itemgroupIndex.value;
+
+        let wareHouse = document.getElementById("choices-multiple-WareHouse");
+        let whIndex = wareHouse.options[wareHouse.selectedIndex];
+        let whValue = whIndex.value;
+
+
+        let viewAllSAPItemList = SAPItemUrl + '?search=' + searchString + '&itemGroup=' + itemgroupValue + '&wareHouse=' + whValue;
+        window.location.href = viewAllSAPItemList;
+    };
+
+
+    $(document).ready(function () {
+
+        $("#choices-multiple-ItemGroup option[value='" + '@Html.Raw(itemGroup)' + "']").prop("selected", true);
+
+        var multipleCancelButtonItemGroup = new Choices('#choices-multiple-ItemGroup', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+
+
+        $("#choices-multiple-WareHouse option[value='" + '@Html.Raw(wareHouse)' + "']").prop("selected", true);
+
+        var multipleCancelButtonWareHouse = new Choices('#choices-multiple-WareHouse', {
+            removeItemButton: false,
+            maxItemCount: 10,
+            searchResultLimit: 10,
+            renderChoiceLimit: 10
+        });
+    });
+
+
+    function fnOpenBuyerList(obj) {
+        let itemCode = obj.dataset.id;
+        const headLabel = document.getElementById('BuyerModalLabel');
+        headLabel.textContent = obj.dataset.name;
+
+        // $('#BuyerListModal').modal('show');
+
+        let urlOpenBuyerList = '@Url.Action("GetCustomerListByItemCode", "SAPItemCollection")';
+        let _parameters = { itemCode: itemCode };
+        $.ajax({
+            url: urlOpenBuyerList,
+            type: "GET",
+            data: _parameters,
+            dataType: 'json',
+            success: function (data) {
+                // $("#BuyerListModal").show();//('hide');
+                //$('#itemModalBody').html(data);
+                if (data != null && data.status) {
+                    var table = document.getElementById('customerTable');
+
+                    // Loop through the dataArray and create a row for each item
+                    // data.customerListByItemCodes.forEach(function (item) {
+                    //     debugger;
+                    //     // Create a new table row (tr element)
+                    //     var row = table.insertRow();
+                    //     // Create cells for "ID," "Name," and "Age"
+                    //     var idCell = row.insertCell(0);
+                    //     var nameCell = row.insertCell(1);
+                    //     // Set the cell values
+                    //     idCell.innerHTML = item.customerName;
+                    //     nameCell.innerHTML = item.volume;
+
+                    $('#customerTable tbody').empty();
+                    var listData = data.customerListByItemCodes;
+                    if (listData.length > 0) {
+                        $.each(listData, function (i, item) {
+                            let custName = item.customerName.replace(/ /g, "+");
+                            const rows = '<tr><td><a onclick="fnShowSummury(this)" data-custName=' + custName + ' data-indexNo=' + i + ' data-itemCode=' + itemCode + ' data-bs-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample' + i + '">' + item.customerName + '</a><div class="collapse" id="collapseExample' + i + '"></div></td><td><a>' + item.volume + '</a></td></tr>';
+
+                            // BELOW CODE IS FOr AUTO GENERATE TABLE
+                            //<table class="table table-striped border border-dark text-center" style="white-space: nowrap; font-size:inherit !important;" id ="customerTable' + i + '"><thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;" ><tr><th>Month - Year</th><th>Volume</th></tr></thead><tbody class="border border-dark" id="colapseTableId' + i + '"></tbody></table>
+                            //<table class="table table-striped border border-dark text-center" style="white-space: nowrap; font-size:inherit !important;" id ="customerTable'+i+'"><thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;" ><tr><th>Customer Name </th><th>Volume</th></tr></thead><tbody class="border border-dark" id="colapseTableId'+i+'"><tr><td>Test Success</td><td>Volume List</td></tr></tbody></table>
+
+                            // const rows = '<tr><td><a onclick="fnShoWSummury(this)" data-itemCode=' + itemCode + ' data-customerName=' + item.customerName + ' data-bs-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample' + i + '">' + item.customerName + '</a><div class="collapse" id="collapseExample' + i + '"></div></td><td><a>' + item.volume + '</a></td></tr>';
+
+                            $('#customerTable tbody').append(rows);
+                            // $('tbody').append(rows);
+
+                        });
+                    }
+                    else {
+                        $('tbody').append('<tr><h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1><h3 style="color: red;">No customer found.</h3></tr>');
+                    }
+                    $('#BuyerListModal').modal('show');
+                    // $('#itemModalBody').html(data);
+                }
+            }
+        });
+    }
+
+    function fnShowSummury(obj) {
+
+        let customerName = obj.dataset.custname.replace(/\+/g, ' ');
+        let indexNo = obj.dataset.indexno;
+        let itemCode = obj.dataset.itemcode;
+        const tableDiv = document.getElementById('collapseExample' + indexNo);
+        let urlOpenBuyerList = '@Url.Action("GetClientSalesSummary", "SAPItemCollection")';
+        let _parameters = { itemCode: itemCode, customerName: customerName };
+        $.ajax({
+            url: urlOpenBuyerList,
+            type: "GET",
+            data: _parameters,
+            dataType: 'json',
+            success: function (data) {
+                // $("#BuyerListModal").show();//('hide');
+                //$('#itemModalBody').html(data);
+                if (data != null && data.status) {
+                    let tempTable = '<table class="table table-striped border border-dark text-center" style="white-space: nowrap; font-size:inherit !important;" id ="customerTable' + indexNo + '"><thead style="position: sticky; top: 0; background-color:#e9ecf8; color:black; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;" ><tr><th>Month - Year</th><th>Volume</th></tr></thead><tbody class="border border-dark" id="colapseTableId' + indexNo + '"></tbody></table>';
+                    tableDiv.innerHTML = tempTable;
+
+                    var listData = data.listClientSalesSummaryModel;
+
+                    if (listData.length > 0) {
+                        $.each(listData, function (j, item) {
+
+                            const newTablerows = '<tr><td>' + item.monthYear + '</td><td>' + item.volume + '</td></tr>';
+
+                            $('#colapseTableId' + indexNo).append(newTablerows);
+
+                        });
+                    }
+                    else {
+                        $('tbody').append('<tr><h1><iconify-icon icon="mdi:text-box-remove-outline" style="color: #37569d;" width="100"></iconify-icon></h1><h3 style="color: red;">No customer found.</h3></tr>');
+                    }
+                }
+            }
+        });
+    }
+
+    window.document.onkeydown = function (e) {
+        if (!e) {
+            e = event;
+        }
+        if (e.keyCode == 27) {
+            lightbox_close();
+        }
+    }
+
+    function lightbox_open() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        window.scrollTo(0, 0);
+        document.getElementById('light').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+        lightBoxVideo.play();
+    }
+
+    function lightbox_close() {
+        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+        lightBoxVideo.pause();
+    }
+
+    document.getElementById("openPdfBtn").addEventListener("click", function () {
+        openPdfInPopup("/wwwroot/assets/images/SAPItemCollectionDocumentation/ItemSearchEngineForUpdatedStock.docx");
+    });
+
+    function openPdfInPopup(pdfUrl) {
+        // Set width and height of the popup window
+        var width = 750;
+        var height = 650;
+        alert('pdfUrl--' + pdfUrl);
+        // Calculate the position of the popup window to center it on the screen
+        var left = (screen.width - width) / 2;
+        var top = (screen.height - height) / 2;
+
+        // Open the PDF file in a new window
+        var pdfWindow = window.open(pdfUrl, "_blank", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+
+        // Focus the new window
+        if (pdfWindow) {
+            pdfWindow.focus();
+        } else {
+            alert("Popup blocked! Please allow popups for this site.");
+        }
+    }
+
+</script>

@@ -2169,7 +2169,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/12.0.3": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -3860,6 +3860,7 @@
           "GridCore": "5.2.0",
           "Microsoft.AspNet.Mvc": "5.2.9",
           "Microsoft.AspNetCore.Http.Features": "5.0.14",
+          "Newtonsoft.Json": "13.0.1",
           "Utils": "1.0.0"
         },
         "compile": {
@@ -3875,7 +3876,8 @@
         "dependencies": {
           "Business.Entities": "1.0.0",
           "Business.SQL": "1.0.0",
-          "Microsoft.Extensions.Identity.Core": "3.1.22"
+          "Microsoft.Extensions.Identity.Core": "3.1.22",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Business.Interface.dll": {}
@@ -3899,6 +3901,7 @@
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.Identity.Core": "3.1.22",
           "MimeKit": "3.1.1",
+          "Newtonsoft.Json": "13.0.1",
           "System.Configuration.ConfigurationManager": "4.7.0",
           "System.Data.SqlClient": "4.8.3"
         },
@@ -3914,6 +3917,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Dapper": "2.0.123",
+          "Newtonsoft.Json": "13.0.1",
           "System.Data.SqlClient": "4.8.3"
         },
         "compile": {
@@ -3934,6 +3938,7 @@
           "Microsoft.AspNetCore.Components.Web": "5.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Primitives": "5.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "System.Net.Http.Json": "5.0.0"
         },
         "compile": {
@@ -3950,6 +3955,7 @@
           "GridShared": "5.2.0",
           "Microsoft.AspNetCore.Components": "5.0.0",
           "Microsoft.Extensions.FileProviders.Embedded": "5.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -3964,7 +3970,8 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "GridCore": "5.2.0",
-          "Microsoft.Extensions.FileProviders.Embedded": "5.0.0"
+          "Microsoft.Extensions.FileProviders.Embedded": "5.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/GridMvcCore.dll": {}
@@ -3982,6 +3989,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.0",
           "Microsoft.Extensions.Primitives": "5.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "System.Text.Json": "5.0.0"
         },
         "compile": {
@@ -3999,7 +4007,8 @@
           "Business.SQL": "1.0.0",
           "JsonFlatFileDataStore": "2.2.2",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Kinfo.JsonStore.dll": {}
@@ -4011,6 +4020,9 @@
       "Utils/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
         "compile": {
           "bin/placeholder/Utils.dll": {}
         },
@@ -6165,7 +6177,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/12.0.3": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -8014,6 +8026,7 @@
           "GridCore": "5.2.0",
           "Microsoft.AspNet.Mvc": "5.2.9",
           "Microsoft.AspNetCore.Http.Features": "5.0.14",
+          "Newtonsoft.Json": "13.0.1",
           "Utils": "1.0.0"
         },
         "compile": {
@@ -8029,7 +8042,8 @@
         "dependencies": {
           "Business.Entities": "1.0.0",
           "Business.SQL": "1.0.0",
-          "Microsoft.Extensions.Identity.Core": "3.1.22"
+          "Microsoft.Extensions.Identity.Core": "3.1.22",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Business.Interface.dll": {}
@@ -8053,6 +8067,7 @@
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.Identity.Core": "3.1.22",
           "MimeKit": "3.1.1",
+          "Newtonsoft.Json": "13.0.1",
           "System.Configuration.ConfigurationManager": "4.7.0",
           "System.Data.SqlClient": "4.8.3"
         },
@@ -8068,6 +8083,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Dapper": "2.0.123",
+          "Newtonsoft.Json": "13.0.1",
           "System.Data.SqlClient": "4.8.3"
         },
         "compile": {
@@ -8088,6 +8104,7 @@
           "Microsoft.AspNetCore.Components.Web": "5.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Primitives": "5.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "System.Net.Http.Json": "5.0.0"
         },
         "compile": {
@@ -8104,6 +8121,7 @@
           "GridShared": "5.2.0",
           "Microsoft.AspNetCore.Components": "5.0.0",
           "Microsoft.Extensions.FileProviders.Embedded": "5.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -8118,7 +8136,8 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "GridCore": "5.2.0",
-          "Microsoft.Extensions.FileProviders.Embedded": "5.0.0"
+          "Microsoft.Extensions.FileProviders.Embedded": "5.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/GridMvcCore.dll": {}
@@ -8136,6 +8155,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.0",
           "Microsoft.Extensions.Primitives": "5.0.0",
+          "Newtonsoft.Json": "13.0.1",
           "System.Text.Json": "5.0.0"
         },
         "compile": {
@@ -8153,7 +8173,8 @@
           "Business.SQL": "1.0.0",
           "JsonFlatFileDataStore": "2.2.2",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Kinfo.JsonStore.dll": {}
@@ -8165,6 +8186,9 @@
       "Utils/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
         "compile": {
           "bin/placeholder/Utils.dll": {}
         },
@@ -10936,10 +10960,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/12.0.3": {
-      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.3",
+      "path": "newtonsoft.json/13.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -10958,11 +10982,7 @@
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
@@ -15916,6 +15936,7 @@
       "Microsoft.ReportViewer.WebForms >= 10.0.40219.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "NLog >= 5.0.4",
+      "Newtonsoft.Json >= 13.0.1",
       "Razor.Templating.Core >= 1.4.0",
       "ReportViewerCore.NETCore >= 15.1.17",
       "Select.HtmlToPdf.NetCore >= 22.1.0",
@@ -15951,6 +15972,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -15985,6 +16007,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -16039,6 +16066,10 @@
             "target": "Package",
             "version": "[5.0.4, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "Razor.Templating.Core": {
             "target": "Package",
             "version": "[1.4.0, )"
@@ -16089,7 +16120,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

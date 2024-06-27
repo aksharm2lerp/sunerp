@@ -28,7 +28,7 @@ namespace Business.Entities.Employee
         public string ContractorName { get; set; }
         public int? OTPaymentIn { get; set; }
         public string PFNumber { get; set; }
-        public DateTime PFDate { get; set; }
+        public DateTime? PFDate { get; set; }
         public string UANNO { get; set; }
 
     }

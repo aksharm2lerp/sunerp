@@ -74,14 +74,14 @@ namespace ERP.Areas.Admin.Controllers
                    .SetWidth(250)
                     .Filterable(true);
 
-                c.Add()
-                  .Titled("Edit")
-                  .Encoded(false)
-                  .Sanitized(false)
-                  .SetWidth(60).Sortable(false)
-                  //.Css("hidden-xs") //hide on phones
-                  //.RenderValueAs(o => $"<a class='btn' href='Users/Edit/{o.UserID}' ><i class='bx bx-edit'></i></a> <a class='btn'href='Users/ManageRole/{o.UserID}' ><i class='bx bx-lock'></i></a>");
-                  .RenderValueAs(o => $"<a class='btn' href='Users/Edit/{o.UserID}' ><i class='bx bx-edit'></i></a>");
+                //c.Add()
+                //  .Titled("Edit")
+                //  .Encoded(false)
+                //  .Sanitized(false)
+                //  .SetWidth(60).Sortable(false)
+                //  //.Css("hidden-xs") //hide on phones
+                //  //.RenderValueAs(o => $"<a class='btn' href='Users/Edit/{o.UserID}' ><i class='bx bx-edit'></i></a> <a class='btn'href='Users/ManageRole/{o.UserID}' ><i class='bx bx-lock'></i></a>");
+                //  .RenderValueAs(o => $"<a class='btn' href='Users/Edit/{o.UserID}' ><i class='bx bx-edit'></i></a>");
 
                 c.Add()
                     .Titled("Edit")
@@ -145,55 +145,12 @@ namespace ERP.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(RegisterViewModel model)
         {
-            var userCheck = await _userManager.FindByEmailAsync(model.Email);
-            if (userCheck == null)
+            try
             {
-                var user = new UserMasterMetadata
+                if (model.UserID == 0)
                 {
-                    Forename = model.FirstName,
-                    Surname = model.LastName,
-                    Username = model.Email,
-                    NormalizedUserName = model.Email,
-                    Email = model.Email,
-                    PhoneNumber = model.Mobile,
-                    EmailConfirmed = true,
-                    PhoneNumberConfirmed = true,
-                    CompanyID = COMPANYID == 0 ? 1 : COMPANYID,
-                    IsActive = model.IsActive
-
-                };
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    RoleMasterMetadata roleitem = _roleService.FindByIdAsync(model.RoleID.ToString()).Result;
-                    if (roleitem != null)
-                    {
-                        await _userManager.AddToRoleAsync(user, roleitem.Name);
-                    }
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    if (result.Errors.Count() > 0)
-                    {
-                        foreach (var error in result.Errors)
-                        {
-                            ModelState.AddModelError("message", error.Description);
-                        }
-                    }
-                    return View(model);
-                }
-            }
-            else
-            {
-                bool isValid = false;
-                try
-                {
-                    if (userCheck.UserID == model.UserID)
-                    {
-                        isValid = true;
-                    }
-                    if (isValid)
+                    var userCheck = await _userManager.FindByEmailAsync(model.Email);
+                    if (userCheck == null)
                     {
                         var user = new UserMasterMetadata
                         {
@@ -205,36 +162,181 @@ namespace ERP.Areas.Admin.Controllers
                             PhoneNumber = model.Mobile,
                             EmailConfirmed = true,
                             PhoneNumberConfirmed = true,
-                            CompanyID = COMPANYID,
-                            IsActive = model.IsActive,
-                            UserID = model.UserID,
-                            //PasswordHash = model.Password,
-                            RoleID = model.RoleID
+                            CompanyID = COMPANYID == 0 ? 1 : COMPANYID,
+                            IsActive = model.IsActive
 
                         };
-                        user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, model.Password);
-                        //var result = await _userManager.ChangePasswordAsync(user,model.Password,model.Password);
-                        var result = await _userManager.UpdateAsync(user);
-                        //var result = await _userManager.ValidatePasswordAsync(user, model.PasswordHash);
+                        var result = await _userManager.CreateAsync(user, model.Password);
                         if (result.Succeeded)
                         {
-                            //RoleMasterMetadata roleitem = _roleService.FindByIdAsync(model.RoleID.ToString()).Result;
-                            //if (roleitem != null)
-                            //{
-                            //    await _userManager.AddToRoleAsync(user, roleitem.Name);
-                            //}
+                            RoleMasterMetadata roleitem = _roleService.FindByIdAsync(model.RoleID.ToString()).Result;
+                            if (roleitem != null)
+                            {
+                                await _userManager.AddToRoleAsync(user, roleitem.Name);
+                            }
                             return RedirectToAction("Index");
                         }
+                        else
+                        {
+                            if (result.Errors.Count() > 0)
+                            {
+                                foreach (var error in result.Errors)
+                                {
+                                    ModelState.AddModelError("message", error.Description);
+                                }
+                            }
+                            return View(model);
+                        }
                     }
-                }
-                catch
-                {
-                    throw;
-                }
+                    else
+                    {
+                        bool isValid = false;
+                        try
+                        {
+                            if (userCheck.UserID == model.UserID)
+                            {
+                                isValid = true;
+                            }
+                            if (isValid)
+                            {
+                                var user = new UserMasterMetadata
+                                {
+                                    Forename = model.FirstName,
+                                    Surname = model.LastName,
+                                    Username = model.Email,
+                                    NormalizedUserName = model.Email,
+                                    Email = model.Email,
+                                    PhoneNumber = model.Mobile,
+                                    EmailConfirmed = true,
+                                    PhoneNumberConfirmed = true,
+                                    CompanyID = COMPANYID,
+                                    IsActive = model.IsActive,
+                                    UserID = model.UserID,
+                                    //PasswordHash = model.Password,
+                                    RoleID = model.RoleID
 
+                                };
+                                user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, model.Password);
+                                //var result = await _userManager.ChangePasswordAsync(user,model.Password,model.Password);
+                                var result = await _userManager.UpdateAsync(user);
+                                //var result = await _userManager.ValidatePasswordAsync(user, model.PasswordHash);
+                                if (result.Succeeded)
+                                {
+                                    //RoleMasterMetadata roleitem = _roleService.FindByIdAsync(model.RoleID.ToString()).Result;
+                                    //if (roleitem != null)
+                                    //{
+                                    //    await _userManager.AddToRoleAsync(user, roleitem.Name);
+                                    //}
+                                    return RedirectToAction("Index");
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+
+                    }
+                    return RedirectToAction("Index");
+                    //return View(model);
+                }
+                else
+                {
+                    var userCheck = await _userManager.FindByEmailAsync(model.Email);
+                    if (userCheck == null)
+                    {
+                        bool isValid = false;
+                        try
+                        {
+                            if (model.UserID > 0)
+                            {
+                                isValid = true;
+                            }
+                            if (isValid)
+                            {
+                                var user = new UserMasterMetadata
+                                {
+                                    Forename = model.FirstName,
+                                    Surname = model.LastName,
+                                    Username = model.Email,
+                                    NormalizedUserName = model.Email,
+                                    Email = model.Email,
+                                    PhoneNumber = model.Mobile,
+                                    EmailConfirmed = true,
+                                    PhoneNumberConfirmed = true,
+                                    CompanyID = COMPANYID,
+                                    IsActive = model.IsActive,
+                                    UserID = model.UserID,
+                                    //PasswordHash = model.Password,
+                                    RoleID = model.RoleID
+
+                                };
+                                user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, model.Password);
+                                var result = await _userManager.UpdateAsync(user);
+                                if (result.Succeeded)
+                                {
+                                    return RedirectToAction("Index");
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+
+                    }
+                    else 
+                    {
+                        bool isValid = false;
+                        try
+                        {
+                            if (model.UserID > 0)
+                            {
+                                isValid = true;
+                            }
+                            if (isValid)
+                            {
+                                var user = new UserMasterMetadata
+                                {
+                                    Forename = model.FirstName,
+                                    Surname = model.LastName,
+                                    Username = model.Email,
+                                    NormalizedUserName = model.Email,
+                                    Email = model.Email,
+                                    PhoneNumber = model.Mobile,
+                                    EmailConfirmed = true,
+                                    PhoneNumberConfirmed = true,
+                                    CompanyID = COMPANYID,
+                                    IsActive = model.IsActive,
+                                    UserID = model.UserID,
+                                    //PasswordHash = model.Password,
+                                    RoleID = model.RoleID
+                                };
+                                user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, model.Password);
+                                var result = await _userManager.UpdateAsync(user);
+                                if (result.Succeeded)
+                                {
+                                    return RedirectToAction("Index");
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+
+                    }
+                    return RedirectToAction("Index");
+                    //return View(model);
+                }
             }
-            return RedirectToAction("Index");
-            //return View(model);
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
         }
 
         [DisplayName("User Edit")]

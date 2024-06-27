@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_MasterEntity_ppIndex), @"mvc.1.0.view", @"/Areas/Admin/Views/MasterEntity/ppIndex.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\MasterEntity\ppIndex.cshtml"
-using Business.Entities.Dynamic;
+ using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"7da5d75a56ed738fd349551881f1ec296f905331a0bfaffbc3980392b99fab23", @"/Areas/Admin/Views/MasterEntity/ppIndex.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"7da5d75a56ed738fd349551881f1ec296f905331a0bfaffbc3980392b99fab23", @"/Areas/Admin/Views/MasterEntity/ppIndex.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_MasterEntity_ppIndex : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<MasterEntityListMetadata>
     #nullable disable
@@ -125,6 +117,7 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("\r\n<input type=\"hidden\" class=\"form-control\" id=\"txtID\" value=\"0\" />\r\n<input type=\"hidden\" class=\"form-control\" id=\"hdnKey\"");
             BeginWriteAttribute("value", " value=\"", 296, "\"", 304, 0);
             EndWriteAttribute();
@@ -143,7 +136,7 @@ using Business.Entities.Dynamic;
             BeginWriteAttribute("title", " title=\"", 805, "\"", 813, 0);
             EndWriteAttribute();
             WriteLiteral("> </a>\r\n                    </div>\r\n                </div>\r\n                <div class=\"portlet-body form\">\r\n                    <!-- BEGIN FORM-->\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da5d75a56ed738fd349551881f1ec296f905331a0bfaffbc3980392b99fab237011", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da5d75a56ed738fd349551881f1ec296f905331a0bfaffbc3980392b99fab236814", async() => {
                 WriteLiteral(@"
                         <div class=""form-body"">
                             <div class=""row"">
@@ -186,27 +179,32 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral("                                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da5d75a56ed738fd349551881f1ec296f905331a0bfaffbc3980392b99fab239895", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da5d75a56ed738fd349551881f1ec296f905331a0bfaffbc3980392b99fab239700", async() => {
+                    Write(
 #nullable restore
 #line 59 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\MasterEntity\ppIndex.cshtml"
-                                                                                           Write(item.Name);
+                                                                                                 item.Name
 
 #line default
 #line hidden
 #nullable disable
+                    );
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
                 __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
                 BeginWriteTagHelperAttribute();
+                WriteLiteral(
 #nullable restore
 #line 59 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\MasterEntity\ppIndex.cshtml"
-                                                       WriteLiteral(item.MasterListEntryTypeID);
+                                                                    item.MasterListEntryTypeID
 
 #line default
 #line hidden
 #nullable disable
+                );
                 __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
                 __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value = __tagHelperStringValueBuffer;
                 __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -225,6 +223,7 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
                 WriteLiteral(@"                                            </select>
                                         </div>
                                     </div>
@@ -312,36 +311,43 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                <tr>\r\n                                                    <td class=\"text-left\">");
+            Write(
 #nullable restore
 #line 124 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\MasterEntity\ppIndex.cshtml"
-                                                                     Write(item.Name);
+                                                                           item.Name
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                                    <td class=\"text-center\">\r\n                                                        <a href=\"javascript:void(0);\"");
             BeginWriteAttribute("onclick", " onclick=\"", 7234, "\"", 7272, 3);
             WriteAttributeValue("", 7244, "EditKeyMaster(\'", 7244, 15, true);
+            WriteAttributeValue("", 7259, 
 #nullable restore
 #line 126 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\MasterEntity\ppIndex.cshtml"
-WriteAttributeValue("", 7259, item.Name, 7259, 10, false);
+                                                                                                               item.Name
 
 #line default
 #line hidden
 #nullable disable
+            , 7259, 10, false);
             WriteAttributeValue("", 7269, "\');", 7269, 3, true);
             EndWriteAttribute();
             WriteLiteral(" class=\"btn btn-success btn-sm\">Edit</a>\r\n\r\n                                                        <a href=\"javascript:void(0);\"");
             BeginWriteAttribute("onclick", " onclick=\"", 7402, "\"", 7442, 3);
             WriteAttributeValue("", 7412, "DeleteKeyMaster(\'", 7412, 17, true);
+            WriteAttributeValue("", 7429, 
 #nullable restore
 #line 128 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\MasterEntity\ppIndex.cshtml"
-WriteAttributeValue("", 7429, item.Name, 7429, 10, false);
+                                                                                                                 item.Name
 
 #line default
 #line hidden
 #nullable disable
+            , 7429, 10, false);
             WriteAttributeValue("", 7439, "\');", 7439, 3, true);
             EndWriteAttribute();
             WriteLiteral(" class=\"btn btn-danger btn-sm\">Delete</a>\r\n                                                    </td>\r\n                                                </tr>\r\n");
@@ -352,6 +358,7 @@ WriteAttributeValue("", 7429, item.Name, 7429, 10, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                        </tbody>
                                         <tfoot>
                                         </tfoot>

@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup Label="Globals">
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
+    <SccProjectName></SccProjectName>
+    <SccProvider></SccProvider>
+    <SccAuxPath></SccAuxPath>
+    <SccLocalPath></SccLocalPath>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -57,6 +57,7 @@
   <ItemGroup>
     <PackageReference Include="Agno.BlazorInputFile" Version="0.3.0" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.11" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   
   <ItemGroup>

@@ -191,13 +191,11 @@ namespace ERP.Areas.Admin.Controllers
             {
                 CustomerAddressTxn customerAddressTxn = new CustomerAddressTxn();
                 customerAddressTxn.CustomerID = customerId;
-                if (customerAddressTxnId > 0 || customerId > 0)
+                if (customerAddressTxnId > 0 && customerId > 0)
                 {
-                        var CustomerAddressTxn = await _customerService.GetCustomerAddressTxn(customerAddressTxnId, customerId);
-                    if (CustomerAddressTxn == null)
+                    customerAddressTxn = await _customerService.GetCustomerAddressTxn(customerAddressTxnId, customerId);
+                    if (customerAddressTxn == null)
                         customerAddressTxn.CustomerID = customerId;
-                    else
-                        customerAddressTxn = CustomerAddressTxn;
 
                     return PartialView("_addUpdateCustomerAddress", customerAddressTxn);
                 }
@@ -216,6 +214,7 @@ namespace ERP.Areas.Admin.Controllers
         {
             try
             {
+                customerAddressTxn.CreatedOrModifiedBy = USERID;
                 int customerAddressId = await _customerService.AddUpdateCustomeAddress(customerAddressTxn);
                 if (customerAddressId > 0)
                 {

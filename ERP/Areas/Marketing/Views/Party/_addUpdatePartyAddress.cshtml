@@ -7,95 +7,79 @@
             <div class="row mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">Address Type<span class="required">*</span></label>
                 <div class="col-sm-8">
-                    <select class="form-select" asp-for="AddressTypeID" id="AddressTypeID" name="AddressTypeID" asp-items="@SuperCompanyDropdownBinder.AddressType()">
-                    @* <select class="form-select" asp-for="AddressTypeID" id="AddressTypeID" name="AddressTypeID" required="" asp-items="@SuperCompanyDropdownBinder.AddressType()"> *@
+                    <select class="form-select" asp-for="AddressTypeID" id="AddressTypeID" name="AddressTypeID" asp-items="@SuperCompanyDropdownBinder.AddressType()" required>
                         <option value="">--Select--</option>
                     </select>
+                    <span asp-validation-for="AddressTypeID" class="text-danger"></span>
                 </div>
             </div>
             <div class="row  mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">Plot  No./Name <span class="required">*</span></label>
                 <div class="col-sm-8">
-                    @*                    <input type="text" required="" class="form-control" asp-for="PlotNoName" placeholder="" maxlength="200">
-                    <span asp-validation-for="PlotNoName" class="text-danger"></span>*@
-
-                    <input type="text"  class="form-control" id="PlotNoName" name="PlotNoName" asp-for="PlotNoName">
+                    <input type="text" class="form-control" id="PlotNoName" name="PlotNoName" asp-for="PlotNoName" required>
+                    <span asp-validation-for="PlotNoName" class="text-danger"></span>
                 </div>
             </div>
             <div class="row  mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">Street No./Name</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" asp-for="StreetNoName" placeholder="" maxlength="200">
-                    @*<input type="text" required="" class="form-control" asp-for="StreetNoName" placeholder="" maxlength="200">*@
-                    @*<span asp-validation-for="StreetNoName" class="text-danger"></span>*@
                 </div>
             </div>
             <div class="row  mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">Landmark</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" asp-for="Landmark" placeholder="" maxlength="200">
-                    @*<span asp-validation-for="Landmark" class="text-danger"></span>*@
+                    <input type="text" class="form-control" asp-for="Landmark" placeholder="" maxlength="200">                    
                 </div>
             </div>
             <div class="row  mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">Area</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" asp-for="Area" placeholder="" maxlength="150">
-                    @*<span asp-validation-for="Area" class="text-danger"></span>*@
                 </div>
             </div>
             <div class="row  mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">Pincode</label>
                 <div class="col-sm-8 autoerp">
                     <input type="text" class="form-control" asp-for="ZIPCode" placeholder="" maxlength="150">
-                    @*<input type="text" required="" class="form-control" asp-for="ZIPCode" placeholder="" maxlength="150">
-                    <span asp-validation-for="ZIPCode" class="text-danger"></span>*@
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">City</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control bs-autocomplete" asp-for="City" placeholder="" maxlength="15" autocomplete="off">
-                    @*<input type="text" required="" class="form-control bs-autocomplete" asp-for="City" placeholder="" maxlength="15" autocomplete="off">*@
-                    @*                    <select class="form-select" asp-for="CityID" asp-items="@SuperCompanyDropdownBinder.City(Model.StateID)">
-                    <option value="">--Select--</option>
-                    </select>*@
                 </div>
             </div>
             <div class="row mb-3">
-                @*<label for="" class="col-sm-4 col-form-label text-end">Taluka<span class="required">*</span></label>*@
                 <label for="" class="col-sm-4 col-form-label text-end">Taluka <span class="required">*</span></label>
                 <div class="col-sm-8">
-                    <input type="text"  class="form-control bs-autocomplete" asp-for="Taluka" placeholder="" maxlength="15" autocomplete="off">
-                    @*                    <select class="form-select" asp-for="TalukaID" asp-items="@SuperCompanyDropdownBinder.Taluka(Model.DistrictID)">
-                    <option value="">--Select--</option>
-                    </select>*@
+                    <input type="text" class="form-control bs-autocomplete" asp-for="Taluka" placeholder="" maxlength="15" autocomplete="off" required>
+                    <span asp-validation-for="Taluka" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-3">
-                @*<label for="" class="col-sm-4 col-form-label text-end">District<span class="required">*</span></label>*@
                 <label for="" class="col-sm-4 col-form-label text-end">District <span class="required">*</span></label>
                 <div class="col-sm-8">
-                    <input type="text"  class="form-control bs-autocomplete" asp-for="District" name="District" id="District">
-                    @*                    <select class="form-select" asp-for="DistrictID" asp-items="@SuperCompanyDropdownBinder.District(Model.StateID)">
-                    <option value="">--Select--</option>
-                    </select>*@
+                    <input type="text" class="form-control bs-autocomplete" asp-for="District" name="District" id="District" required>
+                    <span asp-validation-for="District" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">State<span class="required">*</span></label>
                 <div class="col-sm-8">
-                    <select class="form-select" asp-for="StateID" asp-items="@SuperCompanyDropdownBinder.State(Model.CountryID)" id="countryDropDownList">
+                    <select class="form-select" asp-for="StateID" asp-items="@SuperCompanyDropdownBinder.State(Model.CountryID)" id="countryDropDownList" required>
                         <option value="">--Select--</option>
                     </select>
+                    <span asp-validation-for="StateID" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="" class="col-sm-4 col-form-label text-end">Country<span class="required">*</span></label>
                 <div class="col-sm-8">
-                    <select class="form-select"  asp-for="CountryID" asp-items="@SuperCompanyDropdownBinder.Countries()" id="countryDropdown" onloadeddata="loadCountries()">
+                    <select class="form-select" asp-for="CountryID" asp-items="@SuperCompanyDropdownBinder.Countries()" id="countryDropdown" onloadeddata="loadCountries()" required>
                         <option value="">--Select--</option>
                     </select>
+                    <span asp-validation-for="CountryID" class="text-danger"></span>
                 </div>
             </div>
 
@@ -107,7 +91,7 @@
             </div>
 
             <div class="modal-footer-sticky text-center">
-                <button id="btnPartyAddressSave" type="submit" onsubmit="fnBtnSavePartyAddress()" class="btn btn-primary btn-info px-5 ladda-button">Save</button>
+                <button id="btnPartyAddressSave" type="submit" onsubmit="fnBtnSavePartyAddress()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
                 <button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Cancel</button>
             </div>
         </div>
@@ -138,7 +122,7 @@
                         icon: 'bx bx-check-circle',
                         continueDelayOnInactiveTab: false,
                         position: 'bottom right',
-                        msg: data.message,                        
+                        msg: data.message,
                     });
                     $("#tblPartyAddress").load(window.location.href + " #tblPartyAddress");
                 }
@@ -321,7 +305,7 @@
             source: function (request, response) {
                 console.log('request', request);
                 $.ajax({
-                    url: '@Url.Action("GetZipcode","Base")',
+                    url: '@Url.Action("GetZipcode", "Base")',
                     data: { 'q': request },
                     dataType: "json",
                     //type: "POST",

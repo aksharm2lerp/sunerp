@@ -1,5 +1,5 @@
 ﻿@model Business.Entities.Party.PartyContactDetail
-<form method="post" id="formAddUpdatePartyContactPerson" class="row g-3 needs-validation" asp-area="Marketing" asp-controller="Party" asp-action="AddUpdatePartyContactPerson">
+<form method="post" id="formAddUpdatePartyContactDetail" class="row g-3 needs-validation" asp-area="Marketing" asp-controller="Party" asp-action="AddUpdatePartyContactPerson">
     <input type="hidden" asp-for="PartyID" />
     <input type="hidden" asp-for="PartyContactDetailID" />
 
@@ -35,7 +35,7 @@
     </div>
 
     <div class="text-center">
-        <button type="submit" onclick="fnSavePartyContactDetail()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSavePartyContactDetail">Save</button>
+        <button type="submit" onclick="fnSavePartyContactDetail()" class="btn btn-primary btn-info px-5 ladda-button" id="btnSavePartyContactDetail">Submit</button>
         <button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Cancel</button>
     </div>
 </form>
@@ -46,7 +46,7 @@
 <script type="text/javascript">
     function fnSavePartyContactDetail() {
         var ls = laddaStart('btnSavePartyContactDetail');
-        modeldata = $("#formAddUpdatePartyContactPerson").serialize();
+        modeldata = $("#formAddUpdatePartyContactDetail").serialize();
         $.ajax({
             type: 'POST',
             url: '/Marketing/Party/AddUpdatePartyContactDetail/',

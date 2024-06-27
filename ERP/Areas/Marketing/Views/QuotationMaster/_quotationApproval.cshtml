@@ -32,7 +32,7 @@
             <div class="row mb-2">
                 <label for="" class="col-sm-4 col-form-label ">Status:</label>
                 <div class="col-sm-8">
-                    <select class='form-select' asp-for="QuotationApprovalStatusID" id='QuotationApprovalStatusID' asp-items='@CommonExtension.GetAllQuotationApprovalStatusAsync()'>
+                    <select class='form-select' asp-for="QuotationApprovalStatusID" id='QuotationApprovalStatusID' asp-items='@CommonExtension.GetAllQuotationApprovalStatusAsync("Quotation")'>
                         <option value=''>Select here...</option>
                     </select>
                 </div>
@@ -43,6 +43,15 @@
                     <textarea type="text" required="" class="form-control" id="Comment" name="Comment" asp-for="Comment" placeholder="" cols="7"></textarea>
                 </div>
             </div>
+
+            <!--Below code added by dravesh for canvas popup 29-05-2024-->
+            <div class="modal-footer-sticky text-center">                
+                <button type="button" onclick="fnApprovQuotationPrint()" class="btn btn-primary btn-info px-5 ladda-button">Print</button>
+                <button type="button" onclick="fnApprovQuotation()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l abel="Close">Close</button>
+            </div>
+            <!--Above code added by dravesh for canvas popup 29-05-2024-->
+
         </div>
     </div>
 </form>

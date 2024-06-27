@@ -12,6 +12,7 @@ using Business.Service.Department;
 using Business.Interface.Designation;
 using Business.Service.Designation;
 using Business.Interface.ProductImages;
+using Business.Service.ProductImages;
 using Business.Interface.Marketing.CommunicatonLog;
 using Business.Service.Marketing.CommunicationLogService;
 using Business.Interface.Marketing.IVisitingDetailService;
@@ -87,10 +88,7 @@ using Business.Interface.IProductCategoryMasterService;
 using Business.Service.SAdmin.ProductCategoryMaster;
 using Business.Interface.IEmployeeChildrenService;
 using Business.Service.SHR.EmployeeChildren;
-using Business.Service.SActivityOnMap;
 using Business.Interface.IActivityOnMap;
-
-
 using Business.Interface.HR.ITestHTMLForm2;
 using Business.Service.HR.STestHTMLForm2;
 using Business.Interface.HR.IEmployeeFacility;
@@ -102,7 +100,6 @@ using Business.Service.HR.SExpensesTxn;
 using Business.Interface.Production.IMachineOperatingStatus;
 using Business.Service.Production.SMachineOperatingStatus;
 using Business.Interface.Production.IMachinery;
-using Business.Service.Production.SMachinery;
 using Business.Interface.Production.IDepreciationMethod;
 using Business.Service.Production.SDepreciationMethod;
 using Business.Interface.Production.IShiftMaster;
@@ -149,7 +146,6 @@ using Business.Interface.HR.IMachineResourceSummary;
 using Business.Service.HR.SMachineResourceSummary;
 using Business.Interface.SalesDistribution.IOpportunityLossMaster;
 using Business.Service.SalesDistribution.SOpportunityLossMaster;
-
 using Business.Interface.Production.IMasterPacking;
 using Business.Service.Production.SMasterPacking;
 using Business.Interface.Marketing.IRequestForQuotMaster;
@@ -162,8 +158,18 @@ using Business.Interface.Marketing.IPurchaseOrderMaster;
 using Business.Service.Marketing.SPurchaseOrderMaster;
 using Business.Interface.Marketing.IRequestForQuotTypeMaster;
 using Business.Service.Marketing.SRequestForQuotTypeMaster;
- //$UsingInterFace$;
- //$UsingService$;
+using Business.Interface.SalesDistribution.ITermTypeMaster;
+using Business.Service.SalesDistribution.STermTypeMaster;
+using Business.Interface.SalesDistribution.ITermsMaster;
+using Business.Service.SalesDistribution.STermsMaster;
+using Business.Interface.Marketing.ITravellingExpenseDetail;
+using Business.Service.Marketing.STravellingExpenseDetail;
+using Business.Interface.Marketing.ITaxFormulaMaster;
+using Business.Service.Marketing.STaxFormulaMaster;
+using Business.Interface.Admin.ITicketManagementStatusMaster;
+using Business.Service.Admin.STicketManagementStatusMaster;
+//$UsingInterFace$;
+//$UsingService$;
 
 namespace Business.Service
 {
@@ -201,7 +207,7 @@ namespace Business.Service
             services.AddTransient<IDepartmentGroupService, DepartmentGroupService>();
             services.AddTransient<IDesignationService, DesignationService>();
             services.AddTransient<IDesignationGroupService, DesignationGroupService>();
-            services.AddTransient<IProductImages, Business.Service.ProductImages.ProductImages>();
+            services.AddTransient<IProductImages, SProductImages>();
             services.AddTransient<IMarketingCommunicationLogService, MarketingCommunicationLogService>();
             services.AddTransient<IMarketingVisitingDetailService, MarketingVisitingDetailService>();
             services.AddTransient<IEmployeeService, EmployeeService>();
@@ -278,17 +284,22 @@ namespace Business.Service
             services.AddTransient<MachineResourceSummaryInterface, MachineResourceSummaryService>();
             services.AddTransient<OpportunityLossMasterInterface, OpportunityLossMasterService>();
 
-            services.AddTransient<ItemQRCodeDetailInterface, ItemQRCodeDetailService>(); 
-			 services.AddTransient<MasterPackingInterface, MasterPackingService>(); 
-			 services.AddTransient<RequestForQuotMasterInterface, RequestForQuotMasterService>();
-			 services.AddTransient<QuotationMasterInterface, QuotationMasterService>();
-			 services.AddTransient<OfferAcceptedMasterInterface, OfferAcceptedMasterService>();
-			 services.AddTransient<PurchaseOrderMasterInterface, PurchaseOrderMasterService>();
+            services.AddTransient<ItemQRCodeDetailInterface, ItemQRCodeDetailService>();
+            services.AddTransient<MasterPackingInterface, MasterPackingService>();
+            services.AddTransient<RequestForQuotMasterInterface, RequestForQuotMasterService>();
+            services.AddTransient<QuotationMasterInterface, QuotationMasterService>();
+            services.AddTransient<OfferAcceptedMasterInterface, OfferAcceptedMasterService>();
+            services.AddTransient<PurchaseOrderMasterInterface, PurchaseOrderMasterService>();
 
 
 
-            	 services.AddTransient<RequestForQuotTypeMasterInterface, RequestForQuotTypeMasterService>(); 
-		//$InjectForm$
+            services.AddTransient<RequestForQuotTypeMasterInterface, RequestForQuotTypeMasterService>();
+            services.AddTransient<TermTypeMasterInterface, TermTypeMasterService>();
+            services.AddTransient<TermsMasterInterface, TermsMasterService>();
+            services.AddTransient<TravellingExpenseDetailInterface, TravellingExpenseDetailService>();
+            services.AddTransient<TaxFormulaMasterInterface, TaxFormulaMasterService>();
+            services.AddTransient<TicketManagementStatusMasterInterface, TicketManagementStatusMasterService>();
+            //$InjectForm$
 
 
             services.AddTransient<ITestDataTable, TestDataTableService>(); // this is for testing of Jquery DataTables by Rahul Mistry.

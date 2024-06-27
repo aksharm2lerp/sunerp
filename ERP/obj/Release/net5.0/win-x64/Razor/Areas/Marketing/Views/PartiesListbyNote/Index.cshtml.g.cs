@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Marketing_Views_PartiesListbyNote_Index), @"mvc.1.0.view", @"/Areas/Marketing/Views/PartiesListbyNote/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,90 +14,78 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-using Business.Entities.PartyMasterModel;
+ using Business.Entities.PartyMasterModel;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-using System.Data;
+ using System.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a", @"/Areas/Marketing/Views/PartiesListbyNote/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a", @"/Areas/Marketing/Views/PartiesListbyNote/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Marketing_Views_PartiesListbyNote_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<PartyMaster>>
     #nullable disable
@@ -144,6 +132,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"<div class=""container"" id=""partyListSummary"">
     <div class=""row"">
         <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
@@ -157,9 +146,9 @@ using System.Data;
                                 <div class=""row"">
 ");
             WriteLiteral("                                    <div class=\"col-sm-4\">\r\n                                        <label class=\"col-form-label\">Party</label>\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a8159", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a7905", async() => {
                 WriteLiteral("\r\n                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a8487", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a8233", async() => {
                     WriteLiteral("Select Party");
                 }
                 );
@@ -183,13 +172,15 @@ using System.Data;
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_2);
             __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Name = (string)__tagHelperAttribute_3.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 28 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension.GetAllPartyName();
+                                                                                                             MarketingExtension.GetAllPartyName()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -199,9 +190,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    </div>\r\n\r\n                                    <div class=\"col-sm-4\">\r\n                                        <label class=\"col-form-label\">Positive Note</label>\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a11578", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a11461", async() => {
                 WriteLiteral("\r\n                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a11907", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dc584f4a1038605321eb619f39939955e60ff8c1aff3c71b3da0bf020c06f23a11790", async() => {
                     WriteLiteral("Select Positive Note");
                 }
                 );
@@ -225,13 +216,15 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Name = (string)__tagHelperAttribute_5.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_5);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 35 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension.GetAllMarketingClientFeedbackNote();
+                                                                                                                           MarketingExtension.GetAllMarketingClientFeedbackNote()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -260,6 +253,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            <div class=""row"" style=""overflow:auto; height:auto; width:100%;"">
                                 <table class=""table table-striped"" style=""white-space: nowrap; font-size:inherit !important;"">
                                     <thead class=""userProfileTableTHead"">
@@ -282,54 +276,67 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                            <tr>\r\n                                                <td>");
+            Write(
 #nullable restore
 #line 80 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-                                               Write(item.PartyName);
+                                                     item.PartyName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                                <td>");
+            Write(
 #nullable restore
 #line 81 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-                                               Write(item.Email);
+                                                     item.Email
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                                <td>");
+            Write(
 #nullable restore
 #line 82 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-                                               Write(item.MobileNo);
+                                                     item.MobileNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                                <td>");
+            Write(
 #nullable restore
 #line 83 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-                                               Write(item.Date);
+                                                     item.Date
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                                <td>");
+            Write(
 #nullable restore
 #line 84 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-                                               Write(item.Note);
+                                                     item.Note
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                                <td>");
+            Write(
 #nullable restore
 #line 85 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-                                               Write(item.Reply);
+                                                     item.Reply
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                            </tr>\r\n");
 #nullable restore
 #line 87 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
@@ -338,6 +345,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                   \r\n");
             WriteLiteral("                                </table>\r\n                            </div>\r\n");
 #nullable restore
@@ -349,6 +357,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            <div class=""text-center"">
                                 <h1><iconify-icon icon=""mdi:text-box-remove-outline"" style=""color: #37569d;"" width=""100""></iconify-icon></h1>
                                 <h3 style=""color: red;"">No Data Found</h3>
@@ -361,14 +370,17 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = MarketingExtension
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    </div>\r\n\r\n\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+            Write(
 #nullable restore
 #line 139 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"
 <script type=""text/javascript"">
     function fnSearchParty(obj) {
@@ -377,13 +389,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         let positiveNoteId = $('#PositiveNoteID').val();
         // var searchString = $('#SearchString').val();
         let partyListUrl = '");
+            Write(
 #nullable restore
 #line 146 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\PartiesListbyNote\Index.cshtml"
-                       Write(Url.Action("ViewAllNotificationList","PartiesListbyNote"));
+                             Url.Action("ViewAllNotificationList","PartiesListbyNote")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         let istrue = obj;
         let viewAllPartyList = partyListUrl + '?partyid=' + partyId + '&positivenoteid=' + positiveNoteId + '&isTrue=' + istrue;

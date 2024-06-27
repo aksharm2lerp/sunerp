@@ -1,12 +1,10 @@
 using Business.Interface;
 using Microsoft.AspNetCore.Http;
-using Business.Interface.IParty;
-using System.Collections.Generic;
 using System.Linq;
-using Business.Entities.Party;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Business.Service;
 using System;
+using Business.Interface.SalesDistribution.ISalesOrderMaster;
+using System.Data;
 
 namespace ERP.Extensions
 {
@@ -15,6 +13,7 @@ namespace ERP.Extensions
         private static HttpContext Current => new HttpContextAccessor().HttpContext;
         public static ICommonMasterService _commonmasterService => (ICommonMasterService)Current.RequestServices.GetService(typeof(ICommonMasterService));
         public static IMasterService _masterService => (IMasterService)Current.RequestServices.GetService(typeof(IMasterService));
+        public static SalesOrderMasterInterface _salesOrderMasterInterface => (SalesOrderMasterInterface)Current.RequestServices.GetService(typeof(SalesOrderMasterInterface));
 
         #region GetZipCodeAsync
         public static SelectList GetZipCodeAsync(string SearchString)
@@ -131,7 +130,7 @@ namespace ERP.Extensions
             try
             {
                 var itemCategoryList = _commonmasterService.GetAllItemCategoryAsync().Result;
-                return new SelectList(itemCategoryList, "ItemCategoryID", "ItemCategoryText");
+                return new SelectList(itemCategoryList, "ProductCategoryID", "ProductCategoryText");
             }
             catch
             {
@@ -634,11 +633,11 @@ namespace ERP.Extensions
 
         #region GetAllQuotationApprovalStatusAsync - Quotation Approval Status Dropdown List  
 
-        public static SelectList GetAllQuotationApprovalStatusAsync()
+        public static SelectList GetAllQuotationApprovalStatusAsync(string useFor)
         {
             try
             {
-                var FYList = _commonmasterService.GetAllQuotationApprovalStatusAsync().Result;
+                var FYList = _commonmasterService.GetAllQuotationApprovalStatusAsync(useFor).Result;
                 return new SelectList(FYList, "QuotationApprovalStatusID", "QuotationApprovalStatusName");
             }
             catch
@@ -663,6 +662,99 @@ namespace ERP.Extensions
             }
         }
         #endregion  GetAllMostUsedSAPItemSearchKeywordAsync - Displayed in List  
+
+
+        #region GetAllTermTypeAsync - TermType List for dropdown list
+
+        public static SelectList GetAllTermTypeAsync()
+        {
+            try
+            {
+                var TermTypeList = _commonmasterService.GetAllTermTypeAsync().Result;
+                return new SelectList(TermTypeList, "TermTypeID", "TermTypeText");
+            }
+            catch
+            {
+                return new SelectList(Enumerable.Empty<SelectListItem>());
+            }
+        }
+        #endregion  GetAllTermTypeAsync -  TermType List for dropdown list;
+
+        #region GetAllEmployeeAsync For select reference in SalesOrder page
+        public static SelectList GetAllEmployeeAsyncForReferenceDropDown()
+        {
+            try
+            {
+                var listEmployees = _commonmasterService.GetAllEmployeeAsync(19).Result;
+                return new SelectList(listEmployees, "EmployeeID", "EmployeeName");
+            }
+            catch
+            {
+                return new SelectList(Enumerable.Empty<SelectListItem>());
+            }
+        }
+        #endregion GetAllEmployeeAsync For select reference in SalesOrder page
+
+
+
+        #region Get formula for calculate taxes and amounts(GetFormulaMasterByCustomerID)
+        public static DataTable GetFormulaMasterByCustomerID(int? customerId)
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+                if (customerId > 0)
+                    dataTable = _salesOrderMasterInterface.GetFormulaByCustomerIdAsync(customerId).Result;
+
+                if (dataTable.Rows.Count > 0)
+                    return dataTable;
+                else return null;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        #endregion Get formula for calculate taxes and amounts(GetFormulaMasterByCustomerID)
+
+        #region GetAllTermsMasterAsync - TermType List for dropdown list
+
+        public static SelectList GetAllTermsMasterAsync(string term)
+        {
+            try
+            {
+                var TermTypeList = _commonmasterService.GetAllTermsMasterAsync(term).Result;
+                return new SelectList(TermTypeList, "TermsID", "TermText");
+            }
+            catch
+            {
+                return new SelectList(Enumerable.Empty<SelectListItem>());
+            }
+        }
+        #endregion  GetAllTermsMasterAsync -  TermType List for dropdown list;
+
+
+        #region Get formula for calculate taxes and amounts(GetFormulaMasterByCustomerID)
+        public static DataTable GetFormulaMasterForQuotationByPartyID(int? partyId, int? quotationId)
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+                if (partyId > 0)
+                    dataTable = _commonmasterService.GetFormulaMasterForQuotationByPartyIDAsync(partyId, quotationId).Result;
+
+                if (dataTable.Rows.Count > 0)
+                    return dataTable;
+                else return null;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        #endregion Get formula for calculate taxes and amounts(GetFormulaMasterByCustomerID)
 
         //$AddCommonExtensionMethod$
 

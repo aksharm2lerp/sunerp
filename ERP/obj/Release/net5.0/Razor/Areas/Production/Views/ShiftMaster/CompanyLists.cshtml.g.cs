@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Production_Views_ShiftMaster_CompanyLists), @"mvc.1.0.view", @"/Areas/Production/Views/ShiftMaster/CompanyLists.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\ShiftMaster\CompanyLists.cshtml"
-using Business.Entities.Production.ShiftMasterModel;
+ using Business.Entities.Production.ShiftMasterModel
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"bd6eb8ac12e8181a7f2525c8a30e15daa7c32430c77b131b02f9271a997b1476", @"/Areas/Production/Views/ShiftMaster/CompanyLists.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Production/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"bd6eb8ac12e8181a7f2525c8a30e15daa7c32430c77b131b02f9271a997b1476", @"/Areas/Production/Views/ShiftMaster/CompanyLists.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Production/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Production_Views_ShiftMaster_CompanyLists : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagedDataTable<ManageShift>>
     #nullable disable
@@ -132,6 +123,7 @@ using Business.Entities.Production.ShiftMasterModel;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"
 <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
     <div class=""card border-1 shadow rounded-7 p-1"">
@@ -143,7 +135,7 @@ using Business.Entities.Production.ShiftMasterModel;
                             <ol class=""breadcrumb mb-0 p-0"">
                                 <li class=""breadcrumb-item"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd6eb8ac12e8181a7f2525c8a30e15daa7c32430c77b131b02f9271a997b14766984", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd6eb8ac12e8181a7f2525c8a30e15daa7c32430c77b131b02f9271a997b14766764", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -196,6 +188,7 @@ using Business.Entities.Production.ShiftMasterModel;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 43 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\ShiftMaster\CompanyLists.cshtml"
                              foreach (var item in Model)
@@ -205,23 +198,28 @@ using Business.Entities.Production.ShiftMasterModel;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                <tr>\r\n                                    <td>");
+            Write(
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\ShiftMaster\CompanyLists.cshtml"
-                                   Write(SrNo);
+                                         SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                                    <td>\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd6eb8ac12e8181a7f2525c8a30e15daa7c32430c77b131b02f9271a997b147610395", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd6eb8ac12e8181a7f2525c8a30e15daa7c32430c77b131b02f9271a997b147610213", async() => {
+                Write(
 #nullable restore
 #line 49 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\ShiftMaster\CompanyLists.cshtml"
-                                                                                                                                                       Write(item.CompanyName);
+                                                                                                                                                             item.CompanyName
 
 #line default
 #line hidden
 #nullable disable
+                );
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
@@ -237,13 +235,15 @@ using Business.Entities.Production.ShiftMasterModel;
                 throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-companyID", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
             }
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 49 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\ShiftMaster\CompanyLists.cshtml"
-                                                                                                                               WriteLiteral(item.CompanyID);
+                                                                                                                                            item.CompanyID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["companyID"] = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-route-companyID", __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues["companyID"], global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -264,6 +264,7 @@ using Business.Entities.Production.ShiftMasterModel;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Production\Views\ShiftMaster\CompanyLists.cshtml"
                              
@@ -272,6 +273,7 @@ using Business.Entities.Production.ShiftMasterModel;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n");
         }
         #pragma warning restore 1998

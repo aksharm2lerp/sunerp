@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_SuperAdmin_Views_Company__listOfAddress), @"mvc.1.0.view", @"/Areas/SuperAdmin/Views/Company/_listOfAddress.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-using Business.SQL;
+ using Business.SQL
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"96fa3fabc67a100e9054dd44711aa432d4c54bad0f0fda1f9b00f597aca91ab1", @"/Areas/SuperAdmin/Views/Company/_listOfAddress.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"96fa3fabc67a100e9054dd44711aa432d4c54bad0f0fda1f9b00f597aca91ab1", @"/Areas/SuperAdmin/Views/Company/_listOfAddress.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/SuperAdmin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_SuperAdmin_Views_Company__listOfAddress : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagedDataTable<CompanyAddressTxnMetadata>>
     #nullable disable
@@ -114,7 +106,7 @@ using Business.SQL;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "96fa3fabc67a100e9054dd44711aa432d4c54bad0f0fda1f9b00f597aca91ab15487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "96fa3fabc67a100e9054dd44711aa432d4c54bad0f0fda1f9b00f597aca91ab15288", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -165,64 +157,79 @@ using Business.SQL;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                        <tr>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 35 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-                           Write(item.SrNo);
+                                 item.SrNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 36 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-                           Write(item.AddressTypeText);
+                                 item.AddressTypeText
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 37 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-                           Write(string.Format("{0} {1} {2}", item.Address1,item.Address2,item.Address3));
+                                 string.Format("{0} {1} {2}", item.Address1,item.Address2,item.Address3)
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>                        \r\n                            <td>");
+            Write(
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-                           Write(item.ZIPCode);
+                                 item.ZIPCode
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 39 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-                           Write(item.DistrictName);
+                                 item.DistrictName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>");
+            Write(
 #nullable restore
 #line 40 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-                           Write(item.StateName);
+                                 item.StateName
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n                            <td>\r\n                                <a class=\'btn editaddress\'");
             BeginWriteAttribute("onclick", " onclick=\"", 1870, "\"", 1919, 3);
             WriteAttributeValue("", 1880, "fnAddAddress(", 1880, 13, true);
+            WriteAttributeValue("", 1893, 
 #nullable restore
 #line 42 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-WriteAttributeValue("", 1893, item.CompanyAddressTxnID, 1893, 25, false);
+                                                                                  item.CompanyAddressTxnID
 
 #line default
 #line hidden
 #nullable disable
+            , 1893, 25, false);
             WriteAttributeValue("", 1918, ")", 1918, 1, true);
             EndWriteAttribute();
             WriteLiteral(@" 
@@ -231,22 +238,26 @@ WriteAttributeValue("", 1893, item.CompanyAddressTxnID, 1893, 25, false);
                                 data-bs-target=""#canvas_address""
                                 aria-controls=""canvas_address""
                                 data-id=""");
+            Write(
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-                                    Write(item.CompanyAddressTxnID);
+                                          item.CompanyAddressTxnID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"");
             BeginWriteAttribute("compnayid", " \r\n                                compnayid=\"", 2239, "\"", 2300, 1);
+            WriteAttributeValue("", 2285, 
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-WriteAttributeValue("", 2285, item.CompanyID, 2285, 15, false);
+                                            item.CompanyID
 
 #line default
 #line hidden
 #nullable disable
+            , 2285, 15, false);
             EndWriteAttribute();
             WriteLiteral("><i class=\'bx bx-edit\'></i></a>\r\n                            </td>\r\n                        </tr>\r\n");
 #nullable restore
@@ -257,6 +268,7 @@ WriteAttributeValue("", 2285, item.CompanyID, 2285, 15, false);
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"            </tbody>
         </table>
     </div>
@@ -274,13 +286,15 @@ WriteAttributeValue("", 2285, item.CompanyID, 2285, 15, false);
 
 <script>
     var urlAddAddress = '");
+            Write(
 #nullable restore
 #line 69 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\SuperAdmin\Views\Company\_listOfAddress.cshtml"
-                    Write(Url.Action("AddAddress", "Company"));
+                          Url.Action("AddAddress", "Company")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnAddAddress(id) {
         var _id = id;//$(this).data('id');

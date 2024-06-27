@@ -33,6 +33,7 @@ namespace Business.Entities.Marketing.Feedback
         public string Note { get; set; }
         public string PositiveNoteID { get; set; }
         public string PositiveNoteText { get; set; }
+        public string ActionTaken { get; set; }
         public int CreatedOrModifiedBy { get; set; }
         public object SrNo { get; set; }
         public string PositiveNotesArray { get; set; }

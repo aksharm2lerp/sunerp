@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Admin_Views_VisitorRequests_Details), @"mvc.1.0.view", @"/Areas/Admin/Views/VisitorRequests/Details.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,76 +14,68 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b7", @"/Areas/Admin/Views/VisitorRequests/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b7", @"/Areas/Admin/Views/VisitorRequests/Details.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Admin/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_VisitorRequests_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<VisitorMetaData>
     #nullable disable
@@ -133,6 +125,7 @@ using Business.Entities.Dynamic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"
 
     <div class=""page-breadcrumb d-none d-sm-flex align-items-center pb-3 border-bottom"">
@@ -141,7 +134,7 @@ using Business.Entities.Dynamic;
                 <ol class=""breadcrumb mb-0 p-0"">
                     <li class=""breadcrumb-item"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b79000", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b78802", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -161,7 +154,7 @@ using Business.Entities.Dynamic;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </li>\r\n                    <li class=\"breadcrumb-item active\" aria-current=\"page\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b710719", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b710521", async() => {
                 WriteLiteral("Visitor Requests");
             }
             );
@@ -199,30 +192,34 @@ using Business.Entities.Dynamic;
                                         <td><strong>Visitor Name</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b713264", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b713066", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 33 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.VisitorName);
+                                                            VisitorName
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_5);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 33 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                           WriteLiteral(Html.Raw(@Model.VisitorName));
+                                                                                                                                        Html.Raw(@Model.VisitorName)
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -240,30 +237,34 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                         <td><strong>Email</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b716049", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b715980", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 39 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Email);
+                                                            Email
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 39 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                      WriteLiteral(Html.Raw(@Model.Email));
+                                                                                                                                   Html.Raw(@Model.Email)
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -281,30 +282,34 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                         <td><strong>Mobile</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b718818", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b718878", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 45 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.MobileNo);
+                                                            MobileNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 45 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                         WriteLiteral(Html.Raw(@Model.MobileNo.toStringWithDash()));
+                                                                                                                                      Html.Raw(@Model.MobileNo.toStringWithDash())
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -322,30 +327,34 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                         <td><strong>Identity Proof details</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b721631", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b721820", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.IdentityProofNumber);
+                                                            IdentityProofNumber
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                                     WriteLiteral(Html.Raw(@Model.IdentityProofTypeText));
+                                                                                                                                                  Html.Raw(@Model.IdentityProofTypeText)
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -366,13 +375,16 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
 #line default
 #line hidden
 #nullable disable
+
+            Write(
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                           Write(Html.ActionLink("Download", "DownloadFile", "VisitorRequests", new { id = Model.VisitorMeetingRequestID }));
+                                                 Html.ActionLink("Download", "DownloadFile", "VisitorRequests", new { id = Model.VisitorMeetingRequestID })
 
 #line default
 #line hidden
 #nullable disable
+            );
 #nullable restore
 #line 54 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
                                                                                                                                                            
@@ -381,44 +393,51 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                        </td>
                                     </tr>
                                     <tr>
                                         <td><strong>Vehicle Details</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b725525", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b725881", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 61 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.VehicleNo);
+                                                            VehicleNo
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_7);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 61 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                           WriteLiteral(Html.Raw(@Model.VehicleTypeText.toStringWithDash()));
+                                                                                                                                        Html.Raw(@Model.VehicleTypeText.toStringWithDash())
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(" - ");
+            WriteLiteral(
 #nullable restore
 #line 61 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                                                                                  WriteLiteral(Html.Raw(@Model.VehicleNo.toStringWithDash()));
+                                                                                                                                                                                               Html.Raw(@Model.VehicleNo.toStringWithDash())
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -436,18 +455,20 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                         <td><strong>Meeting Request Title and date and time</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b728797", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b729323", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => 
 #nullable restore
 #line 67 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => Model.MeetingRequestDateTime);
+                                                             Model.MeetingRequestDateTime
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
@@ -465,29 +486,33 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                         <td><strong>Person name whom to meet</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b730761", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b731376", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 73 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.MeetToWhomPersonName);
+                                                            MeetToWhomPersonName
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 73 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                      WriteLiteral(Html.Raw(@Model.MeetToWhomPersonName));
+                                                                                                                                   Html.Raw(@Model.MeetToWhomPersonName)
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -505,30 +530,34 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                         <td><strong>Person mobile whom to meet</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b733497", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b734241", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 79 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.MeetToWhomPersonMobile);
+                                                            MeetToWhomPersonMobile
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_9);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 79 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                                       WriteLiteral(Html.Raw(@Model.MeetToWhomPersonMobile.toStringWithDash()));
+                                                                                                                                                    Html.Raw(@Model.MeetToWhomPersonMobile.toStringWithDash())
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -546,30 +575,34 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                                         <td><strong>Meeting purpose</strong></td>
                                         <td class=""text-left"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b736345", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6d74b5197e3ad1ce6bf6532995c8e23d031f0645b4c18da67f20848924fc19b737218", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.
 #nullable restore
 #line 85 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.MeetToWhomPersonMobile);
+                                                            MeetToWhomPersonMobile
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_6);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_10);
             BeginWriteTagHelperAttribute();
+            WriteLiteral(
 #nullable restore
 #line 85 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-                                                                                                                                        WriteLiteral(Html.Raw(@Model.PurposeofMeeting.toStringWithDash()));
+                                                                                                                                                     Html.Raw(@Model.PurposeofMeeting.toStringWithDash())
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
             __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
             __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -592,6 +625,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 96 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
                                              if (@Model.IsApproved != 0 || @Model.IsApproved != 1)
@@ -601,40 +635,47 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                <input class=\"btn btn-success btn-login text-uppercase fw-bold\" type=\"button\" value=\"Approve\"");
             BeginWriteAttribute("onclick", " onclick=\"", 7646, "\"", 7756, 3);
             WriteAttributeValue("", 7656, "location.href=\'", 7656, 15, true);
+            WriteAttributeValue("", 7671, 
 #nullable restore
 #line 106 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-WriteAttributeValue("", 7671, Url.Action("Approve", "VisitorRequests",new { id = @Model.VisitorMeetingRequestID}), 7671, 84, false);
+                                                                                                                                                                       Url.Action("Approve", "VisitorRequests",new { id = @Model.VisitorMeetingRequestID})
 
 #line default
 #line hidden
 #nullable disable
+            , 7671, 84, false);
             WriteAttributeValue("", 7755, "\'", 7755, 1, true);
             EndWriteAttribute();
             WriteLiteral(" />\r\n                                                <input class=\"btn btn-danger btn-login text-uppercase fw-bold\" type=\"button\" value=\"Reject\"");
             BeginWriteAttribute("onclick", " onclick=\"", 7901, "\"", 8011, 3);
             WriteAttributeValue("", 7911, "location.href=\'", 7911, 15, true);
+            WriteAttributeValue("", 7926, 
 #nullable restore
 #line 107 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-WriteAttributeValue("", 7926, Url.Action("Declain", "VisitorRequests",new { id = @Model.VisitorMeetingRequestID}), 7926, 84, false);
+                                                                                                                                                                     Url.Action("Declain", "VisitorRequests",new { id = @Model.VisitorMeetingRequestID})
 
 #line default
 #line hidden
 #nullable disable
+            , 7926, 84, false);
             WriteAttributeValue("", 8010, "\'", 8010, 1, true);
             EndWriteAttribute();
             WriteLiteral(" />\r\n                                                <input class=\"btn btn-primary btn-login text-uppercase fw-bold\" type=\"button\" value=\"Cancel\"");
             BeginWriteAttribute("onclick", " onclick=\"", 8157, "\"", 8222, 3);
             WriteAttributeValue("", 8167, "location.href=\'", 8167, 15, true);
+            WriteAttributeValue("", 8182, 
 #nullable restore
 #line 108 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Admin\Views\VisitorRequests\Details.cshtml"
-WriteAttributeValue("", 8182, Url.Action("Index", "VisitorRequests"), 8182, 39, false);
+                                                                                                                                                                      Url.Action("Index", "VisitorRequests")
 
 #line default
 #line hidden
 #nullable disable
+            , 8182, 39, false);
             WriteAttributeValue("", 8221, "\'", 8221, 1, true);
             EndWriteAttribute();
             WriteLiteral(" />\r\n");
@@ -645,6 +686,7 @@ WriteAttributeValue("", 8182, Url.Action("Index", "VisitorRequests"), 8182, 39, 
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                        </td>
                                     </tr>
                                 </tbody>

@@ -7,8 +7,9 @@
 @{
     int i = 0;
     int index = Model.marketingCommunicationLogDetails.Count();
-    int? userId =  ViewBag.UserID;
+    int? userId = ViewBag.UserID;
     int? companyId = ViewBag.CompanyID;
+
 
 }
 <div class="card border-1 shadow rounded-7 p-3">
@@ -35,10 +36,10 @@
                 <div class="row mb-3">
                     <input type="hidden" asp-for="MarketingCommunicationLogID" />
                     <label class="col-sm-3 col-form-label">Contact By Person<span class="required">*</span></label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
                         @*    <input type="text" required="" class="form-control" id="ContactByPerson" name="ContactByPerson" asp-for="ContactByPerson">
                         <span asp-validation-for="ContactByPerson" class="text-danger"></span>*@
-                        <select class="form-select" id="choices-multiple-remove-button-employee" asp-items="@EmployeeExtension.GetAllEmployeesForDropDown(userId, companyId)">
+                        <select class="form-select" id="choices-multiple-remove-button-employee" asp-for="EmployeeID" asp-items="@EmployeeExtension.GetAllEmployeesForDropDown(userId, companyId)">
                             <option value="">Select Person</option>
                         </select>
                     </div>
@@ -50,7 +51,7 @@
                     <input type="text" required="" class="form-control" id="ContactTo" name="ContactTo" asp-for="ContactTo">
                     <span asp-validation-for="ContactTo" class="text-danger"></span>
                     </div>*@
-                    <div class="col-sm-7">
+                    <div class="col-sm-6">
                         @*       <input type="text" required="" class="form-control" id="PartyName" name="PartyName" asp-for="PartyName">
                         <span asp-validation-for="PartyName" class="text-danger"></span>*@
                         <select class="form-select" onchange="fnFillPartyMobileEmail()" id="choices-multiple-remove-button-party" asp-items="@MarketingExtension.GetAllPartyName()">
@@ -58,16 +59,16 @@
                             <option value="">Select Contact</option>
                         </select>
                     </div>
-                    <div class="col-sm-2 h2 my-2">
-                        <a class="MCLFAB" data-bs-toggle="modal" data-bs-target="#ModalMail"><iconify-icon icon="material-symbols:add-circle-outline-rounded" class="parent-icon"></iconify-icon></a>
+                    <div class="col-sm-2 h3">
+                        <a class="MCLFAB" title="Add new customer/party" data-bs-toggle="modal" data-bs-target="#ModalMail"><iconify-icon icon="material-symbols:add-circle-outline-rounded" class="parent-icon"></iconify-icon></a>
                         &nbsp;
-                        <a class="MCLFAB" asp-area="Marketing" asp-controller="Party" asp-action="AddUpdateParty" asp-route-id="0" id=""><iconify-icon icon="mingcute:link-line" class="parent-icon"></iconify-icon></a>
+                        <a class="MCLFAB" title="Go to customer/party page!" asp-area="Marketing" asp-controller="Party" asp-action="AddUpdateParty" asp-route-id="0" target="_blank" id=""><iconify-icon icon="mingcute:link-line" class="parent-icon"></iconify-icon></a>
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Contact Channel<span class="required">*</span></label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
                         <select asp-for="ContactChannelTypeID" asp-items="ViewBag.ContactChannelText" class="form-control" required="">
                             <option value="">Select Contact Channel...</option>
                         </select>
@@ -77,14 +78,14 @@
 
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Email</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
                         <input type="text" class="form-control" id="Email" name="Email" asp-for="Email">
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Mobile No.<span class="required">*</span></label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
                         <input type="text" class="form-control" id="MobileNo" name="MobileNo" asp-for="MobileNo" required="">
                         <span asp-validation-for="MobileNo" class="text-danger "></span>
                     </div>
@@ -92,7 +93,7 @@
 
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Venue Type</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
                         <select asp-for="VenueTypeID" asp-items="ViewBag.VenueTypeText" class="form-control">
                             <option value="">Select Venue Type...</option>
                         </select>
@@ -101,7 +102,7 @@
 
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Party Type</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
                         <select asp-for="PartyTypeID" asp-items="ViewBag.PartyTypeText" class="form-control">
                             <option value="">Select Party Type...</option>
                         </select>
@@ -110,17 +111,17 @@
 
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Date</label>
-                    <div class="col-sm-9">
-                        <input type="date" class="form-control" id="CommunicationLogDate" name="CommunicationLogDate" asp-for="CommunicationLogDate">
+                    <div class="col-sm-2">
+                        <input type="datetime-local" class="form-control" id="CommunicationLogDate" name="CommunicationLogDate" asp-for="CommunicationLogDate">
                     </div>
                 </div>
 
-                <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Place Of Meeting</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="PlaceOfMeeting" name="PlaceOfMeeting" asp-for="PlaceOfMeeting">
-                    </div>
+                @*  <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Place Of Meeting</label>
+                <div class="col-sm-9">
+                <input type="text" class="form-control" id="PlaceOfMeeting" name="PlaceOfMeeting" asp-for="PlaceOfMeeting">
                 </div>
+                </div> *@
 
 
                 <!-- Important code, Commented by Rahul Mistry
@@ -153,15 +154,15 @@
                                             <input type="hidden" asp-for="@item.MarketingCommunicationLogDetailID" id="MarketingCommunicationLogDetailID" name="MarketingCommunicationLogDetailID" />
                                             <input type="hidden" asp-for="@item.MarketingCommunicationLogID" id="MarketingCommunicationLogID" name="MarketingCommunicationLogID" />
 
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <select class='form-select' asp-for="@item.PositiveNoteID" name="@("SelectName"+i)" id="@("selectedId" + i)" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()">
+                                            <div class="row" id="@("removeAddMoreSubDiv" +i)">
+                                                <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                                    <select class='form-select' asp-for="@item.PositiveNoteID" name="@("SelectName"+i)" id="@("selectedId" + i)" asp-items="@MarketingExtension.GetAllMarketingClientFeedbackNote()" onchange="fnShowSelectedNoteResponse(this)">
                                                     </select>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                                     <input placeholder="Response" type="text" class="form-control" asp-for="@item.Response" name="@("Response"+i)" id="@("selectedResponse"+i)" />
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="ccol-sm-1 col-md-1 col-lg-1 col-xl-1">
 
                                                     @*MCLFSB MarketingCommunicationLogFeedbackStoreButton*@
                                                     @* <a class="MCLFSB fa-2x" id="btnRemove" onclick="@("fnLockDiv("+i+")")"><iconify-icon icon="material-symbols:arrow-circle-right-outline-rounded"></iconify-icon></a>&ensp;*@
@@ -186,8 +187,7 @@
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Notes</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control" rows="4" id="Note" name="Note" asp-for="Note"></textarea>
-                        <span asp-validation-for="Note" class="text-danger "></span>
+                        <textarea class="form-control" rows="4" id="Note" name="Note" asp-for="Note" placeholder="If you want add more detail, use it."></textarea>
                     </div>
                 </div>
 
@@ -227,7 +227,7 @@
 
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">If provided reference, Mobile No / Email Id</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-3">
                         <input type="text" class="form-control" id="ReferenceMobileOrEmail" name="ReferenceMobileOrEmail" asp-for="ReferenceMobileOrEmail">
                     </div>
                 </div>
@@ -280,13 +280,103 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="fnAddParty()">Save</button>
+                    <button type="button" class="btn btn-primary" onclick="fnAddParty()">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!--Below code added by Rahul Mistry for Send Mail canvas popup 26-06-2024-->
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvasRaiseTicket" aria-labelledby="offcanvasCompanyLabel" style="height: auto; width: auto; margin: 20% 20%;">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="canvasRaiseTicketHeader">Send email & raise a ticket</h5>
+        <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3 pb-5">
+        <div id="dvInfoRaiseTicket">
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label for="recipient-name" class=" col-form-label">To:</label>
+                </div>
+                <div class="col-9">
+                    <input type="email" class="form-control" id="recipientToNameForTicketRaise">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label for="recipient-name" class="col-form-label">Subject:</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" class="form-control" id="subjectLineForTicketRaise">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label for="message-text" class="col-form-label">Message:</label>
+                </div>
+                <div class="col-9">
+                    <textarea class="form-control" id="messageBoxForTicketRaise" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer-sticky text-center">
+        <button id="btnSendMail" type="button" onclick="fnSendMailRaiseTicket()" class="btn btn-primary btn-info px-5 ladda-button">Send Mail</button>
+        <button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l="" abel="Close">Back</button>
+    </div>
+</div>
+<!--Above code added by Rahul Mistry for Send Mail canvas popup 26-06-2024-->
+<!--Below code added by Rahul Mistry for Set Reminder canvas popup 27-06-2024-->
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="canvasSetReminder" aria-labelledby="offcanvasCompanyLabel" style="height: auto; width: auto; margin: 20% 20%;">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="canvasSetReminderHeader"><iconify-icon icon="fluent-mdl2:reminder-time"></iconify-icon><span>&nbsp; &nbsp; Add Reminder</span></h5>
+        <button type="button" class="btn-close te  xt-reset" data-bs-dismiss="offcanvas" aria-l abel="Close"></button>
+    </div>
+    <div class="offcanvas-body pt-3 pb-5">
+        <div id="dvInfoSetReminder">
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label for="recipient-name" class="col-form-label">Date:</label>
+                </div>
+                <div class="col-9">
+                    <input type="date" class="form-control" id="reminderDateCommunication" name="reminderDate" placeholder="dd-mm-yyyy" value="">
+                    <span id="date-error"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label for="recipient-name" class="col-form-label">Time:</label>
+                </div>
+                <div class="col-9">
+                    <input type="time" class="form-control" id="reminderTimeCommunication" name="reminderTime">
+                    <span id="time-error"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label for="recipient-name" class="col-form-label">Subject:</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" class="form-control" id="reminderSubjectCommunication">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label for="recipient-name" class="col-form-label">Description:</label>
+                </div>
+                <div class="col-9">
+                    <textarea class="form-control" id="reminderTextCommunication" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer-sticky text-center">
+        <button id="btnSetReminder" type="button" onclick="fnSetReminder()" class="btn btn-primary btn-info px-5 ladda-button">Set Reminder</button>
+        <button type="button" class="btn btn-primary btn-info px-5 ladda-button" data-bs-dismiss="offcanvas" aria-l="" abel="Close">Back</button>
+    </div>
+</div>
+<!--Above code added by Rahul Mistry for Set Reminder canvas popup 27-06-2024-->
 @await Html.PartialAsync("_ValidationScriptsPartial")
 <script type="text/javascript">
     var i = 0;
@@ -331,6 +421,10 @@
         let partyNameDrp = document.getElementById('choices-multiple-remove-button-party');
         let selectedPartyIndex = partyNameDrp.options[partyNameDrp.selectedIndex];
         let partyIdValue = selectedPartyIndex.value;
+        if (partyIdValue == null || partyIdValue == "") {
+            alert("Select Contact To.");
+            return false;
+        }
         let partyIds = document.getElementById("PartyID");
         partyIds.value = partyIdValue;
 
@@ -399,7 +493,7 @@
                 //i++;
             }
 
-            var newDiv = "<div id='removeAddMoreDiv" + i + "' class='col-xs-12 col-sm-12 form-group'><input type='hidden' id='MarketingCommunicationLogDetailID' name='MarketingCommunicationLogDetailID' value='0'/><input type='hidden' id='MarketingCommunicationLogID' name='MarketingCommunicationLogID' value='" + @Model.MarketingCommunicationLogID+"'/><div class='row'><div class='col-md-4'><select class='form-select' name='SelectName" + i + "' id='selectedId" + i + "' onchange='fnLockDiv(" + i + ")'></select></div><div class='col-md-4'><input type='text' class='form-control' name='Response" + i + "' id='selectedResponse" + i + "' onchange='fnLockDiv(" + i + ")'/></div><div class='col-md-4'><a class='MCLFRB fa-2x' id='btnRemove' onclick='fnRemoveDiv(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></div></div></div>";
+            var newDiv = "<div id='removeAddMoreDiv" + i + "' class='col-xs-12 col-sm-12 form-group'><input type='hidden' id='MarketingCommunicationLogDetailID' name='MarketingCommunicationLogDetailID' value='0'/><input type='hidden' id='MarketingCommunicationLogID' name='MarketingCommunicationLogID' value='" + @Model.MarketingCommunicationLogID+"'/><div class='row' id='removeAddMoreSubDiv" + i + "'><div class='col-sm-4 col-md-4 col-lg-4 col-xl-4'><select class='form-select' name='SelectName" + i + "' id='selectedId" + i + "' onchange='fnLockDiv(" + i + "); fnShowSelectedNoteResponse(this)'></select></div><div class='col-sm-4 col-md-4 col-lg-4 col-xl-4'><input type='text' class='form-control' name='Response" + i + "' id='selectedResponse" + i + "' onchange='fnLockDiv(" + i + ")'/></div><div class='col-sm-1 col-md-1 col-lg-1 col-xl-1'><a class='MCLFRB fa-2x' id='btnRemove' onclick='fnRemoveDiv(" + i + ")'><iconify-icon icon='mdi:remove-circle-outline'></iconify-icon></a></div></div></div>";
 
             /*BELOW CODE IMPORTANT CODE
 
@@ -415,7 +509,7 @@
                 function (data) {
                     var newHTML = "";
                     for (var l = 0; l < data.length; l++) {
-                        newHTML += "<option id='" + data[l].positiveNoteID + "' value='" + data[l].positiveNoteID + "'>" + data[l].positiveNoteText + "</option>";
+                        newHTML += "<option id='" + data[l].actionTaken + "' value='" + data[l].positiveNoteID + "'>" + data[l].positiveNoteText + "</option>";
                     }
                     //employeeDropdown.innerHTML = newHTML;
                     myselected.innerHTML = newHTML;
@@ -543,7 +637,7 @@
         //let partyNameLabel = selectedPartyIndex.text;
         let partyIdValue = selectedPartyIndex.value;
         let _parameters = { partyId: partyIdValue };
-        let urlFillMobEmail = '@Url.Action("GetPartyMobileEmailByPartyID","MarketingCommunicationLog")';
+        let urlFillMobEmail = '@Url.Action("GetPartyMobileEmailByPartyID", "MarketingCommunicationLog")';
 
         $.ajax({
             url: urlFillMobEmail,
@@ -571,7 +665,7 @@
         let partyMobile = $('#partyMobile').val();
         let partyEmail = $('#partyEmail').val();
 
-        let addPartyUrl = '@Url.Action("AddParty","MarketingCommunicationLog")';
+        let addPartyUrl = '@Url.Action("AddParty", "MarketingCommunicationLog")';
         let _parameters = { partyName: partyName, partyMobile: partyMobile, partyEmail: partyEmail }
         $.ajax({
             type: 'POST',
@@ -623,7 +717,251 @@
             hideLoader();
         });
     };
-              // Added by Rahul Mistry on 26 June 2023
+    // Added by Rahul Mistry on 26 June 2023
+
+    // Added by Rahul Mistry on 24 June 2024.
+    function fnShowSelectedNoteResponse(obj) {
+        var testObjecter = obj;
+        var dropdownId = obj.id;
+        var dropdown = document.getElementById(obj.id);
+        //9    Asked to share Pricelist
+        const elselect = document.getElementById(obj.id);
+        divIdsArray.push(obj.id);
+        localStorage.setItem(obj.id, elselect.value);
+
+        let idIndex = dropdownId.slice(-1);
+        var subDiv = document.getElementById('removeAddMoreSubDiv' + idIndex);
+
+        var newItemRaiseTicket = "<div class='col-sm-1 col-md-1 col-lg-1 col-xl-1' id='subDivId" + idIndex + "'><a class='MCLFRB fa-2x' id='btnRaiseTicket" + idIndex + "' onclick='fnRaiseTicket(" + idIndex + ")' title='Raise a ticket.' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasRaiseTicket' aria-controls='canvasRaiseTicket'><iconify-icon icon='icon-park-outline:mail-review'></iconify-icon></a></div>";
+        var newItemReminder = "<div class='col-sm-1 col-md-1 col-lg-1 col-xl-1' id='subDivId" + idIndex + "'><a class='MCLFRB fa-2x' id='btnSetReminder" + idIndex + "' onclick='fnOpenSetReminder(" + idIndex + ")' title='Set reminder.' href='javascript:void(0)' data-bs-toggle='offcanvas' data-bs-target='#canvasSetReminder' aria-controls='canvasSetReminder'><iconify-icon icon='clarity:alarm-clock-solid-badged'></iconify-icon></a></div>";
+        if (dropdown.options[dropdown.selectedIndex].id === 'TICKET' && document.getElementById('subDivId' + idIndex) === null) {
+            subDiv.innerHTML += newItemRaiseTicket;
+        }
+        // if (dropdown.options[dropdown.selectedIndex].id !== 'TICKET' &&  document.getElementById('subDivId' + idIndex) !== null) {
+        //     document.getElementById('subDivId' + idIndex).remove();
+        // }
+        if (dropdown.options[dropdown.selectedIndex].id === 'REMINDER' && document.getElementById('subDivId' + idIndex) === null) {
+            subDiv.innerHTML += newItemReminder;
+        }
+        if (dropdown.options[dropdown.selectedIndex].id !== 'REMINDER' && dropdown.options[dropdown.selectedIndex].id !== 'TICKET' && document.getElementById('subDivId' + idIndex) !== null) {
+            document.getElementById('subDivId' + idIndex).remove();
+        }
+        // set auto select in positive notes.
+        // fnLockDiv(idIndex);
+        for (var j = 0; j < divIdsArray.length; j++) {
+            var divContent = divIdsArray[j];
+            //var inputvalue = inputValues[j].value;
+            var test = localStorage.getItem(divContent);
+            document.getElementById(divIdsArray[j]).value = test;
+            //selectedValues.push(selectedDrps[j].value);
+        }
+    }
+    // Added by Rahul Mistry on 24 June 2024.
+
+
+    // Added by Rahul Mistry on 26 June 2024.
+    function fnRaiseTicket(index) {
+        var ticketRaiseEmailSubject = document.getElementById('selectedId' + index);
+        var ticketRaiseEmailSubjectLabel = ticketRaiseEmailSubject.options[ticketRaiseEmailSubject.selectedIndex].label;
+        var contactToName = document.getElementById('choices-multiple-remove-button-party');
+        var contactToNameLabel = contactToName.options[contactToName.selectedIndex].label;
+        var ticketRaiseMessage = "our party " + contactToNameLabel + " is " + ticketRaiseEmailSubjectLabel + " As soon as possible, Thank you.";
+
+        document.getElementById('subjectLineForTicketRaise').value = ticketRaiseEmailSubjectLabel;
+        document.getElementById('messageBoxForTicketRaise').value = ticketRaiseMessage
+        $("#canvasRaiseTicket").show();//('hide');
+    }
+
+    function fnSendMailRaiseTicket() {
+
+        let recipientToName = $('#recipientToNameForTicketRaise').val();
+        //let recipientCcName = $('#recipientCcName').val();
+        //let recipientBccName = $('#recipientBccName').val();
+        let subjectLine = $('#subjectLineForTicketRaise').val();
+        let messageBox = $('#messageBoxForTicketRaise').val();
+        //messageBoxText.value = CKEDITOR.instances.editor.getData();
+
+        let sendMailUrl = '@Url.Action("SendMail", "ConversationActivities")';
+        //let sendMailUrlList = sendMailUrl + '?recipientToName=' + recipientToName + '&recipientCcName=' + recipientCcName + '&recipientBccName=' + recipientBccName + '&subjectLine=' + subjectLine + '&messageBox=' + messageBox;
+        let sendMailUrlList = sendMailUrl + '?recipientToName=' + recipientToName + '&subjectLine=' + subjectLine + '&messageBox=' + messageBox;
+        //window.location.href = sendMailUrlList;
+
+        $.ajax({
+            type: 'POST',
+            url: sendMailUrlList,
+            //data: modeldata,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status) {
+                    //notification
+
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    $('#canvasRaiseTicket').hide();
+                    // $("#ModalMail").modal("hide");
+                    window.location.reload().delay(10000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                //window.location.reload().delay(10000);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+
+    }
+    // Added by Rahul Mistry on 26 June 2024.
+
+
+    // Added by Rahul Mistry on 27 June 2024.
+
+    function fnOpenSetReminder(index) {
+        var ticketRaiseEmailSubject = document.getElementById('selectedId' + index);
+        var ticketRaiseEmailSubjectLabel = ticketRaiseEmailSubject.options[ticketRaiseEmailSubject.selectedIndex].label;
+        document.getElementById('reminderSubjectCommunication').value = ticketRaiseEmailSubjectLabel;
+        document.getElementById('reminderDateCommunication').valueAsDate = new Date();
+
+        var newDateTime = new Date();
+        var hour = newDateTime.getHours();
+        var minutes = newDateTime.getMinutes();
+        var testCase = hour + ":" + minutes;
+        debugger;
+        document.getElementById('reminderTimeCommunication').value = hour + ":" + minutes;
+        $('#canvasSetReminder').show();
+    }
+
+
+    function fnSetReminder() {
+        const reminderDateCommunication = document.getElementById('reminderDateCommunication').value;
+        const reminderTimeCommunication = document.getElementById('reminderTimeCommunication').value;
+        const reminderSubjectCommunication = document.getElementById('reminderSubjectCommunication').value;
+        const reminderTextCommunication = document.getElementById('reminderTextCommunication').value;
+
+        // alert(`reminderDate ${reminderDate},reminderTime ${reminderTime}, reminderText ${reminderText}, reminderSubject ${reminderSubject} `);
+        //let addReminderUrl = 'Url.Action("AddReminder","Notification")';
+        //alert('addReminderUrl-- ' + addReminderUrl)
+        let _parameters = { reminderDate: reminderDateCommunication, reminderTime: reminderTimeCommunication, reminderText: reminderTextCommunication, reminderSubject: reminderSubjectCommunication };
+
+        $.ajax({
+            type: 'POST',
+            //url: addReminderUrl,
+            url: '/Notification/AddReminder',
+            data: _parameters,
+            dataType: 'json',
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status) {
+                    //Remainder
+                    Lobibox.notify('success', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                    $('#canvasSetReminder').hide();
+                    // window.location.reload().delay(5000);
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: data.message
+                    });
+                }
+                //window.location.reload().delay(5000);
+            },
+            error: function (error) {
+                laddaStop(l);
+                Lobibox.notify('error', {
+                    pauseDelayOnHover: true,
+                    size: 'mini',
+                    icon: 'bx bx-check-circle',
+                    continueDelayOnInactiveTab: false,
+                    position: 'bottom right',
+                    msg: "@MessageHelper.Error"
+                });
+            }
+        }).always(function () {
+            hideLoader();
+        });
+    }
+
+
+    const bookingDateInput = document.getElementById("reminderDateCommunication");
+    const dateError = document.getElementById("date-error");
+
+    function getTodayString() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        return year + '-' + month + '-' + day;
+    }
+
+    bookingDateInput.addEventListener("input", function () {
+        const enteredDate = bookingDateInput.value;
+        const today = getTodayString();
+        if (enteredDate < today) {
+            dateError.style.color = 'red';
+            dateError.textContent = "Please select today's date or a future date.";
+            bookingDateInput.style.border = "1px solid"; // Optional: style the input for error
+        } else {
+            dateError.textContent = "";
+            bookingDateInput.style.border = ""; // Optional: remove error style
+        }
+    });
+
+    const meetingTimeInput = document.getElementById("reminderTimeCommunication");
+    const timeError = document.getElementById("time-error");
+
+    meetingTimeInput.addEventListener("input", function () {
+        const enteredTime = meetingTimeInput.value;
+        const today = new Date(); // Get today's date and time
+
+        // Create a Date object with today's date and entered time
+        const enteredDateTimeObj = new Date(today.getFullYear(), today.getMonth(), today.getDate(), enteredTime.split(':')[0], enteredTime.split(':')[1]);
+
+        if (enteredDateTimeObj <= today) {
+            timeError.style.color = 'red';
+            timeError.textContent = "Please select a time after the current time.";
+            meetingTimeInput.style.border = "1px solid"; // Optional: style the input for error
+        } else {
+            timeError.textContent = "";
+            meetingTimeInput.style.border = ""; // Optional: remove error style
+        }
+    });
+    // Added by Rahul Mistry on 27 June 2024.
 
 </script>
 

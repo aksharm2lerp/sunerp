@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Support library for GridBlazor and GridMvcCore component libraries")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("5.2.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("5.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("5.2.0+8bd911a60d49510cdeba7e3c30e132f6be7b1a54")]
 [assembly: System.Reflection.AssemblyProductAttribute("GridShared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GridShared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("5.2.0.0")]

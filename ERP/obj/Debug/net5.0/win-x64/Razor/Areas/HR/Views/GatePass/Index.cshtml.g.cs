@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_HR_Views_GatePass_Index), @"mvc.1.0.view", @"/Areas/HR/Views/GatePass/Index.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,74 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-using Business.SQL;
+ using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-using GridCore;
+ using GridCore
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"2f928b8f3bb8cb2a8cf12690a488fbb9efeb4e284782e1595d36b96f35e1f0ac", @"/Areas/HR/Views/GatePass/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
+    ;
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"2f928b8f3bb8cb2a8cf12690a488fbb9efeb4e284782e1595d36b96f35e1f0ac", @"/Areas/HR/Views/GatePass/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_HR_Views_GatePass_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ISGrid>
     #nullable disable
@@ -138,6 +129,7 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"
 <div class=""col-sm-12 col-md-12 col-lg-12 mx-auto"">
     <div class=""card border-1 shadow rounded-7 p-1"">
@@ -149,7 +141,7 @@ using GridCore;
                             <ol class=""breadcrumb mb-0 p-0"">
                                 <li class=""breadcrumb-item"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f928b8f3bb8cb2a8cf12690a488fbb9efeb4e284782e1595d36b96f35e1f0ac6712", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f928b8f3bb8cb2a8cf12690a488fbb9efeb4e284782e1595d36b96f35e1f0ac6494", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -187,6 +179,7 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                    <a class=""btn btn-primary px-5"" onclick=""fnEmployeeGatepass(this)""
                     href=""javascript:void(0)""
                     data-id=""0""
@@ -204,19 +197,22 @@ using GridCore;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2f928b8f3bb8cb2a8cf12690a488fbb9efeb4e284782e1595d36b96f35e1f0ac9728", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("grid", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2f928b8f3bb8cb2a8cf12690a488fbb9efeb4e284782e1595d36b96f35e1f0ac9514", async() => {
             }
             );
             __GridMvc_TagHelpers_GridTagHelper = CreateTagHelper<global::GridMvc.TagHelpers.GridTagHelper>();
             __tagHelperExecutionContext.Add(__GridMvc_TagHelpers_GridTagHelper);
+            __GridMvc_TagHelpers_GridTagHelper.Model = 
 #nullable restore
 #line 56 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-__GridMvc_TagHelpers_GridTagHelper.Model = Model;
+                              Model
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("model", __GridMvc_TagHelpers_GridTagHelper.Model, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -244,13 +240,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
 </div>
 <script type=""text/javascript"">
     var urlAddUpdateEmployeeGatepass = '");
+            Write(
 #nullable restore
 #line 74 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-                                   Write(Url.Action("AddUpdateEmployeeGatepass", "GatePass"));
+                                         Url.Action("AddUpdateEmployeeGatepass", "GatePass")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
     function fnEmployeeGatepass(obj) {
         var _id = $(obj).data('id');
@@ -320,13 +318,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: """);
+            Write(
 #nullable restore
 #line 140 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                 });
             }
@@ -422,13 +422,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
 
     functi");
             WriteLiteral("on fnActiveInactiveApproval(obj) {\r\n      \r\n        var urlAddRemoveApproval = \'");
+            Write(
 #nullable restore
 #line 233 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-                               Write(Url.Action("AddRemoveApproval", "GatePass"));
+                                     Url.Action("AddRemoveApproval", "GatePass")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         let rowid = $(obj).data('rowid');
         let _isApproved = document.getElementById(rowid).checked;
@@ -489,13 +491,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: """);
+            Write(
 #nullable restore
 #line 290 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                 });
             }
@@ -511,13 +515,15 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
 
     function fnUpdateInOutTime(obj){
         var urlUpdateGatePassInOutTime = '");
+            Write(
 #nullable restore
 #line 304 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-                                     Write(Url.Action("UpdateGatePassInOutTime", "GatePass"));
+                                           Url.Action("UpdateGatePassInOutTime", "GatePass")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         let rowid = $(obj).data('rowid');
         let checked = document.getElementById(rowid).checked;
@@ -571,24 +577,56 @@ __GridMvc_TagHelpers_GridTagHelper.Model = Model;
                     continueDelayOnInactiveTab: false,
                     position: 'bottom r");
             WriteLiteral("ight\',\r\n                    msg: \"");
+            Write(
 #nullable restore
 #line 355 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n                });\r\n            }\r\n        }).always(function () {\r\n            hideLoader();\r\n        });\r\n    };\r\n\r\n    // Update in and Out Time by Security.\r\n</script>\r\n");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public UserManager<UserMasterMetadata> UserManager { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public 
+#nullable restore
+#line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
+        UserManager<UserMasterMetadata>
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
+                                        UserManager
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public SignInManager<UserMasterMetadata> SignInManager { get; private set; } = default!;
-        #nullable disable
+        public 
+#nullable restore
+#line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
+        SignInManager<UserMasterMetadata>
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\GatePass\Index.cshtml"
+                                          SignInManager
+
+#line default
+#line hidden
+#nullable disable
+         { get; private set; }
+         = default!;
         #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;

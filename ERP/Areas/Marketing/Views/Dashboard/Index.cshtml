@@ -2,7 +2,12 @@
 @model DashboardModel;
 @{
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
-    ViewBag.Title = "Dashboard..";
+    ViewBag.Title = "Index";
+    //var currentdate = DateTime.Now.Date;
+    DateTime? StartDate = ViewBag.StartDate;
+    DateTime? EndDate = ViewBag.EndDate;
+    var test = EndDate;
+    //DateTime? dt = ViewData["StartDate"];    
 }
 <div class="page-breadcrumb d-none d-sm-flex align-items-center pb-3 border-bottom">
     <div class="ps-3 col-md-6">
@@ -29,28 +34,27 @@
 
 
                     <div class="row">
-                        @*<label class="col-sm-3 col-form-label">Start Date</label>
-                        <div class="col-sm-3">
-                        <input type="date" class="form-control" id="StartDate" name="StartDate">
-                        <span class="text-danger"></span>
-                        </div>*@
-                        <div class="col-sm-4">
+
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                             <label class="col-form-label">Start Date</label>
-                            <input type="date" class="form-control" id="StartDate" name="StartDate">
+                            <input type="date" class="form-control" id="StartDate" name="StartDate" value="@StartDate">
                             <span class="text-danger"></span>
                         </div>
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
                             <label class="col-form-label">End Date</label>
-                            <input type="date" class="form-control" id="EndDate" name="EndDate">
+                            <input type="date" class="form-control" id="EndDate" name="EndDate" value="@EndDate">
                             <span class="text-danger"></span>
                         </div>
-                        @*<label class="col-sm-3 col-form-label">Search Keyword</label>
-                        <div class="col-sm-3">
-                        <input type="text" class="form-control" id="SearchString" placeholder="Search by string." value="@ViewBag.SearchString">
-                        </div>*@
 
-                        <div class="col-sm-4 text-center marketingDashboardPaddingTop">
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <label class="col-form-label">Employee Name</label>
+                            <select class="form-select" id="SelectedEmployeeID" name="SelectedEmployeeID" asp-items="@CommonExtension.GetAllEmployeeAsyncForReferenceDropDown()">
+                                <option value="" selected>Select Marketing Employee</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center marketingDashboardPaddingTop">
                             <button id="btnSearchUserDetailForDashboard" type="button" onclick="fnSearchUserCount(true)" class="btn btn-outline-primary btn-sm">Search</button>
                         </div>
                     </div>
@@ -65,11 +69,9 @@
                                 <div class="col-sm-4 text-center">
                                     <div class="column">
                                         <div class="card bgColorDashboard">
-                                            @* <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> *@
                                             <div class="container my-3">
                                                 <h2>Total Login</h2>
                                                 <h4>@Model.TotalLogin</h4>
-                                                @*<p><button class="button">Contact</button></p>*@
                                             </div>
                                         </div>
                                     </div>
@@ -77,11 +79,9 @@
                                 <div class="col-sm-4 text-center">
                                     <div class="column">
                                         <div class="card bgColorDashboard">
-                                            @* <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> *@
                                             <div class="container my-3">
                                                 <h2>Total Visit's</h2>
                                                 <h4>@Model.TotalVisits</h4>
-                                                @*<p><button class="button">Contact</button></p>*@
                                             </div>
                                         </div>
                                     </div>
@@ -89,11 +89,9 @@
                                 <div class="col-sm-4 text-center">
                                     <div class="column">
                                         <div class="card bgColorDashboard">
-                                            @* <img src="/w3images/team2.jpg" alt="Mike" style="width:100%"> *@
                                             <div class="container my-3">
                                                 <h2>Total Calls</h2>
                                                 <h4>@Model.TotalCalls</h4>
-                                                @*<p><button class="button">Contact</button></p>*@
                                             </div>
                                         </div>
                                     </div>
@@ -143,6 +141,7 @@
     </div>
 
     <script type="text/javascript">
+
         var xValues = ["Rahul Mistry", "Dravesh Lokhande", "Sagar Parmar", "Sandip Patel", "Virat Gajjar"];
         var yValues = [55, 49, 44, 24, 15];
         var barColors = ["red", "green", "blue", "orange", "brown"];
@@ -166,15 +165,43 @@
         });
 
 
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        var today = year + "-" + month + "-" + day;
+
+        document.getElementById("StartDate").value = today;
+        document.getElementById("EndDate").value = today;
+
         function fnSearchUserCount() {
 
             let StartDate = $('#StartDate').val();
             let EndDate = $('#EndDate').val();
-            //alert(`StartDate----${StartDate} && EndDate----${EndDate}`)
-            let UserCountListUrl = '@Url.Action("Index","Dashboard")';
+            let SelectedEmployeeID = $('#SelectedEmployeeID').val();
+            if (StartDate == null || StartDate == "") {
+                alert("Select start date...");
+                return false;
+            }
+            if (EndDate == null || EndDate == "") {
+                alert("Select end date...");
+                return false;
+            }
+            //alert(`StartDate---- ${StartDate} && EndDate---- ${EndDate} && SelectedEmployeeID---- ${SelectedEmployeeID}`);
+            let UserCountListUrl = '@Url.Action("Index", "Dashboard")';
             //alert('UserCountListUrl-- ' + UserCountListUrl);
             //let istrue = obj;
-            let viewUserLoginList = UserCountListUrl + '?startDate=' + StartDate + '&endDate=' + EndDate;
+            let viewUserLoginList;
+            if (SelectedEmployeeID == null || SelectedEmployeeID == "") {
+                viewUserLoginList = UserCountListUrl + '?startDate=' + StartDate + '&endDate=' + EndDate;
+            }
+            else {
+                viewUserLoginList = UserCountListUrl + '?startDate=' + StartDate + '&endDate=' + EndDate + '&employee=' + SelectedEmployeeID;
+            }
             window.location.href = viewUserLoginList;
         };
 

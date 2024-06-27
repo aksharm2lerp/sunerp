@@ -1,0 +1,31 @@
+﻿@model Business.Entities.ProductPhotoPath.ProductPhotoPath
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+        <div class="table-responsive-sm">
+            <table class="table table-bordered">
+                <thead class="userProfileTableTHead">
+                    <tr>
+                        @* <th scope="col">Sr No.</th> *@
+                        <th scope="col">Product</th>
+                        <th scope="col">synonyms or other name</th>
+                        <th scope="col">Search Key</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.listItemDocument.Count() > 0)
+                    {
+                        @foreach (var i in Model.listItemDocument)
+                        {
+                            <tr>
+                                @* <th scope="row">@i.SrNo</th> *@
+                                <td>@i.ProductCategoryText</td>
+                                <td>@i.ProductImageText</td>
+                                <td>@i.SearchKey</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

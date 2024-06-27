@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Grid components for Blazor")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("3.2.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.2.0+8bd911a60d49510cdeba7e3c30e132f6be7b1a54")]
 [assembly: System.Reflection.AssemblyProductAttribute("GridBlazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GridBlazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("3.2.0.0")]

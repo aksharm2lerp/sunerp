@@ -96,8 +96,8 @@ D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\Business.Entities.AssemblyInfo.cs
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\Business.Entities.csproj.CoreCompileInputs.cache
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\Business.Entities.sourcelink.json
-D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\Business.Entities.csproj.CopyComplete
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\Business.Entities.dll
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\refint\Business.Entities.dll
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\Business.Entities.pdb
 D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\ref\Business.Entities.dll
+D:\GitHub\SUN\sunerpm2l\Business\Business.Entities\Business.Entities\obj\Release\net5.0\Business.40527FD7.Up2Date

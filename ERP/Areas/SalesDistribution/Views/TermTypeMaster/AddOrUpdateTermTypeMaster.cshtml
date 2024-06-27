@@ -1,0 +1,123 @@
+@using Business.Entities.SalesDistribution.TermTypeMasterModel;
+@model TermTypeMaster;
+@{
+    //$ViewBag$
+}
+<form class="form-horizontal" role="form" id="formTermTypeMaster">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-3">
+                <input type="hidden" asp-for="TermTypeID" />
+                <div class="col-sm-9">
+                  @*  <input type="text" required="" class="form-control" id="TermTypeMasterText" name="TermTypeMasterText" asp-for="TermTypeMasterText">
+                    <span asp-validation-for="TermTypeMasterText" class="text-danger"></span>*@
+                </div>
+            </div>
+
+            <div class='row mt-3'><div class='col-12'>
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>TermTypeID</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='TermTypeID' asp-for='TermTypeID' name='TermTypeID'>
+ <span asp-validation-for='TermTypeID' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>TermTypeText</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='TermTypeText' asp-for='TermTypeText' name='TermTypeText'>
+ <span asp-validation-for='TermTypeText' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ 
+ <div class='row mb-3'>
+ <label for='' class='col-sm-3 col-form-label'>Note</label>
+ <div class='col-sm-9'>
+ <input type='text' class='form-control' id='Note' asp-for='Note' name='Note'>
+ <span asp-validation-for='Note' class='text-danger'>
+ </span>
+ </div>
+ </div>
+ 
+ </div></div>
+
+            <div class="modal-footer-sticky text-center">
+                <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-primary btn-info px-5 my-2">Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+@await Html.PartialAsync("_ValidationScriptsPartial")
+<script type="text/javascript">
+    var urlsave = '@Url.Action("AddOrUpdateTermTypeMaster", "TermTypeMaster")';
+    function fnSubmit() {
+        if ($("#formTermTypeMaster").valid()) {
+            var l = laddaStart('btnSave');
+            console.log(l);
+            modeldata = $("#formTermTypeMaster").serialize();
+            $.ajax({
+                type: 'POST',
+                url: urlsave,
+                data: modeldata,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data.status) {
+                        //notification
+                        $("#canvas_masterentity2").hide();//('hide');
+                        Lobibox.notify('success', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+						window.location.reload().delay(3000);
+                    }
+                    else {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: true,
+                            size: 'mini',
+                            icon: 'bx bx-check-circle',
+                            continueDelayOnInactiveTab: false,
+                            position: 'bottom right',
+                            msg: data.message
+                        });
+                    }
+                },
+                error: function (error) {
+                    laddaStop(l);
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: true,
+                        size: 'mini',
+                        icon: 'bx bx-check-circle',
+                        continueDelayOnInactiveTab: false,
+                        position: 'bottom right',
+                        msg: "@MessageHelper.Error"
+                    });
+                }
+            }).always(function () {
+                hideLoader();
+            });
+        }
+    };
+
+     $(document).ready(function () {
+
+          
+
+       
+
+          
+
+    });
+
+
+</script>

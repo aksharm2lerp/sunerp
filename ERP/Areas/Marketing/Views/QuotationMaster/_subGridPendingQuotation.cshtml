@@ -2,4 +2,10 @@
 @using GridMvc;
 @model ISGrid
 @addTagHelper *, GridMvc
+<style>
+    .grid-table-wrap {
+        /* overflow-y: scroll !important; */
+        overflow-x: scroll !important;
+    }
+</style>
         <grid model="@Model" />

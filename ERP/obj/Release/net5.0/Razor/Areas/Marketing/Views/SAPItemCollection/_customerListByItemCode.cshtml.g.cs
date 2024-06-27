@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_Marketing_Views_SAPItemCollection__customerListByItemCode), @"mvc.1.0.view", @"/Areas/Marketing/Views/SAPItemCollection/_customerListByItemCode.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Collections.Generic;
     using global::System.Linq;
@@ -14,83 +14,73 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
-using System.Data;
+ using System.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"0b46008f7937597351696ec2209160e2040893df3abf9182b16dffe795a3341a", @"/Areas/Marketing/Views/SAPItemCollection/_customerListByItemCode.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"0b46008f7937597351696ec2209160e2040893df3abf9182b16dffe795a3341a", @"/Areas/Marketing/Views/SAPItemCollection/_customerListByItemCode.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/Marketing/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Marketing_Views_SAPItemCollection__customerListByItemCode : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<DataTable>
     #nullable disable
@@ -108,6 +98,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("<div id=\"CustomerListTable\">\r\n");
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -117,6 +108,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"        <div class=""row"" style=""overflow:auto; height:350px; width:100%;"">
             <table class=""table table-striped w-auto"" style=""white-space: nowrap; font-size:inherit !important;"">
                 <!--style=""display:block; overflow: auto; white-space: nowrap;""-->
@@ -133,14 +125,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                <th>");
+            Write(
 #nullable restore
 #line 20 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
-                               Write(dataColumn.ToString());
+                                     dataColumn.ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n");
 #nullable restore
 #line 21 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -151,14 +146,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                <th>");
+            Write(
 #nullable restore
 #line 24 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
-                               Write(dataColumn.ToString());
+                                     dataColumn.ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n");
 #nullable restore
 #line 25 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -169,6 +167,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    </tr>\r\n                </thead>\r\n");
 #nullable restore
 #line 30 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -178,6 +177,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    <tr style=\"background-color:azure; color:black; font-family:\'Segoe UI\', Tahoma, Geneva, Verdana, sans-serif;\">\r\n");
 #nullable restore
 #line 33 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -188,6 +188,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 35 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
                              if (!string.IsNullOrEmpty(row[timeRow].ToString()))
@@ -196,14 +197,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                <td>");
+            Write(
 #nullable restore
 #line 37 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
-                               Write(row[timeRow]);
+                                     row[timeRow]
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
 #nullable restore
 #line 38 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -214,6 +218,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                <td>-</td>\r\n");
 #nullable restore
 #line 42 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -222,6 +227,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 42 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
                              
@@ -230,6 +236,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    </tr>\r\n                    <tr>\r\n");
 #nullable restore
 #line 46 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -240,6 +247,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 48 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
                              if (!string.IsNullOrEmpty(row[timeRow].ToString()))
@@ -248,14 +256,17 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                <td>");
+            Write(
 #nullable restore
 #line 50 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
-                               Write(row[timeRow]);
+                                     row[timeRow]
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -266,6 +277,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                <td>-</td>\r\n");
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -274,6 +286,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 55 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
                              
@@ -282,6 +295,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    </tr>\r\n");
 #nullable restore
 #line 58 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -290,6 +304,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("            </table>\r\n        </div>\r\n");
 #nullable restore
 #line 61 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -300,6 +315,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("        <div class=\"text-center\">\r\n            <h1><iconify-icon icon=\"mdi:text-box-remove-outline\" style=\"color: #37569d;\" width=\"100\"></iconify-icon></h1>\r\n            <h3 style=\"color: red;\">No Data Found</h3>\r\n        </div>\r\n");
 #nullable restore
 #line 68 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\Marketing\Views\SAPItemCollection\_customerListByItemCode.cshtml"
@@ -308,6 +324,7 @@ using System.Data;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("</div>");
         }
         #pragma warning restore 1998

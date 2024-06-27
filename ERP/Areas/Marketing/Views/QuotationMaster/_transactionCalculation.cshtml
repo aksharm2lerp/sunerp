@@ -1,0 +1,283 @@
+﻿@using System.Data;
+@model System.Data.DataTable;
+@{
+    DataTable dataTable = Model;
+    string dataTableIntoJson = Newtonsoft.Json.JsonConvert.SerializeObject(Model).ToString();
+    string testrt = dataTableIntoJson;
+}
+
+@*     <div class="col-sm-7 col-md-7 col-lg-7">
+    <div class="row mb-3">
+    </div>
+    </div>
+    <div class=" col-sm-5 col-md-5 col-lg-5">
+    <div class="row">
+    <label for="" class="col-sm-3 col-form-label">GST(%)</label>
+    <div class="col-sm-2">
+    <input type="text" class="form-control" id="GSTPerSource" oninput="fnUpdateTaxAmt()">
+    </div>
+    <div class="col-sm-7">
+    <input type="text" class="form-control" id="GSTAmtSource" placeholder="GST Amount" oninput="fnUpdateTaxAmt()">
+    </div>
+    </div>
+    </div> *@
+@if (Model != null && Model.Rows.Count > 0)
+{
+    int i = 0;
+    foreach (DataRow item in Model.Rows)
+    {
+        decimal percentageValue = 0;
+        string percentageValueStr = Convert.ToString(item[6]);
+        if (!string.IsNullOrEmpty(percentageValueStr))
+        { percentageValue = Convert.ToDecimal(percentageValueStr); }
+        <div class="col-sm-8 col-md-8 col-lg-8">
+            <div class="row mb-3">
+            </div>
+        </div>
+        <div class=" col-sm-4 col-md-4 col-lg-4">
+            <div class="row mb-3">
+                <label for="" class="col-sm-3 col-form-label">@Convert.ToString(item[3])</label>
+                <div class="col-sm-2">
+                    @if (percentageValue > 0)
+                    {
+                        string controlId = "perId" + Convert.ToString(item[0]);
+                        <input type="text" class="form-control" id="@Convert.ToString(item[0])" value="@percentageValue" oninput="fnCalculateTaxesAmounts(this,true)">
+                    }
+                    else
+                    {
+                        <input type="hidden" value="0" />
+                    }
+                </div>
+                <div class="col-sm-7">
+                    <input type="hidden" value="@Convert.ToString(item[3])" />
+                    <input type="hidden" value="@Convert.ToString(item[4])" />
+                    <input type="text" class="form-control" id="@Convert.ToString(item[4])" placeholder="@Convert.ToString(item[3])" oninput="fnCalculateTaxesAmounts()">
+                    <input type="hidden" value="@Convert.ToString(item[5])" />
+                </div>
+            </div>
+        </div>
+        i++;
+    }
+}
+
+<!--else
+{
+    <div class="col-sm-8 col-md-8 col-lg-8">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-4 col-md-4 col-lg-4">
+        <div class="row mb-3">
+            <label for="" class="col-sm-5 col-form-label">Net Amount</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" placeholder="Net Amount" id="NetAmountSource" readonly>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-7 col-md-7 col-lg-7">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-5 col-md-5 col-lg-5">
+        <div class="row mb-3">
+            <label for="" class="col-sm-3 col-form-label">Discount Amt</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="DiscountAmtSource" oninput="fnUpdateTaxAmt()">
+            </div>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="DiscountAmtSource" placeholder="Discount Amount" oninput="fnUpdateTaxAmt()">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-7 col-md-7 col-lg-7">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-5 col-md-5 col-lg-5">
+        <div class="row">
+            <label for="" class="col-sm-3 col-form-label">GST(%)</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="GSTPerSource" oninput="fnUpdateTaxAmt()">
+            </div>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="GSTAmtSource" placeholder="GST Amount" oninput="fnUpdateTaxAmt()">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8 col-md-8 col-lg-8">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-4 col-md-4 col-lg-4">
+        <div class="row mb-3">
+            <label for="" class="col-sm-5 col-form-label">Gross Amount</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" placeholder="Gross Amount" id="GrossAmountSource" readonly>
+            </div>
+        </div>
+    </div>
+}-->
+<!--div class="row">
+    <div class="col-sm-7 col-md-7 col-lg-7">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-5 col-md-5 col-lg-5">
+        <div class="row mb-3">
+            <label for="" class="col-sm-3 col-form-label">Freight tax(%)</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="FreightPercentageSource" oninput="fnUpdateTaxAmt()">
+            </div>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="FreightAmountSource" placeholder="Freight Amount" oninput="fnUpdateTaxAmt()">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-7 col-md-7 col-lg-7">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-5 col-md-5 col-lg-5">
+        <div class="row">
+            <label for="" class="col-sm-3 col-form-label">Packing charges(%)</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="PackingChargesPerSource" oninput="fnUpdateTaxAmt()">
+            </div>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" id="PackingAmountSource" placeholder="Packing Amount" oninput="fnUpdateTaxAmt()">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-8 col-md-8 col-lg-8">
+        <div class="row mb-3">
+        </div>
+    </div>
+    <div class=" col-sm-4 col-md-4 col-lg-4">
+        <div class="row mb-3">
+            <label for="" class="col-sm-5 col-form-label">Gross Amount</label>
+            <div class="col-sm-7">
+                <input type="text" class="form-control" placeholder="Gross Amount" id="GrossAmountSource" readonly>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>-->
+@await Html.PartialAsync("_ValidationScriptsPartial")
+
+
+<script type="text/javascript">
+    
+    var jsonObjectOK = @Html.Raw(dataTableIntoJson);
+    var filteredResult;
+    $(document).ready(function () {
+        fnCalculateTaxesAmounts();
+        //fnUpdateNetAmount();
+        // setTimeout(
+        //     function () {
+        //         //window.location.reload();
+        //         fnCalculateTaxesAmounts();
+        //     }, 2000);
+    });
+    setTimeout(
+        function () {
+            //window.location.reload();
+            fnUpdateQuotationNetAmount();
+        }, 2000);
+    function fnCalculateTaxesAmounts(inputEvent, isInputed) {
+        var dataTableObject = jsonObjectOK;
+
+        //let ctc = document.getElementById('CostToCompany').value;
+
+        filteredResult = dataTableObject.filter((obj) => {
+            return obj.Formula !== null && obj.Formula !== '';
+        });
+        if (isInputed) {
+            let inputId = inputEvent.id;
+            let inputValue = inputEvent.value;
+            let selectedId = parseInt(inputId);
+            for (let i = 0; i < filteredResult.length; i++) {
+                if (filteredResult[i].FormulaID === selectedId) {
+                    filteredResult[i].FormulaPercentage = parseInt(inputValue);
+                }
+            }
+            jsonObjectOK = filteredResult;
+        }
+
+        let indexLength = Number(filteredResult.length - 1);
+        if (filteredResult.length > 0) {
+            $.each(filteredResult, function (i, k) {
+                let formulaId = k.FormulaID;
+                let test = k.Formula;
+                let targetId = test.charAt(0);
+                var slicedValues = test.slice(2);
+                if (test !== null && test !== "") {
+                    for (const strChar of slicedValues) {
+                        var replaceValue = document.getElementById(strChar);
+                        if (replaceValue) {
+                            let repValue = replaceValue.value;
+                            slicedValues = slicedValues.replace(strChar, repValue);
+                        }
+                        else {
+                            //My Added
+                            if (!replaceValue && slicedValues.includes('P') && strChar === 'P') {
+                                //replace values with P.
+                                var percValue = fnGetPercentageValuesAccordingToFormulaID(formulaId);
+                                slicedValues = slicedValues.replace(strChar, percValue);
+                            }
+                            if (!replaceValue && slicedValues.includes('-' + strChar) && (strChar === '(' || strChar === ')')) {
+                                // slicedValues = slicedValues.replace(strChar, 1);
+                                continue;
+                            }
+                            //My Added
+                            if (!replaceValue && slicedValues.includes('-' + strChar) && (strChar !== '0' && strChar !== '.')) {
+                                slicedValues = slicedValues.replace(strChar, 0);
+                            }
+                            if (!replaceValue && slicedValues.includes('*' + strChar) && (strChar !== '0' && strChar !== '.')) {
+                                slicedValues = slicedValues.replace(strChar, 1);
+                            }
+                        }
+                    }
+                }
+                let calcValue = slicedValues;//.replace('D', 1).replace('I', 1);
+                let id = document.getElementById(targetId);
+                var vals = eval(calcValue);
+                if (id && vals) {
+                    id.value = Number(parseFloat(vals.toFixed(2)));
+                    if (indexLength === i) {
+                        //document.getElementById('X').value = Number(parseFloat(vals.toFixed(0)));
+                    }
+                }
+            });
+        }
+    }
+
+    function fnGetPercentageValuesAccordingToFormulaID(formulaId) {
+        filteredResult = jsonObjectOK.find((obj) => {
+            return obj.FormulaID === formulaId;
+        });
+        return filteredResult.FormulaPercentage;
+    }
+
+    function fnUpdateQuotationNetAmount() {
+        let netAmount = 0;
+        var finalTable = document.getElementsByTagName('table');
+        var rowLen = finalTable[0].rows.length;
+        for (var i = 1; i < rowLen; i++) {
+            let tester = parseFloat(finalTable[0].rows[i].cells[15].children[0].value).toFixed(2);
+            netAmount = Number(parseFloat(netAmount) + parseFloat(finalTable[0].rows[i].cells[15].children[0].value)).toFixed(2);
+        }
+        document.getElementById('A').value = netAmount;
+        fnCalculateTaxesAmounts();
+        // settimeout(
+        //     function () {
+        //         //window.location.reload();
+        //         fncalculatetaxesamounts();
+        //     }, 2000);
+    }
+    //fnCalculateTaxesAmounts();
+
+</script>

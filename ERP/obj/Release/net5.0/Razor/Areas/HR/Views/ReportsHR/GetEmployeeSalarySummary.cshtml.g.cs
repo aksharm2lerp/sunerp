@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Areas_HR_Views_ReportsHR_GetEmployeeSalarySummary), @"mvc.1.0.view", @"/Areas/HR/Views/ReportsHR/GetEmployeeSalarySummary.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+    #line default
     using global::System;
     using global::System.Linq;
     using global::System.Threading.Tasks;
@@ -13,90 +13,78 @@ namespace AspNetCore
     using global::Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP;
+using ERP
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Models;
+using ERP.Models
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 3 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities;
+using Business.Entities
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 4 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 5 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.SQL;
+using Business.SQL
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 6 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 7 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Enums;
+using ERP.Enums
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Extensions;
+using ERP.Extensions
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 9 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using ERP.Helpers;
+using ERP.Helpers
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 10 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\_ViewImports.cshtml"
-using Business.Entities.Dynamic;
+using Business.Entities.Dynamic
 
-#line default
-#line hidden
 #nullable disable
+    ;
 #nullable restore
 #line 1 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-using System.Data;
+ using System.Data;
 
-#line default
-#line hidden
 #nullable disable
 #nullable restore
 #line 2 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-using System.Collections.Generic;
+ using System.Collections.Generic;
 
 #line default
 #line hidden
 #nullable disable
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc", @"/Areas/HR/Views/ReportsHR/GetEmployeeSalarySummary.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc", @"/Areas/HR/Views/ReportsHR/GetEmployeeSalarySummary.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"Sha256", @"66ca4ed4d968d0cb63ad96b0820d0f1f680273fdde74e92383c120d6a96a5604", @"/Areas/HR/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_HR_Views_ReportsHR_GetEmployeeSalarySummary : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<DataSet>
     #nullable disable
@@ -148,6 +136,7 @@ using System.Collections.Generic;
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 8 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
   
@@ -164,6 +153,7 @@ using System.Collections.Generic;
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"
 <div class=""container"" id=""employeeSalalrySummary"">
     <div class=""row"">
@@ -178,7 +168,7 @@ using System.Collections.Generic;
                                     <ol class=""breadcrumb mb-0 p-0"">
                                         <li class=""breadcrumb-item"">
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc10673", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc10421", async() => {
                 WriteLiteral("<i class=\"bx bx-home-alt\"></i>");
             }
             );
@@ -214,21 +204,23 @@ using System.Collections.Generic;
                         <div class=""col-3"">
                             <input type=""month"" class=""form-control"" id=""month""");
             BeginWriteAttribute("value", " value=\"", 2056, "\"", 2074, 1);
+            WriteAttributeValue("", 2064, 
 #nullable restore
 #line 47 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-WriteAttributeValue("", 2064, monthyear, 2064, 10, false);
+                                                                                        monthyear
 
 #line default
 #line hidden
 #nullable disable
+            , 2064, 10, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n                        </div>\r\n                        <label");
             BeginWriteAttribute("for", " for=\"", 2140, "\"", 2146, 0);
             EndWriteAttribute();
             WriteLiteral(" class=\"col-sm-3 col-form-label \">Company:</label>\r\n                        <div class=\"col-sm-3\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc13671", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc13535", async() => {
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc13988", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc13852", async() => {
                     WriteLiteral("Select Company");
                 }
                 );
@@ -249,24 +241,28 @@ WriteAttributeValue("", 2064, monthyear, 2064, 10, false);
             __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => 
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => companyID);
+                                                                  companyID
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_5);
             __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Name = (string)__tagHelperAttribute_6.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 51 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.GetAllCompanyAsync();
+                                                                                                                         EmployeeExtension.GetAllCompanyAsync()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -285,9 +281,9 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
                         <label class=""col-3 col-form-label"">Employee Category</label>
                         <div class=""col-3"">
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc17624", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc17731", async() => {
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc17941", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc18048", async() => {
                     WriteLiteral("Select Category");
                 }
                 );
@@ -311,21 +307,25 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_8);
             __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Name = (string)__tagHelperAttribute_9.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_9);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.GetAllEmployeeCategoryMaster();
+                                                                                                                       EmployeeExtension.GetAllEmployeeCategoryMaster()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => 
 #nullable restore
 #line 62 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => empCatId);
+                                                                                                                                                                                   empCatId
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -341,21 +341,23 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
                             <input type=""hidden"" id=""EmployeeID"" class=""form-control"" />
                             <input type=""text"" class=""form-control bs-autocomplete"" id=""employeeText"" name=""EmployeeName"" placeholder=""Enter Searching text.""");
             BeginWriteAttribute("value", " value=\"", 3504, "\"", 3531, 1);
+            WriteAttributeValue("", 3512, 
 #nullable restore
 #line 69 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-WriteAttributeValue("", 3512, ViewBag.EmployeeID, 3512, 19, false);
+                                                                                                                                                                      ViewBag.EmployeeID
 
 #line default
 #line hidden
 #nullable disable
+            , 3512, 19, false);
             EndWriteAttribute();
             WriteLiteral(">\r\n                        </div>\r\n\r\n                    </div>\r\n\r\n                    <div class=\"row mb-1\">\r\n                        <label");
             BeginWriteAttribute("for", " for=\"", 3673, "\"", 3679, 0);
             EndWriteAttribute();
             WriteLiteral(" class=\"col-sm-3 col-form-label \">Employment Type:</label>\r\n                        <div class=\"col-sm-3\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc22581", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc23236", async() => {
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc22898", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94075c1d60d593c24a6f7f9803cadd34c553bdcb043a3eeeb890bc331bf85ffc23553", async() => {
                     WriteLiteral("Select Employment Type");
                 }
                 );
@@ -376,24 +378,28 @@ WriteAttributeValue("", 3512, ViewBag.EmployeeID, 3512, 19, false);
             __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper>();
             __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => 
 #nullable restore
 #line 77 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => employmentTypeId);
+                                                                  employmentTypeId
 
 #line default
 #line hidden
 #nullable disable
+            );
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_10);
             __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Name = (string)__tagHelperAttribute_11.Value;
             __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_11);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = 
 #nullable restore
 #line 77 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-__Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.GetAllEmploymentType();
+                                                                                                                                              EmployeeExtension.GetAllEmploymentType()
 
 #line default
 #line hidden
 #nullable disable
+            ;
             __tagHelperExecutionContext.AddTagHelperAttribute("asp-items", __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
             await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
             if (!__tagHelperExecutionContext.Output.IsContentModified)
@@ -423,6 +429,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                <div class=""row"" style=""overflow:auto; height:auto; width:100%;"">
                                     <table class=""table table-striped table-hover table-bordered"" style=""white-space: nowrap; font-size:inherit !important;"">
 ");
@@ -443,14 +450,17 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                        <th>");
+            Write(
 #nullable restore
 #line 108 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                       Write(dataColumn.ToString());
+                                                             dataColumn.ToString()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</th>\r\n");
 #nullable restore
 #line 109 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -460,6 +470,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                            </tr>\r\n                                        </thead>\r\n");
 #nullable restore
 #line 113 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -470,15 +481,18 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                            <tr>\r\n                                                <td class=\"text-center\">\r\n");
             WriteLiteral("                                                    <a type=\"button\" onclick=\"fnVerifySalary(this)\" data-empId=\"");
+            Write(
 #nullable restore
 #line 119 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                           Write(row[1].ToInt());
+                                                                                                                 row[1].ToInt()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\">\r\n");
 #nullable restore
 #line 120 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -488,6 +502,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                            <iconify-icon icon=\"material-symbols:verified-outline\" class=\"text-success\" style=\"font-size:20px\" disabled></iconify-icon>\r\n");
 #nullable restore
 #line 123 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -498,6 +513,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                            <iconify-icon icon=\"material-symbols:verified-outline\" class=\"text-danger\" style=\"font-size:20px\"></iconify-icon>\r\n");
 #nullable restore
 #line 127 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -506,89 +522,110 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                    </a>\r\n\r\n                                                </td>");
             WriteLiteral("                                                <td>\r\n                                                    <a data-editId=\"");
+            Write(
 #nullable restore
 #line 133 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                               Write(row[1].ToInt());
+                                                                     row[1].ToInt()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-month=\"");
+            Write(
 #nullable restore
 #line 133 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                            Write(month);
+                                                                                                  month
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-year=\"");
+            Write(
 #nullable restore
 #line 133 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                               Write(year);
+                                                                                                                     year
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-companyId=\"");
+            Write(
 #nullable restore
 #line 133 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                                                      Write(companyID);
+                                                                                                                                            companyID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-employeeCategoryId=\"");
+            Write(
 #nullable restore
 #line 133 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                                                                                           Write(empCatId);
+                                                                                                                                                                                 empCatId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" onclick=\"fnOpenNewEditTab(this)\" style=\"cursor:pointer;color: #37569d;\"><iconify-icon icon=\"material-symbols:edit-note-sharp\" style=\"font-size:20px\"></iconify-icon></a>\r\n");
             WriteLiteral("                                                </td>");
             WriteLiteral("                                                <td>\r\n                                                    <a onclick=\"fnPrintSalarySleep(this)\" href=\"javascript:void(0)\" data-id=\"");
+            Write(
 #nullable restore
 #line 146 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                                        Write(row[1].ToInt());
+                                                                                                                              row[1].ToInt()
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-month=\"");
+            Write(
 #nullable restore
 #line 146 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                                                                     Write(month);
+                                                                                                                                                           month
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-year=\"");
+            Write(
 #nullable restore
 #line 146 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                                                                                        Write(year);
+                                                                                                                                                                              year
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-company=\"");
+            Write(
 #nullable restore
 #line 146 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                                                                                                             Write(companyID);
+                                                                                                                                                                                                   companyID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" data-category=\"");
+            Write(
 #nullable restore
 #line 146 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                                                                                                                                                                                        Write(empCatId);
+                                                                                                                                                                                                                              empCatId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\" style=\"font-size:20px\"><iconify-icon icon=\'arcticons:mobile-print\'></iconify-icon></a>\r\n                                                </td>");
 #nullable restore
 #line 148 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -601,6 +638,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 152 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
                                                          if (!string.IsNullOrEmpty(row[timeRow].ToString()))
@@ -609,14 +647,17 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                            <td>");
+            Write(
 #nullable restore
 #line 154 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                                                           Write(row[timeRow]);
+                                                                 row[timeRow]
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("</td>\r\n");
 #nullable restore
 #line 155 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -627,6 +668,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                                            <td>-</td>\r\n");
 #nullable restore
 #line 159 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -635,6 +677,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
 #nullable restore
 #line 159 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
                                                          
@@ -645,6 +688,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                            </tr>\r\n");
 #nullable restore
 #line 164 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -653,6 +697,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                                    </table>\r\n                                </div>\r\n");
 #nullable restore
 #line 167 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
@@ -663,6 +708,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                                <div class=""text-center"">
                                     <h1><iconify-icon icon=""mdi:text-box-remove-outline"" style=""color: #37569d;"" width=""100""></iconify-icon></h1>
                                     <h3 style=""color: red;"">No Data Found</h3>
@@ -678,6 +724,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral(@"                            <div class=""text-center"">
                                 <h1><iconify-icon icon=""mdi:text-box-remove-outline"" style=""color: #37569d;"" width=""100""></iconify-icon></h1>
                                 <h3 style=""color: red;"">No Data Found</h3>
@@ -690,14 +737,17 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.Items = EmployeeExtension.
 #line default
 #line hidden
 #nullable disable
+
             WriteLiteral("                    </div>\r\n\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n");
+            Write(
 #nullable restore
 #line 192 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-Write(await Html.PartialAsync("_ValidationScriptsPartial"));
+ await Html.PartialAsync("_ValidationScriptsPartial")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"
 <script type=""text/javascript"">
     function fnSearchEmpSal(obj) {
@@ -726,13 +776,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         var isdownload = obj;
 
         var urlEmpSalSumm = '");
+            Write(
 #nullable restore
 #line 219 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                        Write(Url.Action("GetEmployeeSalarySummary","ReportsHR"));
+                              Url.Action("GetEmployeeSalarySummary","ReportsHR")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
 
         var searchEmpSalURL = urlEmpSalSumm + '?employeeCategoryId=' + employeeCategoryId + '&companyId=' + companyid + '&month=' + month + '&year=' + year + '&employeeId=' + employeeId + '&isDownload=' + isdownload + '&employmentTypeId=' + employmentTypeId + '&salaryDate=' + formattedDate + '&isSalProcess=' + isSalProcess;
@@ -744,45 +796,55 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
     function fnVerifySalary(obj) {
 
         let year = ");
+            Write(
 #nullable restore
 #line 229 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-              Write(year);
+                    year
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(";\r\n        let month = ");
+            Write(
 #nullable restore
 #line 230 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-               Write(month);
+                     month
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(";\r\n        let companyId = ");
+            Write(
 #nullable restore
 #line 231 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                   Write(companyID);
+                         companyID
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(";\r\n        let employeeId = obj.dataset.empid;\r\n        let employeeCategoryId = ");
+            Write(
 #nullable restore
 #line 233 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                            Write(empCatId);
+                                  empCatId
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(";\r\n        const params = { year: year, month: month, companyId: companyId, employeeId: employeeId, employeeCategoryId: employeeCategoryId };\r\n        let verifySalaryUrl = \'");
+            Write(
 #nullable restore
 #line 235 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                          Write(Url.Action("VerifySalary","ReportsHR"));
+                                Url.Action("VerifySalary","ReportsHR")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
         $.ajax({
             type: 'post',
@@ -822,13 +884,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: '");
+            Write(
 #nullable restore
 #line 272 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\'\r\n                });\r\n            }\r\n        }).always(function () {\r\n            hideloader();\r\n        });\r\n");
             WriteLiteral(@"                };
 
@@ -840,13 +904,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         let employeeCategoryId = obj.dataset.employeecategoryid;
 
         var urlEditEmpSal = '");
+            Write(
 #nullable restore
 #line 293 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                        Write(Url.Action("Edit","ReportsHR"));
+                              Url.Action("Edit","ReportsHR")
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"';
 
         var finalUrl = urlEditEmpSal + '?editId=' + editId + '&month=' + month + '&year=' + year + '&companyId=' + companyId + '&employeeCategoryId=' + employeeCategoryId;
@@ -913,13 +979,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
                     continueDelayOnInactiveTab: false,
                     position: 'bottom right',
                     msg: """);
+            Write(
 #nullable restore
 #line 356 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                     Write(MessageHelper.Error);
+                           MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral(@"""
                 });
             }
@@ -988,13 +1056,15 @@ Write(await Html.PartialAsync("_ValidationScriptsPartial"));
         //             continueDelayOnInactiveTab: false,
         //             position: 'bottom right',
         //             msg: """);
+            Write(
 #nullable restore
 #line 421 "D:\GitHub\SUN\sunerpm2l\ERP\Areas\HR\Views\ReportsHR\GetEmployeeSalarySummary.cshtml"
-                        Write(MessageHelper.Error);
+                              MessageHelper.Error
 
 #line default
 #line hidden
 #nullable disable
+            );
             WriteLiteral("\"\r\n        //         });\r\n        //     }\r\n        // }).always(function () {\r\n        //     hideLoader();\r\n        // });\r\n    };\r\n\r\n    //// Print Function\r\n");
             WriteLiteral("</script>\r\n\r\n\r\n<!--    Important Code Block\r\n");
             WriteLiteral("-->\r\n");

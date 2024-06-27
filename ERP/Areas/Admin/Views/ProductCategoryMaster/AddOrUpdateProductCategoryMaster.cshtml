@@ -11,7 +11,31 @@
                 </div>
             </div>
 
-            <div class='row mt-3'><div class='col-12'><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>Product Group ID</label><div class='col-sm-9'><input type='text' class='form-control' id='ProductCategoryID' asp-for='ProductCategoryID' name='ProductCategoryID'><span asp-validation-for='ProductCategoryID' class='text-danger'></span></div></div><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>Product Group:</label><div class='col-sm-9'><input type='text' class='form-control' id='ProductCategoryText' asp-for='ProductCategoryText' name='ProductCategoryText'><span asp-validation-for='ProductCategoryText' class='text-danger'></span></div></div><div class='row mb-3'><label for='' class='col-sm-3 col-form-label'>Remark</label><div class='col-sm-9'><input type='text' class='form-control' id='Remark' asp-for='Remark' name='Remark'><span asp-validation-for='Remark' class='text-danger'></span></div></div></div></div>
+            <div class='row mt-3'>
+                <div class='col-12'>
+                    @* <div class='row mb-3'>
+                         <label for='' class='col-sm-3 col-form-label'>Product Group ID</label>
+                        <div class='col-sm-9'> *@
+                            <input type='hidden' class='form-control' id='ProductCategoryID' asp-for='ProductCategoryID' name='ProductCategoryID'>
+                            @* <span asp-validation-for='ProductCategoryID' class='text-danger'></span>
+                        </div>
+                    </div> *@
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Product Group:</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='ProductCategoryText' asp-for='ProductCategoryText' name='ProductCategoryText'>
+                            <span asp-validation-for='ProductCategoryText' class='text-danger'></span>
+                        </div>
+                    </div>
+                    <div class='row mb-3'>
+                        <label for='' class='col-sm-3 col-form-label'>Remark</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='Remark' asp-for='Remark' name='Remark'>
+                            <span asp-validation-for='Remark' class='text-danger'></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="modal-footer-sticky text-center">
                 <button id="btnSave" type="button" onclick="fnSubmit()" class="btn btn-primary btn-info px-5 ladda-button">Submit</button>

@@ -48,7 +48,7 @@ namespace ERP.Areas.Production.Controllers
                     .Sanitized(false)
                     .SetWidth(60)
                     .Css("hidden-xs") //hide on phones
-                    .RenderValueAs(o => $"<a class='btn IndexPagebtnEidtPadding' onclick='fnMachineOperatingStatus(this)' href='javascript:void(0)' data-id='{o.MachineOperatingStatusText}' data-bs-toggle='offcanvas' data-bs-target='#canvas_MachineOperatingStatus' aria-controls='canvas_masterentity' ><i class='bx bx-edit'></i></a>");
+                    .RenderValueAs(o => $"<a class='btn IndexPagebtnEidtPadding' onclick='fnMachineOperatingStatus(this)' href='javascript:void(0)' data-id='{o.MachineOperatingStatusID}' data-bs-toggle='offcanvas' data-bs-target='#canvas_MachineOperatingStatus' aria-controls='canvas_masterentity' ><i class='bx bx-edit'></i></a>");
             };
             PagedDataTable<MachineOperatingStatus> pds =(PagedDataTable<MachineOperatingStatus>) iMachineOperatingStatus.GetAllMachineOperatingStatusAsync(gridpage.ToInt(), PAGESIZE, search, orderby.RemoveSpace(), sortby == "0" ? "ASC" : "DESC").Result;
 
