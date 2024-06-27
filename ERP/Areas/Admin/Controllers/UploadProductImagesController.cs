@@ -197,6 +197,9 @@ namespace ERP.Areas.Admin.Controllers
             }
             //}
         }
+                else
+                {
+                    return View(ViewData["Message"] = "Error! Failt to save records!");
 
         #region Product Group Description By ProductGroup ID
         public JsonResult ProductGroupDescriptionByProductGroupID(int productGroupID)
